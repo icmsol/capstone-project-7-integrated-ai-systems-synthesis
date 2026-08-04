@@ -1,0 +1,25 @@
+{
+  "best_epoch": 14,
+  "selected_configuration": "Baseline dropout 0.10",
+  "selection_basis": "Validation macro F1; validation loss used as the checkpoint tie-breaker during training.",
+  "test_metrics_used_for_selection": false,
+  "training_summary": {
+    "best_epoch": 14,
+    "best_validation_loss": 0.502932503716699,
+    "best_validation_macro_f1": 0.8877919857996972,
+    "dropout": 0.1,
+    "epochs": 15,
+    "mean_epoch_seconds": 2.4152706346666792,
+    "peak_gpu_memory_gb": 0.28427982330322266,
+    "run_name": "Formal baseline",
+    "total_seconds": 36.26380490899987
+  },
+  "validation_metrics": {
+    "accuracy": 0.9011494252873563,
+    "loss": 0.502932503716699,
+    "macro_f1": 0.8877919857996972,
+    "macro_precision": 0.8893414076468176,
+    "macro_recall": 0.8878029534776731,
+    "weighted_f1": 0.9011095816916755
+  }
+}

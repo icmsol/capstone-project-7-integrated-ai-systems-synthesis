@@ -1,0 +1,17 @@
+{
+  "lowercase": true,
+  "maximum_sequence_length": 256,
+  "pad_index": 0,
+  "pad_token": "<PAD>",
+  "pattern": "[a-z]+(?:'[a-z]+)?|\\d+(?:\\.\\d+)*|[^\\w\\s]",
+  "tokenizer_type": "regular_expression",
+  "unk_index": 1,
+  "unk_token": "<UNK>",
+  "vocabulary_construction": {
+    "maximum_size": 20000,
+    "minimum_frequency": 2,
+    "ordering": "descending training frequency, then alphabetical token order",
+    "training_partition_only": true
+  },
+  "vocabulary_size": 4417
+}

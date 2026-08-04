@@ -1,0 +1,132 @@
+{
+  "artifact_id": "PROJECT4-CLAUSE-CLASSIFIER-INFERENCE",
+  "artifact_version": "1.0.0",
+  "cpu_smoke_test": {
+    "actual_category": "Audit Rights",
+    "actual_label_id": 0,
+    "confidence": 0.9997158646583557,
+    "example_id": "cuad_00141",
+    "finite_logits": true,
+    "finite_probabilities": true,
+    "output_shape": [
+      1,
+      10
+    ],
+    "predicted_category": "Audit Rights",
+    "predicted_label_id": 0,
+    "probability_sum": 0.9999998807907104,
+    "runtime_device": "cpu",
+    "source_partition": "validation",
+    "status": "passed"
+  },
+  "created_for": "Capstone Project 7",
+  "cuda_version_during_export": "12.8",
+  "file_count_excluding_manifest": 9,
+  "files": [
+    {
+      "bytes": 418,
+      "path": "audit/project4_cpu_smoke_test.json",
+      "sha256": "a77aa0a709aa6707df075cf30d267056fd288a1f0e3ec80a5a05bab64b60e81b"
+    },
+    {
+      "bytes": 1228,
+      "path": "models/project4/README.md",
+      "sha256": "123946f4342ec782530a24e4d6b14200da4f1d88695d5c7afe3a3758aaa510dc"
+    },
+    {
+      "bytes": 58103,
+      "path": "models/project4/index_to_token.json",
+      "sha256": "348b24726d341bfe7ccd77e05847fbe30bcc228a3f86b62c12600458a3a4b258"
+    },
+    {
+      "bytes": 278,
+      "path": "models/project4/label_id_to_category.json",
+      "sha256": "bd77c4733dea392d9e26b2fccde1c3436d312ba32d350f23bd740fa87b19eae0"
+    },
+    {
+      "bytes": 189,
+      "path": "models/project4/model_config.json",
+      "sha256": "498308295dc220b558baa015e32143bf2a417dec1169db12d57b550b55818dce"
+    },
+    {
+      "bytes": 3468981,
+      "path": "models/project4/selected_clause_classifier.pt",
+      "sha256": "50a280950d31466d7002578295c64e957d144611f5b9731bb059be50e68c6c92"
+    },
+    {
+      "bytes": 83495,
+      "path": "models/project4/token_to_index.json",
+      "sha256": "511aff34340238a49bac685f8d26929be93738d9d01a4775104d015d062b0f5a"
+    },
+    {
+      "bytes": 479,
+      "path": "models/project4/tokenizer_config.json",
+      "sha256": "9cbf2028a9c97fb0cddd5689c0ac2f77e223e7706bc95c46fe3e861b54c732db"
+    },
+    {
+      "bytes": 842,
+      "path": "models/project4/validation_selection_metrics.json",
+      "sha256": "7127525e87dbbf1705a6e8df77c434ac9db64019a238d343dacadc740e109a76"
+    }
+  ],
+  "gpu_during_export": "Tesla T4",
+  "limitations": [
+    "Ten modeled clause categories only.",
+    "CUAD commercial-contract training domain.",
+    "Maximum sequence length of 256 tokens.",
+    "Confidence is not legal certainty.",
+    "Human review is mandatory for consequential use."
+  ],
+  "model_config": {
+    "dropout": 0.1,
+    "embedding_dim": 128,
+    "feedforward_dim": 256,
+    "max_length": 256,
+    "num_classes": 10,
+    "num_heads": 4,
+    "num_layers": 2,
+    "pad_index": 0,
+    "vocab_size": 4417
+  },
+  "python_version": "3.12.13",
+  "pytorch_version": "2.11.0+cu128",
+  "seed": 42,
+  "selected_configuration": "Baseline dropout 0.10",
+  "selection_basis": "validation macro F1",
+  "source_checksums": {
+    "experiment_configuration": {
+      "bytes": 3435,
+      "sha256": "8e6b7093bebe4fe3b99f11302d9a9e4cc4000ac5ec24760056213f52e95b2082",
+      "status": "verified",
+      "url": "https://raw.githubusercontent.com/icmsol/capstone-project-4-deep-learning-systems/main/config/experiment_configuration.json"
+    },
+    "processed_dataset": {
+      "bytes": 2375834,
+      "sha256": "a935763e8cef7d6260eb4ebca33005c18294634d48a2763e10c1c91564451046",
+      "status": "verified",
+      "url": "https://raw.githubusercontent.com/icmsol/capstone-project-4-deep-learning-systems/main/data/processed/cuad_clause_classification.csv"
+    }
+  },
+  "source_project": "Capstone Project 4 — Deep Learning Systems",
+  "source_repository": "icmsol/capstone-project-4-deep-learning-systems",
+  "test_results_used_for_selection": false,
+  "training_summary": {
+    "best_epoch": 14,
+    "best_validation_loss": 0.502932503716699,
+    "best_validation_macro_f1": 0.8877919857996972,
+    "dropout": 0.1,
+    "epochs": 15,
+    "mean_epoch_seconds": 2.4152706346666792,
+    "peak_gpu_memory_gb": 0.28427982330322266,
+    "run_name": "Formal baseline",
+    "total_seconds": 36.26380490899987
+  },
+  "validation_metrics": {
+    "accuracy": 0.9011494252873563,
+    "loss": 0.502932503716699,
+    "macro_f1": 0.8877919857996972,
+    "macro_precision": 0.8893414076468176,
+    "macro_recall": 0.8878029534776731,
+    "weighted_f1": 0.9011095816916755
+  }
+}

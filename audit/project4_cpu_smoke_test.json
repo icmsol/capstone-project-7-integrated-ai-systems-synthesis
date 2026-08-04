@@ -1,0 +1,18 @@
+{
+  "actual_category": "Audit Rights",
+  "actual_label_id": 0,
+  "confidence": 0.9997158646583557,
+  "example_id": "cuad_00141",
+  "finite_logits": true,
+  "finite_probabilities": true,
+  "output_shape": [
+    1,
+    10
+  ],
+  "predicted_category": "Audit Rights",
+  "predicted_label_id": 0,
+  "probability_sum": 0.9999998807907104,
+  "runtime_device": "cpu",
+  "source_partition": "validation",
+  "status": "passed"
+}
