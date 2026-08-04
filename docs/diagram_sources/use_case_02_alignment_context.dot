@@ -1,0 +1,55 @@
+
+digraph UseCase {
+
+graph [
+  bgcolor="white",
+  fontname="Helvetica",
+  fontsize=11,
+  pad=0.25,
+  nodesep=0.45,
+  ranksep=0.65,
+  splines=ortho
+];
+node [
+  fontname="Helvetica",
+  fontsize=10,
+  style="rounded,filled",
+  penwidth=1.2,
+  color="#375A7F",
+  fillcolor="#F7FAFC",
+  margin="0.12,0.08"
+];
+edge [
+  fontname="Helvetica",
+  fontsize=9,
+  color="#4A5568",
+  penwidth=1.2,
+  arrowsize=0.8
+];
+
+rankdir=LR;
+
+analyst [shape=box, label="«actor»\nBusiness Development Reviewer", fillcolor="#EAF2F8"];
+profile_owner [shape=box, label="«actor»\nOrganization Profile Owner", fillcolor="#EAF2F8"];
+
+subgraph cluster_system {
+  label="Major Function 2 — Organization Alignment and Historical Context";
+  color="#1F4E78";
+  penwidth=1.6;
+  style="rounded";
+  uc1 [shape=ellipse, label="Load Active Organization Profile", fillcolor="#F7FAFC"];
+uc2 [shape=ellipse, label="Match Services and Capabilities", fillcolor="#F7FAFC"];
+uc3 [shape=ellipse, label="Apply Exclusions and Conditions", fillcolor="#F7FAFC"];
+uc4 [shape=ellipse, label="Attach Historical Context", fillcolor="#F7FAFC"];
+uc5 [shape=ellipse, label="Identify Staffing Families", fillcolor="#F7FAFC"];
+uc6 [shape=ellipse, label="Create Advisory Pursuit Assessment", fillcolor="#F7FAFC"];
+}
+
+profile_owner -> uc1 [label=""];
+analyst -> uc6 [label=""];
+uc1 -> uc2 [style=dashed, label="«include»"];
+uc2 -> uc3 [style=dashed, label="«include»"];
+uc3 -> uc4 [style=dashed, label="«include»"];
+uc4 -> uc5 [style=dashed, label="«include»"];
+uc5 -> uc6 [style=dashed, label="«include»"];
+}

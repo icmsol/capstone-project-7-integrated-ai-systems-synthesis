@@ -1,0 +1,58 @@
+
+digraph RecommendationFlow {
+
+graph [
+  bgcolor="white",
+  fontname="Helvetica",
+  fontsize=11,
+  pad=0.25,
+  nodesep=0.45,
+  ranksep=0.65,
+  splines=ortho
+];
+node [
+  fontname="Helvetica",
+  fontsize=10,
+  style="rounded,filled",
+  penwidth=1.2,
+  color="#375A7F",
+  fillcolor="#F7FAFC",
+  margin="0.12,0.08"
+];
+edge [
+  fontname="Helvetica",
+  fontsize=9,
+  color="#4A5568",
+  penwidth=1.2,
+  arrowsize=0.8
+];
+
+rankdir=LR;
+
+evidence [shape=box, label="Validated Evidence\nand Historical Context", fillcolor="#EAF4E4"];
+assessment [shape=box, label="Assessment Factors,\nCounterevidence, Gaps, Conditions", fillcolor="#EBF5FB"];
+recommendation [shape=note, label="Nonbinding Recommendation\n+ Confidence / Strength\n+ Next Action", fillcolor="#FFF2CC"];
+human [shape=diamond, label="Authorized Human Review", fillcolor="#EAF2F8"];
+accept [shape=box, label="Accept", fillcolor="#EAF4E4"];
+modify [shape=box, label="Accept with\nModified Conditions", fillcolor="#EAF4E4"];
+reject [shape=box, label="Reject", fillcolor="#FCE8E6"];
+defer [shape=box, label="Defer Pending\nInformation", fillcolor="#FFF2CC"];
+escalate [shape=box, label="Escalate to\nSpecialist / Executive", fillcolor="#FFF2CC"];
+audit [shape=cylinder, label="Preserve Original Recommendation,\nHuman Disposition and Rationale", fillcolor="#FCE8E6"];
+
+evidence -> assessment;
+assessment -> recommendation;
+recommendation -> human;
+human -> accept;
+human -> modify;
+human -> reject;
+human -> defer;
+human -> escalate;
+
+recommendation -> audit [style=dashed, label="original advisory output"];
+accept -> audit;
+modify -> audit;
+reject -> audit;
+defer -> audit;
+escalate -> audit;
+}

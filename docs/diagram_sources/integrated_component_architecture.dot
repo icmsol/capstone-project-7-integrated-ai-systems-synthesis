@@ -1,0 +1,122 @@
+
+digraph IntegratedComponents {
+
+graph [
+  bgcolor="white",
+  fontname="Helvetica",
+  fontsize=11,
+  pad=0.25,
+  nodesep=0.45,
+  ranksep=0.65,
+  splines=ortho
+];
+node [
+  fontname="Helvetica",
+  fontsize=10,
+  style="rounded,filled",
+  penwidth=1.2,
+  color="#375A7F",
+  fillcolor="#F7FAFC",
+  margin="0.12,0.08"
+];
+edge [
+  fontname="Helvetica",
+  fontsize=9,
+  color="#4A5568",
+  penwidth=1.2,
+  arrowsize=0.8
+];
+
+rankdir=TB;
+compound=true;
+
+subgraph cluster_interface {
+  label="1. Case Intake and Human Interface";
+  color="#9FBAD0";
+  style="rounded";
+  intake [shape=box, label="Opportunity Intake\nand Case Creation", fillcolor="#EAF2F8"];
+  review_ui [shape=box, label="Human Review, Override,\nand Final Disposition", fillcolor="#EAF2F8"];
+}
+
+subgraph cluster_policy {
+  label="2. Configuration and Fixed Governance";
+  color="#B7D7A8";
+  style="rounded";
+  loader [shape=component, label="Organization Profile\nLoader and Validator", fillcolor="#EAF4E4"];
+  safeguards [shape=component, label="Fixed Safeguard\nPolicy Engine", fillcolor="#EAF4E4"];
+  roles [shape=component, label="Reviewer Role and\nRouting Configuration", fillcolor="#EAF4E4"];
+}
+
+subgraph cluster_analysis {
+  label="3. Structured Opportunity Analysis";
+  color="#A9CCE3";
+  style="rounded";
+  normalize [shape=component, label="Source Parsing,\nNormalization and Provenance", fillcolor="#EBF5FB"];
+  align [shape=component, label="Service Alignment and\nExclusion-First Screening", fillcolor="#EBF5FB"];
+  history [shape=component, label="Historical Demand and\nStaffing-Family Context", fillcolor="#EBF5FB"];
+}
+
+subgraph cluster_text {
+  label="4. Contract and Evidence Analysis";
+  color="#C5B0D5";
+  style="rounded";
+  passage [shape=component, label="Relevant Passage\nSelection", fillcolor="#F4ECF7"];
+  classifier [shape=component, label="Bounded Clause-Theme\nClassifier (CPU)", fillcolor="#F4ECF7"];
+  evidence [shape=component, label="Exact and Semantic\nOfficial Evidence Retrieval", fillcolor="#F4ECF7"];
+  validation [shape=component, label="Citation, Metadata and\nEvidence Sufficiency Validation", fillcolor="#F4ECF7"];
+}
+
+subgraph cluster_recommendation {
+  label="5. Assessment and Recommendation";
+  color="#D6B656";
+  style="rounded";
+  assessment [shape=component, label="Factors, Counterevidence,\nMissing Information and Conditions", fillcolor="#FFF2CC"];
+  recommend [shape=component, label="Nonbinding Recommendation\nand Next-Action Guidance", fillcolor="#FFF2CC"];
+  packet [shape=component, label="Decision-Support Packet\nAssembly and Completeness Check", fillcolor="#FFF2CC"];
+}
+
+subgraph cluster_state {
+  label="6. Cross-Cutting State, Audit and Evaluation";
+  color="#E6B8AF";
+  style="rounded";
+  state [shape=cylinder, label="Versioned Case State", fillcolor="#FCE8E6"];
+  audit [shape=cylinder, label="Append-Only Audit Events", fillcolor="#FCE8E6"];
+  metrics [shape=cylinder, label="Evaluation and\nTraceability Evidence", fillcolor="#FCE8E6"];
+}
+
+intake -> loader;
+loader -> normalize;
+normalize -> align;
+align -> history;
+history -> passage;
+passage -> classifier;
+classifier -> evidence [label="theme / reviewer cue"];
+evidence -> validation;
+validation -> assessment;
+assessment -> recommend;
+recommend -> packet;
+packet -> review_ui;
+
+safeguards -> intake [style=dashed];
+safeguards -> align [style=dashed];
+safeguards -> classifier [style=dashed];
+safeguards -> evidence [style=dashed];
+safeguards -> recommend [style=dashed];
+roles -> recommend [style=dashed];
+roles -> review_ui [style=dashed];
+
+intake -> state [style=dashed];
+loader -> state [style=dashed];
+align -> state [style=dashed];
+classifier -> state [style=dashed];
+validation -> state [style=dashed];
+recommend -> state [style=dashed];
+review_ui -> state [style=dashed];
+
+state -> audit [label="state transitions"];
+audit -> metrics [label="traceability"];
+packet -> metrics [style=dashed];
+review_ui -> metrics [style=dashed];
+
+review_ui -> recommend [label="request reassessment", style=dashed];
+}

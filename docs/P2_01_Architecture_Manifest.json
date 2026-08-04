@@ -1,0 +1,157 @@
+{
+  "artifact_id": "PROJECT7-P2-01-ARCHITECTURE",
+  "artifact_version": "1.0.0",
+  "created_at": "2026-08-04T22:40:43.713031Z",
+  "purpose": "Integrated system architecture and major-function use case diagrams",
+  "file_count": 37,
+  "files": [
+    {
+      "path": "docs/Integrated_System_Architecture.md",
+      "bytes": 12476
+    },
+    {
+      "path": "docs/diagram_sources/configuration_portability_architecture.dot",
+      "bytes": 1892
+    },
+    {
+      "path": "docs/diagram_sources/data_provenance_audit_flow.dot",
+      "bytes": 1704
+    },
+    {
+      "path": "docs/diagram_sources/failure_escalation_flow.dot",
+      "bytes": 2354
+    },
+    {
+      "path": "docs/diagram_sources/integrated_component_architecture.dot",
+      "bytes": 3988
+    },
+    {
+      "path": "docs/diagram_sources/recommendation_human_decision_flow.dot",
+      "bytes": 1644
+    },
+    {
+      "path": "docs/diagram_sources/system_context_architecture.dot",
+      "bytes": 2589
+    },
+    {
+      "path": "docs/diagram_sources/use_case_01_opportunity_intake.dot",
+      "bytes": 1632
+    },
+    {
+      "path": "docs/diagram_sources/use_case_02_alignment_context.dot",
+      "bytes": 1560
+    },
+    {
+      "path": "docs/diagram_sources/use_case_03_clause_triage.dot",
+      "bytes": 1564
+    },
+    {
+      "path": "docs/diagram_sources/use_case_04_evidence_review.dot",
+      "bytes": 1682
+    },
+    {
+      "path": "docs/diagram_sources/use_case_05_packet_recommendation.dot",
+      "bytes": 1555
+    },
+    {
+      "path": "docs/diagram_sources/use_case_06_human_disposition.dot",
+      "bytes": 1837
+    },
+    {
+      "path": "figures/configuration_portability_architecture.png",
+      "bytes": 58067
+    },
+    {
+      "path": "figures/configuration_portability_architecture.svg",
+      "bytes": 11320
+    },
+    {
+      "path": "figures/data_provenance_audit_flow.png",
+      "bytes": 68527
+    },
+    {
+      "path": "figures/data_provenance_audit_flow.svg",
+      "bytes": 11716
+    },
+    {
+      "path": "figures/failure_escalation_flow.png",
+      "bytes": 112266
+    },
+    {
+      "path": "figures/failure_escalation_flow.svg",
+      "bytes": 17248
+    },
+    {
+      "path": "figures/integrated_component_architecture.png",
+      "bytes": 151621
+    },
+    {
+      "path": "figures/integrated_component_architecture.svg",
+      "bytes": 30786
+    },
+    {
+      "path": "figures/recommendation_human_decision_flow.png",
+      "bytes": 66832
+    },
+    {
+      "path": "figures/recommendation_human_decision_flow.svg",
+      "bytes": 13360
+    },
+    {
+      "path": "figures/system_context_architecture.png",
+      "bytes": 104427
+    },
+    {
+      "path": "figures/system_context_architecture.svg",
+      "bytes": 16907
+    },
+    {
+      "path": "figures/use_case_01_opportunity_intake.png",
+      "bytes": 68614
+    },
+    {
+      "path": "figures/use_case_01_opportunity_intake.svg",
+      "bytes": 8555
+    },
+    {
+      "path": "figures/use_case_02_alignment_context.png",
+      "bytes": 55517
+    },
+    {
+      "path": "figures/use_case_02_alignment_context.svg",
+      "bytes": 7306
+    },
+    {
+      "path": "figures/use_case_03_clause_triage.png",
+      "bytes": 69194
+    },
+    {
+      "path": "figures/use_case_03_clause_triage.svg",
+      "bytes": 7764
+    },
+    {
+      "path": "figures/use_case_04_evidence_review.png",
+      "bytes": 76579
+    },
+    {
+      "path": "figures/use_case_04_evidence_review.svg",
+      "bytes": 9052
+    },
+    {
+      "path": "figures/use_case_05_packet_recommendation.png",
+      "bytes": 65518
+    },
+    {
+      "path": "figures/use_case_05_packet_recommendation.svg",
+      "bytes": 7271
+    },
+    {
+      "path": "figures/use_case_06_human_disposition.png",
+      "bytes": 80720
+    },
+    {
+      "path": "figures/use_case_06_human_disposition.svg",
+      "bytes": 10262
+    }
+  ]
+}

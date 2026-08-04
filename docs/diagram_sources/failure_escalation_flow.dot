@@ -1,0 +1,65 @@
+
+digraph FailureEscalation {
+
+graph [
+  bgcolor="white",
+  fontname="Helvetica",
+  fontsize=11,
+  pad=0.25,
+  nodesep=0.45,
+  ranksep=0.65,
+  splines=ortho
+];
+node [
+  fontname="Helvetica",
+  fontsize=10,
+  style="rounded,filled",
+  penwidth=1.2,
+  color="#375A7F",
+  fillcolor="#F7FAFC",
+  margin="0.12,0.08"
+];
+edge [
+  fontname="Helvetica",
+  fontsize=9,
+  color="#4A5568",
+  penwidth=1.2,
+  arrowsize=0.8
+];
+
+rankdir=TB;
+
+start [shape=ellipse, label="Process Current Case", fillcolor="#EAF2F8"];
+config [shape=diamond, label="Configuration valid?", fillcolor="#FFF2CC"];
+source [shape=diamond, label="Source provenance\nand data rights valid?", fillcolor="#FFF2CC"];
+sensitive [shape=diamond, label="Sensitive or prohibited\ncontent detected?", fillcolor="#FFF2CC"];
+model [shape=diamond, label="Classifier applicable\nand above threshold?", fillcolor="#FFF2CC"];
+evidence [shape=diamond, label="Evidence sufficient,\nvalid and nonconflicting?", fillcolor="#FFF2CC"];
+audit [shape=diamond, label="Audit event persisted?", fillcolor="#FFF2CC"];
+recommend [shape=box, label="Generate Nonbinding\nRecommendation", fillcolor="#EAF4E4"];
+packet [shape=box, label="Route Complete Packet\nto Human Reviewer", fillcolor="#EAF4E4"];
+
+fail_config [shape=box, label="Fail Closed:\nReject Configuration", fillcolor="#FCE8E6"];
+quarantine [shape=box, label="Quarantine Source /\nRequire Provenance Review", fillcolor="#FCE8E6"];
+block [shape=box, label="Block or Redact /\nPrivacy-Security Review", fillcolor="#FCE8E6"];
+abstain [shape=box, label="Abstain from Classification /\nRoute for Manual Triage", fillcolor="#FFF2CC"];
+escalate [shape=box, label="No Recommendation or\nSpecialist Escalation", fillcolor="#FFF2CC"];
+stop_audit [shape=box, label="Stop Processing:\nAudit Failure", fillcolor="#FCE8E6"];
+
+start -> config;
+config -> source [label="Yes"];
+config -> fail_config [label="No"];
+source -> sensitive [label="Yes"];
+source -> quarantine [label="No"];
+sensitive -> block [label="Yes"];
+sensitive -> model [label="No"];
+model -> evidence [label="Yes"];
+model -> abstain [label="No"];
+abstain -> evidence [style=dashed, label="manual theme / reviewer cue"];
+evidence -> audit [label="Yes"];
+evidence -> escalate [label="No"];
+audit -> recommend [label="Yes"];
+audit -> stop_audit [label="No"];
+recommend -> packet;
+escalate -> packet [style=dashed];
+}

@@ -1,0 +1,56 @@
+
+digraph ProvenanceFlow {
+
+graph [
+  bgcolor="white",
+  fontname="Helvetica",
+  fontsize=11,
+  pad=0.25,
+  nodesep=0.45,
+  ranksep=0.65,
+  splines=ortho
+];
+node [
+  fontname="Helvetica",
+  fontsize=10,
+  style="rounded,filled",
+  penwidth=1.2,
+  color="#375A7F",
+  fillcolor="#F7FAFC",
+  margin="0.12,0.08"
+];
+edge [
+  fontname="Helvetica",
+  fontsize=9,
+  color="#4A5568",
+  penwidth=1.2,
+  arrowsize=0.8
+];
+
+rankdir=LR;
+
+source [shape=cylinder, label="Original Source Record\nURL / File / Snapshot", fillcolor="#EAF4E4"];
+ingest [shape=box, label="Ingestion Validation\nand Source Checksum", fillcolor="#EBF5FB"];
+normalized [shape=cylinder, label="Normalized Opportunity\n+ Original Values", fillcolor="#EBF5FB"];
+config [shape=folder, label="Active Profile, Rules,\nModel and Corpus Versions", fillcolor="#EAF4E4"];
+component [shape=box, label="Component Outputs:\nAlignment, Triage, Evidence", fillcolor="#F4ECF7"];
+recommendation [shape=note, label="Recommendation, Conditions,\nCounterevidence and Gaps", fillcolor="#FFF2CC"];
+human [shape=note, label="Human Disposition,\nModifications and Rationale", fillcolor="#EAF2F8"];
+audit [shape=cylinder, label="Append-Only Audit Events\nby Case ID", fillcolor="#FCE8E6"];
+manifest [shape=cylinder, label="Run Manifest, File Hashes,\nEnvironment and Evaluation", fillcolor="#FCE8E6"];
+
+source -> ingest;
+ingest -> normalized;
+normalized -> component;
+config -> component;
+component -> recommendation;
+recommendation -> human;
+
+ingest -> audit [style=dashed];
+normalized -> audit [style=dashed];
+config -> audit [style=dashed];
+component -> audit [style=dashed];
+recommendation -> audit [style=dashed];
+human -> audit [style=dashed];
+audit -> manifest;
+}

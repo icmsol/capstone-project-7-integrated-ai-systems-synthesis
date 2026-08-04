@@ -1,0 +1,56 @@
+
+digraph UseCase {
+
+graph [
+  bgcolor="white",
+  fontname="Helvetica",
+  fontsize=11,
+  pad=0.25,
+  nodesep=0.45,
+  ranksep=0.65,
+  splines=ortho
+];
+node [
+  fontname="Helvetica",
+  fontsize=10,
+  style="rounded,filled",
+  penwidth=1.2,
+  color="#375A7F",
+  fillcolor="#F7FAFC",
+  margin="0.12,0.08"
+];
+edge [
+  fontname="Helvetica",
+  fontsize=9,
+  color="#4A5568",
+  penwidth=1.2,
+  arrowsize=0.8
+];
+
+rankdir=LR;
+
+analyst [shape=box, label="«actor»\nOpportunity / Contract Analyst", fillcolor="#EAF2F8"];
+specialist [shape=box, label="«actor»\nContracts or Legal Reviewer", fillcolor="#EAF2F8"];
+
+subgraph cluster_system {
+  label="Major Function 3 — Clause-Theme Triage";
+  color="#1F4E78";
+  penwidth=1.6;
+  style="rounded";
+  uc1 [shape=ellipse, label="Select Relevant Passage", fillcolor="#F7FAFC"];
+uc2 [shape=ellipse, label="Tokenize and Classify Theme", fillcolor="#F7FAFC"];
+uc3 [shape=ellipse, label="Report Confidence and Model Version", fillcolor="#F7FAFC"];
+uc4 [shape=ellipse, label="Apply Domain-Shift and Threshold Controls", fillcolor="#F7FAFC"];
+uc5 [shape=ellipse, label="Recommend Review Priority and Reviewer", fillcolor="#F7FAFC"];
+uc6 [shape=ellipse, label="Abstain and Escalate", fillcolor="#F7FAFC"];
+}
+
+analyst -> uc1 [label=""];
+uc1 -> uc2 [style=dashed, label="«include»"];
+uc2 -> uc3 [style=dashed, label="«include»"];
+uc3 -> uc4 [style=dashed, label="«include»"];
+uc4 -> uc5 [style=dashed, label="«include»"];
+uc4 -> uc6 [style=dashed, label="«extend»"];
+specialist -> uc5 [label=""];
+specialist -> uc6 [label=""];
+}

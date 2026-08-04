@@ -1,0 +1,82 @@
+
+digraph SystemContext {
+
+graph [
+  bgcolor="white",
+  fontname="Helvetica",
+  fontsize=11,
+  pad=0.25,
+  nodesep=0.45,
+  ranksep=0.65,
+  splines=ortho
+];
+node [
+  fontname="Helvetica",
+  fontsize=10,
+  style="rounded,filled",
+  penwidth=1.2,
+  color="#375A7F",
+  fillcolor="#F7FAFC",
+  margin="0.12,0.08"
+];
+edge [
+  fontname="Helvetica",
+  fontsize=9,
+  color="#4A5568",
+  penwidth=1.2,
+  arrowsize=0.8
+];
+
+rankdir=LR;
+
+subgraph cluster_humans {
+  label="Authorized Human Roles";
+  color="#9FBAD0";
+  style="rounded,dashed";
+  analyst [shape=box, label="Business Development /\nOpportunity Analyst", fillcolor="#EAF2F8"];
+  specialist [shape=box, label="Contracts / Legal /\nSecurity / Staffing / Finance", fillcolor="#EAF2F8"];
+  executive [shape=box, label="Executive Decision Authority", fillcolor="#EAF2F8"];
+}
+
+system [shape=box3d, width=3.6, height=1.2,
+  label="Configurable Small-Business\nOpportunity-to-Contract Intelligence\nand Assurance Framework",
+  fillcolor="#D6EAF8", color="#1F4E78", penwidth=2.0];
+
+subgraph cluster_sources {
+  label="Approved Sources and Configurations";
+  color="#B7D7A8";
+  style="rounded,dashed";
+  procurement [shape=cylinder, label="Public Procurement\nOpportunity Records", fillcolor="#EAF4E4"];
+  profiles [shape=folder, label="Organization Profiles,\nServices, Rules, Roles", fillcolor="#EAF4E4"];
+  historical [shape=cylinder, label="Frozen Historical\nProcurement Context", fillcolor="#EAF4E4"];
+  far [shape=cylinder, label="Versioned Official FAR\nEvidence Corpus", fillcolor="#EAF4E4"];
+  model [shape=folder, label="Project 4 Clause\nClassifier Package", fillcolor="#EAF4E4"];
+}
+
+subgraph cluster_outputs {
+  label="Controlled Outputs";
+  color="#D6B656";
+  style="rounded,dashed";
+  packet [shape=note, label="Evidence-Linked\nDecision-Support Packet", fillcolor="#FFF2CC"];
+  audit [shape=cylinder, label="Case State, Audit Events,\nVersions and Checksums", fillcolor="#FFF2CC"];
+  disposition [shape=note, label="Human Disposition\nand Rationale", fillcolor="#FFF2CC"];
+}
+
+analyst -> system [label="submit / review case"];
+specialist -> system [label="specialist findings"];
+executive -> system [label="final disposition"];
+system -> analyst [label="nonbinding recommendation"];
+system -> specialist [label="escalation / review request"];
+system -> executive [label="decision packet"];
+
+procurement -> system;
+profiles -> system;
+historical -> system;
+far -> system;
+model -> system;
+
+system -> packet;
+system -> audit;
+packet -> disposition [label="human accepts, modifies,\nrejects, defers, or escalates"];
+disposition -> audit;
+}

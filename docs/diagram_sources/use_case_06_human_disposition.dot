@@ -1,0 +1,61 @@
+
+digraph UseCase {
+
+graph [
+  bgcolor="white",
+  fontname="Helvetica",
+  fontsize=11,
+  pad=0.25,
+  nodesep=0.45,
+  ranksep=0.65,
+  splines=ortho
+];
+node [
+  fontname="Helvetica",
+  fontsize=10,
+  style="rounded,filled",
+  penwidth=1.2,
+  color="#375A7F",
+  fillcolor="#F7FAFC",
+  margin="0.12,0.08"
+];
+edge [
+  fontname="Helvetica",
+  fontsize=9,
+  color="#4A5568",
+  penwidth=1.2,
+  arrowsize=0.8
+];
+
+rankdir=LR;
+
+reviewer [shape=box, label="«actor»\nAuthorized Human Reviewer", fillcolor="#EAF2F8"];
+specialist [shape=box, label="«actor»\nSpecialist / Executive Authority", fillcolor="#EAF2F8"];
+
+subgraph cluster_system {
+  label="Major Function 6 — Human Review and Final Disposition";
+  color="#1F4E78";
+  penwidth=1.6;
+  style="rounded";
+  uc1 [shape=ellipse, label="Review Evidence and Recommendation", fillcolor="#F7FAFC"];
+uc2 [shape=ellipse, label="Accept Recommendation", fillcolor="#F7FAFC"];
+uc3 [shape=ellipse, label="Accept with Modified Conditions", fillcolor="#F7FAFC"];
+uc4 [shape=ellipse, label="Reject Recommendation", fillcolor="#F7FAFC"];
+uc5 [shape=ellipse, label="Defer Pending Information", fillcolor="#F7FAFC"];
+uc6 [shape=ellipse, label="Escalate Decision", fillcolor="#F7FAFC"];
+uc7 [shape=ellipse, label="Record Rationale and Final Status", fillcolor="#F7FAFC"];
+}
+
+reviewer -> uc1 [label=""];
+uc1 -> uc2 [style=dashed, label="«extend»"];
+uc1 -> uc3 [style=dashed, label="«extend»"];
+uc1 -> uc4 [style=dashed, label="«extend»"];
+uc1 -> uc5 [style=dashed, label="«extend»"];
+uc1 -> uc6 [style=dashed, label="«extend»"];
+uc2 -> uc7 [style=dashed, label="«include»"];
+uc3 -> uc7 [style=dashed, label="«include»"];
+uc4 -> uc7 [style=dashed, label="«include»"];
+uc5 -> uc7 [style=dashed, label="«include»"];
+uc6 -> uc7 [style=dashed, label="«include»"];
+specialist -> uc6 [label=""];
+}

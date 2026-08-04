@@ -1,0 +1,62 @@
+
+digraph ConfigurationArchitecture {
+
+graph [
+  bgcolor="white",
+  fontname="Helvetica",
+  fontsize=11,
+  pad=0.25,
+  nodesep=0.45,
+  ranksep=0.65,
+  splines=ortho
+];
+node [
+  fontname="Helvetica",
+  fontsize=10,
+  style="rounded,filled",
+  penwidth=1.2,
+  color="#375A7F",
+  fillcolor="#F7FAFC",
+  margin="0.12,0.08"
+];
+edge [
+  fontname="Helvetica",
+  fontsize=9,
+  color="#4A5568",
+  penwidth=1.2,
+  arrowsize=0.8
+];
+
+rankdir=LR;
+
+subgraph cluster_profiles {
+  label="Replaceable Organization Configuration";
+  color="#B7D7A8";
+  style="rounded";
+  org [shape=folder, label="organization_profile.json", fillcolor="#EAF4E4"];
+  services [shape=folder, label="service_catalog.csv", fillcolor="#EAF4E4"];
+  rules [shape=folder, label="opportunity_rules.json", fillcolor="#EAF4E4"];
+  staffing [shape=folder, label="staffing_map.csv", fillcolor="#EAF4E4"];
+  reviewers [shape=folder, label="reviewer_roles.json", fillcolor="#EAF4E4"];
+  thresholds [shape=folder, label="recommendation_thresholds.json", fillcolor="#EAF4E4"];
+}
+
+validator [shape=component, label="Schema and Referential-\nIntegrity Validator", fillcolor="#D6EAF8"];
+framework [shape=box3d, label="Shared Project 7\nExecutable Framework", fillcolor="#D6EAF8", color="#1F4E78", penwidth=2.0];
+safeguards [shape=octagon, label="Fixed Safeguards\nNon-Overridable", fillcolor="#FCE8E6", color="#C0504D"];
+output [shape=note, label="Organization-Specific\nEvidence and Recommendation", fillcolor="#FFF2CC"];
+
+org -> validator;
+services -> validator;
+rules -> validator;
+staffing -> validator;
+reviewers -> validator;
+thresholds -> validator;
+
+validator -> framework [label="validated active profile"];
+safeguards -> framework [label="mandatory controls", style=dashed];
+framework -> output;
+
+attempt [shape=note, label="Attempted safeguard override", fillcolor="#FCE8E6"];
+attempt -> validator [label="rejected", color="#C0504D"];
+}
