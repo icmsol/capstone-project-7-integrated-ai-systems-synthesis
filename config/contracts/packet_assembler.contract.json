@@ -1,0 +1,115 @@
+{
+  "contract_schema_version": "1.0.0",
+  "contract_id": "CONTRACT-PACKET_ASSEMBLY",
+  "component_id": "packet_assembler",
+  "component_name": "Decision-Support Packet Assembler",
+  "component_type": "packet_assembler",
+  "purpose": "Assemble one human-readable and machine-traceable packet containing the opportunity, analysis, evidence, recommendation, conditions, and limitations.",
+  "implementation_boundary": "framework_controlled",
+  "inputs": [
+    {
+      "name": "case_state",
+      "schema_ref": "integrated_case_state.schema.json",
+      "required": true,
+      "cardinality": "one",
+      "source": "workflow_orchestrator",
+      "description": null
+    },
+    {
+      "name": "recommendation",
+      "schema_ref": "recommendation.schema.json",
+      "required": false,
+      "cardinality": "zero_or_one",
+      "source": "recommendation_engine",
+      "description": null
+    }
+  ],
+  "outputs": [
+    {
+      "name": "case_packet",
+      "schema_ref": "internal:case_packet",
+      "cardinality": "one",
+      "consumer": "human_disposition_recorder",
+      "description": null
+    },
+    {
+      "name": "packet_completeness_result",
+      "schema_ref": "internal:packet_completeness",
+      "cardinality": "one",
+      "consumer": "workflow_orchestrator",
+      "description": null
+    }
+  ],
+  "configuration_dependencies": [
+    "organization display name",
+    "reporting labels"
+  ],
+  "fixed_dependencies": [
+    "packet completeness checklist",
+    "production boundary disclosure",
+    "audit reference requirement"
+  ],
+  "preconditions": [
+    "Case state is schema-valid.",
+    "Recommendation is present or the packet explicitly states No Recommendation."
+  ],
+  "postconditions": [
+    "The packet contains source provenance, component limitations, recommendation, and required reviewer.",
+    "Machine-readable artifact IDs align with the case state."
+  ],
+  "allowed_side_effects": [
+    "Write packet artifact under outputs/case_packets.",
+    "Write output artifact ID into audit state."
+  ],
+  "prohibited_side_effects": [
+    "Send or submit the packet externally.",
+    "Remove the nonbinding or production-boundary disclosure.",
+    "Present a missing recommendation as approval."
+  ],
+  "failure_modes": [
+    {
+      "error_code": "PACKET_INCOMPLETE",
+      "condition": "One or more mandatory packet sections are absent.",
+      "behavior": "fail_closed",
+      "audit_status": "blocked",
+      "human_route": "Technical Reviewer"
+    },
+    {
+      "error_code": "PACKET_ARTIFACT_MISMATCH",
+      "condition": "Packet artifact IDs do not match the case state.",
+      "behavior": "fail_closed",
+      "audit_status": "failed",
+      "human_route": "Technical Reviewer"
+    }
+  ],
+  "audit_events": [
+    "recommendation_created",
+    "processing_failed"
+  ],
+  "downstream_consumers": [
+    "human_disposition_recorder",
+    "evaluation_pipeline"
+  ],
+  "idempotency": {
+    "idempotent": true,
+    "key": "case_state_hash + packet_template_version",
+    "replay_behavior": "append_new_version"
+  },
+  "retry_policy": {
+    "permitted": false,
+    "maximum_attempts": 0,
+    "retryable_conditions": []
+  },
+  "human_checkpoint": {
+    "required": true,
+    "role": "Configured authorized reviewer",
+    "response_options": [
+      "accept",
+      "accept_with_modified_conditions",
+      "reject",
+      "defer_pending_information",
+      "escalate"
+    ]
+  },
+  "production_boundary": "Controlled capstone prototype; no autonomous external action; nonbinding recommendation only; final human authority required."
+}

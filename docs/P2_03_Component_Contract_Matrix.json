@@ -1,0 +1,146 @@
+{
+  "artifact_id": "PROJECT7-P2-03-CONTRACT-MATRIX",
+  "artifact_version": "1.0.0",
+  "contracts": [
+    {
+      "component_id": "profile_loader",
+      "contract_id": "CONTRACT-PROFILE_LOADER",
+      "input_count": 2,
+      "output_count": 2,
+      "failure_mode_count": 3,
+      "human_checkpoint_required": false,
+      "prohibited_side_effect_count": 4,
+      "implementation_boundary": "hybrid"
+    },
+    {
+      "component_id": "case_intake_normalizer",
+      "contract_id": "CONTRACT-CASE_INTAKE",
+      "input_count": 3,
+      "output_count": 2,
+      "failure_mode_count": 3,
+      "human_checkpoint_required": false,
+      "prohibited_side_effect_count": 3,
+      "implementation_boundary": "framework_controlled"
+    },
+    {
+      "component_id": "service_alignment_engine",
+      "contract_id": "CONTRACT-SERVICE_ALIGNMENT",
+      "input_count": 4,
+      "output_count": 1,
+      "failure_mode_count": 3,
+      "human_checkpoint_required": false,
+      "prohibited_side_effect_count": 4,
+      "implementation_boundary": "hybrid"
+    },
+    {
+      "component_id": "historical_context_provider",
+      "contract_id": "CONTRACT-HISTORICAL_CONTEXT",
+      "input_count": 3,
+      "output_count": 1,
+      "failure_mode_count": 2,
+      "human_checkpoint_required": false,
+      "prohibited_side_effect_count": 3,
+      "implementation_boundary": "framework_controlled"
+    },
+    {
+      "component_id": "passage_selector",
+      "contract_id": "CONTRACT-PASSAGE_SELECTOR",
+      "input_count": 3,
+      "output_count": 1,
+      "failure_mode_count": 2,
+      "human_checkpoint_required": false,
+      "prohibited_side_effect_count": 3,
+      "implementation_boundary": "hybrid"
+    },
+    {
+      "component_id": "clause_triage_model",
+      "contract_id": "CONTRACT-CLAUSE_TRIAGE",
+      "input_count": 3,
+      "output_count": 1,
+      "failure_mode_count": 3,
+      "human_checkpoint_required": false,
+      "prohibited_side_effect_count": 4,
+      "implementation_boundary": "framework_controlled"
+    },
+    {
+      "component_id": "official_evidence_retriever",
+      "contract_id": "CONTRACT-EVIDENCE_RETRIEVAL",
+      "input_count": 3,
+      "output_count": 1,
+      "failure_mode_count": 3,
+      "human_checkpoint_required": false,
+      "prohibited_side_effect_count": 4,
+      "implementation_boundary": "framework_controlled"
+    },
+    {
+      "component_id": "evidence_validator",
+      "contract_id": "CONTRACT-EVIDENCE_VALIDATION",
+      "input_count": 2,
+      "output_count": 2,
+      "failure_mode_count": 4,
+      "human_checkpoint_required": false,
+      "prohibited_side_effect_count": 3,
+      "implementation_boundary": "framework_controlled"
+    },
+    {
+      "component_id": "risk_escalation_router",
+      "contract_id": "CONTRACT-RISK_ROUTING",
+      "input_count": 4,
+      "output_count": 1,
+      "failure_mode_count": 2,
+      "human_checkpoint_required": false,
+      "prohibited_side_effect_count": 3,
+      "implementation_boundary": "hybrid"
+    },
+    {
+      "component_id": "recommendation_engine",
+      "contract_id": "CONTRACT-RECOMMENDATION",
+      "input_count": 6,
+      "output_count": 1,
+      "failure_mode_count": 3,
+      "human_checkpoint_required": true,
+      "prohibited_side_effect_count": 5,
+      "implementation_boundary": "hybrid"
+    },
+    {
+      "component_id": "packet_assembler",
+      "contract_id": "CONTRACT-PACKET_ASSEMBLY",
+      "input_count": 2,
+      "output_count": 2,
+      "failure_mode_count": 2,
+      "human_checkpoint_required": true,
+      "prohibited_side_effect_count": 3,
+      "implementation_boundary": "framework_controlled"
+    },
+    {
+      "component_id": "human_disposition_recorder",
+      "contract_id": "CONTRACT-HUMAN_DISPOSITION",
+      "input_count": 3,
+      "output_count": 2,
+      "failure_mode_count": 2,
+      "human_checkpoint_required": true,
+      "prohibited_side_effect_count": 4,
+      "implementation_boundary": "human_authority"
+    },
+    {
+      "component_id": "audit_writer",
+      "contract_id": "CONTRACT-AUDIT_WRITER",
+      "input_count": 2,
+      "output_count": 1,
+      "failure_mode_count": 3,
+      "human_checkpoint_required": false,
+      "prohibited_side_effect_count": 3,
+      "implementation_boundary": "framework_controlled"
+    },
+    {
+      "component_id": "workflow_orchestrator",
+      "contract_id": "CONTRACT-WORKFLOW_ORCHESTRATOR",
+      "input_count": 3,
+      "output_count": 1,
+      "failure_mode_count": 3,
+      "human_checkpoint_required": true,
+      "prohibited_side_effect_count": 5,
+      "implementation_boundary": "framework_controlled"
+    }
+  ]
+}

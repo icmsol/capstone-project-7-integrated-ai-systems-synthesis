@@ -1,0 +1,118 @@
+{
+  "contract_schema_version": "1.0.0",
+  "contract_id": "CONTRACT-RISK_ROUTING",
+  "component_id": "risk_escalation_router",
+  "component_name": "Risk and Escalation Router",
+  "component_type": "risk_routing",
+  "purpose": "Apply fixed mandatory-review triggers and organization reviewer-role mappings to determine whether analysis can continue, must abstain, or requires escalation.",
+  "implementation_boundary": "hybrid",
+  "inputs": [
+    {
+      "name": "case_state",
+      "schema_ref": "integrated_case_state.schema.json",
+      "required": true,
+      "cardinality": "one",
+      "source": "workflow_orchestrator",
+      "description": null
+    },
+    {
+      "name": "evidence_assessments",
+      "schema_ref": "evidence_assessment.schema.json",
+      "required": true,
+      "cardinality": "zero_or_more",
+      "source": "evidence_validator",
+      "description": null
+    },
+    {
+      "name": "clause_predictions",
+      "schema_ref": "clause_prediction.schema.json",
+      "required": true,
+      "cardinality": "zero_or_more",
+      "source": "clause_triage_model",
+      "description": null
+    },
+    {
+      "name": "reviewer_roles",
+      "schema_ref": "config:reviewer_roles.json",
+      "required": true,
+      "cardinality": "one",
+      "source": "profile_loader",
+      "description": null
+    }
+  ],
+  "outputs": [
+    {
+      "name": "routing_decision",
+      "schema_ref": "internal:routing_decision",
+      "cardinality": "one",
+      "consumer": "recommendation_engine",
+      "description": null
+    }
+  ],
+  "configuration_dependencies": [
+    "organization reviewer roles",
+    "organization-specific non-safeguard review preferences"
+  ],
+  "fixed_dependencies": [
+    "mandatory review triggers",
+    "fixed safeguards",
+    "reason-code registry"
+  ],
+  "preconditions": [
+    "Relevant component outputs are available or explicitly absent.",
+    "Fixed safeguards and reviewer-role configuration are loaded."
+  ],
+  "postconditions": [
+    "Every route includes a reason code and required reviewer role.",
+    "Fixed mandatory-review triggers take precedence over organization convenience."
+  ],
+  "allowed_side_effects": [
+    "Write case_escalated audit event when escalation is required."
+  ],
+  "prohibited_side_effects": [
+    "Downgrade a fixed mandatory escalation.",
+    "Assign AI as final reviewer.",
+    "Approve legal, security, privacy, pricing, or staffing commitments."
+  ],
+  "failure_modes": [
+    {
+      "error_code": "REVIEWER_ROLE_UNRESOLVED",
+      "condition": "No authorized configured role matches a mandatory issue type.",
+      "behavior": "fail_closed",
+      "audit_status": "blocked",
+      "human_route": "Executive Authority"
+    },
+    {
+      "error_code": "MANDATORY_ESCALATION_TRIGGERED",
+      "condition": "A fixed legal, security, privacy, financial, staffing, or external-action trigger is present.",
+      "behavior": "escalate",
+      "audit_status": "warned",
+      "human_route": "Configured Qualified Specialist"
+    }
+  ],
+  "audit_events": [
+    "case_escalated",
+    "processing_failed"
+  ],
+  "downstream_consumers": [
+    "recommendation_engine",
+    "packet_assembler",
+    "human_disposition_recorder"
+  ],
+  "idempotency": {
+    "idempotent": true,
+    "key": "case_state_hash + safeguard_version + reviewer_roles_version",
+    "replay_behavior": "return_existing_output"
+  },
+  "retry_policy": {
+    "permitted": false,
+    "maximum_attempts": 0,
+    "retryable_conditions": []
+  },
+  "human_checkpoint": {
+    "required": false,
+    "role": null,
+    "response_options": []
+  },
+  "production_boundary": "Controlled capstone prototype; no autonomous external action; nonbinding recommendation only; final human authority required."
+}

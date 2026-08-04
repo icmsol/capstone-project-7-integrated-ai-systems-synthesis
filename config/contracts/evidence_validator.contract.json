@@ -1,0 +1,123 @@
+{
+  "contract_schema_version": "1.0.0",
+  "contract_id": "CONTRACT-EVIDENCE_VALIDATION",
+  "component_id": "evidence_validator",
+  "component_name": "Citation, Metadata, Sufficiency, and Conflict Validator",
+  "component_type": "validation_tool",
+  "purpose": "Validate evidence citations and metadata, assess relevance and freshness, identify conflicts, and determine whether the evidence supports continued analysis.",
+  "implementation_boundary": "framework_controlled",
+  "inputs": [
+    {
+      "name": "candidate_evidence",
+      "schema_ref": "evidence_item.schema.json",
+      "required": true,
+      "cardinality": "zero_or_more",
+      "source": "official_evidence_retriever",
+      "description": null
+    },
+    {
+      "name": "claim_context",
+      "schema_ref": "internal:claim_context",
+      "required": true,
+      "cardinality": "one",
+      "source": "workflow_orchestrator",
+      "description": null
+    }
+  ],
+  "outputs": [
+    {
+      "name": "validated_evidence",
+      "schema_ref": "evidence_item.schema.json",
+      "cardinality": "zero_or_more",
+      "consumer": "recommendation_engine",
+      "description": null
+    },
+    {
+      "name": "evidence_assessment",
+      "schema_ref": "evidence_assessment.schema.json",
+      "cardinality": "one",
+      "consumer": "risk_escalation_router",
+      "description": null
+    }
+  ],
+  "configuration_dependencies": [
+    "freshness thresholds",
+    "minimum evidence score"
+  ],
+  "fixed_dependencies": [
+    "citation validation rules",
+    "conflict disclosure requirement",
+    "missing-information disclosure requirement"
+  ],
+  "preconditions": [
+    "Candidate evidence retains source and retrieval metadata.",
+    "The claim being assessed is explicit."
+  ],
+  "postconditions": [
+    "Each evidence item records citation validity, metadata validity, relevance, support/conflict, and freshness.",
+    "The evidence assessment records sufficiency and required action."
+  ],
+  "allowed_side_effects": [
+    "Write evidence_validated audit event."
+  ],
+  "prohibited_side_effects": [
+    "Convert invalid evidence into a supporting citation.",
+    "Hide counterevidence or material conflict.",
+    "Declare legal sufficiency."
+  ],
+  "failure_modes": [
+    {
+      "error_code": "EVIDENCE_EMPTY",
+      "condition": "No candidate evidence was retrieved.",
+      "behavior": "abstain",
+      "audit_status": "warned",
+      "human_route": "Contract Analyst"
+    },
+    {
+      "error_code": "CITATION_INVALID",
+      "condition": "Citation or source locator does not resolve to the recorded source.",
+      "behavior": "fail_closed",
+      "audit_status": "blocked",
+      "human_route": "Contract Analyst"
+    },
+    {
+      "error_code": "EVIDENCE_MATERIAL_CONFLICT",
+      "condition": "Validated evidence materially conflicts.",
+      "behavior": "escalate",
+      "audit_status": "warned",
+      "human_route": "Qualified Specialist"
+    },
+    {
+      "error_code": "EVIDENCE_INSUFFICIENT",
+      "condition": "Evidence score or coverage is below the minimum threshold.",
+      "behavior": "abstain",
+      "audit_status": "warned",
+      "human_route": "Opportunity Analyst"
+    }
+  ],
+  "audit_events": [
+    "evidence_validated",
+    "processing_failed"
+  ],
+  "downstream_consumers": [
+    "risk_escalation_router",
+    "recommendation_engine",
+    "packet_assembler"
+  ],
+  "idempotency": {
+    "idempotent": true,
+    "key": "claim_id + evidence_ids + validation_rules_version",
+    "replay_behavior": "recompute_and_compare"
+  },
+  "retry_policy": {
+    "permitted": false,
+    "maximum_attempts": 0,
+    "retryable_conditions": []
+  },
+  "human_checkpoint": {
+    "required": false,
+    "role": null,
+    "response_options": []
+  },
+  "production_boundary": "Controlled capstone prototype; no autonomous external action; nonbinding recommendation only; final human authority required."
+}

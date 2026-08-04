@@ -1,0 +1,122 @@
+{
+  "contract_schema_version": "1.0.0",
+  "contract_id": "CONTRACT-EVIDENCE_RETRIEVAL",
+  "component_id": "official_evidence_retriever",
+  "component_name": "Official Evidence Retrieval Tool",
+  "component_type": "retrieval_tool",
+  "purpose": "Retrieve exact or semantically relevant evidence only from an approved, versioned official corpus and expose source metadata and retrieval scores.",
+  "implementation_boundary": "framework_controlled",
+  "inputs": [
+    {
+      "name": "evidence_request",
+      "schema_ref": "internal:evidence_request",
+      "required": true,
+      "cardinality": "one",
+      "source": "workflow_orchestrator",
+      "description": null
+    },
+    {
+      "name": "approved_corpus",
+      "schema_ref": "versioned:official_corpus",
+      "required": true,
+      "cardinality": "one",
+      "source": "corpus_registry",
+      "description": null
+    },
+    {
+      "name": "citation_hint",
+      "schema_ref": "string:citation",
+      "required": false,
+      "cardinality": "zero_or_one",
+      "source": "analyst_or_upstream_component",
+      "description": null
+    }
+  ],
+  "outputs": [
+    {
+      "name": "candidate_evidence",
+      "schema_ref": "evidence_item.schema.json",
+      "cardinality": "zero_or_more",
+      "consumer": "evidence_validator",
+      "description": null
+    }
+  ],
+  "configuration_dependencies": [
+    "retrieval top-k",
+    "keyword and semantic weights"
+  ],
+  "fixed_dependencies": [
+    "approved corpus registry",
+    "exact-citation precedence",
+    "corpus version and checksum",
+    "no external uncited knowledge"
+  ],
+  "preconditions": [
+    "The corpus candidate has completed normalization and metadata validation.",
+    "The request is within the permitted evidence-review scope."
+  ],
+  "postconditions": [
+    "Every result identifies retrieval method, corpus version, source locator, and score.",
+    "No result is presented as validated until evidence validation completes."
+  ],
+  "allowed_side_effects": [
+    "Read the approved corpus index.",
+    "Write evidence_retrieved audit event."
+  ],
+  "prohibited_side_effects": [
+    "Search unapproved external sources.",
+    "Fabricate a citation.",
+    "Modify the official corpus.",
+    "Treat semantic similarity as authoritative validation."
+  ],
+  "failure_modes": [
+    {
+      "error_code": "CORPUS_NOT_APPROVED",
+      "condition": "The corpus has not completed versioning and validation.",
+      "behavior": "fail_closed",
+      "audit_status": "blocked",
+      "human_route": "Data or Contracts Reviewer"
+    },
+    {
+      "error_code": "CITATION_NOT_FOUND",
+      "condition": "An exact requested citation is absent.",
+      "behavior": "abstain",
+      "audit_status": "warned",
+      "human_route": "Contract Analyst"
+    },
+    {
+      "error_code": "RETRIEVAL_TOOL_TEMPORARY_FAILURE",
+      "condition": "The local index or retrieval operation fails transiently.",
+      "behavior": "retry_then_fail_closed",
+      "audit_status": "failed",
+      "human_route": "Technical Reviewer"
+    }
+  ],
+  "audit_events": [
+    "evidence_retrieved",
+    "processing_failed"
+  ],
+  "downstream_consumers": [
+    "evidence_validator",
+    "packet_assembler"
+  ],
+  "idempotency": {
+    "idempotent": true,
+    "key": "request_hash + corpus_sha256 + retrieval_config_version",
+    "replay_behavior": "return_existing_output"
+  },
+  "retry_policy": {
+    "permitted": true,
+    "maximum_attempts": 1,
+    "retryable_conditions": [
+      "local index read error",
+      "temporary resource exhaustion"
+    ]
+  },
+  "human_checkpoint": {
+    "required": false,
+    "role": null,
+    "response_options": []
+  },
+  "production_boundary": "Controlled capstone prototype; no autonomous external action; nonbinding recommendation only; final human authority required."
+}

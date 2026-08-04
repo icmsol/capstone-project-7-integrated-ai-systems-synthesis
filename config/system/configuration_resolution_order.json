@@ -1,0 +1,46 @@
+{
+  "artifact_version": "1.0.0",
+  "resolution_order": [
+    {
+      "precedence": 1,
+      "layer": "fixed_framework_safeguards",
+      "source": "config/system/fixed_safeguards.json",
+      "overridable": false,
+      "description": "Responsible-AI, audit, privacy, human-authority, abstention, and external-action controls."
+    },
+    {
+      "precedence": 2,
+      "layer": "schema_and_contract_defaults",
+      "source": "config/schemas and config/contracts",
+      "overridable": false,
+      "description": "Required object structure, component obligations, and baseline failure and side-effect rules."
+    },
+    {
+      "precedence": 3,
+      "layer": "validated_organization_profile",
+      "source": "config/profiles/<active_profile>",
+      "overridable": true,
+      "description": "Services, opportunity rules, staffing map, reviewer roles, and recommendation thresholds within permitted business criteria."
+    },
+    {
+      "precedence": 4,
+      "layer": "authorized_case_specific_business_override",
+      "source": "case request",
+      "overridable": true,
+      "description": "Explicit case-specific business preferences that do not weaken fixed safeguards, schemas, or component contracts."
+    }
+  ],
+  "prohibited_case_override_categories": [
+    "fixed safeguards",
+    "evidence traceability",
+    "citation validation",
+    "abstention",
+    "audit logging",
+    "human final authority",
+    "privacy or secrets protection",
+    "no autonomous external action",
+    "component prohibited side effects",
+    "production-boundary disclosure"
+  ],
+  "conflict_rule": "When a lower-precedence layer conflicts with a higher-precedence layer, the higher-precedence requirement controls and the conflict is audited."
+}

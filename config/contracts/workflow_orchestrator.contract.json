@@ -1,0 +1,142 @@
+{
+  "contract_schema_version": "1.0.0",
+  "contract_id": "CONTRACT-WORKFLOW_ORCHESTRATOR",
+  "component_id": "workflow_orchestrator",
+  "component_name": "Integrated Case Workflow Orchestrator",
+  "component_type": "stateful_orchestrator",
+  "purpose": "Coordinate the validated component contracts, case-state transitions, gates, failure paths, resumability, audit events, and human checkpoints.",
+  "implementation_boundary": "framework_controlled",
+  "inputs": [
+    {
+      "name": "case_request",
+      "schema_ref": "internal:case_request",
+      "required": true,
+      "cardinality": "one",
+      "source": "authorized_user",
+      "description": null
+    },
+    {
+      "name": "orchestration_policy",
+      "schema_ref": "orchestration_policy.schema.json",
+      "required": true,
+      "cardinality": "one",
+      "source": "framework",
+      "description": null
+    },
+    {
+      "name": "component_contract_registry",
+      "schema_ref": "config/contracts/component_contract_registry.json",
+      "required": true,
+      "cardinality": "one",
+      "source": "framework",
+      "description": null
+    }
+  ],
+  "outputs": [
+    {
+      "name": "integrated_case_state",
+      "schema_ref": "integrated_case_state.schema.json",
+      "cardinality": "one",
+      "consumer": "authorized_user_and_evaluation",
+      "description": null
+    }
+  ],
+  "configuration_dependencies": [
+    "active organization profile path"
+  ],
+  "fixed_dependencies": [
+    "orchestration policy",
+    "component contract registry",
+    "fixed safeguards",
+    "case-state schema",
+    "audit writer availability"
+  ],
+  "preconditions": [
+    "Orchestration policy and every registered component contract are schema-valid.",
+    "Audit persistence is available."
+  ],
+  "postconditions": [
+    "Every completed stage satisfies its component postconditions.",
+    "Every state transition is audited.",
+    "The case terminates only in finalized, deferred, escalated, or failed-closed status."
+  ],
+  "allowed_side_effects": [
+    "Invoke registered local components.",
+    "Update versioned case state.",
+    "Request authorized human input."
+  ],
+  "prohibited_side_effects": [
+    "Invoke an unregistered component.",
+    "Skip fixed gates.",
+    "Perform an external write action.",
+    "Finalize a case without a human disposition.",
+    "Continue after audit persistence failure."
+  ],
+  "failure_modes": [
+    {
+      "error_code": "ORCHESTRATION_POLICY_INVALID",
+      "condition": "The policy or contract registry is inconsistent.",
+      "behavior": "fail_closed",
+      "audit_status": "blocked",
+      "human_route": "Technical Reviewer"
+    },
+    {
+      "error_code": "COMPONENT_CONTRACT_VIOLATION",
+      "condition": "A component output, side effect, or failure behavior violates its contract.",
+      "behavior": "fail_closed",
+      "audit_status": "failed",
+      "human_route": "Technical Reviewer"
+    },
+    {
+      "error_code": "CASE_STATE_TRANSITION_INVALID",
+      "condition": "A requested state transition is not permitted.",
+      "behavior": "fail_closed",
+      "audit_status": "blocked",
+      "human_route": "Technical Reviewer"
+    }
+  ],
+  "audit_events": [
+    "case_created",
+    "configuration_loaded",
+    "source_ingested",
+    "alignment_completed",
+    "historical_context_attached",
+    "clause_triage_completed",
+    "evidence_retrieved",
+    "evidence_validated",
+    "recommendation_created",
+    "recommendation_abstained",
+    "case_escalated",
+    "human_disposition_recorded",
+    "processing_failed"
+  ],
+  "downstream_consumers": [
+    "authorized_user",
+    "evaluation_pipeline"
+  ],
+  "idempotency": {
+    "idempotent": false,
+    "key": "case_id + workflow_run_id",
+    "replay_behavior": "human_review_required"
+  },
+  "retry_policy": {
+    "permitted": false,
+    "maximum_attempts": 0,
+    "retryable_conditions": []
+  },
+  "human_checkpoint": {
+    "required": true,
+    "role": "Configured authorized reviewer",
+    "response_options": [
+      "accept",
+      "accept_with_modified_conditions",
+      "reject",
+      "defer_pending_information",
+      "escalate",
+      "correct_input",
+      "approve_source",
+      "manual_triage"
+    ]
+  },
+  "production_boundary": "Controlled capstone prototype; no autonomous external action; nonbinding recommendation only; final human authority required."
+}

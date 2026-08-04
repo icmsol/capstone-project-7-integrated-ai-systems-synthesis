@@ -1,0 +1,107 @@
+{
+  "contract_schema_version": "1.0.0",
+  "contract_id": "CONTRACT-AUDIT_WRITER",
+  "component_id": "audit_writer",
+  "component_name": "Append-Only Audit Event Writer",
+  "component_type": "audit_writer",
+  "purpose": "Persist sanitized, chained, append-only audit events for every material state transition, component result, warning, block, and human disposition.",
+  "implementation_boundary": "framework_controlled",
+  "inputs": [
+    {
+      "name": "audit_event",
+      "schema_ref": "audit_event.schema.json",
+      "required": true,
+      "cardinality": "one",
+      "source": "all_components",
+      "description": null
+    },
+    {
+      "name": "previous_event_hash",
+      "schema_ref": "common_definitions.schema.json#/$defs/sha256",
+      "required": false,
+      "cardinality": "zero_or_one",
+      "source": "case_audit_log",
+      "description": null
+    }
+  ],
+  "outputs": [
+    {
+      "name": "persisted_event",
+      "schema_ref": "audit_event.schema.json",
+      "cardinality": "one",
+      "consumer": "workflow_orchestrator",
+      "description": null
+    }
+  ],
+  "configuration_dependencies": [],
+  "fixed_dependencies": [
+    "audit_event.schema.json",
+    "sanitization rules",
+    "event hashing and chain validation",
+    "append-only storage rule"
+  ],
+  "preconditions": [
+    "Event payload validates against the audit schema.",
+    "Sensitive values and private reasoning are removed."
+  ],
+  "postconditions": [
+    "The event is persisted with its event hash and previous-event hash.",
+    "The case state references the persisted event ID."
+  ],
+  "allowed_side_effects": [
+    "Append one event to the case audit log."
+  ],
+  "prohibited_side_effects": [
+    "Modify or delete prior events.",
+    "Store credentials, PII, confidential data, or private reasoning.",
+    "Continue the normal workflow after an audit persistence failure."
+  ],
+  "failure_modes": [
+    {
+      "error_code": "AUDIT_EVENT_SCHEMA_INVALID",
+      "condition": "The event payload fails the audit schema.",
+      "behavior": "fail_closed",
+      "audit_status": "failed",
+      "human_route": "Technical Reviewer"
+    },
+    {
+      "error_code": "AUDIT_PERSISTENCE_FAILED",
+      "condition": "The event cannot be durably written.",
+      "behavior": "fail_closed",
+      "audit_status": "failed",
+      "human_route": "Technical Reviewer"
+    },
+    {
+      "error_code": "AUDIT_CHAIN_INVALID",
+      "condition": "The previous-event hash does not match the current case audit chain.",
+      "behavior": "fail_closed",
+      "audit_status": "blocked",
+      "human_route": "Technical Reviewer"
+    }
+  ],
+  "audit_events": [
+    "processing_failed"
+  ],
+  "downstream_consumers": [
+    "workflow_orchestrator",
+    "evaluation_pipeline"
+  ],
+  "idempotency": {
+    "idempotent": false,
+    "key": "event_id",
+    "replay_behavior": "reject_duplicate"
+  },
+  "retry_policy": {
+    "permitted": true,
+    "maximum_attempts": 1,
+    "retryable_conditions": [
+      "temporary local file lock"
+    ]
+  },
+  "human_checkpoint": {
+    "required": false,
+    "role": null,
+    "response_options": []
+  },
+  "production_boundary": "Controlled capstone prototype; no autonomous external action; nonbinding recommendation only; final human authority required."
+}

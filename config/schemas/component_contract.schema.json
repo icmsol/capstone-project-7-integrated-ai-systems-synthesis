@@ -1,0 +1,382 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/component_contract.schema.json",
+  "title": "Project 7 Component Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_schema_version",
+    "contract_id",
+    "component_id",
+    "component_name",
+    "component_type",
+    "purpose",
+    "implementation_boundary",
+    "inputs",
+    "outputs",
+    "configuration_dependencies",
+    "fixed_dependencies",
+    "preconditions",
+    "postconditions",
+    "allowed_side_effects",
+    "prohibited_side_effects",
+    "failure_modes",
+    "audit_events",
+    "downstream_consumers",
+    "idempotency",
+    "retry_policy",
+    "human_checkpoint",
+    "production_boundary"
+  ],
+  "properties": {
+    "contract_schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "contract_id": {
+      "type": "string",
+      "pattern": "^CONTRACT-[A-Z0-9_-]{3,64}$"
+    },
+    "component_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]{2,63}$"
+    },
+    "component_name": {
+      "type": "string",
+      "minLength": 3
+    },
+    "component_type": {
+      "type": "string",
+      "enum": [
+        "stateful_orchestrator",
+        "configuration_loader",
+        "deterministic_transform",
+        "deterministic_rule_engine",
+        "historical_context_provider",
+        "model_inference",
+        "retrieval_tool",
+        "validation_tool",
+        "risk_routing",
+        "recommendation_engine",
+        "packet_assembler",
+        "human_checkpoint",
+        "audit_writer"
+      ]
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 20
+    },
+    "implementation_boundary": {
+      "type": "string",
+      "enum": [
+        "framework_controlled",
+        "organization_configurable",
+        "hybrid",
+        "human_authority"
+      ]
+    },
+    "inputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "schema_ref",
+          "required",
+          "cardinality",
+          "source"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]{1,63}$"
+          },
+          "schema_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "cardinality": {
+            "type": "string",
+            "enum": [
+              "one",
+              "zero_or_one",
+              "one_or_more",
+              "zero_or_more"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "schema_ref",
+          "cardinality",
+          "consumer"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]{1,63}$"
+          },
+          "schema_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "cardinality": {
+            "type": "string",
+            "enum": [
+              "one",
+              "zero_or_one",
+              "one_or_more",
+              "zero_or_more"
+            ]
+          },
+          "consumer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "configuration_dependencies": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "fixed_dependencies": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "preconditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "postconditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "allowed_side_effects": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "prohibited_side_effects": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "failure_modes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "error_code",
+          "condition",
+          "behavior",
+          "audit_status",
+          "human_route"
+        ],
+        "properties": {
+          "error_code": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_:-]{2,63}$"
+          },
+          "condition": {
+            "type": "string",
+            "minLength": 5
+          },
+          "behavior": {
+            "type": "string",
+            "enum": [
+              "fail_closed",
+              "abstain",
+              "warn_and_continue",
+              "retry_then_fail_closed",
+              "escalate",
+              "defer"
+            ]
+          },
+          "audit_status": {
+            "type": "string",
+            "enum": [
+              "warned",
+              "failed",
+              "blocked"
+            ]
+          },
+          "human_route": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "audit_events": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "downstream_consumers": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "idempotency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "idempotent",
+        "key",
+        "replay_behavior"
+      ],
+      "properties": {
+        "idempotent": {
+          "type": "boolean"
+        },
+        "key": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "replay_behavior": {
+          "type": "string",
+          "enum": [
+            "return_existing_output",
+            "recompute_and_compare",
+            "append_new_version",
+            "reject_duplicate",
+            "human_review_required"
+          ]
+        }
+      }
+    },
+    "retry_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "permitted",
+        "maximum_attempts",
+        "retryable_conditions"
+      ],
+      "properties": {
+        "permitted": {
+          "type": "boolean"
+        },
+        "maximum_attempts": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "retryable_conditions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "human_checkpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required",
+        "role",
+        "response_options"
+      ],
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "role": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "response_options": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "accept",
+              "accept_with_modified_conditions",
+              "reject",
+              "defer_pending_information",
+              "escalate",
+              "correct_input",
+              "approve_source",
+              "manual_triage"
+            ]
+          }
+        }
+      }
+    },
+    "production_boundary": {
+      "type": "string",
+      "const": "Controlled capstone prototype; no autonomous external action; nonbinding recommendation only; final human authority required."
+    }
+  }
+}

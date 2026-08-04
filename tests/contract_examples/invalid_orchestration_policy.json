@@ -1,0 +1,271 @@
+{
+  "policy_schema_version": "1.0.0",
+  "policy_id": "ORCH-PROJECT7_BASELINE",
+  "workflow_name": "Project 7 Opportunity-to-Contract Decision-Support Workflow",
+  "initial_stage": "load_configuration",
+  "terminal_stages": [
+    "finalized"
+  ],
+  "stages": [
+    {
+      "stage_id": "load_configuration",
+      "sequence": 1,
+      "component_id": "profile_loader",
+      "required": true,
+      "entry_gate": "Audit writer and fixed safeguards are available.",
+      "success_status": "created",
+      "failure_status": "failed_closed",
+      "skip_condition": null
+    },
+    {
+      "stage_id": "intake_and_normalize",
+      "sequence": 2,
+      "component_id": "case_intake_normalizer",
+      "required": true,
+      "entry_gate": "Active configuration is valid and source approval is resolvable.",
+      "success_status": "intake_validated",
+      "failure_status": "failed_closed",
+      "skip_condition": null
+    },
+    {
+      "stage_id": "assess_service_alignment",
+      "sequence": 3,
+      "component_id": "service_alignment_engine",
+      "required": true,
+      "entry_gate": "Normalized opportunity exists.",
+      "success_status": "analysis_in_progress",
+      "failure_status": "failed_closed",
+      "skip_condition": null
+    },
+    {
+      "stage_id": "attach_historical_context",
+      "sequence": 4,
+      "component_id": "historical_context_provider",
+      "required": false,
+      "entry_gate": "Approved frozen historical assets are available.",
+      "success_status": "analysis_in_progress",
+      "failure_status": "analysis_in_progress",
+      "skip_condition": "Historical assets are unavailable or not comparable."
+    },
+    {
+      "stage_id": "select_passages",
+      "sequence": 5,
+      "component_id": "passage_selector",
+      "required": false,
+      "entry_gate": "Approved solicitation or contract text is available.",
+      "success_status": "analysis_in_progress",
+      "failure_status": "analysis_in_progress",
+      "skip_condition": "No approved text passage is available."
+    },
+    {
+      "stage_id": "triage_clause_themes",
+      "sequence": 6,
+      "component_id": "clause_triage_model",
+      "required": false,
+      "entry_gate": "At least one approved selected passage exists and the model package is valid.",
+      "success_status": "analysis_in_progress",
+      "failure_status": "analysis_in_progress",
+      "skip_condition": "No selected passage exists or model inference is disabled."
+    },
+    {
+      "stage_id": "retrieve_official_evidence",
+      "sequence": 7,
+      "component_id": "official_evidence_retriever",
+      "required": false,
+      "entry_gate": "A validated official corpus is approved and an evidence request exists.",
+      "success_status": "analysis_in_progress",
+      "failure_status": "analysis_in_progress",
+      "skip_condition": "No official evidence request is required or the corpus is not approved."
+    },
+    {
+      "stage_id": "validate_evidence",
+      "sequence": 8,
+      "component_id": "evidence_validator",
+      "required": false,
+      "entry_gate": "Candidate evidence exists.",
+      "success_status": "analysis_in_progress",
+      "failure_status": "analysis_in_progress",
+      "skip_condition": "No candidate evidence exists."
+    },
+    {
+      "stage_id": "route_risk_and_escalation",
+      "sequence": 9,
+      "component_id": "risk_escalation_router",
+      "required": true,
+      "entry_gate": "Analysis outputs or explicit abstentions are recorded.",
+      "success_status": "analysis_in_progress",
+      "failure_status": "failed_closed",
+      "skip_condition": null
+    },
+    {
+      "stage_id": "create_recommendation",
+      "sequence": 10,
+      "component_id": "recommendation_engine",
+      "required": true,
+      "entry_gate": "Routing decision is available and audit persistence is healthy.",
+      "success_status": "recommendation_ready",
+      "failure_status": "failed_closed",
+      "skip_condition": null
+    },
+    {
+      "stage_id": "assemble_packet",
+      "sequence": 11,
+      "component_id": "packet_assembler",
+      "required": true,
+      "entry_gate": "Recommendation or explicit No Recommendation outcome is recorded.",
+      "success_status": "awaiting_human_review",
+      "failure_status": "failed_closed",
+      "skip_condition": null
+    },
+    {
+      "stage_id": "record_human_disposition",
+      "sequence": 12,
+      "component_id": "human_disposition_recorder",
+      "required": true,
+      "entry_gate": "Authorized reviewer has the complete packet.",
+      "success_status": "finalized",
+      "failure_status": "deferred",
+      "skip_condition": null
+    }
+  ],
+  "transitions": [
+    {
+      "from_stage": "load_configuration",
+      "to_stage": "intake_and_normalize",
+      "condition": "Configuration succeeds.",
+      "transition_type": "normal"
+    },
+    {
+      "from_stage": "intake_and_normalize",
+      "to_stage": "assess_service_alignment",
+      "condition": "Intake succeeds.",
+      "transition_type": "normal"
+    },
+    {
+      "from_stage": "assess_service_alignment",
+      "to_stage": "attach_historical_context",
+      "condition": "Alignment completes.",
+      "transition_type": "normal"
+    },
+    {
+      "from_stage": "attach_historical_context",
+      "to_stage": "select_passages",
+      "condition": "Context completes or is skipped with limitation.",
+      "transition_type": "conditional"
+    },
+    {
+      "from_stage": "select_passages",
+      "to_stage": "triage_clause_themes",
+      "condition": "Selected passages exist.",
+      "transition_type": "conditional"
+    },
+    {
+      "from_stage": "select_passages",
+      "to_stage": "route_risk_and_escalation",
+      "condition": "No passage exists and no official evidence review is required.",
+      "transition_type": "conditional"
+    },
+    {
+      "from_stage": "triage_clause_themes",
+      "to_stage": "retrieve_official_evidence",
+      "condition": "Evidence review is requested or mandatory.",
+      "transition_type": "conditional"
+    },
+    {
+      "from_stage": "triage_clause_themes",
+      "to_stage": "route_risk_and_escalation",
+      "condition": "No evidence review is required.",
+      "transition_type": "conditional"
+    },
+    {
+      "from_stage": "retrieve_official_evidence",
+      "to_stage": "validate_evidence",
+      "condition": "Candidate evidence exists.",
+      "transition_type": "conditional"
+    },
+    {
+      "from_stage": "retrieve_official_evidence",
+      "to_stage": "route_risk_and_escalation",
+      "condition": "Retrieval abstains or returns no evidence.",
+      "transition_type": "conditional"
+    },
+    {
+      "from_stage": "validate_evidence",
+      "to_stage": "route_risk_and_escalation",
+      "condition": "Validation completes with sufficient, insufficient, or conflicting status.",
+      "transition_type": "normal"
+    },
+    {
+      "from_stage": "route_risk_and_escalation",
+      "to_stage": "create_recommendation",
+      "condition": "Routing permits a recommendation or requires an escalation recommendation.",
+      "transition_type": "normal"
+    },
+    {
+      "from_stage": "create_recommendation",
+      "to_stage": "assemble_packet",
+      "condition": "A schema-valid recommendation or No Recommendation outcome exists.",
+      "transition_type": "normal"
+    },
+    {
+      "from_stage": "assemble_packet",
+      "to_stage": "record_human_disposition",
+      "condition": "Packet completeness passes.",
+      "transition_type": "normal"
+    },
+    {
+      "from_stage": "record_human_disposition",
+      "to_stage": "finalized",
+      "condition": "Human accepts, modifies, or rejects with rationale.",
+      "transition_type": "terminal"
+    },
+    {
+      "from_stage": "record_human_disposition",
+      "to_stage": "deferred",
+      "condition": "Human defers pending information.",
+      "transition_type": "terminal"
+    },
+    {
+      "from_stage": "record_human_disposition",
+      "to_stage": "escalated",
+      "condition": "Human escalates to a specialist or executive.",
+      "transition_type": "terminal"
+    },
+    {
+      "from_stage": "*",
+      "to_stage": "failed_closed",
+      "condition": "A required component, state transition, safeguard, or audit operation fails closed.",
+      "transition_type": "failure"
+    },
+    {
+      "from_stage": "deferred",
+      "to_stage": "load_configuration",
+      "condition": "Authorized human supplies required information and requests a new versioned run.",
+      "transition_type": "human_return"
+    },
+    {
+      "from_stage": "escalated",
+      "to_stage": "load_configuration",
+      "condition": "Specialist input is supplied and an authorized human requests reassessment.",
+      "transition_type": "human_return"
+    }
+  ],
+  "global_gates": [],
+  "resume_policy": {
+    "resume_permitted": true,
+    "required_artifacts": [
+      "schema-valid integrated case state",
+      "valid audit chain",
+      "original source checksums",
+      "original recommendation when already created"
+    ],
+    "revalidate_configuration": true,
+    "revalidate_source_freshness": true
+  },
+  "concurrency_policy": {
+    "cross_case_parallelism_permitted": true,
+    "same_case_parallelism_permitted": false,
+    "state_lock_required": true
+  },
+  "production_boundary": "Controlled capstone prototype; no autonomous external action; nonbinding recommendation only; final human authority required."
+}

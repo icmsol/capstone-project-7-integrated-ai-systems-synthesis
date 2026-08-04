@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/orchestration_policy.schema.json",
+  "title": "Project 7 Orchestration Policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "policy_schema_version",
+    "policy_id",
+    "workflow_name",
+    "initial_stage",
+    "terminal_stages",
+    "stages",
+    "transitions",
+    "global_gates",
+    "resume_policy",
+    "concurrency_policy",
+    "production_boundary"
+  ],
+  "properties": {
+    "policy_schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "policy_id": {
+      "type": "string",
+      "pattern": "^ORCH-[A-Z0-9_-]{3,64}$"
+    },
+    "workflow_name": {
+      "type": "string",
+      "minLength": 5
+    },
+    "initial_stage": {
+      "type": "string",
+      "minLength": 3
+    },
+    "terminal_stages": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "stages": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stage_id",
+          "sequence",
+          "component_id",
+          "required",
+          "entry_gate",
+          "success_status",
+          "failure_status"
+        ],
+        "properties": {
+          "stage_id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]{2,63}$"
+          },
+          "sequence": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "component_id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]{2,63}$"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "entry_gate": {
+            "type": "string",
+            "minLength": 1
+          },
+          "success_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "failure_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "skip_condition": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "transitions": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "from_stage",
+          "to_stage",
+          "condition",
+          "transition_type"
+        ],
+        "properties": {
+          "from_stage": {
+            "type": "string",
+            "minLength": 1
+          },
+          "to_stage": {
+            "type": "string",
+            "minLength": 1
+          },
+          "condition": {
+            "type": "string",
+            "minLength": 1
+          },
+          "transition_type": {
+            "type": "string",
+            "enum": [
+              "normal",
+              "conditional",
+              "failure",
+              "human_return",
+              "terminal"
+            ]
+          }
+        }
+      }
+    },
+    "global_gates": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "gate_id",
+          "applies_before",
+          "rule",
+          "failure_behavior"
+        ],
+        "properties": {
+          "gate_id": {
+            "type": "string",
+            "pattern": "^GATE-[A-Z0-9_-]{3,64}$"
+          },
+          "applies_before": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rule": {
+            "type": "string",
+            "minLength": 10
+          },
+          "failure_behavior": {
+            "type": "string",
+            "enum": [
+              "fail_closed",
+              "abstain",
+              "escalate",
+              "defer",
+              "block"
+            ]
+          }
+        }
+      }
+    },
+    "resume_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "resume_permitted",
+        "required_artifacts",
+        "revalidate_configuration",
+        "revalidate_source_freshness"
+      ],
+      "properties": {
+        "resume_permitted": {
+          "type": "boolean"
+        },
+        "required_artifacts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "revalidate_configuration": {
+          "type": "boolean"
+        },
+        "revalidate_source_freshness": {
+          "type": "boolean"
+        }
+      }
+    },
+    "concurrency_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cross_case_parallelism_permitted",
+        "same_case_parallelism_permitted",
+        "state_lock_required"
+      ],
+      "properties": {
+        "cross_case_parallelism_permitted": {
+          "type": "boolean"
+        },
+        "same_case_parallelism_permitted": {
+          "type": "boolean"
+        },
+        "state_lock_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "production_boundary": {
+      "type": "string",
+      "const": "Controlled capstone prototype; no autonomous external action; nonbinding recommendation only; final human authority required."
+    }
+  }
+}

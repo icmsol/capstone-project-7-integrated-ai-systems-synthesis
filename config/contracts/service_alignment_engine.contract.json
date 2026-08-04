@@ -1,0 +1,130 @@
+{
+  "contract_schema_version": "1.0.0",
+  "contract_id": "CONTRACT-SERVICE_ALIGNMENT",
+  "component_id": "service_alignment_engine",
+  "component_name": "Configuration-Driven Service Alignment Engine",
+  "component_type": "deterministic_rule_engine",
+  "purpose": "Compare the normalized opportunity with the active organization's capabilities using exclusion-first transparent matching.",
+  "implementation_boundary": "hybrid",
+  "inputs": [
+    {
+      "name": "opportunity",
+      "schema_ref": "opportunity_record.schema.json",
+      "required": true,
+      "cardinality": "one",
+      "source": "case_intake_normalizer",
+      "description": null
+    },
+    {
+      "name": "service_catalog",
+      "schema_ref": "config:service_catalog.csv",
+      "required": true,
+      "cardinality": "one",
+      "source": "profile_loader",
+      "description": null
+    },
+    {
+      "name": "opportunity_rules",
+      "schema_ref": "config:opportunity_rules.json",
+      "required": true,
+      "cardinality": "one",
+      "source": "profile_loader",
+      "description": null
+    },
+    {
+      "name": "staffing_map",
+      "schema_ref": "config:staffing_map.csv",
+      "required": true,
+      "cardinality": "one",
+      "source": "profile_loader",
+      "description": null
+    }
+  ],
+  "outputs": [
+    {
+      "name": "service_alignment",
+      "schema_ref": "service_alignment.schema.json",
+      "cardinality": "one",
+      "consumer": "recommendation_engine",
+      "description": null
+    }
+  ],
+  "configuration_dependencies": [
+    "service catalog",
+    "positive terms",
+    "strong phrases",
+    "exclusion terms",
+    "staffing-family map"
+  ],
+  "fixed_dependencies": [
+    "exclusion-first precedence",
+    "reason-code registry",
+    "service_alignment.schema.json"
+  ],
+  "preconditions": [
+    "The opportunity and active configuration are schema-valid.",
+    "At least one active capability exists."
+  ],
+  "postconditions": [
+    "Every positive match records the exact matched term.",
+    "Every exclusion records its term and reason.",
+    "No match is treated as evidence, not silently converted to a positive fit."
+  ],
+  "allowed_side_effects": [
+    "Write alignment_completed audit event."
+  ],
+  "prohibited_side_effects": [
+    "Predict award probability.",
+    "Claim eligibility, capacity, or full-scope fit.",
+    "Commit named staff.",
+    "Change organization configuration."
+  ],
+  "failure_modes": [
+    {
+      "error_code": "SERVICE_CATALOG_EMPTY",
+      "condition": "No active capabilities are available.",
+      "behavior": "fail_closed",
+      "audit_status": "blocked",
+      "human_route": "Organization Profile Owner"
+    },
+    {
+      "error_code": "ALIGNMENT_INPUT_INSUFFICIENT",
+      "condition": "Opportunity title and description are insufficient for meaningful screening.",
+      "behavior": "abstain",
+      "audit_status": "warned",
+      "human_route": "Opportunity Analyst"
+    },
+    {
+      "error_code": "ALIGNMENT_RULE_CONFLICT",
+      "condition": "Positive and exclusion rules create an unresolved material conflict.",
+      "behavior": "escalate",
+      "audit_status": "warned",
+      "human_route": "Business Development or Pursuit Lead"
+    }
+  ],
+  "audit_events": [
+    "alignment_completed",
+    "processing_failed"
+  ],
+  "downstream_consumers": [
+    "historical_context_provider",
+    "recommendation_engine",
+    "packet_assembler"
+  ],
+  "idempotency": {
+    "idempotent": true,
+    "key": "record_key + service_catalog_version + rules_version",
+    "replay_behavior": "recompute_and_compare"
+  },
+  "retry_policy": {
+    "permitted": false,
+    "maximum_attempts": 0,
+    "retryable_conditions": []
+  },
+  "human_checkpoint": {
+    "required": false,
+    "role": null,
+    "response_options": []
+  },
+  "production_boundary": "Controlled capstone prototype; no autonomous external action; nonbinding recommendation only; final human authority required."
+}

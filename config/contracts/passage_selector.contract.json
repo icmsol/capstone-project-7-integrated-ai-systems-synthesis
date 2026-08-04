@@ -1,0 +1,108 @@
+{
+  "contract_schema_version": "1.0.0",
+  "contract_id": "CONTRACT-PASSAGE_SELECTOR",
+  "component_id": "passage_selector",
+  "component_name": "Relevant Passage Selector",
+  "component_type": "deterministic_transform",
+  "purpose": "Select and hash solicitation or contract passages that warrant bounded theme triage or official evidence review.",
+  "implementation_boundary": "hybrid",
+  "inputs": [
+    {
+      "name": "opportunity",
+      "schema_ref": "opportunity_record.schema.json",
+      "required": true,
+      "cardinality": "one",
+      "source": "case_intake_normalizer",
+      "description": null
+    },
+    {
+      "name": "document_text",
+      "schema_ref": "source_specific:solicitation_or_contract_text",
+      "required": false,
+      "cardinality": "zero_or_one",
+      "source": "authorized_source",
+      "description": null
+    },
+    {
+      "name": "human_selected_passages",
+      "schema_ref": "array:passage",
+      "required": false,
+      "cardinality": "zero_or_more",
+      "source": "Opportunity or Contract Analyst",
+      "description": null
+    }
+  ],
+  "outputs": [
+    {
+      "name": "selected_passages",
+      "schema_ref": "array:passage_with_hash",
+      "cardinality": "zero_or_more",
+      "consumer": "clause_triage_model",
+      "description": null
+    }
+  ],
+  "configuration_dependencies": [
+    "passage-selection keywords and maximum passage count"
+  ],
+  "fixed_dependencies": [
+    "source provenance gate",
+    "privacy and restricted-data gate",
+    "passage hashing algorithm"
+  ],
+  "preconditions": [
+    "The source text is approved for processing.",
+    "Passages retain source locators."
+  ],
+  "postconditions": [
+    "Every selected passage has an ID, source locator, and SHA-256.",
+    "Selection rationale is explicit."
+  ],
+  "allowed_side_effects": [
+    "Write passage selection details into sanitized case state."
+  ],
+  "prohibited_side_effects": [
+    "Select or retain credential values.",
+    "Infer omitted contract text.",
+    "Rewrite the source passage."
+  ],
+  "failure_modes": [
+    {
+      "error_code": "PASSAGE_SOURCE_UNAVAILABLE",
+      "condition": "No approved source text or human-selected passage is available.",
+      "behavior": "abstain",
+      "audit_status": "warned",
+      "human_route": "Opportunity or Contract Analyst"
+    },
+    {
+      "error_code": "PASSAGE_SENSITIVE_CONTENT",
+      "condition": "Selected text contains prohibited sensitive content.",
+      "behavior": "fail_closed",
+      "audit_status": "blocked",
+      "human_route": "Security or Privacy Reviewer"
+    }
+  ],
+  "audit_events": [
+    "source_ingested",
+    "processing_failed"
+  ],
+  "downstream_consumers": [
+    "clause_triage_model",
+    "official_evidence_retriever"
+  ],
+  "idempotency": {
+    "idempotent": true,
+    "key": "source_sha256 + selection_rules_version + human_selection_hash",
+    "replay_behavior": "recompute_and_compare"
+  },
+  "retry_policy": {
+    "permitted": false,
+    "maximum_attempts": 0,
+    "retryable_conditions": []
+  },
+  "human_checkpoint": {
+    "required": false,
+    "role": null,
+    "response_options": []
+  },
+  "production_boundary": "Controlled capstone prototype; no autonomous external action; nonbinding recommendation only; final human authority required."
+}

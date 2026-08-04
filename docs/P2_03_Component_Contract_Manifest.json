@@ -1,0 +1,128 @@
+{
+  "artifact_id": "PROJECT7-P2-03-COMPONENT-CONTRACTS",
+  "artifact_version": "1.0.0",
+  "created_at_utc": "2026-08-04T23:03:09.967348+00:00",
+  "component_contract_count": 14,
+  "orchestration_stage_count": 12,
+  "transition_count": 20,
+  "global_gate_count": 7,
+  "validation_result": {
+    "component_contract_schema_valid": true,
+    "orchestration_policy_schema_valid": true,
+    "all_component_contracts_valid": true,
+    "orchestration_policy_valid": true,
+    "registry_integrity_valid": true,
+    "stage_contract_references_valid": true,
+    "transition_stage_references_valid": true,
+    "invalid_contract_rejected": true,
+    "invalid_contract_error_count": 2,
+    "invalid_orchestration_rejected": true,
+    "invalid_orchestration_error_count": 2
+  },
+  "files": [
+    {
+      "path": "config/contracts/audit_writer.contract.json",
+      "bytes": 3269
+    },
+    {
+      "path": "config/contracts/case_intake_normalizer.contract.json",
+      "bytes": 4081
+    },
+    {
+      "path": "config/contracts/clause_triage_model.contract.json",
+      "bytes": 3759
+    },
+    {
+      "path": "config/contracts/component_contract_registry.json",
+      "bytes": 5247
+    },
+    {
+      "path": "config/contracts/evidence_validator.contract.json",
+      "bytes": 3880
+    },
+    {
+      "path": "config/contracts/historical_context_provider.contract.json",
+      "bytes": 3373
+    },
+    {
+      "path": "config/contracts/human_disposition_recorder.contract.json",
+      "bytes": 3801
+    },
+    {
+      "path": "config/contracts/official_evidence_retriever.contract.json",
+      "bytes": 3795
+    },
+    {
+      "path": "config/contracts/packet_assembler.contract.json",
+      "bytes": 3556
+    },
+    {
+      "path": "config/contracts/passage_selector.contract.json",
+      "bytes": 3278
+    },
+    {
+      "path": "config/contracts/profile_loader.contract.json",
+      "bytes": 3995
+    },
+    {
+      "path": "config/contracts/recommendation_engine.contract.json",
+      "bytes": 4961
+    },
+    {
+      "path": "config/contracts/risk_escalation_router.contract.json",
+      "bytes": 3727
+    },
+    {
+      "path": "config/contracts/service_alignment_engine.contract.json",
+      "bytes": 3931
+    },
+    {
+      "path": "config/contracts/workflow_orchestrator.contract.json",
+      "bytes": 4350
+    },
+    {
+      "path": "config/schemas/component_contract.schema.json",
+      "bytes": 8565
+    },
+    {
+      "path": "config/schemas/orchestration_policy.schema.json",
+      "bytes": 5306
+    },
+    {
+      "path": "config/system/configuration_resolution_order.json",
+      "bytes": 1741
+    },
+    {
+      "path": "config/system/orchestration_policy.json",
+      "bytes": 11129
+    },
+    {
+      "path": "docs/Orchestration_and_Component_Contracts.md",
+      "bytes": 5416
+    },
+    {
+      "path": "docs/P2_03_Component_Contract_Matrix.json",
+      "bytes": 4616
+    },
+    {
+      "path": "tests/contract_examples/invalid_component_contract.json",
+      "bytes": 3737
+    },
+    {
+      "path": "tests/contract_examples/invalid_orchestration_policy.json",
+      "bytes": 9390
+    },
+    {
+      "path": "tests/contract_examples/valid_component_contract.json",
+      "bytes": 3995
+    },
+    {
+      "path": "tests/contract_examples/valid_orchestration_policy.json",
+      "bytes": 11129
+    },
+    {
+      "path": "tests/validate_component_contracts.py",
+      "bytes": 2937
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "contract_schema_version": "1.0.0",
+  "contract_id": "CONTRACT-CASE_INTAKE",
+  "component_id": "case_intake_normalizer",
+  "component_name": "Opportunity Intake, Normalization, and Provenance",
+  "component_type": "deterministic_transform",
+  "purpose": "Create a case, validate the approved source, normalize the opportunity, preserve original values, and assign deterministic identifiers.",
+  "implementation_boundary": "framework_controlled",
+  "inputs": [
+    {
+      "name": "raw_opportunity",
+      "schema_ref": "source_specific:opportunity_record",
+      "required": true,
+      "cardinality": "one",
+      "source": "authorized_user_or_public_source",
+      "description": null
+    },
+    {
+      "name": "source_approval",
+      "schema_ref": "common_definitions.schema.json#/$defs/source_reference",
+      "required": true,
+      "cardinality": "one",
+      "source": "source_gate",
+      "description": null
+    },
+    {
+      "name": "normalization_rules",
+      "schema_ref": "config:normalization_rules",
+      "required": true,
+      "cardinality": "one",
+      "source": "framework",
+      "description": null
+    }
+  ],
+  "outputs": [
+    {
+      "name": "normalized_opportunity",
+      "schema_ref": "opportunity_record.schema.json",
+      "cardinality": "one",
+      "consumer": "service_alignment_engine",
+      "description": null
+    },
+    {
+      "name": "case_state_initial",
+      "schema_ref": "integrated_case_state.schema.json",
+      "cardinality": "one",
+      "consumer": "workflow_orchestrator",
+      "description": null
+    }
+  ],
+  "configuration_dependencies": [
+    "jurisdiction-specific fiscal calendar where applicable"
+  ],
+  "fixed_dependencies": [
+    "config/schemas/opportunity_record.schema.json",
+    "source approval and privacy gates",
+    "record-key version"
+  ],
+  "preconditions": [
+    "Source is public, frozen, synthetic, de-identified, or explicitly authorized.",
+    "Required identifiers and source metadata are available or marked missing."
+  ],
+  "postconditions": [
+    "Original values are retained.",
+    "Normalized values and missing fields are explicit.",
+    "Source checksum and deterministic record key are recorded."
+  ],
+  "allowed_side_effects": [
+    "Write case_created and source_ingested audit events.",
+    "Create versioned case-state file."
+  ],
+  "prohibited_side_effects": [
+    "Overwrite the original source record.",
+    "Infer material missing values.",
+    "Persist credentials, private reasoning, or prohibited personal data."
+  ],
+  "failure_modes": [
+    {
+      "error_code": "SOURCE_NOT_APPROVED",
+      "condition": "Source approval flag is false or the approval basis is absent.",
+      "behavior": "fail_closed",
+      "audit_status": "blocked",
+      "human_route": "Data or Privacy Reviewer"
+    },
+    {
+      "error_code": "REQUIRED_SOURCE_METADATA_MISSING",
+      "condition": "Source location, retrieval time, or checksum cannot be recorded.",
+      "behavior": "defer",
+      "audit_status": "warned",
+      "human_route": "Opportunity Analyst"
+    },
+    {
+      "error_code": "NORMALIZATION_FAILED",
+      "condition": "Source-specific parsing or normalization fails.",
+      "behavior": "fail_closed",
+      "audit_status": "failed",
+      "human_route": "Opportunity Analyst"
+    }
+  ],
+  "audit_events": [
+    "case_created",
+    "source_ingested",
+    "processing_failed"
+  ],
+  "downstream_consumers": [
+    "service_alignment_engine",
+    "historical_context_provider",
+    "passage_selector",
+    "audit_writer"
+  ],
+  "idempotency": {
+    "idempotent": true,
+    "key": "source_sha256 + normalization_version",
+    "replay_behavior": "recompute_and_compare"
+  },
+  "retry_policy": {
+    "permitted": true,
+    "maximum_attempts": 1,
+    "retryable_conditions": [
+      "temporary source read failure"
+    ]
+  },
+  "human_checkpoint": {
+    "required": false,
+    "role": null,
+    "response_options": []
+  },
+  "production_boundary": "Controlled capstone prototype; no autonomous external action; nonbinding recommendation only; final human authority required."
+}

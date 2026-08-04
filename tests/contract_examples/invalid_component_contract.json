@@ -1,0 +1,119 @@
+{
+  "contract_schema_version": "1.0.0",
+  "contract_id": "CONTRACT-PROFILE_LOADER",
+  "component_id": "profile_loader",
+  "component_name": "Organization Profile Loader and Validator",
+  "component_type": "configuration_loader",
+  "purpose": "Load one organization profile, validate its schema and file references, and produce an immutable active configuration context.",
+  "implementation_boundary": "hybrid",
+  "inputs": [
+    {
+      "name": "profile_path",
+      "schema_ref": "string:path",
+      "required": true,
+      "cardinality": "one",
+      "source": "authorized_case_request",
+      "description": "Repository-relative path to the requested organization profile."
+    },
+    {
+      "name": "fixed_safeguards",
+      "schema_ref": "config/system/fixed_safeguards.json",
+      "required": true,
+      "cardinality": "one",
+      "source": "framework",
+      "description": null
+    }
+  ],
+  "outputs": [
+    {
+      "name": "organization_context",
+      "schema_ref": "integrated_case_state.schema.json#/properties/organization_context",
+      "cardinality": "one",
+      "consumer": "workflow_orchestrator",
+      "description": null
+    },
+    {
+      "name": "validated_configuration_bundle",
+      "schema_ref": "config:validated_bundle",
+      "cardinality": "one",
+      "consumer": "all_downstream_components",
+      "description": null
+    }
+  ],
+  "configuration_dependencies": [
+    "organization_profile.json",
+    "service_catalog.csv",
+    "opportunity_rules.json",
+    "staffing_map.csv",
+    "reviewer_roles.json",
+    "recommendation_thresholds.json"
+  ],
+  "fixed_dependencies": [
+    "config/schemas/organization_profile.schema.json",
+    "config/system/fixed_safeguards.json",
+    "config/system/configuration_resolution_order.json"
+  ],
+  "preconditions": [
+    "The requested profile path is repository-local and approved.",
+    "The fixed safeguard file is readable and schema-valid."
+  ],
+  "postconditions": [
+    "Every referenced configuration artifact exists and is versioned.",
+    "No prohibited safeguard override key is present.",
+    "The active configuration bundle is immutable for the case run."
+  ],
+  "allowed_side_effects": [
+    "Write configuration_loaded audit event.",
+    "Cache read-only configuration for the active case."
+  ],
+  "prohibited_side_effects": [],
+  "failure_modes": [
+    {
+      "error_code": "CONFIG_SCHEMA_INVALID",
+      "condition": "Profile or linked configuration does not satisfy its schema.",
+      "behavior": "fail_closed",
+      "audit_status": "blocked",
+      "human_route": "Organization Profile Owner"
+    },
+    {
+      "error_code": "CONFIG_REFERENCE_MISSING",
+      "condition": "A profile-linked file is absent or unreadable.",
+      "behavior": "fail_closed",
+      "audit_status": "failed",
+      "human_route": "Organization Profile Owner"
+    },
+    {
+      "error_code": "SAFEGUARD_OVERRIDE_ATTEMPT",
+      "condition": "A profile attempts to override a fixed safeguard.",
+      "behavior": "fail_closed",
+      "audit_status": "blocked",
+      "human_route": "Executive Authority"
+    }
+  ],
+  "audit_events": [
+    "configuration_loaded",
+    "processing_failed"
+  ],
+  "downstream_consumers": [
+    "workflow_orchestrator",
+    "service_alignment_engine",
+    "recommendation_engine",
+    "human_disposition_recorder"
+  ],
+  "idempotency": {
+    "idempotent": true,
+    "key": "case_id + organization_id + profile_version",
+    "replay_behavior": "return_existing_output"
+  },
+  "retry_policy": {
+    "permitted": false,
+    "maximum_attempts": 0,
+    "retryable_conditions": []
+  },
+  "human_checkpoint": {
+    "required": false,
+    "role": null,
+    "response_options": []
+  },
+  "production_boundary": "Production system approved."
+}

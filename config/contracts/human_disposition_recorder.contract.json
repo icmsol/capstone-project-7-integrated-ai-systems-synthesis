@@ -1,0 +1,125 @@
+{
+  "contract_schema_version": "1.0.0",
+  "contract_id": "CONTRACT-HUMAN_DISPOSITION",
+  "component_id": "human_disposition_recorder",
+  "component_name": "Authorized Human Disposition Recorder",
+  "component_type": "human_checkpoint",
+  "purpose": "Record the authorized human's accept, modify, reject, defer, or escalate response separately from the original system recommendation.",
+  "implementation_boundary": "human_authority",
+  "inputs": [
+    {
+      "name": "case_packet",
+      "schema_ref": "internal:case_packet",
+      "required": true,
+      "cardinality": "one",
+      "source": "packet_assembler",
+      "description": null
+    },
+    {
+      "name": "human_response",
+      "schema_ref": "human_disposition.schema.json",
+      "required": true,
+      "cardinality": "one",
+      "source": "authorized_human_reviewer",
+      "description": null
+    },
+    {
+      "name": "reviewer_roles",
+      "schema_ref": "config:reviewer_roles.json",
+      "required": true,
+      "cardinality": "one",
+      "source": "profile_loader",
+      "description": null
+    }
+  ],
+  "outputs": [
+    {
+      "name": "human_disposition",
+      "schema_ref": "human_disposition.schema.json",
+      "cardinality": "one",
+      "consumer": "workflow_orchestrator",
+      "description": null
+    },
+    {
+      "name": "finalized_case_state",
+      "schema_ref": "integrated_case_state.schema.json",
+      "cardinality": "one",
+      "consumer": "audit_writer",
+      "description": null
+    }
+  ],
+  "configuration_dependencies": [
+    "authorized reviewer roles"
+  ],
+  "fixed_dependencies": [
+    "human authority requirement",
+    "original recommendation immutability",
+    "rationale requirement"
+  ],
+  "preconditions": [
+    "Reviewer identity maps to an authorized configured role.",
+    "The reviewer has access to the complete packet."
+  ],
+  "postconditions": [
+    "The original recommendation remains unchanged.",
+    "The human disposition, rationale, role, and timestamp are recorded.",
+    "A finalized case has a valid human disposition."
+  ],
+  "allowed_side_effects": [
+    "Write human_disposition_recorded audit event.",
+    "Finalize or defer the case state."
+  ],
+  "prohibited_side_effects": [
+    "Permit AI or a tool to impersonate the reviewer.",
+    "Overwrite the original recommendation.",
+    "Record a final disposition without rationale.",
+    "Communicate the disposition externally."
+  ],
+  "failure_modes": [
+    {
+      "error_code": "REVIEWER_NOT_AUTHORIZED",
+      "condition": "The reviewer does not map to an authorized role.",
+      "behavior": "fail_closed",
+      "audit_status": "blocked",
+      "human_route": "Executive Authority"
+    },
+    {
+      "error_code": "HUMAN_RATIONALE_MISSING",
+      "condition": "A final disposition is submitted without adequate rationale.",
+      "behavior": "defer",
+      "audit_status": "warned",
+      "human_route": "Authorized Human Reviewer"
+    }
+  ],
+  "audit_events": [
+    "human_disposition_recorded",
+    "processing_failed"
+  ],
+  "downstream_consumers": [
+    "workflow_orchestrator",
+    "audit_writer",
+    "evaluation_pipeline"
+  ],
+  "idempotency": {
+    "idempotent": false,
+    "key": "case_id + recommendation_id + reviewer_id + decided_at",
+    "replay_behavior": "human_review_required"
+  },
+  "retry_policy": {
+    "permitted": false,
+    "maximum_attempts": 0,
+    "retryable_conditions": []
+  },
+  "human_checkpoint": {
+    "required": true,
+    "role": "Authorized human reviewer",
+    "response_options": [
+      "accept",
+      "accept_with_modified_conditions",
+      "reject",
+      "defer_pending_information",
+      "escalate"
+    ]
+  },
+  "production_boundary": "Controlled capstone prototype; no autonomous external action; nonbinding recommendation only; final human authority required."
+}

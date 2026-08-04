@@ -1,0 +1,132 @@
+{
+  "registry_version": "1.0.0",
+  "contract_schema": "../schemas/component_contract.schema.json",
+  "contracts": [
+    {
+      "contract_id": "CONTRACT-PROFILE_LOADER",
+      "component_id": "profile_loader",
+      "component_name": "Organization Profile Loader and Validator",
+      "component_type": "configuration_loader",
+      "path": "profile_loader.contract.json",
+      "implementation_boundary": "hybrid",
+      "human_checkpoint_required": false
+    },
+    {
+      "contract_id": "CONTRACT-CASE_INTAKE",
+      "component_id": "case_intake_normalizer",
+      "component_name": "Opportunity Intake, Normalization, and Provenance",
+      "component_type": "deterministic_transform",
+      "path": "case_intake_normalizer.contract.json",
+      "implementation_boundary": "framework_controlled",
+      "human_checkpoint_required": false
+    },
+    {
+      "contract_id": "CONTRACT-SERVICE_ALIGNMENT",
+      "component_id": "service_alignment_engine",
+      "component_name": "Configuration-Driven Service Alignment Engine",
+      "component_type": "deterministic_rule_engine",
+      "path": "service_alignment_engine.contract.json",
+      "implementation_boundary": "hybrid",
+      "human_checkpoint_required": false
+    },
+    {
+      "contract_id": "CONTRACT-HISTORICAL_CONTEXT",
+      "component_id": "historical_context_provider",
+      "component_name": "Frozen Historical Procurement Context Provider",
+      "component_type": "historical_context_provider",
+      "path": "historical_context_provider.contract.json",
+      "implementation_boundary": "framework_controlled",
+      "human_checkpoint_required": false
+    },
+    {
+      "contract_id": "CONTRACT-PASSAGE_SELECTOR",
+      "component_id": "passage_selector",
+      "component_name": "Relevant Passage Selector",
+      "component_type": "deterministic_transform",
+      "path": "passage_selector.contract.json",
+      "implementation_boundary": "hybrid",
+      "human_checkpoint_required": false
+    },
+    {
+      "contract_id": "CONTRACT-CLAUSE_TRIAGE",
+      "component_id": "clause_triage_model",
+      "component_name": "Project 4 Clause-Theme Triage",
+      "component_type": "model_inference",
+      "path": "clause_triage_model.contract.json",
+      "implementation_boundary": "framework_controlled",
+      "human_checkpoint_required": false
+    },
+    {
+      "contract_id": "CONTRACT-EVIDENCE_RETRIEVAL",
+      "component_id": "official_evidence_retriever",
+      "component_name": "Official Evidence Retrieval Tool",
+      "component_type": "retrieval_tool",
+      "path": "official_evidence_retriever.contract.json",
+      "implementation_boundary": "framework_controlled",
+      "human_checkpoint_required": false
+    },
+    {
+      "contract_id": "CONTRACT-EVIDENCE_VALIDATION",
+      "component_id": "evidence_validator",
+      "component_name": "Citation, Metadata, Sufficiency, and Conflict Validator",
+      "component_type": "validation_tool",
+      "path": "evidence_validator.contract.json",
+      "implementation_boundary": "framework_controlled",
+      "human_checkpoint_required": false
+    },
+    {
+      "contract_id": "CONTRACT-RISK_ROUTING",
+      "component_id": "risk_escalation_router",
+      "component_name": "Risk and Escalation Router",
+      "component_type": "risk_routing",
+      "path": "risk_escalation_router.contract.json",
+      "implementation_boundary": "hybrid",
+      "human_checkpoint_required": false
+    },
+    {
+      "contract_id": "CONTRACT-RECOMMENDATION",
+      "component_id": "recommendation_engine",
+      "component_name": "Evidence-Linked Nonbinding Recommendation Engine",
+      "component_type": "recommendation_engine",
+      "path": "recommendation_engine.contract.json",
+      "implementation_boundary": "hybrid",
+      "human_checkpoint_required": true
+    },
+    {
+      "contract_id": "CONTRACT-PACKET_ASSEMBLY",
+      "component_id": "packet_assembler",
+      "component_name": "Decision-Support Packet Assembler",
+      "component_type": "packet_assembler",
+      "path": "packet_assembler.contract.json",
+      "implementation_boundary": "framework_controlled",
+      "human_checkpoint_required": true
+    },
+    {
+      "contract_id": "CONTRACT-HUMAN_DISPOSITION",
+      "component_id": "human_disposition_recorder",
+      "component_name": "Authorized Human Disposition Recorder",
+      "component_type": "human_checkpoint",
+      "path": "human_disposition_recorder.contract.json",
+      "implementation_boundary": "human_authority",
+      "human_checkpoint_required": true
+    },
+    {
+      "contract_id": "CONTRACT-AUDIT_WRITER",
+      "component_id": "audit_writer",
+      "component_name": "Append-Only Audit Event Writer",
+      "component_type": "audit_writer",
+      "path": "audit_writer.contract.json",
+      "implementation_boundary": "framework_controlled",
+      "human_checkpoint_required": false
+    },
+    {
+      "contract_id": "CONTRACT-WORKFLOW_ORCHESTRATOR",
+      "component_id": "workflow_orchestrator",
+      "component_name": "Integrated Case Workflow Orchestrator",
+      "component_type": "stateful_orchestrator",
+      "path": "workflow_orchestrator.contract.json",
+      "implementation_boundary": "framework_controlled",
+      "human_checkpoint_required": true
+    }
+  ]
+}

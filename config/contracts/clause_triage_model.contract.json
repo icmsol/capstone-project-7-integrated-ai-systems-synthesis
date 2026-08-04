@@ -1,0 +1,119 @@
+{
+  "contract_schema_version": "1.0.0",
+  "contract_id": "CONTRACT-CLAUSE_TRIAGE",
+  "component_id": "clause_triage_model",
+  "component_name": "Project 4 Clause-Theme Triage",
+  "component_type": "model_inference",
+  "purpose": "Produce a bounded clause-theme prediction, confidence, limitation, review priority, and reviewer-routing recommendation on CPU.",
+  "implementation_boundary": "framework_controlled",
+  "inputs": [
+    {
+      "name": "selected_passages",
+      "schema_ref": "array:passage_with_hash",
+      "required": true,
+      "cardinality": "one_or_more",
+      "source": "passage_selector",
+      "description": null
+    },
+    {
+      "name": "model_package",
+      "schema_ref": "project4:model_package",
+      "required": true,
+      "cardinality": "one",
+      "source": "repository_model_registry",
+      "description": null
+    },
+    {
+      "name": "triage_thresholds",
+      "schema_ref": "config:clause_triage_thresholds",
+      "required": true,
+      "cardinality": "one",
+      "source": "framework",
+      "description": null
+    }
+  ],
+  "outputs": [
+    {
+      "name": "clause_predictions",
+      "schema_ref": "clause_prediction.schema.json",
+      "cardinality": "one_or_more",
+      "consumer": "risk_escalation_router",
+      "description": null
+    }
+  ],
+  "configuration_dependencies": [
+    "review-priority mapping",
+    "reviewer-role mapping"
+  ],
+  "fixed_dependencies": [
+    "validated Project 4 model package",
+    "model checksum verification",
+    "domain-shift warning",
+    "abstention threshold"
+  ],
+  "preconditions": [
+    "Model configuration, vocabulary, label map, and state dictionary checksums match the manifest.",
+    "Input passage is nonempty and within the approved processing boundary."
+  ],
+  "postconditions": [
+    "Every prediction records model identity, checksum, confidence, decision, and limitations.",
+    "Low-confidence or incompatible inputs abstain or escalate."
+  ],
+  "allowed_side_effects": [
+    "Write clause_triage_completed audit event."
+  ],
+  "prohibited_side_effects": [
+    "Provide legal interpretation.",
+    "Determine enforceability or compliance.",
+    "Suppress the domain-shift warning.",
+    "Use confidence as legal certainty."
+  ],
+  "failure_modes": [
+    {
+      "error_code": "MODEL_PACKAGE_INVALID",
+      "condition": "Model package files or checksums are missing or incompatible.",
+      "behavior": "fail_closed",
+      "audit_status": "blocked",
+      "human_route": "Technical Reviewer"
+    },
+    {
+      "error_code": "MODEL_INPUT_OUT_OF_DOMAIN",
+      "condition": "The passage is materially outside the supported CUAD-derived domain.",
+      "behavior": "abstain",
+      "audit_status": "warned",
+      "human_route": "Contracts or Legal Reviewer"
+    },
+    {
+      "error_code": "MODEL_CONFIDENCE_LOW",
+      "condition": "Maximum class probability is below the configured abstention threshold.",
+      "behavior": "abstain",
+      "audit_status": "warned",
+      "human_route": "Contracts or Legal Reviewer"
+    }
+  ],
+  "audit_events": [
+    "clause_triage_completed",
+    "processing_failed"
+  ],
+  "downstream_consumers": [
+    "risk_escalation_router",
+    "official_evidence_retriever",
+    "packet_assembler"
+  ],
+  "idempotency": {
+    "idempotent": true,
+    "key": "passage_sha256 + model_sha256 + threshold_version",
+    "replay_behavior": "return_existing_output"
+  },
+  "retry_policy": {
+    "permitted": false,
+    "maximum_attempts": 0,
+    "retryable_conditions": []
+  },
+  "human_checkpoint": {
+    "required": false,
+    "role": null,
+    "response_options": []
+  },
+  "production_boundary": "Controlled capstone prototype; no autonomous external action; nonbinding recommendation only; final human authority required."
+}
