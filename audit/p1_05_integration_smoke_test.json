@@ -1,0 +1,205 @@
+{
+  "artifact_id": "PROJECT7-P1-05-INTEGRATION-SMOKE-TEST",
+  "artifact_version": "1.0.0",
+  "created_at_utc": "2026-08-04T22:23:53.496276+00:00",
+  "project7_repository": "https://github.com/icmsol/capstone-project-7-integrated-ai-systems-synthesis.git",
+  "project7_commit_sha": "4f23fae1f5bd80e9bf7ff3619ae8a4798b5c0802",
+  "runtime": {
+    "python": "3.12.13",
+    "pytorch": "2.11.0+cpu",
+    "device": "cpu"
+  },
+  "status_counts": {
+    "PASS": 6,
+    "WARN": 1,
+    "FAIL": 0
+  },
+  "overall_status": "PASS_WITH_WARNING",
+  "tests": [
+    {
+      "test_id": "P1-05-T01",
+      "status": "PASS",
+      "summary": "Repository structure and required starter artifacts are present.",
+      "evidence": {
+        "required_directory_count": 12,
+        "required_file_count": 19,
+        "commit_sha": "4f23fae1f5bd80e9bf7ff3619ae8a4798b5c0802"
+      },
+      "recorded_at_utc": "2026-08-04T22:23:47.078309+00:00"
+    },
+    {
+      "test_id": "P1-05-T02",
+      "status": "PASS",
+      "summary": "Both organization profiles and their linked configuration artifacts are valid.",
+      "evidence": {
+        "ICMSOL": {
+          "profile_version": "1.0.0",
+          "fictional": false,
+          "active_capabilities": 54,
+          "service_families": 8,
+          "resolved_references": {
+            "service_catalog_file": "config/profiles/icm_service_catalog.csv",
+            "opportunity_rules_file": "config/profiles/icm_opportunity_rules.json",
+            "staffing_map_file": "config/profiles/icm_staffing_map.csv",
+            "reviewer_roles_file": "config/profiles/icm_reviewer_roles.json",
+            "recommendation_thresholds_file": "config/profiles/icm_recommendation_thresholds.json",
+            "fixed_safeguards_file": "config/system/fixed_safeguards.json"
+          }
+        },
+        "RCALABS": {
+          "profile_version": "1.0.0",
+          "fictional": true,
+          "active_capabilities": 3,
+          "service_families": 3,
+          "resolved_references": {
+            "service_catalog_file": "config/profiles/fictional_service_catalog.csv",
+            "opportunity_rules_file": "config/profiles/fictional_opportunity_rules.json",
+            "staffing_map_file": "config/profiles/fictional_staffing_map.csv",
+            "reviewer_roles_file": "config/profiles/fictional_reviewer_roles.json",
+            "recommendation_thresholds_file": "config/profiles/fictional_recommendation_thresholds.json",
+            "fixed_safeguards_file": "config/system/fixed_safeguards.json"
+          }
+        }
+      },
+      "recorded_at_utc": "2026-08-04T22:23:47.142871+00:00"
+    },
+    {
+      "test_id": "P1-05-T03",
+      "status": "PASS",
+      "summary": "Organization profiles cannot disable the required framework safeguards.",
+      "evidence": {
+        "prohibited_override_key_count": 10,
+        "validated_required_controls": [
+          "evidence_traceability_required",
+          "counterevidence_required",
+          "abstention_required_when_evidence_insufficient",
+          "human_final_decision_required",
+          "audit_logging_required",
+          "secrets_prohibited_in_repository",
+          "autonomous_external_actions_prohibited",
+          "unsupported_recommendations_prohibited"
+        ]
+      },
+      "recorded_at_utc": "2026-08-04T22:23:47.187778+00:00"
+    },
+    {
+      "test_id": "P1-05-T04",
+      "status": "PASS",
+      "summary": "The shared profile loader exposes distinct organization-specific capability context.",
+      "evidence": {
+        "icm_unique_term_count": 522,
+        "fictional_unique_term_count": 20,
+        "icm_examples": [
+          ".net developer",
+          "acceptance criteria",
+          "acquisition requirements",
+          "acquisition strategy",
+          "adoption metrics",
+          "adoption monitoring",
+          "adoption monitoring and training effectiveness",
+          "agile",
+          "agile adoption",
+          "agile adoption and coaching"
+        ],
+        "fictional_examples": [
+          "business intelligence",
+          "business intelligence analysis",
+          "cloud data platform",
+          "cloud data platform implementation",
+          "dashboard",
+          "data analytics",
+          "data lake",
+          "data pipeline",
+          "data visualization",
+          "data warehouse"
+        ],
+        "source_code_change_required": false
+      },
+      "recorded_at_utc": "2026-08-04T22:23:47.204524+00:00"
+    },
+    {
+      "test_id": "P1-05-T05",
+      "status": "PASS",
+      "summary": "The Project 4 inference package loads and produces a finite CPU prediction.",
+      "evidence": {
+        "checkpoint_sha256": "50a280950d31466d7002578295c64e957d144611f5b9731bb059be50e68c6c92",
+        "prediction": "Audit Rights",
+        "confidence": 0.9999610185623169,
+        "probability_sum": 0.9999999403953552,
+        "output_shape": [
+          1,
+          10
+        ],
+        "device": "cpu",
+        "boundary": "Clause-theme triage only; mandatory human review for consequential interpretation."
+      },
+      "recorded_at_utc": "2026-08-04T22:23:47.605055+00:00"
+    },
+    {
+      "test_id": "P1-05-T06",
+      "status": "PASS",
+      "summary": "Selected Project 2 frozen historical assets loaded successfully.",
+      "evidence": {
+        "downloaded_assets": {
+          "analysis_summary.json": {
+            "url": "https://raw.githubusercontent.com/icmsol/Capstone-project-2-statistical-analysis/main/data/processed/analysis_summary.json",
+            "bytes": 579,
+            "sha256": "916b1c97ef94341130267933e63fcb0b71ab29159345ed0fdaf22f8299562b4b"
+          },
+          "data_dictionary.csv": {
+            "url": "https://raw.githubusercontent.com/icmsol/Capstone-project-2-statistical-analysis/main/data/processed/data_dictionary.csv",
+            "bytes": 1810,
+            "sha256": "fb8e5f5485a59d1e64156b0882e0f33d926ce072172a3ae5f139caada8c6b1db"
+          },
+          "classification_audit_sample.csv": {
+            "url": "https://raw.githubusercontent.com/icmsol/Capstone-project-2-statistical-analysis/main/data/processed/classification_audit_sample.csv",
+            "bytes": 9940,
+            "sha256": "0fa686d0f48de77ff0b9a8f6eaa989db39cc3f16c1b6f6f21a377b61da5fc26e"
+          }
+        },
+        "data_dictionary_rows": 24,
+        "classification_audit_rows": 56,
+        "analysis_summary_top_level_keys": [
+          "advisory_assurance_change_rows",
+          "chi_square_statistic",
+          "city_rows",
+          "county_rows",
+          "cramers_v",
+          "current_icm_relevant_rows",
+          "current_open_rows",
+          "degrees_of_freedom",
+          "historical_period_end",
+          "historical_period_start",
+          "historical_rows",
+          "icm_relevant_rate",
+          "icm_relevant_rows",
+          "minimum_expected_count",
+          "p_value",
+          "state_rows",
+          "technology_delivery_rows"
+        ],
+        "limitation": "Descriptive historical context only; not an award, eligibility, staffing-capacity, or bid/no-bid predictor."
+      },
+      "recorded_at_utc": "2026-08-04T22:23:48.128643+00:00"
+    },
+    {
+      "test_id": "P1-05-T07",
+      "status": "WARN",
+      "summary": "The official FAR source has the expected FAC metadata but does not match the Project 6 byte checksum. Treat it as a newly acquired candidate until the difference is resolved.",
+      "evidence": {
+        "source_url": "https://www.acquisition.gov/far/subpart-52.2",
+        "fac_number": "2026-01",
+        "effective_date": "03/13/2026",
+        "retrieved_bytes": 14296409,
+        "retrieved_sha256": "9a285c6b03f42c372d62074e1064e87349bda7e59c7bbdf9c3a4840d45b284ac",
+        "expected_project6_sha256": "58cdd8faddf9a6b591b81afaf03639c350da795ca57f233df5b96a05962a54fd",
+        "exact_project6_match": false,
+        "local_gzip_path": "/content/project7_p1_05_work/far_recovery/far_subpart_52_2_fac_2026_01.html.gz",
+        "http_status": 200,
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "recorded_at_utc": "2026-08-04T22:23:53.484951+00:00"
+    }
+  ],
+  "production_boundary": "Controlled capstone smoke test only; no production-readiness claim and no autonomous external action."
+}
