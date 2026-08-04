@@ -1,0 +1,42 @@
+{
+  "organization_id": "REPLACE_ME",
+  "artifact_version": "1.0.0",
+  "effective_date": "YYYY-MM-DD",
+  "status": "template",
+  "score_scale": {
+    "minimum": 0.0,
+    "maximum": 1.0
+  },
+  "minimum_evidence_completeness": null,
+  "stale_data_days": null,
+  "outcomes": [],
+  "override_outcomes": [
+    {
+      "code": "R-05",
+      "label": "Escalate \u2014 Specialized Review Required",
+      "trigger": "mandatory review trigger"
+    },
+    {
+      "code": "R-06",
+      "label": "No Recommendation",
+      "trigger": "insufficient or contradictory evidence"
+    }
+  ],
+  "required_recommendation_fields": [
+    "recommendation_code",
+    "recommendation_label",
+    "nonbinding_disclosure",
+    "recommendation_strength",
+    "supporting_evidence",
+    "counterevidence",
+    "missing_information",
+    "conditions",
+    "limitations",
+    "required_human_reviewer",
+    "recommended_next_action",
+    "data_freshness",
+    "reason_codes",
+    "audit_reference"
+  ],
+  "notes": "Complete and validate through representative scenarios."
+}

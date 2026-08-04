@@ -1,0 +1,15 @@
+{
+  "organization_id": "REPLACE_ME",
+  "artifact_version": "1.0.0",
+  "effective_date": "YYYY-MM-DD",
+  "status": "template",
+  "preferred_buyers": [],
+  "preferred_geographies": [],
+  "preferred_engagement_types": [],
+  "preferred_procurement_paths": [],
+  "positive_factors": [],
+  "mandatory_review_triggers": [],
+  "default_exclusion_conditions": [],
+  "unknown_value_policy": "Do not infer missing values.",
+  "notes": "Replace with organization-approved rules and validate."
+}

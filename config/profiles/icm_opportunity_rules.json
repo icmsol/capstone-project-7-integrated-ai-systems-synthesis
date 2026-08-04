@@ -1,0 +1,95 @@
+{
+  "organization_id": "ICMSOL",
+  "artifact_version": "1.0.0",
+  "effective_date": "2026-08-03",
+  "status": "draft_for_scenario_validation",
+  "purpose": "Transparent organization-specific opportunity-screening and recommendation inputs.",
+  "preferred_buyers": [
+    "California state agencies",
+    "California local government",
+    "Public-sector entities",
+    "Private organizations seeking technology consulting",
+    "Technology consulting primes and partners"
+  ],
+  "preferred_geographies": [
+    "California",
+    "United States remote where permitted"
+  ],
+  "preferred_engagement_types": [
+    "Technology consulting",
+    "Professional services",
+    "Staff augmentation",
+    "Project-based delivery",
+    "Independent oversight",
+    "Training and change management",
+    "Procurement and proposal support"
+  ],
+  "preferred_procurement_paths": [
+    "Open competitive solicitation",
+    "California Small Business participation",
+    "CMAS",
+    "Master Service Agreement",
+    "Subcontracting or teaming"
+  ],
+  "positive_factors": [
+    {
+      "factor_id": "PF-01",
+      "name": "service_alignment",
+      "weight": 0.35,
+      "description": "Opportunity requirements match one or more active capabilities."
+    },
+    {
+      "factor_id": "PF-02",
+      "name": "sector_alignment",
+      "weight": 0.15,
+      "description": "Buyer or industry aligns with configured target sectors."
+    },
+    {
+      "factor_id": "PF-03",
+      "name": "geographic_alignment",
+      "weight": 0.1,
+      "description": "Place of performance aligns with configured geography or remote-delivery rules."
+    },
+    {
+      "factor_id": "PF-04",
+      "name": "procurement_path_alignment",
+      "weight": 0.1,
+      "description": "The procurement path is compatible with a configured participation mechanism."
+    },
+    {
+      "factor_id": "PF-05",
+      "name": "staffing_family_alignment",
+      "weight": 0.1,
+      "description": "Required roles map to configured staffing families."
+    },
+    {
+      "factor_id": "PF-06",
+      "name": "evidence_completeness",
+      "weight": 0.2,
+      "description": "Available opportunity information is sufficient to support an advisory recommendation."
+    }
+  ],
+  "mandatory_review_triggers": [
+    "legal interpretation",
+    "contract-term acceptance or rejection",
+    "insurance or indemnification requirement",
+    "security or privacy requirement",
+    "confidential or restricted data",
+    "pricing approval or financial commitment",
+    "named-person staffing commitment",
+    "mandatory certification or eligibility uncertainty",
+    "subcontracting limitation",
+    "organizational conflict of interest",
+    "external submission or communication"
+  ],
+  "default_exclusion_conditions": [
+    "construction-only services",
+    "medical or clinical staffing",
+    "commodity or product resale only",
+    "hardware installation only without consulting scope",
+    "services outside configured geography with no remote option",
+    "clearly disallowed certification or eligibility requirement"
+  ],
+  "unknown_value_policy": "Do not infer missing values; disclose the gap and hold or abstain when material.",
+  "notes": "Weights are initial prototype defaults and must be validated through frozen scenarios. They do not represent award probability."
+}

@@ -1,0 +1,48 @@
+{
+  "artifact_id": "ICM-SERVICE-SOURCE-REGISTRY",
+  "artifact_version": "1.0.0",
+  "retrieval_date": "2026-08-03",
+  "sources": [
+    {
+      "name": "ICM Services",
+      "url": "https://icmsol.com/services"
+    },
+    {
+      "name": "ICM Industries",
+      "url": "https://icmsol.com/industries"
+    },
+    {
+      "name": "IT Strategy Consulting",
+      "url": "https://icmsol.com/it-strategy-consulting"
+    },
+    {
+      "name": "Custom Development & System Integration",
+      "url": "https://icmsol.com/custom-development"
+    },
+    {
+      "name": "Project Management",
+      "url": "https://icmsol.com/project-management"
+    },
+    {
+      "name": "Software Testing and QA Engineering",
+      "url": "https://icmsol.com/software-testing"
+    },
+    {
+      "name": "Agile Development",
+      "url": "https://icmsol.com/agile-development"
+    },
+    {
+      "name": "Organizational Change Management & Training",
+      "url": "https://icmsol.com/organizational-change-management"
+    },
+    {
+      "name": "Contract Staffing",
+      "url": "https://icmsol.com/contract-staffing"
+    },
+    {
+      "name": "Procurement",
+      "url": "https://icmsol.com/procurement"
+    }
+  ],
+  "note": "Website-derived capability statements are supplemented by user-approved ICM business context. Operational availability, certifications, contract vehicles, rates, and staffing capacity require human verification."
+}

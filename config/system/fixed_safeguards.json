@@ -1,0 +1,39 @@
+{
+  "artifact_id": "PROJECT7-FIXED-SAFEGUARDS",
+  "artifact_version": "1.0.0",
+  "effective_date": "2026-08-03",
+  "ordinary_profile_override_permitted": false,
+  "controls": {
+    "evidence_traceability_required": true,
+    "counterevidence_required": true,
+    "missing_information_disclosure_required": true,
+    "citation_validation_required_for_authoritative_claims": true,
+    "abstention_required_when_evidence_insufficient": true,
+    "mandatory_escalation_enabled": true,
+    "human_final_decision_required": true,
+    "original_recommendation_retained": true,
+    "human_override_rationale_required": true,
+    "audit_logging_required": true,
+    "profile_and_configuration_version_logging_required": true,
+    "secrets_prohibited_in_repository": true,
+    "confidential_data_requires_explicit_approval": true,
+    "autonomous_external_actions_prohibited": true,
+    "production_readiness_claim_prohibited": true,
+    "legal_advice_prohibited": true,
+    "authoritative_contract_drafting_prohibited": true,
+    "unsupported_recommendations_prohibited": true
+  },
+  "prohibited_profile_keys": [
+    "disable_evidence_traceability",
+    "disable_citation_validation",
+    "disable_abstention",
+    "disable_escalation",
+    "disable_human_approval",
+    "disable_audit_logging",
+    "allow_external_write_actions",
+    "allow_secrets_in_repository",
+    "allow_authoritative_legal_advice",
+    "allow_automatic_final_decision"
+  ],
+  "configuration_failure_policy": "Reject the profile and record a configuration-validation reason code."
+}

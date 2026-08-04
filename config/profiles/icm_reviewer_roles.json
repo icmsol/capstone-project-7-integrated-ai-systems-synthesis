@@ -1,0 +1,114 @@
+{
+  "organization_id": "ICMSOL",
+  "artifact_version": "1.0.0",
+  "effective_date": "2026-08-03",
+  "roles": [
+    {
+      "role_id": "RR-01",
+      "role_name": "Business Development or Pursuit Lead",
+      "authorities": [
+        "accept, modify, reject, defer, or escalate opportunity recommendation",
+        "make final bid/no-bid recommendation to executive authority where applicable"
+      ],
+      "issue_types": [
+        "opportunity alignment",
+        "pursuit conditions",
+        "missing opportunity information"
+      ]
+    },
+    {
+      "role_id": "RR-02",
+      "role_name": "Executive Authority",
+      "authorities": [
+        "make final pursuit decision",
+        "approve organizational commitments within delegated authority"
+      ],
+      "issue_types": [
+        "final bid/no-bid",
+        "strategic risk",
+        "material commitment",
+        "production pilot approval"
+      ]
+    },
+    {
+      "role_id": "RR-03",
+      "role_name": "Contracts or Procurement Specialist",
+      "authorities": [
+        "interpret procurement process and contract-administration implications",
+        "recommend clarification or negotiation topics"
+      ],
+      "issue_types": [
+        "solicitation terms",
+        "procurement path",
+        "contract vehicle",
+        "compliance matrix"
+      ]
+    },
+    {
+      "role_id": "RR-04",
+      "role_name": "Legal Counsel",
+      "authorities": [
+        "provide legal interpretation and advice",
+        "approve legal position where authorized"
+      ],
+      "issue_types": [
+        "indemnification",
+        "liability",
+        "intellectual property",
+        "legal dispute",
+        "regulatory interpretation"
+      ]
+    },
+    {
+      "role_id": "RR-05",
+      "role_name": "Security or Privacy Reviewer",
+      "authorities": [
+        "assess security, privacy, and restricted-data obligations",
+        "approve or reject security or privacy approach where authorized"
+      ],
+      "issue_types": [
+        "cybersecurity",
+        "privacy",
+        "confidential data",
+        "access control",
+        "incident obligations"
+      ]
+    },
+    {
+      "role_id": "RR-06",
+      "role_name": "Staffing or Delivery Lead",
+      "authorities": [
+        "assess staffing feasibility",
+        "approve named staffing and delivery commitments where authorized"
+      ],
+      "issue_types": [
+        "required labor categories",
+        "availability",
+        "delivery schedule",
+        "skills gap"
+      ]
+    },
+    {
+      "role_id": "RR-07",
+      "role_name": "Finance or Pricing Authority",
+      "authorities": [
+        "approve rates, pricing, cost assumptions, and financial commitments"
+      ],
+      "issue_types": [
+        "pricing",
+        "cost reasonableness",
+        "cash flow",
+        "financial risk",
+        "payment terms"
+      ]
+    }
+  ],
+  "human_response_options": [
+    "accept recommendation",
+    "accept with modified conditions",
+    "reject recommendation",
+    "defer pending information",
+    "escalate"
+  ],
+  "constraint": "No AI component is an authorized final decision-maker."
+}

@@ -1,0 +1,28 @@
+{
+  "organization_id": "RCALABS",
+  "artifact_version": "1.0.0",
+  "roles": [
+    {
+      "role_id": "FRR-01",
+      "role_name": "Fictional Pursuit Lead",
+      "authorities": [
+        "review opportunity recommendation"
+      ]
+    },
+    {
+      "role_id": "FRR-02",
+      "role_name": "Fictional Executive Authority",
+      "authorities": [
+        "make final pursuit decision"
+      ]
+    },
+    {
+      "role_id": "FRR-03",
+      "role_name": "Fictional Security and Data Reviewer",
+      "authorities": [
+        "review restricted-data and security requirements"
+      ]
+    }
+  ],
+  "constraint": "No AI component is an authorized final decision-maker."
+}

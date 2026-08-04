@@ -1,0 +1,198 @@
+{
+  "manifest_version": "1.0.0",
+  "created_date": "2026-08-04",
+  "package": "Project 7 configurable repository starter",
+  "file_count": 38,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "53613a7391c90814398de4bdf79eaeea9ef1c303a8dcdec9f8312688bba6fe91",
+      "bytes": 3943
+    },
+    {
+      "path": "audit/README.md",
+      "sha256": "e1a89719e297d443e176ba3eb1bd9d09114adb12acfdd606c7c5e12b151971c3",
+      "bytes": 112
+    },
+    {
+      "path": "audit/icm_service_source_registry.json",
+      "sha256": "e88649494c56e3e888ebce106c1671d4b188aed35beb786918a399ee78126fad",
+      "bytes": 1416
+    },
+    {
+      "path": "config/README.md",
+      "sha256": "8f4c04b7e3f223b6c42ff9e61015cc4d772fb2e0d7b03b2cdfcfe7fc2b1d2e21",
+      "bytes": 851
+    },
+    {
+      "path": "config/profiles/fictional_opportunity_rules.json",
+      "sha256": "023fec028641bb580ee587404f441b558744f2aeee892b97dc3b585647d67943",
+      "bytes": 905
+    },
+    {
+      "path": "config/profiles/fictional_recommendation_thresholds.json",
+      "sha256": "077ce84e20f68e7863f25561cd2ac63ff2d1050f7406534198d675f368e4694d",
+      "bytes": 1964
+    },
+    {
+      "path": "config/profiles/fictional_reviewer_roles.json",
+      "sha256": "7821b7c17fefcc6c5ebfb8697279845f74cf2e3584cb1fe5149a46e3fc792a04",
+      "bytes": 666
+    },
+    {
+      "path": "config/profiles/fictional_service_catalog.csv",
+      "sha256": "24d3794d3982343ef7b629f077380bfc153ffd95d3af01e4465e3a1c0380ccac",
+      "bytes": 2508
+    },
+    {
+      "path": "config/profiles/fictional_small_business.json",
+      "sha256": "c259172e27abb6d8a5a289f55cd34daa68bb760c7cc5de7dc0599c065eab0cfb",
+      "bytes": 1321
+    },
+    {
+      "path": "config/profiles/fictional_staffing_map.csv",
+      "sha256": "a929d61af5698451486faa95f95bde5ce6c012526635f7dd4ac498ccf9f60606",
+      "bytes": 638
+    },
+    {
+      "path": "config/profiles/icm_opportunity_rules.json",
+      "sha256": "ac9f09973c163c11e05e3f607a920da07e3dfcfe7cadb9c279f510e9b9e7cec3",
+      "bytes": 3318
+    },
+    {
+      "path": "config/profiles/icm_recommendation_thresholds.json",
+      "sha256": "8fb637375c25c6953cb5931ef26d93d3430a86d7cf351eaace75ec2e2e35c415",
+      "bytes": 1983
+    },
+    {
+      "path": "config/profiles/icm_reviewer_roles.json",
+      "sha256": "76a924d17c9c5c3f6d0591854f644467188fcb418358b9a9308dcbc102c26b0f",
+      "bytes": 3125
+    },
+    {
+      "path": "config/profiles/icm_service_catalog.csv",
+      "sha256": "236c5781c602f4eb26ae4c51bc55b7315d2fe55815f13f536ea6f9c4a1515233",
+      "bytes": 56599
+    },
+    {
+      "path": "config/profiles/icm_solutions.json",
+      "sha256": "01c36cc8bd9509e10fc62e7442a4980a04565041158918dcb410c0d4be454076",
+      "bytes": 2087
+    },
+    {
+      "path": "config/profiles/icm_staffing_map.csv",
+      "sha256": "e55b65b47f03a7dac38d35c7e65e110bdbb823f20a7e56c86d1d8f3ab98d6519",
+      "bytes": 2288
+    },
+    {
+      "path": "config/schemas/organization_profile.schema.json",
+      "sha256": "9d052b3a6d80098186b36d6652b6b02166130ac5469441a5777698990a8b8cfd",
+      "bytes": 3203
+    },
+    {
+      "path": "config/system/fixed_safeguards.json",
+      "sha256": "20643de05287eb123fc7eb92331e4531e3f78303251aac5326503feb0c4e89d6",
+      "bytes": 1547
+    },
+    {
+      "path": "config/templates/opportunity_rules.template.json",
+      "sha256": "7f721964404c8970c4cee5977e762d16ec39bde2a99214c456f640d27e9d7e13",
+      "bytes": 482
+    },
+    {
+      "path": "config/templates/organization_profile.template.json",
+      "sha256": "3661a175474d0edd4619b70252505e06258084c69f07ad737bccad118e523d1b",
+      "bytes": 1019
+    },
+    {
+      "path": "config/templates/recommendation_thresholds.template.json",
+      "sha256": "f35d1613101eba52bcf9ac5c01ee4381a9a238ed1615a62dd532ed2fe2f3e80f",
+      "bytes": 1042
+    },
+    {
+      "path": "config/templates/reviewer_roles.template.json",
+      "sha256": "e113f51ddd271e484a43bd85557c944cc6c73b49fb2cd0a14c4b1d191d97bca3",
+      "bytes": 537
+    },
+    {
+      "path": "config/templates/service_catalog.template.csv",
+      "sha256": "0d99f9826d9bdfab63d13ec349edab6b75bdd0baa7277a8714e6ca3ae1f91bf0",
+      "bytes": 801
+    },
+    {
+      "path": "config/templates/staffing_map.template.csv",
+      "sha256": "98d69c1928c71eaae50be11c387081a8ac91a01feb471f9de7f82599b4300f17",
+      "bytes": 264
+    },
+    {
+      "path": "data/README.md",
+      "sha256": "015fc4e02b1adf4213a843113129819ac7114dc51bb2b578ac692e1bfe035ca4",
+      "bytes": 160
+    },
+    {
+      "path": "data/frozen_scenarios/README.md",
+      "sha256": "af242e133d69a0902a3bd9f03721366d375d390238140f735ebd79610417386c",
+      "bytes": 134
+    },
+    {
+      "path": "data/processed/README.md",
+      "sha256": "c5ae9f00f0afe88ff73262cdefb067ce6611f121c38b0d4f65424ce94b326dda",
+      "bytes": 116
+    },
+    {
+      "path": "data/raw/README.md",
+      "sha256": "24c9544c8bad13294834647515b88c1c615a7ad66aecfbd5ff2950b55a686ccb",
+      "bytes": 114
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "2ca77853f38151aefdf2e4861dbfa919102c3fd9028e1aad7bb1e8059b4095bc",
+      "bytes": 131
+    },
+    {
+      "path": "figures/README.md",
+      "sha256": "38fd8ca609b00b7180b2ef45d48c4520d6976ddcdd3d83a3584649fea5480ce0",
+      "bytes": 124
+    },
+    {
+      "path": "notebooks/README.md",
+      "sha256": "d77a8bee025b238222a2fba57d12ed75df6c664db38233144f56922b5f99558b",
+      "bytes": 114
+    },
+    {
+      "path": "outputs/README.md",
+      "sha256": "07644ba3bab57ec1d02aa0f7b2efd639124f791b62cc3065fb809872e945cfeb",
+      "bytes": 97
+    },
+    {
+      "path": "outputs/case_packets/README.md",
+      "sha256": "72e49203204fba2a7ac8e5e6ab05a9ee5bf834ebe85c18e72224c71862e95d02",
+      "bytes": 88
+    },
+    {
+      "path": "outputs/evaluation/README.md",
+      "sha256": "c97636bb0117f5e39ff4e494bb81986ad006187037b2bb33a69313f231b576cb",
+      "bytes": 107
+    },
+    {
+      "path": "presentation/README.md",
+      "sha256": "fb6ba62e26c02a86ddb64e623b1c9defdc18672aa81315569d49b228634fddc0",
+      "bytes": 109
+    },
+    {
+      "path": "reports/README.md",
+      "sha256": "41ef0fd0a75f4424c116263e680ad645126f6b8de9bab9b77410649a90077823",
+      "bytes": 99
+    },
+    {
+      "path": "src/README.md",
+      "sha256": "afda0c6905f51e5c84b7dd7eb776eac4552f9a02221563924460d9fbf82506ec",
+      "bytes": 153
+    },
+    {
+      "path": "tests/README.md",
+      "sha256": "57154c6788a8f2ccdd08744bf5e91d39a8643b2f7a64da74ff86eb16a51eb562",
+      "bytes": 120
+    }
+  ]
+}

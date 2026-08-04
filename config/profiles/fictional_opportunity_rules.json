@@ -1,0 +1,34 @@
+{
+  "organization_id": "RCALABS",
+  "artifact_version": "1.0.0",
+  "effective_date": "2026-08-03",
+  "status": "fictional_portability_test",
+  "preferred_buyers": [
+    "California, Oregon, or Washington public-sector entities"
+  ],
+  "preferred_geographies": [
+    "California",
+    "Oregon",
+    "Washington",
+    "Remote where permitted"
+  ],
+  "preferred_engagement_types": [
+    "data analytics",
+    "cloud data platform implementation",
+    "dashboard and reporting development"
+  ],
+  "mandatory_review_triggers": [
+    "restricted data",
+    "security requirement",
+    "pricing approval",
+    "named-person commitment",
+    "external submission"
+  ],
+  "default_exclusion_conditions": [
+    "general project management without data scope",
+    "software testing only",
+    "organizational change management only",
+    "construction services"
+  ],
+  "notes": "Fictional portability-test rules."
+}

@@ -1,0 +1,71 @@
+{
+  "organization_id": "RCALABS",
+  "artifact_version": "1.0.0",
+  "effective_date": "2026-08-03",
+  "status": "fictional_portability_test",
+  "score_scale": {
+    "minimum": 0.0,
+    "maximum": 1.0
+  },
+  "minimum_evidence_completeness": 0.6,
+  "stale_data_days": 180,
+  "outcomes": [
+    {
+      "code": "R-01",
+      "label": "Recommend Pursue",
+      "minimum_score": 0.8,
+      "maximum_score": 1.0,
+      "requires_no_blocking_trigger": true
+    },
+    {
+      "code": "R-02",
+      "label": "Recommend Pursue with Conditions",
+      "minimum_score": 0.65,
+      "maximum_score": 0.7999,
+      "requires_named_conditions": true
+    },
+    {
+      "code": "R-03",
+      "label": "Recommend Hold \u2014 Gather Information",
+      "minimum_score": 0.45,
+      "maximum_score": 0.6499,
+      "requires_resolvable_information_gap": true
+    },
+    {
+      "code": "R-04",
+      "label": "Recommend Do Not Pursue",
+      "minimum_score": 0.0,
+      "maximum_score": 0.4499,
+      "requires_sufficient_negative_evidence": true
+    }
+  ],
+  "override_outcomes": [
+    {
+      "code": "R-05",
+      "label": "Escalate \u2014 Specialized Review Required",
+      "trigger": "one or more mandatory review triggers are present"
+    },
+    {
+      "code": "R-06",
+      "label": "No Recommendation",
+      "trigger": "evidence is insufficient, contradictory, stale, or outside system authority"
+    }
+  ],
+  "required_recommendation_fields": [
+    "recommendation_code",
+    "recommendation_label",
+    "nonbinding_disclosure",
+    "recommendation_strength",
+    "supporting_evidence",
+    "counterevidence",
+    "missing_information",
+    "conditions",
+    "limitations",
+    "required_human_reviewer",
+    "recommended_next_action",
+    "data_freshness",
+    "reason_codes",
+    "audit_reference"
+  ],
+  "notes": "Fictional profile uses a slightly higher evidence-completeness threshold to demonstrate configuration-driven behavior. Fixed safeguards remain unchanged."
+}

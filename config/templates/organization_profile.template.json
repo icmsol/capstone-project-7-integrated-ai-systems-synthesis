@@ -1,0 +1,28 @@
+{
+  "$schema": "../schemas/organization_profile.schema.json",
+  "organization_id": "REPLACE_ME",
+  "organization_name": "Replace with legal organization name",
+  "display_name": "Replace with display name",
+  "profile_version": "1.0.0",
+  "effective_date": "YYYY-MM-DD",
+  "fictional": false,
+  "description": "Describe the organization and its public-sector consulting focus.",
+  "website": "https://example.org",
+  "target_sectors": [
+    "Replace"
+  ],
+  "target_geographies": [
+    "Replace"
+  ],
+  "business_designations": [],
+  "service_catalog_file": "service_catalog.csv",
+  "opportunity_rules_file": "opportunity_rules.json",
+  "staffing_map_file": "staffing_map.csv",
+  "reviewer_roles_file": "reviewer_roles.json",
+  "recommendation_thresholds_file": "recommendation_thresholds.json",
+  "fixed_safeguards_file": "../system/fixed_safeguards.json",
+  "source_urls": [],
+  "profile_owner_role": "Replace with authorized profile owner",
+  "review_cycle_days": 90,
+  "notes": "Complete and validate before use."
+}

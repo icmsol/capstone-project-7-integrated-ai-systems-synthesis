@@ -1,0 +1,4 @@
+﻿organization_id,artifact_version,service_family_id,service_family,staffing_family,related_roles,delivery_coverage,active,notes
+RCALABS,1.0.0,FSF01,Data Analytics,Analytics,Data Analyst;Analytics Consultant;Business Intelligence Analyst,Analysis;Visualization;Reporting,TRUE,Fictional
+RCALABS,1.0.0,FSF02,Cloud Data Platforms,Cloud Data Engineering,Cloud Data Architect;Data Engineer;Platform Engineer,Architecture;Pipeline Development;Migration,TRUE,Fictional
+RCALABS,1.0.0,FSF03,Dashboards and Reporting,Business Intelligence,BI Developer;Data Analyst;Business Analyst,Requirements;Dashboard Development;Validation,TRUE,Fictional

@@ -1,0 +1,2 @@
+﻿organization_id,artifact_version,service_family_id,service_family,staffing_family,related_roles,delivery_coverage,active,notes
+REPLACE_ME,1.0.0,SF01,Replace service family,Replace staffing family,Role One;Role Two,Replace delivery coverage,TRUE,Template row.

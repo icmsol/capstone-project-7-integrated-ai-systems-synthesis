@@ -1,0 +1,53 @@
+{
+  "$schema": "../schemas/organization_profile.schema.json",
+  "organization_id": "ICMSOL",
+  "organization_name": "Integrated Consulting and Management Solutions, LLC",
+  "display_name": "ICM Solutions",
+  "profile_version": "1.0.0",
+  "effective_date": "2026-08-03",
+  "fictional": false,
+  "description": "Technology consulting and professional-services small business serving private companies and state and local government agencies.",
+  "website": "https://icmsol.com",
+  "target_sectors": [
+    "State government",
+    "Local government",
+    "Public sector",
+    "Private sector",
+    "Healthcare and insurance",
+    "Defense",
+    "Technology consulting partners"
+  ],
+  "target_geographies": [
+    "California",
+    "United States",
+    "Remote where permitted"
+  ],
+  "business_designations": [
+    {
+      "designation": "California Small Business",
+      "status": "active_reference_profile",
+      "verification_required_before_external_use": true
+    }
+  ],
+  "service_catalog_file": "icm_service_catalog.csv",
+  "opportunity_rules_file": "icm_opportunity_rules.json",
+  "staffing_map_file": "icm_staffing_map.csv",
+  "reviewer_roles_file": "icm_reviewer_roles.json",
+  "recommendation_thresholds_file": "icm_recommendation_thresholds.json",
+  "fixed_safeguards_file": "../system/fixed_safeguards.json",
+  "source_urls": [
+    "https://icmsol.com/services",
+    "https://icmsol.com/industries",
+    "https://icmsol.com/it-strategy-consulting",
+    "https://icmsol.com/custom-development",
+    "https://icmsol.com/project-management",
+    "https://icmsol.com/software-testing",
+    "https://icmsol.com/agile-development",
+    "https://icmsol.com/organizational-change-management",
+    "https://icmsol.com/contract-staffing",
+    "https://icmsol.com/procurement"
+  ],
+  "profile_owner_role": "ICM executive or delegated business-development authority",
+  "review_cycle_days": 90,
+  "notes": "This reference profile supports a capstone prototype. Certifications, contract vehicles, availability, rates, and current capacity require human verification before external use."
+}

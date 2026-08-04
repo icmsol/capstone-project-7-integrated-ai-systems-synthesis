@@ -1,0 +1,33 @@
+{
+  "$schema": "../schemas/organization_profile.schema.json",
+  "organization_id": "RCALABS",
+  "organization_name": "Redwood Civic Analytics LLC",
+  "display_name": "Redwood Civic Analytics",
+  "profile_version": "1.0.0",
+  "effective_date": "2026-08-03",
+  "fictional": true,
+  "description": "Fictional small business used only to test configuration portability. It focuses on public-sector data analytics, cloud data platforms, and dashboard implementation.",
+  "website": "https://example.org/redwood-civic-analytics",
+  "target_sectors": [
+    "State government",
+    "Local government",
+    "Public sector"
+  ],
+  "target_geographies": [
+    "California",
+    "Oregon",
+    "Washington",
+    "Remote where permitted"
+  ],
+  "business_designations": [],
+  "service_catalog_file": "fictional_service_catalog.csv",
+  "opportunity_rules_file": "fictional_opportunity_rules.json",
+  "staffing_map_file": "fictional_staffing_map.csv",
+  "reviewer_roles_file": "fictional_reviewer_roles.json",
+  "recommendation_thresholds_file": "fictional_recommendation_thresholds.json",
+  "fixed_safeguards_file": "../system/fixed_safeguards.json",
+  "source_urls": [],
+  "profile_owner_role": "Fictional executive reviewer",
+  "review_cycle_days": 90,
+  "notes": "Fictional profile. It must never be represented as a real company."
+}

@@ -1,0 +1,24 @@
+{
+  "organization_id": "REPLACE_ME",
+  "artifact_version": "1.0.0",
+  "roles": [
+    {
+      "role_id": "RR-01",
+      "role_name": "Replace with authorized reviewer role",
+      "authorities": [
+        "Replace"
+      ],
+      "issue_types": [
+        "Replace"
+      ]
+    }
+  ],
+  "human_response_options": [
+    "accept recommendation",
+    "accept with modified conditions",
+    "reject recommendation",
+    "defer pending information",
+    "escalate"
+  ],
+  "constraint": "No AI component is an authorized final decision-maker."
+}
