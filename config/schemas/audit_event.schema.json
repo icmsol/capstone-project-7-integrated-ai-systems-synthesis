@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/audit_event.schema.json",
+  "title": "Append-Only Audit Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "audit_schema_version",
+    "event_id",
+    "case_id",
+    "event_type",
+    "event_time",
+    "actor_type",
+    "actor_id",
+    "component",
+    "action",
+    "status",
+    "reason_codes",
+    "input_artifact_ids",
+    "output_artifact_ids",
+    "configuration_versions",
+    "event_hash",
+    "previous_event_hash"
+  ],
+  "properties": {
+    "audit_schema_version": {
+      "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+    },
+    "event_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "case_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "case_created",
+        "configuration_loaded",
+        "source_ingested",
+        "alignment_completed",
+        "historical_context_attached",
+        "clause_triage_completed",
+        "evidence_retrieved",
+        "evidence_validated",
+        "recommendation_created",
+        "recommendation_abstained",
+        "case_escalated",
+        "human_disposition_recorded",
+        "processing_failed"
+      ]
+    },
+    "event_time": {
+      "$ref": "common_definitions.schema.json#/$defs/utc_datetime"
+    },
+    "actor_type": {
+      "type": "string",
+      "enum": [
+        "system",
+        "human",
+        "tool"
+      ]
+    },
+    "actor_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "component": {
+      "type": "string",
+      "minLength": 1
+    },
+    "action": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "started",
+        "succeeded",
+        "warned",
+        "failed",
+        "blocked"
+      ]
+    },
+    "reason_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common_definitions.schema.json#/$defs/reason_code"
+      }
+    },
+    "input_artifact_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common_definitions.schema.json#/$defs/identifier"
+      }
+    },
+    "output_artifact_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common_definitions.schema.json#/$defs/identifier"
+      }
+    },
+    "configuration_versions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "sanitized_details": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "event_hash": {
+      "$ref": "common_definitions.schema.json#/$defs/sha256"
+    },
+    "previous_event_hash": {
+      "oneOf": [
+        {
+          "$ref": "common_definitions.schema.json#/$defs/sha256"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/evidence_item.schema.json",
+  "title": "Validated Evidence Item",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidence_schema_version",
+    "evidence_id",
+    "case_id",
+    "claim_id",
+    "source",
+    "citation",
+    "quoted_or_paraphrased_text",
+    "retrieval_method",
+    "metadata_valid",
+    "citation_valid",
+    "relevance_score",
+    "supports_claim",
+    "conflicts_with_claim",
+    "freshness_status",
+    "validation_reason_codes"
+  ],
+  "properties": {
+    "evidence_schema_version": {
+      "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+    },
+    "evidence_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "case_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "claim_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "source": {
+      "$ref": "common_definitions.schema.json#/$defs/source_reference"
+    },
+    "citation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "citation_text",
+        "source_locator"
+      ],
+      "properties": {
+        "citation_text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "clause_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "section_heading": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "quoted_or_paraphrased_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "retrieval_method": {
+      "type": "string",
+      "enum": [
+        "exact_lookup",
+        "keyword_search",
+        "semantic_search",
+        "structured_filter",
+        "human_supplied"
+      ]
+    },
+    "metadata_valid": {
+      "type": "boolean"
+    },
+    "citation_valid": {
+      "type": "boolean"
+    },
+    "relevance_score": {
+      "$ref": "common_definitions.schema.json#/$defs/bounded_confidence"
+    },
+    "supports_claim": {
+      "type": "boolean"
+    },
+    "conflicts_with_claim": {
+      "type": "boolean"
+    },
+    "freshness_status": {
+      "type": "string",
+      "enum": [
+        "current",
+        "acceptable",
+        "stale",
+        "unknown"
+      ]
+    },
+    "validation_reason_codes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common_definitions.schema.json#/$defs/reason_code"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "$ref": "common_definitions.schema.json#/$defs/limitation"
+      }
+    }
+  }
+}

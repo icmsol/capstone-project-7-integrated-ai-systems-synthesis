@@ -1,0 +1,274 @@
+{
+  "case_schema_version": "1.0.0",
+  "case_id": "CASE-2026-0001",
+  "case_status": "awaiting_human_review",
+  "created_at": "2026-08-04T20:00:00Z",
+  "updated_at": "2026-08-04T20:15:00Z",
+  "organization_context": {
+    "organization_id": "ICMSOL",
+    "organization_name": "Integrated Consulting and Management Solutions, LLC",
+    "profile_version": "1.0.0",
+    "service_catalog_version": "1.0.0",
+    "rules_version": "1.0.0",
+    "reviewer_roles_version": "1.0.0",
+    "thresholds_version": "1.0.0",
+    "fixed_safeguards_version": "1.0.0"
+  },
+  "opportunity": {
+    "record_schema_version": "1.0.0",
+    "opportunity_id": "OPP-2026-001",
+    "case_id": "CASE-2026-0001",
+    "source": {
+      "source_id": "SRC-CAL-001",
+      "source_type": "frozen_snapshot",
+      "source_location": "data/frozen_scenarios/opportunity_001.json",
+      "retrieved_at": "2026-08-04T19:55:00Z",
+      "snapshot_date": "2026-08-04",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "approved_for_use": true,
+      "approval_basis": "Public procurement opportunity snapshot",
+      "notes": null
+    },
+    "source_portal": "Example Public Portal",
+    "jurisdiction": "California",
+    "agency": "Example State Agency",
+    "solicitation_id": "RFP-2026-001",
+    "title": "Independent Verification and Validation Services",
+    "normalized_title": "independent verification and validation services",
+    "description": "Provide IV&V and project assurance services.",
+    "status": "open",
+    "posted_at": "2026-08-01T15:00:00Z",
+    "due_at": "2026-09-01T23:59:00Z",
+    "fiscal_year": "2026-27",
+    "fiscal_quarter": "Q1",
+    "place_of_performance": "California",
+    "procurement_method": "Open competitive solicitation",
+    "contract_vehicle": null,
+    "estimated_value": null,
+    "ingested_at": "2026-08-04T20:00:00Z",
+    "normalization_version": "1.0.0",
+    "record_key": "0123456789abcdefabcd",
+    "original_values": {
+      "title": "Independent Verification and Validation Services",
+      "status": "Open"
+    },
+    "missing_fields": [],
+    "data_freshness_days": 0,
+    "limitations": []
+  },
+  "service_alignment": {
+    "alignment_schema_version": "1.0.0",
+    "case_id": "CASE-2026-0001",
+    "organization_id": "ICMSOL",
+    "profile_version": "1.0.0",
+    "service_catalog_version": "1.0.0",
+    "matched_capabilities": [
+      {
+        "capability_id": "ICM-PM-007",
+        "capability_name": "Independent Verification and Validation",
+        "service_family_id": "SF03",
+        "matched_terms": [
+          "independent verification and validation",
+          "iv&v"
+        ],
+        "match_strength": "strong",
+        "evidence_text": "Opportunity title explicitly requests IV&V services."
+      }
+    ],
+    "excluded_matches": [],
+    "alignment_score": 0.92,
+    "alignment_label": "strong_alignment",
+    "staffing_families": [
+      "Program Delivery and Oversight"
+    ],
+    "reason_codes": [
+      "ALIGNMENT_STRONG"
+    ],
+    "limitations": [
+      {
+        "code": "TITLE_SCOPE_LIMIT",
+        "description": "Title alignment does not establish complete scope fit or eligibility.",
+        "material": true,
+        "mitigation": "Review the full solicitation and mandatory qualifications."
+      }
+    ]
+  },
+  "historical_context": {
+    "context_schema_version": "1.0.0",
+    "case_id": "CASE-2026-0001",
+    "source_period": {
+      "start_date": "2021-07-01",
+      "end_date": "2026-06-30"
+    },
+    "source_records": 29646,
+    "matched_historical_records": 176,
+    "service_category_counts": {
+      "Independent Verification and Validation": 14
+    },
+    "staffing_family_counts": {
+      "Program Delivery and Oversight": 88
+    },
+    "source_asset_checksums": {
+      "analysis_summary.json": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "interpretation": "Historical records demonstrate recurring demand for related services, but do not predict this opportunity's award likelihood.",
+    "limitations": [
+      {
+        "code": "DESCRIPTIVE_ONLY",
+        "description": "Historical context is descriptive and not predictive.",
+        "material": true,
+        "mitigation": "Use current solicitation evidence and human judgment."
+      }
+    ]
+  },
+  "clause_predictions": [
+    {
+      "prediction_schema_version": "1.0.0",
+      "case_id": "CASE-2026-0001",
+      "passage_id": "PASSAGE-001",
+      "passage_text_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "model_artifact_id": "PROJECT4-CLAUSE-CLASSIFIER-INFERENCE",
+      "model_version": "1.0.0",
+      "model_sha256": "50a280950d31466d7002578295c64e957d144611f5b9731bb059be50e68c6c92",
+      "predicted_label_id": 0,
+      "predicted_category": "Audit Rights",
+      "confidence": 0.93,
+      "decision": "classify",
+      "review_priority": "high",
+      "required_reviewer_role": "Contracts or Legal Reviewer",
+      "domain_warning": true,
+      "truncated": false,
+      "token_count": 36,
+      "reason_codes": [
+        "CLAUSE_THEME_CLASSIFIED",
+        "DOMAIN_SHIFT_WARNING"
+      ],
+      "limitations": [
+        {
+          "code": "CUAD_DOMAIN_SHIFT",
+          "description": "The classifier was trained on commercial contract clauses.",
+          "material": true,
+          "mitigation": "Use the prediction only for review routing and require human interpretation."
+        }
+      ]
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_schema_version": "1.0.0",
+      "evidence_id": "EVID-001",
+      "case_id": "CASE-2026-0001",
+      "claim_id": "CLAIM-001",
+      "source": {
+        "source_id": "FAR-2026-01",
+        "source_type": "frozen_snapshot",
+        "source_location": "data/processed/far_records.jsonl",
+        "retrieved_at": "2026-08-04T20:05:00Z",
+        "snapshot_date": "2026-08-04",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "approved_for_use": true,
+        "approval_basis": "Versioned official FAR source candidate",
+        "notes": "Requires deterministic corpus validation before final authoritative use."
+      },
+      "citation": {
+        "citation_text": "FAR 52.215-2",
+        "source_locator": "52.215-2 Audit and Records—Negotiation",
+        "clause_number": "52.215-2",
+        "section_heading": "Audit and Records—Negotiation"
+      },
+      "quoted_or_paraphrased_text": "The clause establishes specified audit and record-access requirements.",
+      "retrieval_method": "exact_lookup",
+      "metadata_valid": true,
+      "citation_valid": true,
+      "relevance_score": 0.96,
+      "supports_claim": true,
+      "conflicts_with_claim": false,
+      "freshness_status": "acceptable",
+      "validation_reason_codes": [
+        "CITATION_VALID",
+        "METADATA_VALID"
+      ],
+      "limitations": [
+        {
+          "code": "SOURCE_CANDIDATE_REFRESH",
+          "description": "The source candidate differs from the prior raw-byte checksum.",
+          "material": true,
+          "mitigation": "Complete deterministic normalization and representative clause comparison."
+        }
+      ]
+    }
+  ],
+  "evidence_assessments": [
+    {
+      "assessment_schema_version": "1.0.0",
+      "case_id": "CASE-2026-0001",
+      "claim_id": "CLAIM-001",
+      "evidence_ids": [
+        "EVID-001"
+      ],
+      "sufficiency_status": "uncertain",
+      "conflict_status": "none",
+      "evidence_score": 0.72,
+      "missing_information": [
+        "Complete solicitation-specific audit-rights language",
+        "Authorized contracts or legal interpretation"
+      ],
+      "reason_codes": [
+        "EVIDENCE_PARTIAL",
+        "SPECIALIST_REVIEW_REQUIRED"
+      ],
+      "required_action": "escalate"
+    }
+  ],
+  "recommendation": {
+    "recommendation_schema_version": "1.0.0",
+    "recommendation_id": "REC-001",
+    "case_id": "CASE-2026-0001",
+    "organization_id": "ICMSOL",
+    "profile_version": "1.0.0",
+    "recommendation_code": "R-02",
+    "recommendation_label": "Recommend Pursue with Conditions",
+    "nonbinding_disclosure": "This is an advisory system recommendation and is not an authorized final bid/no-bid decision.",
+    "recommendation_strength": 0.78,
+    "supporting_evidence_ids": [
+      "EVID-001"
+    ],
+    "counterevidence_ids": [],
+    "missing_information": [
+      "Complete mandatory qualification review",
+      "Pricing and staffing feasibility"
+    ],
+    "conditions": [
+      "Contracts or legal review of audit-rights language",
+      "Executive confirmation of staffing and pricing feasibility"
+    ],
+    "limitations": [
+      {
+        "code": "NONBINDING_RECOMMENDATION",
+        "description": "The recommendation cannot authorize a pursuit or commitment.",
+        "material": true,
+        "mitigation": "Require authorized human disposition and rationale."
+      }
+    ],
+    "required_human_reviewer": {
+      "role_id": "RR-01",
+      "role_name": "Business Development or Pursuit Lead",
+      "organization_id": "ICMSOL"
+    },
+    "recommended_next_action": "Complete mandatory qualification, staffing, pricing, and contracts review before the final pursuit decision.",
+    "data_freshness_status": "acceptable",
+    "reason_codes": [
+      "RECOMMEND_CONDITIONAL",
+      "HUMAN_DECISION_REQUIRED"
+    ],
+    "audit_reference": "AUDIT-EVENT-009",
+    "created_at": "2026-08-04T20:14:00Z"
+  },
+  "human_disposition": null,
+  "audit_event_ids": [
+    "AUDIT-EVENT-001",
+    "AUDIT-EVENT-009"
+  ],
+  "processing_errors": [],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

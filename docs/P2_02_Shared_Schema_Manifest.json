@@ -1,0 +1,87 @@
+{
+  "artifact_id": "PROJECT7-P2-02-SHARED-SCHEMAS",
+  "artifact_version": "1.0.0",
+  "created_at_utc": "2026-08-04T22:49:04.701779+00:00",
+  "schema_draft": "https://json-schema.org/draft/2020-12/schema",
+  "schema_count": 11,
+  "valid_examples": [
+    "tests/schema_examples/valid_integrated_case.json",
+    "tests/schema_examples/valid_audit_event.json"
+  ],
+  "invalid_examples": [
+    "tests/schema_examples/invalid_integrated_case.json"
+  ],
+  "validation_result": {
+    "all_schemas_well_formed": true,
+    "valid_integrated_case_passed": true,
+    "valid_audit_event_passed": true,
+    "invalid_integrated_case_rejected": true,
+    "invalid_error_count": 1
+  },
+  "files": [
+    {
+      "path": "config/schemas/audit_event.schema.json",
+      "bytes": 3011
+    },
+    {
+      "path": "config/schemas/clause_prediction.schema.json",
+      "bytes": 3131
+    },
+    {
+      "path": "config/schemas/common_definitions.schema.json",
+      "bytes": 3494
+    },
+    {
+      "path": "config/schemas/evidence_assessment.schema.json",
+      "bytes": 1902
+    },
+    {
+      "path": "config/schemas/evidence_item.schema.json",
+      "bytes": 2828
+    },
+    {
+      "path": "config/schemas/historical_context.schema.json",
+      "bytes": 1976
+    },
+    {
+      "path": "config/schemas/human_disposition.schema.json",
+      "bytes": 2197
+    },
+    {
+      "path": "config/schemas/integrated_case_state.schema.json",
+      "bytes": 5613
+    },
+    {
+      "path": "config/schemas/opportunity_record.schema.json",
+      "bytes": 3748
+    },
+    {
+      "path": "config/schemas/recommendation.schema.json",
+      "bytes": 4125
+    },
+    {
+      "path": "config/schemas/service_alignment.schema.json",
+      "bytes": 3545
+    },
+    {
+      "path": "docs/Shared_Data_Contracts.md",
+      "bytes": 4900
+    },
+    {
+      "path": "tests/schema_examples/invalid_integrated_case.json",
+      "bytes": 9594
+    },
+    {
+      "path": "tests/schema_examples/valid_audit_event.json",
+      "bytes": 916
+    },
+    {
+      "path": "tests/schema_examples/valid_integrated_case.json",
+      "bytes": 9675
+    },
+    {
+      "path": "tests/validate_shared_schemas.py",
+      "bytes": 2211
+    }
+  ]
+}

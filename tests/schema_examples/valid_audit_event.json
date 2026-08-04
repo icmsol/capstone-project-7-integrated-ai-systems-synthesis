@@ -1,0 +1,34 @@
+{
+  "audit_schema_version": "1.0.0",
+  "event_id": "AUDIT-EVENT-009",
+  "case_id": "CASE-2026-0001",
+  "event_type": "recommendation_created",
+  "event_time": "2026-08-04T20:14:00Z",
+  "actor_type": "system",
+  "actor_id": "recommendation_engine",
+  "component": "assessment_and_recommendation",
+  "action": "create_nonbinding_recommendation",
+  "status": "succeeded",
+  "reason_codes": [
+    "RECOMMEND_CONDITIONAL",
+    "HUMAN_DECISION_REQUIRED"
+  ],
+  "input_artifact_ids": [
+    "EVID-001",
+    "OPP-2026-001"
+  ],
+  "output_artifact_ids": [
+    "REC-001"
+  ],
+  "configuration_versions": {
+    "organization_profile": "1.0.0",
+    "fixed_safeguards": "1.0.0",
+    "project4_model": "1.0.0"
+  },
+  "sanitized_details": {
+    "recommendation_code": "R-02",
+    "recommendation_strength": 0.78
+  },
+  "event_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "previous_event_hash": null
+}

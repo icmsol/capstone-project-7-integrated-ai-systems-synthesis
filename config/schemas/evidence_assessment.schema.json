@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/evidence_assessment.schema.json",
+  "title": "Evidence Sufficiency and Conflict Assessment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "assessment_schema_version",
+    "case_id",
+    "claim_id",
+    "evidence_ids",
+    "sufficiency_status",
+    "conflict_status",
+    "evidence_score",
+    "missing_information",
+    "reason_codes",
+    "required_action"
+  ],
+  "properties": {
+    "assessment_schema_version": {
+      "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+    },
+    "case_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "claim_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "evidence_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common_definitions.schema.json#/$defs/identifier"
+      }
+    },
+    "sufficiency_status": {
+      "type": "string",
+      "enum": [
+        "sufficient",
+        "insufficient",
+        "uncertain"
+      ]
+    },
+    "conflict_status": {
+      "type": "string",
+      "enum": [
+        "none",
+        "material_conflict",
+        "unresolved"
+      ]
+    },
+    "evidence_score": {
+      "$ref": "common_definitions.schema.json#/$defs/bounded_confidence"
+    },
+    "missing_information": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "reason_codes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common_definitions.schema.json#/$defs/reason_code"
+      }
+    },
+    "required_action": {
+      "type": "string",
+      "enum": [
+        "continue",
+        "retrieve_more_evidence",
+        "hold",
+        "abstain",
+        "escalate"
+      ]
+    }
+  }
+}

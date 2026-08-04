@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/human_disposition.schema.json",
+  "title": "Authorized Human Disposition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "disposition_schema_version",
+    "disposition_id",
+    "case_id",
+    "recommendation_id",
+    "reviewer",
+    "disposition",
+    "rationale",
+    "modified_conditions",
+    "decided_at"
+  ],
+  "properties": {
+    "disposition_schema_version": {
+      "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+    },
+    "disposition_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "case_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "recommendation_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "reviewer": {
+      "$ref": "common_definitions.schema.json#/$defs/human_role"
+    },
+    "disposition": {
+      "type": "string",
+      "enum": [
+        "accept",
+        "accept_with_modified_conditions",
+        "reject",
+        "defer_pending_information",
+        "escalate"
+      ]
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 20
+    },
+    "modified_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "escalated_to": {
+      "oneOf": [
+        {
+          "$ref": "common_definitions.schema.json#/$defs/human_role"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "decided_at": {
+      "$ref": "common_definitions.schema.json#/$defs/utc_datetime"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "disposition": {
+            "const": "accept_with_modified_conditions"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "modified_conditions": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "disposition": {
+            "const": "escalate"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "escalated_to"
+        ]
+      }
+    }
+  ]
+}

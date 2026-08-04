@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/recommendation.schema.json",
+  "title": "Nonbinding Recommendation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "recommendation_schema_version",
+    "recommendation_id",
+    "case_id",
+    "organization_id",
+    "profile_version",
+    "recommendation_code",
+    "recommendation_label",
+    "nonbinding_disclosure",
+    "recommendation_strength",
+    "supporting_evidence_ids",
+    "counterevidence_ids",
+    "missing_information",
+    "conditions",
+    "limitations",
+    "required_human_reviewer",
+    "recommended_next_action",
+    "data_freshness_status",
+    "reason_codes",
+    "audit_reference",
+    "created_at"
+  ],
+  "properties": {
+    "recommendation_schema_version": {
+      "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+    },
+    "recommendation_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "case_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "organization_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "profile_version": {
+      "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+    },
+    "recommendation_code": {
+      "type": "string",
+      "enum": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-04",
+        "R-05",
+        "R-06"
+      ]
+    },
+    "recommendation_label": {
+      "type": "string",
+      "enum": [
+        "Recommend Pursue",
+        "Recommend Pursue with Conditions",
+        "Recommend Hold — Gather Information",
+        "Recommend Do Not Pursue",
+        "Escalate — Specialized Review Required",
+        "No Recommendation"
+      ]
+    },
+    "nonbinding_disclosure": {
+      "type": "string",
+      "minLength": 20
+    },
+    "recommendation_strength": {
+      "$ref": "common_definitions.schema.json#/$defs/bounded_confidence"
+    },
+    "supporting_evidence_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common_definitions.schema.json#/$defs/identifier"
+      }
+    },
+    "counterevidence_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common_definitions.schema.json#/$defs/identifier"
+      }
+    },
+    "missing_information": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common_definitions.schema.json#/$defs/limitation"
+      }
+    },
+    "required_human_reviewer": {
+      "$ref": "common_definitions.schema.json#/$defs/human_role"
+    },
+    "recommended_next_action": {
+      "type": "string",
+      "minLength": 1
+    },
+    "data_freshness_status": {
+      "type": "string",
+      "enum": [
+        "current",
+        "acceptable",
+        "stale",
+        "unknown"
+      ]
+    },
+    "reason_codes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common_definitions.schema.json#/$defs/reason_code"
+      }
+    },
+    "audit_reference": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "created_at": {
+      "$ref": "common_definitions.schema.json#/$defs/utc_datetime"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "recommendation_code": {
+            "const": "R-02"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "conditions": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "recommendation_code": {
+            "enum": [
+              "R-05",
+              "R-06"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "supporting_evidence_ids": {
+            "type": "array"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/clause_prediction.schema.json",
+  "title": "Bounded Clause-Theme Prediction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "prediction_schema_version",
+    "case_id",
+    "passage_id",
+    "model_artifact_id",
+    "model_version",
+    "model_sha256",
+    "predicted_label_id",
+    "predicted_category",
+    "confidence",
+    "decision",
+    "review_priority",
+    "required_reviewer_role",
+    "domain_warning",
+    "reason_codes",
+    "limitations"
+  ],
+  "properties": {
+    "prediction_schema_version": {
+      "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+    },
+    "case_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "passage_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "passage_text_hash": {
+      "$ref": "common_definitions.schema.json#/$defs/sha256"
+    },
+    "model_artifact_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "model_version": {
+      "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+    },
+    "model_sha256": {
+      "$ref": "common_definitions.schema.json#/$defs/sha256"
+    },
+    "predicted_label_id": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "predicted_category": {
+      "type": "string",
+      "minLength": 1
+    },
+    "confidence": {
+      "$ref": "common_definitions.schema.json#/$defs/bounded_confidence"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "classify",
+        "abstain",
+        "escalate"
+      ]
+    },
+    "review_priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "required_reviewer_role": {
+      "type": "string",
+      "minLength": 1
+    },
+    "domain_warning": {
+      "type": "boolean"
+    },
+    "truncated": {
+      "type": "boolean"
+    },
+    "token_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "reason_codes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common_definitions.schema.json#/$defs/reason_code"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common_definitions.schema.json#/$defs/limitation"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "decision": {
+            "const": "classify"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "confidence": {
+            "minimum": 0.0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "decision": {
+            "enum": [
+              "abstain",
+              "escalate"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "review_priority": {
+            "enum": [
+              "medium",
+              "high",
+              "critical"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

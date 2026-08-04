@@ -1,0 +1,237 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/integrated_case_state.schema.json",
+  "title": "Project 7 Integrated Case State",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_schema_version",
+    "case_id",
+    "case_status",
+    "created_at",
+    "updated_at",
+    "organization_context",
+    "opportunity",
+    "service_alignment",
+    "historical_context",
+    "clause_predictions",
+    "evidence_items",
+    "evidence_assessments",
+    "recommendation",
+    "human_disposition",
+    "audit_event_ids",
+    "processing_errors",
+    "production_boundary"
+  ],
+  "properties": {
+    "case_schema_version": {
+      "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+    },
+    "case_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "case_status": {
+      "type": "string",
+      "enum": [
+        "created",
+        "intake_validated",
+        "analysis_in_progress",
+        "recommendation_ready",
+        "awaiting_human_review",
+        "deferred",
+        "escalated",
+        "finalized",
+        "failed_closed"
+      ]
+    },
+    "created_at": {
+      "$ref": "common_definitions.schema.json#/$defs/utc_datetime"
+    },
+    "updated_at": {
+      "$ref": "common_definitions.schema.json#/$defs/utc_datetime"
+    },
+    "organization_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "organization_id",
+        "organization_name",
+        "profile_version",
+        "service_catalog_version",
+        "rules_version",
+        "reviewer_roles_version",
+        "thresholds_version",
+        "fixed_safeguards_version"
+      ],
+      "properties": {
+        "organization_id": {
+          "$ref": "common_definitions.schema.json#/$defs/identifier"
+        },
+        "organization_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "profile_version": {
+          "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+        },
+        "service_catalog_version": {
+          "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+        },
+        "rules_version": {
+          "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+        },
+        "reviewer_roles_version": {
+          "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+        },
+        "thresholds_version": {
+          "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+        },
+        "fixed_safeguards_version": {
+          "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+        }
+      }
+    },
+    "opportunity": {
+      "$ref": "opportunity_record.schema.json"
+    },
+    "service_alignment": {
+      "oneOf": [
+        {
+          "$ref": "service_alignment.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "historical_context": {
+      "oneOf": [
+        {
+          "$ref": "historical_context.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "clause_predictions": {
+      "type": "array",
+      "items": {
+        "$ref": "clause_prediction.schema.json"
+      }
+    },
+    "evidence_items": {
+      "type": "array",
+      "items": {
+        "$ref": "evidence_item.schema.json"
+      }
+    },
+    "evidence_assessments": {
+      "type": "array",
+      "items": {
+        "$ref": "evidence_assessment.schema.json"
+      }
+    },
+    "recommendation": {
+      "oneOf": [
+        {
+          "$ref": "recommendation.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "human_disposition": {
+      "oneOf": [
+        {
+          "$ref": "human_disposition.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "audit_event_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common_definitions.schema.json#/$defs/identifier"
+      }
+    },
+    "processing_errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "component",
+          "error_code",
+          "message",
+          "fail_closed"
+        ],
+        "properties": {
+          "component": {
+            "type": "string",
+            "minLength": 1
+          },
+          "error_code": {
+            "$ref": "common_definitions.schema.json#/$defs/reason_code"
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fail_closed": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "production_boundary": {
+      "type": "string",
+      "const": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "case_status": {
+            "enum": [
+              "recommendation_ready",
+              "awaiting_human_review"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "recommendation": {
+            "not": {
+              "type": "null"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "case_status": {
+            "const": "finalized"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "human_disposition": {
+            "not": {
+              "type": "null"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
