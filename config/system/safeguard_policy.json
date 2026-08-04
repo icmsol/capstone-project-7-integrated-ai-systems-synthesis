@@ -1,0 +1,1135 @@
+{
+  "policy_schema_version": "1.0.0",
+  "policy_id": "SAFEGUARD-POLICY-PROJECT7",
+  "policy_version": "1.0.0",
+  "default_failure_behavior": "fail_closed",
+  "organization_override_permitted": false,
+  "thresholds": {
+    "clause_triage_classify_min_confidence": 0.8,
+    "evidence_relevance_minimum": 0.6,
+    "evidence_directional_recommendation_minimum": 0.7,
+    "maximum_retry_attempts": 1,
+    "threshold_override_permitted_in_profile": false
+  },
+  "mandatory_review_triggers": [
+    "legal interpretation or contract enforceability",
+    "privacy or restricted personal data",
+    "cybersecurity or credential exposure",
+    "pricing, financial commitment, or payment terms",
+    "staffing commitment or named-person availability",
+    "contract acceptance, rejection, or modification",
+    "material conflicting evidence",
+    "low-confidence or out-of-domain model output",
+    "unverified or stale official source",
+    "conflict of interest or ethical concern",
+    "external communication, submission, or transaction",
+    "production deployment or production-readiness claim"
+  ],
+  "prohibited_request_categories": [
+    "make or communicate a final bid/no-bid decision",
+    "provide authoritative legal advice or interpretation",
+    "approve compliance, security, privacy, pricing, staffing, or contract terms",
+    "submit a proposal, message, purchase, acceptance, or other external action",
+    "reveal credentials, secrets, private reasoning, or restricted information",
+    "disable evidence, audit, abstention, or human-approval safeguards",
+    "claim production readiness or operational authorization"
+  ],
+  "controls": [
+    {
+      "control_id": "SG-001",
+      "category": "configuration_governance",
+      "control_name": "Safeguard policy schema and startup validation",
+      "objective": "Prevent workflow execution when the fixed safeguard policy is missing or invalid.",
+      "control_types": [
+        "preventive",
+        "detective"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "The safeguard policy is absent, unreadable, schema-invalid, or version-inconsistent.",
+      "applies_to": [
+        "workflow_orchestrator",
+        "profile_loader"
+      ],
+      "action_on_trigger": "fail_closed",
+      "reason_codes": [
+        "SAFEGUARD_POLICY_INVALID"
+      ],
+      "required_evidence": [
+        "Schema validation result",
+        "Policy version",
+        "Policy checksum"
+      ],
+      "audit_events": [
+        "processing_failed"
+      ],
+      "human_route": "Technical Reviewer",
+      "test_scenarios": [
+        "SCN-SG-001"
+      ]
+    },
+    {
+      "control_id": "SG-002",
+      "category": "configuration_governance",
+      "control_name": "Organization safeguard override rejection",
+      "objective": "Keep responsible-AI safeguards separate from configurable business criteria.",
+      "control_types": [
+        "preventive",
+        "detective",
+        "escalation"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "A profile or case request includes a prohibited override key or conflicts with a fixed control.",
+      "applies_to": [
+        "profile_loader",
+        "workflow_orchestrator"
+      ],
+      "action_on_trigger": "fail_closed",
+      "reason_codes": [
+        "SAFEGUARD_OVERRIDE_ATTEMPT"
+      ],
+      "required_evidence": [
+        "Conflicting key",
+        "Configuration source",
+        "Resolution precedence"
+      ],
+      "audit_events": [
+        "configuration_loaded",
+        "processing_failed"
+      ],
+      "human_route": "Executive Authority",
+      "test_scenarios": [
+        "SCN-SG-002"
+      ]
+    },
+    {
+      "control_id": "SG-003",
+      "category": "configuration_governance",
+      "control_name": "Versioned configuration referential integrity",
+      "objective": "Reject missing, unversioned, or unresolved configuration references.",
+      "control_types": [
+        "preventive",
+        "detective"
+      ],
+      "severity": "high",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "A profile-linked service, rules, staffing, reviewer, threshold, or schema file is absent or invalid.",
+      "applies_to": [
+        "profile_loader"
+      ],
+      "action_on_trigger": "fail_closed",
+      "reason_codes": [
+        "CONFIGURATION_REFERENCE_INVALID"
+      ],
+      "required_evidence": [
+        "Resolved path",
+        "Artifact version",
+        "Artifact checksum"
+      ],
+      "audit_events": [
+        "configuration_loaded",
+        "processing_failed"
+      ],
+      "human_route": "Organization Profile Owner",
+      "test_scenarios": [
+        "SCN-SG-003"
+      ]
+    },
+    {
+      "control_id": "SG-004",
+      "category": "source_provenance",
+      "control_name": "Approved-source gate",
+      "objective": "Process only public, frozen, synthetic, de-identified, or explicitly authorized sources.",
+      "control_types": [
+        "preventive",
+        "detective"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "A source lacks an approved-for-use flag or approval basis.",
+      "applies_to": [
+        "case_intake_normalizer",
+        "passage_selector",
+        "official_evidence_retriever"
+      ],
+      "action_on_trigger": "block",
+      "reason_codes": [
+        "SOURCE_NOT_APPROVED"
+      ],
+      "required_evidence": [
+        "Source type",
+        "Approval flag",
+        "Approval basis"
+      ],
+      "audit_events": [
+        "source_ingested",
+        "processing_failed"
+      ],
+      "human_route": "Data or Privacy Reviewer",
+      "test_scenarios": [
+        "SCN-SG-004"
+      ]
+    },
+    {
+      "control_id": "SG-005",
+      "category": "source_provenance",
+      "control_name": "Source checksum and immutable snapshot requirement",
+      "objective": "Tie every material source to a recorded checksum and retained version.",
+      "control_types": [
+        "preventive",
+        "detective",
+        "disclosure"
+      ],
+      "severity": "high",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "A source checksum is missing or the retrieved source no longer matches the approved version.",
+      "applies_to": [
+        "case_intake_normalizer",
+        "historical_context_provider",
+        "official_evidence_retriever"
+      ],
+      "action_on_trigger": "defer",
+      "reason_codes": [
+        "SOURCE_CHECKSUM_MISSING",
+        "SOURCE_VERSION_CHANGED"
+      ],
+      "required_evidence": [
+        "Current checksum",
+        "Prior checksum",
+        "Retrieval time",
+        "Snapshot path"
+      ],
+      "audit_events": [
+        "source_ingested",
+        "processing_failed"
+      ],
+      "human_route": "Data Reviewer",
+      "test_scenarios": [
+        "SCN-SG-005"
+      ]
+    },
+    {
+      "control_id": "SG-006",
+      "category": "privacy_security",
+      "control_name": "Sensitive-data detection and redaction",
+      "objective": "Prevent persistence or processing of prohibited personal, confidential, or restricted information.",
+      "control_types": [
+        "preventive",
+        "detective",
+        "corrective",
+        "escalation"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "Input or generated output contains prohibited sensitive data.",
+      "applies_to": [
+        "case_intake_normalizer",
+        "passage_selector",
+        "audit_writer",
+        "packet_assembler"
+      ],
+      "action_on_trigger": "redact_and_escalate",
+      "reason_codes": [
+        "SENSITIVE_DATA_DETECTED"
+      ],
+      "required_evidence": [
+        "Detection category",
+        "Redaction result",
+        "Escalation route"
+      ],
+      "audit_events": [
+        "processing_failed",
+        "case_escalated"
+      ],
+      "human_route": "Security or Privacy Reviewer",
+      "test_scenarios": [
+        "SCN-SG-006"
+      ]
+    },
+    {
+      "control_id": "SG-007",
+      "category": "privacy_security",
+      "control_name": "Secret and credential blocking",
+      "objective": "Ensure tokens, API keys, passwords, credentials, and secret values are never committed or logged.",
+      "control_types": [
+        "preventive",
+        "detective"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "A credential-like value is detected in input, configuration, output, or audit content.",
+      "applies_to": [
+        "profile_loader",
+        "workflow_orchestrator",
+        "audit_writer",
+        "repository_outputs"
+      ],
+      "action_on_trigger": "block",
+      "reason_codes": [
+        "SECRET_VALUE_DETECTED"
+      ],
+      "required_evidence": [
+        "Secret detection result",
+        "Artifact path",
+        "Sanitized replacement"
+      ],
+      "audit_events": [
+        "processing_failed"
+      ],
+      "human_route": "Technical or Security Reviewer",
+      "test_scenarios": [
+        "SCN-SG-007"
+      ]
+    },
+    {
+      "control_id": "SG-008",
+      "category": "prompt_injection",
+      "control_name": "Untrusted-source instruction isolation",
+      "objective": "Treat instructions embedded in opportunities, contracts, or retrieved documents strictly as data.",
+      "control_types": [
+        "preventive",
+        "detective",
+        "disclosure"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "Source text asks the system to ignore rules, reveal secrets, change tools, use new sources, or take an action.",
+      "applies_to": [
+        "passage_selector",
+        "official_evidence_retriever",
+        "recommendation_engine"
+      ],
+      "action_on_trigger": "block",
+      "reason_codes": [
+        "PROMPT_INJECTION_DETECTED",
+        "UNTRUSTED_INSTRUCTION_IGNORED"
+      ],
+      "required_evidence": [
+        "Detected text pattern",
+        "Source locator",
+        "Ignored instruction record"
+      ],
+      "audit_events": [
+        "processing_failed",
+        "evidence_validated"
+      ],
+      "human_route": "Security Reviewer",
+      "test_scenarios": [
+        "SCN-SG-008"
+      ]
+    },
+    {
+      "control_id": "SG-009",
+      "category": "structured_analysis",
+      "control_name": "Insufficient structured-input abstention",
+      "objective": "Prevent a fit assessment when opportunity information is too sparse or ambiguous.",
+      "control_types": [
+        "preventive",
+        "detective",
+        "disclosure"
+      ],
+      "severity": "medium",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "Required title, description, scope, or qualification information is absent or materially ambiguous.",
+      "applies_to": [
+        "service_alignment_engine",
+        "recommendation_engine"
+      ],
+      "action_on_trigger": "abstain",
+      "reason_codes": [
+        "STRUCTURED_ANALYSIS_INSUFFICIENT"
+      ],
+      "required_evidence": [
+        "Missing fields",
+        "Ambiguity explanation",
+        "Requested follow-up"
+      ],
+      "audit_events": [
+        "alignment_completed",
+        "recommendation_abstained"
+      ],
+      "human_route": "Opportunity Analyst",
+      "test_scenarios": [
+        "SCN-SG-009"
+      ]
+    },
+    {
+      "control_id": "SG-010",
+      "category": "structured_analysis",
+      "control_name": "Descriptive-history nonprediction control",
+      "objective": "Prevent historical counts from being represented as award probability, eligibility, or current staffing capacity.",
+      "control_types": [
+        "preventive",
+        "detective",
+        "disclosure"
+      ],
+      "severity": "high",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "A request or output converts descriptive historical context into a predictive or capacity claim.",
+      "applies_to": [
+        "historical_context_provider",
+        "recommendation_engine",
+        "packet_assembler"
+      ],
+      "action_on_trigger": "block",
+      "reason_codes": [
+        "PREDICTIVE_CLAIM_PROHIBITED"
+      ],
+      "required_evidence": [
+        "Historical source period",
+        "Prohibited claim",
+        "Required limitation"
+      ],
+      "audit_events": [
+        "historical_context_attached",
+        "processing_failed"
+      ],
+      "human_route": "Business Development Reviewer",
+      "test_scenarios": [
+        "SCN-SG-010"
+      ]
+    },
+    {
+      "control_id": "SG-011",
+      "category": "model_inference",
+      "control_name": "Project 4 package integrity validation",
+      "objective": "Allow clause triage only when model, vocabulary, label map, configuration, and checksums match the approved package.",
+      "control_types": [
+        "preventive",
+        "detective"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "A model package file is missing, incompatible, or fails checksum or load validation.",
+      "applies_to": [
+        "clause_triage_model"
+      ],
+      "action_on_trigger": "fail_closed",
+      "reason_codes": [
+        "MODEL_PACKAGE_INVALID"
+      ],
+      "required_evidence": [
+        "Manifest",
+        "Checkpoint checksum",
+        "CPU load result"
+      ],
+      "audit_events": [
+        "clause_triage_completed",
+        "processing_failed"
+      ],
+      "human_route": "Technical Reviewer",
+      "test_scenarios": [
+        "SCN-SG-011"
+      ]
+    },
+    {
+      "control_id": "SG-012",
+      "category": "model_inference",
+      "control_name": "Fixed model-confidence abstention threshold",
+      "objective": "Require abstention when the Project 4 maximum class probability is below 0.80.",
+      "control_types": [
+        "preventive",
+        "detective",
+        "escalation",
+        "disclosure"
+      ],
+      "severity": "high",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "Maximum class probability is below 0.80.",
+      "applies_to": [
+        "clause_triage_model",
+        "risk_escalation_router"
+      ],
+      "action_on_trigger": "abstain",
+      "reason_codes": [
+        "MODEL_CONFIDENCE_LOW"
+      ],
+      "required_evidence": [
+        "Full probability vector",
+        "Threshold version",
+        "Predicted label"
+      ],
+      "audit_events": [
+        "clause_triage_completed",
+        "case_escalated"
+      ],
+      "human_route": "Contracts or Legal Reviewer",
+      "test_scenarios": [
+        "SCN-SG-012"
+      ]
+    },
+    {
+      "control_id": "SG-013",
+      "category": "model_inference",
+      "control_name": "Model domain-shift escalation",
+      "objective": "Disclose the CUAD commercial-contract training domain and escalate materially different public-sector passages.",
+      "control_types": [
+        "detective",
+        "escalation",
+        "disclosure"
+      ],
+      "severity": "high",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "The passage type, vocabulary, or context materially differs from the supported training domain.",
+      "applies_to": [
+        "clause_triage_model",
+        "risk_escalation_router",
+        "packet_assembler"
+      ],
+      "action_on_trigger": "escalate",
+      "reason_codes": [
+        "MODEL_DOMAIN_SHIFT"
+      ],
+      "required_evidence": [
+        "Domain warning",
+        "Passage source",
+        "Reviewer route"
+      ],
+      "audit_events": [
+        "clause_triage_completed",
+        "case_escalated"
+      ],
+      "human_route": "Contracts or Legal Reviewer",
+      "test_scenarios": [
+        "SCN-SG-013"
+      ]
+    },
+    {
+      "control_id": "SG-014",
+      "category": "model_inference",
+      "control_name": "Sequence truncation disclosure",
+      "objective": "Make every truncated classifier input visible and require elevated review when material context may be lost.",
+      "control_types": [
+        "detective",
+        "disclosure",
+        "escalation"
+      ],
+      "severity": "medium",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "A passage exceeds the supported 256-token input length.",
+      "applies_to": [
+        "clause_triage_model",
+        "packet_assembler"
+      ],
+      "action_on_trigger": "warn",
+      "reason_codes": [
+        "MODEL_INPUT_TRUNCATED"
+      ],
+      "required_evidence": [
+        "Original token count",
+        "Retained token count",
+        "Passage locator"
+      ],
+      "audit_events": [
+        "clause_triage_completed"
+      ],
+      "human_route": "Contracts Reviewer",
+      "test_scenarios": [
+        "SCN-SG-014"
+      ]
+    },
+    {
+      "control_id": "SG-015",
+      "category": "official_evidence",
+      "control_name": "Approved official-corpus gate",
+      "objective": "Prevent authoritative evidence retrieval from an unversioned or unapproved corpus.",
+      "control_types": [
+        "preventive",
+        "detective"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "The official corpus lacks approved version, checksum, metadata validation, or representative retrieval tests.",
+      "applies_to": [
+        "official_evidence_retriever",
+        "evidence_validator"
+      ],
+      "action_on_trigger": "fail_closed",
+      "reason_codes": [
+        "CORPUS_NOT_APPROVED"
+      ],
+      "required_evidence": [
+        "Corpus version",
+        "Corpus checksum",
+        "Approval record",
+        "Validation results"
+      ],
+      "audit_events": [
+        "evidence_retrieved",
+        "processing_failed"
+      ],
+      "human_route": "Data or Contracts Reviewer",
+      "test_scenarios": [
+        "SCN-SG-015"
+      ]
+    },
+    {
+      "control_id": "SG-016",
+      "category": "official_evidence",
+      "control_name": "Exact citation precedence and missing-citation abstention",
+      "objective": "Use exact retrieval before semantic search when a citation is supplied and never substitute a different clause silently.",
+      "control_types": [
+        "preventive",
+        "detective",
+        "disclosure"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "A supplied citation is missing or exact metadata does not match.",
+      "applies_to": [
+        "official_evidence_retriever",
+        "evidence_validator"
+      ],
+      "action_on_trigger": "abstain",
+      "reason_codes": [
+        "CITATION_NOT_FOUND",
+        "CITATION_INVALID"
+      ],
+      "required_evidence": [
+        "Requested citation",
+        "Exact-search result",
+        "Metadata comparison"
+      ],
+      "audit_events": [
+        "evidence_retrieved",
+        "evidence_validated"
+      ],
+      "human_route": "Contract Analyst",
+      "test_scenarios": [
+        "SCN-SG-016"
+      ]
+    },
+    {
+      "control_id": "SG-017",
+      "category": "official_evidence",
+      "control_name": "Evidence freshness and source-version gate",
+      "objective": "Hold material evidence when its current applicability or source version cannot be established.",
+      "control_types": [
+        "detective",
+        "corrective",
+        "disclosure"
+      ],
+      "severity": "high",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "Evidence is stale, the source version changed, or freshness is unknown for a material claim.",
+      "applies_to": [
+        "official_evidence_retriever",
+        "evidence_validator",
+        "recommendation_engine"
+      ],
+      "action_on_trigger": "defer",
+      "reason_codes": [
+        "SOURCE_STALE",
+        "SOURCE_VERSION_CHANGED"
+      ],
+      "required_evidence": [
+        "Source version",
+        "Effective date",
+        "Retrieval date",
+        "Freshness status"
+      ],
+      "audit_events": [
+        "evidence_validated",
+        "recommendation_abstained"
+      ],
+      "human_route": "Contract or Data Reviewer",
+      "test_scenarios": [
+        "SCN-SG-017"
+      ]
+    },
+    {
+      "control_id": "SG-018",
+      "category": "evidence_sufficiency",
+      "control_name": "Minimum relevance and sufficiency threshold",
+      "objective": "Require evidence relevance of at least 0.60 and aggregate directional-recommendation sufficiency of at least 0.70.",
+      "control_types": [
+        "preventive",
+        "detective",
+        "disclosure"
+      ],
+      "severity": "high",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "Evidence relevance is below 0.60 or directional sufficiency is below 0.70.",
+      "applies_to": [
+        "evidence_validator",
+        "recommendation_engine"
+      ],
+      "action_on_trigger": "abstain",
+      "reason_codes": [
+        "EVIDENCE_INSUFFICIENT"
+      ],
+      "required_evidence": [
+        "Evidence scores",
+        "Threshold version",
+        "Missing information"
+      ],
+      "audit_events": [
+        "evidence_validated",
+        "recommendation_abstained"
+      ],
+      "human_route": "Opportunity or Contract Analyst",
+      "test_scenarios": [
+        "SCN-SG-018"
+      ]
+    },
+    {
+      "control_id": "SG-019",
+      "category": "evidence_sufficiency",
+      "control_name": "Material-conflict escalation",
+      "objective": "Expose conflicting validated evidence and route it to an appropriate specialist.",
+      "control_types": [
+        "detective",
+        "escalation",
+        "disclosure"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "Two or more validated evidence items materially conflict.",
+      "applies_to": [
+        "evidence_validator",
+        "risk_escalation_router",
+        "packet_assembler"
+      ],
+      "action_on_trigger": "escalate",
+      "reason_codes": [
+        "EVIDENCE_MATERIAL_CONFLICT"
+      ],
+      "required_evidence": [
+        "Conflicting evidence IDs",
+        "Conflict summary",
+        "Reviewer role"
+      ],
+      "audit_events": [
+        "evidence_validated",
+        "case_escalated"
+      ],
+      "human_route": "Qualified Specialist",
+      "test_scenarios": [
+        "SCN-SG-019"
+      ]
+    },
+    {
+      "control_id": "SG-020",
+      "category": "evidence_sufficiency",
+      "control_name": "Counterevidence completeness gate",
+      "objective": "Require known material counterevidence to appear in the recommendation and packet.",
+      "control_types": [
+        "preventive",
+        "detective",
+        "disclosure"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "Known counterevidence exists but is absent from the recommendation packet.",
+      "applies_to": [
+        "recommendation_engine",
+        "packet_assembler"
+      ],
+      "action_on_trigger": "fail_closed",
+      "reason_codes": [
+        "COUNTEREVIDENCE_MISSING"
+      ],
+      "required_evidence": [
+        "Counterevidence inventory",
+        "Recommendation references",
+        "Packet completeness result"
+      ],
+      "audit_events": [
+        "recommendation_created",
+        "processing_failed"
+      ],
+      "human_route": "Business Development or Specialist Reviewer",
+      "test_scenarios": [
+        "SCN-SG-020"
+      ]
+    },
+    {
+      "control_id": "SG-021",
+      "category": "recommendation",
+      "control_name": "Recommendation schema and completeness gate",
+      "objective": "Reject recommendations that omit disclosure, evidence, gaps, conditions, limitations, reviewer routing, next action, freshness, or audit reference.",
+      "control_types": [
+        "preventive",
+        "detective"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "The recommendation fails the required JSON Schema or packet completeness checks.",
+      "applies_to": [
+        "recommendation_engine",
+        "packet_assembler"
+      ],
+      "action_on_trigger": "fail_closed",
+      "reason_codes": [
+        "RECOMMENDATION_SCHEMA_INVALID"
+      ],
+      "required_evidence": [
+        "Schema errors",
+        "Missing fields",
+        "Recommendation version"
+      ],
+      "audit_events": [
+        "recommendation_created",
+        "processing_failed"
+      ],
+      "human_route": "Technical Reviewer",
+      "test_scenarios": [
+        "SCN-SG-021"
+      ]
+    },
+    {
+      "control_id": "SG-022",
+      "category": "recommendation",
+      "control_name": "Evidence-linked claim enforcement",
+      "objective": "Prevent unsupported free-form claims from appearing as recommendation evidence.",
+      "control_types": [
+        "preventive",
+        "detective"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "A material recommendation claim lacks a recorded source, rule, model artifact, or validated evidence reference.",
+      "applies_to": [
+        "recommendation_engine",
+        "packet_assembler"
+      ],
+      "action_on_trigger": "fail_closed",
+      "reason_codes": [
+        "RECOMMENDATION_UNSUPPORTED"
+      ],
+      "required_evidence": [
+        "Claim-to-evidence map",
+        "Artifact IDs",
+        "Reason codes"
+      ],
+      "audit_events": [
+        "recommendation_created",
+        "processing_failed"
+      ],
+      "human_route": "Opportunity Analyst",
+      "test_scenarios": [
+        "SCN-SG-022"
+      ]
+    },
+    {
+      "control_id": "SG-023",
+      "category": "recommendation",
+      "control_name": "Nonbinding language enforcement",
+      "objective": "Prevent advisory output from being presented as an approved or final organizational decision.",
+      "control_types": [
+        "preventive",
+        "detective",
+        "disclosure"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "Recommendation text contains binding approval, authorization, acceptance, or final-decision language.",
+      "applies_to": [
+        "recommendation_engine",
+        "packet_assembler"
+      ],
+      "action_on_trigger": "block",
+      "reason_codes": [
+        "BINDING_DECISION_LANGUAGE_DETECTED"
+      ],
+      "required_evidence": [
+        "Detected phrase",
+        "Required disclosure",
+        "Corrected output"
+      ],
+      "audit_events": [
+        "recommendation_abstained",
+        "processing_failed"
+      ],
+      "human_route": "Business Development or Executive Reviewer",
+      "test_scenarios": [
+        "SCN-SG-023"
+      ]
+    },
+    {
+      "control_id": "SG-024",
+      "category": "human_authority",
+      "control_name": "Authorized human final-disposition requirement",
+      "objective": "Require an authorized human disposition and substantive rationale before a case can be finalized.",
+      "control_types": [
+        "preventive",
+        "detective",
+        "escalation"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "A case attempts to reach finalized status without an authorized human disposition and rationale.",
+      "applies_to": [
+        "human_disposition_recorder",
+        "workflow_orchestrator"
+      ],
+      "action_on_trigger": "defer",
+      "reason_codes": [
+        "HUMAN_DECISION_REQUIRED",
+        "REVIEWER_NOT_AUTHORIZED"
+      ],
+      "required_evidence": [
+        "Reviewer role",
+        "Disposition",
+        "Rationale",
+        "Timestamp"
+      ],
+      "audit_events": [
+        "human_disposition_recorded",
+        "processing_failed"
+      ],
+      "human_route": "Executive Authority",
+      "test_scenarios": [
+        "SCN-SG-024"
+      ]
+    },
+    {
+      "control_id": "SG-025",
+      "category": "human_authority",
+      "control_name": "Mandatory specialist-review routing",
+      "objective": "Escalate legal, privacy, security, pricing, staffing, conflict, and other high-consequence issues to qualified roles.",
+      "control_types": [
+        "preventive",
+        "detective",
+        "escalation"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "A mandatory review trigger is present.",
+      "applies_to": [
+        "risk_escalation_router",
+        "human_disposition_recorder"
+      ],
+      "action_on_trigger": "escalate",
+      "reason_codes": [
+        "MANDATORY_SPECIALIST_REVIEW"
+      ],
+      "required_evidence": [
+        "Trigger category",
+        "Required role",
+        "Escalation rationale"
+      ],
+      "audit_events": [
+        "case_escalated"
+      ],
+      "human_route": "Configured Qualified Specialist",
+      "test_scenarios": [
+        "SCN-SG-025"
+      ]
+    },
+    {
+      "control_id": "SG-026",
+      "category": "external_action",
+      "control_name": "Autonomous external-action prohibition",
+      "objective": "Block all requests to send, submit, approve, purchase, price, staff, communicate, or otherwise act outside the controlled repository.",
+      "control_types": [
+        "preventive",
+        "detective",
+        "escalation"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "A user, source, model, or tool requests an external write or commitment action.",
+      "applies_to": [
+        "workflow_orchestrator",
+        "all_components"
+      ],
+      "action_on_trigger": "block",
+      "reason_codes": [
+        "EXTERNAL_ACTION_PROHIBITED"
+      ],
+      "required_evidence": [
+        "Requested action",
+        "Request source",
+        "Authorized human route"
+      ],
+      "audit_events": [
+        "processing_failed",
+        "case_escalated"
+      ],
+      "human_route": "Authorized Human Decision Maker",
+      "test_scenarios": [
+        "SCN-SG-026"
+      ]
+    },
+    {
+      "control_id": "SG-027",
+      "category": "audit_traceability",
+      "control_name": "Audit schema, sanitization, and hash-chain validation",
+      "objective": "Require every material state transition to be recorded as a sanitized, schema-valid, chained event.",
+      "control_types": [
+        "preventive",
+        "detective"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "An event fails schema, sanitization, event-hash, or previous-hash validation.",
+      "applies_to": [
+        "audit_writer",
+        "workflow_orchestrator"
+      ],
+      "action_on_trigger": "fail_closed",
+      "reason_codes": [
+        "AUDIT_EVENT_INVALID",
+        "SENSITIVE_AUDIT_CONTENT_DETECTED"
+      ],
+      "required_evidence": [
+        "Event payload",
+        "Validation errors",
+        "Hash-chain result"
+      ],
+      "audit_events": [
+        "processing_failed"
+      ],
+      "human_route": "Technical Reviewer",
+      "test_scenarios": [
+        "SCN-SG-027"
+      ]
+    },
+    {
+      "control_id": "SG-028",
+      "category": "audit_traceability",
+      "control_name": "Audit persistence fail-closed control",
+      "objective": "Stop normal workflow execution when a required audit event cannot be durably written.",
+      "control_types": [
+        "preventive",
+        "detective",
+        "corrective"
+      ],
+      "severity": "critical",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "Audit persistence fails after the single permitted retry.",
+      "applies_to": [
+        "audit_writer",
+        "workflow_orchestrator"
+      ],
+      "action_on_trigger": "fail_closed",
+      "reason_codes": [
+        "AUDIT_PERSISTENCE_FAILED",
+        "RETRY_LIMIT_EXCEEDED"
+      ],
+      "required_evidence": [
+        "Write error",
+        "Retry count",
+        "Last durable event hash"
+      ],
+      "audit_events": [
+        "processing_failed"
+      ],
+      "human_route": "Technical Reviewer",
+      "test_scenarios": [
+        "SCN-SG-028"
+      ]
+    },
+    {
+      "control_id": "SG-029",
+      "category": "failure_recovery",
+      "control_name": "Bounded retry and deterministic fallback",
+      "objective": "Prevent repeated uncontrolled retries and require explicit failure after the fixed maximum.",
+      "control_types": [
+        "preventive",
+        "detective",
+        "corrective"
+      ],
+      "severity": "high",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "A retryable tool failure occurs or the retry count exceeds one.",
+      "applies_to": [
+        "official_evidence_retriever",
+        "audit_writer",
+        "workflow_orchestrator"
+      ],
+      "action_on_trigger": "fail_closed",
+      "reason_codes": [
+        "RETRY_LIMIT_EXCEEDED"
+      ],
+      "required_evidence": [
+        "Failure type",
+        "Attempt count",
+        "Fallback result"
+      ],
+      "audit_events": [
+        "processing_failed"
+      ],
+      "human_route": "Technical Reviewer",
+      "test_scenarios": [
+        "SCN-SG-029"
+      ]
+    },
+    {
+      "control_id": "SG-030",
+      "category": "production_boundary",
+      "control_name": "Production-readiness and deployment-boundary disclosure",
+      "objective": "Prevent the controlled capstone artifact from being represented as production-ready or generally authorized.",
+      "control_types": [
+        "preventive",
+        "detective",
+        "disclosure"
+      ],
+      "severity": "high",
+      "enabled": true,
+      "organization_override_permitted": false,
+      "trigger": "Documentation or output claims production readiness, legal sufficiency, or operational authorization.",
+      "applies_to": [
+        "documentation",
+        "packet_assembler",
+        "recommendation_engine",
+        "README"
+      ],
+      "action_on_trigger": "block",
+      "reason_codes": [
+        "PRODUCTION_READINESS_CLAIM_PROHIBITED"
+      ],
+      "required_evidence": [
+        "Detected claim",
+        "Required boundary disclosure",
+        "Artifact location"
+      ],
+      "audit_events": [
+        "processing_failed"
+      ],
+      "human_route": "Project Owner",
+      "test_scenarios": [
+        "SCN-SG-030"
+      ]
+    }
+  ],
+  "change_control": {
+    "version_increment_required": true,
+    "regression_test_required": true,
+    "risk_review_required": true,
+    "approval_role": "Project Owner or Authorized Governance Reviewer",
+    "ordinary_profile_change_permitted": false
+  },
+  "production_boundary": "Controlled capstone prototype; no autonomous external action; nonbinding recommendation only; final human authority required."
+}

@@ -1,0 +1,215 @@
+{
+  "registry_version": "1.0.0",
+  "codes": [
+    {
+      "code": "SAFEGUARD_POLICY_INVALID",
+      "category": "configuration_governance",
+      "meaning": "The fixed safeguard policy is absent, malformed, or inconsistent.",
+      "default_action": "fail_closed"
+    },
+    {
+      "code": "SAFEGUARD_OVERRIDE_ATTEMPT",
+      "category": "configuration_governance",
+      "meaning": "An organization profile or case request attempted to weaken a fixed safeguard.",
+      "default_action": "fail_closed"
+    },
+    {
+      "code": "CONFIGURATION_REFERENCE_INVALID",
+      "category": "configuration_governance",
+      "meaning": "A configuration reference is missing, unresolved, or not versioned.",
+      "default_action": "fail_closed"
+    },
+    {
+      "code": "SOURCE_NOT_APPROVED",
+      "category": "source_provenance",
+      "meaning": "The source lacks an approved-for-use basis.",
+      "default_action": "block"
+    },
+    {
+      "code": "SOURCE_CHECKSUM_MISSING",
+      "category": "source_provenance",
+      "meaning": "The source cannot be tied to a recorded SHA-256 checksum.",
+      "default_action": "defer"
+    },
+    {
+      "code": "SOURCE_VERSION_CHANGED",
+      "category": "source_provenance",
+      "meaning": "The retrieved source differs from the previously approved version.",
+      "default_action": "defer"
+    },
+    {
+      "code": "SENSITIVE_DATA_DETECTED",
+      "category": "privacy_security",
+      "meaning": "The content contains prohibited credentials, private data, or restricted information.",
+      "default_action": "redact_and_escalate"
+    },
+    {
+      "code": "SECRET_VALUE_DETECTED",
+      "category": "privacy_security",
+      "meaning": "A credential, token, key, or secret value was detected.",
+      "default_action": "block"
+    },
+    {
+      "code": "PROMPT_INJECTION_DETECTED",
+      "category": "prompt_injection",
+      "meaning": "Untrusted text attempts to change system instructions, tools, sources, or authority.",
+      "default_action": "block"
+    },
+    {
+      "code": "UNTRUSTED_INSTRUCTION_IGNORED",
+      "category": "prompt_injection",
+      "meaning": "An instruction embedded in source content was treated only as data and ignored.",
+      "default_action": "warn"
+    },
+    {
+      "code": "STRUCTURED_ANALYSIS_INSUFFICIENT",
+      "category": "structured_analysis",
+      "meaning": "The opportunity contains insufficient information for meaningful structured screening.",
+      "default_action": "abstain"
+    },
+    {
+      "code": "PREDICTIVE_CLAIM_PROHIBITED",
+      "category": "structured_analysis",
+      "meaning": "A request attempts to convert descriptive history into award or success prediction.",
+      "default_action": "block"
+    },
+    {
+      "code": "MODEL_PACKAGE_INVALID",
+      "category": "model_inference",
+      "meaning": "The classifier package, configuration, vocabulary, or checksum is invalid.",
+      "default_action": "fail_closed"
+    },
+    {
+      "code": "MODEL_CONFIDENCE_LOW",
+      "category": "model_inference",
+      "meaning": "The model confidence is below the fixed classification threshold.",
+      "default_action": "abstain"
+    },
+    {
+      "code": "MODEL_DOMAIN_SHIFT",
+      "category": "model_inference",
+      "meaning": "The input materially differs from the commercial-contract training domain.",
+      "default_action": "escalate"
+    },
+    {
+      "code": "MODEL_INPUT_TRUNCATED",
+      "category": "model_inference",
+      "meaning": "The input exceeded the supported sequence length and was truncated.",
+      "default_action": "warn"
+    },
+    {
+      "code": "CORPUS_NOT_APPROVED",
+      "category": "official_evidence",
+      "meaning": "The official evidence corpus has not completed version and integrity approval.",
+      "default_action": "fail_closed"
+    },
+    {
+      "code": "CITATION_NOT_FOUND",
+      "category": "official_evidence",
+      "meaning": "An exact requested citation was not found in the approved corpus.",
+      "default_action": "abstain"
+    },
+    {
+      "code": "CITATION_INVALID",
+      "category": "official_evidence",
+      "meaning": "The citation does not resolve to the recorded source metadata.",
+      "default_action": "fail_closed"
+    },
+    {
+      "code": "SOURCE_STALE",
+      "category": "official_evidence",
+      "meaning": "Material evidence is stale or its freshness cannot be established.",
+      "default_action": "defer"
+    },
+    {
+      "code": "EVIDENCE_INSUFFICIENT",
+      "category": "evidence_sufficiency",
+      "meaning": "Validated evidence does not support a directional recommendation.",
+      "default_action": "abstain"
+    },
+    {
+      "code": "EVIDENCE_MATERIAL_CONFLICT",
+      "category": "evidence_sufficiency",
+      "meaning": "Material validated evidence conflicts and requires specialist review.",
+      "default_action": "escalate"
+    },
+    {
+      "code": "COUNTEREVIDENCE_MISSING",
+      "category": "evidence_sufficiency",
+      "meaning": "A recommendation packet omits known material counterevidence.",
+      "default_action": "fail_closed"
+    },
+    {
+      "code": "RECOMMENDATION_SCHEMA_INVALID",
+      "category": "recommendation",
+      "meaning": "The recommendation omits mandatory evidence, limitations, conditions, or disclosure.",
+      "default_action": "fail_closed"
+    },
+    {
+      "code": "RECOMMENDATION_UNSUPPORTED",
+      "category": "recommendation",
+      "meaning": "The recommendation contains claims not grounded in recorded evidence.",
+      "default_action": "fail_closed"
+    },
+    {
+      "code": "BINDING_DECISION_LANGUAGE_DETECTED",
+      "category": "recommendation",
+      "meaning": "The output is written as an authorized or final organizational decision.",
+      "default_action": "block"
+    },
+    {
+      "code": "HUMAN_DECISION_REQUIRED",
+      "category": "human_authority",
+      "meaning": "The workflow requires an authorized human disposition before finalization.",
+      "default_action": "defer"
+    },
+    {
+      "code": "REVIEWER_NOT_AUTHORIZED",
+      "category": "human_authority",
+      "meaning": "The identified reviewer does not map to an authorized role.",
+      "default_action": "fail_closed"
+    },
+    {
+      "code": "MANDATORY_SPECIALIST_REVIEW",
+      "category": "human_authority",
+      "meaning": "Legal, privacy, security, financial, staffing, or other specialist review is mandatory.",
+      "default_action": "escalate"
+    },
+    {
+      "code": "EXTERNAL_ACTION_PROHIBITED",
+      "category": "external_action",
+      "meaning": "A request asks the system to send, submit, approve, purchase, price, staff, or otherwise act externally.",
+      "default_action": "block"
+    },
+    {
+      "code": "AUDIT_EVENT_INVALID",
+      "category": "audit_traceability",
+      "meaning": "An audit event fails schema, sanitization, or chain validation.",
+      "default_action": "fail_closed"
+    },
+    {
+      "code": "AUDIT_PERSISTENCE_FAILED",
+      "category": "audit_traceability",
+      "meaning": "The required audit event cannot be durably persisted.",
+      "default_action": "fail_closed"
+    },
+    {
+      "code": "SENSITIVE_AUDIT_CONTENT_DETECTED",
+      "category": "audit_traceability",
+      "meaning": "An audit payload contains secrets, prohibited personal data, confidential content, or private reasoning.",
+      "default_action": "block"
+    },
+    {
+      "code": "RETRY_LIMIT_EXCEEDED",
+      "category": "failure_recovery",
+      "meaning": "A retryable operation exceeded the fixed attempt limit.",
+      "default_action": "fail_closed"
+    },
+    {
+      "code": "PRODUCTION_READINESS_CLAIM_PROHIBITED",
+      "category": "production_boundary",
+      "meaning": "The artifact or output claims production readiness without required approvals and controls.",
+      "default_action": "block"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "artifact_version": "1.0.0",
+  "mandatory_review_triggers": [
+    {
+      "trigger_id": "MRT-01",
+      "trigger": "legal interpretation or contract enforceability",
+      "default_action": "escalate",
+      "organization_override_permitted": false
+    },
+    {
+      "trigger_id": "MRT-02",
+      "trigger": "privacy or restricted personal data",
+      "default_action": "escalate",
+      "organization_override_permitted": false
+    },
+    {
+      "trigger_id": "MRT-03",
+      "trigger": "cybersecurity or credential exposure",
+      "default_action": "escalate",
+      "organization_override_permitted": false
+    },
+    {
+      "trigger_id": "MRT-04",
+      "trigger": "pricing, financial commitment, or payment terms",
+      "default_action": "escalate",
+      "organization_override_permitted": false
+    },
+    {
+      "trigger_id": "MRT-05",
+      "trigger": "staffing commitment or named-person availability",
+      "default_action": "escalate",
+      "organization_override_permitted": false
+    },
+    {
+      "trigger_id": "MRT-06",
+      "trigger": "contract acceptance, rejection, or modification",
+      "default_action": "escalate",
+      "organization_override_permitted": false
+    },
+    {
+      "trigger_id": "MRT-07",
+      "trigger": "material conflicting evidence",
+      "default_action": "escalate",
+      "organization_override_permitted": false
+    },
+    {
+      "trigger_id": "MRT-08",
+      "trigger": "low-confidence or out-of-domain model output",
+      "default_action": "escalate",
+      "organization_override_permitted": false
+    },
+    {
+      "trigger_id": "MRT-09",
+      "trigger": "unverified or stale official source",
+      "default_action": "escalate",
+      "organization_override_permitted": false
+    },
+    {
+      "trigger_id": "MRT-10",
+      "trigger": "conflict of interest or ethical concern",
+      "default_action": "escalate",
+      "organization_override_permitted": false
+    },
+    {
+      "trigger_id": "MRT-11",
+      "trigger": "external communication, submission, or transaction",
+      "default_action": "escalate",
+      "organization_override_permitted": false
+    },
+    {
+      "trigger_id": "MRT-12",
+      "trigger": "production deployment or production-readiness claim",
+      "default_action": "escalate",
+      "organization_override_permitted": false
+    }
+  ]
+}

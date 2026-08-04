@@ -1,0 +1,291 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/safeguard_policy.schema.json",
+  "title": "Project 7 Fixed Safeguard Policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "policy_schema_version",
+    "policy_id",
+    "policy_version",
+    "default_failure_behavior",
+    "organization_override_permitted",
+    "thresholds",
+    "mandatory_review_triggers",
+    "prohibited_request_categories",
+    "controls",
+    "change_control",
+    "production_boundary"
+  ],
+  "properties": {
+    "policy_schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "policy_id": {
+      "type": "string",
+      "const": "SAFEGUARD-POLICY-PROJECT7"
+    },
+    "policy_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "default_failure_behavior": {
+      "type": "string",
+      "const": "fail_closed"
+    },
+    "organization_override_permitted": {
+      "type": "boolean",
+      "const": false
+    },
+    "thresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "clause_triage_classify_min_confidence",
+        "evidence_relevance_minimum",
+        "evidence_directional_recommendation_minimum",
+        "maximum_retry_attempts",
+        "threshold_override_permitted_in_profile"
+      ],
+      "properties": {
+        "clause_triage_classify_min_confidence": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 1.0
+        },
+        "evidence_relevance_minimum": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 1.0
+        },
+        "evidence_directional_recommendation_minimum": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 1.0
+        },
+        "maximum_retry_attempts": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "threshold_override_permitted_in_profile": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "mandatory_review_triggers": {
+      "type": "array",
+      "minItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "prohibited_request_categories": {
+      "type": "array",
+      "minItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "controls": {
+      "type": "array",
+      "minItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "control_id",
+          "category",
+          "control_name",
+          "objective",
+          "control_types",
+          "severity",
+          "enabled",
+          "organization_override_permitted",
+          "trigger",
+          "applies_to",
+          "action_on_trigger",
+          "reason_codes",
+          "required_evidence",
+          "audit_events",
+          "human_route",
+          "test_scenarios"
+        ],
+        "properties": {
+          "control_id": {
+            "type": "string",
+            "pattern": "^SG-\\d{3}$"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "configuration_governance",
+              "source_provenance",
+              "privacy_security",
+              "prompt_injection",
+              "structured_analysis",
+              "model_inference",
+              "official_evidence",
+              "evidence_sufficiency",
+              "recommendation",
+              "human_authority",
+              "external_action",
+              "audit_traceability",
+              "failure_recovery",
+              "production_boundary"
+            ]
+          },
+          "control_name": {
+            "type": "string",
+            "minLength": 5
+          },
+          "objective": {
+            "type": "string",
+            "minLength": 15
+          },
+          "control_types": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "enum": [
+                "preventive",
+                "detective",
+                "corrective",
+                "escalation",
+                "disclosure"
+              ]
+            }
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ]
+          },
+          "enabled": {
+            "type": "boolean",
+            "const": true
+          },
+          "organization_override_permitted": {
+            "type": "boolean",
+            "const": false
+          },
+          "trigger": {
+            "type": "string",
+            "minLength": 10
+          },
+          "applies_to": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 2
+            }
+          },
+          "action_on_trigger": {
+            "type": "string",
+            "enum": [
+              "warn",
+              "abstain",
+              "block",
+              "fail_closed",
+              "escalate",
+              "defer",
+              "redact_and_escalate"
+            ]
+          },
+          "reason_codes": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Z][A-Z0-9_:-]{2,63}$"
+            }
+          },
+          "required_evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 3
+            }
+          },
+          "audit_events": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 3
+            }
+          },
+          "human_route": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "test_scenarios": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^SCN-SG-\\d{3}$"
+            }
+          }
+        }
+      }
+    },
+    "change_control": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "version_increment_required",
+        "regression_test_required",
+        "risk_review_required",
+        "approval_role",
+        "ordinary_profile_change_permitted"
+      ],
+      "properties": {
+        "version_increment_required": {
+          "type": "boolean",
+          "const": true
+        },
+        "regression_test_required": {
+          "type": "boolean",
+          "const": true
+        },
+        "risk_review_required": {
+          "type": "boolean",
+          "const": true
+        },
+        "approval_role": {
+          "type": "string",
+          "minLength": 5
+        },
+        "ordinary_profile_change_permitted": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "production_boundary": {
+      "type": "string",
+      "const": "Controlled capstone prototype; no autonomous external action; nonbinding recommendation only; final human authority required."
+    }
+  }
+}

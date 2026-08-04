@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/safeguard_reason_code_registry.schema.json",
+  "title": "Project 7 Safeguard Reason Code Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "registry_version",
+    "codes"
+  ],
+  "properties": {
+    "registry_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "codes": {
+      "type": "array",
+      "minItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "category",
+          "meaning",
+          "default_action"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_:-]{2,63}$"
+          },
+          "category": {
+            "type": "string",
+            "minLength": 3
+          },
+          "meaning": {
+            "type": "string",
+            "minLength": 10
+          },
+          "default_action": {
+            "type": "string",
+            "enum": [
+              "warn",
+              "abstain",
+              "block",
+              "fail_closed",
+              "escalate",
+              "defer",
+              "redact_and_escalate"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

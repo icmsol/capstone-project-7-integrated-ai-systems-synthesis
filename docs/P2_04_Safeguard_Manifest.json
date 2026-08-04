@@ -1,0 +1,79 @@
+{
+  "artifact_id": "PROJECT7-P2-04-SAFEGUARDS",
+  "artifact_version": "1.0.0",
+  "created_at_utc": "2026-08-04T23:13:04.356678+00:00",
+  "control_count": 30,
+  "risk_count": 30,
+  "reason_code_count": 35,
+  "scenario_count": 30,
+  "category_count": 14,
+  "validation_result": {
+    "policy_schema_valid": true,
+    "reason_code_schema_valid": true,
+    "policy_valid": true,
+    "reason_code_registry_valid": true,
+    "control_ids_unique": true,
+    "reason_code_references_valid": true,
+    "all_required_categories_present": true,
+    "critical_routes_valid": true,
+    "invalid_policy_rejected": true,
+    "invalid_policy_error_count": 4
+  },
+  "thresholds": {
+    "clause_triage_classify_min_confidence": 0.8,
+    "evidence_relevance_minimum": 0.6,
+    "evidence_directional_recommendation_minimum": 0.7,
+    "maximum_retry_attempts": 1,
+    "threshold_override_permitted_in_profile": false
+  },
+  "files": [
+    {
+      "path": "config/schemas/safeguard_policy.schema.json",
+      "bytes": 7496
+    },
+    {
+      "path": "config/schemas/safeguard_reason_code_registry.schema.json",
+      "bytes": 1347
+    },
+    {
+      "path": "config/system/mandatory_review_triggers.json",
+      "bytes": 2342
+    },
+    {
+      "path": "config/system/safeguard_policy.json",
+      "bytes": 34975
+    },
+    {
+      "path": "config/system/safeguard_reason_codes.json",
+      "bytes": 7817
+    },
+    {
+      "path": "docs/P2_04_Risk_Control_Matrix.csv",
+      "bytes": 11926
+    },
+    {
+      "path": "docs/P2_04_Risk_Control_Matrix.json",
+      "bytes": 19337
+    },
+    {
+      "path": "docs/Safeguards_and_Fail_Closed_Behavior.md",
+      "bytes": 5468
+    },
+    {
+      "path": "tests/safeguard_examples/invalid_safeguard_policy.json",
+      "bytes": 34866
+    },
+    {
+      "path": "tests/safeguard_examples/safeguard_trigger_scenarios.json",
+      "bytes": 19161
+    },
+    {
+      "path": "tests/safeguard_examples/valid_safeguard_policy.json",
+      "bytes": 34975
+    },
+    {
+      "path": "tests/validate_safeguards.py",
+      "bytes": 2807
+    }
+  ]
+}
