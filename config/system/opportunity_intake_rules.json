@@ -1,0 +1,31 @@
+{
+  "rules_schema_version": "1.0.0",
+  "normalization_version": "1.0.0",
+  "record_key_version": "1.0.0",
+  "accepted_date_formats": [
+    "%Y-%m-%d",
+    "%m/%d/%Y",
+    "%Y/%m/%d"
+  ],
+  "status_map": {
+    "active": "open",
+    "open": "open",
+    "posted": "open",
+    "closed": "closed",
+    "cancelled": "cancelled",
+    "canceled": "cancelled",
+    "awarded": "awarded",
+    "planned": "planned"
+  },
+  "tracked_optional_fields": [
+    "description",
+    "posted_at",
+    "due_at",
+    "place_of_performance",
+    "procurement_method",
+    "contract_vehicle"
+  ],
+  "material_values_may_be_inferred": false,
+  "maximum_retry_attempts": 1,
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

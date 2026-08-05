@@ -1,0 +1,11 @@
+{
+  "source_id": "SRC-P4-01-SPARSE",
+  "source_type": "synthetic",
+  "source_location": "tests/fixtures/p4_01/sparse_raw_opportunity.json",
+  "retrieved_at": "2026-08-05T16:30:00Z",
+  "snapshot_date": "2026-08-05",
+  "sha256": "8218b0a1d6a3f7423b2e0c13310c96ea7e95bbcfbd52586fe2cb9081bb7b9c00",
+  "approved_for_use": true,
+  "approval_basis": "Synthetic frozen opportunity approved for controlled Project 7 implementation testing.",
+  "notes": "No real procurement, client-confidential, credential, or personal information is represented."
+}

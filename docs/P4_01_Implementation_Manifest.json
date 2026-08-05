@@ -1,0 +1,117 @@
+{
+  "artifact_id": "PROJECT7-P4-01-OPPORTUNITY-INTAKE",
+  "artifact_version": "1.0.0",
+  "created_at_utc": "2026-08-05T16:30:51.663109Z",
+  "component_id": "case_intake_normalizer",
+  "source_file_count": 21,
+  "unit_test_count": 5,
+  "representative_output_count": 4,
+  "validation_status": "PASS",
+  "files": [
+    {
+      "path": "audit/p4_01_intake_events.jsonl",
+      "bytes": 1933,
+      "sha256": "4dd0745bcc6c207d54f3ffe7f5e5d695de96ae86aecb69c28f5aa0e3b7960dc1"
+    },
+    {
+      "path": "config/system/opportunity_intake_rules.json",
+      "bytes": 802,
+      "sha256": "7024244f5f744cbb69e90e7949c7dde1307f248d1fa1d087377dfcae5d0e0914"
+    },
+    {
+      "path": "config/system/p4_01_reference_organization_context.json",
+      "bytes": 317,
+      "sha256": "6070b5cabe93e205c95c143c40a03324be8e708bc34b1449b88ecd5069e47eca"
+    },
+    {
+      "path": "data/implementation/p4_01/raw_opportunity.json",
+      "bytes": 802,
+      "sha256": "e152ac2dad41a7e34e41cf27742fb7c0e05aafd46e5d68d9a42f0ef00c00b7c2"
+    },
+    {
+      "path": "data/implementation/p4_01/source_approval.json",
+      "bytes": 545,
+      "sha256": "e7548e9231d5efa245e389de4ea01a6c4f14ab45f417cb510c8965663d12c3cf"
+    },
+    {
+      "path": "docs/P4_01_Opportunity_Intake_and_Provenance.md",
+      "bytes": 4667,
+      "sha256": "7d492bed6a01d878f6bbdfec0578654087d5ba89609c6d3f34afc707bec58c91"
+    },
+    {
+      "path": "docs/P4_01_Requirements_Matrix.csv",
+      "bytes": 1806,
+      "sha256": "35e3f822556c5cb3efd214cf4f917ad6d8a0ae385e2fb49ffbe45f65acd81488"
+    },
+    {
+      "path": "docs/P4_01_Validation_Evidence.json",
+      "bytes": 3434,
+      "sha256": "6a3f73e09514b59fa7648dfc40431c1f40ef351bfb08be5b755419da0b78cf04"
+    },
+    {
+      "path": "outputs/p4_01/initial_case_state.json",
+      "bytes": 3838,
+      "sha256": "b218c410cd68e2702766807418634b797d89642dbfb8f4812e9adca2a969dfc5"
+    },
+    {
+      "path": "outputs/p4_01/normalized_opportunity.json",
+      "bytes": 2671,
+      "sha256": "9cca536d4a0d1ab2ecbffe876a053236be89b96c509628519f5d2fd54e8d548f"
+    },
+    {
+      "path": "requirements_p4_01.txt",
+      "bytes": 41,
+      "sha256": "20a90afd705bc492bd3b5b22c9ef500927ed27ebbbb78a80a3abf8e87ce18689"
+    },
+    {
+      "path": "src/project7/__init__.py",
+      "bytes": 287,
+      "sha256": "d2bd73993fe33c4fffdf10c08a25b8d0fec3cd99a735d7a5cd943deae3d5fd49"
+    },
+    {
+      "path": "src/project7/opportunity_intake.py",
+      "bytes": 18684,
+      "sha256": "46bf1efa0e2e6ff7d0b16d4dbc78f922a0f8543c317fc80bbe889ee85da523fa"
+    },
+    {
+      "path": "src/project7/schema_validation.py",
+      "bytes": 1766,
+      "sha256": "46bf4c5d63f85165ff2befbdf48359765442242cc886ccb4381a98ef5e07538a"
+    },
+    {
+      "path": "tests/__init__.py",
+      "bytes": 30,
+      "sha256": "e11cb4c2bb5199a73eb59adf19501d231f867da13c5fe156fbf64e0984e8931d"
+    },
+    {
+      "path": "tests/fixtures/p4_01/checksum_mismatch_source_approval.json",
+      "bytes": 545,
+      "sha256": "5e68b4978b557f8b2027abbbf2d2ed60202d6d7a03de60b92056319c61726a49"
+    },
+    {
+      "path": "tests/fixtures/p4_01/sparse_raw_opportunity.json",
+      "bytes": 254,
+      "sha256": "8218b0a1d6a3f7423b2e0c13310c96ea7e95bbcfbd52586fe2cb9081bb7b9c00"
+    },
+    {
+      "path": "tests/fixtures/p4_01/sparse_source_approval.json",
+      "bytes": 542,
+      "sha256": "58bc22bae9b93ec3eb52a3dc511520e94e0de05217bff8c7962ab871d3f71982"
+    },
+    {
+      "path": "tests/fixtures/p4_01/unapproved_source_approval.json",
+      "bytes": 546,
+      "sha256": "09edf79c0841976f9ad9d218b2a073d0610c32b25abd811a348c868beb008c63"
+    },
+    {
+      "path": "tests/run_p4_01_validation.py",
+      "bytes": 3010,
+      "sha256": "c9b1b324841ee19bfe365c9a8600e334c7db2f9b2edd154c097fb3d423abd7b5"
+    },
+    {
+      "path": "tests/test_opportunity_intake.py",
+      "bytes": 5530,
+      "sha256": "7b7724405fb8a170f8c43a1fa6cdec950b5a069b36dfe9c177898965d5f96626"
+    }
+  ]
+}

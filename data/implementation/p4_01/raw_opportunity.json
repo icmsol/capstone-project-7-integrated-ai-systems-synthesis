@@ -1,0 +1,19 @@
+{
+  "source_portal": "Project 7 Synthetic Procurement Portal",
+  "jurisdiction": "California",
+  "agency": "Synthetic Department of Digital Services",
+  "solicitation_id": "RFO-2026-001",
+  "title": "  Enterprise IT Strategy, Program Management, and Systems Integration Support  ",
+  "description": "Provide enterprise IT strategy, project and program management, systems integration, agile delivery support, organizational change management, and technical training.",
+  "status": "Active",
+  "posted_at": "2026-08-01",
+  "due_at": "2026-09-15T17:00:00-07:00",
+  "place_of_performance": "California",
+  "procurement_method": "Request for Offer",
+  "contract_vehicle": "Synthetic Statewide Contract",
+  "estimated_value": {
+    "amount": 2500000,
+    "currency": "USD"
+  },
+  "data_freshness_days": 4
+}

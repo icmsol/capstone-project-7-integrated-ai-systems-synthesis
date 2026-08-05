@@ -1,0 +1,33 @@
+{
+  "artifact_id": "PROJECT7-P4-01-VALIDATION-EVIDENCE",
+  "artifact_version": "1.0.0",
+  "validated_at_utc": "2026-08-05T16:30:51.661387Z",
+  "validation_status": "PASS",
+  "command": "python tests/run_p4_01_validation.py",
+  "stdout": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/generated/interface/models.py\", line 30820, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/rpc/remote.py\", line 749, in __call__\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/rpc/client.py\", line 150, in call\nartifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.\ntest_checksum_change_defers (tests.test_opportunity_intake.OpportunityIntakeTests.test_checksum_change_defers) ... ok\ntest_replay_is_deterministic (tests.test_opportunity_intake.OpportunityIntakeTests.test_replay_is_deterministic) ... ok\ntest_sparse_source_preserves_missing_fields (tests.test_opportunity_intake.OpportunityIntakeTests.test_sparse_source_preserves_missing_fields) ... ok\ntest_unapproved_source_fails_closed (tests.test_opportunity_intake.OpportunityIntakeTests.test_unapproved_source_fails_closed) ... ok\ntest_valid_intake_is_schema_valid_and_traceable (tests.test_opportunity_intake.OpportunityIntakeTests.test_valid_intake_is_schema_valid_and_traceable) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.114s\n\nOK\nRepresentative normalized opportunity: OPP-E19200F7BD6C3161\nInitial case state: CASE-D850D326D21B745D / intake_validated\nSource SHA-256 recorded and validated: PASS\nOriginal values retained without material inference: PASS\nAudit hash chain: PASS\nSchema validation: PASS\nExternal actions performed: 0\n",
+  "checks": {
+    "unit_tests_passed": 5,
+    "normalized_opportunity_schema_valid": true,
+    "initial_case_state_schema_valid": true,
+    "audit_events_schema_valid": 2,
+    "source_checksum_valid": true,
+    "audit_hash_chain_valid": true,
+    "idempotent_replay_valid": true,
+    "unapproved_source_fails_closed": true,
+    "checksum_change_defers": true,
+    "sparse_source_preserves_missing_fields": true,
+    "external_actions_performed": 0
+  },
+  "representative_output": {
+    "opportunity_id": "OPP-E19200F7BD6C3161",
+    "case_id": "CASE-D850D326D21B745D",
+    "case_status": "intake_validated",
+    "record_key": "d850d326d21b745d1bc1",
+    "source_sha256": "e152ac2dad41a7e34e41cf27742fb7c0e05aafd46e5d68d9a42f0ef00c00b7c2",
+    "audit_event_ids": [
+      "AUD-CASE-D850D326D21B745D-01",
+      "AUD-CASE-D850D326D21B745D-02"
+    ]
+  },
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

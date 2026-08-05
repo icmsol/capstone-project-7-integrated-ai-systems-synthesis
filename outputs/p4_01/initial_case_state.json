@@ -1,0 +1,90 @@
+{
+  "case_schema_version": "1.0.0",
+  "case_id": "CASE-D850D326D21B745D",
+  "case_status": "intake_validated",
+  "created_at": "2026-08-05T16:30:00Z",
+  "updated_at": "2026-08-05T16:30:00Z",
+  "organization_context": {
+    "organization_id": "ICMSOL",
+    "organization_name": "Integrated Consulting and Management Solutions, LLC",
+    "profile_version": "1.0.0",
+    "service_catalog_version": "1.0.0",
+    "rules_version": "1.0.0",
+    "reviewer_roles_version": "1.0.0",
+    "thresholds_version": "1.0.0",
+    "fixed_safeguards_version": "1.0.0"
+  },
+  "opportunity": {
+    "record_schema_version": "1.0.0",
+    "opportunity_id": "OPP-E19200F7BD6C3161",
+    "case_id": "CASE-D850D326D21B745D",
+    "source": {
+      "source_id": "SRC-P4-01-OPPORTUNITY",
+      "source_type": "synthetic",
+      "source_location": "data/implementation/p4_01/raw_opportunity.json",
+      "retrieved_at": "2026-08-05T16:30:00Z",
+      "snapshot_date": "2026-08-05",
+      "sha256": "e152ac2dad41a7e34e41cf27742fb7c0e05aafd46e5d68d9a42f0ef00c00b7c2",
+      "approved_for_use": true,
+      "approval_basis": "Synthetic frozen opportunity approved for controlled Project 7 implementation testing.",
+      "notes": "No real procurement, client-confidential, credential, or personal information is represented."
+    },
+    "source_portal": "Project 7 Synthetic Procurement Portal",
+    "jurisdiction": "California",
+    "agency": "Synthetic Department of Digital Services",
+    "solicitation_id": "RFO-2026-001",
+    "title": "Enterprise IT Strategy, Program Management, and Systems Integration Support",
+    "normalized_title": "enterprise it strategy, program management, and systems integration support",
+    "description": "Provide enterprise IT strategy, project and program management, systems integration, agile delivery support, organizational change management, and technical training.",
+    "status": "open",
+    "posted_at": "2026-08-01T00:00:00Z",
+    "due_at": "2026-09-16T00:00:00Z",
+    "fiscal_year": "2026",
+    "fiscal_quarter": "Q3",
+    "place_of_performance": "California",
+    "procurement_method": "Request for Offer",
+    "contract_vehicle": "Synthetic Statewide Contract",
+    "estimated_value": {
+      "amount": 2500000,
+      "currency": "USD"
+    },
+    "ingested_at": "2026-08-05T16:30:00Z",
+    "normalization_version": "1.0.0",
+    "record_key": "d850d326d21b745d1bc1",
+    "original_values": {
+      "source_portal": "Project 7 Synthetic Procurement Portal",
+      "jurisdiction": "California",
+      "agency": "Synthetic Department of Digital Services",
+      "solicitation_id": "RFO-2026-001",
+      "title": "  Enterprise IT Strategy, Program Management, and Systems Integration Support  ",
+      "description": "Provide enterprise IT strategy, project and program management, systems integration, agile delivery support, organizational change management, and technical training.",
+      "status": "Active",
+      "posted_at": "2026-08-01",
+      "due_at": "2026-09-15T17:00:00-07:00",
+      "place_of_performance": "California",
+      "procurement_method": "Request for Offer",
+      "contract_vehicle": "Synthetic Statewide Contract",
+      "estimated_value": {
+        "amount": 2500000,
+        "currency": "USD"
+      },
+      "data_freshness_days": 4
+    },
+    "missing_fields": [],
+    "data_freshness_days": 4,
+    "limitations": []
+  },
+  "service_alignment": null,
+  "historical_context": null,
+  "clause_predictions": [],
+  "evidence_items": [],
+  "evidence_assessments": [],
+  "recommendation": null,
+  "human_disposition": null,
+  "audit_event_ids": [
+    "AUD-CASE-D850D326D21B745D-01",
+    "AUD-CASE-D850D326D21B745D-02"
+  ],
+  "processing_errors": [],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

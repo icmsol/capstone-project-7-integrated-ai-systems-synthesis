@@ -1,0 +1,11 @@
+requirement_id,requirement,implementation,validation,status
+P4-01-R01,Accept one raw opportunity and an explicit source-approval record.,run_intake_from_files and normalize_opportunity,Representative file-based execution passes.,Implemented
+P4-01-R02,Fail closed when the source is not approved.,_validate_source raises SOURCE_NOT_APPROVED.,test_unapproved_source_fails_closed,Implemented
+P4-01-R03,Tie the normalized record to exact source bytes.,SHA-256 is verified and stored in source provenance.,Source checksum validation passes.,Implemented
+P4-01-R04,"Assign deterministic case, opportunity, and record identifiers.","Identifiers derive from source SHA, version, agency, and solicitation.",test_replay_is_deterministic,Implemented
+P4-01-R05,Preserve original values and do not infer material missing data.,original_values retains raw input; missing_fields and limitations are explicit.,Valid and sparse-source tests pass.,Implemented
+P4-01-R06,Produce a schema-valid normalized opportunity.,Output validates against opportunity_record.schema.json.,Representative schema validation passes.,Implemented
+P4-01-R07,Create a schema-valid initial integrated case state.,Initial state is intake_validated with downstream fields empty.,integrated_case_state validation passes.,Implemented
+P4-01-R08,Write append-only case_created and source_ingested audit events.,Two hash-chained audit events are generated.,Audit schemas and chain checks pass.,Implemented
+P4-01-R09,Detect credential-like source content before persistence.,Secret patterns trigger SECRET_VALUE_DETECTED.,Implemented as fixed fail-closed source gate.,Implemented
+P4-01-R10,Perform no external action or recommendation.,Component writes only local versioned artifacts and audit events.,External actions performed: 0.,Implemented

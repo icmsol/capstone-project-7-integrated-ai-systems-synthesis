@@ -1,0 +1,11 @@
+{
+  "source_id": "SRC-P4-01-OPPORTUNITY",
+  "source_type": "synthetic",
+  "source_location": "data/implementation/p4_01/raw_opportunity.json",
+  "retrieved_at": "2026-08-05T16:30:00Z",
+  "snapshot_date": "2026-08-05",
+  "sha256": "e152ac2dad41a7e34e41cf27742fb7c0e05aafd46e5d68d9a42f0ef00c00b7c2",
+  "approved_for_use": true,
+  "approval_basis": "Synthetic frozen opportunity approved for controlled Project 7 implementation testing.",
+  "notes": "No real procurement, client-confidential, credential, or personal information is represented."
+}
