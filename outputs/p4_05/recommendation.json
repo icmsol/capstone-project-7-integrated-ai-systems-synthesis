@@ -1,0 +1,81 @@
+{
+  "recommendation_schema_version": "1.0.0",
+  "recommendation_id": "REC-D7B8E9C975F6179BDE83",
+  "case_id": "CASE-D850D326D21B745D",
+  "organization_id": "ICMSOL",
+  "profile_version": "1.0.0",
+  "recommendation_code": "R-05",
+  "recommendation_label": "Escalate — Specialized Review Required",
+  "nonbinding_disclosure": "This is an advisory decision-support recommendation only. It is not a final pursuit, procurement, legal, contractual, staffing, pricing, or commitment decision.",
+  "recommendation_strength": 1.0,
+  "supporting_evidence_ids": [
+    "EVID-70B2A42B2AFD1B044C4E",
+    "EVID-915C1A7761C944E112D4"
+  ],
+  "counterevidence_ids": [],
+  "missing_information": [
+    "Complete current solicitation, amendments, attachments, and incorporated terms.",
+    "Mandatory eligibility, certification, insurance, security, and qualification requirements.",
+    "Current named or role-based staffing availability and delivery capacity.",
+    "Pricing, labor mix, subcontracting, cost, and margin feasibility.",
+    "Proposal, mobilization, and delivery schedule feasibility.",
+    "Qualified determination of clause applicability and contractual implications.",
+    "Complete review of the passage that exceeded the model's 256-token limit."
+  ],
+  "conditions": [
+    "A Contracts or Legal Reviewer reviews the current complete solicitation and official clause text.",
+    "Leadership confirms eligibility, strategic fit, staffing capacity, delivery risk, and financial feasibility.",
+    "The truncated passage and surrounding context are reviewed without model truncation.",
+    "The original recommendation remains separate from the authorized human disposition."
+  ],
+  "limitations": [
+    {
+      "code": "NONBINDING_RECOMMENDATION",
+      "description": "The recommendation prioritizes review and next actions; it does not authorize pursuit or decline.",
+      "material": true,
+      "mitigation": "An authorized human reviewer must record a separate disposition and rationale."
+    },
+    {
+      "code": "EVIDENCE_SCOPE_LIMITED",
+      "description": "The evidence workflow used a representative three-record FAR subset rather than the complete current solicitation and full authoritative corpus.",
+      "material": true,
+      "mitigation": "Review all current official acquisition documents before a consequential disposition."
+    },
+    {
+      "code": "MODEL_DOMAIN_LIMIT",
+      "description": "Project 4 clause-theme predictions are outside the model's commercial-contract training domain and one passage was truncated.",
+      "material": true,
+      "mitigation": "Use the predictions for triage only and require qualified review of complete text."
+    },
+    {
+      "code": "BUSINESS_FEASIBILITY_UNVERIFIED",
+      "description": "Alignment and historical counts do not verify eligibility, capacity, pricing, margin, schedule, or award probability.",
+      "material": true,
+      "mitigation": "Complete business, staffing, financial, and delivery review."
+    }
+  ],
+  "required_human_reviewer": {
+    "role_id": "ROLE-CONTRACTS-LEGAL-REVIEWER",
+    "role_name": "Contracts or Legal Reviewer",
+    "organization_id": "ICMSOL"
+  },
+  "recommended_next_action": "Route the integrated packet to a Contracts or Legal Reviewer, then to authorized business leadership for a documented human disposition after the identified information gaps are resolved.",
+  "data_freshness_status": "acceptable",
+  "reason_codes": [
+    "CAPACITY_UNVERIFIED",
+    "CLAUSE_APPLICABILITY_UNVERIFIED",
+    "ELIGIBILITY_UNVERIFIED",
+    "FULL_SOLICITATION_NOT_REVIEWED",
+    "HUMAN_DISPOSITION_PENDING",
+    "HUMAN_REVIEW_REQUIRED",
+    "MODEL_DOMAIN_SHIFT",
+    "MODEL_INPUT_TRUNCATED",
+    "PRICING_AND_MARGIN_UNVERIFIED",
+    "RECOMMENDATION_ESCALATE_SPECIALIZED_REVIEW",
+    "RECOMMENDATION_NONBINDING",
+    "SCHEDULE_UNVERIFIED",
+    "SUPPORTED_WITH_EVIDENCE"
+  ],
+  "audit_reference": "AUD-CASE-D850D326D21B745D-10",
+  "created_at": "2026-08-05T19:15:00Z"
+}

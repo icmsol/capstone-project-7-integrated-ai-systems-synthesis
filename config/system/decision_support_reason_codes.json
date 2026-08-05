@@ -1,0 +1,56 @@
+{
+  "registry_schema_version": "1.0.0",
+  "registry_id": "PROJECT7-P4-05-DECISION-SUPPORT-REASON-CODES",
+  "reason_codes": [
+    {
+      "code": "RECOMMENDATION_ESCALATE_SPECIALIZED_REVIEW",
+      "category": "recommendation",
+      "meaning": "Material model, evidence-scope, or contractual-review conditions require specialized human review."
+    },
+    {
+      "code": "RECOMMENDATION_NONBINDING",
+      "category": "governance",
+      "meaning": "The generated recommendation is advisory and does not constitute a final disposition."
+    },
+    {
+      "code": "FULL_SOLICITATION_NOT_REVIEWED",
+      "category": "information_gap",
+      "meaning": "The controlled workflow did not review a complete current solicitation and all attachments."
+    },
+    {
+      "code": "ELIGIBILITY_UNVERIFIED",
+      "category": "business_review",
+      "meaning": "Organizational eligibility and mandatory qualifications have not been verified."
+    },
+    {
+      "code": "CAPACITY_UNVERIFIED",
+      "category": "business_review",
+      "meaning": "Current staffing availability and delivery capacity have not been verified."
+    },
+    {
+      "code": "PRICING_AND_MARGIN_UNVERIFIED",
+      "category": "business_review",
+      "meaning": "Pricing, cost, rate, and margin feasibility have not been evaluated."
+    },
+    {
+      "code": "SCHEDULE_UNVERIFIED",
+      "category": "business_review",
+      "meaning": "Proposal, mobilization, and delivery schedule feasibility have not been verified."
+    },
+    {
+      "code": "CLAUSE_APPLICABILITY_UNVERIFIED",
+      "category": "contract_review",
+      "meaning": "Evidence retrieval does not determine clause applicability to the procurement."
+    },
+    {
+      "code": "HUMAN_DISPOSITION_PENDING",
+      "category": "governance",
+      "meaning": "An authorized reviewer has not yet recorded a final human disposition."
+    },
+    {
+      "code": "PACKET_READY_FOR_HUMAN_REVIEW",
+      "category": "workflow",
+      "meaning": "All required packet components are assembled and awaiting authorized review."
+    }
+  ]
+}

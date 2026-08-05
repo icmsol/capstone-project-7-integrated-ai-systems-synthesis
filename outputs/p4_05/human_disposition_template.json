@@ -1,0 +1,29 @@
+{
+  "template_schema_version": "1.0.0",
+  "status": "pending",
+  "case_id": "CASE-D850D326D21B745D",
+  "recommendation_id": "REC-D7B8E9C975F6179BDE83",
+  "required_reviewer": {
+    "role_id": "ROLE-CONTRACTS-LEGAL-REVIEWER",
+    "role_name": "Contracts or Legal Reviewer",
+    "organization_id": "ICMSOL"
+  },
+  "allowed_dispositions": [
+    "accept",
+    "accept_with_modified_conditions",
+    "reject",
+    "defer_pending_information",
+    "escalate"
+  ],
+  "required_fields": [
+    "disposition_id",
+    "reviewer",
+    "disposition",
+    "rationale",
+    "modified_conditions",
+    "decided_at"
+  ],
+  "human_disposition_schema": "config/schemas/human_disposition.schema.json",
+  "instructions": "Complete only after authorized review. Preserve the original system recommendation and record the human disposition separately.",
+  "external_actions_performed": 0
+}

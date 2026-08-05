@@ -1,0 +1,550 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/decision_support_packet.schema.json",
+  "title": "Integrated Human Decision-Support Packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "packet_schema_version",
+    "packet_id",
+    "case_id",
+    "generated_at",
+    "packet_status",
+    "source_case_state_sha256",
+    "executive_summary",
+    "opportunity_summary",
+    "organization_fit_summary",
+    "historical_context_summary",
+    "clause_triage_summary",
+    "evidence_summary",
+    "recommendation",
+    "unresolved_issues",
+    "human_review",
+    "component_artifacts",
+    "audit_event_ids",
+    "final_decision",
+    "external_actions_performed",
+    "production_boundary"
+  ],
+  "properties": {
+    "packet_schema_version": {
+      "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+    },
+    "packet_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "case_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "generated_at": {
+      "$ref": "common_definitions.schema.json#/$defs/utc_datetime"
+    },
+    "packet_status": {
+      "type": "string",
+      "const": "ready_for_human_review"
+    },
+    "source_case_state_sha256": {
+      "$ref": "common_definitions.schema.json#/$defs/sha256"
+    },
+    "executive_summary": {
+      "type": "string",
+      "minLength": 80
+    },
+    "opportunity_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "agency",
+        "solicitation_id",
+        "title",
+        "status",
+        "due_at",
+        "jurisdiction",
+        "procurement_method",
+        "estimated_value"
+      ],
+      "properties": {
+        "agency": {
+          "type": "string",
+          "minLength": 1
+        },
+        "solicitation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "due_at": {
+          "$ref": "common_definitions.schema.json#/$defs/utc_datetime"
+        },
+        "jurisdiction": {
+          "type": "string",
+          "minLength": 1
+        },
+        "procurement_method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "estimated_value": {
+          "type": [
+            "object",
+            "null"
+          ]
+        }
+      }
+    },
+    "organization_fit_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "organization_id",
+        "alignment_label",
+        "alignment_score",
+        "matched_capability_ids",
+        "matched_capability_names",
+        "staffing_families",
+        "limitations"
+      ],
+      "properties": {
+        "organization_id": {
+          "$ref": "common_definitions.schema.json#/$defs/identifier"
+        },
+        "alignment_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alignment_score": {
+          "$ref": "common_definitions.schema.json#/$defs/bounded_confidence"
+        },
+        "matched_capability_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common_definitions.schema.json#/$defs/identifier"
+          }
+        },
+        "matched_capability_names": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "staffing_families": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "$ref": "common_definitions.schema.json#/$defs/limitation"
+          }
+        }
+      }
+    },
+    "historical_context_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_period",
+        "source_records",
+        "matched_historical_records",
+        "service_category_counts",
+        "interpretation",
+        "limitations"
+      ],
+      "properties": {
+        "source_period": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "start_date",
+            "end_date"
+          ],
+          "properties": {
+            "start_date": {
+              "$ref": "common_definitions.schema.json#/$defs/date"
+            },
+            "end_date": {
+              "$ref": "common_definitions.schema.json#/$defs/date"
+            }
+          }
+        },
+        "source_records": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "matched_historical_records": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "service_category_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "interpretation": {
+          "type": "string",
+          "minLength": 20
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "$ref": "common_definitions.schema.json#/$defs/limitation"
+          }
+        }
+      }
+    },
+    "clause_triage_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "prediction_count",
+        "escalation_count",
+        "domain_warning_count",
+        "truncation_count",
+        "predictions",
+        "reason_codes"
+      ],
+      "properties": {
+        "prediction_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "escalation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "domain_warning_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "truncation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "predictions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "passage_id",
+              "predicted_category",
+              "confidence",
+              "decision",
+              "domain_warning",
+              "truncated",
+              "reason_codes"
+            ],
+            "properties": {
+              "passage_id": {
+                "$ref": "common_definitions.schema.json#/$defs/identifier"
+              },
+              "predicted_category": {
+                "type": "string",
+                "minLength": 1
+              },
+              "confidence": {
+                "$ref": "common_definitions.schema.json#/$defs/bounded_confidence"
+              },
+              "decision": {
+                "type": "string",
+                "minLength": 1
+              },
+              "domain_warning": {
+                "type": "boolean"
+              },
+              "truncated": {
+                "type": "boolean"
+              },
+              "reason_codes": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "$ref": "common_definitions.schema.json#/$defs/reason_code"
+                }
+              }
+            }
+          }
+        },
+        "reason_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common_definitions.schema.json#/$defs/reason_code"
+          }
+        }
+      }
+    },
+    "evidence_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_item_count",
+        "sufficient_assessment_count",
+        "material_conflict_count",
+        "citations",
+        "assessment_reason_codes",
+        "limitations"
+      ],
+      "properties": {
+        "evidence_item_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sufficient_assessment_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "material_conflict_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "citations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "evidence_id",
+              "citation_text",
+              "source_locator",
+              "supports_claim",
+              "freshness_status"
+            ],
+            "properties": {
+              "evidence_id": {
+                "$ref": "common_definitions.schema.json#/$defs/identifier"
+              },
+              "citation_text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_locator": {
+                "type": "string",
+                "format": "uri"
+              },
+              "supports_claim": {
+                "type": "boolean"
+              },
+              "freshness_status": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "assessment_reason_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common_definitions.schema.json#/$defs/reason_code"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "$ref": "common_definitions.schema.json#/$defs/limitation"
+          }
+        }
+      }
+    },
+    "recommendation": {
+      "$ref": "recommendation.schema.json"
+    },
+    "unresolved_issues": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "issue_id",
+          "category",
+          "severity",
+          "description",
+          "source_components",
+          "reason_codes",
+          "required_action",
+          "blocks_final_disposition"
+        ],
+        "properties": {
+          "issue_id": {
+            "$ref": "common_definitions.schema.json#/$defs/identifier"
+          },
+          "category": {
+            "type": "string",
+            "minLength": 1
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "critical",
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "minLength": 20
+          },
+          "source_components": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "reason_codes": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "$ref": "common_definitions.schema.json#/$defs/reason_code"
+            }
+          },
+          "required_action": {
+            "type": "string",
+            "minLength": 10
+          },
+          "blocks_final_disposition": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "human_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required",
+        "status",
+        "required_reviewer",
+        "allowed_dispositions",
+        "decision_authority",
+        "original_recommendation_immutable",
+        "human_disposition"
+      ],
+      "properties": {
+        "required": {
+          "type": "boolean",
+          "const": true
+        },
+        "status": {
+          "type": "string",
+          "const": "pending"
+        },
+        "required_reviewer": {
+          "$ref": "common_definitions.schema.json#/$defs/human_role"
+        },
+        "allowed_dispositions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "accept",
+              "accept_with_modified_conditions",
+              "reject",
+              "defer_pending_information",
+              "escalate"
+            ]
+          }
+        },
+        "decision_authority": {
+          "type": "string",
+          "minLength": 30
+        },
+        "original_recommendation_immutable": {
+          "type": "boolean",
+          "const": true
+        },
+        "human_disposition": {
+          "oneOf": [
+            {
+              "$ref": "human_disposition.schema.json"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "component_artifacts": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "component_id",
+          "component_status",
+          "source_artifacts",
+          "audit_event_ids"
+        ],
+        "properties": {
+          "component_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "component_status": {
+            "type": "string",
+            "enum": [
+              "completed",
+              "completed_with_limitations",
+              "escalated"
+            ]
+          },
+          "source_artifacts": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "audit_event_ids": {
+            "type": "array",
+            "items": {
+              "$ref": "common_definitions.schema.json#/$defs/identifier"
+            }
+          }
+        }
+      }
+    },
+    "audit_event_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common_definitions.schema.json#/$defs/identifier"
+      }
+    },
+    "final_decision": {
+      "type": "null"
+    },
+    "external_actions_performed": {
+      "type": "integer",
+      "const": 0
+    },
+    "production_boundary": {
+      "type": "string",
+      "const": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+    }
+  }
+}

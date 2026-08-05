@@ -1,0 +1,38 @@
+{
+  "artifact_id": "PROJECT7-P4-05-VALIDATION-EVIDENCE",
+  "artifact_version": "1.0.0",
+  "validated_at_utc": "2026-08-05T19:30:06.704109+00:00",
+  "validation_status": "PASS",
+  "command": "python tests/run_p4_05_validation.py",
+  "stdout": "test_integrated_pipeline_sets_awaiting_human_review (tests.test_decision_support_packet.DecisionSupportPacketTests.test_integrated_pipeline_sets_awaiting_human_review) ... ok\ntest_missing_component_fails_closed (tests.test_decision_support_packet.DecisionSupportPacketTests.test_missing_component_fails_closed) ... ok\ntest_packet_and_recommendation_are_schema_valid (tests.test_decision_support_packet.DecisionSupportPacketTests.test_packet_and_recommendation_are_schema_valid) ... ok\ntest_packet_consumes_all_major_component_outputs (tests.test_decision_support_packet.DecisionSupportPacketTests.test_packet_consumes_all_major_component_outputs) ... ok\ntest_packet_has_no_final_decision_or_external_action (tests.test_decision_support_packet.DecisionSupportPacketTests.test_packet_has_no_final_decision_or_external_action) ... ok\ntest_packet_preserves_unresolved_issues (tests.test_decision_support_packet.DecisionSupportPacketTests.test_packet_preserves_unresolved_issues) ... ok\ntest_recommendation_escalates_specialized_review (tests.test_decision_support_packet.DecisionSupportPacketTests.test_recommendation_escalates_specialized_review) ... ok\ntest_recommendation_uses_validated_evidence_ids (tests.test_decision_support_packet.DecisionSupportPacketTests.test_recommendation_uses_validated_evidence_ids) ... ok\ntest_replay_is_deterministic (tests.test_decision_support_packet.DecisionSupportPacketTests.test_replay_is_deterministic) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.432s\n\nOK\nRecommendation: R-05 / Escalate — Specialized Review Required\nSupporting evidence IDs: 2\nUnresolved issues preserved: 9\nRequired reviewer: Contracts or Legal Reviewer\nUpdated case status: awaiting_human_review\nHuman disposition recorded: False\nAudit events added: 2\nPacket schema validation: PASS\nRecommendation schema validation: PASS\nFinal decision created: False\nExternal actions performed: 0\n",
+  "checks": {
+    "unit_tests_passed": 9,
+    "component_artifact_records": 7,
+    "recommendation_code": "R-05",
+    "supporting_evidence_ids": 2,
+    "unresolved_issue_count": 9,
+    "packet_schema_valid": true,
+    "recommendation_schema_valid": true,
+    "updated_case_state_schema_valid": true,
+    "missing_component_fails_closed": true,
+    "deterministic_replay": true,
+    "case_status": "awaiting_human_review",
+    "human_disposition_recorded": false,
+    "final_decision_created": false,
+    "audit_events_added": 2,
+    "external_actions_performed": 0
+  },
+  "representative_result": {
+    "packet_id": "PACKET-D850D326D21B745D-P4-05",
+    "case_id": "CASE-D850D326D21B745D",
+    "recommendation_label": "Escalate — Specialized Review Required",
+    "required_reviewer": {
+      "role_id": "ROLE-CONTRACTS-LEGAL-REVIEWER",
+      "role_name": "Contracts or Legal Reviewer",
+      "organization_id": "ICMSOL"
+    },
+    "packet_status": "ready_for_human_review",
+    "source_case_state_sha256": "0ba138e4ae72e257de176bba77a5f685ebae034736b26c5299686a01aefc5eb9"
+  },
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

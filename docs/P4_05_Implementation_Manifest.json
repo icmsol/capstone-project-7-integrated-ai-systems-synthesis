@@ -1,0 +1,133 @@
+{
+  "artifact_id": "PROJECT7-P4-05-INTEGRATED-DECISION-SUPPORT-PACKET",
+  "artifact_version": "1.0.0",
+  "created_at_utc": "2026-08-05T19:30:06.705362+00:00",
+  "components": [
+    "recommendation_engine",
+    "packet_assembler",
+    "human_review_router"
+  ],
+  "unit_test_count": 9,
+  "component_artifact_record_count": 7,
+  "unresolved_issue_count": 9,
+  "validation_status": "PASS",
+  "final_decision_created": false,
+  "external_actions_performed": 0,
+  "files": [
+    {
+      "path": "audit/p4_05_packet_events.jsonl",
+      "bytes": 3305,
+      "sha256": "1703b504b857b6e2c02c67bf21367b8612d1a3d0a7e2726fc1f093b7877ec3da"
+    },
+    {
+      "path": "config/schemas/decision_support_packet.schema.json",
+      "bytes": 14216,
+      "sha256": "c87fb2fdbd41fd2b784474a18065ad1e45155933e6a2403475b0ecd8545a20ed"
+    },
+    {
+      "path": "config/system/decision_support_packet_policy.json",
+      "bytes": 958,
+      "sha256": "bc369c57458587afee93e7dfe082e1b633c0a2c2c03d75b8c28d67664d1eb302"
+    },
+    {
+      "path": "config/system/decision_support_reason_codes.json",
+      "bytes": 2064,
+      "sha256": "366b4aa77a62d76b816d2a0b03a89e749811b1ce5c74a71d47f1ae63f2faa70f"
+    },
+    {
+      "path": "config/system/recommendation_policy.json",
+      "bytes": 1290,
+      "sha256": "4f2b7adb245c64afe21eda3da971cf06c9f25b881f7550968cfa51b9c800dfdc"
+    },
+    {
+      "path": "docs/P4_05_Integrated_Decision_Support_Packet.md",
+      "bytes": 4485,
+      "sha256": "97086ba6cb024404061a8502ce8e2ee7b347dc733af13f47e92ea6ef87e0a20f"
+    },
+    {
+      "path": "docs/P4_05_Requirements_Matrix.csv",
+      "bytes": 1978,
+      "sha256": "e7cfc9e2f8ebeab06664ac95857b11330918037db2e3713613e99ab1a1fb4a75"
+    },
+    {
+      "path": "docs/P4_05_Validation_Evidence.json",
+      "bytes": 3450,
+      "sha256": "6095ad5196532de205bde138dfd977d49e6e7dbdc41cb5c15390d13a34eaef2c"
+    },
+    {
+      "path": "outputs/p4_05/decision_support_packet.json",
+      "bytes": 20823,
+      "sha256": "63f2829eef2764f4f4b1269a7f5e0389d3aa7ff50d0ca906d5f912472a70c8c6"
+    },
+    {
+      "path": "outputs/p4_05/decision_support_packet.md",
+      "bytes": 8421,
+      "sha256": "dad89261625b5bd2372b8a71e22a1cba7bb8e2c8528b2d0d2fb073c6f7fbb764"
+    },
+    {
+      "path": "outputs/p4_05/human_disposition_template.json",
+      "bytes": 867,
+      "sha256": "e690e60ee0d560d81016461c54400bbbfb10abf63267ca0020b6caff6b54750e"
+    },
+    {
+      "path": "outputs/p4_05/recommendation.json",
+      "bytes": 3972,
+      "sha256": "50c169f8298349479067df26a36a0f9fcdc7ea0deed8a99624ac9ad35b904675"
+    },
+    {
+      "path": "outputs/p4_05/updated_case_state.json",
+      "bytes": 26431,
+      "sha256": "702b35be82e39248f3bd80fc437198670a06d81fc16bacfc97ded14f7bf09115"
+    },
+    {
+      "path": "requirements_p4_05.txt",
+      "bytes": 41,
+      "sha256": "20a90afd705bc492bd3b5b22c9ef500927ed27ebbbb78a80a3abf8e87ce18689"
+    },
+    {
+      "path": "src/project7/__init__.py",
+      "bytes": 2012,
+      "sha256": "066e902411feaed4418e7d6ee2b2efeba34b769a059a3e6b4fc8127706c277d3"
+    },
+    {
+      "path": "src/project7/audit_utils.py",
+      "bytes": 1802,
+      "sha256": "38294a9de812555c7fe2d75694cf23c137d5ca9050814f9a7a26a9e7aeac7bc8"
+    },
+    {
+      "path": "src/project7/decision_support_packet.py",
+      "bytes": 23322,
+      "sha256": "aa1329ae558e077fbf787b163a087d78941136b3218af1f5c7249c232c41ff2a"
+    },
+    {
+      "path": "src/project7/p4_05_pipeline.py",
+      "bytes": 8194,
+      "sha256": "abd4172782999494ce6e025def94fee90cf9dd0fde5d6193fa1dbc006130afe4"
+    },
+    {
+      "path": "src/project7/recommendation_engine.py",
+      "bytes": 8897,
+      "sha256": "9a557caa11ecfacf5c273952ecf2b81ea32870e363dac6b7cb8af15a47074091"
+    },
+    {
+      "path": "src/project7/schema_validation.py",
+      "bytes": 1766,
+      "sha256": "46bf4c5d63f85165ff2befbdf48359765442242cc886ccb4381a98ef5e07538a"
+    },
+    {
+      "path": "tests/__init__.py",
+      "bytes": 23,
+      "sha256": "bc298d46538d0a02c5b93651cf19f2e9c29492638b770f87f84e267c1740e47a"
+    },
+    {
+      "path": "tests/run_p4_05_validation.py",
+      "bytes": 2577,
+      "sha256": "c33029961e22521c07777e02e7446d268afcbdd204e8ff6689fc781bcf8ab5d0"
+    },
+    {
+      "path": "tests/test_decision_support_packet.py",
+      "bytes": 7836,
+      "sha256": "4982b7048b83bb396f3bb4b3012f212a784033d02b398607a8f5afa90927e674"
+    }
+  ]
+}

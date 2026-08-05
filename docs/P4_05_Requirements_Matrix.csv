@@ -1,0 +1,11 @@
+requirement_id,requirement,implementation,validation,status
+P4-05-R01,Consume all major prior component outputs.,"The packet includes intake, alignment, historical, clause, evidence, and recommendation summaries.",Seven component-artifact records are preserved.,Implemented
+P4-05-R02,Generate a nonbinding recommendation using fixed precedence.,R-05 specialized review is triggered by model domain shift and truncation.,Recommendation schema validation passes.,Implemented
+P4-05-R03,Tie the recommendation to validated evidence.,Two supporting evidence IDs are retained from P4-04.,Evidence IDs match the integrated case state.,Implemented
+P4-05-R04,Preserve material limitations and unresolved issues.,"Nine blocking issues cover documents, model limits, clause applicability, eligibility, capacity, finance, schedule, and human authority.",All expected reason codes are present.,Implemented
+P4-05-R05,Provide one coherent human-review artifact.,"JSON and Markdown packets include the summary, evidence, recommendation, conditions, issues, and disposition section.",Decision-support packet schema validation passes.,Implemented
+P4-05-R06,Require an authorized reviewer and separate human disposition.,A Contracts or Legal Reviewer is required; human_disposition remains null.,The case advances to awaiting_human_review.,Implemented
+P4-05-R07,Prevent the automated packet from becoming a final decision.,final_decision is null and the original recommendation is immutable.,Boundary tests pass.,Implemented
+P4-05-R08,Continue the case audit chain.,Events 10 and 11 record recommendation creation and human-review routing.,Two schema-valid audit events are added.,Implemented
+P4-05-R09,Fail closed when a required component is missing.,PacketAssemblyError uses PACKET_COMPONENT_MISSING.,Missing-component test passes.,Implemented
+P4-05-R10,Perform no autonomous external action.,Packet generation writes local artifacts only.,External actions performed: 0.,Implemented

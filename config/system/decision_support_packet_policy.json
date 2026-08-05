@@ -1,0 +1,29 @@
+{
+  "policy_schema_version": "1.0.0",
+  "policy_id": "PROJECT7-HUMAN-REVIEW-PACKET-POLICY",
+  "required_components": [
+    "opportunity_intake",
+    "organization_alignment",
+    "historical_context",
+    "clause_triage",
+    "official_evidence",
+    "evidence_assessment",
+    "nonbinding_recommendation",
+    "unresolved_issues",
+    "human_review_boundary",
+    "audit_references"
+  ],
+  "packet_status": "ready_for_human_review",
+  "original_recommendation_immutable_after_human_disposition": true,
+  "human_disposition_required_for_finalization": true,
+  "allowed_human_dispositions": [
+    "accept",
+    "accept_with_modified_conditions",
+    "reject",
+    "defer_pending_information",
+    "escalate"
+  ],
+  "packet_may_not_create_human_disposition": true,
+  "external_actions_permitted": false,
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

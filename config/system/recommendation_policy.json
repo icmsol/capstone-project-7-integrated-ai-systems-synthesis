@@ -1,0 +1,36 @@
+{
+  "policy_schema_version": "1.0.0",
+  "policy_id": "PROJECT7-NONBINDING-RECOMMENDATION-POLICY",
+  "recommendation_precedence": [
+    "fail_closed",
+    "specialized_review",
+    "hold_for_information",
+    "pursue_with_conditions",
+    "pursue",
+    "do_not_pursue",
+    "no_recommendation"
+  ],
+  "specialized_review_triggers": [
+    "MODEL_DOMAIN_SHIFT",
+    "MODEL_INPUT_TRUNCATED",
+    "SCOPE_OUT_OF_BOUNDS",
+    "EVIDENCE_CONFLICT",
+    "APPLICABILITY_NOT_DETERMINED",
+    "legal_or_contractual_interpretation_required"
+  ],
+  "minimum_alignment_for_directional_pursuit": 0.75,
+  "minimum_evidence_score_for_directional_pursuit": 0.75,
+  "full_solicitation_required_before_final_disposition": true,
+  "capacity_verification_required": true,
+  "eligibility_verification_required": true,
+  "pricing_and_margin_verification_required": true,
+  "schedule_verification_required": true,
+  "recommendation_is_nonbinding": true,
+  "final_decision_must_remain_null": true,
+  "required_human_reviewer": {
+    "role_id": "ROLE-CONTRACTS-LEGAL-REVIEWER",
+    "role_name": "Contracts or Legal Reviewer",
+    "organization_id": "ICMSOL"
+  },
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

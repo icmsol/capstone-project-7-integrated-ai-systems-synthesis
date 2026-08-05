@@ -1,0 +1,592 @@
+{
+  "case_schema_version": "1.0.0",
+  "case_id": "CASE-D850D326D21B745D",
+  "case_status": "awaiting_human_review",
+  "created_at": "2026-08-05T16:30:00Z",
+  "updated_at": "2026-08-05T19:15:00Z",
+  "organization_context": {
+    "organization_id": "ICMSOL",
+    "organization_name": "Integrated Consulting and Management Solutions, LLC",
+    "profile_version": "1.0.0",
+    "service_catalog_version": "1.0.0",
+    "rules_version": "1.0.0",
+    "reviewer_roles_version": "1.0.0",
+    "thresholds_version": "1.0.0",
+    "fixed_safeguards_version": "1.0.0"
+  },
+  "opportunity": {
+    "record_schema_version": "1.0.0",
+    "opportunity_id": "OPP-E19200F7BD6C3161",
+    "case_id": "CASE-D850D326D21B745D",
+    "source": {
+      "source_id": "SRC-P4-01-OPPORTUNITY",
+      "source_type": "synthetic",
+      "source_location": "data/implementation/p4_01/raw_opportunity.json",
+      "retrieved_at": "2026-08-05T16:30:00Z",
+      "snapshot_date": "2026-08-05",
+      "sha256": "e152ac2dad41a7e34e41cf27742fb7c0e05aafd46e5d68d9a42f0ef00c00b7c2",
+      "approved_for_use": true,
+      "approval_basis": "Synthetic frozen opportunity approved for controlled Project 7 implementation testing.",
+      "notes": "No real procurement, client-confidential, credential, or personal information is represented."
+    },
+    "source_portal": "Project 7 Synthetic Procurement Portal",
+    "jurisdiction": "California",
+    "agency": "Synthetic Department of Digital Services",
+    "solicitation_id": "RFO-2026-001",
+    "title": "Enterprise IT Strategy, Program Management, and Systems Integration Support",
+    "normalized_title": "enterprise it strategy, program management, and systems integration support",
+    "description": "Provide enterprise IT strategy, project and program management, systems integration, agile delivery support, organizational change management, and technical training.",
+    "status": "open",
+    "posted_at": "2026-08-01T00:00:00Z",
+    "due_at": "2026-09-16T00:00:00Z",
+    "fiscal_year": "2026",
+    "fiscal_quarter": "Q3",
+    "place_of_performance": "California",
+    "procurement_method": "Request for Offer",
+    "contract_vehicle": "Synthetic Statewide Contract",
+    "estimated_value": {
+      "amount": 2500000,
+      "currency": "USD"
+    },
+    "ingested_at": "2026-08-05T16:30:00Z",
+    "normalization_version": "1.0.0",
+    "record_key": "d850d326d21b745d1bc1",
+    "original_values": {
+      "source_portal": "Project 7 Synthetic Procurement Portal",
+      "jurisdiction": "California",
+      "agency": "Synthetic Department of Digital Services",
+      "solicitation_id": "RFO-2026-001",
+      "title": "  Enterprise IT Strategy, Program Management, and Systems Integration Support  ",
+      "description": "Provide enterprise IT strategy, project and program management, systems integration, agile delivery support, organizational change management, and technical training.",
+      "status": "Active",
+      "posted_at": "2026-08-01",
+      "due_at": "2026-09-15T17:00:00-07:00",
+      "place_of_performance": "California",
+      "procurement_method": "Request for Offer",
+      "contract_vehicle": "Synthetic Statewide Contract",
+      "estimated_value": {
+        "amount": 2500000,
+        "currency": "USD"
+      },
+      "data_freshness_days": 4
+    },
+    "missing_fields": [],
+    "data_freshness_days": 4,
+    "limitations": []
+  },
+  "service_alignment": {
+    "alignment_schema_version": "1.0.0",
+    "case_id": "CASE-D850D326D21B745D",
+    "organization_id": "ICMSOL",
+    "profile_version": "1.0.0",
+    "service_catalog_version": "1.0.0",
+    "matched_capabilities": [
+      {
+        "capability_id": "ICM-PM-001",
+        "capability_name": "Project and Program Management",
+        "service_family_id": "SF03",
+        "matched_terms": [
+          "program management"
+        ],
+        "match_strength": "strong",
+        "evidence_text": "Opportunity text matched configured terms for Project and Program Management: program management"
+      },
+      {
+        "capability_id": "ICM-OCM-005",
+        "capability_name": "Technical Training and Knowledge Transfer",
+        "service_family_id": "SF06",
+        "matched_terms": [
+          "technical training"
+        ],
+        "match_strength": "strong",
+        "evidence_text": "Opportunity text matched configured terms for Technical Training and Knowledge Transfer: technical training"
+      },
+      {
+        "capability_id": "ICM-ITS-001",
+        "capability_name": "IT Strategic Planning",
+        "service_family_id": "SF01",
+        "matched_terms": [
+          "it strategy"
+        ],
+        "match_strength": "strong",
+        "evidence_text": "Opportunity text matched configured terms for IT Strategic Planning: it strategy"
+      },
+      {
+        "capability_id": "ICM-CDI-005",
+        "capability_name": "Systems Integration and API Enablement",
+        "service_family_id": "SF02",
+        "matched_terms": [
+          "systems integration"
+        ],
+        "match_strength": "strong",
+        "evidence_text": "Opportunity text matched configured terms for Systems Integration and API Enablement: systems integration"
+      },
+      {
+        "capability_id": "ICM-PM-006",
+        "capability_name": "Waterfall, Agile, Hybrid, and Client-Specific Delivery",
+        "service_family_id": "SF03",
+        "matched_terms": [
+          "agile"
+        ],
+        "match_strength": "weak",
+        "evidence_text": "Opportunity text matched configured terms for Waterfall, Agile, Hybrid, and Client-Specific Delivery: agile"
+      }
+    ],
+    "excluded_matches": [],
+    "alignment_score": 1.0,
+    "alignment_label": "strong_alignment",
+    "staffing_families": [
+      "Application and Integration Delivery",
+      "Change and Learning",
+      "Program Delivery and Oversight",
+      "Strategy and Architecture"
+    ],
+    "reason_codes": [
+      "ALIGNMENT_STRONG"
+    ],
+    "limitations": [
+      {
+        "code": "SCREENING_NOT_DECISION",
+        "description": "Configuration-driven term alignment is a transparent screening input, not a complete scope, capacity, eligibility, award-probability, or final pursuit decision.",
+        "material": true,
+        "mitigation": "Review the full solicitation, qualifications, current availability, and authoritative evidence before a human decision."
+      },
+      {
+        "code": "TEXT_MATCH_LIMIT",
+        "description": "The assessment evaluates configured terms in normalized opportunity text and may miss implied or differently worded scope.",
+        "material": true,
+        "mitigation": "Use human review and later evidence retrieval to confirm or reject the preliminary service alignment."
+      }
+    ]
+  },
+  "historical_context": {
+    "context_schema_version": "1.0.0",
+    "case_id": "CASE-D850D326D21B745D",
+    "source_period": {
+      "start_date": "2021-07-01",
+      "end_date": "2026-06-30"
+    },
+    "source_records": 29646,
+    "matched_historical_records": 122,
+    "service_category_counts": {
+      "IT Consulting & Staff Augmentation": 20,
+      "Organizational Change, Training & Process": 14,
+      "Project Management, IV&V & Quality": 9,
+      "Software Development & Systems Integration": 79
+    },
+    "staffing_family_counts": {
+      "Advisory, Assurance & Change": 43,
+      "Technology Delivery": 79
+    },
+    "source_asset_checksums": {
+      "analysis_summary.json": "95a3d060abca97638a3aa6da6cc1899bc6ccfa23e62a8c204bdf037d60d226c4",
+      "historical_service_context.csv": "94a98461ff71fcfa889e7b0a48f6f7c9a775411eeac9cee902f468e1145534af"
+    },
+    "interpretation": "The frozen Project 2 dataset contains 29,646 records, including 176 title-classified ICM-relevant records. The current alignment maps to 122 historical records across 4 configured service categories. This is descriptive directional context only and does not predict award likelihood, contract value, labor demand, or current capacity.",
+    "limitations": [
+      {
+        "code": "DESCRIPTIVE_ONLY",
+        "description": "Historical counts summarize a frozen 2021-07-01 through 2026-06-30 procurement dataset and are not predictive.",
+        "material": true,
+        "mitigation": "Use current solicitation evidence and authorized human judgment."
+      },
+      {
+        "code": "TITLE_CLASSIFICATION_LIMIT",
+        "description": "The source records were identified using transparent title-based rules and may not reflect complete solicitation scope.",
+        "material": true,
+        "mitigation": "Treat counts as directional context and review current full-text evidence."
+      },
+      {
+        "code": "NOT_CAPACITY_OR_AWARD_FORECAST",
+        "description": "The counts do not measure contract value, labor hours, current staffing capacity, eligibility, or award probability.",
+        "material": true,
+        "mitigation": "Verify current capacity, qualifications, and pursuit decisions separately."
+      }
+    ]
+  },
+  "clause_predictions": [
+    {
+      "prediction_schema_version": "1.0.0",
+      "case_id": "CASE-D850D326D21B745D",
+      "passage_id": "PASSAGE-AUDIT-001",
+      "passage_text_hash": "f3d49c12aaeb33f518a3be9b18a5073e0a8bce0bdc7735403d7626003141e281",
+      "model_artifact_id": "PROJECT4-CLAUSE-CLASSIFIER-INFERENCE",
+      "model_version": "1.0.0",
+      "model_sha256": "50a280950d31466d7002578295c64e957d144611f5b9731bb059be50e68c6c92",
+      "predicted_label_id": 0,
+      "predicted_category": "Audit Rights",
+      "confidence": 0.9999610185623169,
+      "decision": "escalate",
+      "review_priority": "high",
+      "required_reviewer_role": "Contracts or Legal Reviewer",
+      "domain_warning": true,
+      "truncated": false,
+      "token_count": 27,
+      "reason_codes": [
+        "MODEL_DOMAIN_SHIFT"
+      ],
+      "limitations": [
+        {
+          "code": "MODEL_THEME_ONLY",
+          "description": "The output is a clause-theme triage label, not legal meaning, enforceability, compliance, acceptability, or required contractual action.",
+          "material": true,
+          "mitigation": "Route consequential interpretation to an authorized contracts or legal reviewer."
+        },
+        {
+          "code": "MODEL_TEN_CLASS_LIMIT",
+          "description": "The classifier recognizes only ten CUAD-derived commercial-contract categories.",
+          "material": true,
+          "mitigation": "Do not treat the label set as a complete contract taxonomy."
+        },
+        {
+          "code": "MODEL_CONFIDENCE_NOT_CERTAINTY",
+          "description": "Confidence is not legal certainty or evidence of correctness on public-sector language.",
+          "material": true,
+          "mitigation": "Use confidence only for review prioritization."
+        },
+        {
+          "code": "MODEL_DOMAIN_SHIFT",
+          "description": "The model was trained on commercial-contract language; this passage is public-sector or exhibits vocabulary shift.",
+          "material": true,
+          "mitigation": "Require qualified human review and do not use the label as authoritative evidence."
+        }
+      ]
+    },
+    {
+      "prediction_schema_version": "1.0.0",
+      "case_id": "CASE-D850D326D21B745D",
+      "passage_id": "PASSAGE-ASSIGNMENT-001",
+      "passage_text_hash": "3f36710b6215ba6012fb271f78dc3a568889daaaee3e98865ac5725ebff97d51",
+      "model_artifact_id": "PROJECT4-CLAUSE-CLASSIFIER-INFERENCE",
+      "model_version": "1.0.0",
+      "model_sha256": "50a280950d31466d7002578295c64e957d144611f5b9731bb059be50e68c6c92",
+      "predicted_label_id": 1,
+      "predicted_category": "Anti-Assignment",
+      "confidence": 0.9999657869338989,
+      "decision": "escalate",
+      "review_priority": "high",
+      "required_reviewer_role": "Contracts or Legal Reviewer",
+      "domain_warning": true,
+      "truncated": false,
+      "token_count": 23,
+      "reason_codes": [
+        "MODEL_DOMAIN_SHIFT"
+      ],
+      "limitations": [
+        {
+          "code": "MODEL_THEME_ONLY",
+          "description": "The output is a clause-theme triage label, not legal meaning, enforceability, compliance, acceptability, or required contractual action.",
+          "material": true,
+          "mitigation": "Route consequential interpretation to an authorized contracts or legal reviewer."
+        },
+        {
+          "code": "MODEL_TEN_CLASS_LIMIT",
+          "description": "The classifier recognizes only ten CUAD-derived commercial-contract categories.",
+          "material": true,
+          "mitigation": "Do not treat the label set as a complete contract taxonomy."
+        },
+        {
+          "code": "MODEL_CONFIDENCE_NOT_CERTAINTY",
+          "description": "Confidence is not legal certainty or evidence of correctness on public-sector language.",
+          "material": true,
+          "mitigation": "Use confidence only for review prioritization."
+        },
+        {
+          "code": "MODEL_DOMAIN_SHIFT",
+          "description": "The model was trained on commercial-contract language; this passage is public-sector or exhibits vocabulary shift.",
+          "material": true,
+          "mitigation": "Require qualified human review and do not use the label as authoritative evidence."
+        }
+      ]
+    },
+    {
+      "prediction_schema_version": "1.0.0",
+      "case_id": "CASE-D850D326D21B745D",
+      "passage_id": "PASSAGE-LONG-001",
+      "passage_text_hash": "30b7884638d08e39f5aea82eb30510fe33a65351264b98480a736dcca3208616",
+      "model_artifact_id": "PROJECT4-CLAUSE-CLASSIFIER-INFERENCE",
+      "model_version": "1.0.0",
+      "model_sha256": "50a280950d31466d7002578295c64e957d144611f5b9731bb059be50e68c6c92",
+      "predicted_label_id": 0,
+      "predicted_category": "Audit Rights",
+      "confidence": 0.9999566078186035,
+      "decision": "escalate",
+      "review_priority": "critical",
+      "required_reviewer_role": "Contracts or Legal Reviewer",
+      "domain_warning": true,
+      "truncated": true,
+      "token_count": 1125,
+      "reason_codes": [
+        "MODEL_DOMAIN_SHIFT",
+        "MODEL_INPUT_TRUNCATED"
+      ],
+      "limitations": [
+        {
+          "code": "MODEL_THEME_ONLY",
+          "description": "The output is a clause-theme triage label, not legal meaning, enforceability, compliance, acceptability, or required contractual action.",
+          "material": true,
+          "mitigation": "Route consequential interpretation to an authorized contracts or legal reviewer."
+        },
+        {
+          "code": "MODEL_TEN_CLASS_LIMIT",
+          "description": "The classifier recognizes only ten CUAD-derived commercial-contract categories.",
+          "material": true,
+          "mitigation": "Do not treat the label set as a complete contract taxonomy."
+        },
+        {
+          "code": "MODEL_CONFIDENCE_NOT_CERTAINTY",
+          "description": "Confidence is not legal certainty or evidence of correctness on public-sector language.",
+          "material": true,
+          "mitigation": "Use confidence only for review prioritization."
+        },
+        {
+          "code": "MODEL_DOMAIN_SHIFT",
+          "description": "The model was trained on commercial-contract language; this passage is public-sector or exhibits vocabulary shift.",
+          "material": true,
+          "mitigation": "Require qualified human review and do not use the label as authoritative evidence."
+        },
+        {
+          "code": "MODEL_INPUT_TRUNCATED",
+          "description": "The passage exceeded the configured maximum length and was truncated before inference.",
+          "material": true,
+          "mitigation": "Review the complete passage and surrounding context."
+        }
+      ]
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_schema_version": "1.0.0",
+      "evidence_id": "EVID-70B2A42B2AFD1B044C4E",
+      "case_id": "CASE-D850D326D21B745D",
+      "claim_id": "CLAIM-P4-04-AUDIT",
+      "source": {
+        "source_id": "FAR-52.215-2",
+        "source_type": "frozen_snapshot",
+        "source_location": "data/reference/far/p4_04/52_215-2_snapshot.txt",
+        "retrieved_at": "2026-08-05T18:30:00Z",
+        "snapshot_date": "2026-08-05",
+        "sha256": "7cdf56138e3c5eea825026068f5ec190ad4cb0ff67ddff6297f86737651704e0",
+        "approved_for_use": true,
+        "approval_basis": "Official Acquisition.gov metadata and a controlled paraphrased snapshot approved for Project 7 representative validation.",
+        "notes": "Representative official-source subset; review the current official page before consequential use."
+      },
+      "citation": {
+        "citation_text": "FAR 52.215-2 Audit and Records-Negotiation (Jun 2020)",
+        "source_locator": "https://www.acquisition.gov/far/52.215-2",
+        "clause_number": "52.215-2",
+        "section_heading": "Audit and Records-Negotiation"
+      },
+      "quoted_or_paraphrased_text": "This clause defines covered records and describes Government examination and audit rights for specified contract types, certified cost or pricing data, and supporting report records. It also addresses record availability and certain subcontract flow-downs.",
+      "retrieval_method": "exact_lookup",
+      "metadata_valid": true,
+      "citation_valid": true,
+      "relevance_score": 1.0,
+      "supports_claim": true,
+      "conflicts_with_claim": false,
+      "freshness_status": "current",
+      "validation_reason_codes": [
+        "SUPPORTED_WITH_EVIDENCE"
+      ],
+      "limitations": [
+        {
+          "code": "REPRESENTATIVE_SUBSET_ONLY",
+          "description": "The registered corpus is a representative three-record subset rather than the complete FAR Part 52 corpus.",
+          "material": true,
+          "mitigation": "Review the current official Acquisition.gov clause and complete acquisition context before consequential use."
+        },
+        {
+          "code": "APPLICABILITY_NOT_DETERMINED",
+          "description": "Record retrieval and metadata validation do not determine whether the clause applies to a specific acquisition.",
+          "material": true,
+          "mitigation": "Route applicability and legal interpretation to a qualified reviewer."
+        }
+      ]
+    },
+    {
+      "evidence_schema_version": "1.0.0",
+      "evidence_id": "EVID-915C1A7761C944E112D4",
+      "case_id": "CASE-D850D326D21B745D",
+      "claim_id": "CLAIM-P4-04-ASSIGNMENT",
+      "source": {
+        "source_id": "FAR-52.232-23",
+        "source_type": "frozen_snapshot",
+        "source_location": "data/reference/far/p4_04/52_232-23_snapshot.txt",
+        "retrieved_at": "2026-08-05T18:30:00Z",
+        "snapshot_date": "2026-08-05",
+        "sha256": "25ec3ad3e0697248db1ff86fa5627b8359668a7cffd7277dc4da53dd4e1bfcce",
+        "approved_for_use": true,
+        "approval_basis": "Official Acquisition.gov metadata and a controlled paraphrased snapshot approved for Project 7 representative validation.",
+        "notes": "Representative official-source subset; review the current official page before consequential use."
+      },
+      "citation": {
+        "citation_text": "FAR 52.232-23 Assignment of Claims (May 2014)",
+        "source_locator": "https://www.acquisition.gov/far/52.232-23",
+        "clause_number": "52.232-23",
+        "section_heading": "Assignment of Claims"
+      },
+      "quoted_or_paraphrased_text": "This clause addresses assignment of rights to contract payments to eligible financing institutions, conditions governing such assignments, and restrictions on disclosure of classified information.",
+      "retrieval_method": "exact_lookup",
+      "metadata_valid": true,
+      "citation_valid": true,
+      "relevance_score": 1.0,
+      "supports_claim": true,
+      "conflicts_with_claim": false,
+      "freshness_status": "current",
+      "validation_reason_codes": [
+        "SUPPORTED_WITH_EVIDENCE"
+      ],
+      "limitations": [
+        {
+          "code": "REPRESENTATIVE_SUBSET_ONLY",
+          "description": "The registered corpus is a representative three-record subset rather than the complete FAR Part 52 corpus.",
+          "material": true,
+          "mitigation": "Review the current official Acquisition.gov clause and complete acquisition context before consequential use."
+        },
+        {
+          "code": "APPLICABILITY_NOT_DETERMINED",
+          "description": "Record retrieval and metadata validation do not determine whether the clause applies to a specific acquisition.",
+          "material": true,
+          "mitigation": "Route applicability and legal interpretation to a qualified reviewer."
+        }
+      ]
+    }
+  ],
+  "evidence_assessments": [
+    {
+      "assessment_schema_version": "1.0.0",
+      "case_id": "CASE-D850D326D21B745D",
+      "claim_id": "CLAIM-P4-04-AUDIT",
+      "evidence_ids": [
+        "EVID-70B2A42B2AFD1B044C4E"
+      ],
+      "sufficiency_status": "sufficient",
+      "conflict_status": "none",
+      "evidence_score": 1.0,
+      "missing_information": [],
+      "reason_codes": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MODEL_DOMAIN_SHIFT",
+        "MODEL_INPUT_TRUNCATED",
+        "SUPPORTED_WITH_EVIDENCE"
+      ],
+      "required_action": "escalate"
+    },
+    {
+      "assessment_schema_version": "1.0.0",
+      "case_id": "CASE-D850D326D21B745D",
+      "claim_id": "CLAIM-P4-04-ASSIGNMENT",
+      "evidence_ids": [
+        "EVID-915C1A7761C944E112D4"
+      ],
+      "sufficiency_status": "sufficient",
+      "conflict_status": "none",
+      "evidence_score": 1.0,
+      "missing_information": [],
+      "reason_codes": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MODEL_DOMAIN_SHIFT",
+        "MODEL_INPUT_TRUNCATED",
+        "SUPPORTED_WITH_EVIDENCE"
+      ],
+      "required_action": "escalate"
+    }
+  ],
+  "recommendation": {
+    "recommendation_schema_version": "1.0.0",
+    "recommendation_id": "REC-D7B8E9C975F6179BDE83",
+    "case_id": "CASE-D850D326D21B745D",
+    "organization_id": "ICMSOL",
+    "profile_version": "1.0.0",
+    "recommendation_code": "R-05",
+    "recommendation_label": "Escalate — Specialized Review Required",
+    "nonbinding_disclosure": "This is an advisory decision-support recommendation only. It is not a final pursuit, procurement, legal, contractual, staffing, pricing, or commitment decision.",
+    "recommendation_strength": 1.0,
+    "supporting_evidence_ids": [
+      "EVID-70B2A42B2AFD1B044C4E",
+      "EVID-915C1A7761C944E112D4"
+    ],
+    "counterevidence_ids": [],
+    "missing_information": [
+      "Complete current solicitation, amendments, attachments, and incorporated terms.",
+      "Mandatory eligibility, certification, insurance, security, and qualification requirements.",
+      "Current named or role-based staffing availability and delivery capacity.",
+      "Pricing, labor mix, subcontracting, cost, and margin feasibility.",
+      "Proposal, mobilization, and delivery schedule feasibility.",
+      "Qualified determination of clause applicability and contractual implications.",
+      "Complete review of the passage that exceeded the model's 256-token limit."
+    ],
+    "conditions": [
+      "A Contracts or Legal Reviewer reviews the current complete solicitation and official clause text.",
+      "Leadership confirms eligibility, strategic fit, staffing capacity, delivery risk, and financial feasibility.",
+      "The truncated passage and surrounding context are reviewed without model truncation.",
+      "The original recommendation remains separate from the authorized human disposition."
+    ],
+    "limitations": [
+      {
+        "code": "NONBINDING_RECOMMENDATION",
+        "description": "The recommendation prioritizes review and next actions; it does not authorize pursuit or decline.",
+        "material": true,
+        "mitigation": "An authorized human reviewer must record a separate disposition and rationale."
+      },
+      {
+        "code": "EVIDENCE_SCOPE_LIMITED",
+        "description": "The evidence workflow used a representative three-record FAR subset rather than the complete current solicitation and full authoritative corpus.",
+        "material": true,
+        "mitigation": "Review all current official acquisition documents before a consequential disposition."
+      },
+      {
+        "code": "MODEL_DOMAIN_LIMIT",
+        "description": "Project 4 clause-theme predictions are outside the model's commercial-contract training domain and one passage was truncated.",
+        "material": true,
+        "mitigation": "Use the predictions for triage only and require qualified review of complete text."
+      },
+      {
+        "code": "BUSINESS_FEASIBILITY_UNVERIFIED",
+        "description": "Alignment and historical counts do not verify eligibility, capacity, pricing, margin, schedule, or award probability.",
+        "material": true,
+        "mitigation": "Complete business, staffing, financial, and delivery review."
+      }
+    ],
+    "required_human_reviewer": {
+      "role_id": "ROLE-CONTRACTS-LEGAL-REVIEWER",
+      "role_name": "Contracts or Legal Reviewer",
+      "organization_id": "ICMSOL"
+    },
+    "recommended_next_action": "Route the integrated packet to a Contracts or Legal Reviewer, then to authorized business leadership for a documented human disposition after the identified information gaps are resolved.",
+    "data_freshness_status": "acceptable",
+    "reason_codes": [
+      "CAPACITY_UNVERIFIED",
+      "CLAUSE_APPLICABILITY_UNVERIFIED",
+      "ELIGIBILITY_UNVERIFIED",
+      "FULL_SOLICITATION_NOT_REVIEWED",
+      "HUMAN_DISPOSITION_PENDING",
+      "HUMAN_REVIEW_REQUIRED",
+      "MODEL_DOMAIN_SHIFT",
+      "MODEL_INPUT_TRUNCATED",
+      "PRICING_AND_MARGIN_UNVERIFIED",
+      "RECOMMENDATION_ESCALATE_SPECIALIZED_REVIEW",
+      "RECOMMENDATION_NONBINDING",
+      "SCHEDULE_UNVERIFIED",
+      "SUPPORTED_WITH_EVIDENCE"
+    ],
+    "audit_reference": "AUD-CASE-D850D326D21B745D-10",
+    "created_at": "2026-08-05T19:15:00Z"
+  },
+  "human_disposition": null,
+  "audit_event_ids": [
+    "AUD-CASE-D850D326D21B745D-01",
+    "AUD-CASE-D850D326D21B745D-02",
+    "AUD-CASE-D850D326D21B745D-03",
+    "AUD-CASE-D850D326D21B745D-04",
+    "AUD-CASE-D850D326D21B745D-05",
+    "AUD-CASE-D850D326D21B745D-06",
+    "AUD-CASE-D850D326D21B745D-07",
+    "AUD-CASE-D850D326D21B745D-08",
+    "AUD-CASE-D850D326D21B745D-09",
+    "AUD-CASE-D850D326D21B745D-10",
+    "AUD-CASE-D850D326D21B745D-11"
+  ],
+  "processing_errors": [],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}
