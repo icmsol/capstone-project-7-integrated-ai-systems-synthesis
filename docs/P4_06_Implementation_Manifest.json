@@ -1,0 +1,161 @@
+{
+  "artifact_id": "PROJECT7-P4-06-AUDIT-AND-REPRODUCIBILITY",
+  "artifact_version": "1.0.0",
+  "created_at_utc": "2026-08-05T19:46:05.184404+00:00",
+  "components": [
+    "artifact_inventory",
+    "audit_consolidator",
+    "audit_chain_verifier",
+    "deterministic_replay_verifier",
+    "final_routing_recorder"
+  ],
+  "unit_test_count": 9,
+  "inventoried_artifact_count": 130,
+  "consolidated_audit_event_count": 13,
+  "validation_status": "PASS",
+  "human_disposition_recorded": false,
+  "final_decision_created": false,
+  "external_actions_performed": 0,
+  "files": [
+    {
+      "path": "audit/p4_06_artifact_checksums.csv",
+      "bytes": 16638,
+      "sha256": "1876cf019fd647b6ba2530efe5f03e65ecd0f5533ac243df7abbad610902ae64"
+    },
+    {
+      "path": "audit/p4_06_consolidated_case_ledger.jsonl",
+      "bytes": 17505,
+      "sha256": "9db02a09d592cc1bc92e2ec8b34dfb3aa1ccdad7df73cc2f52107d01e8249616"
+    },
+    {
+      "path": "audit/p4_06_reproducibility_events.jsonl",
+      "bytes": 2995,
+      "sha256": "1e047a84cd5079f291fc9a219c09a99447d68afe794f56b12cf2e6549e250db2"
+    },
+    {
+      "path": "config/schemas/audit_event.schema.json",
+      "bytes": 3083,
+      "sha256": "602edcb21a7d614199eeaace1ce39b188e797eef6bad14594f5f7c2e301562d6"
+    },
+    {
+      "path": "config/schemas/reproducibility_manifest.schema.json",
+      "bytes": 9706,
+      "sha256": "01d47fcc3387c921db2bb3559aaead8b59d732c9d77924271dd49b56be1c778c"
+    },
+    {
+      "path": "config/system/reproducibility_policy.json",
+      "bytes": 2022,
+      "sha256": "65133120364edd6ea6e1e2743cf13acaece2fe76de7170de7d2c0096683d82f1"
+    },
+    {
+      "path": "config/system/reproducibility_reason_codes.json",
+      "bytes": 1569,
+      "sha256": "19071a487a812e23e00885d8800b65df8ab6d0021994bfc9744ff4014817b6bb"
+    },
+    {
+      "path": "docs/P4_06_Audit_and_Reproducibility.md",
+      "bytes": 5469,
+      "sha256": "972923eb78cf2cb7636f84aab2e5adb4f679be1e2b29cb5229a90e697f13a516"
+    },
+    {
+      "path": "docs/P4_06_Requirements_Matrix.csv",
+      "bytes": 1802,
+      "sha256": "3cd55a325929b6ca8268d3e373f973c6e338fe50d5fb0faba88ec49705aef274"
+    },
+    {
+      "path": "docs/P4_06_Validation_Evidence.json",
+      "bytes": 3397,
+      "sha256": "f8ff7e640b47e08320796eec136f8595cd2ee1b6b24a8c05766d45861e80d181"
+    },
+    {
+      "path": "outputs/p4_06/audit_chain_summary.json",
+      "bytes": 454,
+      "sha256": "a590087f2207594e0885621eb44ccfa2ae65013970b8cd6fb97d25d8dd7278af"
+    },
+    {
+      "path": "outputs/p4_06/final_routing_record.json",
+      "bytes": 674,
+      "sha256": "f9a072bc19ab8a3a7c8c75a18064fc5cdaa8421234f6a990cda254142cd00df3"
+    },
+    {
+      "path": "outputs/p4_06/replay_plan.json",
+      "bytes": 1528,
+      "sha256": "59a7025d0b64c4c7c00044932a60874e7a9f61d3a1bcf3d4d4ed00741c549581"
+    },
+    {
+      "path": "outputs/p4_06/replay_verification.json",
+      "bytes": 499,
+      "sha256": "46e06f36677ef9989579b45bcfef71a4bf988d367cf5d8b20a40a5ece2687598"
+    },
+    {
+      "path": "outputs/p4_06/reproducibility_manifest.json",
+      "bytes": 37921,
+      "sha256": "761d7bdb5672701aeec43ae8f2d02e279b63a44947ffba6ade31cc2193254b51"
+    },
+    {
+      "path": "requirements_p4_06.txt",
+      "bytes": 41,
+      "sha256": "20a90afd705bc492bd3b5b22c9ef500927ed27ebbbb78a80a3abf8e87ce18689"
+    },
+    {
+      "path": "scripts/verify_p4_06_reproducibility.py",
+      "bytes": 1524,
+      "sha256": "b3a4f028bfdd6da83c609f6c9c088b6db8d3036acde1db0874bc43ec210e5253"
+    },
+    {
+      "path": "src/project7/__init__.py",
+      "bytes": 1174,
+      "sha256": "d158b3b3047d00a7bb309d62e556249fb42c5ae7d4eef17f832f0c7b41cbaa58"
+    },
+    {
+      "path": "src/project7/audit_utils.py",
+      "bytes": 1802,
+      "sha256": "38294a9de812555c7fe2d75694cf23c137d5ca9050814f9a7a26a9e7aeac7bc8"
+    },
+    {
+      "path": "src/project7/decision_support_packet.py",
+      "bytes": 23322,
+      "sha256": "aa1329ae558e077fbf787b163a087d78941136b3218af1f5c7249c232c41ff2a"
+    },
+    {
+      "path": "src/project7/p4_05_pipeline.py",
+      "bytes": 8194,
+      "sha256": "abd4172782999494ce6e025def94fee90cf9dd0fde5d6193fa1dbc006130afe4"
+    },
+    {
+      "path": "src/project7/p4_06_pipeline.py",
+      "bytes": 14008,
+      "sha256": "8fddfe2dda17a1be0f024d589af8d9e7396fb9008e8d906574ace8c0b6cfc00e"
+    },
+    {
+      "path": "src/project7/recommendation_engine.py",
+      "bytes": 8897,
+      "sha256": "9a557caa11ecfacf5c273952ecf2b81ea32870e363dac6b7cb8af15a47074091"
+    },
+    {
+      "path": "src/project7/reproducibility.py",
+      "bytes": 10294,
+      "sha256": "20b6683307fc06fa858ca7a6acf0717add9556299ba4a400a59a8517aa5180c6"
+    },
+    {
+      "path": "src/project7/schema_validation.py",
+      "bytes": 1766,
+      "sha256": "46bf4c5d63f85165ff2befbdf48359765442242cc886ccb4381a98ef5e07538a"
+    },
+    {
+      "path": "tests/__init__.py",
+      "bytes": 23,
+      "sha256": "bc298d46538d0a02c5b93651cf19f2e9c29492638b770f87f84e267c1740e47a"
+    },
+    {
+      "path": "tests/run_p4_06_validation.py",
+      "bytes": 2330,
+      "sha256": "7ebe2859c18daf8e3d44920a11e5c27ffe13357e7e5f92cbe0ec62068e159dda"
+    },
+    {
+      "path": "tests/test_reproducibility.py",
+      "bytes": 5678,
+      "sha256": "ea88039418b02f3cfc2da80b29f014ee25e61aaa11cf624d394e6a016e7ba556"
+    }
+  ]
+}

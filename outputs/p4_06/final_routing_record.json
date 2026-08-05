@@ -1,0 +1,17 @@
+{
+  "case_status": "awaiting_human_review",
+  "packet_status": "ready_for_human_review",
+  "recommendation_code": "R-05",
+  "recommendation_label": "Escalate — Specialized Review Required",
+  "required_reviewer": {
+    "role_id": "ROLE-CONTRACTS-LEGAL-REVIEWER",
+    "role_name": "Contracts or Legal Reviewer",
+    "organization_id": "ICMSOL"
+  },
+  "human_disposition": null,
+  "final_decision": null,
+  "human_review_required": true,
+  "original_recommendation_immutable": true,
+  "external_actions_performed": 0,
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

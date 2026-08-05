@@ -1,0 +1,1088 @@
+{
+  "manifest_schema_version": "1.0.0",
+  "manifest_id": "REPRO-D850D326D21B745D-P4-06",
+  "case_id": "CASE-D850D326D21B745D",
+  "created_at": "2026-08-05T20:00:00Z",
+  "inventory_scope": {
+    "included_prefixes": [
+      "audit/",
+      "config/profiles/",
+      "config/schemas/",
+      "config/system/",
+      "data/implementation/",
+      "data/reference/",
+      "docs/",
+      "notebooks/",
+      "outputs/",
+      "requirements_p4_",
+      "src/project7/",
+      "tests/"
+    ],
+    "excluded_patterns": [
+      "__pycache__",
+      ".pyc",
+      "/p4_06/",
+      "P4_06_",
+      "p4_06_"
+    ],
+    "self_referential_generated_artifacts_excluded": true
+  },
+  "repository_state_digest": "4cd07ab3a1f8286caeeb8268e41655a6484935a3b8ab860df029781f1247fd10",
+  "artifact_count": 130,
+  "artifact_inventory": [
+    {
+      "path": "audit/p4_01_intake_events.jsonl",
+      "category": "audit",
+      "bytes": 1933,
+      "sha256": "4dd0745bcc6c207d54f3ffe7f5e5d695de96ae86aecb69c28f5aa0e3b7960dc1",
+      "required_for_replay": true
+    },
+    {
+      "path": "audit/p4_02_alignment_history_events.jsonl",
+      "category": "audit",
+      "bytes": 3743,
+      "sha256": "eda4da551d67c6200ef38a0b947e47ff4cf029562f9690a1d259b8946a28e007",
+      "required_for_replay": true
+    },
+    {
+      "path": "audit/p4_03_clause_triage_event.jsonl",
+      "category": "audit",
+      "bytes": 1354,
+      "sha256": "4e450098a0cfbae7a432f24825947f45002d1fe42ef0219301e33befec49dfa7",
+      "required_for_replay": true
+    },
+    {
+      "path": "audit/p4_04_evidence_workflow_events.jsonl",
+      "category": "audit",
+      "bytes": 4175,
+      "sha256": "8791115d5b35e82b1734755c282e935ac7cf7bc78fa6a0c57adc5e993525eafe",
+      "required_for_replay": true
+    },
+    {
+      "path": "audit/p4_04_tool_trace.jsonl",
+      "category": "audit",
+      "bytes": 1875,
+      "sha256": "33ec8cc9ddffddad11555ca87b4d48ac88eb90cb0d297e25873ae66cd2945dbb",
+      "required_for_replay": true
+    },
+    {
+      "path": "audit/p4_05_packet_events.jsonl",
+      "category": "audit",
+      "bytes": 3305,
+      "sha256": "1703b504b857b6e2c02c67bf21367b8612d1a3d0a7e2726fc1f093b7877ec3da",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/profiles/fictional_historical_context_map.csv",
+      "category": "configuration",
+      "bytes": 249,
+      "sha256": "1667c4b11da0d9096c4a68c7c141cf7517c33fadd9a362892a6a532c7f74a69c",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/profiles/icm_historical_context_map.csv",
+      "category": "configuration",
+      "bytes": 586,
+      "sha256": "8cae70c137f76479528582f47b1694dc7d4696939bb919276be5b4039d2d25bd",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/schemas/audit_event.schema.json",
+      "category": "configuration",
+      "bytes": 3083,
+      "sha256": "602edcb21a7d614199eeaace1ce39b188e797eef6bad14594f5f7c2e301562d6",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/schemas/clause_prediction.schema.json",
+      "category": "configuration",
+      "bytes": 3131,
+      "sha256": "1954fe7559d1729f01cc2247e99c993df6756862356ae53a091de7788e5a0e87",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/schemas/common_definitions.schema.json",
+      "category": "configuration",
+      "bytes": 3494,
+      "sha256": "94053139553dba43607a598dc9c273fa2040967e2c78b7514283d83ce684232f",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/schemas/decision_support_packet.schema.json",
+      "category": "configuration",
+      "bytes": 14216,
+      "sha256": "c87fb2fdbd41fd2b784474a18065ad1e45155933e6a2403475b0ecd8545a20ed",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/schemas/evidence_assessment.schema.json",
+      "category": "configuration",
+      "bytes": 1902,
+      "sha256": "ed8b34efeac7fa88bb0a769d5c7f5ad8cbdc1814c27dc9bab8d14693c5ae2a20",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/schemas/evidence_item.schema.json",
+      "category": "configuration",
+      "bytes": 2828,
+      "sha256": "4ac23fe985387ec63930ad4769a5f61c29b97a19b343805a05ac84de84c1823c",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/schemas/evidence_workflow_request.schema.json",
+      "category": "configuration",
+      "bytes": 1572,
+      "sha256": "34c80c2373ea6d76afc2569c9318857ac5d3f72295799516a9221c8bebf50f57",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/schemas/evidence_workflow_result.schema.json",
+      "category": "configuration",
+      "bytes": 3478,
+      "sha256": "aed42047e804ceb9836130144ace35569bb5ec571d4017624c52fe69c4456e2a",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/schemas/historical_context.schema.json",
+      "category": "configuration",
+      "bytes": 1976,
+      "sha256": "f74e4139b1c75c68b5fcb518f41f4785fb167d3e4e3f5bb272637e7d93e8c8b7",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/schemas/human_disposition.schema.json",
+      "category": "configuration",
+      "bytes": 2197,
+      "sha256": "f67b5e646dc47a32fa6250495cf8d6f62f6b350acbed8a4ded325b1065565805",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/schemas/integrated_case_state.schema.json",
+      "category": "configuration",
+      "bytes": 5613,
+      "sha256": "66f5847480971103c5b02107af8cb418c0de85c363028f359608a9eb232c17bd",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/schemas/opportunity_record.schema.json",
+      "category": "configuration",
+      "bytes": 3748,
+      "sha256": "fc354149f4ae6ae1441264c1b0496a073d3fee2d46b948180e98aecb1a3c87e4",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/schemas/recommendation.schema.json",
+      "category": "configuration",
+      "bytes": 4125,
+      "sha256": "192e53796d159948b5b7f11885cccdd414ce8d0c46071e8cd7e3cfb1823f3385",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/schemas/reproducibility_manifest.schema.json",
+      "category": "configuration",
+      "bytes": 9706,
+      "sha256": "01d47fcc3387c921db2bb3559aaead8b59d732c9d77924271dd49b56be1c778c",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/schemas/service_alignment.schema.json",
+      "category": "configuration",
+      "bytes": 3545,
+      "sha256": "0e1d759f67f43ad0b3a71c5e6ac799a686a5fae7ba26cfd41cd3ceb272d0e404",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/system/clause_triage_policy.json",
+      "category": "configuration",
+      "bytes": 950,
+      "sha256": "2f5367664aec89bcb061502215f01beb8e864ad38dbf56ea448ffc0ede4fe36c",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/system/decision_support_packet_policy.json",
+      "category": "configuration",
+      "bytes": 958,
+      "sha256": "bc369c57458587afee93e7dfe082e1b633c0a2c2c03d75b8c28d67664d1eb302",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/system/decision_support_reason_codes.json",
+      "category": "configuration",
+      "bytes": 2064,
+      "sha256": "366b4aa77a62d76b816d2a0b03a89e749811b1ce5c74a71d47f1ae63f2faa70f",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/system/evidence_corpus_registry.json",
+      "category": "configuration",
+      "bytes": 826,
+      "sha256": "2f5294e443a9e23a0f60dbc47dea2c45e3b4576ea8d2451d450824be538ef639",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/system/evidence_reason_codes.json",
+      "category": "configuration",
+      "bytes": 3066,
+      "sha256": "2cab7b9bb13192c8e2777a8b937882f7e39c9557d49d6a0e1b5c935426909000",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/system/evidence_workflow_policy.json",
+      "category": "configuration",
+      "bytes": 1529,
+      "sha256": "d3d1851a3dc73f79b997d580df537e7d6f6672c987da05aec944d7072bc3d669",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/system/historical_context_mapping_registry.json",
+      "category": "configuration",
+      "bytes": 693,
+      "sha256": "fac30b5de20e797770a4c3b5dbdfb744fcf9b02eb85d4a2c5e10eea7edd4e0bc",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/system/historical_context_policy.json",
+      "category": "configuration",
+      "bytes": 888,
+      "sha256": "0be7bbdca9edec2d46ab3e2500fa48fa1558ca5c6410039962ba939eab18e9a5",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/system/opportunity_intake_rules.json",
+      "category": "configuration",
+      "bytes": 802,
+      "sha256": "7024244f5f744cbb69e90e7949c7dde1307f248d1fa1d087377dfcae5d0e0914",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/system/p4_01_reference_organization_context.json",
+      "category": "configuration",
+      "bytes": 317,
+      "sha256": "6070b5cabe93e205c95c143c40a03324be8e708bc34b1449b88ecd5069e47eca",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/system/project4_model_registry.json",
+      "category": "configuration",
+      "bytes": 1395,
+      "sha256": "1bc3bec2aaa70a9d239f4de16799092b1f309e579da9d6fd66c4b41f307bf3a1",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/system/recommendation_policy.json",
+      "category": "configuration",
+      "bytes": 1290,
+      "sha256": "4f2b7adb245c64afe21eda3da971cf06c9f25b881f7550968cfa51b9c800dfdc",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/system/reproducibility_policy.json",
+      "category": "configuration",
+      "bytes": 2022,
+      "sha256": "65133120364edd6ea6e1e2743cf13acaece2fe76de7170de7d2c0096683d82f1",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/system/reproducibility_reason_codes.json",
+      "category": "configuration",
+      "bytes": 1569,
+      "sha256": "19071a487a812e23e00885d8800b65df8ab6d0021994bfc9744ff4014817b6bb",
+      "required_for_replay": true
+    },
+    {
+      "path": "config/system/service_alignment_policy.json",
+      "category": "configuration",
+      "bytes": 972,
+      "sha256": "eee5ee3eeb720ddd16bd03bd0f60ab3b3d38109b72ecf4af91a2994a77a15b26",
+      "required_for_replay": true
+    },
+    {
+      "path": "data/implementation/p4_01/raw_opportunity.json",
+      "category": "data",
+      "bytes": 802,
+      "sha256": "e152ac2dad41a7e34e41cf27742fb7c0e05aafd46e5d68d9a42f0ef00c00b7c2",
+      "required_for_replay": true
+    },
+    {
+      "path": "data/implementation/p4_01/source_approval.json",
+      "category": "data",
+      "bytes": 545,
+      "sha256": "e7548e9231d5efa245e389de4ea01a6c4f14ab45f417cb510c8965663d12c3cf",
+      "required_for_replay": true
+    },
+    {
+      "path": "data/implementation/p4_03/representative_passages.json",
+      "category": "data",
+      "bytes": 7717,
+      "sha256": "b919aa0d75925d1496b2d67af23b90c49cf26319f651cf0d5fb259f8fa3babde",
+      "required_for_replay": true
+    },
+    {
+      "path": "data/implementation/p4_04/representative_evidence_requests.json",
+      "category": "data",
+      "bytes": 1185,
+      "sha256": "15ec848b24d314fc479343d2f02f48d31a1b1e672440753781e48a8b363ea9b0",
+      "required_for_replay": true
+    },
+    {
+      "path": "data/reference/far/p4_04/52_203-3_snapshot.txt",
+      "category": "data",
+      "bytes": 751,
+      "sha256": "94eee857812355c8d6a47718196288956021e51302f250d0c3e9545865f5b5b8",
+      "required_for_replay": true
+    },
+    {
+      "path": "data/reference/far/p4_04/52_215-2_snapshot.txt",
+      "category": "data",
+      "bytes": 876,
+      "sha256": "7cdf56138e3c5eea825026068f5ec190ad4cb0ff67ddff6297f86737651704e0",
+      "required_for_replay": true
+    },
+    {
+      "path": "data/reference/far/p4_04/52_232-23_snapshot.txt",
+      "category": "data",
+      "bytes": 809,
+      "sha256": "25ec3ad3e0697248db1ff86fa5627b8359668a7cffd7277dc4da53dd4e1bfcce",
+      "required_for_replay": true
+    },
+    {
+      "path": "data/reference/far/p4_04/representative_far_evidence_corpus.json",
+      "category": "data",
+      "bytes": 7753,
+      "sha256": "8b2994a12060b320a8b3da77dba20c9bced12438fad71e2db8d1ebe06167f7ea",
+      "required_for_replay": true
+    },
+    {
+      "path": "data/reference/project2/analysis_summary.json",
+      "category": "data",
+      "bytes": 1030,
+      "sha256": "95a3d060abca97638a3aa6da6cc1899bc6ccfa23e62a8c204bdf037d60d226c4",
+      "required_for_replay": true
+    },
+    {
+      "path": "data/reference/project2/historical_service_context.csv",
+      "category": "data",
+      "bytes": 1971,
+      "sha256": "94a98461ff71fcfa889e7b0a48f6f7c9a775411eeac9cee902f468e1145534af",
+      "required_for_replay": true
+    },
+    {
+      "path": "data/reference/project2/project2_asset_registry.json",
+      "category": "data",
+      "bytes": 1561,
+      "sha256": "48156f098a24591f4e4097c40d0880e7956eef5b8b39190e216a599fe8f4ece9",
+      "required_for_replay": true
+    },
+    {
+      "path": "docs/P4_01_Implementation_Manifest.json",
+      "category": "documentation",
+      "bytes": 3954,
+      "sha256": "5f27bc0ca9a08438a3ff38e56d0ef6da5fb3141f8519159fbdf3ebc471e6b22c",
+      "required_for_replay": true
+    },
+    {
+      "path": "docs/P4_01_Opportunity_Intake_and_Provenance.md",
+      "category": "documentation",
+      "bytes": 4667,
+      "sha256": "7d492bed6a01d878f6bbdfec0578654087d5ba89609c6d3f34afc707bec58c91",
+      "required_for_replay": true
+    },
+    {
+      "path": "docs/P4_01_Requirements_Matrix.csv",
+      "category": "documentation",
+      "bytes": 1806,
+      "sha256": "35e3f822556c5cb3efd214cf4f917ad6d8a0ae385e2fb49ffbe45f65acd81488",
+      "required_for_replay": true
+    },
+    {
+      "path": "docs/P4_01_Validation_Evidence.json",
+      "category": "documentation",
+      "bytes": 3434,
+      "sha256": "6a3f73e09514b59fa7648dfc40431c1f40ef351bfb08be5b755419da0b78cf04",
+      "required_for_replay": true
+    },
+    {
+      "path": "docs/P4_02_Configurable_Alignment_and_Historical_Context.md",
+      "category": "documentation",
+      "bytes": 5999,
+      "sha256": "10f2de72ee722f404fc496aeaaa4df664fa26f0f76e8ddba03d608e13794aa8c",
+      "required_for_replay": true
+    },
+    {
+      "path": "docs/P4_02_Implementation_Manifest.json",
+      "category": "documentation",
+      "bytes": 4982,
+      "sha256": "f119dadd1973c370fe0df756594bbe9350ed921aa5c7b998f3b117bae26b0c09",
+      "required_for_replay": true
+    },
+    {
+      "path": "docs/P4_02_Requirements_Matrix.csv",
+      "category": "documentation",
+      "bytes": 1982,
+      "sha256": "a41e3028c0111bce6fd8695c0bbd3436b00e814493b627e2aabca1798ffa17ba",
+      "required_for_replay": true
+    },
+    {
+      "path": "docs/P4_02_Validation_Evidence.json",
+      "category": "documentation",
+      "bytes": 4233,
+      "sha256": "8aa7a33e1b969e1d4dd5ac2d6f4208088616f779563524c7703e4119bc3c5b1d",
+      "required_for_replay": true
+    },
+    {
+      "path": "docs/P4_03_Bounded_Clause_Theme_Inference.md",
+      "category": "documentation",
+      "bytes": 5029,
+      "sha256": "53def4cc63dc4c957d2d22caca38e00176362770e31cabd572bb2dc5a51bf22e",
+      "required_for_replay": true
+    },
+    {
+      "path": "docs/P4_03_Implementation_Manifest.json",
+      "category": "documentation",
+      "bytes": 5098,
+      "sha256": "9c34c382f80868622613b14a6b0b3b57b8e6cce40b4f40635c0aef3f2044feb7",
+      "required_for_replay": true
+    },
+    {
+      "path": "docs/P4_03_Requirements_Matrix.csv",
+      "category": "documentation",
+      "bytes": 1742,
+      "sha256": "21e06ca919c86a20b314caf8f0fb2e92b8d43c559798e3fc3014ed72a4ed7be4",
+      "required_for_replay": true
+    },
+    {
+      "path": "docs/P4_03_Validation_Evidence.json",
+      "category": "documentation",
+      "bytes": 4001,
+      "sha256": "904dc31ec801749098945aad60bbf1ee2762699b424604c831b0844edaade2ee",
+      "required_for_replay": true
+    },
+    {
+      "path": "docs/P4_04_Evidence_Grounded_Agent_Workflow.md",
+      "category": "documentation",
+      "bytes": 5533,
+      "sha256": "3e3fc929e428f6733c6ad251184cfc5a7482d8b70a108b135d8ddfa901a1aebe",
+      "required_for_replay": true
+    },
+    {
+      "path": "docs/P4_04_Implementation_Manifest.json",
+      "category": "documentation",
+      "bytes": 5245,
+      "sha256": "fe50c7a44a79148920f6118eb2cf89eccef951e30f2521d720a3c7ac943edd40",
+      "required_for_replay": true
+    },
+    {
+      "path": "docs/P4_04_Requirements_Matrix.csv",
+      "category": "documentation",
+      "bytes": 2149,
+      "sha256": "5bca5121455231453364bd3a8646a3bde336c4c42ff491a29110304d7b6aa8d7",
+      "required_for_replay": true
+    },
+    {
+      "path": "docs/P4_04_Validation_Evidence.json",
+      "category": "documentation",
+      "bytes": 3405,
+      "sha256": "84b6c761b97c2f18dd108900b3321c02c9f9da8c0b50af1b78f7dd814ba119f8",
+      "required_for_replay": true
+    },
+    {
+      "path": "notebooks/P4_03_Bounded_Clause_Triage_Validation.ipynb",
+      "category": "notebook",
+      "bytes": 2402,
+      "sha256": "dda31a18bd0a689fe12a4c41ebb070a8e4b5d0ffbeb11ea43d848f6154b8eda5",
+      "required_for_replay": true
+    },
+    {
+      "path": "outputs/p4_01/initial_case_state.json",
+      "category": "output",
+      "bytes": 3838,
+      "sha256": "b218c410cd68e2702766807418634b797d89642dbfb8f4812e9adca2a969dfc5",
+      "required_for_replay": true
+    },
+    {
+      "path": "outputs/p4_01/normalized_opportunity.json",
+      "category": "output",
+      "bytes": 2671,
+      "sha256": "9cca536d4a0d1ab2ecbffe876a053236be89b96c509628519f5d2fd54e8d548f",
+      "required_for_replay": true
+    },
+    {
+      "path": "outputs/p4_02/fictional_profile_alignment.json",
+      "category": "output",
+      "bytes": 1141,
+      "sha256": "7ca4149f7af02515bc92828d32580dbd3c209f344f6a169d2264619f4dc06791",
+      "required_for_replay": true
+    },
+    {
+      "path": "outputs/p4_02/historical_context.json",
+      "category": "output",
+      "bytes": 2123,
+      "sha256": "300a015a1f3011f2d33f18e07892160a6d67b556945ae2f9deeae8349d844fe3",
+      "required_for_replay": true
+    },
+    {
+      "path": "outputs/p4_02/service_alignment.json",
+      "category": "output",
+      "bytes": 3138,
+      "sha256": "e12ec408fe21b9a19d5cca73ac096b08171e80c93fdb0ad797c54899b21f1106",
+      "required_for_replay": true
+    },
+    {
+      "path": "outputs/p4_02/updated_case_state.json",
+      "category": "output",
+      "bytes": 9457,
+      "sha256": "cab55fa3f71107600964f087cd4ebd7d6611a77ba940748d3395dea2ff0a2499",
+      "required_for_replay": true
+    },
+    {
+      "path": "outputs/p4_03/clause_predictions.json",
+      "category": "output",
+      "bytes": 6917,
+      "sha256": "45878c9d851d0a8e85778fa5d0c764ccbd6362f14cb55ea6623485fc9d5359cb",
+      "required_for_replay": true
+    },
+    {
+      "path": "outputs/p4_03/controlled_clause_predictions.json",
+      "category": "output",
+      "bytes": 6110,
+      "sha256": "2a0c9e6d6c084aef9d1d2f0a9f727860bf61924e41bca76c73848dad958dd526",
+      "required_for_replay": true
+    },
+    {
+      "path": "outputs/p4_03/updated_case_state.json",
+      "category": "output",
+      "bytes": 16168,
+      "sha256": "e8936ff9e95aa897d0e41f85b15f9acdb25a89de959a6a4367b75ab042b857ff",
+      "required_for_replay": true
+    },
+    {
+      "path": "outputs/p4_04/evidence_workflow_results.json",
+      "category": "output",
+      "bytes": 12741,
+      "sha256": "8d08c5fada5cfb3595b62f3583ec656c582e408691973169a9b908b059116875",
+      "required_for_replay": true
+    },
+    {
+      "path": "outputs/p4_04/updated_case_state.json",
+      "category": "output",
+      "bytes": 22220,
+      "sha256": "ec0a957641b813a5687169edf7a5b4c0676444f2ace5f3a4085dd96a1920850b",
+      "required_for_replay": true
+    },
+    {
+      "path": "outputs/p4_05/decision_support_packet.json",
+      "category": "output",
+      "bytes": 20823,
+      "sha256": "63f2829eef2764f4f4b1269a7f5e0389d3aa7ff50d0ca906d5f912472a70c8c6",
+      "required_for_replay": true
+    },
+    {
+      "path": "outputs/p4_05/decision_support_packet.md",
+      "category": "output",
+      "bytes": 8421,
+      "sha256": "dad89261625b5bd2372b8a71e22a1cba7bb8e2c8528b2d0d2fb073c6f7fbb764",
+      "required_for_replay": true
+    },
+    {
+      "path": "outputs/p4_05/human_disposition_template.json",
+      "category": "output",
+      "bytes": 867,
+      "sha256": "e690e60ee0d560d81016461c54400bbbfb10abf63267ca0020b6caff6b54750e",
+      "required_for_replay": true
+    },
+    {
+      "path": "outputs/p4_05/recommendation.json",
+      "category": "output",
+      "bytes": 3972,
+      "sha256": "50c169f8298349479067df26a36a0f9fcdc7ea0deed8a99624ac9ad35b904675",
+      "required_for_replay": true
+    },
+    {
+      "path": "outputs/p4_05/updated_case_state.json",
+      "category": "output",
+      "bytes": 26431,
+      "sha256": "702b35be82e39248f3bd80fc437198670a06d81fc16bacfc97ded14f7bf09115",
+      "required_for_replay": true
+    },
+    {
+      "path": "requirements_p4_01.txt",
+      "category": "requirements",
+      "bytes": 41,
+      "sha256": "20a90afd705bc492bd3b5b22c9ef500927ed27ebbbb78a80a3abf8e87ce18689",
+      "required_for_replay": true
+    },
+    {
+      "path": "requirements_p4_02.txt",
+      "category": "requirements",
+      "bytes": 41,
+      "sha256": "20a90afd705bc492bd3b5b22c9ef500927ed27ebbbb78a80a3abf8e87ce18689",
+      "required_for_replay": true
+    },
+    {
+      "path": "requirements_p4_03.txt",
+      "category": "requirements",
+      "bytes": 55,
+      "sha256": "2eae7d5bca98a0c4e8c18a6f985437858357babc36bcef37c9a56df4b212806a",
+      "required_for_replay": true
+    },
+    {
+      "path": "requirements_p4_04.txt",
+      "category": "requirements",
+      "bytes": 41,
+      "sha256": "20a90afd705bc492bd3b5b22c9ef500927ed27ebbbb78a80a3abf8e87ce18689",
+      "required_for_replay": true
+    },
+    {
+      "path": "requirements_p4_05.txt",
+      "category": "requirements",
+      "bytes": 41,
+      "sha256": "20a90afd705bc492bd3b5b22c9ef500927ed27ebbbb78a80a3abf8e87ce18689",
+      "required_for_replay": true
+    },
+    {
+      "path": "requirements_p4_06.txt",
+      "category": "requirements",
+      "bytes": 41,
+      "sha256": "20a90afd705bc492bd3b5b22c9ef500927ed27ebbbb78a80a3abf8e87ce18689",
+      "required_for_replay": true
+    },
+    {
+      "path": "src/project7/__init__.py",
+      "category": "source_code",
+      "bytes": 1174,
+      "sha256": "d158b3b3047d00a7bb309d62e556249fb42c5ae7d4eef17f832f0c7b41cbaa58",
+      "required_for_replay": true
+    },
+    {
+      "path": "src/project7/audit_utils.py",
+      "category": "source_code",
+      "bytes": 1802,
+      "sha256": "38294a9de812555c7fe2d75694cf23c137d5ca9050814f9a7a26a9e7aeac7bc8",
+      "required_for_replay": true
+    },
+    {
+      "path": "src/project7/clause_triage.py",
+      "category": "source_code",
+      "bytes": 17258,
+      "sha256": "19922893ca65f45e67bbd271a76ab8bc4dea10ee12f7f08d6b25e33a4cac7eba",
+      "required_for_replay": true
+    },
+    {
+      "path": "src/project7/decision_support_packet.py",
+      "category": "source_code",
+      "bytes": 23322,
+      "sha256": "aa1329ae558e077fbf787b163a087d78941136b3218af1f5c7249c232c41ff2a",
+      "required_for_replay": true
+    },
+    {
+      "path": "src/project7/evidence_retrieval.py",
+      "category": "source_code",
+      "bytes": 5463,
+      "sha256": "d7dc56c680ed713202afe36685399d0db91615833c2afeb0a9c866f6b230d10e",
+      "required_for_replay": true
+    },
+    {
+      "path": "src/project7/evidence_workflow.py",
+      "category": "source_code",
+      "bytes": 23493,
+      "sha256": "6fbe576f15d0b301a557c825bd29c0c93c77f8e0f7d13a34d0bc9d18c8dbae6c",
+      "required_for_replay": true
+    },
+    {
+      "path": "src/project7/historical_context.py",
+      "category": "source_code",
+      "bytes": 8103,
+      "sha256": "b1d4af90cc331a7f81f3fd4fa2c9ddc8ef7cb21529abac3401357664f9fcc0ac",
+      "required_for_replay": true
+    },
+    {
+      "path": "src/project7/opportunity_intake.py",
+      "category": "source_code",
+      "bytes": 18684,
+      "sha256": "46bf1efa0e2e6ff7d0b16d4dbc78f922a0f8543c317fc80bbe889ee85da523fa",
+      "required_for_replay": true
+    },
+    {
+      "path": "src/project7/p4_02_pipeline.py",
+      "category": "source_code",
+      "bytes": 7892,
+      "sha256": "e31b1daec7b788e3d2fb111f7dfaa22dcee2f12310430965daa8aeaa7ead03bf",
+      "required_for_replay": true
+    },
+    {
+      "path": "src/project7/p4_03_pipeline.py",
+      "category": "source_code",
+      "bytes": 5390,
+      "sha256": "2bebe080e0497ba0ea4c72c3114b0cd75f82e51ec38a42df6b72d0f4a874518b",
+      "required_for_replay": true
+    },
+    {
+      "path": "src/project7/p4_04_pipeline.py",
+      "category": "source_code",
+      "bytes": 8994,
+      "sha256": "6c5ecfd7666d8626ed35b01c93096166840b7b77ef72ce3d7fb9fe872d9a52a8",
+      "required_for_replay": true
+    },
+    {
+      "path": "src/project7/p4_05_pipeline.py",
+      "category": "source_code",
+      "bytes": 8194,
+      "sha256": "abd4172782999494ce6e025def94fee90cf9dd0fde5d6193fa1dbc006130afe4",
+      "required_for_replay": true
+    },
+    {
+      "path": "src/project7/profile_loader.py",
+      "category": "source_code",
+      "bytes": 5417,
+      "sha256": "b8d64f3d4816cbabee921e38d4ed29e74caa25a597558373283360c30f9217cb",
+      "required_for_replay": true
+    },
+    {
+      "path": "src/project7/recommendation_engine.py",
+      "category": "source_code",
+      "bytes": 8897,
+      "sha256": "9a557caa11ecfacf5c273952ecf2b81ea32870e363dac6b7cb8af15a47074091",
+      "required_for_replay": true
+    },
+    {
+      "path": "src/project7/reproducibility.py",
+      "category": "source_code",
+      "bytes": 10294,
+      "sha256": "20b6683307fc06fa858ca7a6acf0717add9556299ba4a400a59a8517aa5180c6",
+      "required_for_replay": true
+    },
+    {
+      "path": "src/project7/schema_validation.py",
+      "category": "source_code",
+      "bytes": 1766,
+      "sha256": "46bf4c5d63f85165ff2befbdf48359765442242cc886ccb4381a98ef5e07538a",
+      "required_for_replay": true
+    },
+    {
+      "path": "src/project7/service_alignment.py",
+      "category": "source_code",
+      "bytes": 9976,
+      "sha256": "d9b72b329f1cce136c67d6a6e4e4d72246f289fa54d4dac8d5388fdc1ce38d6d",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/__init__.py",
+      "category": "test",
+      "bytes": 23,
+      "sha256": "bc298d46538d0a02c5b93651cf19f2e9c29492638b770f87f84e267c1740e47a",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/fixtures/p4_01/checksum_mismatch_source_approval.json",
+      "category": "test",
+      "bytes": 545,
+      "sha256": "5e68b4978b557f8b2027abbbf2d2ed60202d6d7a03de60b92056319c61726a49",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/fixtures/p4_01/sparse_raw_opportunity.json",
+      "category": "test",
+      "bytes": 254,
+      "sha256": "8218b0a1d6a3f7423b2e0c13310c96ea7e95bbcfbd52586fe2cb9081bb7b9c00",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/fixtures/p4_01/sparse_source_approval.json",
+      "category": "test",
+      "bytes": 542,
+      "sha256": "58bc22bae9b93ec3eb52a3dc511520e94e0de05217bff8c7962ab871d3f71982",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/fixtures/p4_01/unapproved_source_approval.json",
+      "category": "test",
+      "bytes": 546,
+      "sha256": "09edf79c0841976f9ad9d218b2a073d0610c32b25abd811a348c868beb008c63",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/fixtures/p4_03/controlled_probability_fixtures.json",
+      "category": "test",
+      "bytes": 1056,
+      "sha256": "accb8cd7e2452fd1ce450634287906407c38a9a528c85a5fa0f7d147f22415ce",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/fixtures/p4_03/synthetic_model_package/index_to_token.json",
+      "category": "test",
+      "bytes": 308,
+      "sha256": "1321bb09932d6729012d9f83e612be60bd3d0a2f1f3fa339f3598fe1e3b4a06a",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/fixtures/p4_03/synthetic_model_package/label_id_to_category.json",
+      "category": "test",
+      "bytes": 279,
+      "sha256": "ac62afc0f89dd86139d7e990656e4d3ff8db4d3071504e64f7e2ff6b3da2123b",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/fixtures/p4_03/synthetic_model_package/model_config.json",
+      "category": "test",
+      "bytes": 185,
+      "sha256": "bfc9aad87d9d4d017dd77da939cc337d5bb7a1828537b053bb56ae9cc4cd6496",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/fixtures/p4_03/synthetic_model_package/selected_clause_classifier.pt",
+      "category": "test",
+      "bytes": 20725,
+      "sha256": "b6b3f5a5b4b4842cb420b5c05a0a74d8773404a3b2cd1c95327110a5c725b14f",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/fixtures/p4_03/synthetic_model_package/token_to_index.json",
+      "category": "test",
+      "bytes": 394,
+      "sha256": "2cfb987dadd231bc8c0c1faccade09ac6c5bd7cd68722596b85f9f4dd855a0a6",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/fixtures/p4_03/synthetic_model_package/tokenizer_config.json",
+      "category": "test",
+      "bytes": 270,
+      "sha256": "af34d69b5ee9d1a87255d9286317539961fa5dfe157b9d2e4bba1e3ead0e87a9",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/fixtures/p4_03/synthetic_model_registry.json",
+      "category": "test",
+      "bytes": 1456,
+      "sha256": "2283feb7d7ec728fdc521557dc4c64289c9b696ccae2606195f6b3f9503d8c63",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/run_p4_01_validation.py",
+      "category": "test",
+      "bytes": 3010,
+      "sha256": "c9b1b324841ee19bfe365c9a8600e334c7db2f9b2edd154c097fb3d423abd7b5",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/run_p4_02_validation.py",
+      "category": "test",
+      "bytes": 3510,
+      "sha256": "cd5789212deddceced62ce22e03d7b4ca2230f7d4d467d668e7ccf1d21476a79",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/run_p4_03_controlled_validation.py",
+      "category": "test",
+      "bytes": 3340,
+      "sha256": "69f375b133f529bc15d77813a25e1fae6cb22d3d34832599ae71a780e5505b8c",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/run_p4_03_validation.py",
+      "category": "test",
+      "bytes": 1596,
+      "sha256": "b85fb887ef13c71cc62bfda35eccecc9c08511bb32fcc98f0cdff329ce5fe0e2",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/run_p4_04_validation.py",
+      "category": "test",
+      "bytes": 2566,
+      "sha256": "b21fd12a7a8aa433d10cbedd9a306302eb0c564c2e0c58b82fe790b946f9b2d1",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/run_p4_05_validation.py",
+      "category": "test",
+      "bytes": 2577,
+      "sha256": "c33029961e22521c07777e02e7446d268afcbdd204e8ff6689fc781bcf8ab5d0",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/test_alignment_history.py",
+      "category": "test",
+      "bytes": 7089,
+      "sha256": "6ef787205b4045e874a3a53deb3012c086d1d92bf4257d56f06725703fa8f188",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/test_clause_triage.py",
+      "category": "test",
+      "bytes": 5127,
+      "sha256": "6e5e1e1c78228a99d967c81d9c5462049150fc33223b0e3cc0689f03c49013ca",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/test_decision_support_packet.py",
+      "category": "test",
+      "bytes": 7836,
+      "sha256": "4982b7048b83bb396f3bb4b3012f212a784033d02b398607a8f5afa90927e674",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/test_evidence_workflow.py",
+      "category": "test",
+      "bytes": 6711,
+      "sha256": "e2d233526c8f04589eb98894e9c941b501ca926dc860bc328d99fc605ff87048",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/test_opportunity_intake.py",
+      "category": "test",
+      "bytes": 5530,
+      "sha256": "7b7724405fb8a170f8c43a1fa6cdec950b5a069b36dfe9c177898965d5f96626",
+      "required_for_replay": true
+    },
+    {
+      "path": "tests/test_reproducibility.py",
+      "category": "test",
+      "bytes": 5678,
+      "sha256": "ea88039418b02f3cfc2da80b29f014ee25e61aaa11cf624d394e6a016e7ba556",
+      "required_for_replay": true
+    }
+  ],
+  "component_versions": {
+    "opportunity_intake": "1.0.0",
+    "organization_alignment": "1.0.0",
+    "historical_context": "1.0.0",
+    "project4_clause_triage": "1.0.0",
+    "evidence_workflow": "1.0.0",
+    "recommendation_engine": "1.0.0",
+    "decision_support_packet": "1.0.0",
+    "reproducibility_pipeline": "1.0.0",
+    "organization_profile": "1.0.0",
+    "far_fac": "2026-01"
+  },
+  "execution_environment": {
+    "python_version": "3.13.5",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "dependency_files": [
+      {
+        "path": "requirements_p4_01.txt",
+        "sha256": "20a90afd705bc492bd3b5b22c9ef500927ed27ebbbb78a80a3abf8e87ce18689"
+      },
+      {
+        "path": "requirements_p4_02.txt",
+        "sha256": "20a90afd705bc492bd3b5b22c9ef500927ed27ebbbb78a80a3abf8e87ce18689"
+      },
+      {
+        "path": "requirements_p4_03.txt",
+        "sha256": "2eae7d5bca98a0c4e8c18a6f985437858357babc36bcef37c9a56df4b212806a"
+      },
+      {
+        "path": "requirements_p4_04.txt",
+        "sha256": "20a90afd705bc492bd3b5b22c9ef500927ed27ebbbb78a80a3abf8e87ce18689"
+      },
+      {
+        "path": "requirements_p4_05.txt",
+        "sha256": "20a90afd705bc492bd3b5b22c9ef500927ed27ebbbb78a80a3abf8e87ce18689"
+      },
+      {
+        "path": "requirements_p4_06.txt",
+        "sha256": "20a90afd705bc492bd3b5b22c9ef500927ed27ebbbb78a80a3abf8e87ce18689"
+      }
+    ],
+    "actual_model_dependency": {
+      "path": "models/project4/selected_clause_classifier.pt",
+      "checkpoint_sha256": "50a280950d31466d7002578295c64e957d144611f5b9731bb059be50e68c6c92",
+      "required_for_full_reexecution": true
+    }
+  },
+  "audit_chain": {
+    "event_count": 13,
+    "first_event_id": "AUD-CASE-D850D326D21B745D-01",
+    "last_event_id": "AUD-CASE-D850D326D21B745D-13",
+    "expected_sequences": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "chain_valid": true,
+    "first_event_hash": "d227d4c02befdfba315110d7c3f31cdcd17b4b447e48b64cb86367a8454cd0ad",
+    "last_event_hash": "9ce052ddd373694c33f084812cb862c40376d557f5a6d617ebb5712272b33f79"
+  },
+  "replay_plan": {
+    "artifact_verification_command": "python scripts/verify_p4_06_reproducibility.py",
+    "deterministic_packet_replay_command": "python tests/run_p4_06_validation.py",
+    "full_pipeline_commands": [
+      "python tests/run_p4_01_validation.py",
+      "python tests/run_p4_02_validation.py",
+      "python tests/run_p4_03_validation.py",
+      "python tests/run_p4_04_validation.py",
+      "python tests/run_p4_05_validation.py",
+      "python tests/run_p4_06_validation.py"
+    ],
+    "expected_outcomes": [
+      "All inventoried artifact hashes and sizes match.",
+      "Audit events 1 through 13 form one valid hash chain.",
+      "P4-05 replay reproduces the preserved packet and case hashes.",
+      "The final route remains awaiting_human_review.",
+      "Human disposition and final decision remain null.",
+      "External actions remain zero."
+    ],
+    "limitations": [
+      {
+        "code": "FULL_REEXECUTION_REQUIRES_MODEL_PACKAGE",
+        "description": "Full P4-03 re-execution requires the committed Project 4 checkpoint and companion model files.",
+        "material": true,
+        "mitigation": "Run the replay from the complete public repository where models/project4 is preserved."
+      },
+      {
+        "code": "GIT_COMMIT_CAPTURE_DEFERRED",
+        "description": "The package is generated before its GitHub commit, so the manifest uses a canonical repository-state digest rather than a post-upload commit hash.",
+        "material": false,
+        "mitigation": "Record the resulting Git commit during final submission manifest preparation."
+      }
+    ]
+  },
+  "replay_verification": {
+    "status": "PASS",
+    "artifact_integrity": "PASS",
+    "audit_chain_integrity": "PASS",
+    "packet_replay": "PASS",
+    "preserved_packet_sha256": "6a619e896f8a12f19c0b0258717ab381db0b3855fca55f32adc91f2d66685af1",
+    "replayed_packet_sha256": "6a619e896f8a12f19c0b0258717ab381db0b3855fca55f32adc91f2d66685af1",
+    "preserved_case_sha256": "2036ddd3c11363d0f9ccbf6b72588e6ba1e6908c6e315a07429a2d2668a182af",
+    "replayed_case_sha256": "2036ddd3c11363d0f9ccbf6b72588e6ba1e6908c6e315a07429a2d2668a182af"
+  },
+  "final_routing": {
+    "case_status": "awaiting_human_review",
+    "packet_status": "ready_for_human_review",
+    "recommendation_code": "R-05",
+    "recommendation_label": "Escalate — Specialized Review Required",
+    "required_reviewer": {
+      "role_id": "ROLE-CONTRACTS-LEGAL-REVIEWER",
+      "role_name": "Contracts or Legal Reviewer",
+      "organization_id": "ICMSOL"
+    },
+    "human_disposition": null,
+    "final_decision": null
+  },
+  "limitations": [
+    {
+      "code": "CONTROLLED_CAPSTONE_SCOPE",
+      "description": "The replay demonstrates deterministic controlled-case behavior and artifact integrity, not production readiness.",
+      "material": true,
+      "mitigation": "Complete production security, scalability, monitoring, and operational validation before broader deployment."
+    },
+    {
+      "code": "HUMAN_DISPOSITION_PENDING",
+      "description": "The case is intentionally incomplete until an authorized reviewer records a separate disposition and rationale.",
+      "material": true,
+      "mitigation": "Preserve the original recommendation and record the authorized human disposition separately."
+    }
+  ],
+  "final_decision": null,
+  "external_actions_performed": 0,
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

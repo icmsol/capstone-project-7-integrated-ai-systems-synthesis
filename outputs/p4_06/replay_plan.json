@@ -1,0 +1,34 @@
+{
+  "artifact_verification_command": "python scripts/verify_p4_06_reproducibility.py",
+  "deterministic_packet_replay_command": "python tests/run_p4_06_validation.py",
+  "full_pipeline_commands": [
+    "python tests/run_p4_01_validation.py",
+    "python tests/run_p4_02_validation.py",
+    "python tests/run_p4_03_validation.py",
+    "python tests/run_p4_04_validation.py",
+    "python tests/run_p4_05_validation.py",
+    "python tests/run_p4_06_validation.py"
+  ],
+  "expected_outcomes": [
+    "All inventoried artifact hashes and sizes match.",
+    "Audit events 1 through 13 form one valid hash chain.",
+    "P4-05 replay reproduces the preserved packet and case hashes.",
+    "The final route remains awaiting_human_review.",
+    "Human disposition and final decision remain null.",
+    "External actions remain zero."
+  ],
+  "limitations": [
+    {
+      "code": "FULL_REEXECUTION_REQUIRES_MODEL_PACKAGE",
+      "description": "Full P4-03 re-execution requires the committed Project 4 checkpoint and companion model files.",
+      "material": true,
+      "mitigation": "Run the replay from the complete public repository where models/project4 is preserved."
+    },
+    {
+      "code": "GIT_COMMIT_CAPTURE_DEFERRED",
+      "description": "The package is generated before its GitHub commit, so the manifest uses a canonical repository-state digest rather than a post-upload commit hash.",
+      "material": false,
+      "mitigation": "Record the resulting Git commit during final submission manifest preparation."
+    }
+  ]
+}

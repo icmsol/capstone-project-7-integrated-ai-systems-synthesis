@@ -1,0 +1,66 @@
+{
+  "policy_schema_version": "1.0.0",
+  "policy_id": "PROJECT7-REPRODUCIBILITY-POLICY",
+  "inventory_scope": {
+    "included_prefixes": [
+      "audit/",
+      "config/profiles/",
+      "config/schemas/",
+      "config/system/",
+      "data/implementation/",
+      "data/reference/",
+      "docs/",
+      "notebooks/",
+      "outputs/",
+      "requirements_p4_",
+      "src/project7/",
+      "tests/"
+    ],
+    "excluded_patterns": [
+      "__pycache__",
+      ".pyc",
+      "/p4_06/",
+      "P4_06_",
+      "p4_06_"
+    ],
+    "self_referential_generated_artifacts_excluded": true
+  },
+  "required_audit_event_sequences": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "required_audit_chain_validation": true,
+  "required_checksum_algorithm": "sha256",
+  "required_replay_checks": [
+    "all inventoried artifacts exist",
+    "all inventoried sizes match",
+    "all inventoried SHA-256 values match",
+    "audit event sequence is contiguous",
+    "audit event hashes are valid",
+    "audit previous-hash links are valid",
+    "final packet reconstruction is deterministic",
+    "final route remains awaiting_human_review",
+    "human disposition remains null",
+    "final decision remains null",
+    "external actions remain zero"
+  ],
+  "replay_modes": {
+    "artifact_verification": "Verify preserved inputs, configurations, code, outputs, audit events, and checksums without recomputation.",
+    "deterministic_packet_replay": "Re-run P4-05 from the preserved P4-04 case state and compare recommendation, packet, updated case, and audit hashes.",
+    "full_pipeline_reexecution": "Re-run P4-01 through P4-06 in the public repository. The actual Project 4 checkpoint under models/project4 is required for P4-03."
+  },
+  "repository_branch": "main",
+  "git_commit_capture_deferred_until_post_upload": true,
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

@@ -1,0 +1,51 @@
+{
+  "artifact_id": "PROJECT7-P4-06-VALIDATION-EVIDENCE",
+  "artifact_version": "1.0.0",
+  "validated_at_utc": "2026-08-05T19:46:05.180806+00:00",
+  "validation_status": "PASS",
+  "command": "python tests/run_p4_06_validation.py",
+  "stdout": "test_audit_chain_contains_events_one_through_thirteen (tests.test_reproducibility.ReproducibilityTests.test_audit_chain_contains_events_one_through_thirteen) ... ok\ntest_audit_hash_mutation_is_detected (tests.test_reproducibility.ReproducibilityTests.test_audit_hash_mutation_is_detected) ... ok\ntest_checksum_mutation_is_detected (tests.test_reproducibility.ReproducibilityTests.test_checksum_mutation_is_detected) ... ok\ntest_deterministic_packet_replay_passes (tests.test_reproducibility.ReproducibilityTests.test_deterministic_packet_replay_passes) ... ok\ntest_final_route_preserves_human_authority (tests.test_reproducibility.ReproducibilityTests.test_final_route_preserves_human_authority) ... ok\ntest_full_reexecution_dependency_is_disclosed (tests.test_reproducibility.ReproducibilityTests.test_full_reexecution_dependency_is_disclosed) ... ok\ntest_inventory_has_no_missing_or_mismatched_files (tests.test_reproducibility.ReproducibilityTests.test_inventory_has_no_missing_or_mismatched_files) ... ok\ntest_manifest_is_schema_valid (tests.test_reproducibility.ReproducibilityTests.test_manifest_is_schema_valid) ... ok\ntest_replay_plan_lists_all_phase_four_commands (tests.test_reproducibility.ReproducibilityTests.test_replay_plan_lists_all_phase_four_commands) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.216s\n\nOK\nInventoried artifacts: 130\nConsolidated audit events: 13\nAudit event range: AUD-CASE-D850D326D21B745D-01 through AUD-CASE-D850D326D21B745D-13\nRepository state digest: 4cd07ab3a1f8286caeeb8268e41655a6484935a3b8ab860df029781f1247fd10\nArtifact integrity: PASS\nAudit-chain integrity: PASS\nDeterministic packet replay: PASS\nFinal route: awaiting_human_review\nHuman disposition recorded: False\nFinal decision created: False\nExternal actions performed: 0\n",
+  "checks": {
+    "unit_tests_passed": 9,
+    "inventoried_artifacts": 130,
+    "artifact_integrity": "PASS",
+    "consolidated_audit_events": 13,
+    "audit_chain_integrity": "PASS",
+    "audit_sequences": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "deterministic_packet_replay": "PASS",
+    "packet_hashes_match": true,
+    "case_hashes_match": true,
+    "checksum_mutation_detected": true,
+    "audit_mutation_detected": true,
+    "final_route": "awaiting_human_review",
+    "human_disposition_recorded": false,
+    "final_decision_created": false,
+    "external_actions_performed": 0
+  },
+  "representative_result": {
+    "manifest_id": "REPRO-D850D326D21B745D-P4-06",
+    "repository_state_digest": "4cd07ab3a1f8286caeeb8268e41655a6484935a3b8ab860df029781f1247fd10",
+    "first_audit_event": "AUD-CASE-D850D326D21B745D-01",
+    "last_audit_event": "AUD-CASE-D850D326D21B745D-13",
+    "required_reviewer": {
+      "role_id": "ROLE-CONTRACTS-LEGAL-REVIEWER",
+      "role_name": "Contracts or Legal Reviewer",
+      "organization_id": "ICMSOL"
+    }
+  },
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

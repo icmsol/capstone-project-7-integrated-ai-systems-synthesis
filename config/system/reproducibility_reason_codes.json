@@ -1,0 +1,46 @@
+{
+  "registry_schema_version": "1.0.0",
+  "registry_id": "PROJECT7-P4-06-REPRODUCIBILITY-REASON-CODES",
+  "reason_codes": [
+    {
+      "code": "REPRODUCIBILITY_MANIFEST_CREATED",
+      "category": "reproducibility",
+      "meaning": "A versioned artifact inventory, environment record, audit summary, replay plan, and final route were preserved."
+    },
+    {
+      "code": "REPLAY_VERIFIED",
+      "category": "reproducibility",
+      "meaning": "Artifact integrity, audit-chain integrity, and deterministic packet reconstruction passed."
+    },
+    {
+      "code": "ARTIFACT_CHECKSUM_MISMATCH",
+      "category": "integrity",
+      "meaning": "An artifact's observed SHA-256 does not match the manifest."
+    },
+    {
+      "code": "ARTIFACT_MISSING",
+      "category": "integrity",
+      "meaning": "A required replay artifact is unavailable."
+    },
+    {
+      "code": "AUDIT_CHAIN_INVALID",
+      "category": "audit",
+      "meaning": "An event hash, sequence, or previous-hash link is invalid."
+    },
+    {
+      "code": "REPLAY_OUTPUT_MISMATCH",
+      "category": "reproducibility",
+      "meaning": "A deterministic replay does not reproduce the preserved result."
+    },
+    {
+      "code": "FULL_REEXECUTION_REQUIRES_MODEL_PACKAGE",
+      "category": "dependency",
+      "meaning": "Full P4-03 re-execution requires the committed Project 4 model package under models/project4."
+    },
+    {
+      "code": "HUMAN_DISPOSITION_PENDING",
+      "category": "governance",
+      "meaning": "The case remains awaiting an authorized human disposition."
+    }
+  ]
+}

@@ -1,0 +1,381 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/reproducibility_manifest.schema.json",
+  "title": "Project 7 Reproducibility Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_schema_version",
+    "manifest_id",
+    "case_id",
+    "created_at",
+    "inventory_scope",
+    "repository_state_digest",
+    "artifact_count",
+    "artifact_inventory",
+    "component_versions",
+    "execution_environment",
+    "audit_chain",
+    "replay_plan",
+    "replay_verification",
+    "final_routing",
+    "limitations",
+    "final_decision",
+    "external_actions_performed",
+    "production_boundary"
+  ],
+  "properties": {
+    "manifest_schema_version": {
+      "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+    },
+    "manifest_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "case_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "created_at": {
+      "$ref": "common_definitions.schema.json#/$defs/utc_datetime"
+    },
+    "inventory_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "included_prefixes",
+        "excluded_patterns",
+        "self_referential_generated_artifacts_excluded"
+      ],
+      "properties": {
+        "included_prefixes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "excluded_patterns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "self_referential_generated_artifacts_excluded": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    "repository_state_digest": {
+      "$ref": "common_definitions.schema.json#/$defs/sha256"
+    },
+    "artifact_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "artifact_inventory": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "category",
+          "bytes",
+          "sha256",
+          "required_for_replay"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "audit",
+              "configuration",
+              "data",
+              "documentation",
+              "model_reference",
+              "notebook",
+              "output",
+              "requirements",
+              "source_code",
+              "test"
+            ]
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "sha256": {
+            "$ref": "common_definitions.schema.json#/$defs/sha256"
+          },
+          "required_for_replay": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "component_versions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "execution_environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "python_version",
+        "platform",
+        "dependency_files",
+        "actual_model_dependency"
+      ],
+      "properties": {
+        "python_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "platform": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dependency_files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "path",
+              "sha256"
+            ],
+            "properties": {
+              "path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sha256": {
+                "$ref": "common_definitions.schema.json#/$defs/sha256"
+              }
+            }
+          }
+        },
+        "actual_model_dependency": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "checkpoint_sha256",
+            "required_for_full_reexecution"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "checkpoint_sha256": {
+              "$ref": "common_definitions.schema.json#/$defs/sha256"
+            },
+            "required_for_full_reexecution": {
+              "type": "boolean",
+              "const": true
+            }
+          }
+        }
+      }
+    },
+    "audit_chain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event_count",
+        "first_event_id",
+        "last_event_id",
+        "expected_sequences",
+        "chain_valid",
+        "first_event_hash",
+        "last_event_hash"
+      ],
+      "properties": {
+        "event_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "first_event_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "last_event_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_sequences": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "chain_valid": {
+          "type": "boolean",
+          "const": true
+        },
+        "first_event_hash": {
+          "$ref": "common_definitions.schema.json#/$defs/sha256"
+        },
+        "last_event_hash": {
+          "$ref": "common_definitions.schema.json#/$defs/sha256"
+        }
+      }
+    },
+    "replay_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_verification_command",
+        "deterministic_packet_replay_command",
+        "full_pipeline_commands",
+        "expected_outcomes",
+        "limitations"
+      ],
+      "properties": {
+        "artifact_verification_command": {
+          "type": "string",
+          "minLength": 1
+        },
+        "deterministic_packet_replay_command": {
+          "type": "string",
+          "minLength": 1
+        },
+        "full_pipeline_commands": {
+          "type": "array",
+          "minItems": 6,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "expected_outcomes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "$ref": "common_definitions.schema.json#/$defs/limitation"
+          }
+        }
+      }
+    },
+    "replay_verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "artifact_integrity",
+        "audit_chain_integrity",
+        "packet_replay",
+        "preserved_packet_sha256",
+        "replayed_packet_sha256",
+        "preserved_case_sha256",
+        "replayed_case_sha256"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "const": "PASS"
+        },
+        "artifact_integrity": {
+          "type": "string",
+          "const": "PASS"
+        },
+        "audit_chain_integrity": {
+          "type": "string",
+          "const": "PASS"
+        },
+        "packet_replay": {
+          "type": "string",
+          "const": "PASS"
+        },
+        "preserved_packet_sha256": {
+          "$ref": "common_definitions.schema.json#/$defs/sha256"
+        },
+        "replayed_packet_sha256": {
+          "$ref": "common_definitions.schema.json#/$defs/sha256"
+        },
+        "preserved_case_sha256": {
+          "$ref": "common_definitions.schema.json#/$defs/sha256"
+        },
+        "replayed_case_sha256": {
+          "$ref": "common_definitions.schema.json#/$defs/sha256"
+        }
+      }
+    },
+    "final_routing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_status",
+        "packet_status",
+        "recommendation_code",
+        "recommendation_label",
+        "required_reviewer",
+        "human_disposition",
+        "final_decision"
+      ],
+      "properties": {
+        "case_status": {
+          "type": "string",
+          "const": "awaiting_human_review"
+        },
+        "packet_status": {
+          "type": "string",
+          "const": "ready_for_human_review"
+        },
+        "recommendation_code": {
+          "type": "string",
+          "const": "R-05"
+        },
+        "recommendation_label": {
+          "type": "string",
+          "const": "Escalate — Specialized Review Required"
+        },
+        "required_reviewer": {
+          "$ref": "common_definitions.schema.json#/$defs/human_role"
+        },
+        "human_disposition": {
+          "type": "null"
+        },
+        "final_decision": {
+          "type": "null"
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common_definitions.schema.json#/$defs/limitation"
+      }
+    },
+    "final_decision": {
+      "type": "null"
+    },
+    "external_actions_performed": {
+      "type": "integer",
+      "const": 0
+    },
+    "production_boundary": {
+      "type": "string",
+      "const": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+    }
+  }
+}

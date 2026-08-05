@@ -1,0 +1,11 @@
+requirement_id,requirement,implementation,validation,status
+P4-06-R01,Inventory every replay-critical artifact.,"Versioned manifest records path, category, bytes, SHA-256, and replay requirement.",130 artifacts inventoried.,Implemented
+P4-06-R02,Preserve configuration and component versions.,"Manifest records organization profile, FAC, component, policy, and schema versions.",Component-version map preserved.,Implemented
+P4-06-R03,Consolidate the complete case audit trail.,Events 1-13 are copied into one durable JSONL ledger.,Contiguous 13-event chain validated.,Implemented
+P4-06-R04,Validate event hashes and previous-hash links.,Each event hash is recomputed from canonical JSON and each link is checked.,Audit-chain integrity PASS.,Implemented
+P4-06-R05,Preserve durable checksum evidence.,CSV checksum inventory and repository-state digest are generated.,Artifact integrity PASS.,Implemented
+P4-06-R06,Verify deterministic final-packet replay.,P4-05 is rerun from preserved P4-04 state and canonical packet/case hashes are compared.,Packet and case replay hashes match.,Implemented
+P4-06-R07,Document full replay commands and dependencies.,Replay plan covers artifact verification and P4-01 through P4-06 commands.,Project 4 model dependency explicitly disclosed.,Implemented
+P4-06-R08,Preserve final routing and human authority.,Final route remains awaiting_human_review with R-05 recommendation.,Human disposition and final decision remain null.,Implemented
+P4-06-R09,Detect artifact or audit tampering.,Mutation tests produce ARTIFACT_CHECKSUM_MISMATCH and AUDIT_CHAIN_INVALID.,Both fail-closed tests pass.,Implemented
+P4-06-R10,Perform no autonomous external action.,The pipeline creates local evidence and verification outputs only.,External actions performed: 0.,Implemented

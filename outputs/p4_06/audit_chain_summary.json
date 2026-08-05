@@ -1,0 +1,23 @@
+{
+  "event_count": 13,
+  "first_event_id": "AUD-CASE-D850D326D21B745D-01",
+  "last_event_id": "AUD-CASE-D850D326D21B745D-13",
+  "expected_sequences": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "chain_valid": true,
+  "first_event_hash": "d227d4c02befdfba315110d7c3f31cdcd17b4b447e48b64cb86367a8454cd0ad",
+  "last_event_hash": "9ce052ddd373694c33f084812cb862c40376d557f5a6d617ebb5712272b33f79"
+}

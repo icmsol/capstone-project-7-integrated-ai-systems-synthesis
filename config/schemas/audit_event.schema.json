@@ -47,7 +47,9 @@
         "recommendation_abstained",
         "case_escalated",
         "human_disposition_recorded",
-        "processing_failed"
+        "processing_failed",
+        "reproducibility_manifest_created",
+        "replay_verified"
       ]
     },
     "event_time": {
