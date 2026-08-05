@@ -1,0 +1,52 @@
+{
+  "artifact_id": "PROJECT7-P4-03-ACTUAL-MODEL-VALIDATION",
+  "artifact_version": "1.0.0",
+  "validated_at_utc": "2026-08-05T18:42:13.572823+00:00",
+  "validation_status": "PASS",
+  "notebook_commit": "2dabdea",
+  "model_package": "models/project4",
+  "prediction_count": 3,
+  "predictions": [
+    {
+      "passage_id": "PASSAGE-AUDIT-001",
+      "predicted_category": "Audit Rights",
+      "confidence": 0.9999610185623169,
+      "decision": "escalate",
+      "domain_warning": true,
+      "truncated": false,
+      "reason_codes": [
+        "MODEL_DOMAIN_SHIFT"
+      ]
+    },
+    {
+      "passage_id": "PASSAGE-ASSIGNMENT-001",
+      "predicted_category": "Anti-Assignment",
+      "confidence": 0.9999657869338989,
+      "decision": "escalate",
+      "domain_warning": true,
+      "truncated": false,
+      "reason_codes": [
+        "MODEL_DOMAIN_SHIFT"
+      ]
+    },
+    {
+      "passage_id": "PASSAGE-LONG-001",
+      "predicted_category": "Audit Rights",
+      "confidence": 0.9999566078186035,
+      "decision": "escalate",
+      "domain_warning": true,
+      "truncated": true,
+      "reason_codes": [
+        "MODEL_DOMAIN_SHIFT",
+        "MODEL_INPUT_TRUNCATED"
+      ]
+    }
+  ],
+  "integrated_case_state_validation": "PASS",
+  "case_id": "CASE-D850D326D21B745D",
+  "case_status": "analysis_in_progress",
+  "audit_event_count": 1,
+  "audit_hash_chain_continuation": "PASS",
+  "external_actions_performed": 0,
+  "production_boundary": "Clause-theme triage only; no legal interpretation, compliance determination, contract acceptance, external action, or final decision."
+}

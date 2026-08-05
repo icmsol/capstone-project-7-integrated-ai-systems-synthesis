@@ -1,0 +1,155 @@
+{
+  "case_id": "CASE-D850D326D21B745D",
+  "prediction_count": 3,
+  "predictions": [
+    {
+      "prediction_schema_version": "1.0.0",
+      "case_id": "CASE-D850D326D21B745D",
+      "passage_id": "PASSAGE-AUDIT-001",
+      "passage_text_hash": "f3d49c12aaeb33f518a3be9b18a5073e0a8bce0bdc7735403d7626003141e281",
+      "model_artifact_id": "PROJECT4-CLAUSE-CLASSIFIER-INFERENCE",
+      "model_version": "1.0.0",
+      "model_sha256": "50a280950d31466d7002578295c64e957d144611f5b9731bb059be50e68c6c92",
+      "predicted_label_id": 0,
+      "predicted_category": "Audit Rights",
+      "confidence": 0.9999610185623169,
+      "decision": "escalate",
+      "review_priority": "high",
+      "required_reviewer_role": "Contracts or Legal Reviewer",
+      "domain_warning": true,
+      "truncated": false,
+      "token_count": 27,
+      "reason_codes": [
+        "MODEL_DOMAIN_SHIFT"
+      ],
+      "limitations": [
+        {
+          "code": "MODEL_THEME_ONLY",
+          "description": "The output is a clause-theme triage label, not legal meaning, enforceability, compliance, acceptability, or required contractual action.",
+          "material": true,
+          "mitigation": "Route consequential interpretation to an authorized contracts or legal reviewer."
+        },
+        {
+          "code": "MODEL_TEN_CLASS_LIMIT",
+          "description": "The classifier recognizes only ten CUAD-derived commercial-contract categories.",
+          "material": true,
+          "mitigation": "Do not treat the label set as a complete contract taxonomy."
+        },
+        {
+          "code": "MODEL_CONFIDENCE_NOT_CERTAINTY",
+          "description": "Confidence is not legal certainty or evidence of correctness on public-sector language.",
+          "material": true,
+          "mitigation": "Use confidence only for review prioritization."
+        },
+        {
+          "code": "MODEL_DOMAIN_SHIFT",
+          "description": "The model was trained on commercial-contract language; this passage is public-sector or exhibits vocabulary shift.",
+          "material": true,
+          "mitigation": "Require qualified human review and do not use the label as authoritative evidence."
+        }
+      ]
+    },
+    {
+      "prediction_schema_version": "1.0.0",
+      "case_id": "CASE-D850D326D21B745D",
+      "passage_id": "PASSAGE-ASSIGNMENT-001",
+      "passage_text_hash": "3f36710b6215ba6012fb271f78dc3a568889daaaee3e98865ac5725ebff97d51",
+      "model_artifact_id": "PROJECT4-CLAUSE-CLASSIFIER-INFERENCE",
+      "model_version": "1.0.0",
+      "model_sha256": "50a280950d31466d7002578295c64e957d144611f5b9731bb059be50e68c6c92",
+      "predicted_label_id": 1,
+      "predicted_category": "Anti-Assignment",
+      "confidence": 0.9999657869338989,
+      "decision": "escalate",
+      "review_priority": "high",
+      "required_reviewer_role": "Contracts or Legal Reviewer",
+      "domain_warning": true,
+      "truncated": false,
+      "token_count": 23,
+      "reason_codes": [
+        "MODEL_DOMAIN_SHIFT"
+      ],
+      "limitations": [
+        {
+          "code": "MODEL_THEME_ONLY",
+          "description": "The output is a clause-theme triage label, not legal meaning, enforceability, compliance, acceptability, or required contractual action.",
+          "material": true,
+          "mitigation": "Route consequential interpretation to an authorized contracts or legal reviewer."
+        },
+        {
+          "code": "MODEL_TEN_CLASS_LIMIT",
+          "description": "The classifier recognizes only ten CUAD-derived commercial-contract categories.",
+          "material": true,
+          "mitigation": "Do not treat the label set as a complete contract taxonomy."
+        },
+        {
+          "code": "MODEL_CONFIDENCE_NOT_CERTAINTY",
+          "description": "Confidence is not legal certainty or evidence of correctness on public-sector language.",
+          "material": true,
+          "mitigation": "Use confidence only for review prioritization."
+        },
+        {
+          "code": "MODEL_DOMAIN_SHIFT",
+          "description": "The model was trained on commercial-contract language; this passage is public-sector or exhibits vocabulary shift.",
+          "material": true,
+          "mitigation": "Require qualified human review and do not use the label as authoritative evidence."
+        }
+      ]
+    },
+    {
+      "prediction_schema_version": "1.0.0",
+      "case_id": "CASE-D850D326D21B745D",
+      "passage_id": "PASSAGE-LONG-001",
+      "passage_text_hash": "30b7884638d08e39f5aea82eb30510fe33a65351264b98480a736dcca3208616",
+      "model_artifact_id": "PROJECT4-CLAUSE-CLASSIFIER-INFERENCE",
+      "model_version": "1.0.0",
+      "model_sha256": "50a280950d31466d7002578295c64e957d144611f5b9731bb059be50e68c6c92",
+      "predicted_label_id": 0,
+      "predicted_category": "Audit Rights",
+      "confidence": 0.9999566078186035,
+      "decision": "escalate",
+      "review_priority": "critical",
+      "required_reviewer_role": "Contracts or Legal Reviewer",
+      "domain_warning": true,
+      "truncated": true,
+      "token_count": 1125,
+      "reason_codes": [
+        "MODEL_DOMAIN_SHIFT",
+        "MODEL_INPUT_TRUNCATED"
+      ],
+      "limitations": [
+        {
+          "code": "MODEL_THEME_ONLY",
+          "description": "The output is a clause-theme triage label, not legal meaning, enforceability, compliance, acceptability, or required contractual action.",
+          "material": true,
+          "mitigation": "Route consequential interpretation to an authorized contracts or legal reviewer."
+        },
+        {
+          "code": "MODEL_TEN_CLASS_LIMIT",
+          "description": "The classifier recognizes only ten CUAD-derived commercial-contract categories.",
+          "material": true,
+          "mitigation": "Do not treat the label set as a complete contract taxonomy."
+        },
+        {
+          "code": "MODEL_CONFIDENCE_NOT_CERTAINTY",
+          "description": "Confidence is not legal certainty or evidence of correctness on public-sector language.",
+          "material": true,
+          "mitigation": "Use confidence only for review prioritization."
+        },
+        {
+          "code": "MODEL_DOMAIN_SHIFT",
+          "description": "The model was trained on commercial-contract language; this passage is public-sector or exhibits vocabulary shift.",
+          "material": true,
+          "mitigation": "Require qualified human review and do not use the label as authoritative evidence."
+        },
+        {
+          "code": "MODEL_INPUT_TRUNCATED",
+          "description": "The passage exceeded the configured maximum length and was truncated before inference.",
+          "material": true,
+          "mitigation": "Review the complete passage and surrounding context."
+        }
+      ]
+    }
+  ],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}
