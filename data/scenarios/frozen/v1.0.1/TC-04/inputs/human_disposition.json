@@ -1,0 +1,22 @@
+{
+  "fixture_schema_version": "1.0.1",
+  "case_id": "CASE-TC-04",
+  "reached": true,
+  "disposition": {
+    "disposition_schema_version": "1.0.0",
+    "disposition_id": "DISP-TC-04-001",
+    "case_id": "CASE-TC-04",
+    "recommendation_id": "REC-TC-04-001",
+    "reviewer": {
+      "role_id": "ROLE-TC-04-REVIEWER",
+      "role_name": "Opportunity Analyst",
+      "organization_id": "ICMSOL"
+    },
+    "disposition": "defer_pending_information",
+    "rationale": "The case lacks sufficient, current, unambiguous, or complete information for an accountable final decision and is deferred pending correction.",
+    "modified_conditions": [],
+    "escalated_to": null,
+    "decided_at": "2026-08-05T16:10:00Z"
+  },
+  "not_reached_reason": null
+}

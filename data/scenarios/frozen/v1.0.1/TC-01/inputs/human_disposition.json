@@ -1,0 +1,22 @@
+{
+  "fixture_schema_version": "1.0.1",
+  "case_id": "CASE-TC-01",
+  "reached": true,
+  "disposition": {
+    "disposition_schema_version": "1.0.0",
+    "disposition_id": "DISP-TC-01-001",
+    "case_id": "CASE-TC-01",
+    "recommendation_id": "REC-TC-01-001",
+    "reviewer": {
+      "role_id": "ROLE-TC-01-REVIEWER",
+      "role_name": "Business Development or Pursuit Lead",
+      "organization_id": "ICMSOL"
+    },
+    "disposition": "accept",
+    "rationale": "The evidence-grounded recommendation is supported, the configured services align, and all mandatory human review requirements are complete.",
+    "modified_conditions": [],
+    "escalated_to": null,
+    "decided_at": "2026-08-05T16:10:00Z"
+  },
+  "not_reached_reason": null
+}

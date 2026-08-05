@@ -1,0 +1,9 @@
+{
+  "case_id": "TC-01",
+  "fixture_mode": "controlled_model_output",
+  "invoke_real_model": false,
+  "top_label": "Audit Rights",
+  "top_probability": 0.997,
+  "probability_vector_length": 10,
+  "reason": "Controlled output isolates the integrated system's handling of a validated Audit Rights prediction. Project 4 real-package execution remains covered by the separate model-boundary cases."
+}

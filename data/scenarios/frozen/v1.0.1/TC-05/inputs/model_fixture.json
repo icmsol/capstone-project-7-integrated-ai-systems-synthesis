@@ -1,0 +1,9 @@
+{
+  "case_id": "TC-05",
+  "fixture_mode": "controlled_model_output",
+  "invoke_real_model": false,
+  "top_label": "Audit Rights",
+  "top_probability": 0.62,
+  "probability_vector_length": 10,
+  "reason": "Controlled output isolates the fixed 0.80 abstention threshold from model-content variability."
+}

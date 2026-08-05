@@ -1,0 +1,26 @@
+{
+  "fixture_schema_version": "1.0.1",
+  "case_id": "CASE-TC-02",
+  "reached": true,
+  "disposition": {
+    "disposition_schema_version": "1.0.0",
+    "disposition_id": "DISP-TC-02-001",
+    "case_id": "CASE-TC-02",
+    "recommendation_id": "REC-TC-02-001",
+    "reviewer": {
+      "role_id": "ROLE-TC-02-REVIEWER",
+      "role_name": "Business Development or Pursuit Lead",
+      "organization_id": "ICMSOL"
+    },
+    "disposition": "accept_with_modified_conditions",
+    "rationale": "The opportunity may proceed only after the recorded staffing, conflict, and pricing conditions are independently verified by authorized personnel.",
+    "modified_conditions": [
+      "Confirm named staffing availability.",
+      "Complete conflict-of-interest review.",
+      "Obtain executive pricing approval."
+    ],
+    "escalated_to": null,
+    "decided_at": "2026-08-05T16:10:00Z"
+  },
+  "not_reached_reason": null
+}

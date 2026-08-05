@@ -1,0 +1,89 @@
+{
+  "manifest_schema_version": "1.0.1",
+  "case_id": "CASE-TC-05",
+  "case_name": "Low-confidence Project 4 prediction abstains",
+  "freeze_version": "1.0.1",
+  "freeze_timestamp_utc": "2026-08-05T16:10:00Z",
+  "reference_profile": "icm",
+  "execution_mode": "real_components_with_controlled_model_fixture",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "cefc4c6cd9bd0238a9a399e4013edb6072e637f56f4149f73cfe89c12755c9b7",
+      "bytes": 1101,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191,
+      "role": "organization profile reference"
+    },
+    {
+      "path": "inputs/opportunity_source.txt",
+      "sha256": "7fe3f444596519e6ee5f4ea40d044aa9f9ecdd48eaf1646402c90832c34fd5db",
+      "bytes": 431,
+      "role": "synthetic opportunity source snapshot"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "1de8d03f3ae1bbb8fbc0b3b299ef1d0417ea476a24e543e8be8342052dff6587",
+      "bytes": 1928,
+      "role": "schema-valid normalized opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "72ab70e10a6bb1a032ba820528a3a03fe5f4b262ca6c207d9559b9ba8b65dab5",
+      "bytes": 235,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "a407a765d6d69b64d966e565ce29fa8df94892642ae9042c6576a34b06e4647c",
+      "bytes": 303,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "34ef83061e9c5658951fa9f7ad040644af5555aa894134c64854edd475131d60",
+      "bytes": 74,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "1c3e9f638ec5d2d9d2fdec3e91d21beefd6317ad30eacfe284cacd964d713a29",
+      "bytes": 752,
+      "role": "schema-valid human disposition wrapper"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "6207695fb87562a29852d007a49f42fdd891d60757edbefea31d1a0672d1c622",
+      "bytes": 108,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "9118a7bc3fe9bff2fefe3d092224af47f0b2f868a810cc164c41f07c36b8f5ff",
+      "bytes": 4535,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "deferred",
+  "expected_recommendation_code": "R-03",
+  "expected_primary_stage_id": "STG-06",
+  "expected_primary_stage": "triage_clause_themes",
+  "expected_component": "clause_triage_model",
+  "expected_reason_codes": [
+    "MODEL_CONFIDENCE_LOW"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}

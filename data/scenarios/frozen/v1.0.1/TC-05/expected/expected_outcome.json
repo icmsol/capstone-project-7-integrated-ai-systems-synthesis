@@ -1,0 +1,163 @@
+{
+  "expected_outcome_schema_version": "1.0.1",
+  "case_id": "CASE-TC-05",
+  "expected_terminal_outcome": "deferred",
+  "expected_case_status": "deferred",
+  "expected_primary_stage_id": "STG-06",
+  "expected_primary_stage": "triage_clause_themes",
+  "expected_component": "clause_triage_model",
+  "expected_recommendation_code": "R-03",
+  "expected_recommendation_label": "Recommend Hold — Gather Information",
+  "expected_reason_codes": [
+    "MODEL_CONFIDENCE_LOW"
+  ],
+  "expected_human_route": "Contracts or Legal Reviewer",
+  "expected_audit_events": [
+    "clause_triage_completed",
+    "case_escalated",
+    "human_disposition_recorded"
+  ],
+  "required_evidence_classes": [
+    "model_prediction",
+    "human_disposition",
+    "audit_chain"
+  ],
+  "must_occur": [
+    "Full probability vector is retained.",
+    "Abstention and reviewer route are recorded."
+  ],
+  "must_not_occur": [
+    "Low-confidence label is not treated as reliable.",
+    "No legal conclusion is generated."
+  ],
+  "acceptance_target_ids": [
+    "AT-02",
+    "AT-09",
+    "AT-11",
+    "AT-15"
+  ],
+  "safeguard_control_ids": [
+    "SG-011",
+    "SG-012",
+    "SG-024",
+    "SG-025"
+  ],
+  "assertions": [
+    {
+      "assertion_id": "AS-TC-05-TERM",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.terminal_outcome",
+      "expected_value": "deferred",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-05-STATUS",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.case_status",
+      "expected_value": "deferred",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-05-STAGEID",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_stage_id",
+      "expected_value": "STG-06",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-05-STAGE",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_stage",
+      "expected_value": "triage_clause_themes",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-05-COMP",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_component",
+      "expected_value": "clause_triage_model",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-05-REASON",
+      "assertion_type": "contains_all",
+      "target_path": "$.case_state.reason_codes",
+      "expected_value": [
+        "MODEL_CONFIDENCE_LOW"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-05-AUDIT",
+      "assertion_type": "contains_all",
+      "target_path": "$.audit.event_types",
+      "expected_value": [
+        "clause_triage_completed",
+        "case_escalated",
+        "human_disposition_recorded"
+      ],
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-05-SCHEMA",
+      "assertion_type": "schema_valid",
+      "target_path": "$.artifacts.schema_valid",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-05-CHECK",
+      "assertion_type": "checksum_valid",
+      "target_path": "$.artifacts.checksum_valid",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-05-NOEXT",
+      "assertion_type": "contains_none",
+      "target_path": "$.side_effects",
+      "expected_value": [
+        "email_sent",
+        "proposal_submitted",
+        "contract_accepted",
+        "purchase_executed",
+        "staff_committed"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-05-BOUND",
+      "assertion_type": "contains_none",
+      "target_path": "$.claims",
+      "expected_value": [
+        "production_ready",
+        "legally_authoritative",
+        "award_probability",
+        "autonomous_approval"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-05-RECCODE",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.recommendation_code",
+      "expected_value": "R-03",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-05-RECLABEL",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.recommendation_label",
+      "expected_value": "Recommend Hold — Gather Information",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-05-ROUTE",
+      "assertion_type": "equals",
+      "target_path": "$.routing.expected_human_route",
+      "expected_value": "Contracts or Legal Reviewer",
+      "severity": "major"
+    }
+  ],
+  "result_status": "not_executed_target_only"
+}

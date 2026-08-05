@@ -1,0 +1,28 @@
+{
+  "case_definition_version": "1.0.1",
+  "case_id": "TC-06",
+  "case_name": "Public-sector domain shift escalates",
+  "priority": "critical",
+  "category_ids": [
+    "CAT-03",
+    "CAT-09"
+  ],
+  "purpose": "Verify confidence cannot suppress a material domain warning.",
+  "reference_profile": "icm",
+  "execution_mode": "real_components_with_controlled_model_fixture",
+  "input_shape": {
+    "opportunity_data": "complete",
+    "source_documents": "approved_clean",
+    "project4_inference": "domain_shift",
+    "official_evidence": "not_required",
+    "human_input": "authorized_defer"
+  },
+  "trigger_condition": "Passage differs materially from the CUAD commercial-contract training domain.",
+  "freeze_version": "1.0.1",
+  "freeze_timestamp_utc": "2026-08-05T16:10:00Z",
+  "deterministic_seed": 42,
+  "synthetic_or_approved_inputs_only": true,
+  "measured_result": null,
+  "result_status": "not_executed_target_only",
+  "change_summary": "Corrected v1.0.1 freeze: shared-schema-valid opportunity and human fixtures, separated recommendation and terminal states, mapped stage identifiers, and corrected validation."
+}

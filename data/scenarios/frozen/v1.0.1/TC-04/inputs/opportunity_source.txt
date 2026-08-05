@@ -1,0 +1,9 @@
+Case: TC-04
+Title: Enterprise IT Strategy, Program Management, and Systems Integration Support
+Agency: Synthetic California Public Agency
+Solicitation: SYN-TC-04
+Status: Open
+Posted: 2026-08-01
+Due: 2026-09-15
+Description: [missing]
+Fixture classification: synthetic evaluation source
