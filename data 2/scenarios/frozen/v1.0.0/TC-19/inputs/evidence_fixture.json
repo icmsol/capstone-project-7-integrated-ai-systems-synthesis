@@ -1,0 +1,8 @@
+{
+  "case_id": "TC-19",
+  "fixture_mode": "corpus_governance_failure",
+  "corpus_version": "UNAPPROVED-CANDIDATE",
+  "corpus_approved": false,
+  "checksum_present": false,
+  "representative_retrieval_tests_passed": false
+}

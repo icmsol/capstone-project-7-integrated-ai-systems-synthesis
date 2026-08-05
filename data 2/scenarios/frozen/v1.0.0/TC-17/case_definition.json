@@ -1,0 +1,26 @@
+{
+  "case_definition_version": "1.0.0",
+  "case_id": "TC-17",
+  "case_name": "Alternate profile changes fit without code changes",
+  "priority": "high",
+  "category_ids": [
+    "CAT-08"
+  ],
+  "purpose": "Verify profile portability and configuration-dependent output differences.",
+  "reference_profile": "fictional_alternate",
+  "execution_mode": "profile_comparison",
+  "input_shape": {
+    "opportunity_data": "complete",
+    "source_documents": "none",
+    "project4_inference": "not_applicable",
+    "official_evidence": "not_required",
+    "human_input": "authorized_complete"
+  },
+  "trigger_condition": "The same opportunity is evaluated under the alternate organization profile.",
+  "freeze_version": "1.0.0",
+  "freeze_timestamp_utc": "2026-08-05T01:30:00Z",
+  "deterministic_seed": 42,
+  "synthetic_or_approved_inputs_only": true,
+  "measured_result": null,
+  "result_status": "not_executed_target_only"
+}
