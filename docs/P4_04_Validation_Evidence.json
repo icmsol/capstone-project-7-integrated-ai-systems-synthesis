@@ -1,0 +1,38 @@
+{
+  "artifact_id": "PROJECT7-P4-04-VALIDATION-EVIDENCE",
+  "artifact_version": "1.0.0",
+  "validated_at_utc": "2026-08-05T19:03:12.206318+00:00",
+  "validation_status": "PASS",
+  "command": "python tests/run_p4_04_validation.py",
+  "stdout": "test_assignment_title_mismatch_does_not_support_claim (tests.test_evidence_workflow.EvidenceWorkflowTests.test_assignment_title_mismatch_does_not_support_claim) ... ok\ntest_exact_audit_clause_is_validated_and_escalated (tests.test_evidence_workflow.EvidenceWorkflowTests.test_exact_audit_clause_is_validated_and_escalated) ... ok\ntest_missing_exact_clause_fails_closed_without_semantic_fallback (tests.test_evidence_workflow.EvidenceWorkflowTests.test_missing_exact_clause_fails_closed_without_semantic_fallback) ... ok\ntest_out_of_scope_authority_request_escalates (tests.test_evidence_workflow.EvidenceWorkflowTests.test_out_of_scope_authority_request_escalates) ... ok\ntest_prompt_injection_fails_closed_before_retrieval (tests.test_evidence_workflow.EvidenceWorkflowTests.test_prompt_injection_fails_closed_before_retrieval) ... ok\ntest_replay_is_deterministic (tests.test_evidence_workflow.EvidenceWorkflowTests.test_replay_is_deterministic) ... ok\ntest_result_is_schema_valid_and_performs_no_external_action (tests.test_evidence_workflow.EvidenceWorkflowTests.test_result_is_schema_valid_and_performs_no_external_action) ... ok\ntest_semantic_search_finds_audit_record_for_general_query (tests.test_evidence_workflow.EvidenceWorkflowTests.test_semantic_search_finds_audit_record_for_general_query) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.460s\n\nOK\nRepresentative requests executed: 2\nEvidence items preserved: 2\nSufficient evidence assessments: 2\nExact citation semantic substitutions: 0\nUpdated case status: escalated\nAudit events added: 3\nAudit hash-chain continuation: PASS\nRegistered corpus and snapshot checksums: PASS\nExternal actions performed: 0\n",
+  "checks": {
+    "unit_tests_passed": 8,
+    "representative_requests_executed": 2,
+    "representative_evidence_items": 2,
+    "sufficient_assessments": 2,
+    "registered_corpus_checksum_valid": true,
+    "registered_snapshot_checksums_valid": 3,
+    "exact_citation_semantic_substitutions": 0,
+    "title_mismatch_blocks_support": true,
+    "missing_exact_clause_fails_closed": true,
+    "semantic_retrieval_test_passed": true,
+    "prompt_injection_fails_closed": true,
+    "out_of_scope_authority_request_escalates": true,
+    "integrated_case_state_schema_valid": true,
+    "audit_events_schema_valid": 3,
+    "audit_hash_chain_continued": true,
+    "external_actions_performed": 0
+  },
+  "representative_result": {
+    "case_id": "CASE-D850D326D21B745D",
+    "case_status": "escalated",
+    "evidence_item_count": 2,
+    "evidence_assessment_count": 2,
+    "audit_event_count": 9,
+    "reviewer_role": "Contracts or Legal Reviewer",
+    "fac_number": "2026-01",
+    "fac_effective_date": "2026-03-13"
+  },
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required.",
+  "host_environment_note": "An unrelated artifact_tool spreadsheet-runtime warmup warning emitted by the file-generation host was excluded from the preserved P4-04 test output. The P4-04 validation process returned success and all eight tests passed."
+}

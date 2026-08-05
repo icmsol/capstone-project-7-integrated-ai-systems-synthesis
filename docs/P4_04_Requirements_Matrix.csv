@@ -1,0 +1,11 @@
+requirement_id,requirement,implementation,validation,status
+P4-04-R01,Load a checksum-verified registered official-source corpus.,Registered three-record Acquisition.gov FAR subset with corpus and snapshot hashes.,Corpus and three snapshot checksum validations PASS.,Implemented
+P4-04-R02,Support exact clause lookup without silent semantic substitution.,Exact lookup is separate; missing citations fail closed.,52.999-99 test returns CLAUSE_NOT_FOUND and semantic fallback=false.,Implemented
+P4-04-R03,Support bounded semantic retrieval for general evidence discovery.,Deterministic TF-IDF cosine search with fixed threshold and top-k.,General audit-record query retrieves FAR 52.215-2.,Implemented
+P4-04-R04,"Validate official metadata, version, and citation integrity.","Title, FAC, effective date, approval, reserved status, and snapshot checks.",Valid titles pass; Anti-Assignment mismatch blocks support.,Implemented
+P4-04-R05,Assess evidence sufficiency and preserve limitations.,"Evidence score, support, conflict, missing information, and required action.",Two representative assessments are sufficient but routed to human review.,Implemented
+P4-04-R06,"Apply scope, privacy, prompt-injection, and tool-failure safeguards.",Deterministic preflight and fail-closed reason codes.,Injection fails closed; authority request escalates.,Implemented
+P4-04-R07,Carry Project 4 domain-shift and truncation reasons into routing.,Upstream reason codes are included in assessment and case escalation.,MODEL_DOMAIN_SHIFT and MODEL_INPUT_TRUNCATED are preserved.,Implemented
+P4-04-R08,Update the integrated case state with evidence and assessments.,Case receives two evidence items and two evidence assessments.,Updated case validates and moves to escalated.,Implemented
+P4-04-R09,Continue the append-only audit hash chain and preserve tool traces.,Events 7-9 plus request-level sanitized tool trace JSONL.,Audit hash-chain continuation PASS.,Implemented
+P4-04-R10,"Perform no legal, procurement, approval, or external action.","Outputs are bounded observations, limitations, and human routes only.",External actions performed: 0.,Implemented

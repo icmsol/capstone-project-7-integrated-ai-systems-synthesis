@@ -1,0 +1,311 @@
+{
+  "bundle_schema_version": "1.0.0",
+  "case_id": "CASE-D850D326D21B745D",
+  "request_count": 2,
+  "results": [
+    {
+      "result_schema_version": "1.0.0",
+      "request_id": "REQ-P4-04-AUDIT",
+      "case_id": "CASE-D850D326D21B745D",
+      "claim_id": "CLAIM-P4-04-AUDIT",
+      "response_status": "escalated",
+      "route": "qualified_human_review",
+      "human_review_required": true,
+      "reviewer_role": "Contracts or Legal Reviewer",
+      "supported_observation": "Registered evidence identifies FAR 52.215-2 as Audit and Records-Negotiation and supports only the bounded subject summary preserved in the evidence item.",
+      "evidence_items": [
+        {
+          "evidence_schema_version": "1.0.0",
+          "evidence_id": "EVID-70B2A42B2AFD1B044C4E",
+          "case_id": "CASE-D850D326D21B745D",
+          "claim_id": "CLAIM-P4-04-AUDIT",
+          "source": {
+            "source_id": "FAR-52.215-2",
+            "source_type": "frozen_snapshot",
+            "source_location": "data/reference/far/p4_04/52_215-2_snapshot.txt",
+            "retrieved_at": "2026-08-05T18:30:00Z",
+            "snapshot_date": "2026-08-05",
+            "sha256": "7cdf56138e3c5eea825026068f5ec190ad4cb0ff67ddff6297f86737651704e0",
+            "approved_for_use": true,
+            "approval_basis": "Official Acquisition.gov metadata and a controlled paraphrased snapshot approved for Project 7 representative validation.",
+            "notes": "Representative official-source subset; review the current official page before consequential use."
+          },
+          "citation": {
+            "citation_text": "FAR 52.215-2 Audit and Records-Negotiation (Jun 2020)",
+            "source_locator": "https://www.acquisition.gov/far/52.215-2",
+            "clause_number": "52.215-2",
+            "section_heading": "Audit and Records-Negotiation"
+          },
+          "quoted_or_paraphrased_text": "This clause defines covered records and describes Government examination and audit rights for specified contract types, certified cost or pricing data, and supporting report records. It also addresses record availability and certain subcontract flow-downs.",
+          "retrieval_method": "exact_lookup",
+          "metadata_valid": true,
+          "citation_valid": true,
+          "relevance_score": 1.0,
+          "supports_claim": true,
+          "conflicts_with_claim": false,
+          "freshness_status": "current",
+          "validation_reason_codes": [
+            "SUPPORTED_WITH_EVIDENCE"
+          ],
+          "limitations": [
+            {
+              "code": "REPRESENTATIVE_SUBSET_ONLY",
+              "description": "The registered corpus is a representative three-record subset rather than the complete FAR Part 52 corpus.",
+              "material": true,
+              "mitigation": "Review the current official Acquisition.gov clause and complete acquisition context before consequential use."
+            },
+            {
+              "code": "APPLICABILITY_NOT_DETERMINED",
+              "description": "Record retrieval and metadata validation do not determine whether the clause applies to a specific acquisition.",
+              "material": true,
+              "mitigation": "Route applicability and legal interpretation to a qualified reviewer."
+            }
+          ]
+        }
+      ],
+      "assessment": {
+        "assessment_schema_version": "1.0.0",
+        "case_id": "CASE-D850D326D21B745D",
+        "claim_id": "CLAIM-P4-04-AUDIT",
+        "evidence_ids": [
+          "EVID-70B2A42B2AFD1B044C4E"
+        ],
+        "sufficiency_status": "sufficient",
+        "conflict_status": "none",
+        "evidence_score": 1.0,
+        "missing_information": [],
+        "reason_codes": [
+          "HUMAN_REVIEW_REQUIRED",
+          "MODEL_DOMAIN_SHIFT",
+          "MODEL_INPUT_TRUNCATED",
+          "SUPPORTED_WITH_EVIDENCE"
+        ],
+        "required_action": "escalate"
+      },
+      "reason_codes": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MODEL_DOMAIN_SHIFT",
+        "MODEL_INPUT_TRUNCATED",
+        "SUPPORTED_WITH_EVIDENCE"
+      ],
+      "tool_trace": [
+        {
+          "sequence": 1,
+          "tool": "preflight_screen",
+          "status": "succeeded",
+          "reason_codes": [],
+          "sanitized_details": {
+            "retrieval_mode": "exact",
+            "consequential_use": true
+          }
+        },
+        {
+          "sequence": 2,
+          "tool": "retrieve_exact_clause",
+          "status": "succeeded",
+          "reason_codes": [],
+          "sanitized_details": {
+            "requested_clause": "52.215-2",
+            "records_returned": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "tool": "validate_clause_metadata",
+          "status": "succeeded",
+          "reason_codes": [],
+          "sanitized_details": {
+            "records_validated": 1,
+            "metadata_valid_count": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "tool": "assess_evidence_sufficiency",
+          "status": "succeeded",
+          "reason_codes": [
+            "HUMAN_REVIEW_REQUIRED",
+            "MODEL_DOMAIN_SHIFT",
+            "MODEL_INPUT_TRUNCATED",
+            "SUPPORTED_WITH_EVIDENCE"
+          ],
+          "sanitized_details": {
+            "evidence_score": 1.0,
+            "sufficient": true,
+            "required_action": "escalate"
+          }
+        }
+      ],
+      "limitations": [
+        {
+          "code": "DECISION_SUPPORT_ONLY",
+          "description": "The workflow retrieves and validates bounded evidence; it does not issue legal, procurement, approval, or final decisions.",
+          "material": true,
+          "mitigation": "Use a qualified reviewer with the complete current source and acquisition context."
+        },
+        {
+          "code": "REPRESENTATIVE_SUBSET_ONLY",
+          "description": "P4-04 validates a representative three-record FAR subset, not the full Project 6 corpus or live FAR.",
+          "material": true,
+          "mitigation": "Reintegrate and revalidate the complete approved corpus before broader use."
+        }
+      ],
+      "external_actions_performed": 0,
+      "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+    },
+    {
+      "result_schema_version": "1.0.0",
+      "request_id": "REQ-P4-04-ASSIGNMENT",
+      "case_id": "CASE-D850D326D21B745D",
+      "claim_id": "CLAIM-P4-04-ASSIGNMENT",
+      "response_status": "escalated",
+      "route": "qualified_human_review",
+      "human_review_required": true,
+      "reviewer_role": "Contracts or Legal Reviewer",
+      "supported_observation": "Registered evidence identifies FAR 52.232-23 as Assignment of Claims and supports only the bounded subject summary preserved in the evidence item.",
+      "evidence_items": [
+        {
+          "evidence_schema_version": "1.0.0",
+          "evidence_id": "EVID-915C1A7761C944E112D4",
+          "case_id": "CASE-D850D326D21B745D",
+          "claim_id": "CLAIM-P4-04-ASSIGNMENT",
+          "source": {
+            "source_id": "FAR-52.232-23",
+            "source_type": "frozen_snapshot",
+            "source_location": "data/reference/far/p4_04/52_232-23_snapshot.txt",
+            "retrieved_at": "2026-08-05T18:30:00Z",
+            "snapshot_date": "2026-08-05",
+            "sha256": "25ec3ad3e0697248db1ff86fa5627b8359668a7cffd7277dc4da53dd4e1bfcce",
+            "approved_for_use": true,
+            "approval_basis": "Official Acquisition.gov metadata and a controlled paraphrased snapshot approved for Project 7 representative validation.",
+            "notes": "Representative official-source subset; review the current official page before consequential use."
+          },
+          "citation": {
+            "citation_text": "FAR 52.232-23 Assignment of Claims (May 2014)",
+            "source_locator": "https://www.acquisition.gov/far/52.232-23",
+            "clause_number": "52.232-23",
+            "section_heading": "Assignment of Claims"
+          },
+          "quoted_or_paraphrased_text": "This clause addresses assignment of rights to contract payments to eligible financing institutions, conditions governing such assignments, and restrictions on disclosure of classified information.",
+          "retrieval_method": "exact_lookup",
+          "metadata_valid": true,
+          "citation_valid": true,
+          "relevance_score": 1.0,
+          "supports_claim": true,
+          "conflicts_with_claim": false,
+          "freshness_status": "current",
+          "validation_reason_codes": [
+            "SUPPORTED_WITH_EVIDENCE"
+          ],
+          "limitations": [
+            {
+              "code": "REPRESENTATIVE_SUBSET_ONLY",
+              "description": "The registered corpus is a representative three-record subset rather than the complete FAR Part 52 corpus.",
+              "material": true,
+              "mitigation": "Review the current official Acquisition.gov clause and complete acquisition context before consequential use."
+            },
+            {
+              "code": "APPLICABILITY_NOT_DETERMINED",
+              "description": "Record retrieval and metadata validation do not determine whether the clause applies to a specific acquisition.",
+              "material": true,
+              "mitigation": "Route applicability and legal interpretation to a qualified reviewer."
+            }
+          ]
+        }
+      ],
+      "assessment": {
+        "assessment_schema_version": "1.0.0",
+        "case_id": "CASE-D850D326D21B745D",
+        "claim_id": "CLAIM-P4-04-ASSIGNMENT",
+        "evidence_ids": [
+          "EVID-915C1A7761C944E112D4"
+        ],
+        "sufficiency_status": "sufficient",
+        "conflict_status": "none",
+        "evidence_score": 1.0,
+        "missing_information": [],
+        "reason_codes": [
+          "HUMAN_REVIEW_REQUIRED",
+          "MODEL_DOMAIN_SHIFT",
+          "MODEL_INPUT_TRUNCATED",
+          "SUPPORTED_WITH_EVIDENCE"
+        ],
+        "required_action": "escalate"
+      },
+      "reason_codes": [
+        "HUMAN_REVIEW_REQUIRED",
+        "MODEL_DOMAIN_SHIFT",
+        "MODEL_INPUT_TRUNCATED",
+        "SUPPORTED_WITH_EVIDENCE"
+      ],
+      "tool_trace": [
+        {
+          "sequence": 1,
+          "tool": "preflight_screen",
+          "status": "succeeded",
+          "reason_codes": [],
+          "sanitized_details": {
+            "retrieval_mode": "exact",
+            "consequential_use": true
+          }
+        },
+        {
+          "sequence": 2,
+          "tool": "retrieve_exact_clause",
+          "status": "succeeded",
+          "reason_codes": [],
+          "sanitized_details": {
+            "requested_clause": "52.232-23",
+            "records_returned": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "tool": "validate_clause_metadata",
+          "status": "succeeded",
+          "reason_codes": [],
+          "sanitized_details": {
+            "records_validated": 1,
+            "metadata_valid_count": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "tool": "assess_evidence_sufficiency",
+          "status": "succeeded",
+          "reason_codes": [
+            "HUMAN_REVIEW_REQUIRED",
+            "MODEL_DOMAIN_SHIFT",
+            "MODEL_INPUT_TRUNCATED",
+            "SUPPORTED_WITH_EVIDENCE"
+          ],
+          "sanitized_details": {
+            "evidence_score": 1.0,
+            "sufficient": true,
+            "required_action": "escalate"
+          }
+        }
+      ],
+      "limitations": [
+        {
+          "code": "DECISION_SUPPORT_ONLY",
+          "description": "The workflow retrieves and validates bounded evidence; it does not issue legal, procurement, approval, or final decisions.",
+          "material": true,
+          "mitigation": "Use a qualified reviewer with the complete current source and acquisition context."
+        },
+        {
+          "code": "REPRESENTATIVE_SUBSET_ONLY",
+          "description": "P4-04 validates a representative three-record FAR subset, not the full Project 6 corpus or live FAR.",
+          "material": true,
+          "mitigation": "Reintegrate and revalidate the complete approved corpus before broader use."
+        }
+      ],
+      "external_actions_performed": 0,
+      "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+    }
+  ],
+  "human_review_required": true,
+  "reviewer_role": "Contracts or Legal Reviewer",
+  "external_actions_performed": 0,
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

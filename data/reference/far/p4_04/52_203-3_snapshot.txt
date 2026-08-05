@@ -1,0 +1,14 @@
+Project 7 Representative Official-Source Snapshot
+Clause Number: 52.203-3
+Official Title: Gratuities
+Clause Date: Apr 1984
+FAC Number: 2026-01
+FAC Effective Date: 2026-03-13
+Official Source: https://www.acquisition.gov/far/52.203-3
+Retrieved for controlled capstone use: 2026-08-05T18:30:00Z
+
+Paraphrased scope summary:
+This clause addresses gratuities offered or given to obtain a contract or favorable treatment and describes related termination and remedy provisions.
+
+Controlled-use boundary:
+This compact snapshot preserves representative metadata and a paraphrased scope summary. It is not a complete FAR corpus, legal interpretation, applicability determination, or substitute for reviewing the current official clause and acquisition context.

@@ -1,0 +1,96 @@
+{
+  "registry_schema_version": "1.0.0",
+  "registry_id": "PROJECT7-P4-04-EVIDENCE-REASON-CODES",
+  "reason_codes": [
+    {
+      "code": "SUPPORTED_WITH_EVIDENCE",
+      "category": "success",
+      "meaning": "Validated registered evidence directly supports a bounded observation."
+    },
+    {
+      "code": "SEARCH_NO_RESULTS",
+      "category": "retrieval",
+      "meaning": "No registered candidate record met the retrieval threshold."
+    },
+    {
+      "code": "CLAUSE_NOT_FOUND",
+      "category": "validation",
+      "meaning": "The requested exact clause identifier is absent from the registered corpus."
+    },
+    {
+      "code": "TITLE_MISMATCH",
+      "category": "validation",
+      "meaning": "The claimed title does not match registered official metadata."
+    },
+    {
+      "code": "SOURCE_VERSION_UNVERIFIED",
+      "category": "validation",
+      "meaning": "FAC or source snapshot version cannot be verified."
+    },
+    {
+      "code": "SOURCE_CHECKSUM_MISMATCH",
+      "category": "validation",
+      "meaning": "The corpus or snapshot checksum differs from the approved registry."
+    },
+    {
+      "code": "EVIDENCE_INSUFFICIENT",
+      "category": "evidence",
+      "meaning": "Available evidence does not directly support the bounded claim."
+    },
+    {
+      "code": "EVIDENCE_CONFLICT",
+      "category": "evidence",
+      "meaning": "Evidence contains a material unresolved conflict."
+    },
+    {
+      "code": "EXACT_CITATION_REQUIRED",
+      "category": "retrieval",
+      "meaning": "An exact citation request cannot be satisfied through semantic substitution."
+    },
+    {
+      "code": "SEMANTIC_MATCH_NOT_EXACT",
+      "category": "retrieval",
+      "meaning": "A semantic candidate is not an exact-citation substitute."
+    },
+    {
+      "code": "TOOL_FAILURE",
+      "category": "reliability",
+      "meaning": "A required deterministic evidence tool failed."
+    },
+    {
+      "code": "AUDIT_FAILURE",
+      "category": "reliability",
+      "meaning": "A required audit event could not be produced."
+    },
+    {
+      "code": "PROMPT_INJECTION_DETECTED",
+      "category": "security",
+      "meaning": "Input attempts to override fixed workflow or tool rules."
+    },
+    {
+      "code": "PRIVACY_SENSITIVE_INPUT",
+      "category": "privacy",
+      "meaning": "Input appears to contain credential, personal, confidential, or protected data."
+    },
+    {
+      "code": "SCOPE_OUT_OF_BOUNDS",
+      "category": "scope",
+      "meaning": "Request seeks a prohibited legal, approval, procurement, or authority decision."
+    },
+    {
+      "code": "HUMAN_REVIEW_REQUIRED",
+      "category": "governance",
+      "meaning": "Qualified human review is required before consequential use."
+    },
+    {
+      "code": "MODEL_DOMAIN_SHIFT",
+      "category": "model",
+      "meaning": "Project 4 model output is outside its commercial-contract training domain."
+    },
+    {
+      "code": "MODEL_INPUT_TRUNCATED",
+      "category": "model",
+      "meaning": "Project 4 input exceeded the configured maximum length."
+    }
+  ]
+}

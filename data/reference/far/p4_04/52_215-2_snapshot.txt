@@ -1,0 +1,14 @@
+Project 7 Representative Official-Source Snapshot
+Clause Number: 52.215-2
+Official Title: Audit and Records-Negotiation
+Clause Date: Jun 2020
+FAC Number: 2026-01
+FAC Effective Date: 2026-03-13
+Official Source: https://www.acquisition.gov/far/52.215-2
+Retrieved for controlled capstone use: 2026-08-05T18:30:00Z
+
+Paraphrased scope summary:
+This clause defines covered records and describes Government examination and audit rights for specified contract types, certified cost or pricing data, and supporting report records. It also addresses record availability and certain subcontract flow-downs.
+
+Controlled-use boundary:
+This compact snapshot preserves representative metadata and a paraphrased scope summary. It is not a complete FAR corpus, legal interpretation, applicability determination, or substitute for reviewing the current official clause and acquisition context.

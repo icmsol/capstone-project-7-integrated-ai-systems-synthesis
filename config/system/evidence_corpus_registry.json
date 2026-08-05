@@ -1,0 +1,22 @@
+{
+  "registry_schema_version": "1.0.0",
+  "registry_id": "PROJECT7-P4-04-EVIDENCE-CORPUS-REGISTRY",
+  "corpus_path": "data/reference/far/p4_04/representative_far_evidence_corpus.json",
+  "corpus_sha256": "8b2994a12060b320a8b3da77dba20c9bced12438fad71e2db8d1ebe06167f7ea",
+  "fac_number": "2026-01",
+  "fac_effective_date": "2026-03-13",
+  "approved_for_use": true,
+  "minimum_exact_relevance": 1.0,
+  "minimum_semantic_relevance": 0.25,
+  "maximum_semantic_results": 3,
+  "exact_citation_fallback_to_semantic_permitted": false,
+  "representative_subset_only": true,
+  "required_revalidation_triggers": [
+    "FAC number or effective date changes",
+    "official source page changes",
+    "retrieval logic changes",
+    "evidence schema changes",
+    "reason-code or routing policy changes",
+    "audit behavior changes"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "request_set_schema_version": "1.0.0",
+  "case_id": "CASE-D850D326D21B745D",
+  "requests": [
+    {
+      "request_schema_version": "1.0.0",
+      "request_id": "REQ-P4-04-AUDIT",
+      "case_id": "CASE-D850D326D21B745D",
+      "claim_id": "CLAIM-P4-04-AUDIT",
+      "request_text": "Locate and validate the official metadata for FAR 52.215-2 and provide a bounded observation about the clause's subject.",
+      "retrieval_mode": "exact",
+      "exact_clause_number": "52.215-2",
+      "claimed_title": "Audit and Records-Negotiation",
+      "top_k": 1,
+      "source_domain": "public_sector",
+      "consequential_use": true
+    },
+    {
+      "request_schema_version": "1.0.0",
+      "request_id": "REQ-P4-04-ASSIGNMENT",
+      "case_id": "CASE-D850D326D21B745D",
+      "claim_id": "CLAIM-P4-04-ASSIGNMENT",
+      "request_text": "Locate and validate the official metadata for FAR 52.232-23 and provide a bounded observation about the clause's subject.",
+      "retrieval_mode": "exact",
+      "exact_clause_number": "52.232-23",
+      "claimed_title": "Assignment of Claims",
+      "top_k": 1,
+      "source_domain": "public_sector",
+      "consequential_use": true
+    }
+  ]
+}

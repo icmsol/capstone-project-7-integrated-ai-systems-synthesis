@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/evidence_workflow_request.schema.json",
+  "title": "Evidence-Grounded Workflow Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_schema_version",
+    "request_id",
+    "case_id",
+    "claim_id",
+    "request_text",
+    "retrieval_mode",
+    "exact_clause_number",
+    "claimed_title",
+    "top_k",
+    "source_domain",
+    "consequential_use"
+  ],
+  "properties": {
+    "request_schema_version": {
+      "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+    },
+    "request_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "case_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "claim_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "request_text": {
+      "type": "string",
+      "minLength": 8
+    },
+    "retrieval_mode": {
+      "type": "string",
+      "enum": [
+        "exact",
+        "semantic"
+      ]
+    },
+    "exact_clause_number": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "claimed_title": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "top_k": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "source_domain": {
+      "type": "string",
+      "enum": [
+        "public_sector",
+        "commercial_contract",
+        "unknown"
+      ]
+    },
+    "consequential_use": {
+      "type": "boolean"
+    }
+  }
+}

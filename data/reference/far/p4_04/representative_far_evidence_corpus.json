@@ -1,0 +1,136 @@
+{
+  "corpus_schema_version": "1.0.0",
+  "corpus_id": "PROJECT7-P4-04-REPRESENTATIVE-FAR-SUBSET",
+  "fac_number": "2026-01",
+  "fac_effective_date": "2026-03-13",
+  "snapshot_date": "2026-08-05",
+  "record_count": 3,
+  "source_authority": "Acquisition.gov — Federal Acquisition Regulation",
+  "source_domain": "https://www.acquisition.gov/far/",
+  "approved_for_controlled_use": true,
+  "completeness_boundary": "Representative three-record subset only; not the full FAR Part 52 corpus.",
+  "records": [
+    {
+      "record_schema_version": "1.0.0",
+      "record_id": "FAR-52.215-2",
+      "clause_number": "52.215-2",
+      "title": "Audit and Records-Negotiation",
+      "normalized_title": "audit and records negotiation",
+      "clause_date": "Jun 2020",
+      "fac_number": "2026-01",
+      "fac_effective_date": "2026-03-13",
+      "source_url": "https://www.acquisition.gov/far/52.215-2",
+      "source_type": "frozen_snapshot",
+      "snapshot_path": "data/reference/far/p4_04/52_215-2_snapshot.txt",
+      "snapshot_sha256": "7cdf56138e3c5eea825026068f5ec190ad4cb0ff67ddff6297f86737651704e0",
+      "snapshot_date": "2026-08-05",
+      "retrieved_at": "2026-08-05T18:30:00Z",
+      "approved_for_use": true,
+      "approval_basis": "Official Acquisition.gov metadata and a controlled paraphrased snapshot approved for Project 7 representative validation.",
+      "reserved": false,
+      "summary": "This clause defines covered records and describes Government examination and audit rights for specified contract types, certified cost or pricing data, and supporting report records. It also addresses record availability and certain subcontract flow-downs.",
+      "key_facts": [
+        "The clause title is Audit and Records-Negotiation.",
+        "The clause addresses examination and audit of specified records.",
+        "The clause includes record-availability requirements.",
+        "Applicability depends on the contract and prescribed conditions."
+      ],
+      "keywords": [
+        "audit",
+        "records",
+        "examination",
+        "costs",
+        "pricing data",
+        "record retention",
+        "comptroller general"
+      ],
+      "searchable_text": "52.215-2 Audit and Records-Negotiation This clause defines covered records and describes Government examination and audit rights for specified contract types, certified cost or pricing data, and supporting report records. It also addresses record availability and certain subcontract flow-downs. The clause title is Audit and Records-Negotiation. The clause addresses examination and audit of specified records. The clause includes record-availability requirements. Applicability depends on the contract and prescribed conditions. audit records examination costs pricing data record retention comptroller general",
+      "limitations": [
+        "Representative three-record subset only.",
+        "Not a complete or live FAR corpus.",
+        "Applicability and legal meaning require qualified human review.",
+        "Revalidate after FAC, source, retrieval, policy, or tool changes."
+      ]
+    },
+    {
+      "record_schema_version": "1.0.0",
+      "record_id": "FAR-52.232-23",
+      "clause_number": "52.232-23",
+      "title": "Assignment of Claims",
+      "normalized_title": "assignment of claims",
+      "clause_date": "May 2014",
+      "fac_number": "2026-01",
+      "fac_effective_date": "2026-03-13",
+      "source_url": "https://www.acquisition.gov/far/52.232-23",
+      "source_type": "frozen_snapshot",
+      "snapshot_path": "data/reference/far/p4_04/52_232-23_snapshot.txt",
+      "snapshot_sha256": "25ec3ad3e0697248db1ff86fa5627b8359668a7cffd7277dc4da53dd4e1bfcce",
+      "snapshot_date": "2026-08-05",
+      "retrieved_at": "2026-08-05T18:30:00Z",
+      "approved_for_use": true,
+      "approval_basis": "Official Acquisition.gov metadata and a controlled paraphrased snapshot approved for Project 7 representative validation.",
+      "reserved": false,
+      "summary": "This clause addresses assignment of rights to contract payments to eligible financing institutions, conditions governing such assignments, and restrictions on disclosure of classified information.",
+      "key_facts": [
+        "The official title is Assignment of Claims.",
+        "The clause addresses assignment of rights to contract payments.",
+        "The assignment is subject to stated statutory and contractual conditions.",
+        "Classified information requires written Contracting Officer authorization before disclosure."
+      ],
+      "keywords": [
+        "assignment",
+        "claims",
+        "payments",
+        "financing institution",
+        "classified information",
+        "contracting officer"
+      ],
+      "searchable_text": "52.232-23 Assignment of Claims This clause addresses assignment of rights to contract payments to eligible financing institutions, conditions governing such assignments, and restrictions on disclosure of classified information. The official title is Assignment of Claims. The clause addresses assignment of rights to contract payments. The assignment is subject to stated statutory and contractual conditions. Classified information requires written Contracting Officer authorization before disclosure. assignment claims payments financing institution classified information contracting officer",
+      "limitations": [
+        "Representative three-record subset only.",
+        "Not a complete or live FAR corpus.",
+        "Applicability and legal meaning require qualified human review.",
+        "Revalidate after FAC, source, retrieval, policy, or tool changes."
+      ]
+    },
+    {
+      "record_schema_version": "1.0.0",
+      "record_id": "FAR-52.203-3",
+      "clause_number": "52.203-3",
+      "title": "Gratuities",
+      "normalized_title": "gratuities",
+      "clause_date": "Apr 1984",
+      "fac_number": "2026-01",
+      "fac_effective_date": "2026-03-13",
+      "source_url": "https://www.acquisition.gov/far/52.203-3",
+      "source_type": "frozen_snapshot",
+      "snapshot_path": "data/reference/far/p4_04/52_203-3_snapshot.txt",
+      "snapshot_sha256": "94eee857812355c8d6a47718196288956021e51302f250d0c3e9545865f5b5b8",
+      "snapshot_date": "2026-08-05",
+      "retrieved_at": "2026-08-05T18:30:00Z",
+      "approved_for_use": true,
+      "approval_basis": "Official Acquisition.gov metadata and a controlled paraphrased snapshot approved for Project 7 representative validation.",
+      "reserved": false,
+      "summary": "This clause addresses gratuities offered or given to obtain a contract or favorable treatment and describes related termination and remedy provisions.",
+      "key_facts": [
+        "The official title is Gratuities.",
+        "The clause concerns gratuities intended to obtain a contract or favorable treatment.",
+        "The clause describes termination and additional remedies."
+      ],
+      "keywords": [
+        "gratuities",
+        "gift",
+        "favorable treatment",
+        "termination",
+        "remedies"
+      ],
+      "searchable_text": "52.203-3 Gratuities This clause addresses gratuities offered or given to obtain a contract or favorable treatment and describes related termination and remedy provisions. The official title is Gratuities. The clause concerns gratuities intended to obtain a contract or favorable treatment. The clause describes termination and additional remedies. gratuities gift favorable treatment termination remedies",
+      "limitations": [
+        "Representative three-record subset only.",
+        "Not a complete or live FAR corpus.",
+        "Applicability and legal meaning require qualified human review.",
+        "Revalidate after FAC, source, retrieval, policy, or tool changes."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "artifact_id": "PROJECT7-P4-04-EVIDENCE-GROUNDED-WORKFLOW",
+  "artifact_version": "1.0.0",
+  "created_at_utc": "2026-08-05T19:03:12.208985+00:00",
+  "components": [
+    "official_evidence_retriever",
+    "evidence_validator",
+    "evidence_sufficiency_assessor",
+    "risk_escalation_router",
+    "workflow_orchestrator"
+  ],
+  "unit_test_count": 8,
+  "representative_request_count": 2,
+  "representative_corpus_record_count": 3,
+  "audit_event_count": 3,
+  "validation_status": "PASS",
+  "external_actions_performed": 0,
+  "files": [
+    {
+      "path": "audit/p4_04_evidence_workflow_events.jsonl",
+      "bytes": 4175,
+      "sha256": "8791115d5b35e82b1734755c282e935ac7cf7bc78fa6a0c57adc5e993525eafe"
+    },
+    {
+      "path": "audit/p4_04_tool_trace.jsonl",
+      "bytes": 1875,
+      "sha256": "33ec8cc9ddffddad11555ca87b4d48ac88eb90cb0d297e25873ae66cd2945dbb"
+    },
+    {
+      "path": "config/schemas/evidence_workflow_request.schema.json",
+      "bytes": 1572,
+      "sha256": "34c80c2373ea6d76afc2569c9318857ac5d3f72295799516a9221c8bebf50f57"
+    },
+    {
+      "path": "config/schemas/evidence_workflow_result.schema.json",
+      "bytes": 3478,
+      "sha256": "aed42047e804ceb9836130144ace35569bb5ec571d4017624c52fe69c4456e2a"
+    },
+    {
+      "path": "config/system/evidence_corpus_registry.json",
+      "bytes": 826,
+      "sha256": "2f5294e443a9e23a0f60dbc47dea2c45e3b4576ea8d2451d450824be538ef639"
+    },
+    {
+      "path": "config/system/evidence_reason_codes.json",
+      "bytes": 3066,
+      "sha256": "2cab7b9bb13192c8e2777a8b937882f7e39c9557d49d6a0e1b5c935426909000"
+    },
+    {
+      "path": "config/system/evidence_workflow_policy.json",
+      "bytes": 1529,
+      "sha256": "d3d1851a3dc73f79b997d580df537e7d6f6672c987da05aec944d7072bc3d669"
+    },
+    {
+      "path": "data/implementation/p4_04/representative_evidence_requests.json",
+      "bytes": 1185,
+      "sha256": "15ec848b24d314fc479343d2f02f48d31a1b1e672440753781e48a8b363ea9b0"
+    },
+    {
+      "path": "data/reference/far/p4_04/52_203-3_snapshot.txt",
+      "bytes": 751,
+      "sha256": "94eee857812355c8d6a47718196288956021e51302f250d0c3e9545865f5b5b8"
+    },
+    {
+      "path": "data/reference/far/p4_04/52_215-2_snapshot.txt",
+      "bytes": 876,
+      "sha256": "7cdf56138e3c5eea825026068f5ec190ad4cb0ff67ddff6297f86737651704e0"
+    },
+    {
+      "path": "data/reference/far/p4_04/52_232-23_snapshot.txt",
+      "bytes": 809,
+      "sha256": "25ec3ad3e0697248db1ff86fa5627b8359668a7cffd7277dc4da53dd4e1bfcce"
+    },
+    {
+      "path": "data/reference/far/p4_04/representative_far_evidence_corpus.json",
+      "bytes": 7753,
+      "sha256": "8b2994a12060b320a8b3da77dba20c9bced12438fad71e2db8d1ebe06167f7ea"
+    },
+    {
+      "path": "docs/P4_04_Evidence_Grounded_Agent_Workflow.md",
+      "bytes": 5533,
+      "sha256": "3e3fc929e428f6733c6ad251184cfc5a7482d8b70a108b135d8ddfa901a1aebe"
+    },
+    {
+      "path": "docs/P4_04_Requirements_Matrix.csv",
+      "bytes": 2149,
+      "sha256": "5bca5121455231453364bd3a8646a3bde336c4c42ff491a29110304d7b6aa8d7"
+    },
+    {
+      "path": "docs/P4_04_Validation_Evidence.json",
+      "bytes": 3405,
+      "sha256": "84b6c761b97c2f18dd108900b3321c02c9f9da8c0b50af1b78f7dd814ba119f8"
+    },
+    {
+      "path": "outputs/p4_04/evidence_workflow_results.json",
+      "bytes": 12741,
+      "sha256": "8d08c5fada5cfb3595b62f3583ec656c582e408691973169a9b908b059116875"
+    },
+    {
+      "path": "outputs/p4_04/updated_case_state.json",
+      "bytes": 22220,
+      "sha256": "ec0a957641b813a5687169edf7a5b4c0676444f2ace5f3a4085dd96a1920850b"
+    },
+    {
+      "path": "requirements_p4_04.txt",
+      "bytes": 41,
+      "sha256": "20a90afd705bc492bd3b5b22c9ef500927ed27ebbbb78a80a3abf8e87ce18689"
+    },
+    {
+      "path": "src/project7/__init__.py",
+      "bytes": 1539,
+      "sha256": "c20f065ecaa199dbe6089ff7337b884e1f5136146f383495f2676db0ef6484de"
+    },
+    {
+      "path": "src/project7/audit_utils.py",
+      "bytes": 1802,
+      "sha256": "38294a9de812555c7fe2d75694cf23c137d5ca9050814f9a7a26a9e7aeac7bc8"
+    },
+    {
+      "path": "src/project7/evidence_retrieval.py",
+      "bytes": 5463,
+      "sha256": "d7dc56c680ed713202afe36685399d0db91615833c2afeb0a9c866f6b230d10e"
+    },
+    {
+      "path": "src/project7/evidence_workflow.py",
+      "bytes": 23493,
+      "sha256": "6fbe576f15d0b301a557c825bd29c0c93c77f8e0f7d13a34d0bc9d18c8dbae6c"
+    },
+    {
+      "path": "src/project7/p4_04_pipeline.py",
+      "bytes": 8994,
+      "sha256": "6c5ecfd7666d8626ed35b01c93096166840b7b77ef72ce3d7fb9fe872d9a52a8"
+    },
+    {
+      "path": "src/project7/schema_validation.py",
+      "bytes": 1766,
+      "sha256": "46bf4c5d63f85165ff2befbdf48359765442242cc886ccb4381a98ef5e07538a"
+    },
+    {
+      "path": "tests/__init__.py",
+      "bytes": 23,
+      "sha256": "bc298d46538d0a02c5b93651cf19f2e9c29492638b770f87f84e267c1740e47a"
+    },
+    {
+      "path": "tests/run_p4_04_validation.py",
+      "bytes": 2566,
+      "sha256": "b21fd12a7a8aa433d10cbedd9a306302eb0c564c2e0c58b82fe790b946f9b2d1"
+    },
+    {
+      "path": "tests/test_evidence_workflow.py",
+      "bytes": 6711,
+      "sha256": "e2d233526c8f04589eb98894e9c941b501ca926dc860bc328d99fc605ff87048"
+    }
+  ],
+  "file_count": 28
+}

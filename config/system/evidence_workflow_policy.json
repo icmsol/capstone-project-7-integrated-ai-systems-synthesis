@@ -1,0 +1,40 @@
+{
+  "policy_schema_version": "1.0.0",
+  "policy_id": "PROJECT7-EVIDENCE-GROUNDED-WORKFLOW-POLICY",
+  "orchestration_pattern": "bounded_plan_act_observe_validate_escalate",
+  "maximum_tool_calls_per_request": 8,
+  "maximum_evidence_items_per_request": 3,
+  "minimum_evidence_items": 1,
+  "minimum_evidence_score": 0.75,
+  "minimum_semantic_relevance": 0.25,
+  "exact_lookup_enabled": true,
+  "semantic_retrieval_enabled": true,
+  "exact_citation_fallback_to_semantic_permitted": false,
+  "fail_closed_on_tool_error": true,
+  "fail_closed_on_audit_error": true,
+  "human_review_required_for_all_outputs": true,
+  "mandatory_human_review_when": [
+    "public-sector consequential use",
+    "model domain shift or truncation",
+    "title or citation mismatch",
+    "evidence insufficiency or conflict",
+    "scope, privacy, security, or tool failure"
+  ],
+  "required_reviewer_role": "Contracts or Legal Reviewer",
+  "allowed_outputs": [
+    "bounded source-location result",
+    "validated metadata observation",
+    "evidence-sufficiency assessment",
+    "documented limitation",
+    "human-escalation route"
+  ],
+  "prohibited_outputs": [
+    "final legal interpretation",
+    "contract approval or rejection",
+    "procurement authority decision",
+    "clause applicability determination",
+    "unsupported authoritative drafting",
+    "external action or commitment"
+  ],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

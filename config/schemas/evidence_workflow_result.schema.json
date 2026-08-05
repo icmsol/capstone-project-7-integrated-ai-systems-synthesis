@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/evidence_workflow_result.schema.json",
+  "title": "Evidence-Grounded Workflow Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "result_schema_version",
+    "request_id",
+    "case_id",
+    "claim_id",
+    "response_status",
+    "route",
+    "human_review_required",
+    "reviewer_role",
+    "supported_observation",
+    "evidence_items",
+    "assessment",
+    "reason_codes",
+    "tool_trace",
+    "limitations",
+    "external_actions_performed",
+    "production_boundary"
+  ],
+  "properties": {
+    "result_schema_version": {
+      "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+    },
+    "request_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "case_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "claim_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "response_status": {
+      "type": "string",
+      "enum": [
+        "supported",
+        "abstained",
+        "escalated",
+        "failed_closed"
+      ]
+    },
+    "route": {
+      "type": "string",
+      "enum": [
+        "continue_with_evidence",
+        "request_clarification",
+        "qualified_human_review",
+        "fail_closed"
+      ]
+    },
+    "human_review_required": {
+      "type": "boolean"
+    },
+    "reviewer_role": {
+      "type": "string",
+      "minLength": 1
+    },
+    "supported_observation": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "evidence_items": {
+      "type": "array",
+      "items": {
+        "$ref": "evidence_item.schema.json"
+      }
+    },
+    "assessment": {
+      "$ref": "evidence_assessment.schema.json"
+    },
+    "reason_codes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common_definitions.schema.json#/$defs/reason_code"
+      }
+    },
+    "tool_trace": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "sequence",
+          "tool",
+          "status",
+          "reason_codes",
+          "sanitized_details"
+        ],
+        "properties": {
+          "sequence": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "tool": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "succeeded",
+              "warned",
+              "blocked",
+              "failed"
+            ]
+          },
+          "reason_codes": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "$ref": "common_definitions.schema.json#/$defs/reason_code"
+            }
+          },
+          "sanitized_details": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "$ref": "common_definitions.schema.json#/$defs/limitation"
+      }
+    },
+    "external_actions_performed": {
+      "type": "integer",
+      "const": 0
+    },
+    "production_boundary": {
+      "type": "string",
+      "const": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+    }
+  }
+}

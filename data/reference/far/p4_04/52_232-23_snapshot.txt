@@ -1,0 +1,14 @@
+Project 7 Representative Official-Source Snapshot
+Clause Number: 52.232-23
+Official Title: Assignment of Claims
+Clause Date: May 2014
+FAC Number: 2026-01
+FAC Effective Date: 2026-03-13
+Official Source: https://www.acquisition.gov/far/52.232-23
+Retrieved for controlled capstone use: 2026-08-05T18:30:00Z
+
+Paraphrased scope summary:
+This clause addresses assignment of rights to contract payments to eligible financing institutions, conditions governing such assignments, and restrictions on disclosure of classified information.
+
+Controlled-use boundary:
+This compact snapshot preserves representative metadata and a paraphrased scope summary. It is not a complete FAR corpus, legal interpretation, applicability determination, or substitute for reviewing the current official clause and acquisition context.
