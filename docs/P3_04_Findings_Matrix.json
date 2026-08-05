@@ -1,0 +1,105 @@
+{
+  "artifact_id": "PROJECT7-P3-04-SCENARIO-QUALITY-FINDINGS",
+  "artifact_version": "1.0.0",
+  "review_date": "2026-08-05",
+  "review_status": "corrections_required",
+  "phase_3_closeout_status": "not_ready",
+  "finding_count": 9,
+  "severity_counts": {
+    "Critical": 5,
+    "Major": 3,
+    "Minor": 1
+  },
+  "findings": [
+    {
+      "finding_id": "F-001",
+      "severity": "Critical",
+      "category": "Executable validation",
+      "scope": "P3-03 validator",
+      "summary": "The committed frozen-set validator cannot run because it points to data/scenarios/frozen/1.0.0 while the package stores cases under v1.0.0.",
+      "evidence": "Traceback (most recent call last):\n  File \"/mnt/data/p3_04_review_workspace/p3_03/tests/validate_frozen_scenario_set.py\", line 149, in <module>\n    main()\n    ~~~~^^\n  File \"/mnt/data/p3_04_review_workspace/p3_03/tests/validate_frozen_scenario_set.py\", line 69, in main\n    for path in SCENARIO_ROOT.iterdir()\n                ~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/usr/lib/python3.13/pathlib/_local.py\", line 577, in iterdir\n    with os.scandir(root_dir) as scandir_it:\n         ~~~~~~~~~~^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/p3_04_review_workspace/p3_03/data/scenarios/frozen/1.0.0'",
+      "remediation": "Correct SCENARIO_ROOT to v1.0.0, rerun from a clean directory, and refresh validation evidence.",
+      "status": "Open"
+    },
+    {
+      "finding_id": "F-002",
+      "severity": "Major",
+      "category": "Checksum integrity",
+      "scope": "Package checksum inventory",
+      "summary": "The package checksum inventory is incomplete and was generated before later documentation and validation files.",
+      "evidence": "declared=218; actual=222; missing=['docs/Frozen_Scenario_Set_and_Evaluator_Guide.md', 'docs/P3_03_Frozen_Scenario_Set_Manifest.json', 'tests/frozen_scenario_examples/invalid_frozen_case_manifest.json', 'tests/validate_frozen_scenario_set.py']; extra=[]",
+      "remediation": "Regenerate the checksum inventory after all package files exist and verify every listed hash and byte count.",
+      "status": "Open"
+    },
+    {
+      "finding_id": "F-004",
+      "severity": "Critical",
+      "category": "Shared data-contract compliance",
+      "scope": "All frozen cases",
+      "summary": "All 19 opportunity.json fixtures fail the committed shared schema, so the frozen inputs cannot be passed directly to the registered components.",
+      "evidence": "[('TC-01', 9, \"Additional properties are not allowed ('due_date', 'published_date', 'retrieved_at_utc', 'source_name', 'source_record_id', 'source_type', 'source_url', 'synthetic_fixture' were unexpected)\"), ('TC-02', 9, \"Additional properties are not allowed ('due_date', 'published_date', 'retrieved_at_utc', 'source_name', 'source_record_id', 'source_type', 'source_url', 'synthetic_fixture' were unexpected)\"), ('TC-03', 9, \"Additional properties are not allowed ('due_date', 'published_date', 'retrieved_at_utc', 'source_name', 'source_record_id', 'source_type', 'source_url', 'synthetic_fixture' were unexpected)\"), ('TC-04', 9, \"Additional properties are not allowed ('due_date', 'published_date', 'retrieved_at_utc', 'source_name', 'source_record_id', 'source_type', 'source_url', 'synthetic_fixture' were unexpected)\"), ('TC-05', 9, \"Additional properties are not allowed ('due_date', 'published_date', 'retrieved_at_utc', 'source_name', 'source_record_id', 'source_type', 'source_url', 'synthetic_fixture' were unexpected)\")]",
+      "remediation": "Rebuild opportunity.json fixtures to conform to opportunity_record.schema.json; for not-reached human decisions, use an explicit wrapper/schema rather than an invalid human-disposition record.",
+      "status": "Open"
+    },
+    {
+      "finding_id": "F-005",
+      "severity": "Critical",
+      "category": "Shared data-contract compliance",
+      "scope": "All frozen cases",
+      "summary": "All 19 human_disposition.json fixtures fail the committed shared schema, so the frozen inputs cannot be passed directly to the registered components.",
+      "evidence": "[('TC-01', 9, \"Additional properties are not allowed ('decision', 'recorded_at_utc', 'reviewer_authorized', 'reviewer_role' were unexpected)\"), ('TC-02', 8, \"Additional properties are not allowed ('decision', 'recorded_at_utc', 'reviewer_authorized', 'reviewer_role' were unexpected)\"), ('TC-03', 9, \"Additional properties are not allowed ('decision', 'recorded_at_utc', 'reviewer_authorized', 'reviewer_role' were unexpected)\"), ('TC-04', 10, \"Additional properties are not allowed ('decision', 'recorded_at_utc', 'reviewer_authorized', 'reviewer_role' were unexpected)\"), ('TC-05', 9, \"Additional properties are not allowed ('decision', 'recorded_at_utc', 'reviewer_authorized', 'reviewer_role' were unexpected)\")]",
+      "remediation": "Rebuild human_disposition.json fixtures to conform to human_disposition.schema.json; for not-reached human decisions, use an explicit wrapper/schema rather than an invalid human-disposition record.",
+      "status": "Open"
+    },
+    {
+      "finding_id": "F-006",
+      "severity": "Critical",
+      "category": "Expected-outcome coherence",
+      "scope": "Human-disposition fixtures",
+      "summary": "Several frozen human decisions contradict the exact expected terminal outcomes.",
+      "evidence": "[('TC-06', 'defer_pending_information', 'escalated'), ('TC-09', 'defer_pending_information', 'no_recommendation'), ('TC-11', 'defer_pending_information', 'escalated'), ('TC-12', 'defer_pending_information', 'no_recommendation'), ('TC-17', 'accept', 'finalized_reject')]",
+      "remediation": "Use schema-valid reject/escalate/defer dispositions that agree with each case target, and validate this relationship automatically.",
+      "status": "Open"
+    },
+    {
+      "finding_id": "F-007",
+      "severity": "Critical",
+      "category": "Architecture consistency",
+      "scope": "TC-04, TC-09, TC-12",
+      "summary": "no_recommendation is modeled as a terminal case outcome even though the orchestration policy and integrated case-state schema treat it as a recommendation result followed by human defer/escalate/reject/accept disposition.",
+      "evidence": "orchestration terminal states=['deferred', 'escalated', 'failed_closed', 'finalized']; cases=['TC-04', 'TC-09', 'TC-12']",
+      "remediation": "Separate recommendation_code=no_recommendation from case_status/terminal_outcome. Give each case an authorized human terminal disposition, normally deferred pending information.",
+      "status": "Open"
+    },
+    {
+      "finding_id": "F-008",
+      "severity": "Major",
+      "category": "Evaluator contract",
+      "scope": "All 192 assertions",
+      "summary": "Assertion JSONPaths such as $.case_state.terminal_outcome, $.side_effects, and $.claims have no committed evaluation-result schema, so implementers cannot know the canonical actual-output shape.",
+      "evidence": "committed P3-03 schemas=['expected_case_outcome.schema.json', 'frozen_case_manifest.schema.json']",
+      "remediation": "Add a scenario_evaluation_result schema containing case-state, audit, routing, artifacts, claims, side effects, timings, and assertion results; validate every JSONPath against that contract.",
+      "status": "Open"
+    },
+    {
+      "finding_id": "F-009",
+      "severity": "Major",
+      "category": "Scenario realism",
+      "scope": "TC-01",
+      "summary": "The case expects the real Project 4 model to predict Audit Rights above 0.95, but the frozen source passage is a general services/governance excerpt rather than an audit-rights clause.",
+      "evidence": "synthetic solicitation excerpt\n\nthe contractor shall provide enterprise information technology strategy,\nprogram and project management, systems integration support, agile delivery\ncoordination, organizational change management, and technical training.\n\nthe agency requires documented governance, qualified personnel, evidence of\nsimilar public-sector engagements, and a transition plan. final decisions,\nlegal interpretations, staffing commitments, and pricing approvals remain\nthe responsibility of authorized human officials.\n",
+      "remediation": "Use the exact validated smoke-test passage or a clearly audit-rights-focused synthetic passage, or replace the expected label with a controlled model fixture.",
+      "status": "Open"
+    },
+    {
+      "finding_id": "F-010",
+      "severity": "Minor",
+      "category": "Traceability",
+      "scope": "Stage identifiers",
+      "summary": "P3 scenarios use STG-01 through STG-12 while orchestration policy uses descriptive IDs such as load_configuration; no machine-readable mapping is committed.",
+      "evidence": "P3 expected_primary_stage values are STG-xx; P2-03 orchestration stage_id values are descriptive.",
+      "remediation": "Add a stage-identifier mapping and validate both identifiers in evaluator results.",
+      "status": "Open"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "decision_id": "P3-04-CORRECTION-DECISION",
+  "decision_date": "2026-08-05",
+  "decision": "create_new_freeze_version",
+  "recommended_freeze_version": "1.0.1",
+  "rationale": "The frozen-set change-control rules prohibit editing v1.0.0 in place. Critical corrections affect executable validation, shared-schema compliance, human-disposition coherence, and terminal-state semantics.",
+  "required_correction_groups": [
+    "Correct the frozen-set validator path and regenerate validation evidence.",
+    "Rebuild all opportunity fixtures using opportunity_record.schema.json.",
+    "Use schema-valid human dispositions or an explicit not-reached wrapper.",
+    "Separate recommendation_code=no_recommendation from terminal case status.",
+    "Correct TC-06, TC-11, and TC-17 human decisions to match intended terminal outcomes.",
+    "Add a scenario_evaluation_result schema and stage identifier mapping.",
+    "Replace or control the unsupported Audit Rights expectation in TC-01 and TC-02.",
+    "Regenerate package-level checksum inventories after all files exist."
+  ],
+  "phase_3_closeout_status": "blocked_pending_v1.0.1_validation"
+}
