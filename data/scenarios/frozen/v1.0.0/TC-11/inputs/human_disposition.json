@@ -1,0 +1,8 @@
+{
+  "case_id": "TC-11",
+  "reviewer_role": "Authorized Human Reviewer",
+  "reviewer_authorized": true,
+  "decision": "defer_pending_information",
+  "rationale": "The case lacks sufficient, current, or unambiguous information for an accountable final disposition.",
+  "recorded_at_utc": "2026-08-05T01:30:00Z"
+}

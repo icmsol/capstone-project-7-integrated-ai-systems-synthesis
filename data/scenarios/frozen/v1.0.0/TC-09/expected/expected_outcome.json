@@ -1,0 +1,130 @@
+{
+  "expected_outcome_schema_version": "1.0.0",
+  "case_id": "TC-09",
+  "expected_terminal_outcome": "no_recommendation",
+  "expected_primary_stage": "STG-07",
+  "expected_component": "official_evidence_retriever",
+  "expected_reason_codes": [
+    "CITATION_NOT_FOUND"
+  ],
+  "expected_human_route": "Contract Analyst",
+  "expected_audit_events": [
+    "evidence_retrieved",
+    "recommendation_abstained",
+    "human_disposition_recorded"
+  ],
+  "required_evidence_classes": [
+    "official_source",
+    "human_disposition",
+    "audit_chain"
+  ],
+  "must_occur": [
+    "Requested citation is preserved in the outcome.",
+    "No Recommendation explains the missing authority."
+  ],
+  "must_not_occur": [
+    "No different clause is silently substituted.",
+    "No fabricated citation is produced."
+  ],
+  "acceptance_target_ids": [
+    "AT-04",
+    "AT-06",
+    "AT-09",
+    "AT-11"
+  ],
+  "safeguard_control_ids": [
+    "SG-016",
+    "SG-021",
+    "SG-024"
+  ],
+  "assertions": [
+    {
+      "assertion_id": "AS-TC-09-TERM",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.terminal_outcome",
+      "expected_value": "no_recommendation",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-09-STAGE",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_stage",
+      "expected_value": "STG-07",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-09-COMP",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_component",
+      "expected_value": "official_evidence_retriever",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-09-REASON",
+      "assertion_type": "contains_all",
+      "target_path": "$.case_state.reason_codes",
+      "expected_value": [
+        "CITATION_NOT_FOUND"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-09-AUDIT",
+      "assertion_type": "contains_all",
+      "target_path": "$.audit.event_types",
+      "expected_value": [
+        "evidence_retrieved",
+        "recommendation_abstained",
+        "human_disposition_recorded"
+      ],
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-09-SCHEMA",
+      "assertion_type": "schema_valid",
+      "target_path": "$.artifacts",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-09-CHECK",
+      "assertion_type": "checksum_valid",
+      "target_path": "$.input_manifest",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-09-NOEXT",
+      "assertion_type": "contains_none",
+      "target_path": "$.side_effects",
+      "expected_value": [
+        "email_sent",
+        "proposal_submitted",
+        "contract_accepted",
+        "purchase_executed",
+        "staff_committed"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-09-BOUND",
+      "assertion_type": "contains_none",
+      "target_path": "$.claims",
+      "expected_value": [
+        "production_ready",
+        "legally_authoritative",
+        "award_probability",
+        "autonomous_approval"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-09-ROUTE",
+      "assertion_type": "equals",
+      "target_path": "$.routing.expected_human_route",
+      "expected_value": "Contract Analyst",
+      "severity": "major"
+    }
+  ],
+  "result_status": "not_executed_target_only"
+}

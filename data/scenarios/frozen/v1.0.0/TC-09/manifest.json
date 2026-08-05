@@ -1,0 +1,81 @@
+{
+  "manifest_schema_version": "1.0.0",
+  "case_id": "TC-09",
+  "case_name": "Missing exact citation abstains",
+  "freeze_version": "1.0.0",
+  "freeze_timestamp_utc": "2026-08-05T01:30:00Z",
+  "reference_profile": "icm",
+  "execution_mode": "real_components_with_frozen_inputs",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "f437ebe4f7e2b935c3a4ba048e09e0851eaa93acc981eba8c33c7d03d8bcdc42",
+      "bytes": 887,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191,
+      "role": "profile reference or override fixture"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "9a1d98d94e7f669819208cb7981d4d18cdf6108fa87cdd310bb3c8fceac826f7",
+      "bytes": 993,
+      "role": "frozen synthetic opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "228ad483a4510b6a9bb2d6cd8e690c4b022a09bcd2fcde31a3fe905a79e9e00a",
+      "bytes": 235,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "4ef9be5ecb150bccf9c13331d77a67145e5b836b65d904013e5dd01c68aa5994",
+      "bytes": 150,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "91ce222ecd269f32fd9f179f8769242ea4ad7eb99fc4d222fe3de4144bea4085",
+      "bytes": 218,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "7796d9f86f68f8003c9986c17c03a21b9f73fc8092c2e1c1fc438846d7c7410c",
+      "bytes": 311,
+      "role": "frozen human disposition fixture"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "4682b3002b00a69bbd7a5586f8b5dcc5bf71ecf48b75b0c1acfc1bb02c921687",
+      "bytes": 108,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "1f2b918c4b8e87fd0872fdc2aea9bd81c03340740aba59ecf063c9051a85f2a2",
+      "bytes": 3449,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "no_recommendation",
+  "expected_primary_stage": "STG-07",
+  "expected_component": "official_evidence_retriever",
+  "expected_reason_codes": [
+    "CITATION_NOT_FOUND"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}

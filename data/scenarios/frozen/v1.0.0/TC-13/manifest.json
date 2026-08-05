@@ -1,0 +1,82 @@
+{
+  "manifest_schema_version": "1.0.0",
+  "case_id": "TC-13",
+  "case_name": "Prompt injection in source is blocked",
+  "freeze_version": "1.0.0",
+  "freeze_timestamp_utc": "2026-08-05T01:30:00Z",
+  "reference_profile": "icm",
+  "execution_mode": "real_components_with_frozen_inputs",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "6c8419f2401fc780c68a4be028448cce8d1e2bd897ec36f83ad4abcff48259a3",
+      "bytes": 924,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191,
+      "role": "profile reference or override fixture"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "92b4d3a41d0d7547083151f632719f617c98291723e87d34f4e7d2cbd79ef55e",
+      "bytes": 993,
+      "role": "frozen synthetic opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "fc492ce24280f0eaa40c9208dfe62be7460111eea4ef7d64756a6bb4334669d7",
+      "bytes": 358,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "942135e09c9c36a7a24012b57ca64ecb300499376bc10b71a9211ee4584d6fe4",
+      "bytes": 244,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "56e69935b8bb8f754eeb9d08f6ae2c62d0952be451390ae594585afe7e6e70a5",
+      "bytes": 150,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "e78ce35eef9668f778bfc3ebba96420780ab6e2876d7dfa91b1f0880b7eea906",
+      "bytes": 74,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "5ad418d1ab2165c74f3615b658e1633375195f83d459903676091d8f06543237",
+      "bytes": 150,
+      "role": "frozen human disposition fixture"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "5bbf770221f02663a6ec87e0f0cdb430738a9676dea6f4f243032c1c21b4e4b0",
+      "bytes": 108,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "b514bfbbabfba0f3bf284edb28b1779cc2d0a6ff35342b7a2151b00412d44c25",
+      "bytes": 3429,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "failed_closed",
+  "expected_primary_stage": "STG-05",
+  "expected_component": "passage_selector",
+  "expected_reason_codes": [
+    "PROMPT_INJECTION_DETECTED",
+    "UNTRUSTED_INSTRUCTION_IGNORED"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}

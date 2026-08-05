@@ -1,0 +1,9 @@
+{
+  "case_id": "TC-10",
+  "fixture_mode": "stale_source",
+  "corpus_version": "P7-FAR-STALE-0.8.0",
+  "effective_date": "2024-01-01",
+  "evaluation_date": "2026-08-04",
+  "freshness_status": "stale",
+  "aggregate_sufficiency": 0.82
+}

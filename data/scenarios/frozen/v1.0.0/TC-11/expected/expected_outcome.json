@@ -1,0 +1,133 @@
+{
+  "expected_outcome_schema_version": "1.0.0",
+  "case_id": "TC-11",
+  "expected_terminal_outcome": "escalated",
+  "expected_primary_stage": "STG-08",
+  "expected_component": "evidence_validator",
+  "expected_reason_codes": [
+    "EVIDENCE_MATERIAL_CONFLICT",
+    "MANDATORY_SPECIALIST_REVIEW"
+  ],
+  "expected_human_route": "Qualified Specialist",
+  "expected_audit_events": [
+    "evidence_validated",
+    "case_escalated"
+  ],
+  "required_evidence_classes": [
+    "official_source",
+    "counterevidence",
+    "specialist_finding",
+    "audit_chain"
+  ],
+  "must_occur": [
+    "Both sides of the conflict are linked.",
+    "Qualified specialist review is required."
+  ],
+  "must_not_occur": [
+    "Conflict is not collapsed into one answer.",
+    "Counterevidence is not omitted."
+  ],
+  "acceptance_target_ids": [
+    "AT-04",
+    "AT-05",
+    "AT-09",
+    "AT-12",
+    "AT-18"
+  ],
+  "safeguard_control_ids": [
+    "SG-019",
+    "SG-020",
+    "SG-025",
+    "SG-027"
+  ],
+  "assertions": [
+    {
+      "assertion_id": "AS-TC-11-TERM",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.terminal_outcome",
+      "expected_value": "escalated",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-11-STAGE",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_stage",
+      "expected_value": "STG-08",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-11-COMP",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_component",
+      "expected_value": "evidence_validator",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-11-REASON",
+      "assertion_type": "contains_all",
+      "target_path": "$.case_state.reason_codes",
+      "expected_value": [
+        "EVIDENCE_MATERIAL_CONFLICT",
+        "MANDATORY_SPECIALIST_REVIEW"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-11-AUDIT",
+      "assertion_type": "contains_all",
+      "target_path": "$.audit.event_types",
+      "expected_value": [
+        "evidence_validated",
+        "case_escalated"
+      ],
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-11-SCHEMA",
+      "assertion_type": "schema_valid",
+      "target_path": "$.artifacts",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-11-CHECK",
+      "assertion_type": "checksum_valid",
+      "target_path": "$.input_manifest",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-11-NOEXT",
+      "assertion_type": "contains_none",
+      "target_path": "$.side_effects",
+      "expected_value": [
+        "email_sent",
+        "proposal_submitted",
+        "contract_accepted",
+        "purchase_executed",
+        "staff_committed"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-11-BOUND",
+      "assertion_type": "contains_none",
+      "target_path": "$.claims",
+      "expected_value": [
+        "production_ready",
+        "legally_authoritative",
+        "award_probability",
+        "autonomous_approval"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-11-ROUTE",
+      "assertion_type": "equals",
+      "target_path": "$.routing.expected_human_route",
+      "expected_value": "Qualified Specialist",
+      "severity": "major"
+    }
+  ],
+  "result_status": "not_executed_target_only"
+}

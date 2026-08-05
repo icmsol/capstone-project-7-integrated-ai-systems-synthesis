@@ -1,0 +1,9 @@
+{
+  "case_id": "TC-13",
+  "source_mode": "approved_with_injection",
+  "source_approved": false,
+  "synthetic_fixture": true,
+  "privacy_classification": "synthetic_non_sensitive",
+  "prompt_injection_test": true,
+  "long_passage_test": false
+}

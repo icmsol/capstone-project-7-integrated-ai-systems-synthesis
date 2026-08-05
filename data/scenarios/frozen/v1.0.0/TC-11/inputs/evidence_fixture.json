@@ -1,0 +1,21 @@
+{
+  "case_id": "TC-11",
+  "fixture_mode": "material_conflict",
+  "aggregate_sufficiency": 0.79,
+  "items": [
+    {
+      "evidence_id": "EV-CONFLICT-A",
+      "citation": "SYNTHETIC AUTHORITY A",
+      "relevance_score": 0.9,
+      "support_status": "supports",
+      "claim": "Specialist review is required."
+    },
+    {
+      "evidence_id": "EV-CONFLICT-B",
+      "citation": "SYNTHETIC AUTHORITY B",
+      "relevance_score": 0.88,
+      "support_status": "conflicts",
+      "claim": "Specialist review is not required."
+    }
+  ]
+}

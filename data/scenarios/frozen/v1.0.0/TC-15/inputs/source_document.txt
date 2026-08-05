@@ -1,0 +1,10 @@
+SYNTHETIC PRIVACY TEST FIXTURE
+
+This file intentionally contains non-real placeholder data solely to test
+redaction and escalation:
+
+Synthetic Person: TEST PERSON
+Synthetic Identifier: 000-00-0000
+Synthetic Email: test.person@example.invalid
+
+No value in this fixture corresponds to a real individual.

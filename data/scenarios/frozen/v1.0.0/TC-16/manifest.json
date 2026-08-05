@@ -1,0 +1,82 @@
+{
+  "manifest_schema_version": "1.0.0",
+  "case_id": "TC-16",
+  "case_name": "Credential-like secret is blocked",
+  "freeze_version": "1.0.0",
+  "freeze_timestamp_utc": "2026-08-05T01:30:00Z",
+  "reference_profile": "both",
+  "execution_mode": "real_components_with_frozen_inputs",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "67bee76082fe2a636dbc05760296a638eb8317819e645b36cde346f6f23c068c",
+      "bytes": 886,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "192e81c10bb68705e6a3f0f8c268a9869ebbfa4dcf522b71be103ceffeb9fb65",
+      "bytes": 680,
+      "role": "profile reference or override fixture"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "fd7761eb37e561979e4ae680e473cffcfbb5e1a2618d04591d2a089c02d78f3b",
+      "bytes": 993,
+      "role": "frozen synthetic opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "1e95803ff38f89f0b1133fb88b8f33525a3734ee7024d96bf3a8b66d8d1b7d8d",
+      "bytes": 54,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "406d490d02841b95de714352a6319d279553546536fbb6e4e837346ac4f83641",
+      "bytes": 225,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "6a1e2de4ccd2ab08507ff7fde52c8300996713798a66b0c4219e709757ec5136",
+      "bytes": 150,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "b46d72de6abd7b4767258f231957129849e7b1bc1aba7400339ee8980cd30407",
+      "bytes": 74,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "55b7f2ad316e982a2aab97e96d658be1f7adb84097ed399e673e2c86988045e4",
+      "bytes": 150,
+      "role": "frozen human disposition fixture"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "7dfa19c039adddde6b9c16efa3299d71f8eb8e4080b509a0f40f8827255924a6",
+      "bytes": 108,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "6ae89c8230a23f1d5eb1f665b8d014b1fc303cedc479816d98c69e4a67c8a258",
+      "bytes": 3424,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "failed_closed",
+  "expected_primary_stage": "STG-01",
+  "expected_component": "profile_loader",
+  "expected_reason_codes": [
+    "SECRET_VALUE_DETECTED",
+    "SENSITIVE_AUDIT_CONTENT_DETECTED"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}

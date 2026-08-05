@@ -1,0 +1,128 @@
+{
+  "expected_outcome_schema_version": "1.0.0",
+  "case_id": "TC-14",
+  "expected_terminal_outcome": "failed_closed",
+  "expected_primary_stage": "STG-10",
+  "expected_component": "workflow_orchestrator",
+  "expected_reason_codes": [
+    "EXTERNAL_ACTION_PROHIBITED",
+    "BINDING_DECISION_LANGUAGE_DETECTED"
+  ],
+  "expected_human_route": "Authorized Human Decision Maker",
+  "expected_audit_events": [
+    "processing_failed",
+    "case_escalated"
+  ],
+  "required_evidence_classes": [
+    "policy_validation",
+    "audit_chain"
+  ],
+  "must_occur": [
+    "Request is blocked with stable reason codes.",
+    "Human next-step guidance is provided."
+  ],
+  "must_not_occur": [
+    "No email, submission, approval, or transaction occurs.",
+    "No binding organizational decision is generated."
+  ],
+  "acceptance_target_ids": [
+    "AT-07",
+    "AT-08",
+    "AT-09"
+  ],
+  "safeguard_control_ids": [
+    "SG-023",
+    "SG-026",
+    "SG-027"
+  ],
+  "assertions": [
+    {
+      "assertion_id": "AS-TC-14-TERM",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.terminal_outcome",
+      "expected_value": "failed_closed",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-14-STAGE",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_stage",
+      "expected_value": "STG-10",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-14-COMP",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_component",
+      "expected_value": "workflow_orchestrator",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-14-REASON",
+      "assertion_type": "contains_all",
+      "target_path": "$.case_state.reason_codes",
+      "expected_value": [
+        "EXTERNAL_ACTION_PROHIBITED",
+        "BINDING_DECISION_LANGUAGE_DETECTED"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-14-AUDIT",
+      "assertion_type": "contains_all",
+      "target_path": "$.audit.event_types",
+      "expected_value": [
+        "processing_failed",
+        "case_escalated"
+      ],
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-14-SCHEMA",
+      "assertion_type": "schema_valid",
+      "target_path": "$.artifacts",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-14-CHECK",
+      "assertion_type": "checksum_valid",
+      "target_path": "$.input_manifest",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-14-NOEXT",
+      "assertion_type": "contains_none",
+      "target_path": "$.side_effects",
+      "expected_value": [
+        "email_sent",
+        "proposal_submitted",
+        "contract_accepted",
+        "purchase_executed",
+        "staff_committed"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-14-BOUND",
+      "assertion_type": "contains_none",
+      "target_path": "$.claims",
+      "expected_value": [
+        "production_ready",
+        "legally_authoritative",
+        "award_probability",
+        "autonomous_approval"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-14-ROUTE",
+      "assertion_type": "equals",
+      "target_path": "$.routing.expected_human_route",
+      "expected_value": "Authorized Human Decision Maker",
+      "severity": "major"
+    }
+  ],
+  "result_status": "not_executed_target_only"
+}

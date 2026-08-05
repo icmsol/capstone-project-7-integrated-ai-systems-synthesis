@@ -1,0 +1,81 @@
+{
+  "manifest_schema_version": "1.0.0",
+  "case_id": "TC-12",
+  "case_name": "Insufficient evidence yields No Recommendation",
+  "freeze_version": "1.0.0",
+  "freeze_timestamp_utc": "2026-08-05T01:30:00Z",
+  "reference_profile": "icm",
+  "execution_mode": "real_components_with_frozen_inputs",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "98e735df005c483119c17cbb81bf3cde4e9e1d15f30cce3a8b02b6fbf5e994ab",
+      "bytes": 886,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191,
+      "role": "profile reference or override fixture"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "faf6fc2e97274ceaf3b9addeac0cec71794d87e5e85c3c0109e8f0ff79e8f4f9",
+      "bytes": 993,
+      "role": "frozen synthetic opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "652d1e3dfb3376c7e1af87408f37b964e2dfeba170dba6f191aed62bb60b345e",
+      "bytes": 235,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "7dd4401463e370768f38f70f202c259e1bac0d8e48586b7ce818cd6faa65b3de",
+      "bytes": 150,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "c42c208552392b0c0cc570d4026a7a9bd1d3f1003614bcf1a8d1b39cc3e2840e",
+      "bytes": 376,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "68377bcd280b40b5e6886785405d5bed5eb48bfc814be26a09e3be1c046fcb72",
+      "bytes": 311,
+      "role": "frozen human disposition fixture"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "4c3d49b11eff286f33d44f47e453b96d24f3fd774eb4241934fb89f4228fe119",
+      "bytes": 108,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "0f66a8a0431cd6f60b96d7d0a0d709df9559cc0283245815ccb488ba17260f56",
+      "bytes": 3540,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "no_recommendation",
+  "expected_primary_stage": "STG-10",
+  "expected_component": "recommendation_engine",
+  "expected_reason_codes": [
+    "EVIDENCE_INSUFFICIENT"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}
