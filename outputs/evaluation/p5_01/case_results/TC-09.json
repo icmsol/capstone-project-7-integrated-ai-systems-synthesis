@@ -1,0 +1,156 @@
+{
+  "evaluation_schema_version": "1.0.0",
+  "case_id": "TC-09",
+  "freeze_version": "1.0.1",
+  "result_status": "PASS",
+  "case_state": {
+    "terminal_outcome": "deferred",
+    "case_status": "deferred",
+    "primary_stage_id": "STG-07",
+    "primary_stage": "retrieve_official_evidence",
+    "primary_component": "official_evidence_retriever",
+    "recommendation_code": "R-06",
+    "recommendation_label": "No Recommendation",
+    "reason_codes": [
+      "CITATION_NOT_FOUND"
+    ]
+  },
+  "audit": {
+    "event_types": [
+      "configuration_loaded",
+      "source_ingested",
+      "alignment_completed",
+      "historical_context_attached",
+      "evidence_retrieved",
+      "recommendation_abstained",
+      "human_disposition_recorded"
+    ],
+    "retry_attempts": 0,
+    "chain_valid": true
+  },
+  "routing": {
+    "expected_human_route": "Contract Analyst"
+  },
+  "artifacts": {
+    "schema_valid": true,
+    "checksum_valid": true,
+    "generated_artifact_ids": [
+      "EVAL-TC-09-001",
+      "AUDIT-TC-09-001",
+      "REC-TC-09-001",
+      "DISP-TC-09-001"
+    ]
+  },
+  "claims": [
+    "controlled_capstone_prototype",
+    "nonbinding_recommendation",
+    "human_authority_preserved"
+  ],
+  "side_effects": [],
+  "timings": {
+    "elapsed_seconds": 0.002372,
+    "started_at": "2026-08-05T23:17:21.127700Z",
+    "completed_at": "2026-08-05T23:17:21.130073Z"
+  },
+  "assertion_results": [
+    {
+      "assertion_id": "AS-TC-09-TERM",
+      "status": "PASS",
+      "observed_value": "deferred",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-09-STATUS",
+      "status": "PASS",
+      "observed_value": "deferred",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-09-STAGEID",
+      "status": "PASS",
+      "observed_value": "STG-07",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-09-STAGE",
+      "status": "PASS",
+      "observed_value": "retrieve_official_evidence",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-09-COMP",
+      "status": "PASS",
+      "observed_value": "official_evidence_retriever",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-09-REASON",
+      "status": "PASS",
+      "observed_value": [
+        "CITATION_NOT_FOUND"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-09-AUDIT",
+      "status": "PASS",
+      "observed_value": [
+        "configuration_loaded",
+        "source_ingested",
+        "alignment_completed",
+        "historical_context_attached",
+        "evidence_retrieved",
+        "recommendation_abstained",
+        "human_disposition_recorded"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-09-SCHEMA",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "schema_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-09-CHECK",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "checksum_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-09-NOEXT",
+      "status": "PASS",
+      "observed_value": [],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-09-BOUND",
+      "status": "PASS",
+      "observed_value": [
+        "controlled_capstone_prototype",
+        "nonbinding_recommendation",
+        "human_authority_preserved"
+      ],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-09-RECCODE",
+      "status": "PASS",
+      "observed_value": "R-06",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-09-RECLABEL",
+      "status": "PASS",
+      "observed_value": "No Recommendation",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-09-ROUTE",
+      "status": "PASS",
+      "observed_value": "Contract Analyst",
+      "message": "equals assertion passed."
+    }
+  ],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

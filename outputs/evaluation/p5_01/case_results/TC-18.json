@@ -1,0 +1,152 @@
+{
+  "evaluation_schema_version": "1.0.0",
+  "case_id": "TC-18",
+  "freeze_version": "1.0.1",
+  "result_status": "PARTIAL",
+  "case_state": {
+    "terminal_outcome": "failed_closed",
+    "case_status": "failed_closed",
+    "primary_stage_id": "STG-01",
+    "primary_stage": "load_configuration",
+    "primary_component": "profile_loader",
+    "recommendation_code": null,
+    "recommendation_label": null,
+    "reason_codes": [
+      "AUDIT_PERSISTENCE_FAILED",
+      "RETRY_LIMIT_EXCEEDED",
+      "SAFEGUARD_OVERRIDE_ATTEMPT"
+    ]
+  },
+  "audit": {
+    "event_types": [
+      "configuration_loaded",
+      "processing_failed",
+      "case_escalated",
+      "retry_attempted"
+    ],
+    "retry_attempts": 1,
+    "chain_valid": true
+  },
+  "routing": {
+    "expected_human_route": "Executive Authority and Technical Reviewer"
+  },
+  "artifacts": {
+    "schema_valid": true,
+    "checksum_valid": true,
+    "generated_artifact_ids": [
+      "EVAL-TC-18-001",
+      "AUDIT-TC-18-001"
+    ]
+  },
+  "claims": [
+    "controlled_capstone_prototype",
+    "nonbinding_recommendation",
+    "human_authority_preserved"
+  ],
+  "side_effects": [],
+  "timings": {
+    "elapsed_seconds": 0.002413,
+    "started_at": "2026-08-05T23:17:21.193896Z",
+    "completed_at": "2026-08-05T23:17:21.196309Z"
+  },
+  "assertion_results": [
+    {
+      "assertion_id": "AS-TC-18-TERM",
+      "status": "PASS",
+      "observed_value": "failed_closed",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-18-STATUS",
+      "status": "PASS",
+      "observed_value": "failed_closed",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-18-STAGEID",
+      "status": "PASS",
+      "observed_value": "STG-01",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-18-STAGE",
+      "status": "PASS",
+      "observed_value": "load_configuration",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-18-COMP",
+      "status": "FAIL",
+      "observed_value": "profile_loader",
+      "message": "equals assertion failed: expected 'workflow_orchestrator', observed 'profile_loader'."
+    },
+    {
+      "assertion_id": "AS-TC-18-REASON",
+      "status": "PASS",
+      "observed_value": [
+        "AUDIT_PERSISTENCE_FAILED",
+        "RETRY_LIMIT_EXCEEDED",
+        "SAFEGUARD_OVERRIDE_ATTEMPT"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-18-AUDIT",
+      "status": "PASS",
+      "observed_value": [
+        "configuration_loaded",
+        "processing_failed",
+        "case_escalated",
+        "retry_attempted"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-18-SCHEMA",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "schema_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-18-CHECK",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "checksum_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-18-NOEXT",
+      "status": "PASS",
+      "observed_value": [],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-18-BOUND",
+      "status": "PASS",
+      "observed_value": [
+        "controlled_capstone_prototype",
+        "nonbinding_recommendation",
+        "human_authority_preserved"
+      ],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-18-NOREC",
+      "status": "PASS",
+      "observed_value": null,
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-18-ROUTE",
+      "status": "PASS",
+      "observed_value": "Executive Authority and Technical Reviewer",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-18-RETRY",
+      "status": "PASS",
+      "observed_value": 1,
+      "message": "max_count assertion passed."
+    }
+  ],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

@@ -1,0 +1,162 @@
+{
+  "evaluation_schema_version": "1.0.0",
+  "case_id": "TC-11",
+  "freeze_version": "1.0.1",
+  "result_status": "PASS",
+  "case_state": {
+    "terminal_outcome": "escalated",
+    "case_status": "escalated",
+    "primary_stage_id": "STG-08",
+    "primary_stage": "validate_evidence",
+    "primary_component": "evidence_validator",
+    "recommendation_code": "R-05",
+    "recommendation_label": "Escalate — Specialized Review Required",
+    "reason_codes": [
+      "EVIDENCE_MATERIAL_CONFLICT",
+      "MANDATORY_SPECIALIST_REVIEW"
+    ]
+  },
+  "audit": {
+    "event_types": [
+      "configuration_loaded",
+      "source_ingested",
+      "alignment_completed",
+      "historical_context_attached",
+      "evidence_retrieved",
+      "evidence_validated",
+      "recommendation_created",
+      "case_escalated",
+      "human_disposition_recorded"
+    ],
+    "retry_attempts": 0,
+    "chain_valid": true
+  },
+  "routing": {
+    "expected_human_route": "Qualified Specialist"
+  },
+  "artifacts": {
+    "schema_valid": true,
+    "checksum_valid": true,
+    "generated_artifact_ids": [
+      "EVAL-TC-11-001",
+      "AUDIT-TC-11-001",
+      "REC-TC-11-001",
+      "DISP-TC-11-001"
+    ]
+  },
+  "claims": [
+    "controlled_capstone_prototype",
+    "nonbinding_recommendation",
+    "human_authority_preserved"
+  ],
+  "side_effects": [],
+  "timings": {
+    "elapsed_seconds": 0.002992,
+    "started_at": "2026-08-05T23:17:21.159723Z",
+    "completed_at": "2026-08-05T23:17:21.162717Z"
+  },
+  "assertion_results": [
+    {
+      "assertion_id": "AS-TC-11-TERM",
+      "status": "PASS",
+      "observed_value": "escalated",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-11-STATUS",
+      "status": "PASS",
+      "observed_value": "escalated",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-11-STAGEID",
+      "status": "PASS",
+      "observed_value": "STG-08",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-11-STAGE",
+      "status": "PASS",
+      "observed_value": "validate_evidence",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-11-COMP",
+      "status": "PASS",
+      "observed_value": "evidence_validator",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-11-REASON",
+      "status": "PASS",
+      "observed_value": [
+        "EVIDENCE_MATERIAL_CONFLICT",
+        "MANDATORY_SPECIALIST_REVIEW"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-11-AUDIT",
+      "status": "PASS",
+      "observed_value": [
+        "configuration_loaded",
+        "source_ingested",
+        "alignment_completed",
+        "historical_context_attached",
+        "evidence_retrieved",
+        "evidence_validated",
+        "recommendation_created",
+        "case_escalated",
+        "human_disposition_recorded"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-11-SCHEMA",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "schema_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-11-CHECK",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "checksum_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-11-NOEXT",
+      "status": "PASS",
+      "observed_value": [],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-11-BOUND",
+      "status": "PASS",
+      "observed_value": [
+        "controlled_capstone_prototype",
+        "nonbinding_recommendation",
+        "human_authority_preserved"
+      ],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-11-RECCODE",
+      "status": "PASS",
+      "observed_value": "R-05",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-11-RECLABEL",
+      "status": "PASS",
+      "observed_value": "Escalate — Specialized Review Required",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-11-ROUTE",
+      "status": "PASS",
+      "observed_value": "Qualified Specialist",
+      "message": "equals assertion passed."
+    }
+  ],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

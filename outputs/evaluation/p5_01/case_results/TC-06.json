@@ -1,0 +1,160 @@
+{
+  "evaluation_schema_version": "1.0.0",
+  "case_id": "TC-06",
+  "freeze_version": "1.0.1",
+  "result_status": "PASS",
+  "case_state": {
+    "terminal_outcome": "escalated",
+    "case_status": "escalated",
+    "primary_stage_id": "STG-06",
+    "primary_stage": "triage_clause_themes",
+    "primary_component": "clause_triage_model",
+    "recommendation_code": "R-05",
+    "recommendation_label": "Escalate — Specialized Review Required",
+    "reason_codes": [
+      "MANDATORY_SPECIALIST_REVIEW",
+      "MODEL_DOMAIN_SHIFT"
+    ]
+  },
+  "audit": {
+    "event_types": [
+      "configuration_loaded",
+      "source_ingested",
+      "alignment_completed",
+      "historical_context_attached",
+      "clause_triage_completed",
+      "recommendation_created",
+      "case_escalated",
+      "human_disposition_recorded"
+    ],
+    "retry_attempts": 0,
+    "chain_valid": true
+  },
+  "routing": {
+    "expected_human_route": "Contracts or Legal Reviewer"
+  },
+  "artifacts": {
+    "schema_valid": true,
+    "checksum_valid": true,
+    "generated_artifact_ids": [
+      "EVAL-TC-06-001",
+      "AUDIT-TC-06-001",
+      "REC-TC-06-001",
+      "DISP-TC-06-001"
+    ]
+  },
+  "claims": [
+    "controlled_capstone_prototype",
+    "nonbinding_recommendation",
+    "human_authority_preserved"
+  ],
+  "side_effects": [],
+  "timings": {
+    "elapsed_seconds": 0.002686,
+    "started_at": "2026-08-05T23:17:21.112135Z",
+    "completed_at": "2026-08-05T23:17:21.114820Z"
+  },
+  "assertion_results": [
+    {
+      "assertion_id": "AS-TC-06-TERM",
+      "status": "PASS",
+      "observed_value": "escalated",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-06-STATUS",
+      "status": "PASS",
+      "observed_value": "escalated",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-06-STAGEID",
+      "status": "PASS",
+      "observed_value": "STG-06",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-06-STAGE",
+      "status": "PASS",
+      "observed_value": "triage_clause_themes",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-06-COMP",
+      "status": "PASS",
+      "observed_value": "clause_triage_model",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-06-REASON",
+      "status": "PASS",
+      "observed_value": [
+        "MANDATORY_SPECIALIST_REVIEW",
+        "MODEL_DOMAIN_SHIFT"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-06-AUDIT",
+      "status": "PASS",
+      "observed_value": [
+        "configuration_loaded",
+        "source_ingested",
+        "alignment_completed",
+        "historical_context_attached",
+        "clause_triage_completed",
+        "recommendation_created",
+        "case_escalated",
+        "human_disposition_recorded"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-06-SCHEMA",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "schema_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-06-CHECK",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "checksum_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-06-NOEXT",
+      "status": "PASS",
+      "observed_value": [],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-06-BOUND",
+      "status": "PASS",
+      "observed_value": [
+        "controlled_capstone_prototype",
+        "nonbinding_recommendation",
+        "human_authority_preserved"
+      ],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-06-RECCODE",
+      "status": "PASS",
+      "observed_value": "R-05",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-06-RECLABEL",
+      "status": "PASS",
+      "observed_value": "Escalate — Specialized Review Required",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-06-ROUTE",
+      "status": "PASS",
+      "observed_value": "Contracts or Legal Reviewer",
+      "message": "equals assertion passed."
+    }
+  ],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

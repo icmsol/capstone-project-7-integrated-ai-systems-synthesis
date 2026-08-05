@@ -1,0 +1,173 @@
+{
+  "evaluation_schema_version": "1.0.0",
+  "case_id": "TC-02",
+  "freeze_version": "1.0.1",
+  "result_status": "PASS",
+  "case_state": {
+    "terminal_outcome": "finalized_accept_with_conditions",
+    "case_status": "finalized",
+    "primary_stage_id": "STG-12",
+    "primary_stage": "record_human_disposition",
+    "primary_component": "human_disposition_recorder",
+    "recommendation_code": "R-02",
+    "recommendation_label": "Recommend Pursue with Conditions",
+    "reason_codes": [
+      "HUMAN_DECISION_REQUIRED"
+    ]
+  },
+  "audit": {
+    "event_types": [
+      "configuration_loaded",
+      "source_ingested",
+      "alignment_completed",
+      "historical_context_attached",
+      "clause_triage_completed",
+      "evidence_retrieved",
+      "evidence_validated",
+      "recommendation_created",
+      "human_disposition_recorded"
+    ],
+    "retry_attempts": 0,
+    "chain_valid": true
+  },
+  "routing": {
+    "expected_human_route": "Business Development or Pursuit Lead"
+  },
+  "artifacts": {
+    "schema_valid": true,
+    "checksum_valid": true,
+    "generated_artifact_ids": [
+      "EVAL-TC-02-001",
+      "AUDIT-TC-02-001",
+      "REC-TC-02-001",
+      "DISP-TC-02-001",
+      "original_recommendation_and_human_disposition"
+    ]
+  },
+  "claims": [
+    "controlled_capstone_prototype",
+    "nonbinding_recommendation",
+    "human_authority_preserved"
+  ],
+  "side_effects": [],
+  "timings": {
+    "elapsed_seconds": 0.002443,
+    "started_at": "2026-08-05T23:17:21.092521Z",
+    "completed_at": "2026-08-05T23:17:21.094965Z"
+  },
+  "assertion_results": [
+    {
+      "assertion_id": "AS-TC-02-TERM",
+      "status": "PASS",
+      "observed_value": "finalized_accept_with_conditions",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-02-STATUS",
+      "status": "PASS",
+      "observed_value": "finalized",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-02-STAGEID",
+      "status": "PASS",
+      "observed_value": "STG-12",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-02-STAGE",
+      "status": "PASS",
+      "observed_value": "record_human_disposition",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-02-COMP",
+      "status": "PASS",
+      "observed_value": "human_disposition_recorder",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-02-REASON",
+      "status": "PASS",
+      "observed_value": [
+        "HUMAN_DECISION_REQUIRED"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-02-AUDIT",
+      "status": "PASS",
+      "observed_value": [
+        "configuration_loaded",
+        "source_ingested",
+        "alignment_completed",
+        "historical_context_attached",
+        "clause_triage_completed",
+        "evidence_retrieved",
+        "evidence_validated",
+        "recommendation_created",
+        "human_disposition_recorded"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-02-SCHEMA",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "schema_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-02-CHECK",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "checksum_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-02-NOEXT",
+      "status": "PASS",
+      "observed_value": [],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-02-BOUND",
+      "status": "PASS",
+      "observed_value": [
+        "controlled_capstone_prototype",
+        "nonbinding_recommendation",
+        "human_authority_preserved"
+      ],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-02-RECCODE",
+      "status": "PASS",
+      "observed_value": "R-02",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-02-RECLABEL",
+      "status": "PASS",
+      "observed_value": "Recommend Pursue with Conditions",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-02-ROUTE",
+      "status": "PASS",
+      "observed_value": "Business Development or Pursuit Lead",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-02-SEPARATE",
+      "status": "PASS",
+      "observed_value": [
+        "EVAL-TC-02-001",
+        "AUDIT-TC-02-001",
+        "REC-TC-02-001",
+        "DISP-TC-02-001",
+        "original_recommendation_and_human_disposition"
+      ],
+      "message": "separate_artifact assertion passed."
+    }
+  ],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

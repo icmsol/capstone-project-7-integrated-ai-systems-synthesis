@@ -1,0 +1,158 @@
+{
+  "evaluation_schema_version": "1.0.0",
+  "case_id": "TC-12",
+  "freeze_version": "1.0.1",
+  "result_status": "PASS",
+  "case_state": {
+    "terminal_outcome": "deferred",
+    "case_status": "deferred",
+    "primary_stage_id": "STG-10",
+    "primary_stage": "create_recommendation",
+    "primary_component": "recommendation_engine",
+    "recommendation_code": "R-06",
+    "recommendation_label": "No Recommendation",
+    "reason_codes": [
+      "EVIDENCE_INSUFFICIENT"
+    ]
+  },
+  "audit": {
+    "event_types": [
+      "configuration_loaded",
+      "source_ingested",
+      "alignment_completed",
+      "historical_context_attached",
+      "evidence_retrieved",
+      "evidence_validated",
+      "recommendation_abstained",
+      "human_disposition_recorded"
+    ],
+    "retry_attempts": 0,
+    "chain_valid": true
+  },
+  "routing": {
+    "expected_human_route": "Opportunity or Contract Analyst"
+  },
+  "artifacts": {
+    "schema_valid": true,
+    "checksum_valid": true,
+    "generated_artifact_ids": [
+      "EVAL-TC-12-001",
+      "AUDIT-TC-12-001",
+      "REC-TC-12-001",
+      "DISP-TC-12-001"
+    ]
+  },
+  "claims": [
+    "controlled_capstone_prototype",
+    "nonbinding_recommendation",
+    "human_authority_preserved"
+  ],
+  "side_effects": [],
+  "timings": {
+    "elapsed_seconds": 0.002365,
+    "started_at": "2026-08-05T23:17:21.165319Z",
+    "completed_at": "2026-08-05T23:17:21.167684Z"
+  },
+  "assertion_results": [
+    {
+      "assertion_id": "AS-TC-12-TERM",
+      "status": "PASS",
+      "observed_value": "deferred",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-12-STATUS",
+      "status": "PASS",
+      "observed_value": "deferred",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-12-STAGEID",
+      "status": "PASS",
+      "observed_value": "STG-10",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-12-STAGE",
+      "status": "PASS",
+      "observed_value": "create_recommendation",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-12-COMP",
+      "status": "PASS",
+      "observed_value": "recommendation_engine",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-12-REASON",
+      "status": "PASS",
+      "observed_value": [
+        "EVIDENCE_INSUFFICIENT"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-12-AUDIT",
+      "status": "PASS",
+      "observed_value": [
+        "configuration_loaded",
+        "source_ingested",
+        "alignment_completed",
+        "historical_context_attached",
+        "evidence_retrieved",
+        "evidence_validated",
+        "recommendation_abstained",
+        "human_disposition_recorded"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-12-SCHEMA",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "schema_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-12-CHECK",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "checksum_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-12-NOEXT",
+      "status": "PASS",
+      "observed_value": [],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-12-BOUND",
+      "status": "PASS",
+      "observed_value": [
+        "controlled_capstone_prototype",
+        "nonbinding_recommendation",
+        "human_authority_preserved"
+      ],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-12-RECCODE",
+      "status": "PASS",
+      "observed_value": "R-06",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-12-RECLABEL",
+      "status": "PASS",
+      "observed_value": "No Recommendation",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-12-ROUTE",
+      "status": "PASS",
+      "observed_value": "Opportunity or Contract Analyst",
+      "message": "equals assertion passed."
+    }
+  ],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

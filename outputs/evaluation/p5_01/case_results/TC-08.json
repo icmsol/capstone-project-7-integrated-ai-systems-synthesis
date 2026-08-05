@@ -1,0 +1,146 @@
+{
+  "evaluation_schema_version": "1.0.0",
+  "case_id": "TC-08",
+  "freeze_version": "1.0.1",
+  "result_status": "PASS",
+  "case_state": {
+    "terminal_outcome": "failed_closed",
+    "case_status": "failed_closed",
+    "primary_stage_id": "STG-06",
+    "primary_stage": "triage_clause_themes",
+    "primary_component": "clause_triage_model",
+    "recommendation_code": null,
+    "recommendation_label": null,
+    "reason_codes": [
+      "MODEL_PACKAGE_INVALID"
+    ]
+  },
+  "audit": {
+    "event_types": [
+      "configuration_loaded",
+      "source_ingested",
+      "alignment_completed",
+      "historical_context_attached",
+      "processing_failed",
+      "case_escalated"
+    ],
+    "retry_attempts": 0,
+    "chain_valid": true
+  },
+  "routing": {
+    "expected_human_route": "Technical Reviewer"
+  },
+  "artifacts": {
+    "schema_valid": true,
+    "checksum_valid": true,
+    "generated_artifact_ids": [
+      "EVAL-TC-08-001",
+      "AUDIT-TC-08-001"
+    ]
+  },
+  "claims": [
+    "controlled_capstone_prototype",
+    "nonbinding_recommendation",
+    "human_authority_preserved"
+  ],
+  "side_effects": [],
+  "timings": {
+    "elapsed_seconds": 0.002469,
+    "started_at": "2026-08-05T23:17:21.122809Z",
+    "completed_at": "2026-08-05T23:17:21.125278Z"
+  },
+  "assertion_results": [
+    {
+      "assertion_id": "AS-TC-08-TERM",
+      "status": "PASS",
+      "observed_value": "failed_closed",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-08-STATUS",
+      "status": "PASS",
+      "observed_value": "failed_closed",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-08-STAGEID",
+      "status": "PASS",
+      "observed_value": "STG-06",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-08-STAGE",
+      "status": "PASS",
+      "observed_value": "triage_clause_themes",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-08-COMP",
+      "status": "PASS",
+      "observed_value": "clause_triage_model",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-08-REASON",
+      "status": "PASS",
+      "observed_value": [
+        "MODEL_PACKAGE_INVALID"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-08-AUDIT",
+      "status": "PASS",
+      "observed_value": [
+        "configuration_loaded",
+        "source_ingested",
+        "alignment_completed",
+        "historical_context_attached",
+        "processing_failed",
+        "case_escalated"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-08-SCHEMA",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "schema_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-08-CHECK",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "checksum_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-08-NOEXT",
+      "status": "PASS",
+      "observed_value": [],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-08-BOUND",
+      "status": "PASS",
+      "observed_value": [
+        "controlled_capstone_prototype",
+        "nonbinding_recommendation",
+        "human_authority_preserved"
+      ],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-08-NOREC",
+      "status": "PASS",
+      "observed_value": null,
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-08-ROUTE",
+      "status": "PASS",
+      "observed_value": "Technical Reviewer",
+      "message": "equals assertion passed."
+    }
+  ],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

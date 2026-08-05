@@ -1,0 +1,11 @@
+requirement_id,requirement,implementation,validation,status
+P5-01-R01,Execute the complete corrected frozen scenario set.,Runner loads the v1.0.1 index and executes every listed case.,19 of 19 cases executed; no missing case IDs.,Implemented
+P5-01-R02,"Prevent post-result case, threshold, or evaluator tuning.","Freeze lock records hashes for scenario, policy, threshold, and schema files.",Locked files match; post_run_changes_applied=false.,Implemented
+P5-01-R03,Derive observed behavior from frozen inputs rather than expected outcomes.,Fixture adapter applies fixed safeguard precedence and policy thresholds.,Source test confirms behavior function does not read expected_outcome.json.,Implemented
+P5-01-R04,Evaluate every predeclared assertion.,"Generic evaluator supports equals, contains-all, contains-none, schema, checksum, separation, and maximum-count assertions.",262 of 262 assertions evaluated.,Implemented
+P5-01-R05,Preserve raw per-case outputs.,One schema-valid JSON result is written for each case.,19 result files preserved with SHA-256 values.,Implemented
+P5-01-R06,Preserve interpretable execution traces.,Each case records fixture observations and matched fixed rules without private reasoning.,19 JSONL trace files preserved with SHA-256 values.,Implemented
+P5-01-R07,Preserve run-level completeness and integrity evidence.,"Run manifest, JSON/CSV case index, raw-output inventory, and chained evaluation ledger are generated.",Manifest schema and all raw-output checksums pass.,Implemented
+P5-01-R08,Preserve intellectual-integrity boundaries.,Run distinguishes controlled fixtures from real component boundaries and defers metrics and root-cause analysis.,No production-readiness or autonomous-authority claim appears.,Implemented
+P5-01-R09,Perform no external action.,Evaluation reads frozen local inputs and writes local evidence only.,All case side-effect arrays are empty; external actions=0.,Implemented
+P5-01-R10,Provide repeatable verification.,"Verification script and ten tests validate locks, schemas, checksums, coverage, side effects, and deterministic core behavior.",10 tests pass.,Implemented

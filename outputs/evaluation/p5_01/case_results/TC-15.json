@@ -1,0 +1,153 @@
+{
+  "evaluation_schema_version": "1.0.0",
+  "case_id": "TC-15",
+  "freeze_version": "1.0.1",
+  "result_status": "PARTIAL",
+  "case_state": {
+    "terminal_outcome": "escalated",
+    "case_status": "escalated",
+    "primary_stage_id": "STG-05",
+    "primary_stage": "select_passages",
+    "primary_component": "passage_selector",
+    "recommendation_code": "R-05",
+    "recommendation_label": "Escalate — Specialized Review Required",
+    "reason_codes": [
+      "SENSITIVE_DATA_DETECTED"
+    ]
+  },
+  "audit": {
+    "event_types": [
+      "configuration_loaded",
+      "source_ingested",
+      "alignment_completed",
+      "historical_context_attached",
+      "recommendation_created",
+      "case_escalated"
+    ],
+    "retry_attempts": 0,
+    "chain_valid": true
+  },
+  "routing": {
+    "expected_human_route": "Security or Privacy Reviewer"
+  },
+  "artifacts": {
+    "schema_valid": true,
+    "checksum_valid": true,
+    "generated_artifact_ids": [
+      "EVAL-TC-15-001",
+      "AUDIT-TC-15-001",
+      "REC-TC-15-001"
+    ]
+  },
+  "claims": [
+    "controlled_capstone_prototype",
+    "nonbinding_recommendation",
+    "human_authority_preserved"
+  ],
+  "side_effects": [],
+  "timings": {
+    "elapsed_seconds": 0.002672,
+    "started_at": "2026-08-05T23:17:21.179486Z",
+    "completed_at": "2026-08-05T23:17:21.182159Z"
+  },
+  "assertion_results": [
+    {
+      "assertion_id": "AS-TC-15-TERM",
+      "status": "PASS",
+      "observed_value": "escalated",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-15-STATUS",
+      "status": "PASS",
+      "observed_value": "escalated",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-15-STAGEID",
+      "status": "PASS",
+      "observed_value": "STG-05",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-15-STAGE",
+      "status": "PASS",
+      "observed_value": "select_passages",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-15-COMP",
+      "status": "PASS",
+      "observed_value": "passage_selector",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-15-REASON",
+      "status": "PASS",
+      "observed_value": [
+        "SENSITIVE_DATA_DETECTED"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-15-AUDIT",
+      "status": "FAIL",
+      "observed_value": [
+        "configuration_loaded",
+        "source_ingested",
+        "alignment_completed",
+        "historical_context_attached",
+        "recommendation_created",
+        "case_escalated"
+      ],
+      "message": "contains_all assertion failed: expected ['processing_failed', 'case_escalated'], observed ['configuration_loaded', 'source_ingested', 'alignment_completed', 'historical_context_attached', 'recommendation_created', 'case_escalated']."
+    },
+    {
+      "assertion_id": "AS-TC-15-SCHEMA",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "schema_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-15-CHECK",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "checksum_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-15-NOEXT",
+      "status": "PASS",
+      "observed_value": [],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-15-BOUND",
+      "status": "PASS",
+      "observed_value": [
+        "controlled_capstone_prototype",
+        "nonbinding_recommendation",
+        "human_authority_preserved"
+      ],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-15-RECCODE",
+      "status": "PASS",
+      "observed_value": "R-05",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-15-RECLABEL",
+      "status": "PASS",
+      "observed_value": "Escalate — Specialized Review Required",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-15-ROUTE",
+      "status": "PASS",
+      "observed_value": "Security or Privacy Reviewer",
+      "message": "equals assertion passed."
+    }
+  ],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

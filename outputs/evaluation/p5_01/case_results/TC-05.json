@@ -1,0 +1,156 @@
+{
+  "evaluation_schema_version": "1.0.0",
+  "case_id": "TC-05",
+  "freeze_version": "1.0.1",
+  "result_status": "PARTIAL",
+  "case_state": {
+    "terminal_outcome": "deferred",
+    "case_status": "deferred",
+    "primary_stage_id": "STG-06",
+    "primary_stage": "triage_clause_themes",
+    "primary_component": "clause_triage_model",
+    "recommendation_code": "R-03",
+    "recommendation_label": "Recommend Hold — Gather Information",
+    "reason_codes": [
+      "MODEL_CONFIDENCE_LOW"
+    ]
+  },
+  "audit": {
+    "event_types": [
+      "configuration_loaded",
+      "source_ingested",
+      "alignment_completed",
+      "historical_context_attached",
+      "clause_triage_completed",
+      "recommendation_created",
+      "human_disposition_recorded"
+    ],
+    "retry_attempts": 0,
+    "chain_valid": true
+  },
+  "routing": {
+    "expected_human_route": "Contracts or Legal Reviewer"
+  },
+  "artifacts": {
+    "schema_valid": true,
+    "checksum_valid": true,
+    "generated_artifact_ids": [
+      "EVAL-TC-05-001",
+      "AUDIT-TC-05-001",
+      "REC-TC-05-001",
+      "DISP-TC-05-001"
+    ]
+  },
+  "claims": [
+    "controlled_capstone_prototype",
+    "nonbinding_recommendation",
+    "human_authority_preserved"
+  ],
+  "side_effects": [],
+  "timings": {
+    "elapsed_seconds": 0.002266,
+    "started_at": "2026-08-05T23:17:21.107255Z",
+    "completed_at": "2026-08-05T23:17:21.109521Z"
+  },
+  "assertion_results": [
+    {
+      "assertion_id": "AS-TC-05-TERM",
+      "status": "PASS",
+      "observed_value": "deferred",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-05-STATUS",
+      "status": "PASS",
+      "observed_value": "deferred",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-05-STAGEID",
+      "status": "PASS",
+      "observed_value": "STG-06",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-05-STAGE",
+      "status": "PASS",
+      "observed_value": "triage_clause_themes",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-05-COMP",
+      "status": "PASS",
+      "observed_value": "clause_triage_model",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-05-REASON",
+      "status": "PASS",
+      "observed_value": [
+        "MODEL_CONFIDENCE_LOW"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-05-AUDIT",
+      "status": "FAIL",
+      "observed_value": [
+        "configuration_loaded",
+        "source_ingested",
+        "alignment_completed",
+        "historical_context_attached",
+        "clause_triage_completed",
+        "recommendation_created",
+        "human_disposition_recorded"
+      ],
+      "message": "contains_all assertion failed: expected ['clause_triage_completed', 'case_escalated', 'human_disposition_recorded'], observed ['configuration_loaded', 'source_ingested', 'alignment_completed', 'historical_context_attached', 'clause_triage_completed', 'recommendation_created', 'human_disposition_recorded']."
+    },
+    {
+      "assertion_id": "AS-TC-05-SCHEMA",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "schema_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-05-CHECK",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "checksum_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-05-NOEXT",
+      "status": "PASS",
+      "observed_value": [],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-05-BOUND",
+      "status": "PASS",
+      "observed_value": [
+        "controlled_capstone_prototype",
+        "nonbinding_recommendation",
+        "human_authority_preserved"
+      ],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-05-RECCODE",
+      "status": "PASS",
+      "observed_value": "R-03",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-05-RECLABEL",
+      "status": "PASS",
+      "observed_value": "Recommend Hold — Gather Information",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-05-ROUTE",
+      "status": "PASS",
+      "observed_value": "Contracts or Legal Reviewer",
+      "message": "equals assertion passed."
+    }
+  ],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

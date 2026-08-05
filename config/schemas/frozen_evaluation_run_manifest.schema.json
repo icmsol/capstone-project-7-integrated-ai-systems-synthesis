@@ -1,0 +1,226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/frozen_evaluation_run_manifest.schema.json",
+  "title": "Frozen Evaluation Run Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_schema_version",
+    "run_id",
+    "freeze_version",
+    "evaluation_policy_version",
+    "started_at",
+    "completed_at",
+    "elapsed_seconds",
+    "case_count_expected",
+    "case_count_executed",
+    "missing_case_ids",
+    "assertion_count_expected",
+    "assertion_count_evaluated",
+    "status_counts",
+    "case_result_index",
+    "freeze_lock_sha256",
+    "raw_output_inventory",
+    "post_run_changes_applied",
+    "external_actions_performed",
+    "production_boundary"
+  ],
+  "properties": {
+    "run_schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,127}$"
+    },
+    "freeze_version": {
+      "type": "string",
+      "const": "1.0.1"
+    },
+    "evaluation_policy_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "elapsed_seconds": {
+      "type": "number",
+      "minimum": 0
+    },
+    "case_count_expected": {
+      "type": "integer",
+      "const": 19
+    },
+    "case_count_executed": {
+      "type": "integer",
+      "const": 19
+    },
+    "missing_case_ids": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "assertion_count_expected": {
+      "type": "integer",
+      "const": 262
+    },
+    "assertion_count_evaluated": {
+      "type": "integer",
+      "const": 262
+    },
+    "status_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "PASS",
+        "PARTIAL",
+        "FAIL"
+      ],
+      "properties": {
+        "PASS": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "PARTIAL": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "FAIL": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "case_result_index": {
+      "type": "array",
+      "minItems": 19,
+      "maxItems": 19,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "case_id",
+          "case_name",
+          "priority",
+          "category_ids",
+          "result_status",
+          "assertions_evaluated",
+          "assertions_passed",
+          "assertions_failed",
+          "critical_failures",
+          "major_failures",
+          "elapsed_seconds",
+          "result_path",
+          "trace_path",
+          "result_sha256",
+          "trace_sha256"
+        ],
+        "properties": {
+          "case_id": {
+            "type": "string"
+          },
+          "case_name": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string"
+          },
+          "category_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "result_status": {
+            "type": "string",
+            "enum": [
+              "PASS",
+              "PARTIAL",
+              "FAIL"
+            ]
+          },
+          "assertions_evaluated": {
+            "type": "integer"
+          },
+          "assertions_passed": {
+            "type": "integer"
+          },
+          "assertions_failed": {
+            "type": "integer"
+          },
+          "critical_failures": {
+            "type": "integer"
+          },
+          "major_failures": {
+            "type": "integer"
+          },
+          "elapsed_seconds": {
+            "type": "number"
+          },
+          "result_path": {
+            "type": "string"
+          },
+          "trace_path": {
+            "type": "string"
+          },
+          "result_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "trace_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "freeze_lock_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "raw_output_inventory": {
+      "type": "array",
+      "minItems": 38,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "bytes",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "post_run_changes_applied": {
+      "type": "boolean",
+      "const": false
+    },
+    "external_actions_performed": {
+      "type": "integer",
+      "const": 0
+    },
+    "production_boundary": {
+      "type": "string",
+      "const": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+    }
+  }
+}

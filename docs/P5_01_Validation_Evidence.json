@@ -1,0 +1,34 @@
+{
+  "artifact_id": "PROJECT7-P5-01-VALIDATION-EVIDENCE",
+  "artifact_version": "1.0.0",
+  "validated_at_utc": "2026-08-05T23:17:25.139288+00:00",
+  "validation_status": "PASS",
+  "run_id": "P5-01-20260805T231721Z",
+  "freeze_version": "1.0.1",
+  "execution_output": "Run ID: P5-01-20260805T231721Z\nFrozen cases executed: 19/19\nAssertions evaluated: 262/262\nCase statuses: PASS=13, PARTIAL=6, FAIL=0\nMissing cases: 0\nPost-run changes applied: False\nExternal actions performed: 0\nRaw result files: 19\nRaw trace files: 19\nP5-01 frozen evaluation run: PASS\n",
+  "test_output": "test_all_262_assertions_evaluated (tests.test_frozen_evaluation.FrozenEvaluationTests.test_all_262_assertions_evaluated) ... ok\ntest_all_nineteen_cases_executed (tests.test_frozen_evaluation.FrozenEvaluationTests.test_all_nineteen_cases_executed) ... ok\ntest_all_raw_files_match_manifest (tests.test_frozen_evaluation.FrozenEvaluationTests.test_all_raw_files_match_manifest) ... ok\ntest_behavior_derivation_does_not_read_expected_outcome (tests.test_frozen_evaluation.FrozenEvaluationTests.test_behavior_derivation_does_not_read_expected_outcome) ... ok\ntest_case_manifests_remain_checksum_valid (tests.test_frozen_evaluation.FrozenEvaluationTests.test_case_manifests_remain_checksum_valid) ... ok\ntest_core_observed_behavior_is_repeatable (tests.test_frozen_evaluation.FrozenEvaluationTests.test_core_observed_behavior_is_repeatable) ... ok\ntest_every_result_is_schema_valid (tests.test_frozen_evaluation.FrozenEvaluationTests.test_every_result_is_schema_valid) ... ok\ntest_freeze_lock_matches_all_locked_files (tests.test_frozen_evaluation.FrozenEvaluationTests.test_freeze_lock_matches_all_locked_files) ... ok\ntest_manifest_reports_no_post_run_changes (tests.test_frozen_evaluation.FrozenEvaluationTests.test_manifest_reports_no_post_run_changes) ... ok\ntest_no_case_performed_external_action (tests.test_frozen_evaluation.FrozenEvaluationTests.test_no_case_performed_external_action) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.049s\n\nOK\n",
+  "checks": {
+    "unit_tests_passed": 10,
+    "cases_expected": 19,
+    "cases_executed": 19,
+    "missing_cases": [],
+    "assertions_expected": 262,
+    "assertions_evaluated": 262,
+    "status_counts": {
+      "PASS": 13,
+      "PARTIAL": 6,
+      "FAIL": 0
+    },
+    "frozen_lock_valid": true,
+    "all_case_manifests_checksum_valid": true,
+    "all_result_schemas_valid": true,
+    "raw_output_inventory_valid": true,
+    "behavior_adapter_reads_expected_outcomes": false,
+    "post_run_changes_applied": false,
+    "external_actions_performed": 0
+  },
+  "metrics_deferred_to": "P5-02",
+  "failure_analysis_deferred_to": "P5-03",
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required.",
+  "host_environment_note": "An unrelated artifact_tool spreadsheet-runtime warmup warning emitted by the file-generation host was excluded from the preserved evaluation test transcript. It was not produced by the P5-01 runner or tests."
+}

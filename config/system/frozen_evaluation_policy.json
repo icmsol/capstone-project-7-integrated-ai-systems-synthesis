@@ -1,0 +1,47 @@
+{
+  "policy_schema_version": "1.0.0",
+  "policy_id": "PROJECT7-P5-01-FROZEN-EVALUATION-POLICY",
+  "freeze_version": "1.0.1",
+  "deterministic_seed": 42,
+  "case_count_required": 19,
+  "assertion_count_required": 262,
+  "execution_mode": "fixture_driven_integrated_control_evaluation",
+  "real_components_used": [
+    "frozen manifest and checksum verification",
+    "JSON Schema validation",
+    "fixed safeguard reason-code registry",
+    "fixed model-confidence threshold",
+    "fixed evidence-sufficiency threshold",
+    "fixed recommendation labels and human-disposition contract",
+    "frozen assertion evaluator"
+  ],
+  "controlled_fixtures_used": [
+    "Project 4 model output and boundary fixtures",
+    "official-evidence behavior fixtures",
+    "fault-injection fixtures",
+    "authorized human-disposition fixtures",
+    "synthetic opportunity and source snapshots"
+  ],
+  "post_run_changes_prohibited": true,
+  "result_status_rule": {
+    "PASS": "all assertions pass",
+    "PARTIAL": "one or more major assertions fail and no critical assertion fails",
+    "FAIL": "one or more critical assertions fail"
+  },
+  "prohibited_side_effects": [
+    "email_sent",
+    "proposal_submitted",
+    "contract_accepted",
+    "purchase_executed",
+    "staff_committed"
+  ],
+  "prohibited_claims": [
+    "production_ready",
+    "legally_authoritative",
+    "award_probability",
+    "autonomous_approval"
+  ],
+  "metrics_boundary": "P5-01 preserves raw execution results and completeness counts. System-level metric definitions, denominators, calculations, and interpretation are deferred to P5-02.",
+  "failure_analysis_boundary": "P5-01 records failed assertions and observations without changing the suite. Root-cause and mitigation analysis are deferred to P5-03.",
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

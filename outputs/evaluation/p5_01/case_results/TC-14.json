@@ -1,0 +1,148 @@
+{
+  "evaluation_schema_version": "1.0.0",
+  "case_id": "TC-14",
+  "freeze_version": "1.0.1",
+  "result_status": "PARTIAL",
+  "case_state": {
+    "terminal_outcome": "failed_closed",
+    "case_status": "failed_closed",
+    "primary_stage_id": "STG-10",
+    "primary_stage": "create_recommendation",
+    "primary_component": "recommendation_engine",
+    "recommendation_code": null,
+    "recommendation_label": null,
+    "reason_codes": [
+      "BINDING_DECISION_LANGUAGE_DETECTED",
+      "EXTERNAL_ACTION_PROHIBITED"
+    ]
+  },
+  "audit": {
+    "event_types": [
+      "configuration_loaded",
+      "source_ingested",
+      "alignment_completed",
+      "historical_context_attached",
+      "processing_failed",
+      "case_escalated"
+    ],
+    "retry_attempts": 0,
+    "chain_valid": true
+  },
+  "routing": {
+    "expected_human_route": "Authorized Human Decision Maker"
+  },
+  "artifacts": {
+    "schema_valid": true,
+    "checksum_valid": true,
+    "generated_artifact_ids": [
+      "EVAL-TC-14-001",
+      "AUDIT-TC-14-001"
+    ]
+  },
+  "claims": [
+    "controlled_capstone_prototype",
+    "nonbinding_recommendation",
+    "human_authority_preserved"
+  ],
+  "side_effects": [],
+  "timings": {
+    "elapsed_seconds": 0.002294,
+    "started_at": "2026-08-05T23:17:21.174638Z",
+    "completed_at": "2026-08-05T23:17:21.176932Z"
+  },
+  "assertion_results": [
+    {
+      "assertion_id": "AS-TC-14-TERM",
+      "status": "PASS",
+      "observed_value": "failed_closed",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-14-STATUS",
+      "status": "PASS",
+      "observed_value": "failed_closed",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-14-STAGEID",
+      "status": "PASS",
+      "observed_value": "STG-10",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-14-STAGE",
+      "status": "PASS",
+      "observed_value": "create_recommendation",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-14-COMP",
+      "status": "FAIL",
+      "observed_value": "recommendation_engine",
+      "message": "equals assertion failed: expected 'workflow_orchestrator', observed 'recommendation_engine'."
+    },
+    {
+      "assertion_id": "AS-TC-14-REASON",
+      "status": "PASS",
+      "observed_value": [
+        "BINDING_DECISION_LANGUAGE_DETECTED",
+        "EXTERNAL_ACTION_PROHIBITED"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-14-AUDIT",
+      "status": "PASS",
+      "observed_value": [
+        "configuration_loaded",
+        "source_ingested",
+        "alignment_completed",
+        "historical_context_attached",
+        "processing_failed",
+        "case_escalated"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-14-SCHEMA",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "schema_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-14-CHECK",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "checksum_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-14-NOEXT",
+      "status": "PASS",
+      "observed_value": [],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-14-BOUND",
+      "status": "PASS",
+      "observed_value": [
+        "controlled_capstone_prototype",
+        "nonbinding_recommendation",
+        "human_authority_preserved"
+      ],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-14-NOREC",
+      "status": "PASS",
+      "observed_value": null,
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-14-ROUTE",
+      "status": "PASS",
+      "observed_value": "Authorized Human Decision Maker",
+      "message": "equals assertion passed."
+    }
+  ],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

@@ -1,0 +1,54 @@
+{
+  "lock_schema_version": "1.0.0",
+  "lock_id": "PROJECT7-P5-01-FROZEN-EVALUATION-LOCK",
+  "freeze_version": "1.0.1",
+  "frozen_case_root": "data/scenarios/frozen/v1.0.1",
+  "locked_files": [
+    {
+      "path": "config/system/frozen_scenario_set_index_v1.0.1.json",
+      "bytes": 6401,
+      "sha256": "19a8cdd5a28c4abd889b9581b23633f680e94bc5e3e20f1ed87dff701f3df3af"
+    },
+    {
+      "path": "config/system/scenario_taxonomy_and_target_cases_v1.0.1.json",
+      "bytes": 46572,
+      "sha256": "63e50db284ed1802ad497941cb7272e9567bf1f8aae1d73a944e9fbd1536f6b6"
+    },
+    {
+      "path": "config/system/stage_identifier_mapping.json",
+      "bytes": 2237,
+      "sha256": "7eec1e68ff55aa784436f1895e425868078cc3c01e64d71c37e7415c629ae4b3"
+    },
+    {
+      "path": "config/schemas/scenario_evaluation_result.schema.json",
+      "bytes": 5783,
+      "sha256": "6fa2b483d268c3b0e831eded77d33b679a541bd0a6ad1cdbbd78c0ca08d2c19d"
+    },
+    {
+      "path": "config/system/safeguard_policy.json",
+      "bytes": 34975,
+      "sha256": "6ad5f06fe17874b33e36c6c5241099a3bdce354be0518cc97277b5f7b6846cd4"
+    },
+    {
+      "path": "config/system/safeguard_reason_codes.json",
+      "bytes": 7817,
+      "sha256": "339d4f9d509f61f23346a02bf3d45c192f51740e8246ce6de7d4f9428ecc6869"
+    },
+    {
+      "path": "config/system/clause_triage_policy.json",
+      "bytes": 950,
+      "sha256": "2f5367664aec89bcb061502215f01beb8e864ad38dbf56ea448ffc0ede4fe36c"
+    },
+    {
+      "path": "config/system/evidence_workflow_policy.json",
+      "bytes": 1529,
+      "sha256": "d3d1851a3dc73f79b997d580df537e7d6f6672c987da05aec944d7072bc3d669"
+    },
+    {
+      "path": "config/system/recommendation_policy.json",
+      "bytes": 1290,
+      "sha256": "4f2b7adb245c64afe21eda3da971cf06c9f25b881f7550968cfa51b9c800dfdc"
+    }
+  ],
+  "change_rule": "Any modification requires a new frozen-set or evaluation-policy version and complete suite re-execution. Existing raw results may not be edited."
+}
