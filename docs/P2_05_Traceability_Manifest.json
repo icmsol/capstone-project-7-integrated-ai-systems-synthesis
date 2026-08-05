@@ -1,0 +1,59 @@
+{
+  "artifact_id": "PROJECT7-P2-05-PRIOR-PROJECT-TRACEABILITY",
+  "artifact_version": "1.0.0",
+  "created_at_utc": "2026-08-04T23:31:13.342827+00:00",
+  "entry_count": 39,
+  "project_counts": {
+    "1": 5,
+    "2": 8,
+    "3": 4,
+    "4": 7,
+    "5": 5,
+    "6": 10
+  },
+  "classification_counts": {
+    "adapted_runtime_reuse": 14,
+    "design_evidence": 6,
+    "evaluation_evidence": 6,
+    "excluded_from_runtime": 4,
+    "executable_reuse": 7,
+    "superseded": 2
+  },
+  "validation_result": {
+    "schema_valid": true,
+    "matrix_valid": true,
+    "all_projects_present": true,
+    "runtime_contributor_rule_valid": true,
+    "bounded_evidence_rule_valid": true,
+    "runtime_targets_valid": true,
+    "excluded_statuses_valid": true,
+    "invalid_matrix_rejected": true,
+    "invalid_error_count": 3
+  },
+  "files": [
+    {
+      "path": "config/schemas/prior_project_traceability.schema.json",
+      "bytes": 4904
+    },
+    {
+      "path": "docs/Prior_Project_Traceability_Matrix.csv",
+      "bytes": 34902
+    },
+    {
+      "path": "docs/Prior_Project_Traceability_Matrix.json",
+      "bytes": 54045
+    },
+    {
+      "path": "docs/Prior_Project_Traceability_Matrix.md",
+      "bytes": 17968
+    },
+    {
+      "path": "tests/traceability_examples/invalid_prior_project_traceability.json",
+      "bytes": 53936
+    },
+    {
+      "path": "tests/validate_prior_project_traceability.py",
+      "bytes": 3017
+    }
+  ]
+}

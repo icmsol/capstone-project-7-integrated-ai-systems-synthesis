@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/prior_project_traceability.schema.json",
+  "title": "Project 7 Prior-Project Traceability Matrix",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "matrix_schema_version",
+    "matrix_id",
+    "decision_baseline",
+    "entries",
+    "summary"
+  ],
+  "properties": {
+    "matrix_schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "matrix_id": {
+      "type": "string",
+      "const": "PROJECT7-P2-05-PRIOR-PROJECT-TRACEABILITY"
+    },
+    "decision_baseline": {
+      "type": "string",
+      "minLength": 20
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 30,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "trace_id",
+          "prior_project",
+          "source_repository",
+          "source_artifact",
+          "source_url",
+          "original_role",
+          "reuse_classification",
+          "project7_target",
+          "project7_role",
+          "runtime_status",
+          "transformation",
+          "limitations",
+          "required_safeguards",
+          "validation_evidence",
+          "decision",
+          "decision_rationale"
+        ],
+        "properties": {
+          "trace_id": {
+            "type": "string",
+            "pattern": "^TR-P[1-6]-\\d{2}$"
+          },
+          "prior_project": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6
+          },
+          "source_repository": {
+            "type": "string",
+            "format": "uri"
+          },
+          "source_artifact": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "original_role": {
+            "type": "string",
+            "minLength": 15
+          },
+          "reuse_classification": {
+            "type": "string",
+            "enum": [
+              "executable_reuse",
+              "adapted_runtime_reuse",
+              "design_evidence",
+              "evaluation_evidence",
+              "superseded",
+              "excluded_from_runtime"
+            ]
+          },
+          "project7_target": {
+            "type": "string",
+            "minLength": 1
+          },
+          "project7_role": {
+            "type": "string",
+            "minLength": 15
+          },
+          "runtime_status": {
+            "type": "string",
+            "enum": [
+              "committed_and_smoke_tested",
+              "committed_not_yet_integrated",
+              "planned_for_implementation",
+              "reference_only",
+              "not_used"
+            ]
+          },
+          "transformation": {
+            "type": "string",
+            "minLength": 5
+          },
+          "limitations": {
+            "type": "string",
+            "minLength": 10
+          },
+          "required_safeguards": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^SG-\\d{3}$"
+            }
+          },
+          "validation_evidence": {
+            "type": "string",
+            "minLength": 10
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "retain",
+              "adapt",
+              "reference",
+              "replace",
+              "exclude"
+            ]
+          },
+          "decision_rationale": {
+            "type": "string",
+            "minLength": 15
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entry_count",
+        "project_counts",
+        "classification_counts",
+        "runtime_contributor_projects",
+        "bounded_evidence_projects"
+      ],
+      "properties": {
+        "entry_count": {
+          "type": "integer",
+          "minimum": 30
+        },
+        "project_counts": {
+          "type": "object",
+          "required": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "classification_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "runtime_contributor_projects": {
+          "type": "array",
+          "const": [
+            1,
+            2,
+            4,
+            6
+          ]
+        },
+        "bounded_evidence_projects": {
+          "type": "array",
+          "const": [
+            3,
+            5
+          ]
+        }
+      }
+    }
+  }
+}
