@@ -1,0 +1,11 @@
+requirement_id,requirement,implementation,validation,status
+P4-03-R01,Load approved checkpoint and companion assets.,"Package structure, dimension, label, vocabulary, length, and SHA checks.",Controlled package PASS; actual prior CPU smoke PASS.,Implemented
+P4-03-R02,Use exact Project 4 architecture and tokenizer.,Two-layer-compatible Transformer wrapper and exported regex tokenizer.,Compatible state dictionary load and ten probabilities.,Implemented
+P4-03-R03,Produce schema-valid bounded predictions.,Outputs validate against clause_prediction.schema.json.,"Classify, abstain, and escalate fixtures PASS.",Implemented
+P4-03-R04,Abstain below confidence 0.80.,MODEL_CONFIDENCE_LOW with decision=abstain.,Low-confidence test PASS.,Implemented
+P4-03-R05,Disclose and escalate truncation.,Original token count and MODEL_INPUT_TRUNCATED retained.,615-token fixture PASS.,Implemented
+P4-03-R06,Escalate public-sector consequential use.,MODEL_DOMAIN_SHIFT and qualified reviewer route.,Domain-shift test PASS.,Implemented
+P4-03-R07,Retain model provenance and fingerprint.,"Artifact ID, version, and checkpoint SHA on every prediction.",50a280950d31466d7002578295c64e957d144611f5b9731bb059be50e68c6c92,Implemented
+P4-03-R08,Continue integrated case state and audit chain.,Pipeline adds clause predictions and audit event 6.,Pending actual-model CPU notebook.,Pending Actual Run
+P4-03-R09,"Prevent legal, compliance, acceptance, and external-action claims.",Fixed limitations and prohibited-use boundary.,Boundary test PASS; external actions 0.,Implemented
+P4-03-R10,Provide reproducible actual-model validation.,CPU Colab notebook clones repository and runs actual wrapper.,Pending execution after GitHub upload.,Pending Actual Run

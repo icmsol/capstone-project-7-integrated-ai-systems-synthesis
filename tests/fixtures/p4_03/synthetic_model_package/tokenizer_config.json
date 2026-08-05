@@ -1,0 +1,11 @@
+{
+  "tokenizer_type": "regular_expression",
+  "pattern": "[a-z]+(?:'[a-z]+)?|\\d+(?:\\.\\d+)*|[^\\w\\s]",
+  "lowercase": true,
+  "maximum_sequence_length": 32,
+  "pad_token": "<PAD>",
+  "pad_index": 0,
+  "unk_token": "<UNK>",
+  "unk_index": 1,
+  "vocabulary_size": 24
+}

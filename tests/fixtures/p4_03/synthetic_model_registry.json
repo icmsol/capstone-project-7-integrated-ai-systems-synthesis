@@ -1,0 +1,37 @@
+{
+  "registry_schema_version": "1.0.0",
+  "registry_id": "PROJECT7-P4-03-SYNTHETIC-MODEL-REGISTRY",
+  "model_artifact_id": "P4-03-SYNTHETIC-COMPATIBILITY-MODEL",
+  "model_version": "0.0.1",
+  "model_directory": "tests/fixtures/p4_03/synthetic_model_package",
+  "checkpoint_path": "tests/fixtures/p4_03/synthetic_model_package/selected_clause_classifier.pt",
+  "checkpoint_sha256": "b6b3f5a5b4b4842cb420b5c05a0a74d8773404a3b2cd1c95327110a5c725b14f",
+  "package_manifest_path": "audit/project4_inference_manifest.json",
+  "prior_cpu_smoke_test_path": "audit/project4_cpu_smoke_test.json",
+  "source_project": "Capstone Project 4 — Deep Learning Systems",
+  "selected_configuration": "Baseline dropout 0.10",
+  "selection_basis": "Validation macro F1",
+  "validation_macro_f1": 0.8877919857996972,
+  "validation_accuracy": 0.9011494252873563,
+  "class_count": 10,
+  "vocabulary_size": 24,
+  "maximum_sequence_length": 32,
+  "prior_cpu_smoke_test": {
+    "status": "passed",
+    "predicted_category": "Audit Rights",
+    "confidence": 0.9997158646583557,
+    "output_shape": [
+      1,
+      10
+    ],
+    "runtime_device": "cpu"
+  },
+  "limitations": [
+    "Ten modeled clause categories only.",
+    "CUAD commercial-contract training domain.",
+    "Public-sector language may be materially out of domain.",
+    "Maximum sequence length of 256 tokens.",
+    "Confidence is not legal certainty.",
+    "Human review is mandatory for consequential use."
+  ]
+}

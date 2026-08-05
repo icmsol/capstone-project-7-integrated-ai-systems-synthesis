@@ -1,0 +1,30 @@
+{
+  "artifact_id": "PROJECT7-P4-03-VALIDATION-EVIDENCE",
+  "artifact_version": "1.0.0",
+  "validated_at_utc": "2026-08-05T17:07:34.823352+00:00",
+  "controlled_implementation_validation": {
+    "status": "PASS",
+    "unit_tests_passed": 7,
+    "stdout": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/generated/interface/models.py\", line 30820, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/rpc/remote.py\", line 749, in __call__\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/rpc/client.py\", line 150, in call\nartifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.\ntest_compatible_package_loads_and_predicts (tests.test_clause_triage.ClauseTriageTests.test_compatible_package_loads_and_predicts) ... /opt/pyvenv/lib/python3.13/site-packages/torch/nn/modules/transformer.py:531: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)\n  output = torch._nested_tensor_from_mask(\nok\ntest_empty_passage_fails_closed (tests.test_clause_triage.ClauseTriageTests.test_empty_passage_fails_closed) ... ok\ntest_high_confidence_commercial_text_classifies (tests.test_clause_triage.ClauseTriageTests.test_high_confidence_commercial_text_classifies) ... ok\ntest_low_confidence_abstains (tests.test_clause_triage.ClauseTriageTests.test_low_confidence_abstains) ... ok\ntest_public_sector_consequential_use_escalates (tests.test_clause_triage.ClauseTriageTests.test_public_sector_consequential_use_escalates) ... ok\ntest_schema_and_prohibited_claim_boundary (tests.test_clause_triage.ClauseTriageTests.test_schema_and_prohibited_claim_boundary) ... ok\ntest_truncation_escalates_and_is_disclosed (tests.test_clause_triage.ClauseTriageTests.test_truncation_escalates_and_is_disclosed) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.070s\n\nOK\nControlled predictions: 3\nCompatible model package load: PASS\nConfidence abstention: PASS\nPublic-sector escalation: PASS\nTruncation disclosure: PASS\nSchema validation: PASS\nExternal actions performed: 0\nActual Project 4 P4-03 wrapper run: PENDING COLAB CPU\n",
+    "actual_model_performance_measured": false
+  },
+  "actual_project4_prior_validation": {
+    "status": "PASS",
+    "evidence_path": "audit/project4_cpu_smoke_test.json",
+    "manifest_path": "audit/project4_inference_manifest.json",
+    "checkpoint_sha256": "50a280950d31466d7002578295c64e957d144611f5b9731bb059be50e68c6c92",
+    "prior_prediction": "Audit Rights",
+    "prior_confidence": 0.9997158646583557,
+    "output_shape": [
+      1,
+      10
+    ],
+    "runtime_device": "cpu"
+  },
+  "actual_project4_integrated_execution": {
+    "status": "PENDING_COLAB_CPU_RUN",
+    "runner": "tests/run_p4_03_validation.py",
+    "notebook": "notebooks/P4_03_Bounded_Clause_Triage_Validation.ipynb"
+  },
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

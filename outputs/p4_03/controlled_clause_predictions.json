@@ -1,0 +1,142 @@
+{
+  "validation_mode": "synthetic_compatible_model_and_controlled_probabilities",
+  "measured_actual_model_result": false,
+  "predictions": [
+    {
+      "prediction_schema_version": "1.0.0",
+      "case_id": "CASE-P4-03-CONTROLLED",
+      "passage_id": "PASSAGE-HIGH_CONFIDENCE",
+      "passage_text_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "model_artifact_id": "P4-03-SYNTHETIC-COMPATIBILITY-MODEL",
+      "model_version": "0.0.1",
+      "model_sha256": "b6b3f5a5b4b4842cb420b5c05a0a74d8773404a3b2cd1c95327110a5c725b14f",
+      "predicted_label_id": 0,
+      "predicted_category": "Audit Rights",
+      "confidence": 0.96,
+      "decision": "classify",
+      "review_priority": "high",
+      "required_reviewer_role": "Contracts or Legal Reviewer",
+      "domain_warning": false,
+      "truncated": false,
+      "token_count": 18,
+      "reason_codes": [
+        "MODEL_CLASSIFICATION_PRODUCED"
+      ],
+      "limitations": [
+        {
+          "code": "MODEL_THEME_ONLY",
+          "description": "The output is a clause-theme triage label, not legal meaning, enforceability, compliance, acceptability, or required contractual action.",
+          "material": true,
+          "mitigation": "Route consequential interpretation to an authorized contracts or legal reviewer."
+        },
+        {
+          "code": "MODEL_TEN_CLASS_LIMIT",
+          "description": "The classifier recognizes only ten CUAD-derived commercial-contract categories.",
+          "material": true,
+          "mitigation": "Do not treat the label set as a complete contract taxonomy."
+        },
+        {
+          "code": "MODEL_CONFIDENCE_NOT_CERTAINTY",
+          "description": "Confidence is not legal certainty or evidence of correctness on public-sector language.",
+          "material": true,
+          "mitigation": "Use confidence only for review prioritization."
+        }
+      ]
+    },
+    {
+      "prediction_schema_version": "1.0.0",
+      "case_id": "CASE-P4-03-CONTROLLED",
+      "passage_id": "PASSAGE-LOW_CONFIDENCE",
+      "passage_text_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "model_artifact_id": "P4-03-SYNTHETIC-COMPATIBILITY-MODEL",
+      "model_version": "0.0.1",
+      "model_sha256": "b6b3f5a5b4b4842cb420b5c05a0a74d8773404a3b2cd1c95327110a5c725b14f",
+      "predicted_label_id": 0,
+      "predicted_category": "Audit Rights",
+      "confidence": 0.24,
+      "decision": "abstain",
+      "review_priority": "high",
+      "required_reviewer_role": "Contracts or Legal Reviewer",
+      "domain_warning": false,
+      "truncated": false,
+      "token_count": 20,
+      "reason_codes": [
+        "MODEL_CONFIDENCE_LOW"
+      ],
+      "limitations": [
+        {
+          "code": "MODEL_THEME_ONLY",
+          "description": "The output is a clause-theme triage label, not legal meaning, enforceability, compliance, acceptability, or required contractual action.",
+          "material": true,
+          "mitigation": "Route consequential interpretation to an authorized contracts or legal reviewer."
+        },
+        {
+          "code": "MODEL_TEN_CLASS_LIMIT",
+          "description": "The classifier recognizes only ten CUAD-derived commercial-contract categories.",
+          "material": true,
+          "mitigation": "Do not treat the label set as a complete contract taxonomy."
+        },
+        {
+          "code": "MODEL_CONFIDENCE_NOT_CERTAINTY",
+          "description": "Confidence is not legal certainty or evidence of correctness on public-sector language.",
+          "material": true,
+          "mitigation": "Use confidence only for review prioritization."
+        }
+      ]
+    },
+    {
+      "prediction_schema_version": "1.0.0",
+      "case_id": "CASE-P4-03-CONTROLLED",
+      "passage_id": "PASSAGE-TRUNCATED",
+      "passage_text_hash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "model_artifact_id": "P4-03-SYNTHETIC-COMPATIBILITY-MODEL",
+      "model_version": "0.0.1",
+      "model_sha256": "b6b3f5a5b4b4842cb420b5c05a0a74d8773404a3b2cd1c95327110a5c725b14f",
+      "predicted_label_id": 0,
+      "predicted_category": "Audit Rights",
+      "confidence": 0.92,
+      "decision": "escalate",
+      "review_priority": "critical",
+      "required_reviewer_role": "Contracts or Legal Reviewer",
+      "domain_warning": true,
+      "truncated": true,
+      "token_count": 615,
+      "reason_codes": [
+        "MODEL_DOMAIN_SHIFT",
+        "MODEL_INPUT_TRUNCATED"
+      ],
+      "limitations": [
+        {
+          "code": "MODEL_THEME_ONLY",
+          "description": "The output is a clause-theme triage label, not legal meaning, enforceability, compliance, acceptability, or required contractual action.",
+          "material": true,
+          "mitigation": "Route consequential interpretation to an authorized contracts or legal reviewer."
+        },
+        {
+          "code": "MODEL_TEN_CLASS_LIMIT",
+          "description": "The classifier recognizes only ten CUAD-derived commercial-contract categories.",
+          "material": true,
+          "mitigation": "Do not treat the label set as a complete contract taxonomy."
+        },
+        {
+          "code": "MODEL_CONFIDENCE_NOT_CERTAINTY",
+          "description": "Confidence is not legal certainty or evidence of correctness on public-sector language.",
+          "material": true,
+          "mitigation": "Use confidence only for review prioritization."
+        },
+        {
+          "code": "MODEL_DOMAIN_SHIFT",
+          "description": "The model was trained on commercial-contract language; this passage is public-sector or exhibits vocabulary shift.",
+          "material": true,
+          "mitigation": "Require qualified human review and do not use the label as authoritative evidence."
+        },
+        {
+          "code": "MODEL_INPUT_TRUNCATED",
+          "description": "The passage exceeded the configured maximum length and was truncated before inference.",
+          "material": true,
+          "mitigation": "Review the complete passage and surrounding context."
+        }
+      ]
+    }
+  ]
+}

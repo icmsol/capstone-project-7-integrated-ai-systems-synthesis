@@ -1,0 +1,143 @@
+{
+  "artifact_id": "PROJECT7-P4-03-BOUNDED-CLAUSE-TRIAGE",
+  "artifact_version": "1.0.0",
+  "created_at_utc": "2026-08-05T17:07:34.826456+00:00",
+  "component_id": "clause_triage_model",
+  "unit_test_count": 7,
+  "controlled_prediction_count": 3,
+  "actual_model_prior_cpu_smoke_test": "PASS",
+  "actual_model_integrated_run": "PENDING_COLAB_CPU_RUN",
+  "checkpoint_sha256": "50a280950d31466d7002578295c64e957d144611f5b9731bb059be50e68c6c92",
+  "files": [
+    {
+      "path": "config/system/clause_triage_policy.json",
+      "bytes": 950,
+      "sha256": "2f5367664aec89bcb061502215f01beb8e864ad38dbf56ea448ffc0ede4fe36c"
+    },
+    {
+      "path": "config/system/project4_model_registry.json",
+      "bytes": 1395,
+      "sha256": "1bc3bec2aaa70a9d239f4de16799092b1f309e579da9d6fd66c4b41f307bf3a1"
+    },
+    {
+      "path": "data/implementation/p4_03/representative_passages.json",
+      "bytes": 7717,
+      "sha256": "b919aa0d75925d1496b2d67af23b90c49cf26319f651cf0d5fb259f8fa3babde"
+    },
+    {
+      "path": "docs/P4_03_Bounded_Clause_Theme_Inference.md",
+      "bytes": 5029,
+      "sha256": "53def4cc63dc4c957d2d22caca38e00176362770e31cabd572bb2dc5a51bf22e"
+    },
+    {
+      "path": "docs/P4_03_Requirements_Matrix.csv",
+      "bytes": 1742,
+      "sha256": "21e06ca919c86a20b314caf8f0fb2e92b8d43c559798e3fc3014ed72a4ed7be4"
+    },
+    {
+      "path": "docs/P4_03_Validation_Evidence.json",
+      "bytes": 4001,
+      "sha256": "904dc31ec801749098945aad60bbf1ee2762699b424604c831b0844edaade2ee"
+    },
+    {
+      "path": "notebooks/P4_03_Bounded_Clause_Triage_Validation.ipynb",
+      "bytes": 2402,
+      "sha256": "dda31a18bd0a689fe12a4c41ebb070a8e4b5d0ffbeb11ea43d848f6154b8eda5"
+    },
+    {
+      "path": "outputs/p4_03/controlled_clause_predictions.json",
+      "bytes": 6110,
+      "sha256": "2a0c9e6d6c084aef9d1d2f0a9f727860bf61924e41bca76c73848dad958dd526"
+    },
+    {
+      "path": "requirements_p4_03.txt",
+      "bytes": 55,
+      "sha256": "2eae7d5bca98a0c4e8c18a6f985437858357babc36bcef37c9a56df4b212806a"
+    },
+    {
+      "path": "src/project7/__init__.py",
+      "bytes": 1133,
+      "sha256": "164bd8f00adeb8d140057c0fece2d1cf55a1ad33a3e15afae261bf8bd7ed5e67"
+    },
+    {
+      "path": "src/project7/audit_utils.py",
+      "bytes": 1802,
+      "sha256": "38294a9de812555c7fe2d75694cf23c137d5ca9050814f9a7a26a9e7aeac7bc8"
+    },
+    {
+      "path": "src/project7/clause_triage.py",
+      "bytes": 17258,
+      "sha256": "19922893ca65f45e67bbd271a76ab8bc4dea10ee12f7f08d6b25e33a4cac7eba"
+    },
+    {
+      "path": "src/project7/p4_03_pipeline.py",
+      "bytes": 5390,
+      "sha256": "2bebe080e0497ba0ea4c72c3114b0cd75f82e51ec38a42df6b72d0f4a874518b"
+    },
+    {
+      "path": "src/project7/schema_validation.py",
+      "bytes": 1766,
+      "sha256": "46bf4c5d63f85165ff2befbdf48359765442242cc886ccb4381a98ef5e07538a"
+    },
+    {
+      "path": "tests/__init__.py",
+      "bytes": 23,
+      "sha256": "bc298d46538d0a02c5b93651cf19f2e9c29492638b770f87f84e267c1740e47a"
+    },
+    {
+      "path": "tests/fixtures/p4_03/controlled_probability_fixtures.json",
+      "bytes": 1056,
+      "sha256": "accb8cd7e2452fd1ce450634287906407c38a9a528c85a5fa0f7d147f22415ce"
+    },
+    {
+      "path": "tests/fixtures/p4_03/synthetic_model_package/index_to_token.json",
+      "bytes": 308,
+      "sha256": "1321bb09932d6729012d9f83e612be60bd3d0a2f1f3fa339f3598fe1e3b4a06a"
+    },
+    {
+      "path": "tests/fixtures/p4_03/synthetic_model_package/label_id_to_category.json",
+      "bytes": 279,
+      "sha256": "ac62afc0f89dd86139d7e990656e4d3ff8db4d3071504e64f7e2ff6b3da2123b"
+    },
+    {
+      "path": "tests/fixtures/p4_03/synthetic_model_package/model_config.json",
+      "bytes": 185,
+      "sha256": "bfc9aad87d9d4d017dd77da939cc337d5bb7a1828537b053bb56ae9cc4cd6496"
+    },
+    {
+      "path": "tests/fixtures/p4_03/synthetic_model_package/selected_clause_classifier.pt",
+      "bytes": 20725,
+      "sha256": "b6b3f5a5b4b4842cb420b5c05a0a74d8773404a3b2cd1c95327110a5c725b14f"
+    },
+    {
+      "path": "tests/fixtures/p4_03/synthetic_model_package/token_to_index.json",
+      "bytes": 394,
+      "sha256": "2cfb987dadd231bc8c0c1faccade09ac6c5bd7cd68722596b85f9f4dd855a0a6"
+    },
+    {
+      "path": "tests/fixtures/p4_03/synthetic_model_package/tokenizer_config.json",
+      "bytes": 270,
+      "sha256": "af34d69b5ee9d1a87255d9286317539961fa5dfe157b9d2e4bba1e3ead0e87a9"
+    },
+    {
+      "path": "tests/fixtures/p4_03/synthetic_model_registry.json",
+      "bytes": 1456,
+      "sha256": "2283feb7d7ec728fdc521557dc4c64289c9b696ccae2606195f6b3f9503d8c63"
+    },
+    {
+      "path": "tests/run_p4_03_controlled_validation.py",
+      "bytes": 3340,
+      "sha256": "69f375b133f529bc15d77813a25e1fae6cb22d3d34832599ae71a780e5505b8c"
+    },
+    {
+      "path": "tests/run_p4_03_validation.py",
+      "bytes": 1596,
+      "sha256": "b85fb887ef13c71cc62bfda35eccecc9c08511bb32fcc98f0cdff329ce5fe0e2"
+    },
+    {
+      "path": "tests/test_clause_triage.py",
+      "bytes": 5127,
+      "sha256": "6e5e1e1c78228a99d967c81d9c5462049150fc33223b0e3cc0689f03c49013ca"
+    }
+  ]
+}

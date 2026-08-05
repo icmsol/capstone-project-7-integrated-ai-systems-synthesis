@@ -1,1 +1,1 @@
-"""Project 7 test package."""
+"""Project 7 tests."""

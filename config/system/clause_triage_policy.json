@@ -1,0 +1,24 @@
+{
+  "policy_schema_version": "1.0.0",
+  "policy_id": "PROJECT7-CLAUSE-TRIAGE-POLICY",
+  "minimum_classification_confidence": 0.8,
+  "maximum_oov_ratio_without_domain_warning": 0.25,
+  "public_sector_domain_warning_required": true,
+  "public_sector_consequential_use_escalates": true,
+  "truncation_escalates": true,
+  "low_confidence_abstains": true,
+  "empty_passage_fails_closed": true,
+  "maximum_passages_per_case": 20,
+  "required_reviewer_role": "Contracts or Legal Reviewer",
+  "default_review_priority": "high",
+  "prohibited_uses": [
+    "legal interpretation",
+    "enforceability determination",
+    "compliance determination",
+    "contract acceptability decision",
+    "required contractual action",
+    "autonomous final decision",
+    "external communication or commitment"
+  ],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

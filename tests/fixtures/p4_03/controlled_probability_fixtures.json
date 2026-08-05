@@ -1,0 +1,35 @@
+{
+  "high_confidence": {
+    "predicted_label_id": 0,
+    "predicted_category": "Audit Rights",
+    "confidence": 0.96,
+    "original_token_count": 18,
+    "retained_token_count": 18,
+    "truncated": false,
+    "oov_count": 1,
+    "oov_ratio": 0.05555555555555555,
+    "passage_text_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "low_confidence": {
+    "predicted_label_id": 0,
+    "predicted_category": "Audit Rights",
+    "confidence": 0.24,
+    "original_token_count": 20,
+    "retained_token_count": 20,
+    "truncated": false,
+    "oov_count": 3,
+    "oov_ratio": 0.15,
+    "passage_text_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "truncated": {
+    "predicted_label_id": 0,
+    "predicted_category": "Audit Rights",
+    "confidence": 0.92,
+    "original_token_count": 615,
+    "retained_token_count": 256,
+    "truncated": true,
+    "oov_count": 50,
+    "oov_ratio": 0.1953125,
+    "passage_text_hash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+  }
+}
