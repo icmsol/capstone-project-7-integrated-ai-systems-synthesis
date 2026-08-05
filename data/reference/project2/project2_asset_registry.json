@@ -1,0 +1,34 @@
+{
+  "registry_schema_version": "1.0.0",
+  "registry_id": "PROJECT7-PROJECT2-HISTORICAL-ASSET-REGISTRY",
+  "source_project": "Capstone Project 2 — Statistical Analysis",
+  "source_repository": "https://github.com/icmsol/Capstone-project-2-statistical-analysis",
+  "source_period": {
+    "start_date": "2021-07-01",
+    "end_date": "2026-06-30"
+  },
+  "source_record_count": 29646,
+  "title_classified_relevant_count": 176,
+  "assets": [
+    {
+      "asset_id": "P2-ANALYSIS-SUMMARY",
+      "path": "data/reference/project2/analysis_summary.json",
+      "sha256": "95a3d060abca97638a3aa6da6cc1899bc6ccfa23e62a8c204bdf037d60d226c4",
+      "approved_for_runtime_context": true,
+      "source_url": "https://raw.githubusercontent.com/icmsol/Capstone-project-2-statistical-analysis/main/data/processed/analysis_summary.json"
+    },
+    {
+      "asset_id": "P2-HISTORICAL-SERVICE-CONTEXT",
+      "path": "data/reference/project2/historical_service_context.csv",
+      "sha256": "94a98461ff71fcfa889e7b0a48f6f7c9a775411eeac9cee902f468e1145534af",
+      "approved_for_runtime_context": true,
+      "source_url": "https://raw.githubusercontent.com/icmsol/Capstone-project-2-statistical-analysis/main/data/processed/icm_relevant_historical_bids.csv",
+      "derivation": "Deidentified aggregate counts by service_category and staffing_family from 176 title-classified records. Buyer names and emails are intentionally excluded."
+    }
+  ],
+  "mandatory_limitations": [
+    "DESCRIPTIVE_ONLY",
+    "TITLE_CLASSIFICATION_LIMIT",
+    "NOT_CAPACITY_OR_AWARD_FORECAST"
+  ]
+}

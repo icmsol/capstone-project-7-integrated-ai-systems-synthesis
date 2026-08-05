@@ -1,0 +1,148 @@
+{
+  "artifact_id": "PROJECT7-P4-02-ALIGNMENT-HISTORICAL-CONTEXT",
+  "artifact_version": "1.0.0",
+  "created_at_utc": "2026-08-05T16:46:56.284317+00:00",
+  "components": [
+    "profile_loader",
+    "service_alignment_engine",
+    "historical_context_provider"
+  ],
+  "unit_test_count": 5,
+  "representative_output_count": 5,
+  "historical_aggregate_rows": 6,
+  "source_historical_records": 29646,
+  "title_classified_relevant_records": 176,
+  "validation_status": "PASS",
+  "files": [
+    {
+      "path": "audit/p4_02_alignment_history_events.jsonl",
+      "bytes": 3743,
+      "sha256": "eda4da551d67c6200ef38a0b947e47ff4cf029562f9690a1d259b8946a28e007"
+    },
+    {
+      "path": "config/profiles/fictional_historical_context_map.csv",
+      "bytes": 249,
+      "sha256": "1667c4b11da0d9096c4a68c7c141cf7517c33fadd9a362892a6a532c7f74a69c"
+    },
+    {
+      "path": "config/profiles/icm_historical_context_map.csv",
+      "bytes": 586,
+      "sha256": "8cae70c137f76479528582f47b1694dc7d4696939bb919276be5b4039d2d25bd"
+    },
+    {
+      "path": "config/system/historical_context_mapping_registry.json",
+      "bytes": 693,
+      "sha256": "fac30b5de20e797770a4c3b5dbdfb744fcf9b02eb85d4a2c5e10eea7edd4e0bc"
+    },
+    {
+      "path": "config/system/historical_context_policy.json",
+      "bytes": 888,
+      "sha256": "0be7bbdca9edec2d46ab3e2500fa48fa1558ca5c6410039962ba939eab18e9a5"
+    },
+    {
+      "path": "config/system/service_alignment_policy.json",
+      "bytes": 972,
+      "sha256": "eee5ee3eeb720ddd16bd03bd0f60ab3b3d38109b72ecf4af91a2994a77a15b26"
+    },
+    {
+      "path": "data/reference/project2/analysis_summary.json",
+      "bytes": 1030,
+      "sha256": "95a3d060abca97638a3aa6da6cc1899bc6ccfa23e62a8c204bdf037d60d226c4"
+    },
+    {
+      "path": "data/reference/project2/historical_service_context.csv",
+      "bytes": 1971,
+      "sha256": "94a98461ff71fcfa889e7b0a48f6f7c9a775411eeac9cee902f468e1145534af"
+    },
+    {
+      "path": "data/reference/project2/project2_asset_registry.json",
+      "bytes": 1561,
+      "sha256": "48156f098a24591f4e4097c40d0880e7956eef5b8b39190e216a599fe8f4ece9"
+    },
+    {
+      "path": "docs/P4_02_Configurable_Alignment_and_Historical_Context.md",
+      "bytes": 5999,
+      "sha256": "10f2de72ee722f404fc496aeaaa4df664fa26f0f76e8ddba03d608e13794aa8c"
+    },
+    {
+      "path": "docs/P4_02_Requirements_Matrix.csv",
+      "bytes": 1982,
+      "sha256": "a41e3028c0111bce6fd8695c0bbd3436b00e814493b627e2aabca1798ffa17ba"
+    },
+    {
+      "path": "docs/P4_02_Validation_Evidence.json",
+      "bytes": 4233,
+      "sha256": "8aa7a33e1b969e1d4dd5ac2d6f4208088616f779563524c7703e4119bc3c5b1d"
+    },
+    {
+      "path": "outputs/p4_02/fictional_profile_alignment.json",
+      "bytes": 1141,
+      "sha256": "7ca4149f7af02515bc92828d32580dbd3c209f344f6a169d2264619f4dc06791"
+    },
+    {
+      "path": "outputs/p4_02/historical_context.json",
+      "bytes": 2123,
+      "sha256": "300a015a1f3011f2d33f18e07892160a6d67b556945ae2f9deeae8349d844fe3"
+    },
+    {
+      "path": "outputs/p4_02/service_alignment.json",
+      "bytes": 3138,
+      "sha256": "e12ec408fe21b9a19d5cca73ac096b08171e80c93fdb0ad797c54899b21f1106"
+    },
+    {
+      "path": "outputs/p4_02/updated_case_state.json",
+      "bytes": 9457,
+      "sha256": "cab55fa3f71107600964f087cd4ebd7d6611a77ba940748d3395dea2ff0a2499"
+    },
+    {
+      "path": "requirements_p4_02.txt",
+      "bytes": 41,
+      "sha256": "20a90afd705bc492bd3b5b22c9ef500927ed27ebbbb78a80a3abf8e87ce18689"
+    },
+    {
+      "path": "src/project7/__init__.py",
+      "bytes": 790,
+      "sha256": "c802f988b25f909fb20870fb46ae46bbbb3bd9ff92b31423d8deacb2c0e4c83b"
+    },
+    {
+      "path": "src/project7/audit_utils.py",
+      "bytes": 1802,
+      "sha256": "38294a9de812555c7fe2d75694cf23c137d5ca9050814f9a7a26a9e7aeac7bc8"
+    },
+    {
+      "path": "src/project7/historical_context.py",
+      "bytes": 8103,
+      "sha256": "b1d4af90cc331a7f81f3fd4fa2c9ddc8ef7cb21529abac3401357664f9fcc0ac"
+    },
+    {
+      "path": "src/project7/p4_02_pipeline.py",
+      "bytes": 7892,
+      "sha256": "e31b1daec7b788e3d2fb111f7dfaa22dcee2f12310430965daa8aeaa7ead03bf"
+    },
+    {
+      "path": "src/project7/profile_loader.py",
+      "bytes": 5417,
+      "sha256": "b8d64f3d4816cbabee921e38d4ed29e74caa25a597558373283360c30f9217cb"
+    },
+    {
+      "path": "src/project7/service_alignment.py",
+      "bytes": 9976,
+      "sha256": "d9b72b329f1cce136c67d6a6e4e4d72246f289fa54d4dac8d5388fdc1ce38d6d"
+    },
+    {
+      "path": "tests/__init__.py",
+      "bytes": 30,
+      "sha256": "e11cb4c2bb5199a73eb59adf19501d231f867da13c5fe156fbf64e0984e8931d"
+    },
+    {
+      "path": "tests/run_p4_02_validation.py",
+      "bytes": 3510,
+      "sha256": "cd5789212deddceced62ce22e03d7b4ca2230f7d4d467d668e7ccf1d21476a79"
+    },
+    {
+      "path": "tests/test_alignment_history.py",
+      "bytes": 7089,
+      "sha256": "6ef787205b4045e874a3a53deb3012c086d1d92bf4257d56f06725703fa8f188"
+    }
+  ]
+}

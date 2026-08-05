@@ -1,0 +1,45 @@
+{
+  "context_schema_version": "1.0.0",
+  "case_id": "CASE-D850D326D21B745D",
+  "source_period": {
+    "start_date": "2021-07-01",
+    "end_date": "2026-06-30"
+  },
+  "source_records": 29646,
+  "matched_historical_records": 122,
+  "service_category_counts": {
+    "IT Consulting & Staff Augmentation": 20,
+    "Organizational Change, Training & Process": 14,
+    "Project Management, IV&V & Quality": 9,
+    "Software Development & Systems Integration": 79
+  },
+  "staffing_family_counts": {
+    "Advisory, Assurance & Change": 43,
+    "Technology Delivery": 79
+  },
+  "source_asset_checksums": {
+    "analysis_summary.json": "95a3d060abca97638a3aa6da6cc1899bc6ccfa23e62a8c204bdf037d60d226c4",
+    "historical_service_context.csv": "94a98461ff71fcfa889e7b0a48f6f7c9a775411eeac9cee902f468e1145534af"
+  },
+  "interpretation": "The frozen Project 2 dataset contains 29,646 records, including 176 title-classified ICM-relevant records. The current alignment maps to 122 historical records across 4 configured service categories. This is descriptive directional context only and does not predict award likelihood, contract value, labor demand, or current capacity.",
+  "limitations": [
+    {
+      "code": "DESCRIPTIVE_ONLY",
+      "description": "Historical counts summarize a frozen 2021-07-01 through 2026-06-30 procurement dataset and are not predictive.",
+      "material": true,
+      "mitigation": "Use current solicitation evidence and authorized human judgment."
+    },
+    {
+      "code": "TITLE_CLASSIFICATION_LIMIT",
+      "description": "The source records were identified using transparent title-based rules and may not reflect complete solicitation scope.",
+      "material": true,
+      "mitigation": "Treat counts as directional context and review current full-text evidence."
+    },
+    {
+      "code": "NOT_CAPACITY_OR_AWARD_FORECAST",
+      "description": "The counts do not measure contract value, labor hours, current staffing capacity, eligibility, or award probability.",
+      "material": true,
+      "mitigation": "Verify current capacity, qualifications, and pursuit decisions separately."
+    }
+  ]
+}

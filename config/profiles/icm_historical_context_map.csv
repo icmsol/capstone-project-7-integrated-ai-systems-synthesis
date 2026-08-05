@@ -1,0 +1,9 @@
+organization_id,artifact_version,service_family_id,project2_service_category,active
+ICMSOL,1.0.0,SF01,IT Consulting & Staff Augmentation,TRUE
+ICMSOL,1.0.0,SF02,Software Development & Systems Integration,TRUE
+ICMSOL,1.0.0,SF03,"Project Management, IV&V & Quality",TRUE
+ICMSOL,1.0.0,SF04,"Project Management, IV&V & Quality",TRUE
+ICMSOL,1.0.0,SF05,Software Development & Systems Integration,TRUE
+ICMSOL,1.0.0,SF06,"Organizational Change, Training & Process",TRUE
+ICMSOL,1.0.0,SF07,IT Consulting & Staff Augmentation,TRUE
+ICMSOL,1.0.0,SF08,IT Consulting & Staff Augmentation,TRUE

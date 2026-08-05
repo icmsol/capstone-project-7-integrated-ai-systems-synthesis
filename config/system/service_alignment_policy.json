@@ -1,0 +1,30 @@
+{
+  "policy_schema_version": "1.0.0",
+  "policy_id": "PROJECT7-SERVICE-ALIGNMENT-POLICY",
+  "matching_order": [
+    "exclusion_terms",
+    "strong_match_phrases",
+    "positive_keywords"
+  ],
+  "match_strength_weights": {
+    "strong": 1.0,
+    "moderate": 0.65,
+    "weak": 0.35
+  },
+  "alignment_thresholds": {
+    "strong_alignment": 0.75,
+    "conditional_alignment": 0.45,
+    "weak_alignment": 0.2,
+    "no_alignment": 0.0
+  },
+  "strong_alignment_minimum_capabilities": 2,
+  "minimum_meaningful_text_characters": 20,
+  "maximum_matched_capabilities": 12,
+  "material_values_may_be_inferred": false,
+  "award_probability_prohibited": true,
+  "capacity_claim_prohibited": true,
+  "eligibility_claim_prohibited": true,
+  "named_staff_commitment_prohibited": true,
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required.",
+  "multiword_positive_keyword_is_strong": true
+}

@@ -1,0 +1,11 @@
+requirement_id,requirement,implementation,validation,status
+P4-02-R01,Load an active organization profile and all referenced artifacts.,load_organization_profile,ICM: 54 capabilities / 8 families; fictional: 3 capabilities / 3 families.,Implemented
+P4-02-R02,Use the same executable logic for ICM and an alternate profile.,Profile paths and CSV/JSON configuration drive all matching.,Same opportunity yields strong ICM alignment and no fictional alignment.,Implemented
+P4-02-R03,Apply exclusion-first transparent service matching.,Exclusion terms are evaluated before strong phrases and keywords.,Configured website-content exclusion blocks ICM-CDI-003.,Implemented
+P4-02-R04,"Record exact matched terms, strength, and evidence text.",service_alignment matched_capabilities contains all trace data.,5 representative matches.,Implemented
+P4-02-R05,Map matched services to configured staffing families.,Profile-specific staffing_map.csv lookup.,Application and Integration Delivery; Change and Learning; Program Delivery and Oversight; Strategy and Architecture,Implemented
+P4-02-R06,Attach checksum-verified Project 2 historical context.,Derived deidentified aggregate plus asset registry and checksums.,122 matched historical records.,Implemented
+P4-02-R07,Keep historical interpretation descriptive and non-predictive.,Mandatory DESCRIPTIVE_ONLY and NOT_CAPACITY_OR_AWARD_FORECAST limits.,Historical limitation tests pass.,Implemented
+P4-02-R08,Continue the integrated case state and audit hash chain.,Case advances to analysis_in_progress and adds three audit events.,5 total audit references.,Implemented
+P4-02-R09,Fail safely when a historical asset checksum changes.,HISTORICAL_ASSET_MISSING with warn_and_continue behavior.,Checksum-mutation unit test passes.,Implemented
+P4-02-R10,"Make no award, eligibility, capacity, staffing, or external-action claim.",Fixed policy and output limitations prohibit these conclusions.,External actions performed: 0.,Implemented

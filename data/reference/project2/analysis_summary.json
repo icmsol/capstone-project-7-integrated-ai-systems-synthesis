@@ -1,0 +1,22 @@
+{
+  "historical_period_start": "2021-07-01",
+  "historical_period_end": "2026-06-30",
+  "historical_rows": 29646,
+  "state_rows": 28107,
+  "city_rows": 1227,
+  "county_rows": 312,
+  "icm_relevant_rows": 176,
+  "icm_relevant_rate": 0.005936719962220873,
+  "technology_delivery_rows": 133,
+  "advisory_assurance_change_rows": 43,
+  "chi_square_statistic": 0.9502438225111562,
+  "degrees_of_freedom": 3,
+  "p_value": 0.8132889481698644,
+  "minimum_expected_count": 7.573863636363637,
+  "cramers_v": 0.07347865423307844,
+  "current_open_rows": 306,
+  "current_icm_relevant_rows": 5,
+  "source_repository": "https://github.com/icmsol/Capstone-project-2-statistical-analysis",
+  "source_artifact": "https://raw.githubusercontent.com/icmsol/Capstone-project-2-statistical-analysis/main/data/processed/analysis_summary.json",
+  "interpretive_boundary": "Directional historical evidence only. Counts do not establish contract value, labor hours, current capacity, eligibility, scope fit, award probability, or a final pursuit decision."
+}

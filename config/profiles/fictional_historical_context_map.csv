@@ -1,0 +1,4 @@
+organization_id,artifact_version,service_family_id,project2_service_category,active
+RCALABS,1.0.0,FSF01,"Data, Analytics & AI",TRUE
+RCALABS,1.0.0,FSF02,"Cloud, Infrastructure & Cybersecurity",TRUE
+RCALABS,1.0.0,FSF03,"Data, Analytics & AI",TRUE

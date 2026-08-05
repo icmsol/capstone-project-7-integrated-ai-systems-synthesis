@@ -1,0 +1,85 @@
+{
+  "alignment_schema_version": "1.0.0",
+  "case_id": "CASE-D850D326D21B745D",
+  "organization_id": "ICMSOL",
+  "profile_version": "1.0.0",
+  "service_catalog_version": "1.0.0",
+  "matched_capabilities": [
+    {
+      "capability_id": "ICM-PM-001",
+      "capability_name": "Project and Program Management",
+      "service_family_id": "SF03",
+      "matched_terms": [
+        "program management"
+      ],
+      "match_strength": "strong",
+      "evidence_text": "Opportunity text matched configured terms for Project and Program Management: program management"
+    },
+    {
+      "capability_id": "ICM-OCM-005",
+      "capability_name": "Technical Training and Knowledge Transfer",
+      "service_family_id": "SF06",
+      "matched_terms": [
+        "technical training"
+      ],
+      "match_strength": "strong",
+      "evidence_text": "Opportunity text matched configured terms for Technical Training and Knowledge Transfer: technical training"
+    },
+    {
+      "capability_id": "ICM-ITS-001",
+      "capability_name": "IT Strategic Planning",
+      "service_family_id": "SF01",
+      "matched_terms": [
+        "it strategy"
+      ],
+      "match_strength": "strong",
+      "evidence_text": "Opportunity text matched configured terms for IT Strategic Planning: it strategy"
+    },
+    {
+      "capability_id": "ICM-CDI-005",
+      "capability_name": "Systems Integration and API Enablement",
+      "service_family_id": "SF02",
+      "matched_terms": [
+        "systems integration"
+      ],
+      "match_strength": "strong",
+      "evidence_text": "Opportunity text matched configured terms for Systems Integration and API Enablement: systems integration"
+    },
+    {
+      "capability_id": "ICM-PM-006",
+      "capability_name": "Waterfall, Agile, Hybrid, and Client-Specific Delivery",
+      "service_family_id": "SF03",
+      "matched_terms": [
+        "agile"
+      ],
+      "match_strength": "weak",
+      "evidence_text": "Opportunity text matched configured terms for Waterfall, Agile, Hybrid, and Client-Specific Delivery: agile"
+    }
+  ],
+  "excluded_matches": [],
+  "alignment_score": 1.0,
+  "alignment_label": "strong_alignment",
+  "staffing_families": [
+    "Application and Integration Delivery",
+    "Change and Learning",
+    "Program Delivery and Oversight",
+    "Strategy and Architecture"
+  ],
+  "reason_codes": [
+    "ALIGNMENT_STRONG"
+  ],
+  "limitations": [
+    {
+      "code": "SCREENING_NOT_DECISION",
+      "description": "Configuration-driven term alignment is a transparent screening input, not a complete scope, capacity, eligibility, award-probability, or final pursuit decision.",
+      "material": true,
+      "mitigation": "Review the full solicitation, qualifications, current availability, and authoritative evidence before a human decision."
+    },
+    {
+      "code": "TEXT_MATCH_LIMIT",
+      "description": "The assessment evaluates configured terms in normalized opportunity text and may miss implied or differently worded scope.",
+      "material": true,
+      "mitigation": "Use human review and later evidence retrieval to confirm or reject the preliminary service alignment."
+    }
+  ]
+}

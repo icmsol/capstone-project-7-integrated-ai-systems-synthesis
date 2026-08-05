@@ -1,0 +1,18 @@
+{
+  "registry_schema_version": "1.0.0",
+  "registry_id": "PROJECT7-HISTORICAL-CONTEXT-MAPPING-REGISTRY",
+  "mappings": [
+    {
+      "organization_id": "ICMSOL",
+      "mapping_file": "icm_historical_context_map.csv",
+      "comparability": "directional_with_limitations",
+      "notes": "Project 2 rules were designed for ICM-relevant title classification; use only as descriptive context."
+    },
+    {
+      "organization_id": "RCALABS",
+      "mapping_file": "fictional_historical_context_map.csv",
+      "comparability": "portability_test_only",
+      "notes": "Fictional organization mapping tests configuration portability and must not be treated as real-company evidence."
+    }
+  ]
+}

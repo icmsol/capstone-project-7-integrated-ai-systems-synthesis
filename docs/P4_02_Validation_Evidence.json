@@ -1,0 +1,51 @@
+{
+  "artifact_id": "PROJECT7-P4-02-VALIDATION-EVIDENCE",
+  "artifact_version": "1.0.0",
+  "validated_at_utc": "2026-08-05T16:46:56.282879+00:00",
+  "validation_status": "PASS",
+  "command": "python tests/run_p4_02_validation.py",
+  "stdout": "Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/generated/interface/models.py\", line 30820, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/rpc/remote.py\", line 749, in __call__\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/rpc/client.py\", line 150, in call\nartifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.\ntest_asset_checksum_change_warns_and_stops_context_use (tests.test_alignment_history.AlignmentHistoryTests.test_asset_checksum_change_warns_and_stops_context_use) ... ok\ntest_exclusion_first_blocks_positive_capability (tests.test_alignment_history.AlignmentHistoryTests.test_exclusion_first_blocks_positive_capability) ... ok\ntest_historical_context_is_descriptive_and_checksum_verified (tests.test_alignment_history.AlignmentHistoryTests.test_historical_context_is_descriptive_and_checksum_verified) ... ok\ntest_profile_loader_is_configuration_driven (tests.test_alignment_history.AlignmentHistoryTests.test_profile_loader_is_configuration_driven) ... ok\ntest_same_opportunity_changes_by_profile_without_code_change (tests.test_alignment_history.AlignmentHistoryTests.test_same_opportunity_changes_by_profile_without_code_change) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.100s\n\nOK\nICM active capabilities / service families: 54 / 8\nICM alignment: strong_alignment / 1.0000\nFictional profile alignment: no_alignment / 0.0000\nMatched historical records: 122\nHistorical context descriptive only: PASS\nProfile portability without code changes: PASS\nAudit hash-chain continuation: PASS\nExternal actions performed: 0\n",
+  "checks": {
+    "unit_tests_passed": 5,
+    "icm_active_capabilities": 54,
+    "icm_service_families": 8,
+    "fictional_active_capabilities": 3,
+    "fictional_service_families": 3,
+    "same_code_portability": true,
+    "exclusion_first_precedence": true,
+    "service_alignment_schema_valid": true,
+    "historical_context_schema_valid": true,
+    "integrated_case_state_schema_valid": true,
+    "historical_asset_checksums_valid": true,
+    "audit_events_schema_valid": 3,
+    "audit_hash_chain_continued": true,
+    "external_actions_performed": 0
+  },
+  "representative_results": {
+    "icm_alignment_label": "strong_alignment",
+    "icm_alignment_score": 1.0,
+    "matched_capabilities": 5,
+    "staffing_families": [
+      "Application and Integration Delivery",
+      "Change and Learning",
+      "Program Delivery and Oversight",
+      "Strategy and Architecture"
+    ],
+    "fictional_alignment_label": "no_alignment",
+    "fictional_alignment_score": 0.0,
+    "historical_source_records": 29646,
+    "matched_historical_records": 122,
+    "service_category_counts": {
+      "IT Consulting & Staff Augmentation": 20,
+      "Organizational Change, Training & Process": 14,
+      "Project Management, IV&V & Quality": 9,
+      "Software Development & Systems Integration": 79
+    },
+    "staffing_family_counts": {
+      "Advisory, Assurance & Change": 43,
+      "Technology Delivery": 79
+    },
+    "case_status": "analysis_in_progress"
+  },
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

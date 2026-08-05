@@ -1,0 +1,29 @@
+{
+  "alignment_schema_version": "1.0.0",
+  "case_id": "CASE-D850D326D21B745D",
+  "organization_id": "RCALABS",
+  "profile_version": "1.0.0",
+  "service_catalog_version": "1.0.0",
+  "matched_capabilities": [],
+  "excluded_matches": [],
+  "alignment_score": 0.0,
+  "alignment_label": "no_alignment",
+  "staffing_families": [],
+  "reason_codes": [
+    "ALIGNMENT_NONE"
+  ],
+  "limitations": [
+    {
+      "code": "SCREENING_NOT_DECISION",
+      "description": "Configuration-driven term alignment is a transparent screening input, not a complete scope, capacity, eligibility, award-probability, or final pursuit decision.",
+      "material": true,
+      "mitigation": "Review the full solicitation, qualifications, current availability, and authoritative evidence before a human decision."
+    },
+    {
+      "code": "TEXT_MATCH_LIMIT",
+      "description": "The assessment evaluates configured terms in normalized opportunity text and may miss implied or differently worded scope.",
+      "material": true,
+      "mitigation": "Use human review and later evidence retrieval to confirm or reject the preliminary service alignment."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "policy_schema_version": "1.0.0",
+  "policy_id": "PROJECT7-HISTORICAL-CONTEXT-POLICY",
+  "asset_registry_path": "data/reference/project2/project2_asset_registry.json",
+  "analysis_summary_path": "data/reference/project2/analysis_summary.json",
+  "historical_aggregate_path": "data/reference/project2/historical_service_context.csv",
+  "mapping_registry_path": "config/system/historical_context_mapping_registry.json",
+  "checksum_required": true,
+  "descriptive_only": true,
+  "continue_when_not_comparable": true,
+  "prohibited_interpretations": [
+    "award probability",
+    "current staffing capacity",
+    "contract value",
+    "labor hours",
+    "eligibility",
+    "complete scope fit",
+    "current demand forecast"
+  ],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}
