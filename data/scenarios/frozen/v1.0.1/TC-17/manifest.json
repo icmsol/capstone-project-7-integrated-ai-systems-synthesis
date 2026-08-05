@@ -1,0 +1,89 @@
+{
+  "manifest_schema_version": "1.0.1",
+  "case_id": "CASE-TC-17",
+  "case_name": "Alternate profile changes fit without code changes",
+  "freeze_version": "1.0.1",
+  "freeze_timestamp_utc": "2026-08-05T16:10:00Z",
+  "reference_profile": "fictional_alternate",
+  "execution_mode": "profile_comparison",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "4e7fceda9a9b9e517c985ff7a5b4260422f126fc44d839e75a05ef60770c7f3f",
+      "bytes": 1115,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "4c9f05f13f71891221af452fbc9b9df9badf20a2c9921aadc778081128f4cc34",
+      "bytes": 218,
+      "role": "organization profile reference"
+    },
+    {
+      "path": "inputs/opportunity_source.txt",
+      "sha256": "909558f2f5fd82c6923db153ab746ea213221db9c72ab67ce383450d8eac28f2",
+      "bytes": 423,
+      "role": "synthetic opportunity source snapshot"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "2e45fed16b2856a4ba35a3392b082b8bdd05882dcbeb4912c9a02c74c010d83b",
+      "bytes": 1920,
+      "role": "schema-valid normalized opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "1e95803ff38f89f0b1133fb88b8f33525a3734ee7024d96bf3a8b66d8d1b7d8d",
+      "bytes": 54,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "5d0df89315e7cfcd371c80f518a08b9aeebcf2cfe5e7f157bd16c7b82b52996f",
+      "bytes": 225,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "2f6eed66b367538c678a7f2302c6f6eacfffe212c55b4280c8f8394404e5730e",
+      "bytes": 150,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "b5a82a3f183fae04600f6873b07db36bfad42b5c5c2b801cc0c45c16cf7fead7",
+      "bytes": 74,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "e70ceb111eea5d49e24721a6174ade2eff8231f56259f3b536cda914bc1a291f",
+      "bytes": 748,
+      "role": "schema-valid human disposition wrapper"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "d721d8ecd004d14205bc5531cfd935c23a9222c636bd7f24dac46ffb1c5d11d1",
+      "bytes": 108,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "0aac47caf52e8e065d8c1d62d655e63e2480e971468b70d1e0f7951bce1bb101",
+      "bytes": 4750,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "finalized_reject",
+  "expected_recommendation_code": "R-04",
+  "expected_primary_stage_id": "STG-03",
+  "expected_primary_stage": "assess_service_alignment",
+  "expected_component": "service_alignment_engine",
+  "expected_reason_codes": [
+    "HUMAN_DECISION_REQUIRED"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}

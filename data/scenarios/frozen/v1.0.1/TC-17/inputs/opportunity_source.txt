@@ -1,0 +1,9 @@
+Case: TC-17
+Title: Enterprise IT Strategy, Program Management, and Systems Integration Support
+Agency: Synthetic California Public Agency
+Solicitation: SYN-TC-17
+Status: Open
+Posted: 2026-08-01
+Due: 2026-09-15
+Description: Provide enterprise systems integration and public-sector program-management support. The fictional alternate profile does not offer these services.
+Fixture classification: synthetic evaluation source

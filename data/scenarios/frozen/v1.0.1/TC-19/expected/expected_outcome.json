@@ -1,0 +1,153 @@
+{
+  "expected_outcome_schema_version": "1.0.1",
+  "case_id": "CASE-TC-19",
+  "expected_terminal_outcome": "failed_closed",
+  "expected_case_status": "failed_closed",
+  "expected_primary_stage_id": "STG-07",
+  "expected_primary_stage": "retrieve_official_evidence",
+  "expected_component": "official_evidence_retriever",
+  "expected_recommendation_code": null,
+  "expected_recommendation_label": null,
+  "expected_reason_codes": [
+    "CORPUS_NOT_APPROVED"
+  ],
+  "expected_human_route": "Data or Contracts Reviewer",
+  "expected_audit_events": [
+    "processing_failed"
+  ],
+  "required_evidence_classes": [
+    "official_source",
+    "policy_validation",
+    "audit_chain"
+  ],
+  "must_occur": [
+    "Corpus approval failure identifies the missing governance evidence.",
+    "Case stops before authoritative evidence is returned."
+  ],
+  "must_not_occur": [
+    "No unapproved content is labeled authoritative.",
+    "No semantic fallback bypasses corpus approval.",
+    "No production-readiness claim appears."
+  ],
+  "acceptance_target_ids": [
+    "AT-03",
+    "AT-06",
+    "AT-09",
+    "AT-17"
+  ],
+  "safeguard_control_ids": [
+    "SG-015",
+    "SG-016",
+    "SG-027",
+    "SG-030"
+  ],
+  "assertions": [
+    {
+      "assertion_id": "AS-TC-19-TERM",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.terminal_outcome",
+      "expected_value": "failed_closed",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-19-STATUS",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.case_status",
+      "expected_value": "failed_closed",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-19-STAGEID",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_stage_id",
+      "expected_value": "STG-07",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-19-STAGE",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_stage",
+      "expected_value": "retrieve_official_evidence",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-19-COMP",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_component",
+      "expected_value": "official_evidence_retriever",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-19-REASON",
+      "assertion_type": "contains_all",
+      "target_path": "$.case_state.reason_codes",
+      "expected_value": [
+        "CORPUS_NOT_APPROVED"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-19-AUDIT",
+      "assertion_type": "contains_all",
+      "target_path": "$.audit.event_types",
+      "expected_value": [
+        "processing_failed"
+      ],
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-19-SCHEMA",
+      "assertion_type": "schema_valid",
+      "target_path": "$.artifacts.schema_valid",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-19-CHECK",
+      "assertion_type": "checksum_valid",
+      "target_path": "$.artifacts.checksum_valid",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-19-NOEXT",
+      "assertion_type": "contains_none",
+      "target_path": "$.side_effects",
+      "expected_value": [
+        "email_sent",
+        "proposal_submitted",
+        "contract_accepted",
+        "purchase_executed",
+        "staff_committed"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-19-BOUND",
+      "assertion_type": "contains_none",
+      "target_path": "$.claims",
+      "expected_value": [
+        "production_ready",
+        "legally_authoritative",
+        "award_probability",
+        "autonomous_approval"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-19-NOREC",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.recommendation_code",
+      "expected_value": null,
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-19-ROUTE",
+      "assertion_type": "equals",
+      "target_path": "$.routing.expected_human_route",
+      "expected_value": "Data or Contracts Reviewer",
+      "severity": "major"
+    }
+  ],
+  "result_status": "not_executed_target_only"
+}

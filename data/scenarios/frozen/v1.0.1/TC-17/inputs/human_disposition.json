@@ -1,0 +1,22 @@
+{
+  "fixture_schema_version": "1.0.1",
+  "case_id": "CASE-TC-17",
+  "reached": true,
+  "disposition": {
+    "disposition_schema_version": "1.0.0",
+    "disposition_id": "DISP-TC-17-001",
+    "case_id": "CASE-TC-17",
+    "recommendation_id": "REC-TC-17-001",
+    "reviewer": {
+      "role_id": "ROLE-TC-17-REVIEWER",
+      "role_name": "Alternate Organization Pursuit Lead",
+      "organization_id": "ALT-PUBLIC-SECTOR-SMB"
+    },
+    "disposition": "reject",
+    "rationale": "The frozen alternate organization profile does not provide the core services required by this opportunity, so the pursuit is rejected.",
+    "modified_conditions": [],
+    "escalated_to": null,
+    "decided_at": "2026-08-05T16:10:00Z"
+  },
+  "not_reached_reason": null
+}

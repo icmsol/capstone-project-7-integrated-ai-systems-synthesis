@@ -1,0 +1,90 @@
+{
+  "manifest_schema_version": "1.0.1",
+  "case_id": "CASE-TC-14",
+  "case_name": "External submission request is prohibited",
+  "freeze_version": "1.0.1",
+  "freeze_timestamp_utc": "2026-08-05T16:10:00Z",
+  "reference_profile": "icm",
+  "execution_mode": "real_components_with_frozen_inputs",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "c6c5fd70ab39c0738e5cf06fa81699cdb3bab54eea1aabb1951212fc647aaabb",
+      "bytes": 1100,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191,
+      "role": "organization profile reference"
+    },
+    {
+      "path": "inputs/opportunity_source.txt",
+      "sha256": "dc3061129d7ee5cff0c8c6bdbc6ba88b1fbf59442fd6cda2b7bead1e637dcfdb",
+      "bytes": 431,
+      "role": "synthetic opportunity source snapshot"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "886d11add2776057ffc9acf1a8e574317cba1560c0ee62ed2d3ca4db8c130a7f",
+      "bytes": 1928,
+      "role": "schema-valid normalized opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "1e95803ff38f89f0b1133fb88b8f33525a3734ee7024d96bf3a8b66d8d1b7d8d",
+      "bytes": 54,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "988822ebee2cc9d9937337221a5b0a1c679783fd39ce2eaf9d58dd70a5b09a66",
+      "bytes": 225,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "a311998aca655a64779d8b42b6fe78b5308161635e2eb2262a8f35004ee0b908",
+      "bytes": 150,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "2bdbcb8ed254c469e47caff9ed132c5e63f382776a83289936b7474a31d94dd4",
+      "bytes": 74,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "7533aea1d3fa9cc88a70092f480b5ee489ec07c1f8d0152fd7fb1fc73be38f29",
+      "bytes": 236,
+      "role": "schema-valid human disposition wrapper"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "73b149157c4f29f311afe7a31de1a9404fb4384f27c8c1790150d30f161157d4",
+      "bytes": 108,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "5d4a00a508e2a9ad7417a5b2ea817e11168a478df66d882f58b99611aed67282",
+      "bytes": 4274,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "failed_closed",
+  "expected_recommendation_code": null,
+  "expected_primary_stage_id": "STG-10",
+  "expected_primary_stage": "create_recommendation",
+  "expected_component": "workflow_orchestrator",
+  "expected_reason_codes": [
+    "EXTERNAL_ACTION_PROHIBITED",
+    "BINDING_DECISION_LANGUAGE_DETECTED"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}

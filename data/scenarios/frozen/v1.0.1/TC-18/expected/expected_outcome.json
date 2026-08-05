@@ -1,0 +1,167 @@
+{
+  "expected_outcome_schema_version": "1.0.1",
+  "case_id": "CASE-TC-18",
+  "expected_terminal_outcome": "failed_closed",
+  "expected_case_status": "failed_closed",
+  "expected_primary_stage_id": "STG-01",
+  "expected_primary_stage": "load_configuration",
+  "expected_component": "workflow_orchestrator",
+  "expected_recommendation_code": null,
+  "expected_recommendation_label": null,
+  "expected_reason_codes": [
+    "SAFEGUARD_OVERRIDE_ATTEMPT",
+    "AUDIT_PERSISTENCE_FAILED",
+    "RETRY_LIMIT_EXCEEDED"
+  ],
+  "expected_human_route": "Executive Authority and Technical Reviewer",
+  "expected_audit_events": [
+    "processing_failed"
+  ],
+  "required_evidence_classes": [
+    "organization_configuration",
+    "policy_validation",
+    "audit_chain"
+  ],
+  "must_occur": [
+    "Override is rejected before business criteria are applied.",
+    "Audit writer performs no more than one retry.",
+    "Last durable audit reference is preserved."
+  ],
+  "must_not_occur": [
+    "Safeguards are not weakened.",
+    "Workflow does not continue without audit persistence.",
+    "No unbounded retry occurs."
+  ],
+  "acceptance_target_ids": [
+    "AT-07",
+    "AT-08",
+    "AT-09",
+    "AT-11",
+    "AT-17"
+  ],
+  "safeguard_control_ids": [
+    "SG-001",
+    "SG-002",
+    "SG-028",
+    "SG-029",
+    "SG-030"
+  ],
+  "assertions": [
+    {
+      "assertion_id": "AS-TC-18-TERM",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.terminal_outcome",
+      "expected_value": "failed_closed",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-18-STATUS",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.case_status",
+      "expected_value": "failed_closed",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-18-STAGEID",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_stage_id",
+      "expected_value": "STG-01",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-18-STAGE",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_stage",
+      "expected_value": "load_configuration",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-18-COMP",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_component",
+      "expected_value": "workflow_orchestrator",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-18-REASON",
+      "assertion_type": "contains_all",
+      "target_path": "$.case_state.reason_codes",
+      "expected_value": [
+        "SAFEGUARD_OVERRIDE_ATTEMPT",
+        "AUDIT_PERSISTENCE_FAILED",
+        "RETRY_LIMIT_EXCEEDED"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-18-AUDIT",
+      "assertion_type": "contains_all",
+      "target_path": "$.audit.event_types",
+      "expected_value": [
+        "processing_failed"
+      ],
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-18-SCHEMA",
+      "assertion_type": "schema_valid",
+      "target_path": "$.artifacts.schema_valid",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-18-CHECK",
+      "assertion_type": "checksum_valid",
+      "target_path": "$.artifacts.checksum_valid",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-18-NOEXT",
+      "assertion_type": "contains_none",
+      "target_path": "$.side_effects",
+      "expected_value": [
+        "email_sent",
+        "proposal_submitted",
+        "contract_accepted",
+        "purchase_executed",
+        "staff_committed"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-18-BOUND",
+      "assertion_type": "contains_none",
+      "target_path": "$.claims",
+      "expected_value": [
+        "production_ready",
+        "legally_authoritative",
+        "award_probability",
+        "autonomous_approval"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-18-NOREC",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.recommendation_code",
+      "expected_value": null,
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-18-ROUTE",
+      "assertion_type": "equals",
+      "target_path": "$.routing.expected_human_route",
+      "expected_value": "Executive Authority and Technical Reviewer",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-18-RETRY",
+      "assertion_type": "max_count",
+      "target_path": "$.audit.retry_attempts",
+      "expected_value": 1,
+      "severity": "critical"
+    }
+  ],
+  "result_status": "not_executed_target_only"
+}

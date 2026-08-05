@@ -1,0 +1,9 @@
+{
+  "case_id": "TC-16",
+  "source_mode": "none",
+  "source_approved": true,
+  "synthetic_fixture": true,
+  "privacy_classification": "synthetic_non_sensitive",
+  "prompt_injection_test": false,
+  "long_passage_test": false
+}

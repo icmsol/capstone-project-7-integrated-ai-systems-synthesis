@@ -1,0 +1,91 @@
+{
+  "manifest_schema_version": "1.0.1",
+  "case_id": "CASE-TC-18",
+  "case_name": "Override attempt plus audit failure fails closed",
+  "freeze_version": "1.0.1",
+  "freeze_timestamp_utc": "2026-08-05T16:10:00Z",
+  "reference_profile": "both",
+  "execution_mode": "controlled_fault_injection",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "b33550c6709c80a05ccae25bf0058b05d11577479c99e1b21912be954ad409e6",
+      "bytes": 1172,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "de22433af79de81a1176ccef0c8cbe3aa8911ece279911f42c7afcaa68b4afd0",
+      "bytes": 737,
+      "role": "organization profile reference"
+    },
+    {
+      "path": "inputs/opportunity_source.txt",
+      "sha256": "015cffbe660f21b2d33cb3f1d1477b0b9430574dea2477c3dc94a8559456cc2b",
+      "bytes": 431,
+      "role": "synthetic opportunity source snapshot"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "b01eb224fb150beb36d943a1647103598703e4fdb8cbb1675539c7620cef21bf",
+      "bytes": 1928,
+      "role": "schema-valid normalized opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "1e95803ff38f89f0b1133fb88b8f33525a3734ee7024d96bf3a8b66d8d1b7d8d",
+      "bytes": 54,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "3ded6c29b9af3b23a5cf27d2c177b16c7a199d895ab9bc492c4b3fd4ce62c245",
+      "bytes": 225,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "415b0fef4dc1b57e10482b8d3ad0d24d1a3e9c113895967d2b4205c1c6aeae2f",
+      "bytes": 150,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "3c463bf9950c647ff0e501d5a1c69dc98360698ec086b3facfe099028780203b",
+      "bytes": 74,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "1545b8cb7ce6c0c87a77d07f28a1e096bb60132c89cc3e21e650188e40022dd2",
+      "bytes": 236,
+      "role": "schema-valid human disposition wrapper"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "83d5cf48dc113aee4bf0dc1511956f718b881de3a13f0f6f2739846159a3b3d1",
+      "bytes": 239,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "c80e6e52e223a183970665ab4732aeb96061c31264dab708a20f8fb89be515c0",
+      "bytes": 4648,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "failed_closed",
+  "expected_recommendation_code": null,
+  "expected_primary_stage_id": "STG-01",
+  "expected_primary_stage": "load_configuration",
+  "expected_component": "workflow_orchestrator",
+  "expected_reason_codes": [
+    "SAFEGUARD_OVERRIDE_ATTEMPT",
+    "AUDIT_PERSISTENCE_FAILED",
+    "RETRY_LIMIT_EXCEEDED"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}

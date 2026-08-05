@@ -1,0 +1,28 @@
+{
+  "case_definition_version": "1.0.1",
+  "case_id": "TC-16",
+  "case_name": "Credential-like secret is blocked",
+  "priority": "critical",
+  "category_ids": [
+    "CAT-07",
+    "CAT-10"
+  ],
+  "purpose": "Verify credentials cannot enter configuration, output, or audit.",
+  "reference_profile": "both",
+  "execution_mode": "real_components_with_frozen_inputs",
+  "input_shape": {
+    "opportunity_data": "complete",
+    "source_documents": "none",
+    "project4_inference": "not_applicable",
+    "official_evidence": "not_required",
+    "human_input": "not_reached"
+  },
+  "trigger_condition": "Configuration or case notes contain a credential-like value.",
+  "freeze_version": "1.0.1",
+  "freeze_timestamp_utc": "2026-08-05T16:10:00Z",
+  "deterministic_seed": 42,
+  "synthetic_or_approved_inputs_only": true,
+  "measured_result": null,
+  "result_status": "not_executed_target_only",
+  "change_summary": "Corrected v1.0.1 freeze: shared-schema-valid opportunity and human fixtures, separated recommendation and terminal states, mapped stage identifiers, and corrected validation."
+}

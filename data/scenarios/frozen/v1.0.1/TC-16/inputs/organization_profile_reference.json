@@ -1,0 +1,21 @@
+{
+  "comparison_profiles": [
+    {
+      "profile_id": "ICMSOL",
+      "profile_path": "config/profiles/icm",
+      "profile_version": "1.0.0",
+      "profile_checksum_source": "repository_commit",
+      "fixed_safeguards_overridable": false
+    },
+    {
+      "profile_id": "ALT-PUBLIC-SECTOR-SMB",
+      "profile_path": "config/profiles/example_company",
+      "profile_version": "1.0.0",
+      "profile_checksum_source": "repository_commit",
+      "fixed_safeguards_overridable": false
+    }
+  ],
+  "same_code_required": true,
+  "synthetic_secret_marker": "REDACTED-SYNTHETIC-CREDENTIAL-MARKER-DO-NOT-USE",
+  "expected_secret_handling": "detect_without_persisting_raw_value"
+}
