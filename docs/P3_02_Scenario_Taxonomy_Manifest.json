@@ -1,0 +1,80 @@
+{
+  "artifact_id": "PROJECT7-P3-02-SCENARIO-TAXONOMY",
+  "artifact_version": "1.0.0",
+  "created_at_utc": "2026-08-05T01:13:13.359783+00:00",
+  "category_count": 11,
+  "case_count": 19,
+  "category_counts": {
+    "CAT-01": 2,
+    "CAT-02": 2,
+    "CAT-03": 4,
+    "CAT-04": 3,
+    "CAT-05": 2,
+    "CAT-06": 2,
+    "CAT-07": 2,
+    "CAT-08": 2,
+    "CAT-09": 3,
+    "CAT-10": 3,
+    "CAT-11": 3
+  },
+  "terminal_outcome_counts": {
+    "deferred": 4,
+    "escalated": 3,
+    "failed_closed": 6,
+    "finalized_accept": 1,
+    "finalized_accept_with_conditions": 1,
+    "finalized_reject": 1,
+    "no_recommendation": 3
+  },
+  "profile_counts": {
+    "both": 2,
+    "fictional_alternate": 1,
+    "icm": 16
+  },
+  "priority_counts": {
+    "critical": 13,
+    "high": 6
+  },
+  "acceptance_target_coverage_count": 18,
+  "safeguard_coverage_count": 27,
+  "validation_result": {
+    "schema_valid": true,
+    "taxonomy_valid": true,
+    "category_minimums_met": true,
+    "terminal_outcomes_complete": true,
+    "all_18_acceptance_targets_covered": true,
+    "safeguard_coverage_valid": true,
+    "invalid_taxonomy_rejected": true,
+    "invalid_error_count": 4
+  },
+  "files": [
+    {
+      "path": "config/schemas/scenario_taxonomy.schema.json",
+      "bytes": 11023
+    },
+    {
+      "path": "config/system/scenario_taxonomy_and_target_cases.json",
+      "bytes": 44175
+    },
+    {
+      "path": "docs/P3_02_Scenario_Category_Matrix.csv",
+      "bytes": 2169
+    },
+    {
+      "path": "docs/P3_02_Target_Case_Matrix.csv",
+      "bytes": 17241
+    },
+    {
+      "path": "docs/Scenario_Taxonomy_and_Target_Cases.md",
+      "bytes": 5564
+    },
+    {
+      "path": "tests/scenario_taxonomy_examples/invalid_scenario_taxonomy.json",
+      "bytes": 26604
+    },
+    {
+      "path": "tests/validate_scenario_taxonomy.py",
+      "bytes": 3055
+    }
+  ]
+}

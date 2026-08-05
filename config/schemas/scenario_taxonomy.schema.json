@@ -1,0 +1,417 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/scenario_taxonomy.schema.json",
+  "title": "Project 7 Scenario Taxonomy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "taxonomy_schema_version",
+    "taxonomy_id",
+    "purpose",
+    "design_principles",
+    "categories",
+    "target_cases",
+    "coverage_summary",
+    "p3_03_boundary"
+  ],
+  "properties": {
+    "taxonomy_schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "taxonomy_id": {
+      "type": "string",
+      "const": "PROJECT7-P3-02-SCENARIO-TAXONOMY"
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 40
+    },
+    "design_principles": {
+      "type": "array",
+      "minItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 15
+      }
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "category_id",
+          "category_name",
+          "category_type",
+          "objective",
+          "minimum_cases",
+          "primary_risks"
+        ],
+        "properties": {
+          "category_id": {
+            "type": "string",
+            "pattern": "^CAT-\\d{2}$"
+          },
+          "category_name": {
+            "type": "string",
+            "minLength": 5
+          },
+          "category_type": {
+            "type": "string",
+            "enum": [
+              "normal_operation",
+              "data_quality",
+              "model_behavior",
+              "evidence_behavior",
+              "security_privacy",
+              "governance",
+              "human_authority",
+              "portability",
+              "resilience"
+            ]
+          },
+          "objective": {
+            "type": "string",
+            "minLength": 20
+          },
+          "minimum_cases": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4
+          },
+          "primary_risks": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 5
+            }
+          }
+        }
+      }
+    },
+    "target_cases": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "case_id",
+          "case_name",
+          "category_ids",
+          "priority",
+          "purpose",
+          "reference_profile",
+          "input_shape",
+          "trigger_condition",
+          "expected_terminal_outcome",
+          "expected_primary_stage",
+          "expected_component",
+          "expected_reason_codes",
+          "expected_human_route",
+          "required_evidence_classes",
+          "expected_audit_events",
+          "must_occur",
+          "must_not_occur",
+          "acceptance_target_ids",
+          "safeguard_control_ids",
+          "p3_03_freeze_requirements"
+        ],
+        "properties": {
+          "case_id": {
+            "type": "string",
+            "pattern": "^TC-\\d{2}$"
+          },
+          "case_name": {
+            "type": "string",
+            "minLength": 8
+          },
+          "category_ids": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^CAT-\\d{2}$"
+            }
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "critical",
+              "high",
+              "medium"
+            ]
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 20
+          },
+          "reference_profile": {
+            "type": "string",
+            "enum": [
+              "icm",
+              "fictional_alternate",
+              "both"
+            ]
+          },
+          "input_shape": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "opportunity_data",
+              "source_documents",
+              "project4_inference",
+              "official_evidence",
+              "human_input"
+            ],
+            "properties": {
+              "opportunity_data": {
+                "type": "string",
+                "enum": [
+                  "complete",
+                  "ambiguous",
+                  "sparse",
+                  "complete_with_override_attempt"
+                ]
+              },
+              "source_documents": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "approved_clean",
+                  "approved_with_injection",
+                  "approved_with_sensitive_data",
+                  "approved_with_long_passage"
+                ]
+              },
+              "project4_inference": {
+                "type": "string",
+                "enum": [
+                  "not_applicable",
+                  "high_confidence",
+                  "low_confidence",
+                  "domain_shift",
+                  "invalid_package",
+                  "truncated_input"
+                ]
+              },
+              "official_evidence": {
+                "type": "string",
+                "enum": [
+                  "not_required",
+                  "sufficient_current",
+                  "missing_exact_citation",
+                  "stale",
+                  "material_conflict",
+                  "unapproved_corpus",
+                  "insufficient"
+                ]
+              },
+              "human_input": {
+                "type": "string",
+                "enum": [
+                  "authorized_complete",
+                  "authorized_modified_conditions",
+                  "authorized_defer",
+                  "unauthorized",
+                  "missing_rationale",
+                  "not_reached"
+                ]
+              }
+            }
+          },
+          "trigger_condition": {
+            "type": "string",
+            "minLength": 20
+          },
+          "expected_terminal_outcome": {
+            "type": "string",
+            "enum": [
+              "finalized_accept",
+              "finalized_accept_with_conditions",
+              "finalized_reject",
+              "deferred",
+              "escalated",
+              "failed_closed",
+              "no_recommendation"
+            ]
+          },
+          "expected_primary_stage": {
+            "type": "string",
+            "pattern": "^STG-\\d{2}$"
+          },
+          "expected_component": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]{2,63}$"
+          },
+          "expected_reason_codes": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Z][A-Z0-9_:-]{2,63}$"
+            }
+          },
+          "expected_human_route": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "required_evidence_classes": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "enum": [
+                "organization_configuration",
+                "opportunity_provenance",
+                "deterministic_alignment",
+                "historical_context",
+                "model_prediction",
+                "official_source",
+                "counterevidence",
+                "specialist_finding",
+                "human_disposition",
+                "audit_chain",
+                "policy_validation"
+              ]
+            }
+          },
+          "expected_audit_events": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 3
+            }
+          },
+          "must_occur": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 10
+            }
+          },
+          "must_not_occur": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string",
+              "minLength": 10
+            }
+          },
+          "acceptance_target_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^AT-\\d{2}$"
+            }
+          },
+          "safeguard_control_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^SG-\\d{3}$"
+            }
+          },
+          "p3_03_freeze_requirements": {
+            "type": "array",
+            "minItems": 3,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 8
+            }
+          }
+        }
+      }
+    },
+    "coverage_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_count",
+        "category_counts",
+        "terminal_outcome_counts",
+        "profile_counts",
+        "priority_counts",
+        "acceptance_target_coverage",
+        "safeguard_coverage"
+      ],
+      "properties": {
+        "case_count": {
+          "type": "integer",
+          "minimum": 16,
+          "maximum": 20
+        },
+        "category_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "terminal_outcome_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "profile_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "priority_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "acceptance_target_coverage": {
+          "type": "array",
+          "minItems": 15,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^AT-\\d{2}$"
+          }
+        },
+        "safeguard_coverage": {
+          "type": "array",
+          "minItems": 20,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^SG-\\d{3}$"
+          }
+        }
+      }
+    },
+    "p3_03_boundary": {
+      "type": "string",
+      "minLength": 80
+    }
+  }
+}

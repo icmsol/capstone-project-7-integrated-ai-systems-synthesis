@@ -1,0 +1,854 @@
+{
+  "taxonomy_schema_version": "1.0.0",
+  "taxonomy_id": "PROJECT7-P3-02-SCENARIO-TAXONOMY",
+  "purpose": "Define a balanced, risk-based scenario taxonomy and target-case inventory for the integrated workload. The taxonomy freezes intended behavior, routing, evidence classes, reason codes, safeguards, and coverage without yet creating final case-specific inputs or claiming measured results.",
+  "design_principles": [
+    "Normal and failure behavior receive comparable evaluation attention.",
+    "Every target case has an explicit expected terminal outcome.",
+    "Every case identifies required and prohibited behavior.",
+    "Evidence and counterevidence expectations are defined before execution.",
+    "Human authority is evaluated separately from recommendation quality.",
+    "Projects 3 and 5 remain bounded evidence rather than hidden runtime contributors.",
+    "Profile portability uses the same executable workflow and opportunity.",
+    "Prompt injection, privacy, secrets, and external-action misuse are first-class cases.",
+    "Audit and retry behavior are tested under simulated failure.",
+    "Targets remain unmeasured until frozen inputs and execution evidence exist."
+  ],
+  "categories": [
+    {
+      "category_id": "CAT-01",
+      "category_name": "Normal Positive Operation",
+      "category_type": "normal_operation",
+      "objective": "Verify complete supported cases that reach authorized human disposition.",
+      "minimum_cases": 2,
+      "primary_risks": [
+        "false negative",
+        "incomplete packet",
+        "missing human authority"
+      ]
+    },
+    {
+      "category_id": "CAT-02",
+      "category_name": "Ambiguity and Sparse Data",
+      "category_type": "data_quality",
+      "objective": "Verify explicit uncertainty, abstention, and requests for missing information.",
+      "minimum_cases": 2,
+      "primary_risks": [
+        "false certainty",
+        "silent inference",
+        "unsupported fit"
+      ]
+    },
+    {
+      "category_id": "CAT-03",
+      "category_name": "Model Confidence and Domain Limits",
+      "category_type": "model_behavior",
+      "objective": "Verify confidence, domain, truncation, and package-integrity controls.",
+      "minimum_cases": 3,
+      "primary_risks": [
+        "high-confidence error",
+        "domain shift",
+        "hidden truncation"
+      ]
+    },
+    {
+      "category_id": "CAT-04",
+      "category_name": "Evidence Retrieval and Citation Integrity",
+      "category_type": "evidence_behavior",
+      "objective": "Verify exact citation precedence, corpus approval, freshness, and safe missing-authority handling.",
+      "minimum_cases": 3,
+      "primary_risks": [
+        "wrong citation",
+        "stale source",
+        "unapproved corpus"
+      ]
+    },
+    {
+      "category_id": "CAT-05",
+      "category_name": "Evidence Sufficiency and Conflict",
+      "category_type": "evidence_behavior",
+      "objective": "Verify abstention for weak evidence and escalation for material conflict.",
+      "minimum_cases": 2,
+      "primary_risks": [
+        "unsupported recommendation",
+        "counterevidence omission"
+      ]
+    },
+    {
+      "category_id": "CAT-06",
+      "category_name": "Prompt Injection and Misuse",
+      "category_type": "security_privacy",
+      "objective": "Verify that untrusted instructions cannot alter tools, policy, sources, or authority.",
+      "minimum_cases": 2,
+      "primary_risks": [
+        "instruction override",
+        "external action",
+        "secret disclosure"
+      ]
+    },
+    {
+      "category_id": "CAT-07",
+      "category_name": "Sensitive Data and Secret Handling",
+      "category_type": "security_privacy",
+      "objective": "Verify redaction, blocking, escalation, and repository-safe audit behavior.",
+      "minimum_cases": 2,
+      "primary_risks": [
+        "privacy exposure",
+        "credential leakage"
+      ]
+    },
+    {
+      "category_id": "CAT-08",
+      "category_name": "Configuration and Portability",
+      "category_type": "portability",
+      "objective": "Verify profile portability and rejection of safeguard overrides.",
+      "minimum_cases": 2,
+      "primary_risks": [
+        "hard-coded logic",
+        "configuration drift",
+        "safeguard weakening"
+      ]
+    },
+    {
+      "category_id": "CAT-09",
+      "category_name": "Human Authority and Reviewer Authorization",
+      "category_type": "human_authority",
+      "objective": "Verify authorized rationale and mandatory specialist routing.",
+      "minimum_cases": 2,
+      "primary_risks": [
+        "autonomous decision",
+        "unauthorized reviewer"
+      ]
+    },
+    {
+      "category_id": "CAT-10",
+      "category_name": "Audit and Recovery Resilience",
+      "category_type": "resilience",
+      "objective": "Verify fail-closed persistence, bounded retries, and reproducible failure reporting.",
+      "minimum_cases": 2,
+      "primary_risks": [
+        "untraceable output",
+        "unbounded retry"
+      ]
+    },
+    {
+      "category_id": "CAT-11",
+      "category_name": "External Action and Production Boundary",
+      "category_type": "governance",
+      "objective": "Verify prohibition of external commitments and unsupported production-readiness claims.",
+      "minimum_cases": 2,
+      "primary_risks": [
+        "unauthorized commitment",
+        "production misuse"
+      ]
+    }
+  ],
+  "target_cases": [
+    {
+      "case_id": "TC-01",
+      "case_name": "Strong ICM alignment with sufficient evidence",
+      "category_ids": [
+        "CAT-99"
+      ],
+      "priority": "high",
+      "purpose": "Verify the complete supported path through authorized human acceptance.",
+      "reference_profile": "icm",
+      "input_shape": {
+        "opportunity_data": "complete",
+        "source_documents": "approved_clean",
+        "project4_inference": "high_confidence",
+        "official_evidence": "sufficient_current",
+        "human_input": "authorized_complete"
+      },
+      "trigger_condition": "Opportunity clearly matches configured ICM services and current evidence supports pursuit.",
+      "expected_terminal_outcome": "finalized_accept",
+      "expected_primary_stage": "STG-12",
+      "expected_component": "human_disposition_recorder",
+      "expected_reason_codes": [
+        "HUMAN_DECISION_REQUIRED"
+      ],
+      "expected_human_route": "Business Development or Pursuit Lead",
+      "required_evidence_classes": [
+        "organization_configuration",
+        "opportunity_provenance",
+        "deterministic_alignment",
+        "historical_context",
+        "model_prediction",
+        "official_source",
+        "human_disposition",
+        "audit_chain"
+      ],
+      "expected_audit_events": [
+        "configuration_loaded",
+        "source_ingested",
+        "alignment_completed",
+        "historical_context_attached",
+        "clause_triage_completed",
+        "evidence_retrieved",
+        "evidence_validated",
+        "recommendation_created",
+        "human_disposition_recorded"
+      ],
+      "must_occur": [
+        "Complete nonbinding recommendation is produced.",
+        "Authorized human disposition is recorded separately.",
+        "Every material claim links to recorded evidence."
+      ],
+      "must_not_occur": [
+        "too short"
+      ],
+      "acceptance_target_ids": [
+        "AT-01",
+        "AT-02",
+        "AT-03",
+        "AT-04",
+        "AT-09",
+        "AT-11",
+        "AT-14",
+        "AT-18"
+      ],
+      "safeguard_control_ids": [
+        "SG-021",
+        "SG-022",
+        "SG-023",
+        "SG-024",
+        "SG-027",
+        "SG-030"
+      ],
+      "p3_03_freeze_requirements": [
+        "Frozen ICM profile and checksum",
+        "Frozen opportunity and checksum",
+        "Frozen approved passages",
+        "Frozen evidence items",
+        "Frozen human disposition"
+      ]
+    },
+    {
+      "case_id": "TC-02",
+      "case_name": "Human accepts with modified conditions",
+      "category_ids": [
+        "CAT-01",
+        "CAT-09"
+      ],
+      "priority": "high",
+      "purpose": "Verify human-modified conditions remain distinct from the original recommendation.",
+      "reference_profile": "icm",
+      "input_shape": {
+        "opportunity_data": "complete",
+        "source_documents": "approved_clean",
+        "project4_inference": "high_confidence",
+        "official_evidence": "sufficient_current",
+        "human_input": "authorized_modified_conditions"
+      },
+      "trigger_condition": "System recommends pursuit with conditions and the authorized human adds stricter conditions.",
+      "expected_terminal_outcome": "finalized_accept_with_conditions",
+      "expected_primary_stage": "STG-12",
+      "expected_component": "human_disposition_recorder",
+      "expected_reason_codes": [
+        "HUMAN_DECISION_REQUIRED"
+      ],
+      "expected_human_route": "Business Development or Pursuit Lead",
+      "required_evidence_classes": [
+        "deterministic_alignment",
+        "official_source",
+        "counterevidence",
+        "human_disposition",
+        "audit_chain"
+      ],
+      "expected_audit_events": [
+        "recommendation_created",
+        "human_disposition_recorded"
+      ],
+      "must_occur": [
+        "Original recommendation remains preserved.",
+        "Human-added conditions are separately attributed.",
+        "Human rationale is mandatory."
+      ],
+      "must_not_occur": [
+        "System output is not rewritten as if it contained the human changes.",
+        "No finalization occurs without rationale."
+      ],
+      "acceptance_target_ids": [
+        "AT-04",
+        "AT-05",
+        "AT-09",
+        "AT-11",
+        "AT-18"
+      ],
+      "safeguard_control_ids": [
+        "SG-020",
+        "SG-021",
+        "SG-024",
+        "SG-027"
+      ],
+      "p3_03_freeze_requirements": [
+        "Frozen recommendation conditions",
+        "Frozen human-modified conditions",
+        "Expected audit references"
+      ]
+    },
+    {
+      "case_id": "TC-03",
+      "case_name": "Ambiguous scope requires clarification",
+      "category_ids": [
+        "CAT-02"
+      ],
+      "priority": "high",
+      "purpose": "Verify uncertainty and clarification rather than confident alignment.",
+      "reference_profile": "icm",
+      "input_shape": {
+        "opportunity_data": "ambiguous",
+        "source_documents": "none",
+        "project4_inference": "not_applicable",
+        "official_evidence": "not_required",
+        "human_input": "authorized_defer"
+      },
+      "trigger_condition": "Opportunity uses broad consulting language without enough scope detail.",
+      "expected_terminal_outcome": "deferred",
+      "expected_primary_stage": "STG-03",
+      "expected_component": "service_alignment_engine",
+      "expected_reason_codes": [
+        "STRUCTURED_ANALYSIS_INSUFFICIENT"
+      ],
+      "expected_human_route": "Opportunity Analyst",
+      "required_evidence_classes": [
+        "organization_configuration",
+        "opportunity_provenance",
+        "deterministic_alignment",
+        "human_disposition",
+        "audit_chain"
+      ],
+      "expected_audit_events": [
+        "alignment_completed",
+        "recommendation_abstained",
+        "human_disposition_recorded"
+      ],
+      "must_occur": [
+        "Missing information is enumerated.",
+        "System produces No Recommendation or defer guidance."
+      ],
+      "must_not_occur": [
+        "No decisive unsupported match score is shown.",
+        "No historical count manufactures certainty."
+      ],
+      "acceptance_target_ids": [
+        "AT-02",
+        "AT-04",
+        "AT-11",
+        "AT-18"
+      ],
+      "safeguard_control_ids": [
+        "SG-009",
+        "SG-018",
+        "SG-021",
+        "SG-024"
+      ],
+      "p3_03_freeze_requirements": [
+        "Frozen ambiguous opportunity",
+        "Expected missing-field list",
+        "Expected clarification questions"
+      ]
+    },
+    {
+      "case_id": "TC-04",
+      "case_name": "Sparse record produces explicit abstention",
+      "category_ids": [
+        "CAT-02"
+      ],
+      "priority": "critical",
+      "purpose": "Verify materially incomplete intake cannot reach a directional recommendation.",
+      "reference_profile": "icm",
+      "input_shape": {
+        "opportunity_data": "sparse",
+        "source_documents": "none",
+        "project4_inference": "not_applicable",
+        "official_evidence": "not_required",
+        "human_input": "not_reached"
+      },
+      "trigger_condition": "Only title and agency are available with no usable scope details.",
+      "expected_terminal_outcome": "no_recommendation",
+      "expected_primary_stage": "STG-03",
+      "expected_component": "service_alignment_engine",
+      "expected_reason_codes": [
+        "STRUCTURED_ANALYSIS_INSUFFICIENT"
+      ],
+      "expected_human_route": "Opportunity Analyst",
+      "required_evidence_classes": [
+        "opportunity_provenance",
+        "deterministic_alignment",
+        "audit_chain"
+      ],
+      "expected_audit_events": [
+        "source_ingested",
+        "alignment_completed",
+        "recommendation_abstained"
+      ],
+      "must_occur": [
+        "Abstention is explicit and machine-readable.",
+        "Missing fields are preserved."
+      ],
+      "must_not_occur": [
+        "No directional recommendation is produced.",
+        "No fields are silently inferred.",
+        "No fabricated service match appears."
+      ],
+      "acceptance_target_ids": [
+        "AT-02",
+        "AT-03",
+        "AT-04",
+        "AT-18"
+      ],
+      "safeguard_control_ids": [
+        "SG-009",
+        "SG-018",
+        "SG-021"
+      ],
+      "p3_03_freeze_requirements": [
+        "Frozen sparse opportunity JSON",
+        "Expected missing-fields list",
+        "Expected No Recommendation record"
+      ]
+    },
+    {
+      "case_id": "TC-05",
+      "case_name": "Low-confidence Project 4 prediction abstains",
+      "category_ids": [
+        "CAT-03"
+      ],
+      "priority": "critical",
+      "purpose": "Verify enforcement of the fixed 0.80 model-confidence threshold.",
+      "reference_profile": "icm",
+      "input_shape": {
+        "opportunity_data": "complete",
+        "source_documents": "approved_clean",
+        "project4_inference": "low_confidence",
+        "official_evidence": "not_required",
+        "human_input": "authorized_defer"
+      },
+      "trigger_condition": "Maximum class probability is below the fixed threshold.",
+      "expected_terminal_outcome": "deferred",
+      "expected_primary_stage": "STG-06",
+      "expected_component": "clause_triage_model",
+      "expected_reason_codes": [
+        "MODEL_CONFIDENCE_LOW"
+      ],
+      "expected_human_route": "Contracts or Legal Reviewer",
+      "required_evidence_classes": [
+        "model_prediction",
+        "human_disposition",
+        "audit_chain"
+      ],
+      "expected_audit_events": [
+        "clause_triage_completed",
+        "case_escalated",
+        "human_disposition_recorded"
+      ],
+      "must_occur": [
+        "Full probability vector is retained.",
+        "Abstention and reviewer route are recorded."
+      ],
+      "must_not_occur": [
+        "Low-confidence label is not treated as reliable.",
+        "No legal conclusion is generated."
+      ],
+      "acceptance_target_ids": [
+        "AT-02",
+        "AT-09",
+        "AT-11",
+        "AT-15"
+      ],
+      "safeguard_control_ids": [
+        "SG-011",
+        "SG-012",
+        "SG-024",
+        "SG-025"
+      ],
+      "p3_03_freeze_requirements": [
+        "Frozen passage and probability band",
+        "Frozen model version",
+        "Expected abstention route"
+      ]
+    },
+    {
+      "case_id": "TC-06",
+      "case_name": "Public-sector domain shift escalates",
+      "category_ids": [
+        "CAT-03",
+        "CAT-09"
+      ],
+      "priority": "critical",
+      "purpose": "Verify confidence cannot suppress a material domain warning.",
+      "reference_profile": "icm",
+      "input_shape": {
+        "opportunity_data": "complete",
+        "source_documents": "approved_clean",
+        "project4_inference": "domain_shift",
+        "official_evidence": "not_required",
+        "human_input": "authorized_defer"
+      },
+      "trigger_condition": "Passage differs materially from the CUAD commercial-contract training domain.",
+      "expected_terminal_outcome": "escalated",
+      "expected_primary_stage": "STG-06",
+      "expected_component": "clause_triage_model",
+      "expected_reason_codes": [
+        "MODEL_DOMAIN_SHIFT",
+        "MANDATORY_SPECIALIST_REVIEW"
+      ],
+      "expected_human_route": "Contracts or Legal Reviewer",
+      "required_evidence_classes": [
+        "model_prediction",
+        "specialist_finding",
+        "audit_chain"
+      ],
+      "expected_audit_events": [
+        "clause_triage_completed",
+        "case_escalated"
+      ],
+      "must_occur": [
+        "Domain warning appears in the packet.",
+        "Qualified specialist review is mandatory."
+      ],
+      "must_not_occur": [
+        "High confidence does not suppress the warning.",
+        "Prediction is not represented as legal authority."
+      ],
+      "acceptance_target_ids": [
+        "AT-04",
+        "AT-09",
+        "AT-12",
+        "AT-15"
+      ],
+      "safeguard_control_ids": [
+        "SG-013",
+        "SG-023",
+        "SG-025"
+      ],
+      "p3_03_freeze_requirements": [
+        "Frozen domain-shift passage",
+        "Expected warning text",
+        "Expected specialist route"
+      ]
+    },
+    {
+      "case_id": "TC-07",
+      "case_name": "Long passage discloses truncation",
+      "category_ids": [
+        "CAT-03"
+      ],
+      "priority": "high",
+      "purpose": "Verify visible truncation and elevated review.",
+      "reference_profile": "icm",
+      "input_shape": {
+        "opportunity_data": "complete",
+        "source_documents": "approved_with_long_passage",
+        "project4_inference": "truncated_input",
+        "official_evidence": "not_required",
+        "human_input": "authorized_defer"
+      },
+      "trigger_condition": "Selected passage exceeds the supported 256-token input length.",
+      "expected_terminal_outcome": "deferred",
+      "expected_primary_stage": "STG-06",
+      "expected_component": "clause_triage_model",
+      "expected_reason_codes": [
+        "MODEL_INPUT_TRUNCATED"
+      ],
+      "expected_human_route": "Contracts Reviewer",
+      "required_evidence_classes": [
+        "model_prediction",
+        "opportunity_provenance",
+        "human_disposition",
+        "audit_chain"
+      ],
+      "expected_audit_events": [
+        "source_ingested",
+        "clause_triage_completed",
+        "human_disposition_recorded"
+      ],
+      "must_occur": [
+        "Original and retained token counts are disclosed.",
+        "Passage locator is preserved."
+      ],
+      "must_not_occur": [
+        "Truncation is not hidden.",
+        "Prediction is not treated as complete-clause analysis."
+      ],
+      "acceptance_target_ids": [
+        "AT-02",
+        "AT-09",
+        "AT-11",
+        "AT-15"
+      ],
+      "safeguard_control_ids": [
+        "SG-014",
+        "SG-024",
+        "SG-027"
+      ],
+      "p3_03_freeze_requirements": [
+        "Frozen long passage",
+        "Expected retained-token count",
+        "Expected truncation disclosure"
+      ]
+    },
+    {
+      "case_id": "TC-08",
+      "case_name": "Invalid model package fails closed",
+      "category_ids": [
+        "CAT-03",
+        "CAT-10"
+      ],
+      "priority": "critical",
+      "purpose": "Verify a checksum-invalid model package cannot produce inference.",
+      "reference_profile": "icm",
+      "input_shape": {
+        "opportunity_data": "complete",
+        "source_documents": "approved_clean",
+        "project4_inference": "invalid_package",
+        "official_evidence": "not_required",
+        "human_input": "not_reached"
+      },
+      "trigger_condition": "Checkpoint or vocabulary checksum differs from the approved manifest.",
+      "expected_terminal_outcome": "failed_closed",
+      "expected_primary_stage": "STG-06",
+      "expected_component": "clause_triage_model",
+      "expected_reason_codes": [
+        "MODEL_PACKAGE_INVALID"
+      ],
+      "expected_human_route": "Technical Reviewer",
+      "required_evidence_classes": [
+        "model_prediction",
+        "policy_validation",
+        "audit_chain"
+      ],
+      "expected_audit_events": [
+        "processing_failed"
+      ],
+      "must_occur": [
+        "Package validation error is explicit.",
+        "Case state records failed-closed status."
+      ],
+      "must_not_occur": [
+        "No inference result is fabricated.",
+        "No fallback model is silently substituted.",
+        "No downstream recommendation is produced."
+      ],
+      "acceptance_target_ids": [
+        "AT-08",
+        "AT-09",
+        "AT-15",
+        "AT-17"
+      ],
+      "safeguard_control_ids": [
+        "SG-011",
+        "SG-027",
+        "SG-029"
+      ],
+      "p3_03_freeze_requirements": [
+        "Frozen corrupted manifest",
+        "Expected checksum mismatch",
+        "Expected failed-closed audit event"
+      ]
+    },
+    {
+      "case_id": "TC-09",
+      "case_name": "Missing exact citation abstains",
+      "category_ids": [
+        "CAT-04"
+      ],
+      "priority": "critical",
+      "purpose": "Verify exact lookup precedence and no silent substitution.",
+      "reference_profile": "icm",
+      "input_shape": {
+        "opportunity_data": "complete",
+        "source_documents": "approved_clean",
+        "project4_inference": "not_applicable",
+        "official_evidence": "missing_exact_citation",
+        "human_input": "authorized_defer"
+      },
+      "trigger_condition": "A requested citation does not exist in the approved corpus.",
+      "expected_terminal_outcome": "no_recommendation",
+      "expected_primary_stage": "STG-07",
+      "expected_component": "official_evidence_retriever",
+      "expected_reason_codes": [
+        "CITATION_NOT_FOUND"
+      ],
+      "expected_human_route": "Contract Analyst",
+      "required_evidence_classes": [
+        "official_source",
+        "human_disposition",
+        "audit_chain"
+      ],
+      "expected_audit_events": [
+        "evidence_retrieved",
+        "recommendation_abstained",
+        "human_disposition_recorded"
+      ],
+      "must_occur": [
+        "Requested citation is preserved in the outcome.",
+        "No Recommendation explains the missing authority."
+      ],
+      "must_not_occur": [
+        "No different clause is silently substituted.",
+        "No fabricated citation is produced."
+      ],
+      "acceptance_target_ids": [
+        "AT-04",
+        "AT-06",
+        "AT-09",
+        "AT-11"
+      ],
+      "safeguard_control_ids": [
+        "SG-016",
+        "SG-021",
+        "SG-024"
+      ],
+      "p3_03_freeze_requirements": [
+        "Frozen nonexistent citation",
+        "Expected exact-search miss",
+        "Expected abstention record"
+      ]
+    },
+    {
+      "case_id": "TC-10",
+      "case_name": "Stale official evidence defers",
+      "category_ids": [
+        "CAT-04"
+      ],
+      "priority": "high",
+      "purpose": "Verify materially stale evidence is held for refresh.",
+      "reference_profile": "icm",
+      "input_shape": {
+        "opportunity_data": "complete",
+        "source_documents": "approved_clean",
+        "project4_inference": "not_applicable",
+        "official_evidence": "stale",
+        "human_input": "authorized_defer"
+      },
+      "trigger_condition": "Evidence version or effective date is older than the approved freshness rule.",
+      "expected_terminal_outcome": "deferred",
+      "expected_primary_stage": "STG-08",
+      "expected_component": "evidence_validator",
+      "expected_reason_codes": [
+        "SOURCE_STALE"
+      ],
+      "expected_human_route": "Contract or Data Reviewer",
+      "required_evidence_classes": [
+        "official_source",
+        "human_disposition",
+        "audit_chain"
+      ],
+      "expected_audit_events": [
+        "evidence_validated",
+        "recommendation_abstained",
+        "human_disposition_recorded"
+      ],
+      "must_occur": [
+        "Freshness status and source version are visible.",
+        "Reviewer is told what must be refreshed."
+      ],
+      "must_not_occur": [
+        "Stale evidence is not used as current authority.",
+        "No unsupported directional recommendation is produced."
+      ],
+      "acceptance_target_ids": [
+        "AT-03",
+        "AT-04",
+        "AT-09",
+        "AT-11"
+      ],
+      "safeguard_control_ids": [
+        "SG-017",
+        "SG-018",
+        "SG-024"
+      ],
+      "p3_03_freeze_requirements": [
+        "Frozen stale metadata",
+        "Expected freshness calculation",
+        "Expected defer reason"
+      ]
+    }
+  ],
+  "coverage_summary": {
+    "case_count": 10,
+    "category_counts": {
+      "CAT-01": 2,
+      "CAT-02": 2,
+      "CAT-03": 4,
+      "CAT-04": 3,
+      "CAT-05": 2,
+      "CAT-06": 2,
+      "CAT-07": 2,
+      "CAT-08": 2,
+      "CAT-09": 3,
+      "CAT-10": 3,
+      "CAT-11": 3
+    },
+    "terminal_outcome_counts": {
+      "deferred": 4,
+      "escalated": 3,
+      "failed_closed": 6,
+      "finalized_accept": 1,
+      "finalized_accept_with_conditions": 1,
+      "finalized_reject": 1,
+      "no_recommendation": 3
+    },
+    "profile_counts": {
+      "both": 2,
+      "fictional_alternate": 1,
+      "icm": 16
+    },
+    "priority_counts": {
+      "critical": 13,
+      "high": 6
+    },
+    "acceptance_target_coverage": [
+      "AT-01",
+      "AT-02",
+      "AT-03",
+      "AT-04",
+      "AT-05",
+      "AT-06",
+      "AT-07",
+      "AT-08",
+      "AT-09",
+      "AT-10",
+      "AT-11",
+      "AT-12",
+      "AT-13",
+      "AT-14",
+      "AT-15",
+      "AT-16",
+      "AT-17",
+      "AT-18"
+    ],
+    "safeguard_coverage": [
+      "SG-001",
+      "SG-002",
+      "SG-003",
+      "SG-006",
+      "SG-007",
+      "SG-008",
+      "SG-009",
+      "SG-011",
+      "SG-012",
+      "SG-013",
+      "SG-014",
+      "SG-015",
+      "SG-016",
+      "SG-017",
+      "SG-018",
+      "SG-019",
+      "SG-020",
+      "SG-021",
+      "SG-022",
+      "SG-023",
+      "SG-024",
+      "SG-025",
+      "SG-026",
+      "SG-027",
+      "SG-028",
+      "SG-029",
+      "SG-030"
+    ]
+  },
+  "p3_03_boundary": "P3-02 defines taxonomy and target behavior only. P3-03 will create the actual frozen JSON, CSV, text, model, evidence, policy-failure, and human-disposition inputs; calculate checksums; define exact expected structured outputs; and produce the evaluator guide. No P3-02 case is a measured pass or fail result."
+}

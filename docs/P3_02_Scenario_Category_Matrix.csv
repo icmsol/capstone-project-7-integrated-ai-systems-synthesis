@@ -1,0 +1,12 @@
+category_id,category_name,category_type,objective,minimum_cases,actual_cases,primary_risks
+CAT-01,Normal Positive Operation,normal_operation,Verify complete supported cases that reach authorized human disposition.,2,2,false negative; incomplete packet; missing human authority
+CAT-02,Ambiguity and Sparse Data,data_quality,"Verify explicit uncertainty, abstention, and requests for missing information.",2,2,false certainty; silent inference; unsupported fit
+CAT-03,Model Confidence and Domain Limits,model_behavior,"Verify confidence, domain, truncation, and package-integrity controls.",3,4,high-confidence error; domain shift; hidden truncation
+CAT-04,Evidence Retrieval and Citation Integrity,evidence_behavior,"Verify exact citation precedence, corpus approval, freshness, and safe missing-authority handling.",3,3,wrong citation; stale source; unapproved corpus
+CAT-05,Evidence Sufficiency and Conflict,evidence_behavior,Verify abstention for weak evidence and escalation for material conflict.,2,2,unsupported recommendation; counterevidence omission
+CAT-06,Prompt Injection and Misuse,security_privacy,"Verify that untrusted instructions cannot alter tools, policy, sources, or authority.",2,2,instruction override; external action; secret disclosure
+CAT-07,Sensitive Data and Secret Handling,security_privacy,"Verify redaction, blocking, escalation, and repository-safe audit behavior.",2,2,privacy exposure; credential leakage
+CAT-08,Configuration and Portability,portability,Verify profile portability and rejection of safeguard overrides.,2,2,hard-coded logic; configuration drift; safeguard weakening
+CAT-09,Human Authority and Reviewer Authorization,human_authority,Verify authorized rationale and mandatory specialist routing.,2,3,autonomous decision; unauthorized reviewer
+CAT-10,Audit and Recovery Resilience,resilience,"Verify fail-closed persistence, bounded retries, and reproducible failure reporting.",2,3,untraceable output; unbounded retry
+CAT-11,External Action and Production Boundary,governance,Verify prohibition of external commitments and unsupported production-readiness claims.,2,3,unauthorized commitment; production misuse
