@@ -1,0 +1,25 @@
+{
+  "comparison_profiles": [
+    {
+      "profile_id": "ICMSOL",
+      "profile_path": "config/profiles/icm",
+      "profile_version": "1.0.0",
+      "profile_checksum_source": "repository_commit",
+      "fixed_safeguards_overridable": false
+    },
+    {
+      "profile_id": "ALT-PUBLIC-SECTOR-SMB",
+      "profile_path": "config/profiles/example_company",
+      "profile_version": "1.0.0",
+      "profile_checksum_source": "repository_commit",
+      "fixed_safeguards_overridable": false
+    }
+  ],
+  "same_code_required": true,
+  "synthetic_override_attempt": {
+    "classification_min_confidence": 0.4,
+    "evidence_sufficiency_minimum": 0.2,
+    "human_review_required": false,
+    "expected_policy_result": "reject_override"
+  }
+}

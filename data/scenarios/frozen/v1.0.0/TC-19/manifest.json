@@ -1,0 +1,81 @@
+{
+  "manifest_schema_version": "1.0.0",
+  "case_id": "TC-19",
+  "case_name": "Unapproved official corpus fails closed",
+  "freeze_version": "1.0.0",
+  "freeze_timestamp_utc": "2026-08-05T01:30:00Z",
+  "reference_profile": "icm",
+  "execution_mode": "controlled_fault_injection",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "ff083443889bfb07bb5c3a6653a689c8bda718550cc96ff58520afda71a84735",
+      "bytes": 954,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191,
+      "role": "profile reference or override fixture"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "84ecfb64cb395131f85fff2bae8234df30e0a792f090cf193c231e88ddd2ae1e",
+      "bytes": 993,
+      "role": "frozen synthetic opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "03590ed2da765290622522230b8fff57c6506c6a33efc3966edbdae3ff4b6fc7",
+      "bytes": 235,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "3315c85e794381ef54b81ee596aa3dae91d8bc75e90dac3a2ba86e206c4b6521",
+      "bytes": 150,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "40e3698d6093988073953846934586059699942a2f487458a058e3cad9664719",
+      "bytes": 223,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "bd086fe05c5ff943124bcb503e971ca5cdbf57d3e8dc0f04891244319d5ee915",
+      "bytes": 150,
+      "role": "frozen human disposition fixture"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "56b7350c4adf190d426b9800727bfe6e315eae0e6d603a94c267dce224ece78e",
+      "bytes": 258,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "4566899e7d95d091c053dd9eac7dec63ed4250131c03d3fcb1c6a46b14470638",
+      "bytes": 3419,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "failed_closed",
+  "expected_primary_stage": "STG-07",
+  "expected_component": "official_evidence_retriever",
+  "expected_reason_codes": [
+    "CORPUS_NOT_APPROVED"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}
