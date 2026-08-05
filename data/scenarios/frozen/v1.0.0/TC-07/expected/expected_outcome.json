@@ -1,0 +1,131 @@
+{
+  "expected_outcome_schema_version": "1.0.0",
+  "case_id": "TC-07",
+  "expected_terminal_outcome": "deferred",
+  "expected_primary_stage": "STG-06",
+  "expected_component": "clause_triage_model",
+  "expected_reason_codes": [
+    "MODEL_INPUT_TRUNCATED"
+  ],
+  "expected_human_route": "Contracts Reviewer",
+  "expected_audit_events": [
+    "source_ingested",
+    "clause_triage_completed",
+    "human_disposition_recorded"
+  ],
+  "required_evidence_classes": [
+    "model_prediction",
+    "opportunity_provenance",
+    "human_disposition",
+    "audit_chain"
+  ],
+  "must_occur": [
+    "Original and retained token counts are disclosed.",
+    "Passage locator is preserved."
+  ],
+  "must_not_occur": [
+    "Truncation is not hidden.",
+    "Prediction is not treated as complete-clause analysis."
+  ],
+  "acceptance_target_ids": [
+    "AT-02",
+    "AT-09",
+    "AT-11",
+    "AT-15"
+  ],
+  "safeguard_control_ids": [
+    "SG-014",
+    "SG-024",
+    "SG-027"
+  ],
+  "assertions": [
+    {
+      "assertion_id": "AS-TC-07-TERM",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.terminal_outcome",
+      "expected_value": "deferred",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-07-STAGE",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_stage",
+      "expected_value": "STG-06",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-07-COMP",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_component",
+      "expected_value": "clause_triage_model",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-07-REASON",
+      "assertion_type": "contains_all",
+      "target_path": "$.case_state.reason_codes",
+      "expected_value": [
+        "MODEL_INPUT_TRUNCATED"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-07-AUDIT",
+      "assertion_type": "contains_all",
+      "target_path": "$.audit.event_types",
+      "expected_value": [
+        "source_ingested",
+        "clause_triage_completed",
+        "human_disposition_recorded"
+      ],
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-07-SCHEMA",
+      "assertion_type": "schema_valid",
+      "target_path": "$.artifacts",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-07-CHECK",
+      "assertion_type": "checksum_valid",
+      "target_path": "$.input_manifest",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-07-NOEXT",
+      "assertion_type": "contains_none",
+      "target_path": "$.side_effects",
+      "expected_value": [
+        "email_sent",
+        "proposal_submitted",
+        "contract_accepted",
+        "purchase_executed",
+        "staff_committed"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-07-BOUND",
+      "assertion_type": "contains_none",
+      "target_path": "$.claims",
+      "expected_value": [
+        "production_ready",
+        "legally_authoritative",
+        "award_probability",
+        "autonomous_approval"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-07-ROUTE",
+      "assertion_type": "equals",
+      "target_path": "$.routing.expected_human_route",
+      "expected_value": "Contracts Reviewer",
+      "severity": "major"
+    }
+  ],
+  "result_status": "not_executed_target_only"
+}

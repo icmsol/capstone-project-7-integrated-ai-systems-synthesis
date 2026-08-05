@@ -1,0 +1,82 @@
+{
+  "manifest_schema_version": "1.0.0",
+  "case_id": "TC-06",
+  "case_name": "Public-sector domain shift escalates",
+  "freeze_version": "1.0.0",
+  "freeze_timestamp_utc": "2026-08-05T01:30:00Z",
+  "reference_profile": "icm",
+  "execution_mode": "real_components_with_controlled_model_fixture",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "3f0bb3eda12f72f4d7f0dcc723fd31e1bfff4d8417316f91d71e47768db22f2b",
+      "bytes": 925,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191,
+      "role": "profile reference or override fixture"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "577a62494cec3b605816c0d8f02c54d88273694fed96505b691ea724affc65aa",
+      "bytes": 993,
+      "role": "frozen synthetic opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "9b42f4dd2958ce08d22ababa6826990aeda47d37de3290b70d2b0ceafc415594",
+      "bytes": 235,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "e7a9ae63ee9e1109e4a392e3305b69af642008b01d496307640a5e9cd819839d",
+      "bytes": 234,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "621197ffc0ca8e01e1418b7d9842467bd1e306da917ab718f1bcd362b82be9fc",
+      "bytes": 74,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "ec4d6c00e301a2f9ffd020dbece10ae90a46ca00c5834f6c545238298df5b86e",
+      "bytes": 311,
+      "role": "frozen human disposition fixture"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "8d1ddce6bf2c74aa033adecdfaf0af033c6e690436353456d168a451bdb9769e",
+      "bytes": 108,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "0fe68cb20e8e9287385af51cc744425c87acdcb16017a7f3d8487a6ceb0f67f9",
+      "bytes": 3431,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "escalated",
+  "expected_primary_stage": "STG-06",
+  "expected_component": "clause_triage_model",
+  "expected_reason_codes": [
+    "MODEL_DOMAIN_SHIFT",
+    "MANDATORY_SPECIALIST_REVIEW"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}

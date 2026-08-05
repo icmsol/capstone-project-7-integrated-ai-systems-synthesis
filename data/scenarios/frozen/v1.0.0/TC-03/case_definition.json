@@ -1,0 +1,26 @@
+{
+  "case_definition_version": "1.0.0",
+  "case_id": "TC-03",
+  "case_name": "Ambiguous scope requires clarification",
+  "priority": "high",
+  "category_ids": [
+    "CAT-02"
+  ],
+  "purpose": "Verify uncertainty and clarification rather than confident alignment.",
+  "reference_profile": "icm",
+  "execution_mode": "real_components_with_frozen_inputs",
+  "input_shape": {
+    "opportunity_data": "ambiguous",
+    "source_documents": "none",
+    "project4_inference": "not_applicable",
+    "official_evidence": "not_required",
+    "human_input": "authorized_defer"
+  },
+  "trigger_condition": "Opportunity uses broad consulting language without enough scope detail.",
+  "freeze_version": "1.0.0",
+  "freeze_timestamp_utc": "2026-08-05T01:30:00Z",
+  "deterministic_seed": 42,
+  "synthetic_or_approved_inputs_only": true,
+  "measured_result": null,
+  "result_status": "not_executed_target_only"
+}

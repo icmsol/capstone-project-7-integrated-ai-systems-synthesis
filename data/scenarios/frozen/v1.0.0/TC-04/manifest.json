@@ -1,0 +1,81 @@
+{
+  "manifest_schema_version": "1.0.0",
+  "case_id": "TC-04",
+  "case_name": "Sparse record produces explicit abstention",
+  "freeze_version": "1.0.0",
+  "freeze_timestamp_utc": "2026-08-05T01:30:00Z",
+  "reference_profile": "icm",
+  "execution_mode": "real_components_with_frozen_inputs",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "24f4c63678fcc3199b659e2a79f6c5b8787b882c8aee447c10a4e7b238870c68",
+      "bytes": 897,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191,
+      "role": "profile reference or override fixture"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "a91f822573f3d3a1c7a60b981ded23c2012c9033eb06c995c962178b4a77cceb",
+      "bytes": 923,
+      "role": "frozen synthetic opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "1e95803ff38f89f0b1133fb88b8f33525a3734ee7024d96bf3a8b66d8d1b7d8d",
+      "bytes": 54,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "a0782d81d5430755b8ddd0ed69915ce8b671371c6de0468db0d3c9c7a7053802",
+      "bytes": 225,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "d20ac66a4e2ee41d40b38e6fe296d5a173a07f72695464bc6aac208ea568445a",
+      "bytes": 150,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "e4e61416e8d16284fd2ff8c5e95b4ad753640614400e4eb6bc94f1a705249a53",
+      "bytes": 74,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "1f2fa935011fa8d49f5b50350ea9f836c600c150d7094f243a951908220da2ca",
+      "bytes": 150,
+      "role": "frozen human disposition fixture"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "b27b3259a9ad7b18aa43a88ef170c1998dc8159609d73ba985b039f6e90c99d6",
+      "bytes": 108,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "cb440f096ccf287ed43138ee769ede255c182a2b6982351ceb2e4bbbee6c01b2",
+      "bytes": 3486,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "no_recommendation",
+  "expected_primary_stage": "STG-03",
+  "expected_component": "service_alignment_engine",
+  "expected_reason_codes": [
+    "STRUCTURED_ANALYSIS_INSUFFICIENT"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}

@@ -1,0 +1,140 @@
+{
+  "expected_outcome_schema_version": "1.0.0",
+  "case_id": "TC-02",
+  "expected_terminal_outcome": "finalized_accept_with_conditions",
+  "expected_primary_stage": "STG-12",
+  "expected_component": "human_disposition_recorder",
+  "expected_reason_codes": [
+    "HUMAN_DECISION_REQUIRED"
+  ],
+  "expected_human_route": "Business Development or Pursuit Lead",
+  "expected_audit_events": [
+    "recommendation_created",
+    "human_disposition_recorded"
+  ],
+  "required_evidence_classes": [
+    "deterministic_alignment",
+    "official_source",
+    "counterevidence",
+    "human_disposition",
+    "audit_chain"
+  ],
+  "must_occur": [
+    "Original recommendation remains preserved.",
+    "Human-added conditions are separately attributed.",
+    "Human rationale is mandatory."
+  ],
+  "must_not_occur": [
+    "System output is not rewritten as if it contained the human changes.",
+    "No finalization occurs without rationale."
+  ],
+  "acceptance_target_ids": [
+    "AT-04",
+    "AT-05",
+    "AT-09",
+    "AT-11",
+    "AT-18"
+  ],
+  "safeguard_control_ids": [
+    "SG-020",
+    "SG-021",
+    "SG-024",
+    "SG-027"
+  ],
+  "assertions": [
+    {
+      "assertion_id": "AS-TC-02-TERM",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.terminal_outcome",
+      "expected_value": "finalized_accept_with_conditions",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-02-STAGE",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_stage",
+      "expected_value": "STG-12",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-02-COMP",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_component",
+      "expected_value": "human_disposition_recorder",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-02-REASON",
+      "assertion_type": "contains_all",
+      "target_path": "$.case_state.reason_codes",
+      "expected_value": [
+        "HUMAN_DECISION_REQUIRED"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-02-AUDIT",
+      "assertion_type": "contains_all",
+      "target_path": "$.audit.event_types",
+      "expected_value": [
+        "recommendation_created",
+        "human_disposition_recorded"
+      ],
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-02-SCHEMA",
+      "assertion_type": "schema_valid",
+      "target_path": "$.artifacts",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-02-CHECK",
+      "assertion_type": "checksum_valid",
+      "target_path": "$.input_manifest",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-02-NOEXT",
+      "assertion_type": "contains_none",
+      "target_path": "$.side_effects",
+      "expected_value": [
+        "email_sent",
+        "proposal_submitted",
+        "contract_accepted",
+        "purchase_executed",
+        "staff_committed"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-02-BOUND",
+      "assertion_type": "contains_none",
+      "target_path": "$.claims",
+      "expected_value": [
+        "production_ready",
+        "legally_authoritative",
+        "award_probability",
+        "autonomous_approval"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-02-ROUTE",
+      "assertion_type": "equals",
+      "target_path": "$.routing.expected_human_route",
+      "expected_value": "Business Development or Pursuit Lead",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-02-SEPARATE",
+      "assertion_type": "separate_artifact",
+      "target_path": "$.human_disposition",
+      "expected_value": "original_recommendation_preserved",
+      "severity": "critical"
+    }
+  ],
+  "result_status": "not_executed_target_only"
+}

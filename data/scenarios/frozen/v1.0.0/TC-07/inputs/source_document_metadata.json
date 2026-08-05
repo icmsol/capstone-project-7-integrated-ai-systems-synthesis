@@ -1,0 +1,9 @@
+{
+  "case_id": "TC-07",
+  "source_mode": "approved_with_long_passage",
+  "source_approved": true,
+  "synthetic_fixture": true,
+  "privacy_classification": "synthetic_non_sensitive",
+  "prompt_injection_test": false,
+  "long_passage_test": true
+}

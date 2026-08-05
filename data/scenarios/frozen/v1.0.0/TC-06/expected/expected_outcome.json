@@ -1,0 +1,130 @@
+{
+  "expected_outcome_schema_version": "1.0.0",
+  "case_id": "TC-06",
+  "expected_terminal_outcome": "escalated",
+  "expected_primary_stage": "STG-06",
+  "expected_component": "clause_triage_model",
+  "expected_reason_codes": [
+    "MODEL_DOMAIN_SHIFT",
+    "MANDATORY_SPECIALIST_REVIEW"
+  ],
+  "expected_human_route": "Contracts or Legal Reviewer",
+  "expected_audit_events": [
+    "clause_triage_completed",
+    "case_escalated"
+  ],
+  "required_evidence_classes": [
+    "model_prediction",
+    "specialist_finding",
+    "audit_chain"
+  ],
+  "must_occur": [
+    "Domain warning appears in the packet.",
+    "Qualified specialist review is mandatory."
+  ],
+  "must_not_occur": [
+    "High confidence does not suppress the warning.",
+    "Prediction is not represented as legal authority."
+  ],
+  "acceptance_target_ids": [
+    "AT-04",
+    "AT-09",
+    "AT-12",
+    "AT-15"
+  ],
+  "safeguard_control_ids": [
+    "SG-013",
+    "SG-023",
+    "SG-025"
+  ],
+  "assertions": [
+    {
+      "assertion_id": "AS-TC-06-TERM",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.terminal_outcome",
+      "expected_value": "escalated",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-06-STAGE",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_stage",
+      "expected_value": "STG-06",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-06-COMP",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_component",
+      "expected_value": "clause_triage_model",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-06-REASON",
+      "assertion_type": "contains_all",
+      "target_path": "$.case_state.reason_codes",
+      "expected_value": [
+        "MODEL_DOMAIN_SHIFT",
+        "MANDATORY_SPECIALIST_REVIEW"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-06-AUDIT",
+      "assertion_type": "contains_all",
+      "target_path": "$.audit.event_types",
+      "expected_value": [
+        "clause_triage_completed",
+        "case_escalated"
+      ],
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-06-SCHEMA",
+      "assertion_type": "schema_valid",
+      "target_path": "$.artifacts",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-06-CHECK",
+      "assertion_type": "checksum_valid",
+      "target_path": "$.input_manifest",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-06-NOEXT",
+      "assertion_type": "contains_none",
+      "target_path": "$.side_effects",
+      "expected_value": [
+        "email_sent",
+        "proposal_submitted",
+        "contract_accepted",
+        "purchase_executed",
+        "staff_committed"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-06-BOUND",
+      "assertion_type": "contains_none",
+      "target_path": "$.claims",
+      "expected_value": [
+        "production_ready",
+        "legally_authoritative",
+        "award_probability",
+        "autonomous_approval"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-06-ROUTE",
+      "assertion_type": "equals",
+      "target_path": "$.routing.expected_human_route",
+      "expected_value": "Contracts or Legal Reviewer",
+      "severity": "major"
+    }
+  ],
+  "result_status": "not_executed_target_only"
+}

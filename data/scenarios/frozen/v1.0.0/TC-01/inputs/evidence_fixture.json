@@ -1,0 +1,28 @@
+{
+  "case_id": "TC-01",
+  "fixture_mode": "frozen_synthetic_authoritative_set",
+  "corpus_version": "P7-FAR-CANDIDATE-1.0.0",
+  "corpus_approved": true,
+  "freshness_status": "current",
+  "aggregate_sufficiency": 0.88,
+  "items": [
+    {
+      "evidence_id": "EV-SYN-001",
+      "citation": "FAR 52.203-13",
+      "locator": "synthetic-evaluation-excerpt-1",
+      "relevance_score": 0.91,
+      "support_status": "supports",
+      "text": "Synthetic evaluator paraphrase: contractor business ethics and compliance controls may require documented oversight.",
+      "verbatim_official_text": false
+    },
+    {
+      "evidence_id": "EV-SYN-002",
+      "citation": "FAR 52.204-21",
+      "locator": "synthetic-evaluation-excerpt-2",
+      "relevance_score": 0.85,
+      "support_status": "supports",
+      "text": "Synthetic evaluator paraphrase: safeguarding requirements may require documented information-security practices.",
+      "verbatim_official_text": false
+    }
+  ]
+}

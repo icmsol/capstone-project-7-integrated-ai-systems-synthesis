@@ -1,0 +1,81 @@
+{
+  "manifest_schema_version": "1.0.0",
+  "case_id": "TC-03",
+  "case_name": "Ambiguous scope requires clarification",
+  "freeze_version": "1.0.0",
+  "freeze_timestamp_utc": "2026-08-05T01:30:00Z",
+  "reference_profile": "icm",
+  "execution_mode": "real_components_with_frozen_inputs",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "84494d17622e36fb09235d4e8c942f517633408e7374a9a8f4f3a39e083bcbbe",
+      "bytes": 894,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191,
+      "role": "profile reference or override fixture"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "9f837aacd21d92d80c1a95a1a8d269118b8836557d5532384557608ec654559e",
+      "bytes": 1013,
+      "role": "frozen synthetic opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "1e95803ff38f89f0b1133fb88b8f33525a3734ee7024d96bf3a8b66d8d1b7d8d",
+      "bytes": 54,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "20188b929a1b033c8a9d44aa0f3aedc0c5acf42235aef6fc0dd145b60f287fd3",
+      "bytes": 225,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "bd0ed40961e4d1803663282785c7305480827ec8560ad29820b49c1ce10814ad",
+      "bytes": 150,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "aecc60c6019f28b1b80ebdde61fc7af794e3bad11dc92b41af1d3e65ffed4056",
+      "bytes": 74,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "bf4f9f9b2eabd7dbe05b53313a656c46f5be37d8f4f349cf86aa81c7b34ef1e6",
+      "bytes": 311,
+      "role": "frozen human disposition fixture"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "9e780519f713abd103a0826ddad870f710a166b6d6ff6a912d4123826d507288",
+      "bytes": 108,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "8b56420837422e68bc164122035c3e7459f1ca086ac278c8c5e918e40c24bc22",
+      "bytes": 3546,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "deferred",
+  "expected_primary_stage": "STG-03",
+  "expected_component": "service_alignment_engine",
+  "expected_reason_codes": [
+    "STRUCTURED_ANALYSIS_INSUFFICIENT"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}

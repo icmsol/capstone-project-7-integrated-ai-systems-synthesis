@@ -1,0 +1,13 @@
+{
+  "case_id": "TC-02",
+  "reviewer_role": "Business Development or Pursuit Lead",
+  "reviewer_authorized": true,
+  "decision": "accept_with_modified_conditions",
+  "rationale": "Proceed only after named staffing availability, conflict checks, and executive pricing approval are confirmed.",
+  "modified_conditions": [
+    "Confirm named staffing availability.",
+    "Complete conflict-of-interest review.",
+    "Obtain executive pricing approval."
+  ],
+  "recorded_at_utc": "2026-08-05T01:30:00Z"
+}

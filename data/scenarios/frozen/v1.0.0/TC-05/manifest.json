@@ -1,0 +1,81 @@
+{
+  "manifest_schema_version": "1.0.0",
+  "case_id": "TC-05",
+  "case_name": "Low-confidence Project 4 prediction abstains",
+  "freeze_version": "1.0.0",
+  "freeze_timestamp_utc": "2026-08-05T01:30:00Z",
+  "reference_profile": "icm",
+  "execution_mode": "real_components_with_controlled_model_fixture",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "32948f13bc26d51092e180ae249d3d79540968c4069e76b611f3e5b559f6b2c9",
+      "bytes": 903,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191,
+      "role": "profile reference or override fixture"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "9eb56afff64af077665a8986ea4398d459eb8885143a0bd6f8ab26dd928a941b",
+      "bytes": 993,
+      "role": "frozen synthetic opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "72ab70e10a6bb1a032ba820528a3a03fe5f4b262ca6c207d9559b9ba8b65dab5",
+      "bytes": 235,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "a407a765d6d69b64d966e565ce29fa8df94892642ae9042c6576a34b06e4647c",
+      "bytes": 303,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "34ef83061e9c5658951fa9f7ad040644af5555aa894134c64854edd475131d60",
+      "bytes": 74,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "0e30be3e55009e245b77bab497aeaf28e286f1b31846ad0c4d234db277735f94",
+      "bytes": 311,
+      "role": "frozen human disposition fixture"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "6207695fb87562a29852d007a49f42fdd891d60757edbefea31d1a0672d1c622",
+      "bytes": 108,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "dd239c1e399683d7f23f1aabb5ec42a2fa3892b4e067a8f5e104a35cc8012c6d",
+      "bytes": 3431,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "deferred",
+  "expected_primary_stage": "STG-06",
+  "expected_component": "clause_triage_model",
+  "expected_reason_codes": [
+    "MODEL_CONFIDENCE_LOW"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}

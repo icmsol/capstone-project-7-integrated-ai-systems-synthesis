@@ -1,0 +1,23 @@
+{
+  "record_schema_version": "1.0.0",
+  "source_type": "synthetic_evaluation_fixture",
+  "source_name": "Project 7 Frozen Scenario Generator",
+  "source_record_id": "SYN-TC-06-OPP",
+  "source_url": "synthetic://project7/TC-06/opportunity",
+  "retrieved_at_utc": "2026-08-05T01:30:00Z",
+  "title": "Enterprise IT Strategy, Program Management, and Systems Integration Support",
+  "agency": "Synthetic California Public Agency",
+  "jurisdiction": "California",
+  "status": "Open",
+  "published_date": "2026-08-01",
+  "due_date": "2026-09-15",
+  "description": "Provide IT strategy, program and project management, systems integration, agile delivery support, organizational change management, and technical training.",
+  "original_values": {
+    "title": "Enterprise IT Strategy, Program Management, and Systems Integration Support",
+    "agency": "Synthetic California Public Agency",
+    "due_date": "09/15/2026"
+  },
+  "missing_fields": [],
+  "synthetic_fixture": true,
+  "case_id": "TC-06"
+}

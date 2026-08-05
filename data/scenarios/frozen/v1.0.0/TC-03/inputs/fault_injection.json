@@ -1,0 +1,6 @@
+{
+  "case_id": "TC-03",
+  "fault_injection_enabled": false,
+  "faults": [],
+  "maximum_retry_attempts": 1
+}

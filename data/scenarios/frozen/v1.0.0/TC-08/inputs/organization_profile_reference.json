@@ -1,0 +1,7 @@
+{
+  "profile_id": "ICMSOL",
+  "profile_path": "config/profiles/icm",
+  "profile_version": "1.0.0",
+  "profile_checksum_source": "repository_commit",
+  "fixed_safeguards_overridable": false
+}

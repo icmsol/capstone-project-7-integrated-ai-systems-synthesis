@@ -1,0 +1,10 @@
+{
+  "case_id": "TC-01",
+  "fixture_mode": "real_component_expected_band",
+  "invoke_real_model": true,
+  "approved_package_path": "models/project4",
+  "expected_top_label": "Audit Rights",
+  "expected_top_probability_min": 0.95,
+  "expected_top_probability_max": 1.0,
+  "note": "The existing Project 4 CPU smoke test produced Audit Rights with confidence above 0.99 for the validated smoke passage."
+}

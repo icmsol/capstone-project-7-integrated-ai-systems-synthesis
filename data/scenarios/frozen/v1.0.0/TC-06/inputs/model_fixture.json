@@ -1,0 +1,7 @@
+{
+  "case_id": "TC-06",
+  "fixture_mode": "controlled_domain_marker",
+  "invoke_real_model": true,
+  "domain_shift_detected": true,
+  "required_warning": "CUAD commercial-contract domain differs from public-sector regulatory text."
+}

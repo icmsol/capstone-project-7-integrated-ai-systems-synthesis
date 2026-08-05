@@ -1,0 +1,81 @@
+{
+  "manifest_schema_version": "1.0.0",
+  "case_id": "TC-07",
+  "case_name": "Long passage discloses truncation",
+  "freeze_version": "1.0.0",
+  "freeze_timestamp_utc": "2026-08-05T01:30:00Z",
+  "reference_profile": "icm",
+  "execution_mode": "real_components_with_controlled_model_fixture",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "ff1de4560fd5c2f539efb6bb6a95f130c43add4374adc21a401a71f510d92390",
+      "bytes": 890,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191,
+      "role": "profile reference or override fixture"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "9fd848af2b079516c51ede612823b6bd75c117aecc50a06dbe345032fd5dc922",
+      "bytes": 993,
+      "role": "frozen synthetic opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "58e3f96208b9ebc11234d0df4b6b5c625e065fb0d1adbe5c5e54d697e0a7b452",
+      "bytes": 8313,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "9795a99199d28ebf2612211b06ae08825f1c8ef8b9913f84710fb4458a9e5e4b",
+      "bytes": 246,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "31577410d511daa5ad608f92d5715b1e0245324bec1a15ae7a7039aa41ad0e04",
+      "bytes": 194,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "ab7df9cccbede30ff588d15953c9802b992c2448e8f3a5bc2b1debc9682df924",
+      "bytes": 74,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "430c11ef9b861b428cc0123f84d5fcb6ba0c73b3d41b65953c972ec2cd425771",
+      "bytes": 311,
+      "role": "frozen human disposition fixture"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "43b5ca9ad19bd4f78c436e9f469b5a8048d9c7286c86947e99c30ef66ccf2a57",
+      "bytes": 108,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "e7a53b61c5f8a92a4b206386f6b26d09dcd80de4b43dba349cfb71f69ef03044",
+      "bytes": 3430,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "deferred",
+  "expected_primary_stage": "STG-06",
+  "expected_component": "clause_triage_model",
+  "expected_reason_codes": [
+    "MODEL_INPUT_TRUNCATED"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}

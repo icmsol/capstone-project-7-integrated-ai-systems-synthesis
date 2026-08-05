@@ -1,0 +1,81 @@
+{
+  "manifest_schema_version": "1.0.0",
+  "case_id": "TC-02",
+  "case_name": "Human accepts with modified conditions",
+  "freeze_version": "1.0.0",
+  "freeze_timestamp_utc": "2026-08-05T01:30:00Z",
+  "reference_profile": "icm",
+  "execution_mode": "real_components_with_frozen_inputs",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "1d39519a868d9fd71ec6f2da0b94890fbcfacea62f7595579d6f09d03aa16dc0",
+      "bytes": 972,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191,
+      "role": "profile reference or override fixture"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "2ab60bd2db02f295256e1f4ad472a976e587b06bf41f12be30edf7d92e59189f",
+      "bytes": 993,
+      "role": "frozen synthetic opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "9aef0af4376d8160df825e0b0486ce8c76900ada1bab54b77b7851d33bac15df",
+      "bytes": 235,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "77c28c04dcf983a3a34b77b062c92d3af5c2c763580d2730d35c19eeb21b600e",
+      "bytes": 402,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "a5628833c4af9dde0ad0ef18a6475a1b29edcc7cfeaa0e0ebfea062699b9f5ac",
+      "bytes": 979,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "f07867a7eedbec0a546d4bbd9107b00a92c9572f436ee454e77e77b0b9949a76",
+      "bytes": 500,
+      "role": "frozen human disposition fixture"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "f4c27853427a95d2d7b0b0cba71848422427a067545c141c89ae288b7a4398ab",
+      "bytes": 108,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "ae42cd245d4db8029b804e7bf227c04c0e41dbf0249070b93a429471c9b054f9",
+      "bytes": 3845,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "finalized_accept_with_conditions",
+  "expected_primary_stage": "STG-12",
+  "expected_component": "human_disposition_recorder",
+  "expected_reason_codes": [
+    "HUMAN_DECISION_REQUIRED"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}
