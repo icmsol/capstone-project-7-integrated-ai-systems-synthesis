@@ -1,0 +1,89 @@
+{
+  "manifest_schema_version": "1.0.1",
+  "case_id": "CASE-TC-08",
+  "case_name": "Invalid model package fails closed",
+  "freeze_version": "1.0.1",
+  "freeze_timestamp_utc": "2026-08-05T16:10:00Z",
+  "reference_profile": "icm",
+  "execution_mode": "controlled_fault_injection",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "031532ca8b5913dc676b7d967ae524eb8b436f30bd0e505ffb52edd9fa2cdcaf",
+      "bytes": 1097,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191,
+      "role": "organization profile reference"
+    },
+    {
+      "path": "inputs/opportunity_source.txt",
+      "sha256": "77c66df998c8ef3b7c69e86f20f29199be13d84f2e341d9fd6913a3ae4ba570f",
+      "bytes": 431,
+      "role": "synthetic opportunity source snapshot"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "2d75264cd548a4dd0db121f6fdd14c80e27d7265061026d263ebb90e2150fc42",
+      "bytes": 1928,
+      "role": "schema-valid normalized opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "d61ed38dd8d2ddab6bde406241c4576034af0c8fa0ab3779cb79c4621ed00305",
+      "bytes": 235,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "b9b33e00ae2ec6221f312f4f04b5c8e7d5e22cc368ed2827b043354fdc1127c4",
+      "bytes": 353,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "17e26e5a89adfd69d47ea24ee7f37975beb9026fa684c9ce254cc644242e5541",
+      "bytes": 74,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "793ba8b14944afaec87dd3f7a1fde7ec3916d289220e924dd277b0c6343ba250",
+      "bytes": 236,
+      "role": "schema-valid human disposition wrapper"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "74e69531098a7fff23821f53f47dae456342eeb9ac678f2dc530dee7ab04825c",
+      "bytes": 254,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "bef2b9c5043dacf718d531264845d63ea3e7fff6b5f7bf3634ae5d39f948f87b",
+      "bytes": 4152,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "failed_closed",
+  "expected_recommendation_code": null,
+  "expected_primary_stage_id": "STG-06",
+  "expected_primary_stage": "triage_clause_themes",
+  "expected_component": "clause_triage_model",
+  "expected_reason_codes": [
+    "MODEL_PACKAGE_INVALID"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}

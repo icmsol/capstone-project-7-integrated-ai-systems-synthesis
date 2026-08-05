@@ -1,0 +1,27 @@
+{
+  "case_definition_version": "1.0.1",
+  "case_id": "TC-09",
+  "case_name": "Missing exact citation abstains",
+  "priority": "critical",
+  "category_ids": [
+    "CAT-04"
+  ],
+  "purpose": "Verify exact lookup precedence and no silent substitution.",
+  "reference_profile": "icm",
+  "execution_mode": "real_components_with_frozen_inputs",
+  "input_shape": {
+    "opportunity_data": "complete",
+    "source_documents": "approved_clean",
+    "project4_inference": "not_applicable",
+    "official_evidence": "missing_exact_citation",
+    "human_input": "authorized_defer"
+  },
+  "trigger_condition": "A requested citation does not exist in the approved corpus.",
+  "freeze_version": "1.0.1",
+  "freeze_timestamp_utc": "2026-08-05T16:10:00Z",
+  "deterministic_seed": 42,
+  "synthetic_or_approved_inputs_only": true,
+  "measured_result": null,
+  "result_status": "not_executed_target_only",
+  "change_summary": "Corrected v1.0.1 freeze: shared-schema-valid opportunity and human fixtures, separated recommendation and terminal states, mapped stage identifiers, and corrected validation."
+}

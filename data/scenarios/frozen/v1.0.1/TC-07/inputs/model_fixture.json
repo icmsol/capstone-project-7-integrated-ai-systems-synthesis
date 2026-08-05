@@ -1,0 +1,8 @@
+{
+  "case_id": "TC-07",
+  "fixture_mode": "controlled_input_boundary",
+  "invoke_real_model": true,
+  "original_token_count": 615,
+  "retained_token_count": 256,
+  "truncation_required": true
+}

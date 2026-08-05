@@ -1,0 +1,89 @@
+{
+  "manifest_schema_version": "1.0.1",
+  "case_id": "CASE-TC-10",
+  "case_name": "Stale official evidence defers",
+  "freeze_version": "1.0.1",
+  "freeze_timestamp_utc": "2026-08-05T16:10:00Z",
+  "reference_profile": "icm",
+  "execution_mode": "real_components_with_frozen_inputs",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "a2dddd0cd2f1a8ad2d8b40a3914b379551b1c8776ca868a6a3f1b0c14164165b",
+      "bytes": 1076,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191,
+      "role": "organization profile reference"
+    },
+    {
+      "path": "inputs/opportunity_source.txt",
+      "sha256": "e0b9b1348543d9b2c250dd63657f54bd4133410923aec4a108efaf16d54779e0",
+      "bytes": 431,
+      "role": "synthetic opportunity source snapshot"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "64cdeb5049afa4ed44feb88d8ee0397ac7961695c9d759a52a2d5423d1c7b0ab",
+      "bytes": 1928,
+      "role": "schema-valid normalized opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "ff69187eb4b7b87d666c2d8bc6fb4f4c44e44358a3fb35b156ca7a977aab0092",
+      "bytes": 235,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "779c118c16265efa49fb75d0dd58175df3fb5570ceba09b4f7c9cc0fc4d8d47a",
+      "bytes": 150,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "73c2d5b20cd1418b66a372f0529400e565b58265a01206252e82b6082a06d750",
+      "bytes": 234,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "463f480927bf279bc0080f9bb0b96e082110d665f68e5d083cceded6335a7724",
+      "bytes": 750,
+      "role": "schema-valid human disposition wrapper"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "42dda8206604a3f190f67ee5af5dd9d9d8920fef4120793d3281076f5b1e93fc",
+      "bytes": 108,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "7d3f6be9bbbc39c14f6561897213fa0ca6c5b740308d7823465410769833f853",
+      "bytes": 4532,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "deferred",
+  "expected_recommendation_code": "R-03",
+  "expected_primary_stage_id": "STG-08",
+  "expected_primary_stage": "validate_evidence",
+  "expected_component": "evidence_validator",
+  "expected_reason_codes": [
+    "SOURCE_STALE"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}

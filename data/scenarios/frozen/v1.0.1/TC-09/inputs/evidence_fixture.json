@@ -1,0 +1,8 @@
+{
+  "case_id": "TC-09",
+  "fixture_mode": "exact_lookup_miss",
+  "requested_citation": "FAR 52.999-99",
+  "corpus_version": "P7-FAR-CANDIDATE-1.0.0",
+  "exact_matches": [],
+  "semantic_substitution_permitted": false
+}

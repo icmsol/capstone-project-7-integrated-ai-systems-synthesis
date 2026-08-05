@@ -1,0 +1,89 @@
+{
+  "manifest_schema_version": "1.0.1",
+  "case_id": "CASE-TC-07",
+  "case_name": "Long passage discloses truncation",
+  "freeze_version": "1.0.1",
+  "freeze_timestamp_utc": "2026-08-05T16:10:00Z",
+  "reference_profile": "icm",
+  "execution_mode": "real_components_with_controlled_model_fixture",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "058854cc406edf2f42299ecd81052657fd20e282af9a0dbaa26502be5cd50433",
+      "bytes": 1088,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191,
+      "role": "organization profile reference"
+    },
+    {
+      "path": "inputs/opportunity_source.txt",
+      "sha256": "e80aea91b5752dbcd1685c0c4ae98a7742a3f0acc473dc71ae537c6e38c28c78",
+      "bytes": 431,
+      "role": "synthetic opportunity source snapshot"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "20c6c17c2282b6225a958e8b2937737c6df94e14b7a8432b4c1151bf66e302e1",
+      "bytes": 1928,
+      "role": "schema-valid normalized opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "58e3f96208b9ebc11234d0df4b6b5c625e065fb0d1adbe5c5e54d697e0a7b452",
+      "bytes": 8313,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "9795a99199d28ebf2612211b06ae08825f1c8ef8b9913f84710fb4458a9e5e4b",
+      "bytes": 246,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "31577410d511daa5ad608f92d5715b1e0245324bec1a15ae7a7039aa41ad0e04",
+      "bytes": 194,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "ab7df9cccbede30ff588d15953c9802b992c2448e8f3a5bc2b1debc9682df924",
+      "bytes": 74,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "0809fcf184b0e4b2666b57934ef3b9c45224939c230fbeb67d8c0d9e35980c6d",
+      "bytes": 743,
+      "role": "schema-valid human disposition wrapper"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "43b5ca9ad19bd4f78c436e9f469b5a8048d9c7286c86947e99c30ef66ccf2a57",
+      "bytes": 108,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "f1277e6b8a9368e477d0a26540048313ec19bf231e1ee8c497f7ff2a0bf06d36",
+      "bytes": 4534,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "deferred",
+  "expected_recommendation_code": "R-03",
+  "expected_primary_stage_id": "STG-06",
+  "expected_primary_stage": "triage_clause_themes",
+  "expected_component": "clause_triage_model",
+  "expected_reason_codes": [
+    "MODEL_INPUT_TRUNCATED"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}

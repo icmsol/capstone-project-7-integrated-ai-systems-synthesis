@@ -1,0 +1,9 @@
+{
+  "case_id": "TC-08",
+  "fixture_mode": "fault_injection",
+  "invoke_real_model": false,
+  "fault": "checksum_mismatch",
+  "expected_retry_count": 0,
+  "approved_manifest_checksum": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "observed_manifest_checksum": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+}

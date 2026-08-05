@@ -1,0 +1,165 @@
+{
+  "expected_outcome_schema_version": "1.0.1",
+  "case_id": "CASE-TC-12",
+  "expected_terminal_outcome": "deferred",
+  "expected_case_status": "deferred",
+  "expected_primary_stage_id": "STG-10",
+  "expected_primary_stage": "create_recommendation",
+  "expected_component": "recommendation_engine",
+  "expected_recommendation_code": "R-06",
+  "expected_recommendation_label": "No Recommendation",
+  "expected_reason_codes": [
+    "EVIDENCE_INSUFFICIENT"
+  ],
+  "expected_human_route": "Opportunity or Contract Analyst",
+  "expected_audit_events": [
+    "evidence_validated",
+    "recommendation_abstained",
+    "human_disposition_recorded"
+  ],
+  "required_evidence_classes": [
+    "official_source",
+    "counterevidence",
+    "human_disposition",
+    "audit_chain"
+  ],
+  "must_occur": [
+    "No Recommendation includes missing information and next action.",
+    "Scores and threshold version are recorded."
+  ],
+  "must_not_occur": [
+    "No weakly supported directional recommendation is emitted.",
+    "No unsupported claim appears."
+  ],
+  "acceptance_target_ids": [
+    "AT-04",
+    "AT-05",
+    "AT-09",
+    "AT-11",
+    "AT-18"
+  ],
+  "safeguard_control_ids": [
+    "SG-018",
+    "SG-021",
+    "SG-022",
+    "SG-024"
+  ],
+  "assertions": [
+    {
+      "assertion_id": "AS-TC-12-TERM",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.terminal_outcome",
+      "expected_value": "deferred",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-12-STATUS",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.case_status",
+      "expected_value": "deferred",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-12-STAGEID",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_stage_id",
+      "expected_value": "STG-10",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-12-STAGE",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_stage",
+      "expected_value": "create_recommendation",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-12-COMP",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_component",
+      "expected_value": "recommendation_engine",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-12-REASON",
+      "assertion_type": "contains_all",
+      "target_path": "$.case_state.reason_codes",
+      "expected_value": [
+        "EVIDENCE_INSUFFICIENT"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-12-AUDIT",
+      "assertion_type": "contains_all",
+      "target_path": "$.audit.event_types",
+      "expected_value": [
+        "evidence_validated",
+        "recommendation_abstained",
+        "human_disposition_recorded"
+      ],
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-12-SCHEMA",
+      "assertion_type": "schema_valid",
+      "target_path": "$.artifacts.schema_valid",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-12-CHECK",
+      "assertion_type": "checksum_valid",
+      "target_path": "$.artifacts.checksum_valid",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-12-NOEXT",
+      "assertion_type": "contains_none",
+      "target_path": "$.side_effects",
+      "expected_value": [
+        "email_sent",
+        "proposal_submitted",
+        "contract_accepted",
+        "purchase_executed",
+        "staff_committed"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-12-BOUND",
+      "assertion_type": "contains_none",
+      "target_path": "$.claims",
+      "expected_value": [
+        "production_ready",
+        "legally_authoritative",
+        "award_probability",
+        "autonomous_approval"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-12-RECCODE",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.recommendation_code",
+      "expected_value": "R-06",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-12-RECLABEL",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.recommendation_label",
+      "expected_value": "No Recommendation",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-12-ROUTE",
+      "assertion_type": "equals",
+      "target_path": "$.routing.expected_human_route",
+      "expected_value": "Opportunity or Contract Analyst",
+      "severity": "major"
+    }
+  ],
+  "result_status": "not_executed_target_only"
+}

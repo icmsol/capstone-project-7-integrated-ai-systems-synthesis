@@ -1,0 +1,90 @@
+{
+  "manifest_schema_version": "1.0.1",
+  "case_id": "CASE-TC-11",
+  "case_name": "Material evidence conflict escalates",
+  "freeze_version": "1.0.1",
+  "freeze_timestamp_utc": "2026-08-05T16:10:00Z",
+  "reference_profile": "icm",
+  "execution_mode": "real_components_with_frozen_inputs",
+  "deterministic_seed": 42,
+  "taxonomy_source": "config/system/scenario_taxonomy_and_target_cases.json",
+  "required_files": [
+    {
+      "path": "case_definition.json",
+      "sha256": "a22031c1f05f3f69d4e42258f3cbf916473f3dc90f5d1f71a0b9a316eee09f1a",
+      "bytes": 1124,
+      "role": "frozen case definition"
+    },
+    {
+      "path": "inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191,
+      "role": "organization profile reference"
+    },
+    {
+      "path": "inputs/opportunity_source.txt",
+      "sha256": "c5423b0c74b139bdae091476ef44d7bc1a009452752f29edbda2a7de3461cc1a",
+      "bytes": 431,
+      "role": "synthetic opportunity source snapshot"
+    },
+    {
+      "path": "inputs/opportunity.json",
+      "sha256": "04a917c95ac8f7fe5e689272a6b5accd43496540af8b2a3944c449b1b210e49b",
+      "bytes": 1928,
+      "role": "schema-valid normalized opportunity"
+    },
+    {
+      "path": "inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529,
+      "role": "frozen synthetic source document"
+    },
+    {
+      "path": "inputs/source_document_metadata.json",
+      "sha256": "bad4c646719b94704ece67b0fbc171d199bece768afd4bc1dd1ef4cfcb6572e8",
+      "bytes": 235,
+      "role": "source approval and privacy metadata"
+    },
+    {
+      "path": "inputs/model_fixture.json",
+      "sha256": "ae99df040deaf5482900174694fea5a51d4c24920813a69aab4e5cdbe475c36e",
+      "bytes": 150,
+      "role": "model boundary or fault fixture"
+    },
+    {
+      "path": "inputs/evidence_fixture.json",
+      "sha256": "4b7ee2387fb55c80eaf960c352e8631252a0761312c0492d54aa8096e5bbb274",
+      "bytes": 536,
+      "role": "official-evidence behavior fixture"
+    },
+    {
+      "path": "inputs/human_disposition.json",
+      "sha256": "ccb9873172a3da23aa2d3856970951bc238737b8019f4f56354a70d7acfeaf97",
+      "bytes": 847,
+      "role": "schema-valid human disposition wrapper"
+    },
+    {
+      "path": "inputs/fault_injection.json",
+      "sha256": "d2fdc3139fd7c71e50af6d6b7d36140d4a11d1d04b50fbd79780686a9f87fa1f",
+      "bytes": 108,
+      "role": "controlled fault-injection fixture"
+    },
+    {
+      "path": "expected/expected_outcome.json",
+      "sha256": "77478782774f1517dc504bd1cf334643a7ff958a528231bdad5889720bcb8e6d",
+      "bytes": 4554,
+      "role": "exact target outcome and evaluator assertions"
+    }
+  ],
+  "expected_terminal_outcome": "escalated",
+  "expected_recommendation_code": "R-05",
+  "expected_primary_stage_id": "STG-08",
+  "expected_primary_stage": "validate_evidence",
+  "expected_component": "evidence_validator",
+  "expected_reason_codes": [
+    "EVIDENCE_MATERIAL_CONFLICT",
+    "MANDATORY_SPECIALIST_REVIEW"
+  ],
+  "checksum_status": "verified_at_freeze",
+  "result_status": "not_executed_target_only"
+}

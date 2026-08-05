@@ -1,0 +1,26 @@
+{
+  "fixture_schema_version": "1.0.1",
+  "case_id": "CASE-TC-11",
+  "reached": true,
+  "disposition": {
+    "disposition_schema_version": "1.0.0",
+    "disposition_id": "DISP-TC-11-001",
+    "case_id": "CASE-TC-11",
+    "recommendation_id": "REC-TC-11-001",
+    "reviewer": {
+      "role_id": "ROLE-TC-11-REVIEWER",
+      "role_name": "Qualified Specialist",
+      "organization_id": "ICMSOL"
+    },
+    "disposition": "escalate",
+    "rationale": "The identified conflict, domain limitation, or specialist issue requires review by the named qualified authority before any further decision.",
+    "modified_conditions": [],
+    "escalated_to": {
+      "role_id": "ROLE-TC-11-ESCALATED",
+      "role_name": "Executive Authority",
+      "organization_id": "ICMSOL"
+    },
+    "decided_at": "2026-08-05T16:10:00Z"
+  },
+  "not_reached_reason": null
+}

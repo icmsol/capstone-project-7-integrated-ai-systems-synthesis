@@ -1,0 +1,43 @@
+{
+  "record_schema_version": "1.0.0",
+  "opportunity_id": "OPP-TC-07-001",
+  "case_id": "CASE-TC-07",
+  "source": {
+    "source_id": "SRC-TC-07-OPP",
+    "source_type": "synthetic",
+    "source_location": "data/scenarios/frozen/v1.0.1/TC-07/inputs/opportunity_source.txt",
+    "retrieved_at": "2026-08-05T16:10:00Z",
+    "snapshot_date": "2026-08-05",
+    "sha256": "e80aea91b5752dbcd1685c0c4ae98a7742a3f0acc473dc71ae537c6e38c28c78",
+    "approved_for_use": true,
+    "approval_basis": "Synthetic frozen evaluation fixture approved for controlled capstone testing.",
+    "notes": "Synthetic source snapshot created for frozen scenario evaluation; no real procurement record is represented."
+  },
+  "source_portal": "Project 7 Synthetic Evaluation Fixtures",
+  "jurisdiction": "California",
+  "agency": "Synthetic California Public Agency",
+  "solicitation_id": "SYN-TC-07",
+  "title": "Enterprise IT Strategy, Program Management, and Systems Integration Support",
+  "normalized_title": "enterprise it strategy, program management, and systems integration support",
+  "description": "Provide IT strategy, program and project management, systems integration, agile delivery support, organizational change management, and technical training.",
+  "status": "open",
+  "posted_at": "2026-08-01T00:00:00Z",
+  "due_at": "2026-09-15T23:59:59Z",
+  "fiscal_year": "2026",
+  "fiscal_quarter": "Q3",
+  "place_of_performance": "California",
+  "procurement_method": "Synthetic evaluation fixture",
+  "contract_vehicle": null,
+  "estimated_value": null,
+  "ingested_at": "2026-08-05T16:10:00Z",
+  "normalization_version": "1.0.1",
+  "record_key": "14e874d2dd224ad67daa",
+  "original_values": {
+    "title": "Enterprise IT Strategy, Program Management, and Systems Integration Support",
+    "agency": "Synthetic California Public Agency",
+    "due_at": "09/15/2026"
+  },
+  "missing_fields": [],
+  "data_freshness_days": 4,
+  "limitations": []
+}

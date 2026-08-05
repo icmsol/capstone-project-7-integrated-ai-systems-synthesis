@@ -1,0 +1,152 @@
+{
+  "expected_outcome_schema_version": "1.0.1",
+  "case_id": "CASE-TC-08",
+  "expected_terminal_outcome": "failed_closed",
+  "expected_case_status": "failed_closed",
+  "expected_primary_stage_id": "STG-06",
+  "expected_primary_stage": "triage_clause_themes",
+  "expected_component": "clause_triage_model",
+  "expected_recommendation_code": null,
+  "expected_recommendation_label": null,
+  "expected_reason_codes": [
+    "MODEL_PACKAGE_INVALID"
+  ],
+  "expected_human_route": "Technical Reviewer",
+  "expected_audit_events": [
+    "processing_failed"
+  ],
+  "required_evidence_classes": [
+    "model_prediction",
+    "policy_validation",
+    "audit_chain"
+  ],
+  "must_occur": [
+    "Package validation error is explicit.",
+    "Case state records failed-closed status."
+  ],
+  "must_not_occur": [
+    "No inference result is fabricated.",
+    "No fallback model is silently substituted.",
+    "No downstream recommendation is produced."
+  ],
+  "acceptance_target_ids": [
+    "AT-08",
+    "AT-09",
+    "AT-15",
+    "AT-17"
+  ],
+  "safeguard_control_ids": [
+    "SG-011",
+    "SG-027",
+    "SG-029"
+  ],
+  "assertions": [
+    {
+      "assertion_id": "AS-TC-08-TERM",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.terminal_outcome",
+      "expected_value": "failed_closed",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-08-STATUS",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.case_status",
+      "expected_value": "failed_closed",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-08-STAGEID",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_stage_id",
+      "expected_value": "STG-06",
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-08-STAGE",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_stage",
+      "expected_value": "triage_clause_themes",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-08-COMP",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.primary_component",
+      "expected_value": "clause_triage_model",
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-08-REASON",
+      "assertion_type": "contains_all",
+      "target_path": "$.case_state.reason_codes",
+      "expected_value": [
+        "MODEL_PACKAGE_INVALID"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-08-AUDIT",
+      "assertion_type": "contains_all",
+      "target_path": "$.audit.event_types",
+      "expected_value": [
+        "processing_failed"
+      ],
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-08-SCHEMA",
+      "assertion_type": "schema_valid",
+      "target_path": "$.artifacts.schema_valid",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-08-CHECK",
+      "assertion_type": "checksum_valid",
+      "target_path": "$.artifacts.checksum_valid",
+      "expected_value": true,
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-08-NOEXT",
+      "assertion_type": "contains_none",
+      "target_path": "$.side_effects",
+      "expected_value": [
+        "email_sent",
+        "proposal_submitted",
+        "contract_accepted",
+        "purchase_executed",
+        "staff_committed"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-08-BOUND",
+      "assertion_type": "contains_none",
+      "target_path": "$.claims",
+      "expected_value": [
+        "production_ready",
+        "legally_authoritative",
+        "award_probability",
+        "autonomous_approval"
+      ],
+      "severity": "critical"
+    },
+    {
+      "assertion_id": "AS-TC-08-NOREC",
+      "assertion_type": "equals",
+      "target_path": "$.case_state.recommendation_code",
+      "expected_value": null,
+      "severity": "major"
+    },
+    {
+      "assertion_id": "AS-TC-08-ROUTE",
+      "assertion_type": "equals",
+      "target_path": "$.routing.expected_human_route",
+      "expected_value": "Technical Reviewer",
+      "severity": "major"
+    }
+  ],
+  "result_status": "not_executed_target_only"
+}

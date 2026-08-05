@@ -1,0 +1,16 @@
+{
+  "case_id": "TC-12",
+  "fixture_mode": "low_sufficiency",
+  "corpus_version": "P7-FAR-CANDIDATE-1.0.0",
+  "corpus_approved": true,
+  "aggregate_sufficiency": 0.54,
+  "minimum_required": 0.7,
+  "items": [
+    {
+      "evidence_id": "EV-WEAK-001",
+      "citation": "SYNTHETIC GENERAL GUIDANCE",
+      "relevance_score": 0.57,
+      "support_status": "uncertain"
+    }
+  ]
+}

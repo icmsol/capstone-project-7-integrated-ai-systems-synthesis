@@ -1,0 +1,9 @@
+Case: TC-07
+Title: Enterprise IT Strategy, Program Management, and Systems Integration Support
+Agency: Synthetic California Public Agency
+Solicitation: SYN-TC-07
+Status: Open
+Posted: 2026-08-01
+Due: 2026-09-15
+Description: Provide IT strategy, program and project management, systems integration, agile delivery support, organizational change management, and technical training.
+Fixture classification: synthetic evaluation source
