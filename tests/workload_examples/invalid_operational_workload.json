@@ -1,0 +1,814 @@
+{
+  "workload_schema_version": "1.0.0",
+  "workload_id": "WL-ICM-OPPORTUNITY-TO-CONTRACT-001",
+  "workload_name": "ICM Public-Sector Opportunity-to-Contract Decision-Support Workload",
+  "industry_context": "Small public-sector consulting businesses must decide which opportunities to pursue, understand contract and evidence risks, allocate scarce review capacity, and preserve accountable human authority.",
+  "business_problem": "ICM Solutions currently relies on fragmented procurement data, manual service-fit screening, separate historical analysis, human contract review, and individual judgment. The representative workload tests whether these activities can be integrated into one configurable, evidence-grounded, auditable, human-authorized decision-support process without overstating model or source capabilities.",
+  "workload_objective": "Given one approved opportunity and an active organization profile, produce a reproducible decision-support packet and nonbinding recommendation, route mandatory specialist reviews, and record a separate authorized human disposition.",
+  "reference_organization": {
+    "organization_id": "ICMSOL",
+    "organization_name": "Integrated Consulting and Management Solutions, LLC",
+    "profile_path": "config/profiles/icm",
+    "portability_requirement": "The same executable workflow must also run with the fictional alternate organization profile without editing source code or weakening fixed safeguards."
+  },
+  "primary_user_story": "As an authorized ICM pursuit lead, I need one evidence-grounded packet that explains opportunity alignment, historical context, clause-review priorities, authoritative evidence, risks, missing information, conditions, and required specialist reviews so that I\u2014not the AI system\u2014can make and justify the final pursuit disposition.",
+  "scope": {
+    "start_condition": "An approved organization profile and frozen or authorized opportunity snapshot are available.",
+    "end_condition": "The case reaches finalized, deferred, escalated, or failed-closed status with a valid audit chain.",
+    "unit_of_work": "One organization profile applied to one opportunity case and its bounded supporting documents.",
+    "execution_mode": "single_case_sequential",
+    "data_mode": "frozen_synthetic_deidentified_or_authorized"
+  },
+  "actors": [
+    {
+      "actor_id": "ACT-01",
+      "actor_name": "Organization Profile Owner",
+      "actor_type": "human_operator",
+      "responsibilities": [
+        "Maintain the organization profile, service catalog, opportunity rules, staffing map, and reviewer-role mappings.",
+        "Correct invalid or incomplete organization configuration."
+      ],
+      "authority_boundary": "May configure permitted business criteria but cannot weaken fixed safeguards, evidence requirements, audit logging, or human final authority."
+    },
+    {
+      "actor_id": "ACT-02",
+      "actor_name": "Opportunity Analyst",
+      "actor_type": "human_operator",
+      "responsibilities": [
+        "Provide or select an approved opportunity record and supporting solicitation material.",
+        "Review normalization warnings, missing fields, and service-alignment evidence."
+      ],
+      "authority_boundary": "May correct input and request further analysis but cannot finalize pursuit or contract decisions."
+    },
+    {
+      "actor_id": "ACT-03",
+      "actor_name": "Business Development or Pursuit Lead",
+      "actor_type": "human_reviewer",
+      "responsibilities": [
+        "Review opportunity alignment, historical context, recommendation conditions, and missing information.",
+        "Accept, modify, reject, defer, or escalate the system recommendation within delegated authority."
+      ],
+      "authority_boundary": "May make an authorized pursuit disposition only within organizational delegation and after mandatory specialist reviews."
+    },
+    {
+      "actor_id": "ACT-04",
+      "actor_name": "Contract Analyst",
+      "actor_type": "human_reviewer",
+      "responsibilities": [
+        "Review selected passages, citation validity, evidence sufficiency, and contract-related limitations.",
+        "Resolve or escalate missing, stale, or conflicting evidence."
+      ],
+      "authority_boundary": "May validate analysis and route issues but does not provide final legal authority unless separately qualified and authorized."
+    },
+    {
+      "actor_id": "ACT-05",
+      "actor_name": "Qualified Specialist",
+      "actor_type": "human_reviewer",
+      "responsibilities": [
+        "Review legal, privacy, security, financial, staffing, ethical, or other mandatory specialist issues.",
+        "Provide bounded specialist findings for the authorized decision maker."
+      ],
+      "authority_boundary": "Authority is limited to the specialist's qualified domain and delegated organizational role."
+    },
+    {
+      "actor_id": "ACT-06",
+      "actor_name": "Executive Authority",
+      "actor_type": "human_authority",
+      "responsibilities": [
+        "Resolve authorization gaps, safeguard conflicts, exceptional risk, and final organizational commitments.",
+        "Approve or reject escalated cases according to organizational governance."
+      ],
+      "authority_boundary": "Retains accountable human authority; the system cannot impersonate or replace this role."
+    },
+    {
+      "actor_id": "ACT-07",
+      "actor_name": "Project 7 Integrated System",
+      "actor_type": "system",
+      "responsibilities": [
+        "Execute registered component contracts, enforce fixed safeguards, assemble evidence, and generate nonbinding recommendations.",
+        "Persist schema-valid case state and append-only sanitized audit events."
+      ],
+      "authority_boundary": "May analyze, recommend, abstain, defer, and route; may not make a final decision or perform an external action."
+    },
+    {
+      "actor_id": "ACT-08",
+      "actor_name": "Evaluation and Audit Reviewer",
+      "actor_type": "evaluation_observer",
+      "responsibilities": [
+        "Verify reproducibility, scenario outcomes, schema compliance, audit completeness, and production-boundary disclosures.",
+        "Compare measured results with the frozen acceptance targets."
+      ],
+      "authority_boundary": "Observes and assesses the controlled workload but does not alter case outcomes during evaluation."
+    }
+  ],
+  "workload_profile": {
+    "organization_profiles_per_run": 1,
+    "opportunities_per_run": 1,
+    "source_documents_per_case_max": 3,
+    "selected_passages_per_case_max": 5,
+    "model_inferences_per_case_max": 5,
+    "candidate_evidence_items_per_claim_max": 5,
+    "claims_per_case_max": 5,
+    "human_dispositions_per_case": 1,
+    "training_required": true,
+    "gpu_required": true
+  },
+  "approved_inputs": [
+    {
+      "input_id": "IN-01",
+      "input_name": "Validated organization profile",
+      "input_type": "configuration",
+      "required": true,
+      "source_classification": "framework_controlled",
+      "schema_or_contract": "organization_profile.schema.json and profile_loader.contract.json",
+      "producer_or_owner": "Organization Profile Owner",
+      "validation_gate": "Schema, file-reference, version, and safeguard-override validation must pass."
+    },
+    {
+      "input_id": "IN-02",
+      "input_name": "Frozen opportunity snapshot",
+      "input_type": "opportunity_record",
+      "required": true,
+      "source_classification": "frozen_snapshot",
+      "schema_or_contract": "opportunity_record.schema.json",
+      "producer_or_owner": "Opportunity Analyst",
+      "validation_gate": "Approved source, checksum, retrieval time, original values, and required metadata must be recorded."
+    },
+    {
+      "input_id": "IN-03",
+      "input_name": "Frozen Project 2 historical reference assets",
+      "input_type": "historical_reference",
+      "required": false,
+      "source_classification": "frozen_snapshot",
+      "schema_or_contract": "historical_context.schema.json and approved prior-project registry",
+      "producer_or_owner": "Project 7 data registry",
+      "validation_gate": "Checksums, source period, descriptive-only limitation, and field mapping must pass."
+    },
+    {
+      "input_id": "IN-04",
+      "input_name": "Authorized solicitation or contract passages",
+      "input_type": "source_document",
+      "required": false,
+      "source_classification": "public",
+      "schema_or_contract": "passage_selector.contract.json",
+      "producer_or_owner": "Opportunity or Contract Analyst",
+      "validation_gate": "Source approval, privacy screening, locator retention, and passage hashing must pass."
+    },
+    {
+      "input_id": "IN-05",
+      "input_name": "Validated Project 4 inference package",
+      "input_type": "model_package",
+      "required": false,
+      "source_classification": "framework_controlled",
+      "schema_or_contract": "clause_triage_model.contract.json and project4 inference manifest",
+      "producer_or_owner": "Repository model registry",
+      "validation_gate": "Checkpoint, vocabulary, label map, configuration, checksum, and CPU smoke test must pass."
+    },
+    {
+      "input_id": "IN-06",
+      "input_name": "Versioned official evidence corpus",
+      "input_type": "official_corpus",
+      "required": false,
+      "source_classification": "frozen_snapshot",
+      "schema_or_contract": "official_evidence_retriever.contract.json",
+      "producer_or_owner": "Project 7 corpus registry",
+      "validation_gate": "Acquisition provenance, checksum, metadata, boundary validation, and representative retrieval tests must pass."
+    },
+    {
+      "input_id": "IN-07",
+      "input_name": "Fixed safeguards and orchestration policy",
+      "input_type": "fixed_policy",
+      "required": true,
+      "source_classification": "framework_controlled",
+      "schema_or_contract": "safeguard_policy.schema.json and orchestration_policy.schema.json",
+      "producer_or_owner": "Project 7 framework",
+      "validation_gate": "Policies must be schema-valid, versioned, non-overridable, and consistent with the contract registry."
+    },
+    {
+      "input_id": "IN-08",
+      "input_name": "Authorized human reviewer response",
+      "input_type": "human_input",
+      "required": true,
+      "source_classification": "human_supplied",
+      "schema_or_contract": "human_disposition.schema.json",
+      "producer_or_owner": "Authorized human reviewer",
+      "validation_gate": "Reviewer role, decision option, rationale, timestamp, and escalation target where applicable must validate."
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "STG-01",
+      "sequence": 1,
+      "stage_name": "Load and validate organization configuration",
+      "component_id": "profile_loader",
+      "primary_actor": "ACT-01",
+      "entry_condition": "An approved profile path and fixed safeguard policy are available.",
+      "processing_summary": "Resolve the organization profile, linked service and staffing artifacts, reviewer roles, and business thresholds while rejecting fixed-safeguard overrides.",
+      "expected_artifacts": [
+        "validated configuration bundle",
+        "organization context"
+      ],
+      "success_condition": "All configuration references validate and the immutable active bundle is recorded.",
+      "failure_or_abstention_route": "Fail closed and route configuration defects to the Organization Profile Owner.",
+      "required_audit_event": "configuration_loaded",
+      "human_interaction": "optional_correction"
+    },
+    {
+      "stage_id": "STG-02",
+      "sequence": 2,
+      "stage_name": "Create, normalize, and provenance-lock the opportunity",
+      "component_id": "case_intake_normalizer",
+      "primary_actor": "ACT-02",
+      "entry_condition": "A source-approved opportunity snapshot is available.",
+      "processing_summary": "Create the case, normalize source-specific fields, preserve original values, record missing fields, and generate deterministic identifiers.",
+      "expected_artifacts": [
+        "normalized opportunity record",
+        "initial integrated case state"
+      ],
+      "success_condition": "The opportunity validates against the shared schema with source metadata and checksum.",
+      "failure_or_abstention_route": "Defer correctable metadata gaps or fail closed for unauthorized or unparseable sources.",
+      "required_audit_event": "source_ingested",
+      "human_interaction": "optional_correction"
+    },
+    {
+      "stage_id": "STG-03",
+      "sequence": 3,
+      "stage_name": "Assess organization service alignment",
+      "component_id": "service_alignment_engine",
+      "primary_actor": "ACT-07",
+      "entry_condition": "The normalized opportunity and active organization configuration are valid.",
+      "processing_summary": "Apply exclusion-first transparent matching against configured capabilities, record exact terms, staffing families, scores, reason codes, and limitations.",
+      "expected_artifacts": [
+        "service alignment assessment"
+      ],
+      "success_condition": "The assessment is complete or explicitly reports insufficient information.",
+      "failure_or_abstention_route": "Abstain for sparse data or escalate unresolved rule conflicts.",
+      "required_audit_event": "alignment_completed",
+      "human_interaction": "none"
+    },
+    {
+      "stage_id": "STG-04",
+      "sequence": 4,
+      "stage_name": "Attach descriptive historical procurement context",
+      "component_id": "historical_context_provider",
+      "primary_actor": "ACT-07",
+      "entry_condition": "Approved Project 2 frozen assets are available and comparable.",
+      "processing_summary": "Attach bounded source-period, service-category, and staffing-family counts with explicit non-predictive interpretation and limitations.",
+      "expected_artifacts": [
+        "historical context assessment or explicit skip limitation"
+      ],
+      "success_condition": "Historical context is reproducible and cannot be interpreted as award probability or capacity.",
+      "failure_or_abstention_route": "Warn and continue without context when assets are missing, stale, or not comparable.",
+      "required_audit_event": "historical_context_attached",
+      "human_interaction": "none"
+    },
+    {
+      "stage_id": "STG-05",
+      "sequence": 5,
+      "stage_name": "Select relevant approved passages",
+      "component_id": "passage_selector",
+      "primary_actor": "ACT-02",
+      "entry_condition": "Approved solicitation or contract text is available or a human selects passages.",
+      "processing_summary": "Select bounded passages for triage or evidence review, retain source locators, hash the text, and screen for sensitive content and prompt injection.",
+      "expected_artifacts": [
+        "selected passage records"
+      ],
+      "success_condition": "Every selected passage has provenance, locator, hash, and selection rationale.",
+      "failure_or_abstention_route": "Abstain when no approved passage exists; block sensitive or injection-bearing content.",
+      "required_audit_event": "source_ingested",
+      "human_interaction": "optional_correction"
+    },
+    {
+      "stage_id": "STG-06",
+      "sequence": 6,
+      "stage_name": "Run bounded clause-theme triage",
+      "component_id": "clause_triage_model",
+      "primary_actor": "ACT-07",
+      "entry_condition": "At least one selected passage and the validated Project 4 package are available.",
+      "processing_summary": "Run CPU inference and produce the full probability vector, bounded theme, confidence, abstention or escalation decision, domain warning, and reviewer route.",
+      "expected_artifacts": [
+        "clause prediction records"
+      ],
+      "success_condition": "Predictions are reproducible and limited to triage rather than legal interpretation.",
+      "failure_or_abstention_route": "Fail closed for an invalid package; abstain below 0.80; escalate domain-shift cases.",
+      "required_audit_event": "clause_triage_completed",
+      "human_interaction": "none"
+    },
+    {
+      "stage_id": "STG-07",
+      "sequence": 7,
+      "stage_name": "Retrieve approved official evidence",
+      "component_id": "official_evidence_retriever",
+      "primary_actor": "ACT-04",
+      "entry_condition": "An evidence request exists and the official corpus is approved.",
+      "processing_summary": "Use exact citation lookup before semantic search, return source metadata and retrieval scores, and never silently substitute a different authority.",
+      "expected_artifacts": [
+        "candidate evidence items"
+      ],
+      "success_condition": "Every candidate identifies corpus version, source locator, retrieval method, and relevance score.",
+      "failure_or_abstention_route": "Fail closed for an unapproved corpus; abstain when an exact requested citation is absent.",
+      "required_audit_event": "evidence_retrieved",
+      "human_interaction": "mandatory_review"
+    },
+    {
+      "stage_id": "STG-08",
+      "sequence": 8,
+      "stage_name": "Validate citations, relevance, sufficiency, and conflict",
+      "component_id": "evidence_validator",
+      "primary_actor": "ACT-04",
+      "entry_condition": "Candidate evidence and an explicit claim context are available.",
+      "processing_summary": "Validate citation metadata, freshness, relevance, support, counterevidence, conflicts, missing information, and the action required.",
+      "expected_artifacts": [
+        "validated evidence items",
+        "evidence sufficiency assessments"
+      ],
+      "success_condition": "Evidence status and all material conflicts and gaps are explicit.",
+      "failure_or_abstention_route": "Fail closed for invalid citations; abstain for insufficiency; escalate material conflict.",
+      "required_audit_event": "evidence_validated",
+      "human_interaction": "mandatory_review"
+    },
+    {
+      "stage_id": "STG-09",
+      "sequence": 9,
+      "stage_name": "Route risk and mandatory escalation",
+      "component_id": "risk_escalation_router",
+      "primary_actor": "ACT-07",
+      "entry_condition": "Analysis outputs or explicit abstentions are present.",
+      "processing_summary": "Apply fixed mandatory-review triggers and organization reviewer-role mappings without permitting convenience settings to weaken escalation requirements.",
+      "expected_artifacts": [
+        "risk and escalation routing decision"
+      ],
+      "success_condition": "Every material issue has a reason code and authorized reviewer route.",
+      "failure_or_abstention_route": "Fail closed when an authorized reviewer role cannot be resolved.",
+      "required_audit_event": "case_escalated",
+      "human_interaction": "mandatory_review"
+    },
+    {
+      "stage_id": "STG-10",
+      "sequence": 10,
+      "stage_name": "Create complete nonbinding recommendation",
+      "component_id": "recommendation_engine",
+      "primary_actor": "ACT-07",
+      "entry_condition": "Routing is complete and audit persistence is healthy.",
+      "processing_summary": "Assemble a recommendation or explicit No Recommendation result with supporting evidence, counterevidence, gaps, conditions, limitations, freshness, reviewer, next action, and audit reference.",
+      "expected_artifacts": [
+        "schema-valid nonbinding recommendation"
+      ],
+      "success_condition": "The recommendation is complete, evidence-linked, nonbinding, and appropriate to the evidence status.",
+      "failure_or_abstention_route": "Abstain for insufficient evidence; fail closed for missing fields or unsupported claims.",
+      "required_audit_event": "recommendation_created",
+      "human_interaction": "none"
+    },
+    {
+      "stage_id": "STG-11",
+      "sequence": 11,
+      "stage_name": "Assemble the decision-support packet",
+      "component_id": "packet_assembler",
+      "primary_actor": "ACT-07",
+      "entry_condition": "A recommendation or explicit No Recommendation outcome exists.",
+      "processing_summary": "Create a human-readable and machine-traceable packet containing provenance, analyses, evidence, conditions, limitations, required reviews, and production-boundary disclosure.",
+      "expected_artifacts": [
+        "decision-support packet",
+        "packet completeness result"
+      ],
+      "success_condition": "Packet completeness and artifact-ID consistency checks pass.",
+      "failure_or_abstention_route": "Fail closed for missing sections, mismatched artifacts, or absent disclosures.",
+      "required_audit_event": "recommendation_created",
+      "human_interaction": "mandatory_review"
+    }
+  ],
+  "human_decision_points": [
+    {
+      "decision_id": "DP-01",
+      "decision_name": "Approve or correct the organization configuration",
+      "stage_id": "STG-01",
+      "authorized_role": "Organization Profile Owner",
+      "decision_options": [
+        "approve validated profile",
+        "correct configuration",
+        "withdraw profile"
+      ],
+      "evidence_available": [
+        "schema results",
+        "missing references",
+        "safeguard override conflicts"
+      ],
+      "required_rationale": true,
+      "system_authority": "recommend_only_or_route"
+    },
+    {
+      "decision_id": "DP-02",
+      "decision_name": "Approve source use or correct intake",
+      "stage_id": "STG-02",
+      "authorized_role": "Opportunity Analyst or Data Reviewer",
+      "decision_options": [
+        "approve source",
+        "correct source metadata",
+        "replace source",
+        "stop case"
+      ],
+      "evidence_available": [
+        "source type",
+        "approval basis",
+        "checksum",
+        "missing fields",
+        "normalization warnings"
+      ],
+      "required_rationale": true,
+      "system_authority": "recommend_only_or_route"
+    },
+    {
+      "decision_id": "DP-03",
+      "decision_name": "Confirm passage and contract-review scope",
+      "stage_id": "STG-05",
+      "authorized_role": "Opportunity or Contract Analyst",
+      "decision_options": [
+        "approve selected passages",
+        "modify passage set",
+        "continue without text analysis",
+        "stop case"
+      ],
+      "evidence_available": [
+        "passage locators",
+        "selection rationale",
+        "source approval",
+        "sensitive-content result"
+      ],
+      "required_rationale": true,
+      "system_authority": "recommend_only_or_route"
+    },
+    {
+      "decision_id": "DP-04",
+      "decision_name": "Resolve evidence sufficiency or conflict",
+      "stage_id": "STG-08",
+      "authorized_role": "Contract Analyst or Qualified Specialist",
+      "decision_options": [
+        "accept evidence assessment",
+        "retrieve more evidence",
+        "defer",
+        "escalate"
+      ],
+      "evidence_available": [
+        "validated citations",
+        "relevance scores",
+        "freshness status",
+        "counterevidence",
+        "conflict summary"
+      ],
+      "required_rationale": true,
+      "system_authority": "recommend_only_or_route"
+    },
+    {
+      "decision_id": "DP-05",
+      "decision_name": "Complete mandatory specialist review",
+      "stage_id": "STG-09",
+      "authorized_role": "Qualified Specialist",
+      "decision_options": [
+        "clear with findings",
+        "require conditions",
+        "defer pending information",
+        "escalate to Executive Authority"
+      ],
+      "evidence_available": [
+        "risk trigger",
+        "reason codes",
+        "component limitations",
+        "relevant evidence"
+      ],
+      "required_rationale": true,
+      "system_authority": "recommend_only_or_route"
+    },
+    {
+      "decision_id": "DP-06",
+      "decision_name": "Make the final human pursuit disposition",
+      "stage_id": "STG-12",
+      "authorized_role": "Business Development or Pursuit Lead, or Executive Authority",
+      "decision_options": [
+        "accept",
+        "accept with modified conditions",
+        "reject",
+        "defer pending information",
+        "escalate"
+      ],
+      "evidence_available": [
+        "complete decision-support packet",
+        "system recommendation",
+        "supporting evidence",
+        "counterevidence",
+        "conditions",
+        "limitations",
+        "specialist findings"
+      ],
+      "required_rationale": true,
+      "system_authority": "recommend_only_or_route"
+    }
+  ],
+  "expected_outputs": [
+    {
+      "output_id": "OUT-01",
+      "output_name": "Validated organization context",
+      "schema_or_format": "integrated_case_state.organization_context",
+      "required_for_completion": true,
+      "reviewer_value": "Shows exactly which organization profile and configuration versions governed the case."
+    },
+    {
+      "output_id": "OUT-02",
+      "output_name": "Normalized opportunity record",
+      "schema_or_format": "opportunity_record.schema.json",
+      "required_for_completion": true,
+      "reviewer_value": "Provides a reproducible opportunity record with original values, missing fields, and provenance."
+    },
+    {
+      "output_id": "OUT-03",
+      "output_name": "Service alignment assessment",
+      "schema_or_format": "service_alignment.schema.json",
+      "required_for_completion": true,
+      "reviewer_value": "Explains exact matches, exclusions, staffing families, score, reason codes, and limitations."
+    },
+    {
+      "output_id": "OUT-04",
+      "output_name": "Historical procurement context",
+      "schema_or_format": "historical_context.schema.json or explicit skip limitation",
+      "required_for_completion": true,
+      "reviewer_value": "Provides bounded historical context without implying award probability or staffing capacity."
+    },
+    {
+      "output_id": "OUT-05",
+      "output_name": "Clause-theme triage results",
+      "schema_or_format": "clause_prediction.schema.json or explicit not-applicable result",
+      "required_for_completion": true,
+      "reviewer_value": "Prioritizes human contract review while disclosing confidence, domain shift, and truncation."
+    },
+    {
+      "output_id": "OUT-06",
+      "output_name": "Validated evidence inventory",
+      "schema_or_format": "evidence_item.schema.json",
+      "required_for_completion": true,
+      "reviewer_value": "Links claims to exact sources, citations, relevance, freshness, and support or conflict status."
+    },
+    {
+      "output_id": "OUT-07",
+      "output_name": "Evidence sufficiency assessments",
+      "schema_or_format": "evidence_assessment.schema.json",
+      "required_for_completion": true,
+      "reviewer_value": "Shows whether evidence is sufficient, uncertain, conflicting, or missing."
+    },
+    {
+      "output_id": "OUT-08",
+      "output_name": "Risk and escalation route",
+      "schema_or_format": "internal routing decision plus audit event",
+      "required_for_completion": true,
+      "reviewer_value": "Identifies mandatory specialist review and the reason for each route."
+    },
+    {
+      "output_id": "OUT-09",
+      "output_name": "Nonbinding recommendation",
+      "schema_or_format": "recommendation.schema.json",
+      "required_for_completion": true,
+      "reviewer_value": "Provides a complete advisory conclusion with evidence, counterevidence, gaps, conditions, and next action."
+    },
+    {
+      "output_id": "OUT-10",
+      "output_name": "Decision-support packet",
+      "schema_or_format": "Markdown or HTML plus machine-readable artifact references",
+      "required_for_completion": true,
+      "reviewer_value": "Presents all relevant case information in one traceable human-review artifact."
+    },
+    {
+      "output_id": "OUT-11",
+      "output_name": "Authorized human disposition",
+      "schema_or_format": "human_disposition.schema.json",
+      "required_for_completion": true,
+      "reviewer_value": "Separates accountable human judgment from the system recommendation."
+    },
+    {
+      "output_id": "OUT-12",
+      "output_name": "Append-only case audit trail",
+      "schema_or_format": "audit_event.schema.json JSONL",
+      "required_for_completion": true,
+      "reviewer_value": "Allows reconstruction of source use, component activity, warnings, failures, recommendations, and human decisions."
+    }
+  ],
+  "acceptance_targets": [
+    {
+      "target_id": "AT-01",
+      "category": "functional",
+      "measure": "Required workflow stages reached or explicitly skipped under policy",
+      "target": "12 of 12 stages accounted for",
+      "measurement_method": "Compare case audit and state transitions with the orchestration policy.",
+      "result_status": "target_not_yet_measured"
+    },
+    {
+      "target_id": "AT-02",
+      "category": "data_quality",
+      "measure": "Required shared records passing JSON Schema",
+      "target": "100%",
+      "measurement_method": "Validate every required output against its committed schema.",
+      "result_status": "target_not_yet_measured"
+    },
+    {
+      "target_id": "AT-03",
+      "category": "data_quality",
+      "measure": "Material sources with type, approval basis, checksum, and retrieval time",
+      "target": "100%",
+      "measurement_method": "Inspect opportunity, document, historical, model, and corpus source records.",
+      "result_status": "target_not_yet_measured"
+    },
+    {
+      "target_id": "AT-04",
+      "category": "evidence",
+      "measure": "Material recommendation claims linked to recorded evidence or deterministic rule artifacts",
+      "target": "100%",
+      "measurement_method": "Run claim-to-artifact traceability validation.",
+      "result_status": "target_not_yet_measured"
+    },
+    {
+      "target_id": "AT-05",
+      "category": "evidence",
+      "measure": "Known material counterevidence disclosed",
+      "target": "100%",
+      "measurement_method": "Compare validated conflict inventory with recommendation and packet references.",
+      "result_status": "target_not_yet_measured"
+    },
+    {
+      "target_id": "AT-06",
+      "category": "evidence",
+      "measure": "Invalid or missing exact citations handled safely",
+      "target": "100% abstain or fail closed",
+      "measurement_method": "Execute missing and incorrect citation scenarios.",
+      "result_status": "target_not_yet_measured"
+    },
+    {
+      "target_id": "AT-07",
+      "category": "governance",
+      "measure": "Fixed safeguard override attempts blocked",
+      "target": "100%",
+      "measurement_method": "Execute profile and case-level override scenarios and inspect audit outcomes.",
+      "result_status": "target_not_yet_measured"
+    },
+    {
+      "target_id": "AT-08",
+      "category": "governance",
+      "measure": "Prohibited external actions performed",
+      "target": "0 occurrences",
+      "measurement_method": "Inspect tool registry, side effects, audit events, and external-action misuse scenarios.",
+      "result_status": "target_not_yet_measured"
+    },
+    {
+      "target_id": "AT-09",
+      "category": "governance",
+      "measure": "Required material state transitions with persisted audit event",
+      "target": "100%",
+      "measurement_method": "Compare orchestration transitions with the case audit-event IDs and hash chain.",
+      "result_status": "target_not_yet_measured"
+    },
+    {
+      "target_id": "AT-10",
+      "category": "governance",
+      "measure": "Secret, restricted, or private-reasoning values persisted",
+      "target": "0 occurrences",
+      "measurement_method": "Run repository and audit-content scans plus sensitive-data scenarios.",
+      "result_status": "target_not_yet_measured"
+    },
+    {
+      "target_id": "AT-11",
+      "category": "human_authority",
+      "measure": "Finalized cases with authorized human disposition and rationale",
+      "target": "100%",
+      "measurement_method": "Validate terminal case state and human-disposition schema.",
+      "result_status": "target_not_yet_measured"
+    },
+    {
+      "target_id": "AT-12",
+      "category": "human_authority",
+      "measure": "Mandatory specialist triggers routed to configured qualified role",
+      "target": "100%",
+      "measurement_method": "Execute each mandatory-trigger scenario and inspect the routing decision.",
+      "result_status": "target_not_yet_measured"
+    },
+    {
+      "target_id": "AT-13",
+      "category": "portability",
+      "measure": "Same executable workflow runs with ICM and fictional organization profiles",
+      "target": "2 profiles with no code change",
+      "measurement_method": "Run the same frozen opportunity under both profiles and compare configuration-dependent outputs.",
+      "result_status": "target_not_yet_measured"
+    },
+    {
+      "target_id": "AT-14",
+      "category": "performance",
+      "measure": "Automated single-case elapsed time excluding human wait and model-provider latency",
+      "target": "60 seconds or less on Colab CPU for the bounded workload",
+      "measurement_method": "Measure stage timestamps for one opportunity, up to five passages, and up to ten evidence candidates.",
+      "result_status": "target_not_yet_measured"
+    },
+    {
+      "target_id": "AT-15",
+      "category": "performance",
+      "measure": "Project 4 CPU inference package load and prediction",
+      "target": "Successful load and finite probability vector",
+      "measurement_method": "Repeat checksum, state-dictionary, shape, finite-value, and probability-sum checks.",
+      "result_status": "target_not_yet_measured"
+    },
+    {
+      "target_id": "AT-16",
+      "category": "reproducibility",
+      "measure": "Frozen workload rerun with identical configuration and source checksums",
+      "target": "Deterministic structured outputs except explicitly nondeterministic model-provider text",
+      "measurement_method": "Compare normalized records, rules, routes, schema results, artifact IDs, and recorded seeds or model settings.",
+      "result_status": "target_not_yet_measured"
+    },
+    {
+      "target_id": "AT-17",
+      "category": "reproducibility",
+      "measure": "Repository validation scripts passing from a clean environment",
+      "target": "100%",
+      "measurement_method": "Run all committed schema, contract, safeguard, traceability, and workload validation scripts.",
+      "result_status": "target_not_yet_measured"
+    },
+    {
+      "target_id": "AT-18",
+      "category": "functional",
+      "measure": "Complete human-readable decision-support packet",
+      "target": "100% of mandatory packet sections present",
+      "measurement_method": "Run packet completeness and artifact-reference validation.",
+      "result_status": "target_not_yet_measured"
+    }
+  ],
+  "constraints": [
+    {
+      "constraint_id": "CON-01",
+      "constraint": "The capstone must integrate prior projects without falsely claiming that every prior model is operationally appropriate.",
+      "design_response": "Use Projects 1, 2, 4, and 6 as runtime contributors and Projects 3 and 5 as bounded evidence, with explicit exclusions."
+    },
+    {
+      "constraint_id": "CON-02",
+      "constraint": "The Project 4 classifier was trained on CUAD commercial-contract passages.",
+      "design_response": "Use it only for bounded theme triage with confidence, abstention, domain warning, and mandatory human review."
+    },
+    {
+      "constraint_id": "CON-03",
+      "constraint": "The original Project 6 official corpus is not present in the public repository and the current official source checksum differs.",
+      "design_response": "Reacquire and version a new corpus candidate, preserve provenance, validate boundaries, and never claim byte-for-byte recovery."
+    },
+    {
+      "constraint_id": "CON-04",
+      "constraint": "Historical procurement data is incomplete across portals and cannot establish award probability or staffing capacity.",
+      "design_response": "Use only descriptive context with explicit source periods, gaps, and non-predictive limitations."
+    },
+    {
+      "constraint_id": "CON-05",
+      "constraint": "Organization-specific services and business criteria must be configurable for other small businesses.",
+      "design_response": "Resolve profiles, service catalogs, rules, staffing maps, reviewers, and business thresholds without changing executable code."
+    },
+    {
+      "constraint_id": "CON-06",
+      "constraint": "Responsible-AI safeguards must not become configurable convenience settings.",
+      "design_response": "Keep fixed safeguards, schemas, contracts, audit, abstention, human authority, and no-external-action rules at higher precedence."
+    },
+    {
+      "constraint_id": "CON-07",
+      "constraint": "The integrated workflow may use Colab, where runtimes and local state can disconnect.",
+      "design_response": "Use small versioned artifacts, GitHub checkpoints, deterministic validation scripts, and restartable stage boundaries."
+    },
+    {
+      "constraint_id": "CON-08",
+      "constraint": "The project paper is limited to approximately 2,000 words while diagrams are not counted toward that word limit.",
+      "design_response": "Place architecture and major-function diagrams in the paper and use concise prose plus repository evidence for detailed controls."
+    },
+    {
+      "constraint_id": "CON-09",
+      "constraint": "The system must remain useful when optional text, model, corpus, or model-provider inputs are unavailable.",
+      "design_response": "Make optional analysis stages explicitly skippable or abstaining while retaining safe routing and a bounded recommendation outcome."
+    },
+    {
+      "constraint_id": "CON-10",
+      "constraint": "A recommendation may influence a real business decision even though the capstone is not production-ready.",
+      "design_response": "Require evidence, counterevidence, conditions, limitations, named human review, rationale, and explicit nonbinding disclosure."
+    },
+    {
+      "constraint_id": "CON-11",
+      "constraint": "Credentials, sensitive information, and private reasoning must not enter the public repository or audit trail.",
+      "design_response": "Use source allowlists, secret scans, sanitization, redaction and escalation, and fail-closed audit persistence."
+    },
+    {
+      "constraint_id": "CON-12",
+      "constraint": "Evaluation must distinguish target behavior from measured results.",
+      "design_response": "Freeze acceptance targets now and populate measured status only after the representative scenario suite executes."
+    }
+  ],
+  "out_of_scope": [
+    "Autonomous bid submission, email, purchase, contract acceptance, or other external action.",
+    "Authoritative legal advice, compliance certification, or contract enforceability determination.",
+    "Prediction of award probability, bid success, revenue, or current staffing capacity.",
+    "Automatic pricing, named-staff commitment, or financial authorization.",
+    "Training or fine-tuning a new deep-learning model within the integrated Project 7 workload.",
+    "Using the Project 3 classifier as a pursuit or eligibility model.",
+    "Using the Project 5 generation checkpoint to draft authoritative contract language.",
+    "Processing credentials, prohibited personal data, confidential records, or unapproved internal data.",
+    "Claiming that the controlled capstone prototype is production-ready or generally deployable.",
+    "Replacing qualified specialist judgment or accountable executive authority."
+  ],
+  "completion_definition": "P3-01 is complete when the workload schema, canonical workload definition, actor and input inventory, 12-stage processing sequence, six human decision points, expected artifact inventory, frozen acceptance targets, constraints, exclusions, validation script, and manifest are committed and pass structural and semantic validation. Measured performance remains intentionally pending until the P3-02 scenario suite and later implementation phases execute.",
+  "production_boundary": "Production ready."
+}

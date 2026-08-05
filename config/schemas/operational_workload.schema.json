@@ -1,0 +1,576 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/operational_workload.schema.json",
+  "title": "Project 7 Representative Operational Workload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "workload_schema_version",
+    "workload_id",
+    "workload_name",
+    "industry_context",
+    "business_problem",
+    "workload_objective",
+    "reference_organization",
+    "primary_user_story",
+    "scope",
+    "actors",
+    "workload_profile",
+    "approved_inputs",
+    "stages",
+    "human_decision_points",
+    "expected_outputs",
+    "acceptance_targets",
+    "constraints",
+    "out_of_scope",
+    "completion_definition",
+    "production_boundary"
+  ],
+  "properties": {
+    "workload_schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "workload_id": {
+      "type": "string",
+      "const": "WL-ICM-OPPORTUNITY-TO-CONTRACT-001"
+    },
+    "workload_name": {
+      "type": "string",
+      "minLength": 10
+    },
+    "industry_context": {
+      "type": "string",
+      "minLength": 30
+    },
+    "business_problem": {
+      "type": "string",
+      "minLength": 50
+    },
+    "workload_objective": {
+      "type": "string",
+      "minLength": 40
+    },
+    "reference_organization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "organization_id",
+        "organization_name",
+        "profile_path",
+        "portability_requirement"
+      ],
+      "properties": {
+        "organization_id": {
+          "type": "string",
+          "minLength": 3
+        },
+        "organization_name": {
+          "type": "string",
+          "minLength": 5
+        },
+        "profile_path": {
+          "type": "string",
+          "minLength": 5
+        },
+        "portability_requirement": {
+          "type": "string",
+          "minLength": 30
+        }
+      }
+    },
+    "primary_user_story": {
+      "type": "string",
+      "minLength": 60
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start_condition",
+        "end_condition",
+        "unit_of_work",
+        "execution_mode",
+        "data_mode"
+      ],
+      "properties": {
+        "start_condition": {
+          "type": "string",
+          "minLength": 10
+        },
+        "end_condition": {
+          "type": "string",
+          "minLength": 10
+        },
+        "unit_of_work": {
+          "type": "string",
+          "minLength": 10
+        },
+        "execution_mode": {
+          "type": "string",
+          "enum": [
+            "single_case_sequential"
+          ]
+        },
+        "data_mode": {
+          "type": "string",
+          "enum": [
+            "frozen_synthetic_deidentified_or_authorized"
+          ]
+        }
+      }
+    },
+    "actors": {
+      "type": "array",
+      "minItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "actor_id",
+          "actor_name",
+          "actor_type",
+          "responsibilities",
+          "authority_boundary"
+        ],
+        "properties": {
+          "actor_id": {
+            "type": "string",
+            "pattern": "^ACT-\\d{2}$"
+          },
+          "actor_name": {
+            "type": "string",
+            "minLength": 3
+          },
+          "actor_type": {
+            "type": "string",
+            "enum": [
+              "human_operator",
+              "human_reviewer",
+              "human_authority",
+              "system",
+              "evaluation_observer"
+            ]
+          },
+          "responsibilities": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 8
+            }
+          },
+          "authority_boundary": {
+            "type": "string",
+            "minLength": 20
+          }
+        }
+      }
+    },
+    "workload_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "organization_profiles_per_run",
+        "opportunities_per_run",
+        "source_documents_per_case_max",
+        "selected_passages_per_case_max",
+        "model_inferences_per_case_max",
+        "candidate_evidence_items_per_claim_max",
+        "claims_per_case_max",
+        "human_dispositions_per_case",
+        "training_required",
+        "gpu_required"
+      ],
+      "properties": {
+        "organization_profiles_per_run": {
+          "type": "integer",
+          "const": 1
+        },
+        "opportunities_per_run": {
+          "type": "integer",
+          "const": 1
+        },
+        "source_documents_per_case_max": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "selected_passages_per_case_max": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "model_inferences_per_case_max": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "candidate_evidence_items_per_claim_max": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "claims_per_case_max": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "human_dispositions_per_case": {
+          "type": "integer",
+          "const": 1
+        },
+        "training_required": {
+          "type": "boolean",
+          "const": false
+        },
+        "gpu_required": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "approved_inputs": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "input_id",
+          "input_name",
+          "input_type",
+          "required",
+          "source_classification",
+          "schema_or_contract",
+          "producer_or_owner",
+          "validation_gate"
+        ],
+        "properties": {
+          "input_id": {
+            "type": "string",
+            "pattern": "^IN-\\d{2}$"
+          },
+          "input_name": {
+            "type": "string",
+            "minLength": 3
+          },
+          "input_type": {
+            "type": "string",
+            "enum": [
+              "configuration",
+              "opportunity_record",
+              "historical_reference",
+              "source_document",
+              "model_package",
+              "official_corpus",
+              "fixed_policy",
+              "human_input"
+            ]
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "source_classification": {
+            "type": "string",
+            "enum": [
+              "public",
+              "frozen_snapshot",
+              "synthetic",
+              "deidentified",
+              "authorized_internal",
+              "framework_controlled",
+              "human_supplied"
+            ]
+          },
+          "schema_or_contract": {
+            "type": "string",
+            "minLength": 3
+          },
+          "producer_or_owner": {
+            "type": "string",
+            "minLength": 3
+          },
+          "validation_gate": {
+            "type": "string",
+            "minLength": 10
+          }
+        }
+      }
+    },
+    "stages": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stage_id",
+          "sequence",
+          "stage_name",
+          "component_id",
+          "primary_actor",
+          "entry_condition",
+          "processing_summary",
+          "expected_artifacts",
+          "success_condition",
+          "failure_or_abstention_route",
+          "required_audit_event",
+          "human_interaction"
+        ],
+        "properties": {
+          "stage_id": {
+            "type": "string",
+            "pattern": "^STG-\\d{2}$"
+          },
+          "sequence": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 12
+          },
+          "stage_name": {
+            "type": "string",
+            "minLength": 5
+          },
+          "component_id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]{2,63}$"
+          },
+          "primary_actor": {
+            "type": "string",
+            "pattern": "^ACT-\\d{2}$"
+          },
+          "entry_condition": {
+            "type": "string",
+            "minLength": 10
+          },
+          "processing_summary": {
+            "type": "string",
+            "minLength": 20
+          },
+          "expected_artifacts": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 3
+            }
+          },
+          "success_condition": {
+            "type": "string",
+            "minLength": 15
+          },
+          "failure_or_abstention_route": {
+            "type": "string",
+            "minLength": 15
+          },
+          "required_audit_event": {
+            "type": "string",
+            "minLength": 3
+          },
+          "human_interaction": {
+            "type": "string",
+            "enum": [
+              "none",
+              "optional_correction",
+              "mandatory_review",
+              "mandatory_disposition"
+            ]
+          }
+        }
+      }
+    },
+    "human_decision_points": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "decision_id",
+          "decision_name",
+          "stage_id",
+          "authorized_role",
+          "decision_options",
+          "evidence_available",
+          "required_rationale",
+          "system_authority"
+        ],
+        "properties": {
+          "decision_id": {
+            "type": "string",
+            "pattern": "^DP-\\d{2}$"
+          },
+          "decision_name": {
+            "type": "string",
+            "minLength": 5
+          },
+          "stage_id": {
+            "type": "string",
+            "pattern": "^STG-\\d{2}$"
+          },
+          "authorized_role": {
+            "type": "string",
+            "minLength": 3
+          },
+          "decision_options": {
+            "type": "array",
+            "minItems": 2,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 2
+            }
+          },
+          "evidence_available": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 3
+            }
+          },
+          "required_rationale": {
+            "type": "boolean"
+          },
+          "system_authority": {
+            "type": "string",
+            "const": "recommend_only_or_route"
+          }
+        }
+      }
+    },
+    "expected_outputs": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "output_id",
+          "output_name",
+          "schema_or_format",
+          "required_for_completion",
+          "reviewer_value"
+        ],
+        "properties": {
+          "output_id": {
+            "type": "string",
+            "pattern": "^OUT-\\d{2}$"
+          },
+          "output_name": {
+            "type": "string",
+            "minLength": 3
+          },
+          "schema_or_format": {
+            "type": "string",
+            "minLength": 3
+          },
+          "required_for_completion": {
+            "type": "boolean"
+          },
+          "reviewer_value": {
+            "type": "string",
+            "minLength": 15
+          }
+        }
+      }
+    },
+    "acceptance_targets": {
+      "type": "array",
+      "minItems": 15,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "target_id",
+          "category",
+          "measure",
+          "target",
+          "measurement_method",
+          "result_status"
+        ],
+        "properties": {
+          "target_id": {
+            "type": "string",
+            "pattern": "^AT-\\d{2}$"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "functional",
+              "data_quality",
+              "evidence",
+              "governance",
+              "human_authority",
+              "portability",
+              "performance",
+              "reproducibility"
+            ]
+          },
+          "measure": {
+            "type": "string",
+            "minLength": 5
+          },
+          "target": {
+            "type": "string",
+            "minLength": 2
+          },
+          "measurement_method": {
+            "type": "string",
+            "minLength": 10
+          },
+          "result_status": {
+            "type": "string",
+            "const": "target_not_yet_measured"
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "constraint_id",
+          "constraint",
+          "design_response"
+        ],
+        "properties": {
+          "constraint_id": {
+            "type": "string",
+            "pattern": "^CON-\\d{2}$"
+          },
+          "constraint": {
+            "type": "string",
+            "minLength": 10
+          },
+          "design_response": {
+            "type": "string",
+            "minLength": 15
+          }
+        }
+      }
+    },
+    "out_of_scope": {
+      "type": "array",
+      "minItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 10
+      }
+    },
+    "completion_definition": {
+      "type": "string",
+      "minLength": 80
+    },
+    "production_boundary": {
+      "type": "string",
+      "const": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+    }
+  }
+}

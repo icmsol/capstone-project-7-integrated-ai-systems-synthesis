@@ -1,0 +1,70 @@
+{
+  "artifact_id": "PROJECT7-P3-01-OPERATIONAL-WORKLOAD",
+  "artifact_version": "1.0.0",
+  "created_at_utc": "2026-08-05T00:56:45.385656+00:00",
+  "workload_id": "WL-ICM-OPPORTUNITY-TO-CONTRACT-001",
+  "actor_count": 8,
+  "approved_input_count": 8,
+  "stage_count": 12,
+  "decision_point_count": 6,
+  "output_count": 12,
+  "acceptance_target_count": 18,
+  "constraint_count": 12,
+  "requirement_count": 19,
+  "component_ids": [
+    "case_intake_normalizer",
+    "clause_triage_model",
+    "evidence_validator",
+    "historical_context_provider",
+    "human_disposition_recorder",
+    "official_evidence_retriever",
+    "packet_assembler",
+    "passage_selector",
+    "profile_loader",
+    "recommendation_engine",
+    "risk_escalation_router",
+    "service_alignment_engine"
+  ],
+  "validation_result": {
+    "schema_valid": true,
+    "workload_valid": true,
+    "stage_sequence_valid": true,
+    "actor_references_valid": true,
+    "decision_stage_references_valid": true,
+    "no_training_required": true,
+    "gpu_not_required": true,
+    "acceptance_categories_complete": true,
+    "invalid_workload_rejected": true,
+    "invalid_error_count": 4
+  },
+  "files": [
+    {
+      "path": "config/schemas/operational_workload.schema.json",
+      "bytes": 14168
+    },
+    {
+      "path": "config/system/representative_operational_workload.json",
+      "bytes": 40947
+    },
+    {
+      "path": "docs/P3_01_Workload_Requirements_Matrix.csv",
+      "bytes": 4408
+    },
+    {
+      "path": "docs/P3_01_Workload_Requirements_Matrix.json",
+      "bytes": 7584
+    },
+    {
+      "path": "docs/Representative_Operational_Workload.md",
+      "bytes": 10160
+    },
+    {
+      "path": "tests/validate_operational_workload.py",
+      "bytes": 3432
+    },
+    {
+      "path": "tests/workload_examples/invalid_operational_workload.json",
+      "bytes": 39853
+    }
+  ]
+}

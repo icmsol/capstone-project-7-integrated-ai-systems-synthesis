@@ -1,0 +1,158 @@
+{
+  "artifact_id": "PROJECT7-P3-01-WORKLOAD-REQUIREMENTS",
+  "artifact_version": "1.0.0",
+  "requirements": [
+    {
+      "requirement_id": "WR-01",
+      "category": "Industry problem",
+      "requirement": "The workload must address opportunity selection, contract review, evidence sufficiency, recommendations, and human approval for a small public-sector consulting business.",
+      "evidence_location": "representative_operational_workload.json: business_problem and workload_objective",
+      "acceptance_test": "Reviewer confirms the workload is operationally plausible and ICM-relevant.",
+      "review_status": "Draft"
+    },
+    {
+      "requirement_id": "WR-02",
+      "category": "Portability",
+      "requirement": "The same executable workflow must support ICM and a fictional alternate organization profile without code changes.",
+      "evidence_location": "reference_organization.portability_requirement and AT-13",
+      "acceptance_test": "Run identical frozen input under both profiles and compare configuration-dependent outputs.",
+      "review_status": "Draft"
+    },
+    {
+      "requirement_id": "WR-03",
+      "category": "Scope",
+      "requirement": "The unit of work must be one organization profile applied to one opportunity case.",
+      "evidence_location": "scope.unit_of_work and workload_profile",
+      "acceptance_test": "Schema validation enforces one profile and one opportunity per run.",
+      "review_status": "Draft"
+    },
+    {
+      "requirement_id": "WR-04",
+      "category": "Data governance",
+      "requirement": "All data must be frozen, synthetic, deidentified, public, or explicitly authorized.",
+      "evidence_location": "scope.data_mode and approved_inputs",
+      "acceptance_test": "Source approval and provenance gates reject any other classification.",
+      "review_status": "Draft"
+    },
+    {
+      "requirement_id": "WR-05",
+      "category": "Prior-project integration",
+      "requirement": "Projects 1, 2, 4, and 6 must contribute runtime assets or methods.",
+      "evidence_location": "Prior_Project_Traceability_Matrix.json",
+      "acceptance_test": "Traceability validator confirms runtime entries for all four projects.",
+      "review_status": "Draft"
+    },
+    {
+      "requirement_id": "WR-06",
+      "category": "Bounded evidence",
+      "requirement": "Projects 3 and 5 must remain design or evaluation evidence unless a new explicit justification is approved.",
+      "evidence_location": "Prior_Project_Traceability_Matrix.json",
+      "acceptance_test": "Traceability validator rejects runtime entries for Projects 3 and 5.",
+      "review_status": "Draft"
+    },
+    {
+      "requirement_id": "WR-07",
+      "category": "Model use",
+      "requirement": "No new model training is required for the integrated workload.",
+      "evidence_location": "workload_profile.training_required",
+      "acceptance_test": "Schema requires false.",
+      "review_status": "Draft"
+    },
+    {
+      "requirement_id": "WR-08",
+      "category": "Compute",
+      "requirement": "The representative workload must run on CPU; GPU is optional and unnecessary.",
+      "evidence_location": "workload_profile.gpu_required and AT-14/AT-15",
+      "acceptance_test": "Run the bounded workload and Project 4 inference on Colab CPU.",
+      "review_status": "Draft"
+    },
+    {
+      "requirement_id": "WR-09",
+      "category": "Stage completeness",
+      "requirement": "All 12 orchestration stages must be accounted for, whether executed, skipped under policy, abstained, or failed closed.",
+      "evidence_location": "stages and AT-01",
+      "acceptance_test": "Compare case audit and state with the orchestration policy.",
+      "review_status": "Draft"
+    },
+    {
+      "requirement_id": "WR-10",
+      "category": "Human authority",
+      "requirement": "A case cannot be finalized without an authorized human disposition and rationale.",
+      "evidence_location": "STG-12, DP-06, OUT-11, and AT-11",
+      "acceptance_test": "Integrated-case schema rejects finalization without human disposition.",
+      "review_status": "Draft"
+    },
+    {
+      "requirement_id": "WR-11",
+      "category": "Evidence grounding",
+      "requirement": "Every material recommendation claim must trace to evidence, deterministic rules, model artifacts, or recorded source facts.",
+      "evidence_location": "OUT-06 through OUT-09 and AT-04",
+      "acceptance_test": "Claim-to-artifact validator reports no unsupported material claim.",
+      "review_status": "Draft"
+    },
+    {
+      "requirement_id": "WR-12",
+      "category": "Counterevidence",
+      "requirement": "Known material counterevidence and conflicts must be disclosed.",
+      "evidence_location": "STG-08, DP-04, AT-05",
+      "acceptance_test": "Compare validated conflict inventory with the recommendation packet.",
+      "review_status": "Draft"
+    },
+    {
+      "requirement_id": "WR-13",
+      "category": "Abstention",
+      "requirement": "Insufficient information, low confidence, and missing citations must produce explicit abstention or safe deferral.",
+      "evidence_location": "STG-03, STG-06, STG-07, STG-08, AT-06",
+      "acceptance_test": "Execute sparse-data, low-confidence, and missing-citation scenarios.",
+      "review_status": "Draft"
+    },
+    {
+      "requirement_id": "WR-14",
+      "category": "Auditability",
+      "requirement": "Every material transition must have a sanitized append-only audit event.",
+      "evidence_location": "OUT-12 and AT-09",
+      "acceptance_test": "Validate event schema, event IDs, state references, and hash chain.",
+      "review_status": "Draft"
+    },
+    {
+      "requirement_id": "WR-15",
+      "category": "External action",
+      "requirement": "No component may submit, send, approve, purchase, price, staff, or otherwise act externally.",
+      "evidence_location": "out_of_scope and AT-08",
+      "acceptance_test": "Execute external-action misuse scenarios and inspect all side effects.",
+      "review_status": "Draft"
+    },
+    {
+      "requirement_id": "WR-16",
+      "category": "Performance",
+      "requirement": "The bounded automated workload should complete within 60 seconds on Colab CPU, excluding human wait and provider latency.",
+      "evidence_location": "AT-14",
+      "acceptance_test": "Measure stage timestamps under the frozen reference workload.",
+      "review_status": "Draft"
+    },
+    {
+      "requirement_id": "WR-17",
+      "category": "Reproducibility",
+      "requirement": "The same frozen inputs and configuration must reproduce deterministic structured outputs.",
+      "evidence_location": "AT-16 and AT-17",
+      "acceptance_test": "Repeat the workload and compare structured artifacts and validation outputs.",
+      "review_status": "Draft"
+    },
+    {
+      "requirement_id": "WR-18",
+      "category": "Output completeness",
+      "requirement": "The decision-support packet must contain all mandatory sections and valid artifact references.",
+      "evidence_location": "OUT-10 and AT-18",
+      "acceptance_test": "Run packet completeness and artifact-ID integrity checks.",
+      "review_status": "Draft"
+    },
+    {
+      "requirement_id": "WR-19",
+      "category": "Production boundary",
+      "requirement": "The workload must state that it is a controlled capstone prototype and not production-ready.",
+      "evidence_location": "production_boundary and CON-10",
+      "acceptance_test": "Repository scan finds the required boundary and no unsupported production-readiness claim.",
+      "review_status": "Draft"
+    }
+  ]
+}
