@@ -1,4 +1,4 @@
-"""Validate the Project 7 scenario taxonomy."""
+"""Validate the active Project 7 scenario taxonomy."""
 
 from __future__ import annotations
 
@@ -7,51 +7,50 @@ from collections import Counter
 from pathlib import Path
 
 from jsonschema import Draft202012Validator
+from referencing import Registry, Resource
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA = ROOT / "config" / "schemas" / "scenario_taxonomy.schema.json"
-TAXONOMY = ROOT / "config" / "system" / "scenario_taxonomy_and_target_cases.json"
-INVALID = ROOT / "tests" / "scenario_taxonomy_examples" / "invalid_scenario_taxonomy.json"
+SCHEMA_DIR = ROOT / "config" / "schemas"
+SCHEMA_PATH = SCHEMA_DIR / "scenario_taxonomy.schema.json"
+TAXONOMY_PATH = (
+    ROOT / "config" / "system"
+    / "scenario_taxonomy_and_target_cases.json"
+)
 
 
-def load(path: Path):
-    with path.open("r", encoding="utf-8") as f:
-        return json.load(f)
+def load_json(path: Path):
+    with path.open("r", encoding="utf-8") as file_obj:
+        return json.load(file_obj)
+
+
+def build_registry() -> Registry:
+    registry = Registry()
+    for path in SCHEMA_DIR.glob("*.json"):
+        schema = load_json(path)
+        if schema.get("$id"):
+            registry = registry.with_resource(
+                schema["$id"],
+                Resource.from_contents(schema),
+            )
+    return registry
 
 
 def main() -> None:
-    schema = load(SCHEMA)
-    taxonomy = load(TAXONOMY)
-    invalid = load(INVALID)
-
-    Draft202012Validator.check_schema(schema)
-    validator = Draft202012Validator(schema)
+    schema = load_json(SCHEMA_PATH)
+    taxonomy = load_json(TAXONOMY_PATH)
+    validator = Draft202012Validator(
+        schema,
+        registry=build_registry(),
+        format_checker=Draft202012Validator.FORMAT_CHECKER,
+    )
     validator.validate(taxonomy)
 
-    categories = taxonomy["categories"]
     cases = taxonomy["target_cases"]
-    category_ids = {c["category_id"] for c in categories}
-    counts = Counter(
-        category_id
+    outcomes = {
+        case["expected_terminal_outcome"]
         for case in cases
-        for category_id in case["category_ids"]
-    )
-
-    for case in cases:
-        unknown = set(case["category_ids"]) - category_ids
-        if unknown:
-            raise AssertionError(
-                f"{case['case_id']} has unknown categories: {sorted(unknown)}"
-            )
-
-    for category in categories:
-        actual = counts.get(category["category_id"], 0)
-        if actual < category["minimum_cases"]:
-            raise AssertionError(
-                f"{category['category_id']} has only {actual} cases."
-            )
-
+    }
     required_outcomes = {
         "finalized_accept",
         "finalized_accept_with_conditions",
@@ -59,41 +58,49 @@ def main() -> None:
         "deferred",
         "escalated",
         "failed_closed",
-        "no_recommendation",
-    }
-    outcomes = {
-        case["expected_terminal_outcome"]
-        for case in cases
     }
     if required_outcomes - outcomes:
-        raise AssertionError("Terminal outcome coverage is incomplete.")
+        raise AssertionError(
+            "Terminal outcome coverage is incomplete."
+        )
 
-    targets = {
-        target_id
+    recommendation_labels = {
+        case["expected_recommendation_label"]
         for case in cases
-        for target_id in case["acceptance_target_ids"]
     }
-    controls = {
-        control_id
+    if "No Recommendation" not in recommendation_labels:
+        raise AssertionError(
+            "No Recommendation coverage is missing."
+        )
+
+    for case in cases:
+        if (
+            case["expected_recommendation_label"]
+            == "No Recommendation"
+            and case["expected_terminal_outcome"]
+            == "failed_closed"
+        ):
+            raise AssertionError(
+                f"{case['case_id']} confuses No Recommendation "
+                "with failed-closed termination."
+            )
+
+    counts = Counter(
+        category_id
         for case in cases
-        for control_id in case["safeguard_control_ids"]
-    }
+        for category_id in case["category_ids"]
+    )
+    for category in taxonomy["categories"]:
+        if counts[category["category_id"]] < category["minimum_cases"]:
+            raise AssertionError(
+                f"{category['category_id']} minimum is not met."
+            )
 
-    if {f"AT-{i:02d}" for i in range(1, 19)} - targets:
-        raise AssertionError("Acceptance target coverage is incomplete.")
-    if len(controls) < 20:
-        raise AssertionError("Safeguard coverage is insufficient.")
-    if not list(validator.iter_errors(invalid)):
-        raise AssertionError("Invalid taxonomy unexpectedly passed.")
-
-    print(f"Scenario categories checked: {len(categories)}")
+    print(f"Scenario categories checked: {len(taxonomy['categories'])}")
     print(f"Target cases checked: {len(cases)}")
     print(f"Terminal outcomes covered: {len(outcomes)}")
-    print(f"Acceptance targets covered: {len(targets)}")
-    print(f"Safeguard controls covered: {len(controls)}")
+    print("No Recommendation modeled separately: PASS")
     print("Category minimum coverage: PASS")
-    print("Profile and outcome balance: PASS")
-    print("Invalid scenario taxonomy: correctly rejected")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/human_disposition_fixture.schema.json",
+  "title": "Frozen Human Disposition Fixture",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "fixture_schema_version",
+    "case_id",
+    "reached",
+    "disposition",
+    "not_reached_reason"
+  ],
+  "properties": {
+    "fixture_schema_version": {
+      "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+    },
+    "case_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "reached": {
+      "type": "boolean"
+    },
+    "disposition": {
+      "oneOf": [
+        {
+          "$ref": "human_disposition.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "not_reached_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "reached": {
+            "const": true
+          }
+        },
+        "required": [
+          "reached"
+        ]
+      },
+      "then": {
+        "properties": {
+          "disposition": {
+            "not": {
+              "type": "null"
+            }
+          },
+          "not_reached_reason": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "reached": {
+            "const": false
+          }
+        },
+        "required": [
+          "reached"
+        ]
+      },
+      "then": {
+        "properties": {
+          "disposition": {
+            "type": "null"
+          },
+          "not_reached_reason": {
+            "type": "string",
+            "minLength": 20
+          }
+        }
+      }
+    }
+  ]
+}

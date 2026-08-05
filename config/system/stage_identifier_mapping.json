@@ -1,0 +1,79 @@
+{
+  "mapping_schema_version": "1.0.0",
+  "mapping_id": "PROJECT7-STAGE-ID-MAPPING",
+  "orchestration_policy_id": "ORCH-PROJECT7_BASELINE",
+  "mappings": [
+    {
+      "numeric_stage_id": "STG-01",
+      "orchestration_stage_id": "load_configuration",
+      "sequence": 1,
+      "component_id": "profile_loader"
+    },
+    {
+      "numeric_stage_id": "STG-02",
+      "orchestration_stage_id": "intake_and_normalize",
+      "sequence": 2,
+      "component_id": "case_intake_normalizer"
+    },
+    {
+      "numeric_stage_id": "STG-03",
+      "orchestration_stage_id": "assess_service_alignment",
+      "sequence": 3,
+      "component_id": "service_alignment_engine"
+    },
+    {
+      "numeric_stage_id": "STG-04",
+      "orchestration_stage_id": "attach_historical_context",
+      "sequence": 4,
+      "component_id": "historical_context_provider"
+    },
+    {
+      "numeric_stage_id": "STG-05",
+      "orchestration_stage_id": "select_passages",
+      "sequence": 5,
+      "component_id": "passage_selector"
+    },
+    {
+      "numeric_stage_id": "STG-06",
+      "orchestration_stage_id": "triage_clause_themes",
+      "sequence": 6,
+      "component_id": "clause_triage_model"
+    },
+    {
+      "numeric_stage_id": "STG-07",
+      "orchestration_stage_id": "retrieve_official_evidence",
+      "sequence": 7,
+      "component_id": "official_evidence_retriever"
+    },
+    {
+      "numeric_stage_id": "STG-08",
+      "orchestration_stage_id": "validate_evidence",
+      "sequence": 8,
+      "component_id": "evidence_validator"
+    },
+    {
+      "numeric_stage_id": "STG-09",
+      "orchestration_stage_id": "route_risk_and_escalation",
+      "sequence": 9,
+      "component_id": "risk_escalation_router"
+    },
+    {
+      "numeric_stage_id": "STG-10",
+      "orchestration_stage_id": "create_recommendation",
+      "sequence": 10,
+      "component_id": "recommendation_engine"
+    },
+    {
+      "numeric_stage_id": "STG-11",
+      "orchestration_stage_id": "assemble_packet",
+      "sequence": 11,
+      "component_id": "packet_assembler"
+    },
+    {
+      "numeric_stage_id": "STG-12",
+      "orchestration_stage_id": "record_human_disposition",
+      "sequence": 12,
+      "component_id": "human_disposition_recorder"
+    }
+  ]
+}

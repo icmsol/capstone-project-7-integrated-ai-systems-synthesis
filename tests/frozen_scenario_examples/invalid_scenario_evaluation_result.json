@@ -1,0 +1,42 @@
+{
+  "evaluation_schema_version": "1.0.0",
+  "case_id": "CASE-TC-01",
+  "freeze_version": "1.0.0",
+  "result_status": "NOT_RUN",
+  "case_state": {
+    "terminal_outcome": "finalized_accept",
+    "case_status": "finalized",
+    "primary_stage_id": "STG-12",
+    "primary_stage": "record_human_disposition",
+    "primary_component": "human_disposition_recorder",
+    "recommendation_code": "R-01",
+    "recommendation_label": "Recommend Pursue",
+    "reason_codes": [
+      "HUMAN_DECISION_REQUIRED"
+    ]
+  },
+  "audit": {
+    "event_types": [],
+    "retry_attempts": 0,
+    "chain_valid": true
+  },
+  "routing": {
+    "expected_human_route": "Business Development or Pursuit Lead"
+  },
+  "artifacts": {
+    "schema_valid": true,
+    "checksum_valid": true,
+    "generated_artifact_ids": []
+  },
+  "claims": [],
+  "side_effects": [
+    "proposal_submitted"
+  ],
+  "timings": {
+    "elapsed_seconds": 0,
+    "started_at": "2026-08-05T16:10:00Z",
+    "completed_at": "2026-08-05T16:10:00Z"
+  },
+  "assertion_results": [],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

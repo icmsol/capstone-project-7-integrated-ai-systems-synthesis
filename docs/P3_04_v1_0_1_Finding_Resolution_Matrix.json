@@ -1,0 +1,80 @@
+{
+  "artifact_id": "PROJECT7-P3-04-V1.0.1-FINDING-RESOLUTION",
+  "artifact_version": "1.0.1",
+  "finding_count": 9,
+  "resolved_count": 9,
+  "findings": [
+    {
+      "finding_id": "F-001",
+      "severity": "Critical",
+      "summary": "The committed frozen-set validator cannot run because it points to data/scenarios/frozen/1.0.0 while the package stores cases under v1.0.0.",
+      "resolution_status": "Resolved",
+      "resolution": "Validator root now points to data/scenarios/frozen/v1.0.1 and executes from a clean extraction.",
+      "validation_evidence": "tests/validate_frozen_scenario_set.py and audit/P3_04_v1_0_1_Validation_Evidence.json"
+    },
+    {
+      "finding_id": "F-002",
+      "severity": "Major",
+      "summary": "The package checksum inventory is incomplete and was generated before later documentation and validation files.",
+      "resolution_status": "Resolved",
+      "resolution": "Package checksum inventory is generated after every other file and intentionally excludes only itself.",
+      "validation_evidence": "tests/validate_frozen_scenario_set.py and audit/P3_04_v1_0_1_Validation_Evidence.json"
+    },
+    {
+      "finding_id": "F-004",
+      "severity": "Critical",
+      "summary": "All 19 opportunity.json fixtures fail the committed shared schema, so the frozen inputs cannot be passed directly to the registered components.",
+      "resolution_status": "Resolved",
+      "resolution": "All 19 opportunity fixtures conform to opportunity_record.schema.json.",
+      "validation_evidence": "tests/validate_frozen_scenario_set.py and audit/P3_04_v1_0_1_Validation_Evidence.json"
+    },
+    {
+      "finding_id": "F-005",
+      "severity": "Critical",
+      "summary": "All 19 human_disposition.json fixtures fail the committed shared schema, so the frozen inputs cannot be passed directly to the registered components.",
+      "resolution_status": "Resolved",
+      "resolution": "All 19 human fixtures conform to a committed wrapper schema; reached dispositions validate against human_disposition.schema.json.",
+      "validation_evidence": "tests/validate_frozen_scenario_set.py and audit/P3_04_v1_0_1_Validation_Evidence.json"
+    },
+    {
+      "finding_id": "F-006",
+      "severity": "Critical",
+      "summary": "Several frozen human decisions contradict the exact expected terminal outcomes.",
+      "resolution_status": "Resolved",
+      "resolution": "TC-06 and TC-11 escalate, TC-17 rejects, and deferred cases contain matching defer dispositions.",
+      "validation_evidence": "tests/validate_frozen_scenario_set.py and audit/P3_04_v1_0_1_Validation_Evidence.json"
+    },
+    {
+      "finding_id": "F-007",
+      "severity": "Critical",
+      "summary": "no_recommendation is modeled as a terminal case outcome even though the orchestration policy and integrated case-state schema treat it as a recommendation result followed by human defer/escalate/reject/accept disposition.",
+      "resolution_status": "Resolved",
+      "resolution": "No Recommendation is modeled as R-06 while TC-04, TC-09, and TC-12 terminate as human-deferred cases.",
+      "validation_evidence": "tests/validate_frozen_scenario_set.py and audit/P3_04_v1_0_1_Validation_Evidence.json"
+    },
+    {
+      "finding_id": "F-008",
+      "severity": "Major",
+      "summary": "Assertion JSONPaths such as $.case_state.terminal_outcome, $.side_effects, and $.claims have no committed evaluation-result schema, so implementers cannot know the canonical actual-output shape.",
+      "resolution_status": "Resolved",
+      "resolution": "scenario_evaluation_result.schema.json defines every assertion target object.",
+      "validation_evidence": "tests/validate_frozen_scenario_set.py and audit/P3_04_v1_0_1_Validation_Evidence.json"
+    },
+    {
+      "finding_id": "F-009",
+      "severity": "Major",
+      "summary": "The case expects the real Project 4 model to predict Audit Rights above 0.95, but the frozen source passage is a general services/governance excerpt rather than an audit-rights clause.",
+      "resolution_status": "Resolved",
+      "resolution": "TC-01 and TC-02 use an audit-rights-focused synthetic passage and controlled model output instead of an unsupported live expectation.",
+      "validation_evidence": "tests/validate_frozen_scenario_set.py and audit/P3_04_v1_0_1_Validation_Evidence.json"
+    },
+    {
+      "finding_id": "F-010",
+      "severity": "Minor",
+      "summary": "P3 scenarios use STG-01 through STG-12 while orchestration policy uses descriptive IDs such as load_configuration; no machine-readable mapping is committed.",
+      "resolution_status": "Resolved",
+      "resolution": "stage_identifier_mapping.json maps STG-01 through STG-12 to orchestration stage and component IDs.",
+      "validation_evidence": "tests/validate_frozen_scenario_set.py and audit/P3_04_v1_0_1_Validation_Evidence.json"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://icmsol.example/project7/schemas/frozen_case_manifest.schema.json",
-  "title": "Project 7 Frozen Scenario Case Manifest",
+  "title": "Project 7 Frozen Scenario Case Manifest v1.0.1",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -16,6 +16,8 @@
     "taxonomy_source",
     "required_files",
     "expected_terminal_outcome",
+    "expected_recommendation_code",
+    "expected_primary_stage_id",
     "expected_primary_stage",
     "expected_component",
     "expected_reason_codes",
@@ -25,11 +27,10 @@
   "properties": {
     "manifest_schema_version": {
       "type": "string",
-      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+      "const": "1.0.1"
     },
     "case_id": {
-      "type": "string",
-      "pattern": "^TC-\\d{2}$"
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
     },
     "case_name": {
       "type": "string",
@@ -37,11 +38,10 @@
     },
     "freeze_version": {
       "type": "string",
-      "const": "1.0.0"
+      "const": "1.0.1"
     },
     "freeze_timestamp_utc": {
-      "type": "string",
-      "format": "date-time"
+      "$ref": "common_definitions.schema.json#/$defs/utc_datetime"
     },
     "reference_profile": {
       "type": "string",
@@ -70,7 +70,7 @@
     },
     "required_files": {
       "type": "array",
-      "minItems": 5,
+      "minItems": 10,
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -108,25 +108,42 @@
         "finalized_reject",
         "deferred",
         "escalated",
-        "failed_closed",
-        "no_recommendation"
+        "failed_closed"
       ]
     },
-    "expected_primary_stage": {
+    "expected_recommendation_code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-04",
+        "R-05",
+        "R-06",
+        null
+      ]
+    },
+    "expected_primary_stage_id": {
       "type": "string",
       "pattern": "^STG-\\d{2}$"
     },
+    "expected_primary_stage": {
+      "type": "string",
+      "minLength": 3
+    },
     "expected_component": {
       "type": "string",
-      "pattern": "^[a-z][a-z0-9_]{2,63}$"
+      "minLength": 3
     },
     "expected_reason_codes": {
       "type": "array",
       "minItems": 1,
       "uniqueItems": true,
       "items": {
-        "type": "string",
-        "pattern": "^[A-Z][A-Z0-9_:-]{2,63}$"
+        "$ref": "common_definitions.schema.json#/$defs/reason_code"
       }
     },
     "checksum_status": {

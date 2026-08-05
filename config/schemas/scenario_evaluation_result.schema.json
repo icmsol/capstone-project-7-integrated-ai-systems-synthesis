@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/scenario_evaluation_result.schema.json",
+  "title": "Project 7 Scenario Evaluation Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evaluation_schema_version",
+    "case_id",
+    "freeze_version",
+    "result_status",
+    "case_state",
+    "audit",
+    "routing",
+    "artifacts",
+    "claims",
+    "side_effects",
+    "timings",
+    "assertion_results",
+    "production_boundary"
+  ],
+  "properties": {
+    "evaluation_schema_version": {
+      "$ref": "common_definitions.schema.json#/$defs/semantic_version"
+    },
+    "case_id": {
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
+    },
+    "freeze_version": {
+      "type": "string",
+      "const": "1.0.1"
+    },
+    "result_status": {
+      "type": "string",
+      "enum": [
+        "NOT_RUN",
+        "PASS",
+        "PARTIAL",
+        "FAIL"
+      ]
+    },
+    "case_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "terminal_outcome",
+        "case_status",
+        "primary_stage_id",
+        "primary_stage",
+        "primary_component",
+        "recommendation_code",
+        "recommendation_label",
+        "reason_codes"
+      ],
+      "properties": {
+        "terminal_outcome": {
+          "type": "string",
+          "enum": [
+            "finalized_accept",
+            "finalized_accept_with_conditions",
+            "finalized_reject",
+            "deferred",
+            "escalated",
+            "failed_closed"
+          ]
+        },
+        "case_status": {
+          "type": "string",
+          "enum": [
+            "finalized",
+            "deferred",
+            "escalated",
+            "failed_closed"
+          ]
+        },
+        "primary_stage_id": {
+          "type": "string",
+          "pattern": "^STG-\\d{2}$"
+        },
+        "primary_stage": {
+          "type": "string",
+          "minLength": 3
+        },
+        "primary_component": {
+          "type": "string",
+          "minLength": 3
+        },
+        "recommendation_code": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "R-01",
+            "R-02",
+            "R-03",
+            "R-04",
+            "R-05",
+            "R-06",
+            null
+          ]
+        },
+        "recommendation_label": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common_definitions.schema.json#/$defs/reason_code"
+          }
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event_types",
+        "retry_attempts",
+        "chain_valid"
+      ],
+      "properties": {
+        "event_types": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "retry_attempts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "chain_valid": {
+          "type": "boolean"
+        }
+      }
+    },
+    "routing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "expected_human_route"
+      ],
+      "properties": {
+        "expected_human_route": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_valid",
+        "checksum_valid",
+        "generated_artifact_ids"
+      ],
+      "properties": {
+        "schema_valid": {
+          "type": "boolean"
+        },
+        "checksum_valid": {
+          "type": "boolean"
+        },
+        "generated_artifact_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common_definitions.schema.json#/$defs/identifier"
+          }
+        }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "side_effects": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "timings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "elapsed_seconds",
+        "started_at",
+        "completed_at"
+      ],
+      "properties": {
+        "elapsed_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "started_at": {
+          "$ref": "common_definitions.schema.json#/$defs/utc_datetime"
+        },
+        "completed_at": {
+          "$ref": "common_definitions.schema.json#/$defs/utc_datetime"
+        }
+      }
+    },
+    "assertion_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "assertion_id",
+          "status",
+          "observed_value",
+          "message"
+        ],
+        "properties": {
+          "assertion_id": {
+            "$ref": "common_definitions.schema.json#/$defs/identifier"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PASS",
+              "FAIL",
+              "NOT_EVALUATED"
+            ]
+          },
+          "observed_value": {},
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "production_boundary": {
+      "type": "string",
+      "const": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+    }
+  }
+}

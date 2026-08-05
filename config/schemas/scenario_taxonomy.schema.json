@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://icmsol.example/project7/schemas/scenario_taxonomy.schema.json",
-  "title": "Project 7 Scenario Taxonomy",
+  "title": "Project 7 Scenario Taxonomy and Target Cases v1.0.1",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -17,7 +17,7 @@
   "properties": {
     "taxonomy_schema_version": {
       "type": "string",
-      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+      "const": "1.0.1"
     },
     "taxonomy_id": {
       "type": "string",
@@ -121,7 +121,9 @@
           "must_not_occur",
           "acceptance_target_ids",
           "safeguard_control_ids",
-          "p3_03_freeze_requirements"
+          "p3_03_freeze_requirements",
+          "expected_recommendation_code",
+          "expected_recommendation_label"
         ],
         "properties": {
           "case_id": {
@@ -240,8 +242,7 @@
               "finalized_reject",
               "deferred",
               "escalated",
-              "failed_closed",
-              "no_recommendation"
+              "failed_closed"
             ]
           },
           "expected_primary_stage": {
@@ -339,6 +340,36 @@
               "type": "string",
               "minLength": 8
             }
+          },
+          "expected_recommendation_code": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "R-01",
+              "R-02",
+              "R-03",
+              "R-04",
+              "R-05",
+              "R-06",
+              null
+            ]
+          },
+          "expected_recommendation_label": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "Recommend Pursue",
+              "Recommend Pursue with Conditions",
+              "Recommend Hold — Gather Information",
+              "Recommend Do Not Pursue",
+              "Escalate — Specialized Review Required",
+              "No Recommendation",
+              null
+            ]
           }
         }
       }
@@ -353,7 +384,8 @@
         "profile_counts",
         "priority_counts",
         "acceptance_target_coverage",
-        "safeguard_coverage"
+        "safeguard_coverage",
+        "recommendation_label_counts"
       ],
       "properties": {
         "case_count": {
@@ -405,6 +437,13 @@
           "items": {
             "type": "string",
             "pattern": "^SG-\\d{3}$"
+          }
+        },
+        "recommendation_label_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
           }
         }
       }

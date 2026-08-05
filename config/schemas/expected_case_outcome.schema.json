@@ -1,15 +1,19 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://icmsol.example/project7/schemas/expected_case_outcome.schema.json",
-  "title": "Project 7 Frozen Scenario Expected Outcome",
+  "title": "Project 7 Frozen Scenario Expected Outcome v1.0.1",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "expected_outcome_schema_version",
     "case_id",
     "expected_terminal_outcome",
+    "expected_case_status",
+    "expected_primary_stage_id",
     "expected_primary_stage",
     "expected_component",
+    "expected_recommendation_code",
+    "expected_recommendation_label",
     "expected_reason_codes",
     "expected_human_route",
     "expected_audit_events",
@@ -24,11 +28,10 @@
   "properties": {
     "expected_outcome_schema_version": {
       "type": "string",
-      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+      "const": "1.0.1"
     },
     "case_id": {
-      "type": "string",
-      "pattern": "^TC-\\d{2}$"
+      "$ref": "common_definitions.schema.json#/$defs/identifier"
     },
     "expected_terminal_outcome": {
       "type": "string",
@@ -38,25 +41,57 @@
         "finalized_reject",
         "deferred",
         "escalated",
-        "failed_closed",
-        "no_recommendation"
+        "failed_closed"
       ]
     },
-    "expected_primary_stage": {
+    "expected_case_status": {
+      "type": "string",
+      "enum": [
+        "finalized",
+        "deferred",
+        "escalated",
+        "failed_closed"
+      ]
+    },
+    "expected_primary_stage_id": {
       "type": "string",
       "pattern": "^STG-\\d{2}$"
     },
+    "expected_primary_stage": {
+      "type": "string",
+      "minLength": 3
+    },
     "expected_component": {
       "type": "string",
-      "pattern": "^[a-z][a-z0-9_]{2,63}$"
+      "minLength": 3
+    },
+    "expected_recommendation_code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-04",
+        "R-05",
+        "R-06",
+        null
+      ]
+    },
+    "expected_recommendation_label": {
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "expected_reason_codes": {
       "type": "array",
       "minItems": 1,
       "uniqueItems": true,
       "items": {
-        "type": "string",
-        "minLength": 3
+        "$ref": "common_definitions.schema.json#/$defs/reason_code"
       }
     },
     "expected_human_route": {
@@ -70,8 +105,7 @@
       "minItems": 1,
       "uniqueItems": true,
       "items": {
-        "type": "string",
-        "minLength": 3
+        "type": "string"
       }
     },
     "required_evidence_classes": {
@@ -79,8 +113,7 @@
       "minItems": 1,
       "uniqueItems": true,
       "items": {
-        "type": "string",
-        "minLength": 3
+        "type": "string"
       }
     },
     "must_occur": {
@@ -119,7 +152,7 @@
     },
     "assertions": {
       "type": "array",
-      "minItems": 8,
+      "minItems": 10,
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -132,8 +165,7 @@
         ],
         "properties": {
           "assertion_id": {
-            "type": "string",
-            "pattern": "^AS-[A-Z0-9-]{4,30}$"
+            "$ref": "common_definitions.schema.json#/$defs/identifier"
           },
           "assertion_type": {
             "type": "string",
