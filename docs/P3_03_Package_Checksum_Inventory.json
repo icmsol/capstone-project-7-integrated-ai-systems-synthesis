@@ -1,0 +1,1098 @@
+{
+  "inventory_version": "1.0.0",
+  "freeze_version": "1.0.0",
+  "created_at_utc": "2026-08-05T01:30:00Z",
+  "file_count_excluding_inventory": 218,
+  "files": [
+    {
+      "path": "config/schemas/expected_case_outcome.schema.json",
+      "sha256": "95588597cc841fb7d2e6a5455fca1a2c8c141bb9995aefb47f67f596cce29250",
+      "bytes": 3889
+    },
+    {
+      "path": "config/schemas/frozen_case_manifest.schema.json",
+      "sha256": "b37168750335ce5d00f71e45418f0957239789637b60c01d523e0a9e3147daec",
+      "bytes": 3263
+    },
+    {
+      "path": "config/system/frozen_scenario_set_index.json",
+      "sha256": "f8229ea04f0c5be23071b9169d8d94ef75a6c489d4d06debb864df19cee63728",
+      "bytes": 7363
+    },
+    {
+      "path": "config/system/scenario_taxonomy_and_target_cases.json",
+      "sha256": "9007c1ad7762a2e0646be51d352e9306d51d99507d7f9e7a364280d4b9d29b71",
+      "bytes": 44175
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-01/case_definition.json",
+      "sha256": "0960611646427a1609599199588a1e1a5d85b80c06f7c72a61075dc0a99abe17",
+      "bytes": 941
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-01/expected/expected_outcome.json",
+      "sha256": "9484c1008b6e0454dbcf61da91cb4b8c5342621b8fbed55fa9cd6e224f49a2b0",
+      "bytes": 4200
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-01/inputs/evidence_fixture.json",
+      "sha256": "b81cce7f61bd7d21cd990c38041937e5091f9ab5f0ab514456ba894994c2f643",
+      "bytes": 979
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-01/inputs/fault_injection.json",
+      "sha256": "2a1c3da499370bda19f93036c84b79bbaae272d789ea062d7b8a346f73702abe",
+      "bytes": 108
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-01/inputs/human_disposition.json",
+      "sha256": "be62d6379a64fbb56f6a84b855c211d8f8cf737d2b69750882d34a00146244b3",
+      "bytes": 339
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-01/inputs/model_fixture.json",
+      "sha256": "ab06da35657f01d8fe42cea6eebd0b775d96c39c2c1a1eba8573ac47b41ca7d5",
+      "bytes": 402
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-01/inputs/opportunity.json",
+      "sha256": "6879f539c3ce76887754ce90cd98fe157c41c7ae5c8fc003bbd8e8f2e1bedd5c",
+      "bytes": 993
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-01/inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-01/inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-01/inputs/source_document_metadata.json",
+      "sha256": "6934abac49423eb20c5558fbbe3120262be191ca8430eeb98e0754b1ec31b794",
+      "bytes": 235
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-01/manifest.json",
+      "sha256": "cca4386fe3a0d61038110acaeb74b99216fee0da8a187fba839ac3a355b9d823",
+      "bytes": 2861
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-02/case_definition.json",
+      "sha256": "1d39519a868d9fd71ec6f2da0b94890fbcfacea62f7595579d6f09d03aa16dc0",
+      "bytes": 972
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-02/expected/expected_outcome.json",
+      "sha256": "ae42cd245d4db8029b804e7bf227c04c0e41dbf0249070b93a429471c9b054f9",
+      "bytes": 3845
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-02/inputs/evidence_fixture.json",
+      "sha256": "a5628833c4af9dde0ad0ef18a6475a1b29edcc7cfeaa0e0ebfea062699b9f5ac",
+      "bytes": 979
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-02/inputs/fault_injection.json",
+      "sha256": "f4c27853427a95d2d7b0b0cba71848422427a067545c141c89ae288b7a4398ab",
+      "bytes": 108
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-02/inputs/human_disposition.json",
+      "sha256": "f07867a7eedbec0a546d4bbd9107b00a92c9572f436ee454e77e77b0b9949a76",
+      "bytes": 500
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-02/inputs/model_fixture.json",
+      "sha256": "77c28c04dcf983a3a34b77b062c92d3af5c2c763580d2730d35c19eeb21b600e",
+      "bytes": 402
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-02/inputs/opportunity.json",
+      "sha256": "2ab60bd2db02f295256e1f4ad472a976e587b06bf41f12be30edf7d92e59189f",
+      "bytes": 993
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-02/inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-02/inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-02/inputs/source_document_metadata.json",
+      "sha256": "9aef0af4376d8160df825e0b0486ce8c76900ada1bab54b77b7851d33bac15df",
+      "bytes": 235
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-02/manifest.json",
+      "sha256": "bfce21c707a54d3f136660288c66a4663c53f1c464953951f199712b87c12e60",
+      "bytes": 2870
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-03/case_definition.json",
+      "sha256": "84494d17622e36fb09235d4e8c942f517633408e7374a9a8f4f3a39e083bcbbe",
+      "bytes": 894
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-03/expected/expected_outcome.json",
+      "sha256": "8b56420837422e68bc164122035c3e7459f1ca086ac278c8c5e918e40c24bc22",
+      "bytes": 3546
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-03/inputs/evidence_fixture.json",
+      "sha256": "aecc60c6019f28b1b80ebdde61fc7af794e3bad11dc92b41af1d3e65ffed4056",
+      "bytes": 74
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-03/inputs/fault_injection.json",
+      "sha256": "9e780519f713abd103a0826ddad870f710a166b6d6ff6a912d4123826d507288",
+      "bytes": 108
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-03/inputs/human_disposition.json",
+      "sha256": "bf4f9f9b2eabd7dbe05b53313a656c46f5be37d8f4f349cf86aa81c7b34ef1e6",
+      "bytes": 311
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-03/inputs/model_fixture.json",
+      "sha256": "bd0ed40961e4d1803663282785c7305480827ec8560ad29820b49c1ce10814ad",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-03/inputs/opportunity.json",
+      "sha256": "9f837aacd21d92d80c1a95a1a8d269118b8836557d5532384557608ec654559e",
+      "bytes": 1013
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-03/inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-03/inputs/source_document.txt",
+      "sha256": "1e95803ff38f89f0b1133fb88b8f33525a3734ee7024d96bf3a8b66d8d1b7d8d",
+      "bytes": 54
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-03/inputs/source_document_metadata.json",
+      "sha256": "20188b929a1b033c8a9d44aa0f3aedc0c5acf42235aef6fc0dd145b60f287fd3",
+      "bytes": 225
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-03/manifest.json",
+      "sha256": "44fed17292b7a80aa72a1161fd8edef6a12626f98409970f061e96a95f587ef7",
+      "bytes": 2852
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-04/case_definition.json",
+      "sha256": "24f4c63678fcc3199b659e2a79f6c5b8787b882c8aee447c10a4e7b238870c68",
+      "bytes": 897
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-04/expected/expected_outcome.json",
+      "sha256": "cb440f096ccf287ed43138ee769ede255c182a2b6982351ceb2e4bbbee6c01b2",
+      "bytes": 3486
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-04/inputs/evidence_fixture.json",
+      "sha256": "e4e61416e8d16284fd2ff8c5e95b4ad753640614400e4eb6bc94f1a705249a53",
+      "bytes": 74
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-04/inputs/fault_injection.json",
+      "sha256": "b27b3259a9ad7b18aa43a88ef170c1998dc8159609d73ba985b039f6e90c99d6",
+      "bytes": 108
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-04/inputs/human_disposition.json",
+      "sha256": "1f2fa935011fa8d49f5b50350ea9f836c600c150d7094f243a951908220da2ca",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-04/inputs/model_fixture.json",
+      "sha256": "d20ac66a4e2ee41d40b38e6fe296d5a173a07f72695464bc6aac208ea568445a",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-04/inputs/opportunity.json",
+      "sha256": "a91f822573f3d3a1c7a60b981ded23c2012c9033eb06c995c962178b4a77cceb",
+      "bytes": 923
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-04/inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-04/inputs/source_document.txt",
+      "sha256": "1e95803ff38f89f0b1133fb88b8f33525a3734ee7024d96bf3a8b66d8d1b7d8d",
+      "bytes": 54
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-04/inputs/source_document_metadata.json",
+      "sha256": "a0782d81d5430755b8ddd0ed69915ce8b671371c6de0468db0d3c9c7a7053802",
+      "bytes": 225
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-04/manifest.json",
+      "sha256": "ab2bcba1389844d6e8ac40bb9002fcb4459ec55e549427fb706dd303cf4942ad",
+      "bytes": 2864
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-05/case_definition.json",
+      "sha256": "32948f13bc26d51092e180ae249d3d79540968c4069e76b611f3e5b559f6b2c9",
+      "bytes": 903
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-05/expected/expected_outcome.json",
+      "sha256": "dd239c1e399683d7f23f1aabb5ec42a2fa3892b4e067a8f5e104a35cc8012c6d",
+      "bytes": 3431
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-05/inputs/evidence_fixture.json",
+      "sha256": "34ef83061e9c5658951fa9f7ad040644af5555aa894134c64854edd475131d60",
+      "bytes": 74
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-05/inputs/fault_injection.json",
+      "sha256": "6207695fb87562a29852d007a49f42fdd891d60757edbefea31d1a0672d1c622",
+      "bytes": 108
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-05/inputs/human_disposition.json",
+      "sha256": "0e30be3e55009e245b77bab497aeaf28e286f1b31846ad0c4d234db277735f94",
+      "bytes": 311
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-05/inputs/model_fixture.json",
+      "sha256": "a407a765d6d69b64d966e565ce29fa8df94892642ae9042c6576a34b06e4647c",
+      "bytes": 303
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-05/inputs/opportunity.json",
+      "sha256": "9eb56afff64af077665a8986ea4398d459eb8885143a0bd6f8ab26dd928a941b",
+      "bytes": 993
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-05/inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-05/inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-05/inputs/source_document_metadata.json",
+      "sha256": "72ab70e10a6bb1a032ba820528a3a03fe5f4b262ca6c207d9559b9ba8b65dab5",
+      "bytes": 235
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-05/manifest.json",
+      "sha256": "33bb6a2129ad2a6d677e93a813391f87599e7c7d8b9e76c34615525294c8a805",
+      "bytes": 2852
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-06/case_definition.json",
+      "sha256": "3f0bb3eda12f72f4d7f0dcc723fd31e1bfff4d8417316f91d71e47768db22f2b",
+      "bytes": 925
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-06/expected/expected_outcome.json",
+      "sha256": "0fe68cb20e8e9287385af51cc744425c87acdcb16017a7f3d8487a6ceb0f67f9",
+      "bytes": 3431
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-06/inputs/evidence_fixture.json",
+      "sha256": "621197ffc0ca8e01e1418b7d9842467bd1e306da917ab718f1bcd362b82be9fc",
+      "bytes": 74
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-06/inputs/fault_injection.json",
+      "sha256": "8d1ddce6bf2c74aa033adecdfaf0af033c6e690436353456d168a451bdb9769e",
+      "bytes": 108
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-06/inputs/human_disposition.json",
+      "sha256": "ec4d6c00e301a2f9ffd020dbece10ae90a46ca00c5834f6c545238298df5b86e",
+      "bytes": 311
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-06/inputs/model_fixture.json",
+      "sha256": "e7a9ae63ee9e1109e4a392e3305b69af642008b01d496307640a5e9cd819839d",
+      "bytes": 234
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-06/inputs/opportunity.json",
+      "sha256": "577a62494cec3b605816c0d8f02c54d88273694fed96505b691ea724affc65aa",
+      "bytes": 993
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-06/inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-06/inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-06/inputs/source_document_metadata.json",
+      "sha256": "9b42f4dd2958ce08d22ababa6826990aeda47d37de3290b70d2b0ceafc415594",
+      "bytes": 235
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-06/manifest.json",
+      "sha256": "c07889a6b4385d1d386a5c754c5ef47fc5a443a4b90e9548a6e1cc73c72cb1f3",
+      "bytes": 2878
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-07/case_definition.json",
+      "sha256": "ff1de4560fd5c2f539efb6bb6a95f130c43add4374adc21a401a71f510d92390",
+      "bytes": 890
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-07/expected/expected_outcome.json",
+      "sha256": "e7a53b61c5f8a92a4b206386f6b26d09dcd80de4b43dba349cfb71f69ef03044",
+      "bytes": 3430
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-07/inputs/evidence_fixture.json",
+      "sha256": "ab7df9cccbede30ff588d15953c9802b992c2448e8f3a5bc2b1debc9682df924",
+      "bytes": 74
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-07/inputs/fault_injection.json",
+      "sha256": "43b5ca9ad19bd4f78c436e9f469b5a8048d9c7286c86947e99c30ef66ccf2a57",
+      "bytes": 108
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-07/inputs/human_disposition.json",
+      "sha256": "430c11ef9b861b428cc0123f84d5fcb6ba0c73b3d41b65953c972ec2cd425771",
+      "bytes": 311
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-07/inputs/model_fixture.json",
+      "sha256": "31577410d511daa5ad608f92d5715b1e0245324bec1a15ae7a7039aa41ad0e04",
+      "bytes": 194
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-07/inputs/opportunity.json",
+      "sha256": "9fd848af2b079516c51ede612823b6bd75c117aecc50a06dbe345032fd5dc922",
+      "bytes": 993
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-07/inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-07/inputs/source_document.txt",
+      "sha256": "58e3f96208b9ebc11234d0df4b6b5c625e065fb0d1adbe5c5e54d697e0a7b452",
+      "bytes": 8313
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-07/inputs/source_document_metadata.json",
+      "sha256": "9795a99199d28ebf2612211b06ae08825f1c8ef8b9913f84710fb4458a9e5e4b",
+      "bytes": 246
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-07/manifest.json",
+      "sha256": "a3167068fb389ec3d00654ca88d279eab48b9c592ae70e13de99bfb3a1e2bde2",
+      "bytes": 2843
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-08/case_definition.json",
+      "sha256": "b50764329da11cc9895b07925e25bf558cf7f7c1963937d61c61c91f45ce70ad",
+      "bytes": 899
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-08/expected/expected_outcome.json",
+      "sha256": "1657c4628ae34c7b1e2f7b09ac6a8017b9f599824ad3c5161d3d4851a45b4af7",
+      "bytes": 3321
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-08/inputs/evidence_fixture.json",
+      "sha256": "17e26e5a89adfd69d47ea24ee7f37975beb9026fa684c9ce254cc644242e5541",
+      "bytes": 74
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-08/inputs/fault_injection.json",
+      "sha256": "74e69531098a7fff23821f53f47dae456342eeb9ac678f2dc530dee7ab04825c",
+      "bytes": 254
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-08/inputs/human_disposition.json",
+      "sha256": "17ed37c83e58fc4b3d6215220dfebd4ae607bc43d5d025b7a39fb01852e6f185",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-08/inputs/model_fixture.json",
+      "sha256": "b9b33e00ae2ec6221f312f4f04b5c8e7d5e22cc368ed2827b043354fdc1127c4",
+      "bytes": 353
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-08/inputs/opportunity.json",
+      "sha256": "b10e81c5b64e084eda5221eeee256782fa8ff1da6f56c36a9b59b75a578348d3",
+      "bytes": 993
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-08/inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-08/inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-08/inputs/source_document_metadata.json",
+      "sha256": "d61ed38dd8d2ddab6bde406241c4576034af0c8fa0ab3779cb79c4621ed00305",
+      "bytes": 235
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-08/manifest.json",
+      "sha256": "a91a0492aa42bc32dbae4466df14bd371e4311f3c778100cd2bfe7b80c1ad1bf",
+      "bytes": 2829
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-09/case_definition.json",
+      "sha256": "f437ebe4f7e2b935c3a4ba048e09e0851eaa93acc981eba8c33c7d03d8bcdc42",
+      "bytes": 887
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-09/expected/expected_outcome.json",
+      "sha256": "1f2b918c4b8e87fd0872fdc2aea9bd81c03340740aba59ecf063c9051a85f2a2",
+      "bytes": 3449
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-09/inputs/evidence_fixture.json",
+      "sha256": "91ce222ecd269f32fd9f179f8769242ea4ad7eb99fc4d222fe3de4144bea4085",
+      "bytes": 218
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-09/inputs/fault_injection.json",
+      "sha256": "4682b3002b00a69bbd7a5586f8b5dcc5bf71ecf48b75b0c1acfc1bb02c921687",
+      "bytes": 108
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-09/inputs/human_disposition.json",
+      "sha256": "7796d9f86f68f8003c9986c17c03a21b9f73fc8092c2e1c1fc438846d7c7410c",
+      "bytes": 311
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-09/inputs/model_fixture.json",
+      "sha256": "4ef9be5ecb150bccf9c13331d77a67145e5b836b65d904013e5dd01c68aa5994",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-09/inputs/opportunity.json",
+      "sha256": "9a1d98d94e7f669819208cb7981d4d18cdf6108fa87cdd310bb3c8fceac826f7",
+      "bytes": 993
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-09/inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-09/inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-09/inputs/source_document_metadata.json",
+      "sha256": "228ad483a4510b6a9bb2d6cd8e690c4b022a09bcd2fcde31a3fe905a79e9e00a",
+      "bytes": 235
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-09/manifest.json",
+      "sha256": "87238b27e33ce7508df5714792e05a1ff7fefff14287f18fdc29e3d684ac8691",
+      "bytes": 2844
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-10/case_definition.json",
+      "sha256": "5d1748b1009cf658ba3a3501fdf6e3ce024a9f84d04d3df59bfd1d4e7b40f458",
+      "bytes": 878
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-10/expected/expected_outcome.json",
+      "sha256": "271223c2daedd20be19d94d99fda304ab445100004d23d6fcbaa1c42ec63e78d",
+      "bytes": 3434
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-10/inputs/evidence_fixture.json",
+      "sha256": "73c2d5b20cd1418b66a372f0529400e565b58265a01206252e82b6082a06d750",
+      "bytes": 234
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-10/inputs/fault_injection.json",
+      "sha256": "42dda8206604a3f190f67ee5af5dd9d9d8920fef4120793d3281076f5b1e93fc",
+      "bytes": 108
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-10/inputs/human_disposition.json",
+      "sha256": "d2c0845b62ebf155add7755e5ea0929b13c61b3a728be85b50ed6726e49c535f",
+      "bytes": 311
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-10/inputs/model_fixture.json",
+      "sha256": "779c118c16265efa49fb75d0dd58175df3fb5570ceba09b4f7c9cc0fc4d8d47a",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-10/inputs/opportunity.json",
+      "sha256": "c783793c31e731653da8662f9d610d9d8b653e598910f36cccafd188de297d6a",
+      "bytes": 993
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-10/inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-10/inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-10/inputs/source_document_metadata.json",
+      "sha256": "ff69187eb4b7b87d666c2d8bc6fb4f4c44e44358a3fb35b156ca7a977aab0092",
+      "bytes": 235
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-10/manifest.json",
+      "sha256": "7a17f281e564af36a831e53474c2e5ec8bbb0463d4c9bd32e4323a7041b469df",
+      "bytes": 2819
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-11/case_definition.json",
+      "sha256": "30ee02fb512bc12fe09cd4df8652a1a6f617af7610b495a47753b6f9dd755c8d",
+      "bytes": 926
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-11/expected/expected_outcome.json",
+      "sha256": "78f44e5c66a5c032fa1dc08a4b9c90e6219a3b25a45458ef959f8fc1a7f001a3",
+      "bytes": 3448
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-11/inputs/evidence_fixture.json",
+      "sha256": "4b7ee2387fb55c80eaf960c352e8631252a0761312c0492d54aa8096e5bbb274",
+      "bytes": 536
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-11/inputs/fault_injection.json",
+      "sha256": "d2fdc3139fd7c71e50af6d6b7d36140d4a11d1d04b50fbd79780686a9f87fa1f",
+      "bytes": 108
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-11/inputs/human_disposition.json",
+      "sha256": "61ba1b5fa915b9255fa9698f15daa945a0d4aedeb0008aee368eb4c8f2538844",
+      "bytes": 311
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-11/inputs/model_fixture.json",
+      "sha256": "ae99df040deaf5482900174694fea5a51d4c24920813a69aab4e5cdbe475c36e",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-11/inputs/opportunity.json",
+      "sha256": "6fbe0eae5c5abd75c58b21e3e8282b32ea5e88e374dbbd45416d786f6f159254",
+      "bytes": 993
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-11/inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-11/inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-11/inputs/source_document_metadata.json",
+      "sha256": "bad4c646719b94704ece67b0fbc171d199bece768afd4bc1dd1ef4cfcb6572e8",
+      "bytes": 235
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-11/manifest.json",
+      "sha256": "3142ee5f9405246a4ac47dda804218ebd6a03a515653d4df81b675aed100ac20",
+      "bytes": 2875
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-12/case_definition.json",
+      "sha256": "98e735df005c483119c17cbb81bf3cde4e9e1d15f30cce3a8b02b6fbf5e994ab",
+      "bytes": 886
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-12/expected/expected_outcome.json",
+      "sha256": "0f66a8a0431cd6f60b96d7d0a0d709df9559cc0283245815ccb488ba17260f56",
+      "bytes": 3540
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-12/inputs/evidence_fixture.json",
+      "sha256": "c42c208552392b0c0cc570d4026a7a9bd1d3f1003614bcf1a8d1b39cc3e2840e",
+      "bytes": 376
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-12/inputs/fault_injection.json",
+      "sha256": "4c3d49b11eff286f33d44f47e453b96d24f3fd774eb4241934fb89f4228fe119",
+      "bytes": 108
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-12/inputs/human_disposition.json",
+      "sha256": "68377bcd280b40b5e6886785405d5bed5eb48bfc814be26a09e3be1c046fcb72",
+      "bytes": 311
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-12/inputs/model_fixture.json",
+      "sha256": "7dd4401463e370768f38f70f202c259e1bac0d8e48586b7ce818cd6faa65b3de",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-12/inputs/opportunity.json",
+      "sha256": "faf6fc2e97274ceaf3b9addeac0cec71794d87e5e85c3c0109e8f0ff79e8f4f9",
+      "bytes": 993
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-12/inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-12/inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-12/inputs/source_document_metadata.json",
+      "sha256": "652d1e3dfb3376c7e1af87408f37b964e2dfeba170dba6f191aed62bb60b345e",
+      "bytes": 235
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-12/manifest.json",
+      "sha256": "840addd2b6ba7739213fe2bb8fd00327dd44b36af7bd293522ebc3be6fe78478",
+      "bytes": 2856
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-13/case_definition.json",
+      "sha256": "6c8419f2401fc780c68a4be028448cce8d1e2bd897ec36f83ad4abcff48259a3",
+      "bytes": 924
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-13/expected/expected_outcome.json",
+      "sha256": "b514bfbbabfba0f3bf284edb28b1779cc2d0a6ff35342b7a2151b00412d44c25",
+      "bytes": 3429
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-13/inputs/evidence_fixture.json",
+      "sha256": "e78ce35eef9668f778bfc3ebba96420780ab6e2876d7dfa91b1f0880b7eea906",
+      "bytes": 74
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-13/inputs/fault_injection.json",
+      "sha256": "5bbf770221f02663a6ec87e0f0cdb430738a9676dea6f4f243032c1c21b4e4b0",
+      "bytes": 108
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-13/inputs/human_disposition.json",
+      "sha256": "5ad418d1ab2165c74f3615b658e1633375195f83d459903676091d8f06543237",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-13/inputs/model_fixture.json",
+      "sha256": "56e69935b8bb8f754eeb9d08f6ae2c62d0952be451390ae594585afe7e6e70a5",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-13/inputs/opportunity.json",
+      "sha256": "92b4d3a41d0d7547083151f632719f617c98291723e87d34f4e7d2cbd79ef55e",
+      "bytes": 993
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-13/inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-13/inputs/source_document.txt",
+      "sha256": "fc492ce24280f0eaa40c9208dfe62be7460111eea4ef7d64756a6bb4334669d7",
+      "bytes": 358
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-13/inputs/source_document_metadata.json",
+      "sha256": "942135e09c9c36a7a24012b57ca64ecb300499376bc10b71a9211ee4584d6fe4",
+      "bytes": 244
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-13/manifest.json",
+      "sha256": "7fa91d7be8fac5592cc4970df8a0362722e953856866aa6e8492babc1c1f3ac9",
+      "bytes": 2878
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-14/case_definition.json",
+      "sha256": "0fa795ac9b3280e3e1236f311bc65f07dc22e23c8d95f8421849caf23e04948a",
+      "bytes": 902
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-14/expected/expected_outcome.json",
+      "sha256": "38b232c216503d52369290999beacd91215d25046d24b48ae024a971fc77c5bb",
+      "bytes": 3441
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-14/inputs/evidence_fixture.json",
+      "sha256": "2bdbcb8ed254c469e47caff9ed132c5e63f382776a83289936b7474a31d94dd4",
+      "bytes": 74
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-14/inputs/fault_injection.json",
+      "sha256": "73b149157c4f29f311afe7a31de1a9404fb4384f27c8c1790150d30f161157d4",
+      "bytes": 108
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-14/inputs/human_disposition.json",
+      "sha256": "e7b1ac916222432ef7f9dc48de0cabb02b0f93a0d1c9a11241a0d78da9b6cf05",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-14/inputs/model_fixture.json",
+      "sha256": "a311998aca655a64779d8b42b6fe78b5308161635e2eb2262a8f35004ee0b908",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-14/inputs/opportunity.json",
+      "sha256": "3fed82113dcc2256387d42ce84ba2c82e9041dd2216b63c9e5120cfe6d833c9d",
+      "bytes": 993
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-14/inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-14/inputs/source_document.txt",
+      "sha256": "1e95803ff38f89f0b1133fb88b8f33525a3734ee7024d96bf3a8b66d8d1b7d8d",
+      "bytes": 54
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-14/inputs/source_document_metadata.json",
+      "sha256": "988822ebee2cc9d9937337221a5b0a1c679783fd39ce2eaf9d58dd70a5b09a66",
+      "bytes": 225
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-14/manifest.json",
+      "sha256": "9df1d979ebec652d5245c08ffa31a219e95755c2723ae035eb090c24d534c6f3",
+      "bytes": 2892
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-15/case_definition.json",
+      "sha256": "6126f2bb993544281308eb4ef66f23c7c6e49f9d4545d0da25b0b3c6e911083b",
+      "bytes": 915
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-15/expected/expected_outcome.json",
+      "sha256": "f5e3e156856444a2c0fa37055e7340a8f5b65b665bde1438276f1e11e2b03466",
+      "bytes": 3347
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-15/inputs/evidence_fixture.json",
+      "sha256": "170766a5883133405b59ffb5618c38b296a77d8abe2affe4f3f0603060e9c26e",
+      "bytes": 74
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-15/inputs/fault_injection.json",
+      "sha256": "35c2ef976dba7dd5a038f4f309fb2c8394e4c2c772436e785bf27a206a1d3154",
+      "bytes": 108
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-15/inputs/human_disposition.json",
+      "sha256": "e43e2a34e4b7788df92c286e79542c728108083adf0ea37272c76db3134ca0ea",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-15/inputs/model_fixture.json",
+      "sha256": "b9b965ba016547d59d657b87164cf0dfdaff19803be96a9710c61011b7c5b74f",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-15/inputs/opportunity.json",
+      "sha256": "cf0540a57e098662ec95ad2e1f5e6c72d5b9193c1cfa64f94f129e7676ebee2b",
+      "bytes": 993
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-15/inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-15/inputs/source_document.txt",
+      "sha256": "4293d32d979b742ec8de03df4116f992ea4fdae9bcc2efaf38ece415d3469f97",
+      "bytes": 302
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-15/inputs/source_document_metadata.json",
+      "sha256": "8498444849fed3432ed8a1fb7cbf84231fe26d2964cf69e2b7c4e913527c78c2",
+      "bytes": 251
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-15/manifest.json",
+      "sha256": "847a20eaa60923451c85f18d1c5847d2ba7934efc5d28401c1aaee0e325d833f",
+      "bytes": 2838
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-16/case_definition.json",
+      "sha256": "67bee76082fe2a636dbc05760296a638eb8317819e645b36cde346f6f23c068c",
+      "bytes": 886
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-16/expected/expected_outcome.json",
+      "sha256": "6ae89c8230a23f1d5eb1f665b8d014b1fc303cedc479816d98c69e4a67c8a258",
+      "bytes": 3424
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-16/inputs/evidence_fixture.json",
+      "sha256": "b46d72de6abd7b4767258f231957129849e7b1bc1aba7400339ee8980cd30407",
+      "bytes": 74
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-16/inputs/fault_injection.json",
+      "sha256": "7dfa19c039adddde6b9c16efa3299d71f8eb8e4080b509a0f40f8827255924a6",
+      "bytes": 108
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-16/inputs/human_disposition.json",
+      "sha256": "55b7f2ad316e982a2aab97e96d658be1f7adb84097ed399e673e2c86988045e4",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-16/inputs/model_fixture.json",
+      "sha256": "6a1e2de4ccd2ab08507ff7fde52c8300996713798a66b0c4219e709757ec5136",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-16/inputs/opportunity.json",
+      "sha256": "fd7761eb37e561979e4ae680e473cffcfbb5e1a2618d04591d2a089c02d78f3b",
+      "bytes": 993
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-16/inputs/organization_profile_reference.json",
+      "sha256": "192e81c10bb68705e6a3f0f8c268a9869ebbfa4dcf522b71be103ceffeb9fb65",
+      "bytes": 680
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-16/inputs/source_document.txt",
+      "sha256": "1e95803ff38f89f0b1133fb88b8f33525a3734ee7024d96bf3a8b66d8d1b7d8d",
+      "bytes": 54
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-16/inputs/source_document_metadata.json",
+      "sha256": "406d490d02841b95de714352a6319d279553546536fbb6e4e837346ac4f83641",
+      "bytes": 225
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-16/manifest.json",
+      "sha256": "b7b1cfd4bd7d996d4e1bf1f6669b9cad040a55d763b5ae9017567050ce17011d",
+      "bytes": 2871
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-17/case_definition.json",
+      "sha256": "5699649080542b944d38ca209fedc3806abed9b0ef4bd7c0b516c13f4d96ca1f",
+      "bytes": 917
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-17/expected/expected_outcome.json",
+      "sha256": "3eec136468092e73ad048f209b367eff9de9a74a2965590c54f57c565c8c012e",
+      "bytes": 3664
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-17/inputs/evidence_fixture.json",
+      "sha256": "b5a82a3f183fae04600f6873b07db36bfad42b5c5c2b801cc0c45c16cf7fead7",
+      "bytes": 74
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-17/inputs/fault_injection.json",
+      "sha256": "d721d8ecd004d14205bc5531cfd935c23a9222c636bd7f24dac46ffb1c5d11d1",
+      "bytes": 108
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-17/inputs/human_disposition.json",
+      "sha256": "e760143355b1a343e63f54f0594df024224b2f3a7e410e5f5d3a70e1b582c710",
+      "bytes": 339
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-17/inputs/model_fixture.json",
+      "sha256": "2f6eed66b367538c678a7f2302c6f6eacfffe212c55b4280c8f8394404e5730e",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-17/inputs/opportunity.json",
+      "sha256": "32e8455fa562957b90e9549ecfb1262bc858e150ae5e19b127ab5acd159f305d",
+      "bytes": 1041
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-17/inputs/organization_profile_reference.json",
+      "sha256": "4c9f05f13f71891221af452fbc9b9df9badf20a2c9921aadc778081128f4cc34",
+      "bytes": 218
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-17/inputs/source_document.txt",
+      "sha256": "1e95803ff38f89f0b1133fb88b8f33525a3734ee7024d96bf3a8b66d8d1b7d8d",
+      "bytes": 54
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-17/inputs/source_document_metadata.json",
+      "sha256": "5d0df89315e7cfcd371c80f518a08b9aeebcf2cfe5e7f157bd16c7b82b52996f",
+      "bytes": 225
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-17/manifest.json",
+      "sha256": "45b829a2a553946aa2d4260f5ae272b00f001ff09d1552767e32ccd75ba82506",
+      "bytes": 2863
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-18/case_definition.json",
+      "sha256": "33de7037b0e1846e091159659465919dbe8adb33c297f5c6794d7851add875db",
+      "bytes": 974
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-18/expected/expected_outcome.json",
+      "sha256": "b822bac412e9f916df3f4258a877fdf35ff760f2bbd7ee9e18ce79d9577f8831",
+      "bytes": 3821
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-18/inputs/evidence_fixture.json",
+      "sha256": "3c463bf9950c647ff0e501d5a1c69dc98360698ec086b3facfe099028780203b",
+      "bytes": 74
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-18/inputs/fault_injection.json",
+      "sha256": "83d5cf48dc113aee4bf0dc1511956f718b881de3a13f0f6f2739846159a3b3d1",
+      "bytes": 239
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-18/inputs/human_disposition.json",
+      "sha256": "15504210a997c285dcb7e9ce22db20be76bb190db729075cf3da38aa7a77c09d",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-18/inputs/model_fixture.json",
+      "sha256": "415b0fef4dc1b57e10482b8d3ad0d24d1a3e9c113895967d2b4205c1c6aeae2f",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-18/inputs/opportunity.json",
+      "sha256": "970af1663a95e1bf96c426cdf738b2b24f3a61722a01d82c1a2044199374b577",
+      "bytes": 1131
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-18/inputs/organization_profile_reference.json",
+      "sha256": "de22433af79de81a1176ccef0c8cbe3aa8911ece279911f42c7afcaa68b4afd0",
+      "bytes": 737
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-18/inputs/source_document.txt",
+      "sha256": "1e95803ff38f89f0b1133fb88b8f33525a3734ee7024d96bf3a8b66d8d1b7d8d",
+      "bytes": 54
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-18/inputs/source_document_metadata.json",
+      "sha256": "3ded6c29b9af3b23a5cf27d2c177b16c7a199d895ab9bc492c4b3fd4ce62c245",
+      "bytes": 225
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-18/manifest.json",
+      "sha256": "319bc89b02e3fb33e108a85a4895cfd1c27c5ed9dd672215e96c9fb69c61cad9",
+      "bytes": 2911
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-19/case_definition.json",
+      "sha256": "ff083443889bfb07bb5c3a6653a689c8bda718550cc96ff58520afda71a84735",
+      "bytes": 954
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-19/expected/expected_outcome.json",
+      "sha256": "4566899e7d95d091c053dd9eac7dec63ed4250131c03d3fcb1c6a46b14470638",
+      "bytes": 3419
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-19/inputs/evidence_fixture.json",
+      "sha256": "40e3698d6093988073953846934586059699942a2f487458a058e3cad9664719",
+      "bytes": 223
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-19/inputs/fault_injection.json",
+      "sha256": "56b7350c4adf190d426b9800727bfe6e315eae0e6d603a94c267dce224ece78e",
+      "bytes": 258
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-19/inputs/human_disposition.json",
+      "sha256": "bd086fe05c5ff943124bcb503e971ca5cdbf57d3e8dc0f04891244319d5ee915",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-19/inputs/model_fixture.json",
+      "sha256": "3315c85e794381ef54b81ee596aa3dae91d8bc75e90dac3a2ba86e206c4b6521",
+      "bytes": 150
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-19/inputs/opportunity.json",
+      "sha256": "84ecfb64cb395131f85fff2bae8234df30e0a792f090cf193c231e88ddd2ae1e",
+      "bytes": 993
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-19/inputs/organization_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-19/inputs/source_document.txt",
+      "sha256": "65e844f97d71b5e12f466ee697a822bf637e8700d6d7b941236965eab7378dda",
+      "bytes": 529
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-19/inputs/source_document_metadata.json",
+      "sha256": "03590ed2da765290622522230b8fff57c6506c6a33efc3966edbdae3ff4b6fc7",
+      "bytes": 235
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/TC-19/manifest.json",
+      "sha256": "4818c09fd14768e386bffb72f8e3ad59b543828e7b8c2fa448ad9afce745a00d",
+      "bytes": 2841
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/_shared/README.md",
+      "sha256": "948ac7bcdda72a4c7ff055af832470185418fda491f28857c3b2e38612632b24",
+      "bytes": 540
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/_shared/fictional_alternate_profile_reference.json",
+      "sha256": "4c9f05f13f71891221af452fbc9b9df9badf20a2c9921aadc778081128f4cc34",
+      "bytes": 218
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/_shared/icm_profile_reference.json",
+      "sha256": "fa91ed725e92733f484adf1c4b4ac16bcb601c0e3fc6ce256a3083f412c2f846",
+      "bytes": 191
+    },
+    {
+      "path": "docs/P3_03_Assertion_Matrix.csv",
+      "sha256": "de05cc847e89aabd33bf3d3192ed3de3c06017ff025d4c7aab628a61fa341db8",
+      "bytes": 20384
+    },
+    {
+      "path": "docs/P3_03_Frozen_Case_Index.csv",
+      "sha256": "81a4ef30a2cd99a27fa9bade0c1a01a6c6377966312bd7d30342981b1d705d45",
+      "bytes": 5185
+    }
+  ]
+}

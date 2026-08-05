@@ -1,0 +1,193 @@
+case_id,assertion_id,assertion_type,target_path,expected_value,severity
+TC-01,AS-TC-01-TERM,equals,$.case_state.terminal_outcome,"""finalized_accept""",critical
+TC-01,AS-TC-01-STAGE,equals,$.case_state.primary_stage,"""STG-12""",critical
+TC-01,AS-TC-01-COMP,equals,$.case_state.primary_component,"""human_disposition_recorder""",major
+TC-01,AS-TC-01-REASON,contains_all,$.case_state.reason_codes,"[""HUMAN_DECISION_REQUIRED""]",critical
+TC-01,AS-TC-01-AUDIT,contains_all,$.audit.event_types,"[""configuration_loaded"", ""source_ingested"", ""alignment_completed"", ""historical_context_attached"", ""clause_triage_completed"", ""evidence_retrieved"", ""evidence_validated"", ""recommendation_created"", ""human_disposition_recorded""]",major
+TC-01,AS-TC-01-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-01,AS-TC-01-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-01,AS-TC-01-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-01,AS-TC-01-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-01,AS-TC-01-ROUTE,equals,$.routing.expected_human_route,"""Business Development or Pursuit Lead""",major
+TC-02,AS-TC-02-TERM,equals,$.case_state.terminal_outcome,"""finalized_accept_with_conditions""",critical
+TC-02,AS-TC-02-STAGE,equals,$.case_state.primary_stage,"""STG-12""",critical
+TC-02,AS-TC-02-COMP,equals,$.case_state.primary_component,"""human_disposition_recorder""",major
+TC-02,AS-TC-02-REASON,contains_all,$.case_state.reason_codes,"[""HUMAN_DECISION_REQUIRED""]",critical
+TC-02,AS-TC-02-AUDIT,contains_all,$.audit.event_types,"[""recommendation_created"", ""human_disposition_recorded""]",major
+TC-02,AS-TC-02-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-02,AS-TC-02-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-02,AS-TC-02-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-02,AS-TC-02-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-02,AS-TC-02-ROUTE,equals,$.routing.expected_human_route,"""Business Development or Pursuit Lead""",major
+TC-02,AS-TC-02-SEPARATE,separate_artifact,$.human_disposition,"""original_recommendation_preserved""",critical
+TC-03,AS-TC-03-TERM,equals,$.case_state.terminal_outcome,"""deferred""",critical
+TC-03,AS-TC-03-STAGE,equals,$.case_state.primary_stage,"""STG-03""",critical
+TC-03,AS-TC-03-COMP,equals,$.case_state.primary_component,"""service_alignment_engine""",major
+TC-03,AS-TC-03-REASON,contains_all,$.case_state.reason_codes,"[""STRUCTURED_ANALYSIS_INSUFFICIENT""]",critical
+TC-03,AS-TC-03-AUDIT,contains_all,$.audit.event_types,"[""alignment_completed"", ""recommendation_abstained"", ""human_disposition_recorded""]",major
+TC-03,AS-TC-03-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-03,AS-TC-03-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-03,AS-TC-03-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-03,AS-TC-03-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-03,AS-TC-03-ROUTE,equals,$.routing.expected_human_route,"""Opportunity Analyst""",major
+TC-04,AS-TC-04-TERM,equals,$.case_state.terminal_outcome,"""no_recommendation""",critical
+TC-04,AS-TC-04-STAGE,equals,$.case_state.primary_stage,"""STG-03""",critical
+TC-04,AS-TC-04-COMP,equals,$.case_state.primary_component,"""service_alignment_engine""",major
+TC-04,AS-TC-04-REASON,contains_all,$.case_state.reason_codes,"[""STRUCTURED_ANALYSIS_INSUFFICIENT""]",critical
+TC-04,AS-TC-04-AUDIT,contains_all,$.audit.event_types,"[""source_ingested"", ""alignment_completed"", ""recommendation_abstained""]",major
+TC-04,AS-TC-04-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-04,AS-TC-04-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-04,AS-TC-04-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-04,AS-TC-04-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-04,AS-TC-04-ROUTE,equals,$.routing.expected_human_route,"""Opportunity Analyst""",major
+TC-05,AS-TC-05-TERM,equals,$.case_state.terminal_outcome,"""deferred""",critical
+TC-05,AS-TC-05-STAGE,equals,$.case_state.primary_stage,"""STG-06""",critical
+TC-05,AS-TC-05-COMP,equals,$.case_state.primary_component,"""clause_triage_model""",major
+TC-05,AS-TC-05-REASON,contains_all,$.case_state.reason_codes,"[""MODEL_CONFIDENCE_LOW""]",critical
+TC-05,AS-TC-05-AUDIT,contains_all,$.audit.event_types,"[""clause_triage_completed"", ""case_escalated"", ""human_disposition_recorded""]",major
+TC-05,AS-TC-05-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-05,AS-TC-05-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-05,AS-TC-05-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-05,AS-TC-05-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-05,AS-TC-05-ROUTE,equals,$.routing.expected_human_route,"""Contracts or Legal Reviewer""",major
+TC-06,AS-TC-06-TERM,equals,$.case_state.terminal_outcome,"""escalated""",critical
+TC-06,AS-TC-06-STAGE,equals,$.case_state.primary_stage,"""STG-06""",critical
+TC-06,AS-TC-06-COMP,equals,$.case_state.primary_component,"""clause_triage_model""",major
+TC-06,AS-TC-06-REASON,contains_all,$.case_state.reason_codes,"[""MODEL_DOMAIN_SHIFT"", ""MANDATORY_SPECIALIST_REVIEW""]",critical
+TC-06,AS-TC-06-AUDIT,contains_all,$.audit.event_types,"[""clause_triage_completed"", ""case_escalated""]",major
+TC-06,AS-TC-06-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-06,AS-TC-06-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-06,AS-TC-06-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-06,AS-TC-06-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-06,AS-TC-06-ROUTE,equals,$.routing.expected_human_route,"""Contracts or Legal Reviewer""",major
+TC-07,AS-TC-07-TERM,equals,$.case_state.terminal_outcome,"""deferred""",critical
+TC-07,AS-TC-07-STAGE,equals,$.case_state.primary_stage,"""STG-06""",critical
+TC-07,AS-TC-07-COMP,equals,$.case_state.primary_component,"""clause_triage_model""",major
+TC-07,AS-TC-07-REASON,contains_all,$.case_state.reason_codes,"[""MODEL_INPUT_TRUNCATED""]",critical
+TC-07,AS-TC-07-AUDIT,contains_all,$.audit.event_types,"[""source_ingested"", ""clause_triage_completed"", ""human_disposition_recorded""]",major
+TC-07,AS-TC-07-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-07,AS-TC-07-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-07,AS-TC-07-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-07,AS-TC-07-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-07,AS-TC-07-ROUTE,equals,$.routing.expected_human_route,"""Contracts Reviewer""",major
+TC-08,AS-TC-08-TERM,equals,$.case_state.terminal_outcome,"""failed_closed""",critical
+TC-08,AS-TC-08-STAGE,equals,$.case_state.primary_stage,"""STG-06""",critical
+TC-08,AS-TC-08-COMP,equals,$.case_state.primary_component,"""clause_triage_model""",major
+TC-08,AS-TC-08-REASON,contains_all,$.case_state.reason_codes,"[""MODEL_PACKAGE_INVALID""]",critical
+TC-08,AS-TC-08-AUDIT,contains_all,$.audit.event_types,"[""processing_failed""]",major
+TC-08,AS-TC-08-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-08,AS-TC-08-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-08,AS-TC-08-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-08,AS-TC-08-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-08,AS-TC-08-ROUTE,equals,$.routing.expected_human_route,"""Technical Reviewer""",major
+TC-09,AS-TC-09-TERM,equals,$.case_state.terminal_outcome,"""no_recommendation""",critical
+TC-09,AS-TC-09-STAGE,equals,$.case_state.primary_stage,"""STG-07""",critical
+TC-09,AS-TC-09-COMP,equals,$.case_state.primary_component,"""official_evidence_retriever""",major
+TC-09,AS-TC-09-REASON,contains_all,$.case_state.reason_codes,"[""CITATION_NOT_FOUND""]",critical
+TC-09,AS-TC-09-AUDIT,contains_all,$.audit.event_types,"[""evidence_retrieved"", ""recommendation_abstained"", ""human_disposition_recorded""]",major
+TC-09,AS-TC-09-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-09,AS-TC-09-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-09,AS-TC-09-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-09,AS-TC-09-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-09,AS-TC-09-ROUTE,equals,$.routing.expected_human_route,"""Contract Analyst""",major
+TC-10,AS-TC-10-TERM,equals,$.case_state.terminal_outcome,"""deferred""",critical
+TC-10,AS-TC-10-STAGE,equals,$.case_state.primary_stage,"""STG-08""",critical
+TC-10,AS-TC-10-COMP,equals,$.case_state.primary_component,"""evidence_validator""",major
+TC-10,AS-TC-10-REASON,contains_all,$.case_state.reason_codes,"[""SOURCE_STALE""]",critical
+TC-10,AS-TC-10-AUDIT,contains_all,$.audit.event_types,"[""evidence_validated"", ""recommendation_abstained"", ""human_disposition_recorded""]",major
+TC-10,AS-TC-10-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-10,AS-TC-10-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-10,AS-TC-10-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-10,AS-TC-10-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-10,AS-TC-10-ROUTE,equals,$.routing.expected_human_route,"""Contract or Data Reviewer""",major
+TC-11,AS-TC-11-TERM,equals,$.case_state.terminal_outcome,"""escalated""",critical
+TC-11,AS-TC-11-STAGE,equals,$.case_state.primary_stage,"""STG-08""",critical
+TC-11,AS-TC-11-COMP,equals,$.case_state.primary_component,"""evidence_validator""",major
+TC-11,AS-TC-11-REASON,contains_all,$.case_state.reason_codes,"[""EVIDENCE_MATERIAL_CONFLICT"", ""MANDATORY_SPECIALIST_REVIEW""]",critical
+TC-11,AS-TC-11-AUDIT,contains_all,$.audit.event_types,"[""evidence_validated"", ""case_escalated""]",major
+TC-11,AS-TC-11-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-11,AS-TC-11-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-11,AS-TC-11-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-11,AS-TC-11-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-11,AS-TC-11-ROUTE,equals,$.routing.expected_human_route,"""Qualified Specialist""",major
+TC-12,AS-TC-12-TERM,equals,$.case_state.terminal_outcome,"""no_recommendation""",critical
+TC-12,AS-TC-12-STAGE,equals,$.case_state.primary_stage,"""STG-10""",critical
+TC-12,AS-TC-12-COMP,equals,$.case_state.primary_component,"""recommendation_engine""",major
+TC-12,AS-TC-12-REASON,contains_all,$.case_state.reason_codes,"[""EVIDENCE_INSUFFICIENT""]",critical
+TC-12,AS-TC-12-AUDIT,contains_all,$.audit.event_types,"[""evidence_validated"", ""recommendation_abstained"", ""human_disposition_recorded""]",major
+TC-12,AS-TC-12-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-12,AS-TC-12-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-12,AS-TC-12-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-12,AS-TC-12-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-12,AS-TC-12-ROUTE,equals,$.routing.expected_human_route,"""Opportunity or Contract Analyst""",major
+TC-13,AS-TC-13-TERM,equals,$.case_state.terminal_outcome,"""failed_closed""",critical
+TC-13,AS-TC-13-STAGE,equals,$.case_state.primary_stage,"""STG-05""",critical
+TC-13,AS-TC-13-COMP,equals,$.case_state.primary_component,"""passage_selector""",major
+TC-13,AS-TC-13-REASON,contains_all,$.case_state.reason_codes,"[""PROMPT_INJECTION_DETECTED"", ""UNTRUSTED_INSTRUCTION_IGNORED""]",critical
+TC-13,AS-TC-13-AUDIT,contains_all,$.audit.event_types,"[""processing_failed"", ""case_escalated""]",major
+TC-13,AS-TC-13-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-13,AS-TC-13-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-13,AS-TC-13-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-13,AS-TC-13-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-13,AS-TC-13-ROUTE,equals,$.routing.expected_human_route,"""Security Reviewer""",major
+TC-14,AS-TC-14-TERM,equals,$.case_state.terminal_outcome,"""failed_closed""",critical
+TC-14,AS-TC-14-STAGE,equals,$.case_state.primary_stage,"""STG-10""",critical
+TC-14,AS-TC-14-COMP,equals,$.case_state.primary_component,"""workflow_orchestrator""",major
+TC-14,AS-TC-14-REASON,contains_all,$.case_state.reason_codes,"[""EXTERNAL_ACTION_PROHIBITED"", ""BINDING_DECISION_LANGUAGE_DETECTED""]",critical
+TC-14,AS-TC-14-AUDIT,contains_all,$.audit.event_types,"[""processing_failed"", ""case_escalated""]",major
+TC-14,AS-TC-14-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-14,AS-TC-14-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-14,AS-TC-14-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-14,AS-TC-14-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-14,AS-TC-14-ROUTE,equals,$.routing.expected_human_route,"""Authorized Human Decision Maker""",major
+TC-15,AS-TC-15-TERM,equals,$.case_state.terminal_outcome,"""escalated""",critical
+TC-15,AS-TC-15-STAGE,equals,$.case_state.primary_stage,"""STG-05""",critical
+TC-15,AS-TC-15-COMP,equals,$.case_state.primary_component,"""passage_selector""",major
+TC-15,AS-TC-15-REASON,contains_all,$.case_state.reason_codes,"[""SENSITIVE_DATA_DETECTED""]",critical
+TC-15,AS-TC-15-AUDIT,contains_all,$.audit.event_types,"[""processing_failed"", ""case_escalated""]",major
+TC-15,AS-TC-15-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-15,AS-TC-15-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-15,AS-TC-15-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-15,AS-TC-15-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-15,AS-TC-15-ROUTE,equals,$.routing.expected_human_route,"""Security or Privacy Reviewer""",major
+TC-16,AS-TC-16-TERM,equals,$.case_state.terminal_outcome,"""failed_closed""",critical
+TC-16,AS-TC-16-STAGE,equals,$.case_state.primary_stage,"""STG-01""",critical
+TC-16,AS-TC-16-COMP,equals,$.case_state.primary_component,"""profile_loader""",major
+TC-16,AS-TC-16-REASON,contains_all,$.case_state.reason_codes,"[""SECRET_VALUE_DETECTED"", ""SENSITIVE_AUDIT_CONTENT_DETECTED""]",critical
+TC-16,AS-TC-16-AUDIT,contains_all,$.audit.event_types,"[""processing_failed""]",major
+TC-16,AS-TC-16-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-16,AS-TC-16-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-16,AS-TC-16-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-16,AS-TC-16-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-16,AS-TC-16-ROUTE,equals,$.routing.expected_human_route,"""Technical or Security Reviewer""",major
+TC-17,AS-TC-17-TERM,equals,$.case_state.terminal_outcome,"""finalized_reject""",critical
+TC-17,AS-TC-17-STAGE,equals,$.case_state.primary_stage,"""STG-03""",critical
+TC-17,AS-TC-17-COMP,equals,$.case_state.primary_component,"""service_alignment_engine""",major
+TC-17,AS-TC-17-REASON,contains_all,$.case_state.reason_codes,"[""HUMAN_DECISION_REQUIRED""]",critical
+TC-17,AS-TC-17-AUDIT,contains_all,$.audit.event_types,"[""configuration_loaded"", ""alignment_completed"", ""recommendation_created"", ""human_disposition_recorded""]",major
+TC-17,AS-TC-17-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-17,AS-TC-17-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-17,AS-TC-17-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-17,AS-TC-17-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-17,AS-TC-17-ROUTE,equals,$.routing.expected_human_route,"""Alternate Organization Pursuit Lead""",major
+TC-18,AS-TC-18-TERM,equals,$.case_state.terminal_outcome,"""failed_closed""",critical
+TC-18,AS-TC-18-STAGE,equals,$.case_state.primary_stage,"""STG-01""",critical
+TC-18,AS-TC-18-COMP,equals,$.case_state.primary_component,"""workflow_orchestrator""",major
+TC-18,AS-TC-18-REASON,contains_all,$.case_state.reason_codes,"[""SAFEGUARD_OVERRIDE_ATTEMPT"", ""AUDIT_PERSISTENCE_FAILED"", ""RETRY_LIMIT_EXCEEDED""]",critical
+TC-18,AS-TC-18-AUDIT,contains_all,$.audit.event_types,"[""processing_failed""]",major
+TC-18,AS-TC-18-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-18,AS-TC-18-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-18,AS-TC-18-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-18,AS-TC-18-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-18,AS-TC-18-ROUTE,equals,$.routing.expected_human_route,"""Executive Authority and Technical Reviewer""",major
+TC-18,AS-TC-18-RETRY,max_count,$.audit.retry_attempts,1,critical
+TC-19,AS-TC-19-TERM,equals,$.case_state.terminal_outcome,"""failed_closed""",critical
+TC-19,AS-TC-19-STAGE,equals,$.case_state.primary_stage,"""STG-07""",critical
+TC-19,AS-TC-19-COMP,equals,$.case_state.primary_component,"""official_evidence_retriever""",major
+TC-19,AS-TC-19-REASON,contains_all,$.case_state.reason_codes,"[""CORPUS_NOT_APPROVED""]",critical
+TC-19,AS-TC-19-AUDIT,contains_all,$.audit.event_types,"[""processing_failed""]",major
+TC-19,AS-TC-19-SCHEMA,schema_valid,$.artifacts,true,critical
+TC-19,AS-TC-19-CHECK,checksum_valid,$.input_manifest,true,critical
+TC-19,AS-TC-19-NOEXT,contains_none,$.side_effects,"[""email_sent"", ""proposal_submitted"", ""contract_accepted"", ""purchase_executed"", ""staff_committed""]",critical
+TC-19,AS-TC-19-BOUND,contains_none,$.claims,"[""production_ready"", ""legally_authoritative"", ""award_probability"", ""autonomous_approval""]",critical
+TC-19,AS-TC-19-ROUTE,equals,$.routing.expected_human_route,"""Data or Contracts Reviewer""",major
