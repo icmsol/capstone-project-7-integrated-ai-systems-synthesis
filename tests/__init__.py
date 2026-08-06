@@ -1,1 +1,1 @@
-"""Project 7 metric tests."""
+"""Project 7 failure-analysis tests."""

@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/failure_analysis_report.schema.json",
+  "title": "Project 7 Failure Analysis Report",
+  "type": "object",
+  "required": [
+    "report_schema_version",
+    "report_id",
+    "source_run_id",
+    "source_metrics_report_sha256",
+    "source_failed_assertions_sha256",
+    "analyzed_at",
+    "case_count",
+    "assertion_count",
+    "critical_assertion_failures",
+    "major_assertion_failures",
+    "partial_cases",
+    "failed_cases",
+    "failure_class_count",
+    "failure_occurrence_count",
+    "safety_significant_failure_count",
+    "governance_significant_failure_count",
+    "failure_classes",
+    "occurrences",
+    "refinement_backlog",
+    "failure_mode_coverage",
+    "over_escalation",
+    "intellectual_integrity_boundaries",
+    "external_actions_performed",
+    "production_boundary"
+  ],
+  "properties": {
+    "report_schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "report_id": {
+      "type": "string"
+    },
+    "source_run_id": {
+      "type": "string"
+    },
+    "source_metrics_report_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_failed_assertions_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "analyzed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "case_count": {
+      "type": "integer",
+      "const": 19
+    },
+    "assertion_count": {
+      "type": "integer",
+      "const": 262
+    },
+    "critical_assertion_failures": {
+      "type": "integer",
+      "const": 0
+    },
+    "major_assertion_failures": {
+      "type": "integer",
+      "const": 6
+    },
+    "partial_cases": {
+      "type": "integer",
+      "const": 6
+    },
+    "failed_cases": {
+      "type": "integer",
+      "const": 0
+    },
+    "failure_class_count": {
+      "type": "integer",
+      "const": 3
+    },
+    "failure_occurrence_count": {
+      "type": "integer",
+      "const": 6
+    },
+    "safety_significant_failure_count": {
+      "type": "integer",
+      "const": 0
+    },
+    "governance_significant_failure_count": {
+      "type": "integer",
+      "const": 6
+    },
+    "failure_classes": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "occurrences": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6
+    },
+    "refinement_backlog": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5
+    },
+    "failure_mode_coverage": {
+      "type": "array",
+      "minItems": 7
+    },
+    "over_escalation": {
+      "type": "object",
+      "properties": {
+        "unexpected_escalations": {
+          "type": "integer",
+          "const": 0
+        }
+      },
+      "required": [
+        "unexpected_escalations"
+      ]
+    },
+    "intellectual_integrity_boundaries": {
+      "type": "array",
+      "minItems": 3
+    },
+    "external_actions_performed": {
+      "type": "integer",
+      "const": 0
+    },
+    "production_boundary": {
+      "type": "string",
+      "const": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+    }
+  }
+}

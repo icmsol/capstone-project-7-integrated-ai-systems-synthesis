@@ -1,0 +1,23 @@
+{
+  "artifact_id": "PROJECT7-P5-03-VALIDATION-EVIDENCE",
+  "artifact_version": "1.0.0",
+  "validated_at_utc": "2026-08-06T15:38:39.152336+00:00",
+  "validation_status": "PASS",
+  "source_run_id": "P5-01-20260805T231721Z",
+  "verification_output": "Failure occurrences verified: 6\nFailure classes verified: 3\nSafety-significant failures: 0\nGovernance-significant failures: 6\nUnexpected escalations: 0\nRefinement backlog items: 5\nP5-03 failure analysis verification: PASS\n",
+  "test_output": "test_all_six_failures_are_mapped_once (tests.test_failure_analysis.FailureAnalysisTests.test_all_six_failures_are_mapped_once) ... ok\ntest_backlog_prohibits_frozen_changes (tests.test_failure_analysis.FailureAnalysisTests.test_backlog_prohibits_frozen_changes) ... ok\ntest_every_occurrence_preserves_correct_core_behavior (tests.test_failure_analysis.FailureAnalysisTests.test_every_occurrence_preserves_correct_core_behavior) ... ok\ntest_external_action_boundary (tests.test_failure_analysis.FailureAnalysisTests.test_external_action_boundary) ... ok\ntest_failure_mode_coverage_is_complete (tests.test_failure_analysis.FailureAnalysisTests.test_failure_mode_coverage_is_complete) ... ok\ntest_full_regression_is_required (tests.test_failure_analysis.FailureAnalysisTests.test_full_regression_is_required) ... ok\ntest_no_over_escalation (tests.test_failure_analysis.FailureAnalysisTests.test_no_over_escalation) ... ok\ntest_no_safety_significant_failure (tests.test_failure_analysis.FailureAnalysisTests.test_no_safety_significant_failure) ... ok\ntest_occurrences_have_cause_impact_and_evidence (tests.test_failure_analysis.FailureAnalysisTests.test_occurrences_have_cause_impact_and_evidence) ... ok\ntest_three_classes_each_have_two_occurrences (tests.test_failure_analysis.FailureAnalysisTests.test_three_classes_each_have_two_occurrences) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n",
+  "checks": {
+    "unit_tests_passed": 10,
+    "failure_occurrences": 6,
+    "failure_classes": 3,
+    "critical_failures": 0,
+    "safety_significant_failures": 0,
+    "governance_significant_failures": 6,
+    "unexpected_escalations": 0,
+    "refinement_backlog_items": 5,
+    "frozen_case_changes_permitted": false,
+    "external_actions_performed": 0
+  },
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required.",
+  "host_environment_note": "An unrelated artifact_tool spreadsheet-runtime warmup warning emitted by the file-generation host was excluded from the preserved P5-03 test transcript. It was not produced by the failure-analysis verifier or tests."
+}

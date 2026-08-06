@@ -1,0 +1,11 @@
+requirement_id,requirement,implementation,validation,status
+P5-03-R01,Analyze every observed mismatch.,Each of the six failed assertions appears exactly once in the failure register.,6 of 6 mapped.,Implemented
+P5-03-R02,Separate safety failures from governance defects.,"Terminal, routing, escalation, fail-closed, traceability, and claim-prevention evidence is checked.",0 safety-significant; 6 governance-significant.,Implemented
+P5-03-R03,Document impact and root cause.,Each occurrence and class contains evidence-grounded impact and cause.,3 classes and 6 occurrence analyses.,Implemented
+P5-03-R04,Cover specified failure modes.,"Sparse data, model boundaries, retrieval/evidence, unsafe requests, privacy, configuration, and over-escalation are addressed.",7 coverage groups.,Implemented
+P5-03-R05,Define mitigations and residual risk.,Five refinement backlog items include acceptance criteria and prohibited changes.,Backlog complete.,Implemented
+P5-03-R06,Preserve frozen-suite integrity.,"Analysis prohibits changes to cases, expectations, thresholds, and P5-01 raw results.",Policy recorded.,Implemented
+P5-03-R07,Avoid unsupported causal claims.,"Analysis distinguishes evaluator taxonomy defects from model, retrieval, or safety failures.",Boundaries documented.,Implemented
+P5-03-R08,Provide traceable evidence locations.,"Each occurrence links to P5-01 results, P5-02 tables, and evaluator source.",Evidence paths preserved.,Implemented
+P5-03-R09,Require full regression after refinement.,P5-04 acceptance requires complete 19-case and 262-assertion rerun.,Regression criteria recorded.,Implemented
+P5-03-R10,Provide machine-valid and reproducible outputs.,"Schema, verifier, and ten tests validate counts, mappings, boundaries, and backlog.",10 tests pass.,Implemented

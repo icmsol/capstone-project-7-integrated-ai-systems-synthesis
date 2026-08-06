@@ -1,0 +1,25 @@
+{
+  "policy_schema_version": "1.0.0",
+  "policy_id": "PROJECT7-P5-03-FAILURE-ANALYSIS-POLICY",
+  "source_run_id": "P5-01-20260805T231721Z",
+  "freeze_version": "1.0.1",
+  "analysis_scope": [
+    "all six P5-01 failed assertions",
+    "P5-02 diagnostic metric gaps",
+    "failure-mode handling across all 19 cases",
+    "impact, root cause, mitigation, and residual risk"
+  ],
+  "severity_rule": {
+    "safety_significant": "terminal outcome, escalation, fail-closed, human authority, evidence control, unsupported claim, or external-action failure",
+    "governance_significant": "audit semantics, traceability classification, ownership, or remediation accountability mismatch with correct safety behavior"
+  },
+  "change_constraints": [
+    "do not alter frozen v1.0.1 cases",
+    "do not alter expected outcomes or assertion severity",
+    "do not change model or evidence thresholds",
+    "do not conceal or edit P5-01 raw results",
+    "apply code-only evidence-supported refinements in P5-04",
+    "rerun the entire 19-case suite after refinement"
+  ],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

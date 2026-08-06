@@ -1,0 +1,95 @@
+{
+  "artifact_id": "PROJECT7-P5-03-FAILURE-ANALYSIS",
+  "artifact_version": "1.0.0",
+  "created_at_utc": "2026-08-06T15:38:39.155323+00:00",
+  "source_run_id": "P5-01-20260805T231721Z",
+  "failure_occurrence_count": 6,
+  "failure_class_count": 3,
+  "refinement_backlog_count": 5,
+  "unit_test_count": 10,
+  "validation_status": "PASS",
+  "external_actions_performed": 0,
+  "files": [
+    {
+      "path": "audit/p5_03_failure_analysis_event.jsonl",
+      "bytes": 568,
+      "sha256": "051768da281d972144c137ed31d1fa59a56a48916fd171e308a1364a48f86708"
+    },
+    {
+      "path": "config/schemas/failure_analysis_report.schema.json",
+      "bytes": 3212,
+      "sha256": "56569cb66f4f4a32202303548dff2a21e7a4f480343b24013976545fdcd1002a"
+    },
+    {
+      "path": "config/system/failure_analysis_policy.json",
+      "bytes": 1214,
+      "sha256": "860321d185b875e365f42ee2a6ebcac2efafd5ee274a1101ca2676094cdcdf75"
+    },
+    {
+      "path": "docs/P5_03_Failure_and_Unexpected_Behavior_Analysis.md",
+      "bytes": 5373,
+      "sha256": "fd74fade6edbc02d07c74b0a84cafc79c0d89e087c430d7558c3eabef6cd725c"
+    },
+    {
+      "path": "docs/P5_03_Requirements_Matrix.csv",
+      "bytes": 1796,
+      "sha256": "3b01f6ace3ade1ab5793be523d36778153ada04834a03924666c9fb14497132e"
+    },
+    {
+      "path": "docs/P5_03_Validation_Evidence.json",
+      "bytes": 2725,
+      "sha256": "59f99ff8db56a89feed0e659640fa5910d9a1929f7866eab1cc2aac3da777752"
+    },
+    {
+      "path": "outputs/evaluation/p5_03/failure_analysis_report.json",
+      "bytes": 21317,
+      "sha256": "9fdc34504a2f2886dc86b15caf9e4182462dfdee161790d9438544a1277555b6"
+    },
+    {
+      "path": "outputs/evaluation/p5_03/failure_class_summary.csv",
+      "bytes": 2725,
+      "sha256": "d429ef0a67ae59c991fa48b24c2b4f9d629bd51ecdda7fe1a80a93aa44286af4"
+    },
+    {
+      "path": "outputs/evaluation/p5_03/failure_mode_coverage.csv",
+      "bytes": 1688,
+      "sha256": "5cc881f9281452c647e57268e1696c6d97d778135690a66584dee2d469fcf596"
+    },
+    {
+      "path": "outputs/evaluation/p5_03/failure_occurrence_register.csv",
+      "bytes": 4831,
+      "sha256": "a7709921a5a3c5e54aca2d98ba96459b44c880c2ae46987d02b2305ff60827f9"
+    },
+    {
+      "path": "outputs/evaluation/p5_03/refinement_backlog.csv",
+      "bytes": 2419,
+      "sha256": "ae1413236f68c1492d3ba77e7feb7f40c75277b86aa3e58b2e10d1b3cc5b7ec2"
+    },
+    {
+      "path": "requirements_p5_03.txt",
+      "bytes": 20,
+      "sha256": "48bdd1a500202e6cd681cb6e978b2c525ce9fb262013f8ff4a9bd2bb46419130"
+    },
+    {
+      "path": "scripts/verify_p5_03_failure_analysis.py",
+      "bytes": 2838,
+      "sha256": "a19f284d25c0a8c9e3a0ee12b0c492a13aded009bb5c5c671445684cee0239de"
+    },
+    {
+      "path": "tests/__init__.py",
+      "bytes": 40,
+      "sha256": "7260e0a4540f4af059455059102b2c0f2850b278650e58379458e0b6baa4e6f7"
+    },
+    {
+      "path": "tests/test_failure_analysis.py",
+      "bytes": 3685,
+      "sha256": "77411e5c62de222f2b3ddd141142102c2e836854f7f06537bbfa1d11fc7598b6"
+    },
+    {
+      "path": "tests/verify_p5_03_failure_analysis.py",
+      "bytes": 2838,
+      "sha256": "a19f284d25c0a8c9e3a0ee12b0c492a13aded009bb5c5c671445684cee0239de"
+    }
+  ],
+  "file_count": 17
+}
