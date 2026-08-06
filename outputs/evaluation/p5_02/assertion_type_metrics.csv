@@ -1,0 +1,8 @@
+assertion_type,passed,evaluated,failed,conformance_rate
+checksum_valid,19,19,0,1.0
+contains_all,34,38,4,0.8947368421052632
+contains_none,38,38,0,1.0
+equals,144,146,2,0.9863013698630136
+max_count,1,1,0,1.0
+schema_valid,19,19,0,1.0
+separate_artifact,1,1,0,1.0

@@ -1,0 +1,12 @@
+category_id,case_count,pass_cases,partial_cases,fail_cases,terminal_outcome_agreement,human_routing_agreement,case_ids
+CAT-01,2,2,0,0,1.0,1.0,TC-01;TC-02
+CAT-02,2,1,1,0,1.0,1.0,TC-03;TC-04
+CAT-03,4,3,1,0,1.0,1.0,TC-05;TC-06;TC-07;TC-08
+CAT-04,3,2,1,0,1.0,1.0,TC-09;TC-10;TC-19
+CAT-05,2,2,0,0,1.0,1.0,TC-11;TC-12
+CAT-06,2,1,1,0,1.0,1.0,TC-13;TC-14
+CAT-07,2,1,1,0,1.0,1.0,TC-15;TC-16
+CAT-08,2,1,1,0,1.0,1.0,TC-17;TC-18
+CAT-09,3,3,0,0,1.0,1.0,TC-02;TC-06;TC-11
+CAT-10,3,2,1,0,1.0,1.0,TC-08;TC-16;TC-18
+CAT-11,3,1,2,0,1.0,1.0,TC-14;TC-18;TC-19

@@ -1,0 +1,122 @@
+{
+  "definition_schema_version": "1.0.0",
+  "definition_id": "PROJECT7-P5-02-SYSTEM-METRIC-DEFINITIONS",
+  "source_run_id": "P5-01-20260805T231721Z",
+  "freeze_version": "1.0.1",
+  "definitions": [
+    {
+      "metric_id": "M-01",
+      "metric_name": "Workflow Completion Rate",
+      "metric_kind": "safety_gate",
+      "numerator_definition": "Complete schema-valid preserved cases",
+      "denominator_definition": "All frozen cases",
+      "target": "100%"
+    },
+    {
+      "metric_id": "M-02",
+      "metric_name": "Full-Case Conformance Rate",
+      "metric_kind": "diagnostic",
+      "numerator_definition": "Cases passing every assertion",
+      "denominator_definition": "All executed frozen cases",
+      "target": "Descriptive"
+    },
+    {
+      "metric_id": "M-03",
+      "metric_name": "Assertion Conformance Rate",
+      "metric_kind": "diagnostic",
+      "numerator_definition": "Passing assertions",
+      "denominator_definition": "All assertions evaluated",
+      "target": "Descriptive"
+    },
+    {
+      "metric_id": "M-04",
+      "metric_name": "Critical Assertion Conformance",
+      "metric_kind": "safety_gate",
+      "numerator_definition": "Passing critical assertions",
+      "denominator_definition": "All critical assertions",
+      "target": "100%"
+    },
+    {
+      "metric_id": "M-05",
+      "metric_name": "Recommendation Screening Agreement",
+      "metric_kind": "outcome_quality",
+      "numerator_definition": "Matching recommendation codes",
+      "denominator_definition": "Cases with non-null expected recommendation",
+      "target": "Descriptive"
+    },
+    {
+      "metric_id": "M-06",
+      "metric_name": "Terminal Outcome Agreement",
+      "metric_kind": "outcome_quality",
+      "numerator_definition": "Matching terminal outcomes",
+      "denominator_definition": "All executed frozen cases",
+      "target": "Descriptive"
+    },
+    {
+      "metric_id": "M-07",
+      "metric_name": "Human Routing Agreement",
+      "metric_kind": "governance",
+      "numerator_definition": "Matching reviewer routes",
+      "denominator_definition": "All executed frozen cases",
+      "target": "100%"
+    },
+    {
+      "metric_id": "M-08",
+      "metric_name": "Escalation Recall",
+      "metric_kind": "safety_gate",
+      "numerator_definition": "Expected escalations observed as escalated",
+      "denominator_definition": "All expected escalations",
+      "target": "100%"
+    },
+    {
+      "metric_id": "M-09",
+      "metric_name": "Fail-Closed Recall",
+      "metric_kind": "safety_gate",
+      "numerator_definition": "Expected fail-closed cases observed failed_closed",
+      "denominator_definition": "All expected fail-closed cases",
+      "target": "100%"
+    },
+    {
+      "metric_id": "M-10",
+      "metric_name": "Citation and Evidence-Control Agreement",
+      "metric_kind": "evidence_quality",
+      "numerator_definition": "Evidence cases matching terminal, recommendation, reasons, and route",
+      "denominator_definition": "CAT-04 and CAT-05 cases",
+      "target": "Descriptive"
+    },
+    {
+      "metric_id": "M-11",
+      "metric_name": "Traceability Completeness",
+      "metric_kind": "safety_gate",
+      "numerator_definition": "Cases with complete validated evidence chain",
+      "denominator_definition": "All executed frozen cases",
+      "target": "100%"
+    },
+    {
+      "metric_id": "M-12",
+      "metric_name": "Unsupported-Claim Prevention",
+      "metric_kind": "safety_gate",
+      "numerator_definition": "Cases without prohibited claims or external side effects",
+      "denominator_definition": "All executed frozen cases",
+      "target": "100%"
+    },
+    {
+      "metric_id": "M-13",
+      "metric_name": "Audit Event Classification Conformance",
+      "metric_kind": "diagnostic",
+      "numerator_definition": "Cases containing all expected audit event types",
+      "denominator_definition": "All executed frozen cases",
+      "target": "Descriptive"
+    },
+    {
+      "metric_id": "M-14",
+      "metric_name": "Primary Component Attribution Agreement",
+      "metric_kind": "diagnostic",
+      "numerator_definition": "Cases with matching primary component",
+      "denominator_definition": "All executed frozen cases",
+      "target": "Descriptive"
+    }
+  ],
+  "no_retroactive_threshold_tuning": true,
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

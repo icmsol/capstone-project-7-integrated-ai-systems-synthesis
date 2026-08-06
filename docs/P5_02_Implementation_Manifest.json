@@ -1,0 +1,98 @@
+{
+  "artifact_id": "PROJECT7-P5-02-SYSTEM-LEVEL-METRICS",
+  "artifact_version": "1.0.0",
+  "created_at_utc": "2026-08-05T23:40:26.952933+00:00",
+  "source_run_id": "P5-01-20260805T231721Z",
+  "metric_count": 14,
+  "unit_test_count": 9,
+  "validation_status": "PASS",
+  "external_actions_performed": 0,
+  "files": [
+    {
+      "path": "audit/p5_02_metrics_event.jsonl",
+      "bytes": 515,
+      "sha256": "726726f772d134fd248e7112fd6c75dfee9b3bcd5a191b596ec716202e3d9738"
+    },
+    {
+      "path": "config/schemas/system_metrics_report.schema.json",
+      "bytes": 1990,
+      "sha256": "fc867deb89428b931b84d47a0cf77b393baa075c4980ab14502ebe5e3d922c91"
+    },
+    {
+      "path": "config/system/system_metric_definitions.json",
+      "bytes": 4458,
+      "sha256": "ef71e87e64ec1b7933c1e5b4ecd4512d01ab620f227736d21d3eb7bfd1d9cf02"
+    },
+    {
+      "path": "docs/P5_02_Requirements_Matrix.csv",
+      "bytes": 1643,
+      "sha256": "f171b0f6c6f6cbcdc448c4ee3138836bc6e2934a167cb32e10ce8a3e1bf0e113"
+    },
+    {
+      "path": "docs/P5_02_System_Level_Metrics.md",
+      "bytes": 5200,
+      "sha256": "f1dc33c2f274baefb3810603bfd5d6eb74c73c7246999e34b5d5ff0526883911"
+    },
+    {
+      "path": "docs/P5_02_Validation_Evidence.json",
+      "bytes": 2286,
+      "sha256": "e4abb1fe77d8b2cc7ff5d60258d9670e7886303c860856c625098777380c2d32"
+    },
+    {
+      "path": "outputs/evaluation/p5_02/assertion_type_metrics.csv",
+      "bytes": 266,
+      "sha256": "e97e1f01b6d02c7bd872d7ca4b57c4d2dce5912abf08e865114eb4bb061164c4"
+    },
+    {
+      "path": "outputs/evaluation/p5_02/case_outcome_matrix.csv",
+      "bytes": 5057,
+      "sha256": "c24e82697282c815cb758c0f17abd7dd34bddca41d163ac04c642138eda84519"
+    },
+    {
+      "path": "outputs/evaluation/p5_02/category_metrics.csv",
+      "bytes": 552,
+      "sha256": "de586b34f176403e5ceea172faddfbdfc1611808ddd750f4d78e4357babf7a47"
+    },
+    {
+      "path": "outputs/evaluation/p5_02/failed_assertions.csv",
+      "bytes": 2930,
+      "sha256": "0a778c789e601e5f5b193d0a00556c65420a2fd0d3b021547c832f9007e5ec6e"
+    },
+    {
+      "path": "outputs/evaluation/p5_02/system_metrics.csv",
+      "bytes": 4773,
+      "sha256": "d053e6f5aa7d136c29e1210476c3280ca1ee29680b689ae39a3366cef25b51e5"
+    },
+    {
+      "path": "outputs/evaluation/p5_02/system_metrics.json",
+      "bytes": 23452,
+      "sha256": "ba1997531cc0ef90aeeb55159b119b84312b0b6673cda578b91ba4b87b2c7424"
+    },
+    {
+      "path": "requirements_p5_02.txt",
+      "bytes": 41,
+      "sha256": "20a90afd705bc492bd3b5b22c9ef500927ed27ebbbb78a80a3abf8e87ce18689"
+    },
+    {
+      "path": "scripts/verify_p5_02_metrics.py",
+      "bytes": 5282,
+      "sha256": "e48cf1b9ccf8e330b25db1c35705aee7dab27d390a311f49d556fa83885a14fb"
+    },
+    {
+      "path": "tests/__init__.py",
+      "bytes": 30,
+      "sha256": "ca2029bf3b9e93af3a11d684a40d79165c9190a47cd80d7382b3cfea00f09038"
+    },
+    {
+      "path": "tests/calculate_p5_02_metrics.py",
+      "bytes": 5282,
+      "sha256": "e48cf1b9ccf8e330b25db1c35705aee7dab27d390a311f49d556fa83885a14fb"
+    },
+    {
+      "path": "tests/test_system_metrics.py",
+      "bytes": 2439,
+      "sha256": "c25c725b4506a8a9f53f9b37c1791707f1167086f29d1614848307aa8ae51dde"
+    }
+  ],
+  "file_count": 18
+}

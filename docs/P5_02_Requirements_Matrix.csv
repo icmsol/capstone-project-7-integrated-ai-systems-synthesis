@@ -1,0 +1,11 @@
+requirement_id,requirement,implementation,validation,status
+P5-02-R01,Define metric populations and formulas.,"Versioned definitions preserve numerator, denominator, target type, and boundary.",14 definitions preserved.,Implemented
+P5-02-R02,Calculate completion and assertion conformance.,"Case, assertion, critical, and major severity counts are calculated from P5-01.",19/19; 256/262; 167/167; 89/95.,Implemented
+P5-02-R03,"Measure screening, terminal, and routing agreement.",Applicable populations are separated.,13/13; 19/19; 19/19.,Implemented
+P5-02-R04,Measure escalation and fail-closed recall.,Only expected escalation and fail-closed populations are used.,3/3 and 6/6.,Implemented
+P5-02-R05,Measure evidence-control agreement.,"CAT-04 and CAT-05 require outcome, recommendation, reason, and route agreement.",5/5.,Implemented
+P5-02-R06,Measure traceability and unsupported-claim prevention.,All cases require artifact integrity and no prohibited claim or side effect.,19/19 and 19/19.,Implemented
+P5-02-R07,Preserve diagnostic disagreement.,Audit-event and component-attribution gaps remain separately measurable.,15/19 and 17/19.,Implemented
+P5-02-R08,Avoid denominator inflation and post-result tuning.,Non-applicable cases are excluded and diagnostics receive no invented threshold.,No retroactive tuning.,Implemented
+P5-02-R09,Provide machine-readable evidence.,JSON and five CSV outputs preserve calculations and case mappings.,Output inventory complete.,Implemented
+P5-02-R10,Provide repeatable recalculation and tests.,Repository-level recalculation script and nine tests verify results.,9 tests pass.,Implemented

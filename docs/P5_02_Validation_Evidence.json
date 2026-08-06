@@ -1,0 +1,22 @@
+{
+  "artifact_id": "PROJECT7-P5-02-VALIDATION-EVIDENCE",
+  "artifact_version": "1.0.0",
+  "validated_at_utc": "2026-08-05T23:40:26.951781+00:00",
+  "validation_status": "PASS",
+  "source_run_id": "P5-01-20260805T231721Z",
+  "metric_count": 14,
+  "verification_output": "Metrics recalculated and verified: 14\nCases: 19\nAssertions: 256/262\nCritical assertions: 167/167\nMajor assertions: 89/95\nP5-02 recalculation: PASS\n",
+  "test_output": "test_complete_population (tests.test_system_metrics.SystemMetricTests.test_complete_population) ... ok\ntest_completion_and_conformance (tests.test_system_metrics.SystemMetricTests.test_completion_and_conformance) ... ok\ntest_diagnostics_preserve_mismatches (tests.test_system_metrics.SystemMetricTests.test_diagnostics_preserve_mismatches) ... ok\ntest_escalation_and_fail_closed_recall (tests.test_system_metrics.SystemMetricTests.test_escalation_and_fail_closed_recall) ... ok\ntest_evidence_traceability_and_claim_controls (tests.test_system_metrics.SystemMetricTests.test_evidence_traceability_and_claim_controls) ... ok\ntest_external_action_boundary (tests.test_system_metrics.SystemMetricTests.test_external_action_boundary) ... ok\ntest_no_retroactive_thresholds (tests.test_system_metrics.SystemMetricTests.test_no_retroactive_thresholds) ... ok\ntest_screening_terminal_and_route (tests.test_system_metrics.SystemMetricTests.test_screening_terminal_and_route) ... ok\ntest_severity_summary (tests.test_system_metrics.SystemMetricTests.test_severity_summary) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.000s\n\nOK\n",
+  "checks": {
+    "unit_tests_passed": 9,
+    "cases": 19,
+    "assertions": 262,
+    "critical_failures": 0,
+    "major_failures": 6,
+    "no_retroactive_threshold_tuning": true,
+    "external_actions_performed": 0
+  },
+  "failure_analysis_deferred_to": "P5-03",
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required.",
+  "host_environment_note": "An unrelated artifact_tool spreadsheet-runtime warmup warning emitted by the file-generation host was excluded from the preserved P5-02 test transcript. It was not produced by the metric calculator or tests."
+}
