@@ -1,0 +1,74 @@
+name: Project 7 Quality Gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: project7-quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate refined integrated prototype
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements_p5_04.txt
+
+      - name: Install quality-gate dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements_p5_04.txt
+
+      - name: Run Project 7 quality gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p outputs/ci
+          {
+            python -m compileall -q src tests scripts
+            python scripts/ci_repository_checks.py
+            python tests/validate_shared_schemas.py
+            python tests/validate_component_contracts.py
+            python tests/validate_safeguards.py
+            python tests/validate_operational_workload.py
+            python tests/validate_scenario_taxonomy.py
+            python scripts/verify_p5_01_frozen_evaluation.py
+            python scripts/verify_p5_02_metrics.py
+            python scripts/verify_p5_03_failure_analysis.py
+            python scripts/verify_p5_04_refinement.py
+            python scripts/verify_p5_04_portability.py
+            python -m unittest \
+              tests.test_refined_evaluation \
+              tests.test_configuration_portability \
+              tests.test_ci_workflow -v
+          } 2>&1 | tee outputs/ci/project7-quality-gate.log
+
+      - name: Upload quality-gate evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: project7-quality-gate-${{ github.run_number }}
+          path: |
+            outputs/ci/project7-quality-gate.log
+            outputs/evaluation/p5_04/
+            docs/P5_04_*.md
+            docs/P5_04_*Validation*.json
+          if-no-files-found: error
+          retention-days: 30
