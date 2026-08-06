@@ -1,0 +1,3 @@
+opportunity_id,opportunity_title,icm_alignment_label,icm_alignment_score,icm_recommendation_code,fictional_alignment_label,fictional_alignment_score,fictional_recommendation_code,alignment_changed,recommendation_changed,source_code_unchanged,fixed_safeguards_unchanged,schemas_unchanged
+OPP-E19200F7BD6C3161,"Enterprise IT Strategy, Program Management, and Systems Integration Support",strong_alignment,1.0,R-01,no_alignment,0.0,R-04,True,True,True,True,True
+OPP-P504-DATA-001,"Public-Sector Cloud Data Platform, Analytics, and Executive Dashboards",no_alignment,0.1167,R-04,strong_alignment,1.0,R-01,True,True,True,True,True

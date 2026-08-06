@@ -1,0 +1,66 @@
+{
+  "opportunity_id": "OPP-E19200F7BD6C3161",
+  "case_id": "CASE-D850D326D21B745D",
+  "opportunity_title": "Enterprise IT Strategy, Program Management, and Systems Integration Support",
+  "organization_id": "RCALABS",
+  "organization_name": "Redwood Civic Analytics LLC",
+  "fictional_profile": true,
+  "profile_path": "config/profiles/fictional_small_business.json",
+  "profile_version": "1.0.0",
+  "alignment": {
+    "alignment_schema_version": "1.0.0",
+    "case_id": "CASE-D850D326D21B745D",
+    "organization_id": "RCALABS",
+    "profile_version": "1.0.0",
+    "service_catalog_version": "1.0.0",
+    "matched_capabilities": [],
+    "excluded_matches": [],
+    "alignment_score": 0.0,
+    "alignment_label": "no_alignment",
+    "staffing_families": [],
+    "reason_codes": [
+      "ALIGNMENT_NONE"
+    ],
+    "limitations": [
+      {
+        "code": "SCREENING_NOT_DECISION",
+        "description": "Configuration-driven term alignment is a transparent screening input, not a complete scope, capacity, eligibility, award-probability, or final pursuit decision.",
+        "material": true,
+        "mitigation": "Review the full solicitation, qualifications, current availability, and authoritative evidence before a human decision."
+      },
+      {
+        "code": "TEXT_MATCH_LIMIT",
+        "description": "The assessment evaluates configured terms in normalized opportunity text and may miss implied or differently worded scope.",
+        "material": true,
+        "mitigation": "Use human review and later evidence retrieval to confirm or reject the preliminary service alignment."
+      }
+    ]
+  },
+  "screening_recommendation": {
+    "recommendation_code": "R-04",
+    "recommendation_label": "Recommend Do Not Pursue",
+    "recommendation_strength": 0.0,
+    "nonbinding_disclosure": "Configuration-driven screening recommendation only; not a final pursuit decision, eligibility determination, capacity commitment, legal opinion, or award-probability estimate.",
+    "required_human_reviewer": {
+      "role_id": "FRR-01",
+      "role_name": "Fictional Pursuit Lead"
+    },
+    "final_authority": {
+      "role_id": "FRR-02",
+      "role_name": "Fictional Executive Authority"
+    },
+    "final_decision": null,
+    "external_actions_performed": 0
+  },
+  "invariants": {
+    "opportunity_sha256": "a5fb5e9363dce9b7296998ff409ad4449532b11b705dc4c52c5962654d4e343d",
+    "executable_source_sha256": "d7a6a33cc64396960c1d1b4cac9e51aa7ee81d75237f229f501ed3b683e20e94",
+    "alignment_policy_sha256": "eee5ee3eeb720ddd16bd03bd0f60ab3b3d38109b72ecf4af91a2994a77a15b26",
+    "fixed_safeguards_sha256": "20643de05287eb123fc7eb92331e4531e3f78303251aac5326503feb0c4e89d6",
+    "organization_profile_schema_sha256": "9d052b3a6d80098186b36d6652b6b02166130ac5469441a5777698990a8b8cfd",
+    "service_alignment_schema_sha256": "0e1d759f67f43ad0b3a71c5e6ac799a686a5fae7ba26cfd41cd3ceb272d0e404",
+    "fixed_safeguards_version": "1.0.0",
+    "human_final_decision_required": true,
+    "autonomous_external_actions_prohibited": true
+  }
+}

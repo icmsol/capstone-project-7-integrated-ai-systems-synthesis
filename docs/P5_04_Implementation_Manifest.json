@@ -1,0 +1,394 @@
+{
+  "artifact_id": "PROJECT7-P5-04-REFINEMENT-PORTABILITY-CI",
+  "artifact_version": "1.0.0",
+  "created_at_utc": "2026-08-06T17:56:05.732434+00:00",
+  "refined_run_id": "P5-04-20260806T175242Z",
+  "case_count": 19,
+  "assertion_count": 262,
+  "portability_run_count": 4,
+  "local_unit_test_count": 25,
+  "hosted_ci_status": "pending_commit",
+  "external_actions_performed": 0,
+  "files": [
+    {
+      "path": ".github/workflows/project7-quality-gate.yml",
+      "bytes": 2279,
+      "sha256": "efd111827746c15632d99d5edc00d354bf9707109a78f74a5008eee14e722b09"
+    },
+    {
+      "path": "audit/p5_04_portability_ledger.jsonl",
+      "bytes": 1295,
+      "sha256": "c8ea5000cf9e4ab5575810b8684ca04fc00daedca064a1a994897010cbbbbb61"
+    },
+    {
+      "path": "audit/p5_04_refined_evaluation_ledger.jsonl",
+      "bytes": 8541,
+      "sha256": "80dda10252fd7b87f31a15da4c7be611cc868be296ac087282073fbbd02b3c72"
+    },
+    {
+      "path": "audit/p5_04_summary_event.jsonl",
+      "bytes": 434,
+      "sha256": "99e26f82ec59e537a149e1bb7dac0aa259d7419531939e0128f27575f79d3e89"
+    },
+    {
+      "path": "config/schemas/portability_test_report.schema.json",
+      "bytes": 1884,
+      "sha256": "812b7a7e9f1d55bf155e6ea7bdab02882b121c704a60e82d3c4e6b28e3537016"
+    },
+    {
+      "path": "config/schemas/refined_evaluation_run_manifest.schema.json",
+      "bytes": 1969,
+      "sha256": "a4943d186166e0c94123e0028cf3808580db300927955e14052d3ab9d235b6e7"
+    },
+    {
+      "path": "config/system/p5_04_refinement_policy.json",
+      "bytes": 1045,
+      "sha256": "8707a437eaee1902187ffd685df88cd447befbb7bb74be0e69d923d103b5306a"
+    },
+    {
+      "path": "data/implementation/p5_04/portability_opportunities.json",
+      "bytes": 5428,
+      "sha256": "23ee0f4079ecbe88ca9ce0d2af1075dfc38e22bbca841dbe3fe88e1401f44cd6"
+    },
+    {
+      "path": "docs/P5_04_CI_Quality_Gate.md",
+      "bytes": 1926,
+      "sha256": "41c949f2332bf953102de15381e45da7e3ee26c0ebe4f0e8a955432b77a90455"
+    },
+    {
+      "path": "docs/P5_04_Refinement_Configuration_Portability_and_CI.md",
+      "bytes": 9707,
+      "sha256": "018b2ead0b5ba06494e116279767644633c7360331bcbdd638fc53776a08b12c"
+    },
+    {
+      "path": "docs/P5_04_Requirements_Matrix.csv",
+      "bytes": 1901,
+      "sha256": "22ff59939ec0e016451ad3b0fa2abaca4ad7519212ea095b33bc4df110b37dd5"
+    },
+    {
+      "path": "docs/P5_04_Validation_Evidence.json",
+      "bytes": 1258,
+      "sha256": "bc57eb517029bbb5a120ff63fb0ca19955be64b8bf9920b2f493c2d8436cbe6f"
+    },
+    {
+      "path": "docs/ci/project7-quality-gate.yml",
+      "bytes": 2279,
+      "sha256": "efd111827746c15632d99d5edc00d354bf9707109a78f74a5008eee14e722b09"
+    },
+    {
+      "path": "outputs/ci/local-project7-quality-gate.log",
+      "bytes": 5632,
+      "sha256": "2e8efd557d6b8f1285fe541acdefc957e84dfb0a79055ca24edf026401032232"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/before_after_metrics.csv",
+      "bytes": 228,
+      "sha256": "c10cdfa37e5399cbe16ccc8bc7abc55b2338c7f56da2e856ad6ca713ea319985"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/before_after_metrics.json",
+      "bytes": 1303,
+      "sha256": "34a48c4ced52d9f701bdf564442f92352fbd1de24dda7d7f16a2e3389b35da15"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/portability/CASE-D850D326D21B745D__ICMSOL.json",
+      "bytes": 5152,
+      "sha256": "b3ef1b0ca7c4d72301274be81d018d7d4448126f33a7138614c3c5b793b86e2e"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/portability/CASE-D850D326D21B745D__RCALABS.json",
+      "bytes": 3035,
+      "sha256": "afff86f035a62dac0d90b6ca3fee41188cb2e69cd251e7a73e6a51d0704470a2"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/portability/CASE-P504-DATA-001__ICMSOL.json",
+      "bytes": 3467,
+      "sha256": "940d7b905015643ce0392ec9b4990c90167f6956e3334499085c4f334e244be2"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/portability/CASE-P504-DATA-001__RCALABS.json",
+      "bytes": 4824,
+      "sha256": "7a1c6c6009abcb81dc8cf76340823b649f92eeba0ed4a72f8adb7905268f32f0"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/portability/portability_comparison.csv",
+      "bytes": 629,
+      "sha256": "c61b12db4eb63fcd4beedc09e36592d8b47681ef16bc7e972c400708f6bfa79f"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/portability/portability_comparison.json",
+      "bytes": 19919,
+      "sha256": "aa639f5f3defe97924551953a6d21c7cb08479bb578c4cc96f119efecd2ad031"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-01.json",
+      "bytes": 4387,
+      "sha256": "a14d562239c17574ed5f393b9e336aa566c190f7f479c609ed80be29946542d4"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-02.json",
+      "bytes": 4836,
+      "sha256": "7b57e8fb86b92bdde090a26c8aa22c019b1b145497090556e2a32d3d3eb137ac"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-03.json",
+      "bytes": 4135,
+      "sha256": "69bc4e976bbbb8be935bc13e02777b0b8ab739938609409f480e0067f8d42bae"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-04.json",
+      "bytes": 4095,
+      "sha256": "7b5b429a2581a5416eb17e28d4bd14d2967aa50f0c7f9a86c0c4c1ebe99697b3"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-05.json",
+      "bytes": 4299,
+      "sha256": "99828bad2cbd3be7c34d124b6e0f2449a6ec37e4b536c8764b7a00b9a66d9f3d"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-06.json",
+      "bytes": 4381,
+      "sha256": "6423098b48385696bf9acb9bbfee1b4c093ed31cdf5e50c6ccaa23ac0eed8f1a"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-07.json",
+      "bytes": 4233,
+      "sha256": "27b47e97a4855497b4cb69a5de23f26bdc84470c1d04f5acf0e46c265145e400"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-08.json",
+      "bytes": 3873,
+      "sha256": "e3fd0f7bee767a2781f6c2158ed16fd3bb8e8eef9e915f7e45dcd9b062e89ccd"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-09.json",
+      "bytes": 4205,
+      "sha256": "8a146656dba79072d8bc84aca81022761a912cd0c04b587c1346c53e057c60bf"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-10.json",
+      "bytes": 4273,
+      "sha256": "605ab8ba6c832be469f448f24cddbce268ece21a8459f35824e97b17a4f8f005"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-11.json",
+      "bytes": 4422,
+      "sha256": "8a96e9be5f2a199ff326cbb1d0958dc03d2d944b6edde107ddd85307e5d18fe2"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-12.json",
+      "bytes": 4276,
+      "sha256": "7db05ab6c6ef23fa1ad9e11dacfb87dc02f6791da940dd2d06cafc75f18d1bdd"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-13.json",
+      "bytes": 3944,
+      "sha256": "b8ad5179bac8e6230ab65b65746eda604b7534690152d8c1bafa47908239e1e2"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-14.json",
+      "bytes": 4006,
+      "sha256": "b1143c65db5a595bca83280fd51824563b3fd563e896812a8af781a060380a74"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-15.json",
+      "bytes": 4191,
+      "sha256": "977b214b49d8e574b2ca618afb128af4c69c54f4335d1ea3a0e588db0f1c9393"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-16.json",
+      "bytes": 3782,
+      "sha256": "86b59193d786feec33e5726b7ffc40f4d61718b52a975895227782de912ebb69"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-17.json",
+      "bytes": 4135,
+      "sha256": "ebed776113d886a9095872b1621be501e3b253282b7d07e10a4fb682c9db746d"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-18.json",
+      "bytes": 4079,
+      "sha256": "efffad5bc72abdf8a7e4ddb8ca3f04857344140e3f72cf2c18634af4d07c2a25"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_results/TC-19.json",
+      "bytes": 3913,
+      "sha256": "e9bf2ae41dde582f27e6fb233ece4e67ae49d0a7051f4a77e3b70c79031c8511"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_run_index.csv",
+      "bytes": 6692,
+      "sha256": "0f6dc5e8a854f6d06113b41e2440cf1ffd9881ca795968f2c09f614abb6be1e2"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_run_index.json",
+      "bytes": 14281,
+      "sha256": "5e3aa470d370348dce48d0d4d70c1846d88d03bb2e559b800662b48159a6721b"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-01.jsonl",
+      "bytes": 1511,
+      "sha256": "b28cb94f2d54c854f56158870848ae745857676343e3d34ef5c16f7131954f28"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-02.jsonl",
+      "bytes": 1511,
+      "sha256": "aa92252310b33975f1bf3bbe12ce48a2e202707a72506d43786776a8b69fff8d"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-03.jsonl",
+      "bytes": 1503,
+      "sha256": "65761e195a3f40e14d24cba82a670e72df6cb714aa41ddff6946027b123e3604"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-04.jsonl",
+      "bytes": 1500,
+      "sha256": "9b4ca8e8630046c35fd2297eeb568b92d23554fb57eec3f4781ff33d3726c0cd"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-05.jsonl",
+      "bytes": 1495,
+      "sha256": "8ec214fdec0b63351e8fcdbc72dd725f023a62a078549562fa6ce3c160791ef3"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-06.jsonl",
+      "bytes": 1545,
+      "sha256": "092491c4aa0239af214735a087008c0c3e994dd259e756653ffbd0dfc14921dd"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-07.jsonl",
+      "bytes": 1506,
+      "sha256": "fcea0a995b38c463dd8ca3338e51f83b7ee5fed29b7282dd4ade89d5edccfd10"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-08.jsonl",
+      "bytes": 1629,
+      "sha256": "3ed95fccc23d3ffd198f487a69f975e03628821e81c63585d0fdba3cf34b003c"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-09.jsonl",
+      "bytes": 1566,
+      "sha256": "935eee0f347ed088323260f46f74772d7a60b50370066cbf94a36dc605baf423"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-10.jsonl",
+      "bytes": 1503,
+      "sha256": "d8f40e2a1edb61e3b197209d4f2b5101efc116c65c4ed2b7affa06006a102404"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-11.jsonl",
+      "bytes": 1474,
+      "sha256": "948c36720383ea6284fc621a8b98ddba7cb033ffcde33b7b2cdf30a539fc0892"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-12.jsonl",
+      "bytes": 1483,
+      "sha256": "a9269b38e31b194e057acbf9f95c3e51256680fe8b7903431446bed484a5c4cd"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-13.jsonl",
+      "bytes": 1306,
+      "sha256": "5a913093e4e02f7f8267282adc673862411c4b6eb86c7430974b02347db0baa7"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-14.jsonl",
+      "bytes": 1381,
+      "sha256": "80006293e6edab206d7d62352f3e55e5bc199f1d4c496cc2ee999fddefe62f07"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-15.jsonl",
+      "bytes": 1308,
+      "sha256": "47c67bc868e8c5f0c685a20bdee10efac4d2942484006508c09a2323d73e8f42"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-16.jsonl",
+      "bytes": 1298,
+      "sha256": "e1d85693613324d489d7fde5d6779de2cfa9c8c92e03443e295586e3c40886b3"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-17.jsonl",
+      "bytes": 1338,
+      "sha256": "e4d6023f30ceb61edd98b00485de1b9d6311862ac7170d36b79600dc73ecd9d3"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-18.jsonl",
+      "bytes": 1383,
+      "sha256": "1d53d9a125d91772d2e1e5a96c01d86520a1c4dded38e66cec5753034f3150fa"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_case_traces/TC-19.jsonl",
+      "bytes": 1559,
+      "sha256": "3e96c7eea4d56589e6513b475186e7adf5ffd2758ccdd0702f4a62bd4e96f0fb"
+    },
+    {
+      "path": "outputs/evaluation/p5_04/refined_run_manifest.json",
+      "bytes": 23330,
+      "sha256": "0ff6170b6029c7d6ad6b99a1bd694a0b27b610bb3e334e5e8fc765669fe37d3a"
+    },
+    {
+      "path": "requirements_p5_04.txt",
+      "bytes": 56,
+      "sha256": "bea7d1a84f53660d9ab99c4c5ff03c82e53dfebae2d62dd8bfdfa2264b222d5e"
+    },
+    {
+      "path": "scripts/ci_repository_checks.py",
+      "bytes": 2686,
+      "sha256": "8b428363ef0abda0a97b96c798b5ef297bb44a129613ac5bce1f7148de063cc3"
+    },
+    {
+      "path": "scripts/verify_p5_04_portability.py",
+      "bytes": 2006,
+      "sha256": "e1248ffdc9f5b9369bfacf36edafd25650615276d971ee0dfaefef7d685cc995"
+    },
+    {
+      "path": "scripts/verify_p5_04_refinement.py",
+      "bytes": 2544,
+      "sha256": "1bc801207994fb7fd7ec1a2f540d542dbce0552dd487f95d625c784c463c25c7"
+    },
+    {
+      "path": "src/project7/__init__.py",
+      "bytes": 615,
+      "sha256": "816014c8584b9fc3bdfd3a6bb82a12ae55af2b419b5e7cf1b3aed380278925a0"
+    },
+    {
+      "path": "src/project7/configuration_portability.py",
+      "bytes": 11700,
+      "sha256": "d7a6a33cc64396960c1d1b4cac9e51aa7ee81d75237f229f501ed3b683e20e94"
+    },
+    {
+      "path": "src/project7/frozen_evaluation.py",
+      "bytes": 30963,
+      "sha256": "4b45da939aa1971a6da993a9024e2c1698dafe44c81424347dc2d2b0d9272ae9"
+    },
+    {
+      "path": "tests/__init__.py",
+      "bytes": 29,
+      "sha256": "49b8c4edab87a4ebf6b1c58fd8d3afd1d7dfbba887aded4a36722eca2526cc84"
+    },
+    {
+      "path": "tests/run_p5_04_portability_test.py",
+      "bytes": 2170,
+      "sha256": "7f69ae022a942ab154f460f87b74a672582082078250092078bab1f0e14a72b2"
+    },
+    {
+      "path": "tests/run_p5_04_refined_evaluation.py",
+      "bytes": 10675,
+      "sha256": "639377b39516f309869be80d0ddb76a1730bf566ec1f75c83a33271f4839e1ee"
+    },
+    {
+      "path": "tests/test_ci_workflow.py",
+      "bytes": 2035,
+      "sha256": "3589c3ff837c80a83760f4742fa7d30c4d37f6a2b506fe0cdbbe4edb51226cfa"
+    },
+    {
+      "path": "tests/test_configuration_portability.py",
+      "bytes": 2307,
+      "sha256": "a054a647d90c2c51f42031976a2ce1b877d5ac03a3547c270d58fd2fcbba8f80"
+    },
+    {
+      "path": "tests/test_refined_evaluation.py",
+      "bytes": 3079,
+      "sha256": "d37f800f4630b96955e06e3d510ec4404ce8531b0290107098f829dd94659a28"
+    }
+  ]
+}

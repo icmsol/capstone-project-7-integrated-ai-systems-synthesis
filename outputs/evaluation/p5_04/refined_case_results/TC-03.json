@@ -1,0 +1,152 @@
+{
+  "evaluation_schema_version": "1.0.0",
+  "case_id": "TC-03",
+  "freeze_version": "1.0.1",
+  "result_status": "PASS",
+  "case_state": {
+    "terminal_outcome": "deferred",
+    "case_status": "deferred",
+    "primary_stage_id": "STG-03",
+    "primary_stage": "assess_service_alignment",
+    "primary_component": "service_alignment_engine",
+    "recommendation_code": "R-03",
+    "recommendation_label": "Recommend Hold — Gather Information",
+    "reason_codes": [
+      "STRUCTURED_ANALYSIS_INSUFFICIENT"
+    ]
+  },
+  "audit": {
+    "event_types": [
+      "configuration_loaded",
+      "source_ingested",
+      "alignment_completed",
+      "recommendation_abstained",
+      "human_disposition_recorded"
+    ],
+    "retry_attempts": 0,
+    "chain_valid": true
+  },
+  "routing": {
+    "expected_human_route": "Opportunity Analyst"
+  },
+  "artifacts": {
+    "schema_valid": true,
+    "checksum_valid": true,
+    "generated_artifact_ids": [
+      "EVAL-TC-03-001",
+      "AUDIT-TC-03-001",
+      "REC-TC-03-001",
+      "DISP-TC-03-001"
+    ]
+  },
+  "claims": [
+    "controlled_capstone_prototype",
+    "nonbinding_recommendation",
+    "human_authority_preserved"
+  ],
+  "side_effects": [],
+  "timings": {
+    "elapsed_seconds": 0.002432,
+    "started_at": "2026-08-06T17:52:42.578179Z",
+    "completed_at": "2026-08-06T17:52:42.580612Z"
+  },
+  "assertion_results": [
+    {
+      "assertion_id": "AS-TC-03-TERM",
+      "status": "PASS",
+      "observed_value": "deferred",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-03-STATUS",
+      "status": "PASS",
+      "observed_value": "deferred",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-03-STAGEID",
+      "status": "PASS",
+      "observed_value": "STG-03",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-03-STAGE",
+      "status": "PASS",
+      "observed_value": "assess_service_alignment",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-03-COMP",
+      "status": "PASS",
+      "observed_value": "service_alignment_engine",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-03-REASON",
+      "status": "PASS",
+      "observed_value": [
+        "STRUCTURED_ANALYSIS_INSUFFICIENT"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-03-AUDIT",
+      "status": "PASS",
+      "observed_value": [
+        "configuration_loaded",
+        "source_ingested",
+        "alignment_completed",
+        "recommendation_abstained",
+        "human_disposition_recorded"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-03-SCHEMA",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "schema_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-03-CHECK",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "checksum_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-03-NOEXT",
+      "status": "PASS",
+      "observed_value": [],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-03-BOUND",
+      "status": "PASS",
+      "observed_value": [
+        "controlled_capstone_prototype",
+        "nonbinding_recommendation",
+        "human_authority_preserved"
+      ],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-03-RECCODE",
+      "status": "PASS",
+      "observed_value": "R-03",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-03-RECLABEL",
+      "status": "PASS",
+      "observed_value": "Recommend Hold — Gather Information",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-03-ROUTE",
+      "status": "PASS",
+      "observed_value": "Opportunity Analyst",
+      "message": "equals assertion passed."
+    }
+  ],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

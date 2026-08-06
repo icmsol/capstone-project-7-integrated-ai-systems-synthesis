@@ -608,7 +608,37 @@ def derive_observed_behavior(
     }
     mapping = stage_map(repo_root)[primary_stage_id]
 
-    # Event types are derived as a safe superset of the components reached.
+    # Resolve the stage executor separately from the owner of a decisive
+    # cross-cutting safeguard. This preserves operational accountability while
+    # retaining the numeric orchestration stage.
+    executing_component = mapping["component_id"]
+    global_control_owner_reasons = {
+        "EXTERNAL_ACTION_PROHIBITED",
+        "BINDING_DECISION_LANGUAGE_DETECTED",
+        "SAFEGUARD_OVERRIDE_ATTEMPT",
+        "AUDIT_PERSISTENCE_FAILED",
+        "RETRY_LIMIT_EXCEEDED",
+    }
+    decisive_global_reasons = sorted(
+        set(reason_codes) & global_control_owner_reasons
+    )
+    primary_component = (
+        "workflow_orchestrator"
+        if decisive_global_reasons
+        else executing_component
+    )
+    observe(
+        "control_ownership_resolution",
+        primary_component != executing_component,
+        {
+            "executing_component": executing_component,
+            "control_owner_component": primary_component,
+            "decisive_reason_codes": decisive_global_reasons,
+        },
+    )
+
+    # Event types are derived from the reached components plus the reason codes
+    # that explain the decisive control behavior.
     stage_sequence = int(mapping["sequence"])
     event_types: list[str] = ["configuration_loaded"]
     if stage_sequence >= 2:
@@ -638,14 +668,42 @@ def derive_observed_behavior(
     }:
         event_types.append("evidence_validated")
 
-    if terminal_outcome == "failed_closed":
+    abstention_reason_codes = {
+        "STRUCTURED_ANALYSIS_INSUFFICIENT",
+        "CITATION_NOT_FOUND",
+        "SOURCE_STALE",
+        "EVIDENCE_INSUFFICIENT",
+    }
+    processing_interruption_reason_codes = {
+        "SENSITIVE_DATA_DETECTED",
+    }
+    mandatory_specialist_reason_codes = {
+        "MODEL_CONFIDENCE_LOW",
+        "MODEL_DOMAIN_SHIFT",
+        "EVIDENCE_MATERIAL_CONFLICT",
+        "MANDATORY_SPECIALIST_REVIEW",
+        "SENSITIVE_DATA_DETECTED",
+    }
+    reason_code_set = set(reason_codes)
+
+    if (
+        terminal_outcome == "failed_closed"
+        or reason_code_set & processing_interruption_reason_codes
+    ):
         event_types.append("processing_failed")
-    elif recommendation_code == "R-06":
+
+    if (
+        recommendation_code in {"R-03", "R-06"}
+        and reason_code_set & abstention_reason_codes
+    ):
         event_types.append("recommendation_abstained")
     elif recommendation_code is not None:
         event_types.append("recommendation_created")
 
-    if terminal_outcome in {"escalated", "failed_closed"}:
+    if (
+        terminal_outcome in {"escalated", "failed_closed"}
+        or reason_code_set & mandatory_specialist_reason_codes
+    ):
         event_types.append("case_escalated")
     if retry_attempts:
         event_types.append("retry_attempted")
@@ -680,7 +738,7 @@ def derive_observed_behavior(
             "primary_stage": mapping[
                 "orchestration_stage_id"
             ],
-            "primary_component": mapping["component_id"],
+            "primary_component": primary_component,
             "recommendation_code": recommendation_code,
             "recommendation_label": recommendation_label,
             "reason_codes": sorted(set(reason_codes)),

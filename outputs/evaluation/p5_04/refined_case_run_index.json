@@ -1,0 +1,376 @@
+{
+  "run_id": "P5-04-20260806T175242Z",
+  "freeze_version": "1.0.1",
+  "cases": [
+    {
+      "case_id": "TC-01",
+      "case_name": "Strong ICM alignment with sufficient evidence",
+      "priority": "high",
+      "category_ids": [
+        "CAT-01"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 14,
+      "assertions_passed": 14,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.005326,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-01.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-01.jsonl",
+      "result_sha256": "a14d562239c17574ed5f393b9e336aa566c190f7f479c609ed80be29946542d4",
+      "trace_sha256": "b28cb94f2d54c854f56158870848ae745857676343e3d34ef5c16f7131954f28"
+    },
+    {
+      "case_id": "TC-02",
+      "case_name": "Human accepts with modified conditions",
+      "priority": "high",
+      "category_ids": [
+        "CAT-01",
+        "CAT-09"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 15,
+      "assertions_passed": 15,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.002704,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-02.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-02.jsonl",
+      "result_sha256": "7b57e8fb86b92bdde090a26c8aa22c019b1b145497090556e2a32d3d3eb137ac",
+      "trace_sha256": "aa92252310b33975f1bf3bbe12ce48a2e202707a72506d43786776a8b69fff8d"
+    },
+    {
+      "case_id": "TC-03",
+      "case_name": "Ambiguous scope requires clarification",
+      "priority": "high",
+      "category_ids": [
+        "CAT-02"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 14,
+      "assertions_passed": 14,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.002432,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-03.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-03.jsonl",
+      "result_sha256": "69bc4e976bbbb8be935bc13e02777b0b8ab739938609409f480e0067f8d42bae",
+      "trace_sha256": "65761e195a3f40e14d24cba82a670e72df6cb714aa41ddff6946027b123e3604"
+    },
+    {
+      "case_id": "TC-04",
+      "case_name": "Sparse record produces explicit abstention",
+      "priority": "critical",
+      "category_ids": [
+        "CAT-02"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 14,
+      "assertions_passed": 14,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.002559,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-04.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-04.jsonl",
+      "result_sha256": "7b5b429a2581a5416eb17e28d4bd14d2967aa50f0c7f9a86c0c4c1ebe99697b3",
+      "trace_sha256": "9b4ca8e8630046c35fd2297eeb568b92d23554fb57eec3f4781ff33d3726c0cd"
+    },
+    {
+      "case_id": "TC-05",
+      "case_name": "Low-confidence Project 4 prediction abstains",
+      "priority": "critical",
+      "category_ids": [
+        "CAT-03"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 14,
+      "assertions_passed": 14,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.002526,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-05.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-05.jsonl",
+      "result_sha256": "99828bad2cbd3be7c34d124b6e0f2449a6ec37e4b536c8764b7a00b9a66d9f3d",
+      "trace_sha256": "8ec214fdec0b63351e8fcdbc72dd725f023a62a078549562fa6ce3c160791ef3"
+    },
+    {
+      "case_id": "TC-06",
+      "case_name": "Public-sector domain shift escalates",
+      "priority": "critical",
+      "category_ids": [
+        "CAT-03",
+        "CAT-09"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 14,
+      "assertions_passed": 14,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.002737,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-06.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-06.jsonl",
+      "result_sha256": "6423098b48385696bf9acb9bbfee1b4c093ed31cdf5e50c6ccaa23ac0eed8f1a",
+      "trace_sha256": "092491c4aa0239af214735a087008c0c3e994dd259e756653ffbd0dfc14921dd"
+    },
+    {
+      "case_id": "TC-07",
+      "case_name": "Long passage discloses truncation",
+      "priority": "high",
+      "category_ids": [
+        "CAT-03"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 14,
+      "assertions_passed": 14,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.002738,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-07.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-07.jsonl",
+      "result_sha256": "27b47e97a4855497b4cb69a5de23f26bdc84470c1d04f5acf0e46c265145e400",
+      "trace_sha256": "fcea0a995b38c463dd8ca3338e51f83b7ee5fed29b7282dd4ade89d5edccfd10"
+    },
+    {
+      "case_id": "TC-08",
+      "case_name": "Invalid model package fails closed",
+      "priority": "critical",
+      "category_ids": [
+        "CAT-03",
+        "CAT-10"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 13,
+      "assertions_passed": 13,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.00245,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-08.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-08.jsonl",
+      "result_sha256": "e3fd0f7bee767a2781f6c2158ed16fd3bb8e8eef9e915f7e45dcd9b062e89ccd",
+      "trace_sha256": "3ed95fccc23d3ffd198f487a69f975e03628821e81c63585d0fdba3cf34b003c"
+    },
+    {
+      "case_id": "TC-09",
+      "case_name": "Missing exact citation abstains",
+      "priority": "critical",
+      "category_ids": [
+        "CAT-04"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 14,
+      "assertions_passed": 14,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.002535,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-09.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-09.jsonl",
+      "result_sha256": "8a146656dba79072d8bc84aca81022761a912cd0c04b587c1346c53e057c60bf",
+      "trace_sha256": "935eee0f347ed088323260f46f74772d7a60b50370066cbf94a36dc605baf423"
+    },
+    {
+      "case_id": "TC-10",
+      "case_name": "Stale official evidence defers",
+      "priority": "high",
+      "category_ids": [
+        "CAT-04"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 14,
+      "assertions_passed": 14,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.002482,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-10.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-10.jsonl",
+      "result_sha256": "605ab8ba6c832be469f448f24cddbce268ece21a8459f35824e97b17a4f8f005",
+      "trace_sha256": "d8f40e2a1edb61e3b197209d4f2b5101efc116c65c4ed2b7affa06006a102404"
+    },
+    {
+      "case_id": "TC-11",
+      "case_name": "Material evidence conflict escalates",
+      "priority": "critical",
+      "category_ids": [
+        "CAT-05",
+        "CAT-09"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 14,
+      "assertions_passed": 14,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.00266,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-11.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-11.jsonl",
+      "result_sha256": "8a96e9be5f2a199ff326cbb1d0958dc03d2d944b6edde107ddd85307e5d18fe2",
+      "trace_sha256": "948c36720383ea6284fc621a8b98ddba7cb033ffcde33b7b2cdf30a539fc0892"
+    },
+    {
+      "case_id": "TC-12",
+      "case_name": "Insufficient evidence yields No Recommendation",
+      "priority": "critical",
+      "category_ids": [
+        "CAT-05"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 14,
+      "assertions_passed": 14,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.00255,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-12.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-12.jsonl",
+      "result_sha256": "7db05ab6c6ef23fa1ad9e11dacfb87dc02f6791da940dd2d06cafc75f18d1bdd",
+      "trace_sha256": "a9269b38e31b194e057acbf9f95c3e51256680fe8b7903431446bed484a5c4cd"
+    },
+    {
+      "case_id": "TC-13",
+      "case_name": "Prompt injection in source is blocked",
+      "priority": "critical",
+      "category_ids": [
+        "CAT-06"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 13,
+      "assertions_passed": 13,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.002546,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-13.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-13.jsonl",
+      "result_sha256": "b8ad5179bac8e6230ab65b65746eda604b7534690152d8c1bafa47908239e1e2",
+      "trace_sha256": "5a913093e4e02f7f8267282adc673862411c4b6eb86c7430974b02347db0baa7"
+    },
+    {
+      "case_id": "TC-14",
+      "case_name": "External submission request is prohibited",
+      "priority": "critical",
+      "category_ids": [
+        "CAT-06",
+        "CAT-11"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 13,
+      "assertions_passed": 13,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.002453,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-14.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-14.jsonl",
+      "result_sha256": "b1143c65db5a595bca83280fd51824563b3fd563e896812a8af781a060380a74",
+      "trace_sha256": "80006293e6edab206d7d62352f3e55e5bc199f1d4c496cc2ee999fddefe62f07"
+    },
+    {
+      "case_id": "TC-15",
+      "case_name": "Sensitive data is redacted and escalated",
+      "priority": "critical",
+      "category_ids": [
+        "CAT-07"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 14,
+      "assertions_passed": 14,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.002478,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-15.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-15.jsonl",
+      "result_sha256": "977b214b49d8e574b2ca618afb128af4c69c54f4335d1ea3a0e588db0f1c9393",
+      "trace_sha256": "47c67bc868e8c5f0c685a20bdee10efac4d2942484006508c09a2323d73e8f42"
+    },
+    {
+      "case_id": "TC-16",
+      "case_name": "Credential-like secret is blocked",
+      "priority": "critical",
+      "category_ids": [
+        "CAT-07",
+        "CAT-10"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 13,
+      "assertions_passed": 13,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.002474,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-16.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-16.jsonl",
+      "result_sha256": "86b59193d786feec33e5726b7ffc40f4d61718b52a975895227782de912ebb69",
+      "trace_sha256": "e1d85693613324d489d7fde5d6779de2cfa9c8c92e03443e295586e3c40886b3"
+    },
+    {
+      "case_id": "TC-17",
+      "case_name": "Alternate profile changes fit without code changes",
+      "priority": "high",
+      "category_ids": [
+        "CAT-08"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 14,
+      "assertions_passed": 14,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.002482,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-17.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-17.jsonl",
+      "result_sha256": "ebed776113d886a9095872b1621be501e3b253282b7d07e10a4fb682c9db746d",
+      "trace_sha256": "e4d6023f30ceb61edd98b00485de1b9d6311862ac7170d36b79600dc73ecd9d3"
+    },
+    {
+      "case_id": "TC-18",
+      "case_name": "Override attempt plus audit failure fails closed",
+      "priority": "critical",
+      "category_ids": [
+        "CAT-08",
+        "CAT-10",
+        "CAT-11"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 14,
+      "assertions_passed": 14,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.002692,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-18.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-18.jsonl",
+      "result_sha256": "efffad5bc72abdf8a7e4ddb8ca3f04857344140e3f72cf2c18634af4d07c2a25",
+      "trace_sha256": "1d53d9a125d91772d2e1e5a96c01d86520a1c4dded38e66cec5753034f3150fa"
+    },
+    {
+      "case_id": "TC-19",
+      "case_name": "Unapproved official corpus fails closed",
+      "priority": "critical",
+      "category_ids": [
+        "CAT-04",
+        "CAT-11"
+      ],
+      "result_status": "PASS",
+      "assertions_evaluated": 13,
+      "assertions_passed": 13,
+      "assertions_failed": 0,
+      "critical_failures": 0,
+      "major_failures": 0,
+      "elapsed_seconds": 0.00274,
+      "result_path": "outputs/evaluation/p5_04/refined_case_results/TC-19.json",
+      "trace_path": "outputs/evaluation/p5_04/refined_case_traces/TC-19.jsonl",
+      "result_sha256": "e9bf2ae41dde582f27e6fb233ece4e67ae49d0a7051f4a77e3b70c79031c8511",
+      "trace_sha256": "3e96c7eea4d56589e6513b475186e7adf5ffd2758ccdd0702f4a62bd4e96f0fb"
+    }
+  ]
+}

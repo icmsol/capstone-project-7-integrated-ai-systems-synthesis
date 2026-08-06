@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/refined_evaluation_run_manifest.schema.json",
+  "title": "Project 7 Refined Evaluation Run Manifest",
+  "type": "object",
+  "required": [
+    "run_schema_version", "run_id", "source_run_id", "freeze_version",
+    "case_count_expected", "case_count_executed", "assertion_count_expected",
+    "assertion_count_evaluated", "assertion_count_passed", "status_counts",
+    "missing_case_ids", "improved_case_ids", "regression_case_ids",
+    "frozen_inputs_changed", "case_result_index", "raw_output_inventory",
+    "external_actions_performed", "production_boundary"
+  ],
+  "properties": {
+    "run_schema_version": {"type": "string", "const": "1.0.0"},
+    "run_id": {"type": "string"},
+    "source_run_id": {"type": "string"},
+    "freeze_version": {"type": "string", "const": "1.0.1"},
+    "case_count_expected": {"type": "integer", "const": 19},
+    "case_count_executed": {"type": "integer", "const": 19},
+    "assertion_count_expected": {"type": "integer", "const": 262},
+    "assertion_count_evaluated": {"type": "integer", "const": 262},
+    "assertion_count_passed": {"type": "integer", "const": 262},
+    "status_counts": {
+      "type": "object",
+      "properties": {
+        "PASS": {"type": "integer", "const": 19},
+        "PARTIAL": {"type": "integer", "const": 0},
+        "FAIL": {"type": "integer", "const": 0}
+      }
+    },
+    "missing_case_ids": {"type": "array", "maxItems": 0},
+    "improved_case_ids": {"type": "array", "minItems": 6, "maxItems": 6},
+    "regression_case_ids": {"type": "array", "maxItems": 0},
+    "frozen_inputs_changed": {"type": "boolean", "const": false},
+    "case_result_index": {"type": "array", "minItems": 19, "maxItems": 19},
+    "raw_output_inventory": {"type": "array", "minItems": 42},
+    "external_actions_performed": {"type": "integer", "const": 0},
+    "production_boundary": {"type": "string"}
+  }
+}

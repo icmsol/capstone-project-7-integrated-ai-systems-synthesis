@@ -1,0 +1,5 @@
+measure,before_numerator,before_denominator,after_numerator,after_denominator
+full_case_conformance,13,19,19,19
+assertion_conformance,256,262,262,262
+audit_event_classification,15,19,19,19
+component_attribution,17,19,19,19

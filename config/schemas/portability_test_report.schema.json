@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/portability_test_report.schema.json",
+  "title": "Project 7 Configuration Portability Report",
+  "type": "object",
+  "required": [
+    "report_schema_version",
+    "report_id",
+    "opportunity_count",
+    "profile_count",
+    "run_count",
+    "profile_runs",
+    "comparisons",
+    "invariant_summary",
+    "production_boundary"
+  ],
+  "properties": {
+    "report_schema_version": {"type": "string", "const": "1.0.0"},
+    "report_id": {"type": "string"},
+    "opportunity_count": {"type": "integer", "const": 2},
+    "profile_count": {"type": "integer", "const": 2},
+    "run_count": {"type": "integer", "const": 4},
+    "profile_runs": {"type": "array", "minItems": 4, "maxItems": 4},
+    "comparisons": {"type": "array", "minItems": 2, "maxItems": 2},
+    "invariant_summary": {
+      "type": "object",
+      "required": [
+        "source_code_unchanged_between_profile_runs",
+        "fixed_safeguards_unchanged",
+        "schemas_unchanged",
+        "alignment_changed_for_every_opportunity",
+        "recommendation_changed_for_every_opportunity",
+        "final_decisions_created",
+        "external_actions_performed"
+      ],
+      "properties": {
+        "source_code_unchanged_between_profile_runs": {"type": "boolean", "const": true},
+        "fixed_safeguards_unchanged": {"type": "boolean", "const": true},
+        "schemas_unchanged": {"type": "boolean", "const": true},
+        "alignment_changed_for_every_opportunity": {"type": "boolean", "const": true},
+        "recommendation_changed_for_every_opportunity": {"type": "boolean", "const": true},
+        "final_decisions_created": {"type": "integer", "const": 0},
+        "external_actions_performed": {"type": "integer", "const": 0}
+      }
+    },
+    "production_boundary": {"type": "string"}
+  }
+}

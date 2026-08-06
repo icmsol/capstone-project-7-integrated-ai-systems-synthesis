@@ -1,0 +1,11 @@
+requirement_id,requirement,implementation,validation,status
+P5-04-R01,Apply evidence-supported refinements only.,Four evaluator refinements map directly to RB-01 through RB-04.,Approved code-only scope preserved.,Implemented
+P5-04-R02,Preserve frozen inputs and original evidence.,P5-01 freeze-lock hashes are verified before the rerun.,Frozen inputs changed=false.,Implemented
+P5-04-R03,Rerun the complete frozen suite.,All 19 cases and 262 assertions execute under the refined evaluator.,"19 PASS, 0 PARTIAL, 0 FAIL; 262/262.",Implemented
+P5-04-R04,Demonstrate no regression.,Before/after comparison preserves all previously passing cases and safety controls.,Six improved cases; zero regressions.,Implemented
+P5-04-R05,Correct audit-event semantics.,"Abstention, escalation, and processing-interruption events use reason-aware mapping.",Audit classification improved 15/19 to 19/19.,Implemented
+P5-04-R06,Correct global control ownership.,Stage executor and cross-cutting safeguard owner are separated in trace logic.,Component attribution improved 17/19 to 19/19.,Implemented
+P5-04-R07,Demonstrate configuration portability.,Two opportunities run against ICM and fictional profiles using the same executable code.,Both alignment and recommendation change in both comparisons.,Implemented
+P5-04-R08,Preserve fixed governance under profile switching.,"Safeguard, schema, policy, human-authority, and external-action invariants are checked.",All invariants pass; final decisions=0.,Implemented
+P5-04-R09,Implement professional continuous integration.,GitHub Actions validates the refined baseline and uploads run evidence.,Workflow structure and 25 local tests pass; hosted run pending.,Implemented
+P5-04-R10,Avoid deployment or production-readiness implication.,"Workflow has read-only permissions and no deploy, publish, or external-write step.",CI-only boundary documented.,Implemented

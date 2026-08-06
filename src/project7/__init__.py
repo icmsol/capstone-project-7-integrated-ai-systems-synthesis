@@ -23,3 +23,5 @@ __all__ = [
     "validate_schema",
     "verify_case_manifest",
 ]
+
+from .configuration_portability import derive_screening_recommendation, run_portability_comparison

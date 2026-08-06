@@ -1,0 +1,37 @@
+{
+  "artifact_id": "PROJECT7-P5-04-VALIDATION-EVIDENCE",
+  "artifact_version": "1.0.0",
+  "validated_at_utc": "2026-08-06T17:56:05.731430+00:00",
+  "validation_status": "PASS_LOCAL_HOSTED_CI_PENDING",
+  "refined_run_id": "P5-04-20260806T175242Z",
+  "source_run_id": "P5-01-20260805T231721Z",
+  "checks": {
+    "cases_executed": 19,
+    "assertions_passed": 262,
+    "pass_cases": 19,
+    "partial_cases": 0,
+    "fail_cases": 0,
+    "improved_cases": [
+      "TC-03",
+      "TC-05",
+      "TC-10",
+      "TC-14",
+      "TC-15",
+      "TC-18"
+    ],
+    "regressions": [],
+    "audit_event_classification_after": "19/19",
+    "component_attribution_after": "19/19",
+    "portability_opportunities": 2,
+    "profile_runs": 4,
+    "configuration_changes_recommendations": true,
+    "source_code_unchanged_between_profiles": true,
+    "fixed_safeguards_unchanged": true,
+    "schemas_unchanged": true,
+    "local_unit_tests_passed": 25,
+    "external_actions_performed": 0,
+    "hosted_github_actions_status": "pending_commit"
+  },
+  "local_quality_gate_log": "outputs/ci/local-project7-quality-gate.log",
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

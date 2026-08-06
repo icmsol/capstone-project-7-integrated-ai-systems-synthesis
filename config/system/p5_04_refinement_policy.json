@@ -1,0 +1,25 @@
+{
+  "policy_schema_version": "1.0.0",
+  "policy_id": "PROJECT7-P5-04-REFINEMENT-POLICY",
+  "source_failure_analysis": "outputs/evaluation/p5_03/failure_analysis_report.json",
+  "approved_refinement_ids": ["RB-01", "RB-02", "RB-03", "RB-04", "RB-05"],
+  "permitted_changes": [
+    "evaluator audit-event derivation",
+    "global control ownership attribution",
+    "interpretable trace details",
+    "configuration-portability test code",
+    "continuous-integration quality gate"
+  ],
+  "prohibited_changes": [
+    "frozen v1.0.1 cases",
+    "expected outcomes",
+    "assertion severity",
+    "model-confidence threshold",
+    "evidence-sufficiency threshold",
+    "raw P5-01 evaluation results"
+  ],
+  "full_regression_required": true,
+  "configuration_switch_must_not_require_source_change": true,
+  "ci_scope": "continuous integration only; no deployment or production-release action",
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

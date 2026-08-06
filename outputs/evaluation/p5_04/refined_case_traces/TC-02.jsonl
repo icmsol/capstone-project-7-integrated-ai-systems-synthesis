@@ -1,0 +1,8 @@
+{"run_id": "P5-04-20260806T175242Z", "case_id": "TC-02", "sequence": 1, "rule": "configuration_override_and_audit_gate", "matched": false, "details": {"override_attempt": false, "audit_fault": false}}
+{"run_id": "P5-04-20260806T175242Z", "case_id": "TC-02", "sequence": 2, "rule": "secret_value_gate", "matched": false, "details": {"secret_marker_present": false}}
+{"run_id": "P5-04-20260806T175242Z", "case_id": "TC-02", "sequence": 3, "rule": "prompt_injection_gate", "matched": false, "details": {"prompt_injection_test": false}}
+{"run_id": "P5-04-20260806T175242Z", "case_id": "TC-02", "sequence": 4, "rule": "sensitive_data_gate", "matched": false, "details": {"privacy_classification": "synthetic_non_sensitive"}}
+{"run_id": "P5-04-20260806T175242Z", "case_id": "TC-02", "sequence": 5, "rule": "external_action_gate", "matched": false, "details": {"trigger_detected": false}}
+{"run_id": "P5-04-20260806T175242Z", "case_id": "TC-02", "sequence": 6, "rule": "configuration_portability", "matched": false, "details": {"profile_id": "ICMSOL"}}
+{"run_id": "P5-04-20260806T175242Z", "case_id": "TC-02", "sequence": 7, "rule": "model_confidence_threshold", "matched": false, "details": {"top_probability": 0.997, "minimum": 0.8}}
+{"run_id": "P5-04-20260806T175242Z", "case_id": "TC-02", "sequence": 8, "rule": "control_ownership_resolution", "matched": false, "details": {"executing_component": "human_disposition_recorder", "control_owner_component": "human_disposition_recorder", "decisive_reason_codes": []}}

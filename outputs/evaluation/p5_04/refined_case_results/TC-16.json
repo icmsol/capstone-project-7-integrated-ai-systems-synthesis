@@ -1,0 +1,142 @@
+{
+  "evaluation_schema_version": "1.0.0",
+  "case_id": "TC-16",
+  "freeze_version": "1.0.1",
+  "result_status": "PASS",
+  "case_state": {
+    "terminal_outcome": "failed_closed",
+    "case_status": "failed_closed",
+    "primary_stage_id": "STG-01",
+    "primary_stage": "load_configuration",
+    "primary_component": "profile_loader",
+    "recommendation_code": null,
+    "recommendation_label": null,
+    "reason_codes": [
+      "SECRET_VALUE_DETECTED",
+      "SENSITIVE_AUDIT_CONTENT_DETECTED"
+    ]
+  },
+  "audit": {
+    "event_types": [
+      "configuration_loaded",
+      "processing_failed",
+      "case_escalated"
+    ],
+    "retry_attempts": 0,
+    "chain_valid": true
+  },
+  "routing": {
+    "expected_human_route": "Technical or Security Reviewer"
+  },
+  "artifacts": {
+    "schema_valid": true,
+    "checksum_valid": true,
+    "generated_artifact_ids": [
+      "EVAL-TC-16-001",
+      "AUDIT-TC-16-001"
+    ]
+  },
+  "claims": [
+    "controlled_capstone_prototype",
+    "nonbinding_recommendation",
+    "human_authority_preserved"
+  ],
+  "side_effects": [],
+  "timings": {
+    "elapsed_seconds": 0.002474,
+    "started_at": "2026-08-06T17:52:42.647936Z",
+    "completed_at": "2026-08-06T17:52:42.650411Z"
+  },
+  "assertion_results": [
+    {
+      "assertion_id": "AS-TC-16-TERM",
+      "status": "PASS",
+      "observed_value": "failed_closed",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-16-STATUS",
+      "status": "PASS",
+      "observed_value": "failed_closed",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-16-STAGEID",
+      "status": "PASS",
+      "observed_value": "STG-01",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-16-STAGE",
+      "status": "PASS",
+      "observed_value": "load_configuration",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-16-COMP",
+      "status": "PASS",
+      "observed_value": "profile_loader",
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-16-REASON",
+      "status": "PASS",
+      "observed_value": [
+        "SECRET_VALUE_DETECTED",
+        "SENSITIVE_AUDIT_CONTENT_DETECTED"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-16-AUDIT",
+      "status": "PASS",
+      "observed_value": [
+        "configuration_loaded",
+        "processing_failed",
+        "case_escalated"
+      ],
+      "message": "contains_all assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-16-SCHEMA",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "schema_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-16-CHECK",
+      "status": "PASS",
+      "observed_value": true,
+      "message": "checksum_valid assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-16-NOEXT",
+      "status": "PASS",
+      "observed_value": [],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-16-BOUND",
+      "status": "PASS",
+      "observed_value": [
+        "controlled_capstone_prototype",
+        "nonbinding_recommendation",
+        "human_authority_preserved"
+      ],
+      "message": "contains_none assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-16-NOREC",
+      "status": "PASS",
+      "observed_value": null,
+      "message": "equals assertion passed."
+    },
+    {
+      "assertion_id": "AS-TC-16-ROUTE",
+      "status": "PASS",
+      "observed_value": "Technical or Security Reviewer",
+      "message": "equals assertion passed."
+    }
+  ],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

@@ -1,0 +1,63 @@
+{
+  "comparison_schema_version": "1.0.0",
+  "source_run_id": "P5-01-20260805T231721Z",
+  "refined_run_id": "P5-04-20260806T175242Z",
+  "freeze_version": "1.0.1",
+  "frozen_inputs_changed": false,
+  "code_refinements": [
+    "RB-01",
+    "RB-02",
+    "RB-03",
+    "RB-04"
+  ],
+  "before": {
+    "case_status_counts": {
+      "PASS": 13,
+      "PARTIAL": 6,
+      "FAIL": 0
+    },
+    "assertions_passed": 256,
+    "assertions_evaluated": 262,
+    "audit_event_classification": {
+      "numerator": 15,
+      "denominator": 19
+    },
+    "component_attribution": {
+      "numerator": 17,
+      "denominator": 19
+    }
+  },
+  "after": {
+    "case_status_counts": {
+      "PASS": 19,
+      "PARTIAL": 0,
+      "FAIL": 0
+    },
+    "assertions_passed": 262,
+    "assertions_evaluated": 262,
+    "audit_event_classification": {
+      "numerator": 19,
+      "denominator": 19
+    },
+    "component_attribution": {
+      "numerator": 19,
+      "denominator": 19
+    }
+  },
+  "improved_case_ids": [
+    "TC-03",
+    "TC-05",
+    "TC-10",
+    "TC-14",
+    "TC-15",
+    "TC-18"
+  ],
+  "regression_case_ids": [],
+  "acceptance_criteria": {
+    "all_cases_executed": true,
+    "all_assertions_passed": true,
+    "no_regressions": true,
+    "safety_metrics_preserved": true,
+    "external_actions_performed": 0
+  }
+}

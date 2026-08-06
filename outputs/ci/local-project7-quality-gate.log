@@ -1,0 +1,98 @@
+Repository files checked: 753
+Credential-pattern hits: 0
+Files over 100 MB: 0
+Merge-conflict markers: 0
+Notebook traceback outputs: 0
+Required final-baseline files present: PASS
+CI repository checks: PASS
+Schemas checked: 32
+Valid integrated case: PASS
+Valid audit event: PASS
+Invalid integrated case: correctly rejected with 1 validation error(s)
+Component contracts checked: 14
+Contract registry integrity: PASS
+Orchestration policy: PASS
+Stage-to-contract referential integrity: PASS
+Invalid component contract: correctly rejected
+Invalid orchestration policy: correctly rejected
+Safeguard controls checked: 30
+Reason codes checked: 35
+Trigger scenarios checked: 30
+Policy schema validation: PASS
+Control and reason-code integrity: PASS
+Control-to-scenario coverage: PASS
+Invalid safeguard policy: correctly rejected
+Actors checked: 8
+Approved inputs checked: 8
+Workflow stages checked: 12
+Human decision points checked: 6
+Acceptance targets checked: 18
+CPU and no-training boundary: PASS
+Stage, actor, and decision integrity: PASS
+Invalid operational workload: correctly rejected
+Scenario categories checked: 11
+Target cases checked: 19
+Terminal outcomes covered: 6
+No Recommendation modeled separately: PASS
+Category minimum coverage: PASS
+Cases verified: 19
+Assertions verified: 262
+Raw output integrity: PASS
+Frozen evaluation verification: PASS
+Metrics recalculated and verified: 14
+Cases: 19
+Assertions: 256/262
+Critical assertions: 167/167
+Major assertions: 89/95
+P5-02 recalculation: PASS
+Failure occurrences verified: 6
+Failure classes verified: 3
+Safety-significant failures: 0
+Governance-significant failures: 6
+Unexpected escalations: 0
+Refinement backlog items: 5
+P5-03 failure analysis verification: PASS
+Frozen inputs verified unchanged: PASS
+Cases executed: 19/19
+Assertions passed: 262/262
+Improved cases: 6
+Regressions: 0
+Audit event classification: 19/19
+Component attribution: 19/19
+P5-04 refinement verification: PASS
+Portability opportunities: 2
+Profile runs: 4
+ICM-oriented result: R-01 vs R-04
+Data-analytics result: R-04 vs R-01
+Source code, schemas, and fixed safeguards unchanged: PASS
+P5-04 portability verification: PASS
+test_all_cases_and_assertions_pass (tests.test_refined_evaluation.RefinedEvaluationTests.test_all_cases_and_assertions_pass) ... ok
+test_audit_event_classification_improved (tests.test_refined_evaluation.RefinedEvaluationTests.test_audit_event_classification_improved) ... ok
+test_component_attribution_improved (tests.test_refined_evaluation.RefinedEvaluationTests.test_component_attribution_improved) ... ok
+test_exact_six_cases_improved (tests.test_refined_evaluation.RefinedEvaluationTests.test_exact_six_cases_improved) ... ok
+test_external_action_boundary (tests.test_refined_evaluation.RefinedEvaluationTests.test_external_action_boundary) ... ok
+test_frozen_inputs_unchanged (tests.test_refined_evaluation.RefinedEvaluationTests.test_frozen_inputs_unchanged) ... ok
+test_global_control_owner_attribution (tests.test_refined_evaluation.RefinedEvaluationTests.test_global_control_owner_attribution) ... ok
+test_no_regressions (tests.test_refined_evaluation.RefinedEvaluationTests.test_no_regressions) ... ok
+test_raw_output_inventory_exists (tests.test_refined_evaluation.RefinedEvaluationTests.test_raw_output_inventory_exists) ... ok
+test_refined_event_semantics (tests.test_refined_evaluation.RefinedEvaluationTests.test_refined_event_semantics) ... ok
+test_all_runs_preserve_human_authority (tests.test_configuration_portability.ConfigurationPortabilityTests.test_all_runs_preserve_human_authority) ... ok
+test_data_opportunity_changes_result_in_reverse (tests.test_configuration_portability.ConfigurationPortabilityTests.test_data_opportunity_changes_result_in_reverse) ... ok
+test_external_action_boundary (tests.test_configuration_portability.ConfigurationPortabilityTests.test_external_action_boundary) ... ok
+test_fixed_safeguards_and_schemas_are_unchanged (tests.test_configuration_portability.ConfigurationPortabilityTests.test_fixed_safeguards_and_schemas_are_unchanged) ... ok
+test_icm_oriented_opportunity_changes_result (tests.test_configuration_portability.ConfigurationPortabilityTests.test_icm_oriented_opportunity_changes_result) ... ok
+test_profile_switch_changes_alignment_and_recommendation (tests.test_configuration_portability.ConfigurationPortabilityTests.test_profile_switch_changes_alignment_and_recommendation) ... ok
+test_source_code_is_unchanged (tests.test_configuration_portability.ConfigurationPortabilityTests.test_source_code_is_unchanged) ... ok
+test_two_opportunities_and_two_profiles (tests.test_configuration_portability.ConfigurationPortabilityTests.test_two_opportunities_and_two_profiles) ... ok
+test_current_official_action_majors (tests.test_ci_workflow.CIWorkflowTests.test_current_official_action_majors) ... ok
+test_evidence_is_uploaded (tests.test_ci_workflow.CIWorkflowTests.test_evidence_is_uploaded) ... ok
+test_final_quality_verifiers_are_run (tests.test_ci_workflow.CIWorkflowTests.test_final_quality_verifiers_are_run) ... ok
+test_no_deployment_or_publish_step (tests.test_ci_workflow.CIWorkflowTests.test_no_deployment_or_publish_step) ... ok
+test_pinned_python_and_dependency_cache (tests.test_ci_workflow.CIWorkflowTests.test_pinned_python_and_dependency_cache) ... ok
+test_read_only_permissions (tests.test_ci_workflow.CIWorkflowTests.test_read_only_permissions) ... ok
+test_triggers_cover_push_pull_request_and_manual (tests.test_ci_workflow.CIWorkflowTests.test_triggers_cover_push_pull_request_and_manual) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.001s
+
+OK
