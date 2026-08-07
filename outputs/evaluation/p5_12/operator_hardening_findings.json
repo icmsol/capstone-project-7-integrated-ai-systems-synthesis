@@ -1,0 +1,60 @@
+{
+  "artifact_schema_version": "1.0.0",
+  "artifact_id": "PROJECT7-P5-12-OPERATOR-HARDENING-FINDINGS",
+  "recorded_date": "2026-08-07",
+  "source_tests": [
+    "P5-10 RFO 3485A same-request operator acceptance",
+    "P5-11 Covered California RFP 2026-01 fresh-request usability smoke test"
+  ],
+  "findings": [
+    {
+      "finding_id": "FR-01",
+      "classification": "alignment_precision_defect",
+      "severity": "major_precision",
+      "observed": "Generic Request for Proposal metadata contributed to RFP and RFQ Preparation alignment even though solicitation preparation was not the requested service.",
+      "disposition": "corrected_configuration",
+      "treatment": "Remove generic request-for-proposal/request-for-quotation metadata terms from ICM-PRC-004 positive keywords while retaining substantive preparation/development terms.",
+      "safety_result": "No autonomous action occurred; correction reduces inflated fit screening."
+    },
+    {
+      "finding_id": "FR-02",
+      "classification": "bounded_model_limitation",
+      "severity": "major_model_limitation",
+      "observed": "A verification-rights passage was classified as IP Ownership Assignment with 0.9946 confidence on public-sector text.",
+      "disposition": "documented_and_operator_warning_strengthened",
+      "treatment": "Do not retrain or rewrite frozen Project 4 evidence. Preserve the error as error-analysis evidence and make the operator warning explicit that domain-shift safeguards override confidence for consequential interpretation.",
+      "safety_result": "MODEL_DOMAIN_SHIFT forced escalation; no legal conclusion or autonomous action occurred."
+    },
+    {
+      "finding_id": "FR-03",
+      "classification": "safe_expected_limitation",
+      "severity": "none",
+      "observed": "One FAR record was retrieved but the assessment remained insufficient at 0.266 and 0/3 claims were sufficient.",
+      "disposition": "accepted",
+      "treatment": "Retain as evidence-layer safeguard example; retrieval is not treated as sufficient support.",
+      "safety_result": "PASS"
+    },
+    {
+      "finding_id": "FR-04",
+      "classification": "presentation_defect",
+      "severity": "minor",
+      "observed": "Markdown table headers can collapse in Colab rendering.",
+      "disposition": "corrected_operator_presentation",
+      "treatment": "Render the operator-facing packet as a table-free sectioned Markdown view while preserving canonical packet JSON/Markdown artifacts.",
+      "safety_result": "No decision-integrity impact."
+    },
+    {
+      "finding_id": "FR-05",
+      "classification": "presentation_defect",
+      "severity": "minor",
+      "observed": "Structured estimated value rendered as a raw Python-style dictionary.",
+      "disposition": "corrected_operator_presentation",
+      "treatment": "Format structured monetary values as human-readable currency in the operator view without changing underlying JSON.",
+      "safety_result": "No decision-integrity impact."
+    }
+  ],
+  "frozen_model_retrained": false,
+  "frozen_evaluation_history_rewritten": false,
+  "external_actions_performed": 0,
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

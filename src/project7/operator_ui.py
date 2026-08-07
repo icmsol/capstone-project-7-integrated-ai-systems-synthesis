@@ -37,6 +37,174 @@ def _parse_optional_int(value: str) -> int | None:
     return int(cleaned) if cleaned else None
 
 
+def _format_operator_money(value: Any) -> str:
+    """Render structured money cleanly without changing the underlying JSON."""
+    if value in (None, "", {}):
+        return "Not stated"
+    if isinstance(value, dict):
+        amount = value.get("amount")
+        currency = str(value.get("currency") or "USD")
+        if isinstance(amount, (int, float)):
+            if float(amount).is_integer():
+                amount_text = f"${amount:,.0f}"
+            else:
+                amount_text = f"${amount:,.2f}"
+            return f"{amount_text} {currency}"
+    return str(value)
+
+
+def _operator_packet_markdown(packet: dict[str, Any]) -> str:
+    """Render a Colab-stable, table-free reviewer view of the packet.
+
+    The canonical packet JSON remains unchanged. This function is presentation-only
+    and deliberately avoids Markdown tables because Colab may collapse table headers.
+    """
+    opportunity = packet["opportunity_summary"]
+    alignment = packet["organization_fit_summary"]
+    history = packet["historical_context_summary"]
+    triage = packet["clause_triage_summary"]
+    evidence = packet["evidence_summary"]
+    recommendation = packet["recommendation"]
+
+    lines = [
+        "# Integrated Human Decision-Support Packet",
+        "",
+        "## Packet Control",
+        f"- **Packet ID:** `{packet['packet_id']}`",
+        f"- **Case ID:** `{packet['case_id']}`",
+        f"- **Status:** `{packet['packet_status']}`",
+        f"- **Generated:** `{packet['generated_at']}`",
+        "- **Final decision:** Pending authorized human disposition",
+        f"- **External actions:** `{packet['external_actions_performed']}`",
+        "",
+        "## Executive Summary",
+        "",
+        packet["executive_summary"],
+        "",
+        "## Opportunity",
+        f"- **Agency:** {opportunity['agency']}",
+        f"- **Solicitation:** `{opportunity['solicitation_id']}`",
+        f"- **Title:** {opportunity['title']}",
+        f"- **Status:** `{opportunity['status']}`",
+        f"- **Due:** `{opportunity['due_at']}`",
+        f"- **Jurisdiction:** {opportunity['jurisdiction']}",
+        f"- **Procurement method:** {opportunity['procurement_method']}",
+        f"- **Estimated value:** {_format_operator_money(opportunity.get('estimated_value'))}",
+        "",
+        "## Configurable Organization Alignment",
+        f"- **Alignment:** {alignment['alignment_label']}",
+        f"- **Alignment score:** `{alignment['alignment_score']:.2f}`",
+        f"- **Staffing families:** {', '.join(alignment['staffing_families']) or 'None mapped'}",
+        "",
+        "### Matched capabilities",
+    ]
+    if alignment["matched_capability_ids"]:
+        lines.extend(
+            f"- `{capability_id}` — {capability_name}"
+            for capability_id, capability_name in zip(
+                alignment["matched_capability_ids"],
+                alignment["matched_capability_names"],
+            )
+        )
+    else:
+        lines.append("- No configured capability met the alignment threshold.")
+    lines.extend([
+        "",
+        "> Alignment is screening evidence—not proof of eligibility, capacity, award probability, or final strategic fit.",
+        "",
+        "## Historical Context",
+        f"- **Frozen source period:** `{history['source_period']['start_date']}` through `{history['source_period']['end_date']}`",
+        f"- **Source records:** `{history['source_records']:,}`",
+        f"- **Matched historical records:** `{history['matched_historical_records']}`",
+        "",
+        history["interpretation"],
+        "",
+        "## Clause-Theme Triage",
+    ])
+    for item in triage["predictions"]:
+        reasons = ", ".join(item.get("reason_codes", [])) or "none"
+        lines.extend([
+            f"### `{item['passage_id']}` — {item['predicted_category']}",
+            f"- **Confidence:** `{item['confidence']:.6f}`",
+            f"- **Decision:** `{item['decision']}`",
+            f"- **Domain warning:** `{item['domain_warning']}`",
+            f"- **Truncated:** `{item['truncated']}`",
+            f"- **Reason codes:** `{reasons}`",
+        ])
+    if triage.get("domain_warning_count", 0):
+        lines.extend([
+            "",
+            "> **Domain-shift safeguard active:** confidence does not establish semantic correctness. "
+            "Use the classifications only for triage and review the original language with a qualified reviewer.",
+        ])
+    lines.extend([
+        "",
+        "## Validated Evidence",
+    ])
+    if evidence["citations"]:
+        for item in evidence["citations"]:
+            lines.extend([
+                f"- `{item['evidence_id']}` — {item['citation_text']}",
+                f"  - Source: {item['source_locator']}",
+            ])
+    else:
+        lines.append("- No registered evidence record met the configured acceptance criteria for the assessed claims.")
+    lines.extend([
+        f"- **Evidence items:** `{evidence['evidence_item_count']}`",
+        f"- **Sufficient assessments:** `{evidence['sufficient_assessment_count']}`",
+        f"- **Material conflicts:** `{evidence['material_conflict_count']}`",
+        "",
+        "> Retrieved evidence is not automatically treated as sufficient support. The registered FAR corpus is bounded and does not replace review of the complete current official acquisition record.",
+        "",
+        "## Nonbinding Recommendation",
+        f"### {recommendation['recommendation_label']}",
+        f"- **Recommendation code:** `{recommendation['recommendation_code']}`",
+        f"- **Recommendation strength:** `{recommendation['recommendation_strength']:.2f}`",
+        f"- **Required reviewer:** {recommendation['required_human_reviewer']['role_name']}",
+        f"- **Next action:** {recommendation['recommended_next_action']}",
+        "",
+        f"> {recommendation['nonbinding_disclosure']}",
+        "",
+        "### Required conditions",
+    ])
+    lines.extend(f"- {item}" for item in recommendation["conditions"])
+    lines.extend(["", "### Missing information"])
+    lines.extend(f"- {item}" for item in recommendation["missing_information"])
+    lines.extend(["", "## Unresolved Issues"])
+    for item in packet["unresolved_issues"]:
+        lines.extend([
+            f"### `{item['issue_id']}` — {item['severity'].upper()} / {item['category']}",
+            f"- **Description:** {item['description']}",
+            f"- **Required action:** {item['required_action']}",
+        ])
+    lines.extend([
+        "",
+        "## Authorized Human Disposition — Pending",
+        f"- **Required reviewer:** {packet['human_review']['required_reviewer']['role_name']}",
+        "- Accept the nonbinding recommendation",
+        "- Accept with modified conditions",
+        "- Reject the recommendation",
+        "- Defer pending information",
+        "- Escalate to another authorized reviewer",
+        "",
+        "**Required disposition record:** reviewer identity and authorized role; selected disposition; rationale of at least 20 characters; modified conditions when applicable; escalation target when applicable; decision timestamp.",
+        "",
+        "**The original system recommendation remains separate and immutable.**",
+        "",
+        "## Audit and Integrity",
+        f"- **Source case-state SHA-256:** `{packet['source_case_state_sha256']}`",
+        f"- **Packet audit events:** `{', '.join(packet['audit_event_ids'][-2:])}`",
+        f"- **Total case audit events:** `{len(packet['audit_event_ids'])}`",
+        "- **Final decision in packet:** `null`",
+        f"- **External actions performed:** `{packet['external_actions_performed']}`",
+        "",
+        "## Production Boundary",
+        "",
+        packet["production_boundary"],
+    ])
+    return "\n".join(lines)
+
+
 def launch_operator_interface(
     *,
     repo_root: Path,
@@ -528,8 +696,10 @@ def launch_operator_interface(
                 "**Matched capabilities**",
             ]
             for item in alignment["matched_capabilities"]:
+                matched_terms = ", ".join(item.get("matched_terms", [])) or "none"
                 lines.append(
-                    f"- {item['capability_name']} — `{item['match_strength']}`"
+                    f"- {item['capability_name']} — `{item['match_strength']}` "
+                    f"(matched: {matched_terms})"
                 )
             lines.extend(
                 [
@@ -576,6 +746,12 @@ def launch_operator_interface(
             lines.append(
                 "\n> Model output is triage only; it is not legal interpretation or approval."
             )
+            if any(item.get("domain_warning") for item in result["predictions"]):
+                lines.append(
+                    "> **Domain-shift safeguard active:** model confidence does not establish "
+                    "semantic correctness. Review the original language with a qualified "
+                    "reviewer before relying on any predicted theme."
+                )
             with clause_output:
                 clear_output()
                 display(Markdown("\n".join(lines)))
@@ -620,11 +796,7 @@ def launch_operator_interface(
                 raise OperatorWorkflowError("Start a case first.")
             result = workflow.run_packet()
             rec = result["recommendation"]
-            packet_path = (
-                workflow.output_dir
-                / "05_decision_support_packet"
-                / "decision_support_packet.md"
-            )
+            packet = result["packet"]
             with packet_output:
                 clear_output()
                 display(Markdown(
@@ -636,7 +808,7 @@ def launch_operator_interface(
                     f"**{rec['required_human_reviewer']['role_name']}**\n\n"
                     "---\n"
                 ))
-                display(Markdown(packet_path.read_text(encoding="utf-8")))
+                display(Markdown(_operator_packet_markdown(packet)))
             set_status()
         except Exception as exc:
             show_error(packet_output, exc)

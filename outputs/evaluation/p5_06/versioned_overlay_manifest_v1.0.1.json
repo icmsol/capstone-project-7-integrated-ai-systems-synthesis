@@ -1,12 +1,12 @@
 {
   "overlay_schema_version": "1.0.1",
   "overlay_id": "PROJECT7-P5-06-VERSIONED-OVERLAY",
-  "overlay_version": "1.0.2",
+  "overlay_version": "1.0.1",
   "parent_baseline_id": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0",
   "corrected_baseline_id": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.1",
-  "generated_at_utc": "2026-08-07T22:51:00Z",
-  "rationale": "P5-06 v1.0.1 is preserved separately. This active overlay extends post-freeze governance to the P5-12 configuration-only alignment precision correction identified by fresh-request operator acceptance; frozen scenarios, model weights, and prior evaluation evidence are not rewritten.",
-  "file_count": 21,
+  "generated_at_utc": "2026-08-07T18:25:14.099222+00:00",
+  "rationale": "Explicitly versioned post-freeze correction based on manual operator acceptance testing. Paths not listed remain governed by the P5-05 v1.0.0 inventory.",
+  "file_count": 20,
   "files": [
     {
       "path": ".github/workflows/project7-quality-gate.yml",
@@ -156,14 +156,6 @@
       "sha256": "16a2e79ab286274ecede2bc83a13f2c8543750ed15f75aed83de8bdddc21cfda",
       "change_class": "versioned_post-freeze_correction",
       "verification_mode": "strict_sha256"
-    },
-    {
-      "path": "config/profiles/icm_service_catalog.csv",
-      "bytes": 56555,
-      "sha256": "3c020df8c9931ac27fe00664e9f7e0ab72d9af9338b519c7b32beecb9384ba9a",
-      "change_class": "p5_12_operator_acceptance_precision_correction",
-      "verification_mode": "strict_sha256",
-      "change_reason": "FR-01: generic solicitation-format metadata must not independently imply RFP/RFQ preparation scope."
     }
   ],
   "frozen_scenario_inputs_changed": false,

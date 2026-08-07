@@ -1,0 +1,53 @@
+{
+  "package": "Project 7 P5-12 Operator Acceptance Hardening",
+  "version": "1.0.0",
+  "based_on_repository_commit": "e4219a5",
+  "file_count": 9,
+  "files": [
+    {
+      "path": "config/profiles/icm_service_catalog.csv",
+      "bytes": 56555,
+      "sha256": "3c020df8c9931ac27fe00664e9f7e0ab72d9af9338b519c7b32beecb9384ba9a"
+    },
+    {
+      "path": "docs/P5_12_Operator_Acceptance_Findings_and_Hardening.md",
+      "bytes": 3470,
+      "sha256": "86aa38c1d0619c35be49eea3d7a736e4f7920881d8ba0208f7aced69db6d8673"
+    },
+    {
+      "path": "outputs/evaluation/p5_06/versioned_overlay_manifest.json",
+      "bytes": 7610,
+      "sha256": "04fc1dd4414b0f260a39b7c0020db5891416cf7756fc96afb5b90cf9912cf29f"
+    },
+    {
+      "path": "outputs/evaluation/p5_06/versioned_overlay_manifest_v1.0.1.json",
+      "bytes": 7075,
+      "sha256": "f25e36ee7d7c5e9f0cad21337f73aca88ee339437696b32238869a848780c30f"
+    },
+    {
+      "path": "outputs/evaluation/p5_12/operator_hardening_findings.json",
+      "bytes": 3281,
+      "sha256": "4a2014afb114777f7847a9b2132cbb3a3e3d2e80183a4af5111248dfb2879014"
+    },
+    {
+      "path": "scripts/verify_p5_12_operator_hardening.py",
+      "bytes": 3799,
+      "sha256": "60c57882a115c93bb7543b2808bb8f894d54fe06b55ff25754698a153627cf76"
+    },
+    {
+      "path": "src/project7/operator_ui.py",
+      "bytes": 37895,
+      "sha256": "ae1dc9535fa53c7e0ad9e00619cf625c08034bd736f41dc32a026e9c1c31cf04"
+    },
+    {
+      "path": "tests/test_p5_12_operator_hardening.py",
+      "bytes": 4255,
+      "sha256": "db65206a7f1516dbe1cbbb442ab43d934b924cbaa377458b20f32634e40c85c7"
+    },
+    {
+      "path": "docs/P5_12_Hardening_Package_Manifest.json",
+      "bytes": "self",
+      "sha256": "not_applicable_self_manifest"
+    }
+  ]
+}
