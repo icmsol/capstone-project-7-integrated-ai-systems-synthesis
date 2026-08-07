@@ -1,7 +1,7 @@
 {
   "artifact_id": "PROJECT7-P5-05-VALIDATION-EVIDENCE",
-  "artifact_version": "1.0.0",
-  "validated_at_utc": "2026-08-07T00:56:23.758880+00:00",
+  "artifact_version": "1.0.1",
+  "validated_at_utc": "2026-08-07T01:17:36.074103+00:00",
   "validation_status": "PASS",
   "baseline_id": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0",
   "checks": {
@@ -18,10 +18,13 @@
     "unresolved_markers": 0,
     "workflow_upload_artifact_major": "v7",
     "deployment_steps": 0,
-    "external_actions_performed": 0
+    "external_actions_performed": 0,
+    "notebook_verification_mode": "canonical_notebook_sources",
+    "non_notebook_verification_mode": "raw_size_and_sha256"
   },
   "hosted_ci_run_1_status": "success",
   "local_quality_gate_log": "outputs/ci/p5_05-local-quality-gate.log",
   "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required.",
-  "hosted_ci_v7_run_status": "pending"
+  "hosted_ci_v7_run_status": "pending",
+  "correction_note": "The initial hosted P5-05 run exposed a raw-byte mismatch for an executed Colab notebook. The correction retains strict raw verification for normal files and uses canonical ordered notebook sources for .ipynb files, excluding only execution outputs, counts, volatile metadata, and duplicate badge-only cells."
 }

@@ -61,6 +61,28 @@ outputs/evaluation/p5_05/repository_validation_report.json
 config/system/final_evaluation_freeze_policy.json
 ```
 
+
+## Notebook Verification Policy
+
+Jupyter notebooks are frozen using a canonical source digest rather than raw
+byte size. Colab and GitHub may add execution outputs, execution counts, cell
+IDs, volatile metadata, or a duplicate badge-only cell when an executed
+notebook is saved. Those changes do not alter the executable code.
+
+The canonical digest preserves:
+
+- notebook format version;
+- ordered code-cell source;
+- ordered substantive markdown source.
+
+It excludes:
+
+- outputs and execution counts;
+- cell and Colab metadata;
+- duplicate standalone Colab badge cells.
+
+All non-notebook files continue to require exact raw size and SHA-256 matches.
+
 ## Immutability
 
 The P5-01 and P5-04 raw results, frozen scenarios, expected outcomes, thresholds, and historical failure evidence may not be silently edited after this freeze. Any material change requires a new explicit version and a complete rerun.

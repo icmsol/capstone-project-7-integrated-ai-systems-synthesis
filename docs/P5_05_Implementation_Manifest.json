@@ -1,7 +1,7 @@
 {
   "artifact_id": "PROJECT7-P5-05-FINAL-EVALUATION-FREEZE",
-  "artifact_version": "1.0.0",
-  "created_at_utc": "2026-08-07T00:56:30.610195+00:00",
+  "artifact_version": "1.0.1",
+  "created_at_utc": "2026-08-07T01:17:42.892879+00:00",
   "baseline_id": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0",
   "validation_status": "PASS",
   "repository_inventory_file_count": 942,
@@ -38,8 +38,8 @@
     },
     {
       "path": "docs/P5_05_Final_Evaluation_Freeze.md",
-      "bytes": 3035,
-      "sha256": "62e09eda65f4e6c8366e4d9640665ca87806f9a6987fbda4792e912d0774cb54"
+      "bytes": 3688,
+      "sha256": "8c212376caddfb07c4c439fd328e51ba9a6385f73a39394b672bdb7d8bcd0794"
     },
     {
       "path": "docs/P5_05_Hosted_CI_Run_1_Evidence.json",
@@ -53,8 +53,8 @@
     },
     {
       "path": "docs/P5_05_Validation_Evidence.json",
-      "bytes": 1000,
-      "sha256": "23ade61c0c038b8b5678434aed07745bd566645db1e66153c26df59432ce4875"
+      "bytes": 1457,
+      "sha256": "a6e13c7177985cc967782ca1273229c4edf9b06304a5997e2f8cfc38ffa3cde6"
     },
     {
       "path": "docs/ci/project7-quality-gate.yml",
@@ -68,13 +68,13 @@
     },
     {
       "path": "outputs/evaluation/p5_05/final_artifact_inventory.csv",
-      "bytes": 128799,
-      "sha256": "0fc620ab4d0e03229d6ee5974eaa688ce7a94e420c21299cc01fe584bb1d13bf"
+      "bytes": 153425,
+      "sha256": "624c22304e226b4c91a73eeef006e9fcf43d8041cf81fccb871f10d70a8ebb36"
     },
     {
       "path": "outputs/evaluation/p5_05/final_artifact_inventory.json",
-      "bytes": 232911,
-      "sha256": "7dcdc774ce2cb28bde311aa9beef30172f1ced6f4474b192c342d0ab2601cc2a"
+      "bytes": 349151,
+      "sha256": "f9f81ab6de8273b62cacb4455f4b7ea90e52e1c720d87a181e80b5dd78b7b2f1"
     },
     {
       "path": "outputs/evaluation/p5_05/final_evaluation_baseline.json",
@@ -103,8 +103,8 @@
     },
     {
       "path": "outputs/evaluation/p5_05/repository_validation_report.json",
-      "bytes": 613,
-      "sha256": "72b0a6cca07a08ebae3eb70abde5d9ba29420cd4962a70ef01d033e13aabc186"
+      "bytes": 1087,
+      "sha256": "3b13c57bfeb4de35831473fce32b600d9ff5901c61eaa46030d539d75abbf674"
     },
     {
       "path": "requirements_p5_05.txt",
@@ -123,8 +123,8 @@
     },
     {
       "path": "scripts/verify_p5_05_final_baseline.py",
-      "bytes": 3047,
-      "sha256": "69aa49b2e27f108099e83d909d8741cf40e6ab1e7ec333a16d1705bf25503166"
+      "bytes": 5331,
+      "sha256": "b6d08982560a680ed8afd2a50be63f9bc2f47473b9cfc8a8f3343a7e8cd60e21"
     },
     {
       "path": "tests/__init__.py",
@@ -138,14 +138,20 @@
     },
     {
       "path": "tests/test_final_evaluation_freeze.py",
-      "bytes": 5596,
-      "sha256": "e675f853a53791e3a5b5ff8732201f4ca8a1f0e0233b5942069ed7f30b700e7d"
+      "bytes": 6143,
+      "sha256": "3706f61c0ea3d3174a35db2ac0ca8f2dfb90812567c83e4571a936c603f366fa"
     },
     {
       "path": "tests/verify_p5_05_final_baseline.py",
-      "bytes": 3047,
-      "sha256": "69aa49b2e27f108099e83d909d8741cf40e6ab1e7ec333a16d1705bf25503166"
+      "bytes": 5331,
+      "sha256": "b6d08982560a680ed8afd2a50be63f9bc2f47473b9cfc8a8f3343a7e8cd60e21"
     }
   ],
-  "hosted_ci_v7_run_status": "pending"
+  "hosted_ci_v7_run_status": "pending",
+  "correction": {
+    "type": "notebook verification normalization",
+    "hosted_failure_impact": "none on evaluation results",
+    "verification_mode": "canonical_notebook_sources"
+  },
+  "file_count": 28
 }

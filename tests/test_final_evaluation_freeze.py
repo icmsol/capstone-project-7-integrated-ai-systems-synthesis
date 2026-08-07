@@ -109,8 +109,23 @@ class FinalEvaluationFreezeTests(unittest.TestCase):
 
     def test_inventory_is_substantial_and_versioned(self):
         self.assertGreater(INVENTORY["file_count"], 900)
-        self.assertEqual(INVENTORY["inventory_schema_version"], "1.0.0")
+        self.assertEqual(INVENTORY["inventory_schema_version"], "1.1.0")
         self.assertEqual(len(INVENTORY["repository_state_digest"]), 64)
+
+    def test_notebooks_use_canonical_source_verification(self):
+        notebooks = [
+            item
+            for item in INVENTORY["files"]
+            if item["path"].endswith(".ipynb")
+        ]
+        self.assertGreaterEqual(len(notebooks), 1)
+        for item in notebooks:
+            self.assertEqual(
+                item["verification_mode"],
+                "canonical_notebook_sources",
+            )
+            self.assertEqual(len(item["canonical_sha256"]), 64)
+            self.assertFalse(item["raw_verification_enforced"])
 
     def test_hosted_run_one_is_preserved(self):
         self.assertEqual(HOSTED_RUN_1["status"], "success")

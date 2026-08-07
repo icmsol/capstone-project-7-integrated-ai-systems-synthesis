@@ -1,7 +1,7 @@
 {
-  "validation_schema_version": "1.0.0",
+  "validation_schema_version": "1.0.1",
   "baseline_id": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0",
-  "validated_at_utc": "2026-08-07T00:55:33.929618+00:00",
+  "validated_at_utc": "2026-08-07T01:17:36.074363+00:00",
   "repository_files_scanned": 942,
   "inventory_file_count": 942,
   "credential_pattern_hits": [],
@@ -14,5 +14,13 @@
   "workflow_permissions": "contents: read",
   "deployment_steps": 0,
   "validation_status": "PASS",
-  "external_actions_performed": 0
+  "external_actions_performed": 0,
+  "notebook_verification_mode": "canonical_notebook_sources",
+  "non_notebook_verification_mode": "raw_size_and_sha256",
+  "hosted_run_2_initial_failure": {
+    "failed_path": "notebooks/P4_03_Bounded_Clause_Triage_Validation.ipynb",
+    "failure_type": "raw size mismatch",
+    "root_cause": "The inventory captured an unexecuted notebook while GitHub contained the executed Colab version with additional outputs and metadata.",
+    "evaluation_result_impact": "none"
+  }
 }

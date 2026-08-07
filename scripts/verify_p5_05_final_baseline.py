@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Verify the frozen Project 7 final evaluation baseline."""
+"""Verify the frozen Project 7 final evaluation baseline.
+
+Normal files use strict raw size and SHA-256 verification. Jupyter notebooks use
+a canonical source digest because Colab/GitHub may add execution outputs,
+execution counts, IDs, volatile metadata, or a duplicate badge-only cell without
+changing the executable notebook source.
+"""
 
 from __future__ import annotations
 
@@ -41,6 +47,49 @@ def sha256_file(path):
     return digest.hexdigest()
 
 
+def canonical_notebook_sha256(path):
+    notebook = json.loads(path.read_text(encoding="utf-8"))
+    normalized_cells = []
+
+    for cell in notebook.get("cells", []):
+        cell_type = cell.get("cell_type", "")
+        source_value = cell.get("source", [])
+        if isinstance(source_value, list):
+            source = "".join(str(item) for item in source_value)
+        else:
+            source = str(source_value)
+
+        badge_only = (
+            cell_type == "markdown"
+            and "colab-badge.svg" in source
+            and source.strip().startswith("<a ")
+            and "\n#" not in source
+            and not source.lstrip().startswith("#")
+        )
+        if badge_only:
+            continue
+
+        normalized_cells.append(
+            {
+                "cell_type": cell_type,
+                "source": source.rstrip(),
+            }
+        )
+
+    payload = {
+        "nbformat": notebook.get("nbformat"),
+        "nbformat_minor": notebook.get("nbformat_minor"),
+        "cells": normalized_cells,
+    }
+    encoded = json.dumps(
+        payload,
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
+    ).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
+
+
 def main():
     baseline = json.loads(BASELINE_PATH.read_text(encoding="utf-8"))
     schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
@@ -64,14 +113,32 @@ def main():
     ):
         raise RuntimeError("Final evaluation results changed.")
 
+    raw_verified = 0
+    notebook_verified = 0
+
     for item in inventory["files"]:
         path = ROOT / item["path"]
         if not path.is_file():
             raise FileNotFoundError(path)
-        if path.stat().st_size != item["bytes"]:
-            raise RuntimeError(f"Size mismatch: {item['path']}")
-        if sha256_file(path) != item["sha256"]:
-            raise RuntimeError(f"Checksum mismatch: {item['path']}")
+
+        mode = item.get("verification_mode", "raw_size_and_sha256")
+        if mode == "canonical_notebook_sources":
+            observed = canonical_notebook_sha256(path)
+            if observed != item["canonical_sha256"]:
+                raise RuntimeError(
+                    f"Canonical notebook source mismatch: {item['path']}"
+                )
+            notebook_verified += 1
+        elif mode == "raw_size_and_sha256":
+            if path.stat().st_size != item["bytes"]:
+                raise RuntimeError(f"Size mismatch: {item['path']}")
+            if sha256_file(path) != item["sha256"]:
+                raise RuntimeError(f"Checksum mismatch: {item['path']}")
+            raw_verified += 1
+        else:
+            raise RuntimeError(
+                f"Unsupported verification mode for {item['path']}: {mode}"
+            )
 
     if validation["validation_status"] != "PASS":
         raise RuntimeError("Repository validation did not pass.")
@@ -83,6 +150,8 @@ def main():
     print(f"Frozen baseline: {baseline['baseline_id']}")
     print("Cases: 19/19")
     print("Assertions: 262/262")
+    print(f"Raw files verified: {raw_verified}")
+    print(f"Canonical notebooks verified: {notebook_verified}")
     print(f"Inventory files verified: {inventory['file_count']}")
     print(f"Evidence areas verified: {evidence_map['evidence_count']}")
     print("Repository validation: PASS")
