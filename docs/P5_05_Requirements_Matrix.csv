@@ -1,0 +1,11 @@
+requirement_id,requirement,implementation,validation,status
+P5-05-R01,Freeze the refined evaluation baseline.,Versioned baseline records the final 19-case and 262-assertion results.,"19 PASS, 0 PARTIAL, 0 FAIL; 262/262 assertions.",Implemented
+P5-05-R02,Preserve final metrics and before/after evidence.,Final metric summary references P5-02 and P5-04 source artifacts.,15 final metrics preserved.,Implemented
+P5-05-R03,Preserve configuration-portability evidence.,"Final baseline records both profiles, both opportunities, same code and controls.",4 profile runs preserved.,Implemented
+P5-05-R04,Create a complete evidence map.,"Paper and presentation evidence locations are mapped across architecture, implementation, evaluation, and CI.",19 evidence areas mapped.,Implemented
+P5-05-R05,Create a repository checksum inventory.,"Every in-scope repository file is inventoried with path, size, category, and SHA-256.",Generated from the reconstructed final baseline.,Implemented
+P5-05-R06,Verify repository cleanliness.,"Credential, file-size, merge-marker, traceback, placeholder, and required-file checks are automated.",All checks pass locally.,Implemented
+P5-05-R07,Record hosted CI evidence.,"Run #1 success, duration, artifact count, warning, and maintenance response are preserved.",Run #1 evidence recorded.,Implemented
+P5-05-R08,Remove the Node.js 20 deprecation warning.,Workflow upgrades upload-artifact from v4 to v7.,Local workflow tests pass; hosted rerun pending.,Implemented
+P5-05-R09,Preserve immutable evidence boundaries.,"Freeze policy prohibits editing frozen results, thresholds, and historical evidence.",Policy is versioned and machine-readable.,Implemented
+P5-05-R10,Provide repeatable final validation.,"Final verifier, tests, local quality-gate log, and hosted workflow are included.",Local validation passes; hosted run #2 required for closure.,Implemented

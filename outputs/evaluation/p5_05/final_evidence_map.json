@@ -1,0 +1,178 @@
+{
+  "map_schema_version": "1.0.0",
+  "baseline_id": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0",
+  "evidence_count": 19,
+  "evidence": [
+    {
+      "evidence_id": "E-001",
+      "evidence_area": "Project purpose and repository overview",
+      "primary_path": "README.md",
+      "supporting_paths": "docs/Integrated_System_Architecture.md",
+      "paper_use": "Problem, scope, boundaries",
+      "presentation_use": "Opening and system overview",
+      "freeze_required": true
+    },
+    {
+      "evidence_id": "E-002",
+      "evidence_area": "Integrated architecture and use cases",
+      "primary_path": "docs/Integrated_System_Architecture.md",
+      "supporting_paths": "figures/",
+      "paper_use": "Architecture and design rationale",
+      "presentation_use": "Architecture and UML diagrams",
+      "freeze_required": true
+    },
+    {
+      "evidence_id": "E-003",
+      "evidence_area": "Shared data contracts",
+      "primary_path": "docs/Shared_Data_Contracts.md",
+      "supporting_paths": "config/schemas/",
+      "paper_use": "System integration contracts",
+      "presentation_use": "Component interoperability",
+      "freeze_required": true
+    },
+    {
+      "evidence_id": "E-004",
+      "evidence_area": "Orchestration and component contracts",
+      "primary_path": "docs/Orchestration_and_Component_Contracts.md",
+      "supporting_paths": "config/contracts/",
+      "paper_use": "Workflow control and interfaces",
+      "presentation_use": "Integrated component flow",
+      "freeze_required": true
+    },
+    {
+      "evidence_id": "E-005",
+      "evidence_area": "Safeguards and fail-closed behavior",
+      "primary_path": "docs/Safeguards_and_Fail_Closed_Behavior.md",
+      "supporting_paths": "config/system/safeguard_policy.json;config/system/safeguard_reason_codes.json",
+      "paper_use": "Responsible AI and risk controls",
+      "presentation_use": "Safety and governance",
+      "freeze_required": true
+    },
+    {
+      "evidence_id": "E-006",
+      "evidence_area": "Prior-project traceability",
+      "primary_path": "docs/Prior_Project_Traceability_Matrix.md",
+      "supporting_paths": "docs/Prior_Project_Traceability_Matrix.csv;docs/Prior_Project_Traceability_Matrix.json",
+      "paper_use": "Synthesis of prior capstones",
+      "presentation_use": "Portfolio integration",
+      "freeze_required": true
+    },
+    {
+      "evidence_id": "E-007",
+      "evidence_area": "Operational workload and frozen scenarios",
+      "primary_path": "docs/Representative_Operational_Workload.md",
+      "supporting_paths": "docs/Frozen_Scenario_Set_and_Evaluator_Guide.md;data/scenarios/frozen/v1.0.1/",
+      "paper_use": "Evaluation design",
+      "presentation_use": "Scenario coverage",
+      "freeze_required": true
+    },
+    {
+      "evidence_id": "E-008",
+      "evidence_area": "Opportunity intake and provenance",
+      "primary_path": "docs/P4_01_Opportunity_Intake_and_Provenance.md",
+      "supporting_paths": "outputs/implementation/p4_01/",
+      "paper_use": "Implementation",
+      "presentation_use": "Major function 1",
+      "freeze_required": true
+    },
+    {
+      "evidence_id": "E-009",
+      "evidence_area": "Alignment and historical context",
+      "primary_path": "docs/P4_02_Configurable_Alignment_and_Historical_Context.md",
+      "supporting_paths": "outputs/implementation/p4_02/",
+      "paper_use": "Implementation and configurability",
+      "presentation_use": "Major function 2",
+      "freeze_required": true
+    },
+    {
+      "evidence_id": "E-010",
+      "evidence_area": "Bounded clause-theme inference",
+      "primary_path": "docs/P4_03_Bounded_Clause_Theme_Inference.md",
+      "supporting_paths": "models/project4/;notebooks/P4_03_Bounded_Clause_Triage_Validation.ipynb",
+      "paper_use": "Deep-learning integration",
+      "presentation_use": "Major function 3",
+      "freeze_required": true
+    },
+    {
+      "evidence_id": "E-011",
+      "evidence_area": "Evidence-grounded workflow and escalation",
+      "primary_path": "docs/P4_04_Evidence_Grounded_Agent_Workflow.md",
+      "supporting_paths": "outputs/implementation/p4_04/;audit/p4_04_tool_trace.jsonl",
+      "paper_use": "Agentic integration and safeguards",
+      "presentation_use": "Major function 4",
+      "freeze_required": true
+    },
+    {
+      "evidence_id": "E-012",
+      "evidence_area": "Integrated human decision-support packet",
+      "primary_path": "docs/P4_05_Integrated_Decision_Support_Packet.md",
+      "supporting_paths": "outputs/implementation/p4_05/",
+      "paper_use": "Recommendation and human authority",
+      "presentation_use": "Major functions 5 and 6",
+      "freeze_required": true
+    },
+    {
+      "evidence_id": "E-013",
+      "evidence_area": "Audit and reproducibility",
+      "primary_path": "docs/P4_06_Audit_and_Reproducibility.md",
+      "supporting_paths": "outputs/p4_06/;audit/p4_06_consolidated_case_ledger.jsonl",
+      "paper_use": "Reproducibility and auditability",
+      "presentation_use": "Governance evidence",
+      "freeze_required": true
+    },
+    {
+      "evidence_id": "E-014",
+      "evidence_area": "Frozen evaluation run",
+      "primary_path": "docs/P5_01_Frozen_Evaluation_Run.md",
+      "supporting_paths": "outputs/evaluation/p5_01/",
+      "paper_use": "Raw evaluation",
+      "presentation_use": "Evaluation setup",
+      "freeze_required": true
+    },
+    {
+      "evidence_id": "E-015",
+      "evidence_area": "System-level metrics",
+      "primary_path": "docs/P5_02_System_Level_Metrics.md",
+      "supporting_paths": "outputs/evaluation/p5_02/",
+      "paper_use": "Quantitative evaluation",
+      "presentation_use": "Metrics",
+      "freeze_required": true
+    },
+    {
+      "evidence_id": "E-016",
+      "evidence_area": "Failure analysis",
+      "primary_path": "docs/P5_03_Failure_and_Unexpected_Behavior_Analysis.md",
+      "supporting_paths": "outputs/evaluation/p5_03/",
+      "paper_use": "Failure modes and responsible refinement",
+      "presentation_use": "Lessons and limitations",
+      "freeze_required": true
+    },
+    {
+      "evidence_id": "E-017",
+      "evidence_area": "Refined evaluation and portability",
+      "primary_path": "docs/P5_04_Refinement_Configuration_Portability_and_CI.md",
+      "supporting_paths": "outputs/evaluation/p5_04/",
+      "paper_use": "Refinement and portability",
+      "presentation_use": "Before-and-after results",
+      "freeze_required": true
+    },
+    {
+      "evidence_id": "E-018",
+      "evidence_area": "Continuous integration",
+      "primary_path": ".github/workflows/project7-quality-gate.yml",
+      "supporting_paths": "docs/P5_04_CI_Quality_Gate.md;docs/P5_05_Hosted_CI_Run_1_Evidence.json",
+      "paper_use": "Automated reproducibility control",
+      "presentation_use": "Professional engineering practices",
+      "freeze_required": true
+    },
+    {
+      "evidence_id": "E-019",
+      "evidence_area": "Final evaluation freeze",
+      "primary_path": "docs/P5_05_Final_Evaluation_Freeze.md",
+      "supporting_paths": "outputs/evaluation/p5_05/",
+      "paper_use": "Final evaluation baseline",
+      "presentation_use": "Final results and evidence map",
+      "freeze_required": true
+    }
+  ]
+}

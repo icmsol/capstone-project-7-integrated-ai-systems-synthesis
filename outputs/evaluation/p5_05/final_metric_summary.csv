@@ -1,0 +1,16 @@
+metric_id,metric_name,numerator,denominator,percentage,source
+FM-01,Frozen cases executed,19,19,100.0,outputs/evaluation/p5_04/refined_run_manifest.json
+FM-02,Full-case conformance,19,19,100.0,outputs/evaluation/p5_04/before_after_metrics.json
+FM-03,Assertion conformance,262,262,100.0,outputs/evaluation/p5_04/refined_run_manifest.json
+FM-04,Critical assertion conformance,167,167,100.0,outputs/evaluation/p5_02/system_metrics.json and P5-04 zero-regression evidence
+FM-05,Major assertion conformance,95,95,100.0,outputs/evaluation/p5_02/system_metrics.json and P5-04 262/262 evidence
+FM-06,Recommendation screening agreement,13,13,100.0,outputs/evaluation/p5_02/system_metrics.json and P5-04 zero-regression evidence
+FM-07,Terminal outcome agreement,19,19,100.0,outputs/evaluation/p5_02/system_metrics.json and P5-04 zero-regression evidence
+FM-08,Human routing agreement,19,19,100.0,outputs/evaluation/p5_02/system_metrics.json and P5-04 zero-regression evidence
+FM-09,Escalation recall,3,3,100.0,outputs/evaluation/p5_02/system_metrics.json and P5-04 zero-regression evidence
+FM-10,Fail-closed recall,6,6,100.0,outputs/evaluation/p5_02/system_metrics.json and P5-04 zero-regression evidence
+FM-11,Citation and evidence-control agreement,5,5,100.0,outputs/evaluation/p5_02/system_metrics.json and P5-04 zero-regression evidence
+FM-12,Traceability completeness,19,19,100.0,outputs/evaluation/p5_02/system_metrics.json and P5-04 zero-regression evidence
+FM-13,Unsupported-claim prevention,19,19,100.0,outputs/evaluation/p5_02/system_metrics.json and P5-04 zero-regression evidence
+FM-14,Audit-event classification conformance,19,19,100.0,outputs/evaluation/p5_04/before_after_metrics.json
+FM-15,Primary component attribution agreement,19,19,100.0,outputs/evaluation/p5_04/before_after_metrics.json

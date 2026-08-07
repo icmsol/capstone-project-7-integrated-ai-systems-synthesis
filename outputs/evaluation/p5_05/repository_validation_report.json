@@ -1,0 +1,18 @@
+{
+  "validation_schema_version": "1.0.0",
+  "baseline_id": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0",
+  "validated_at_utc": "2026-08-07T00:55:33.929618+00:00",
+  "repository_files_scanned": 942,
+  "inventory_file_count": 942,
+  "credential_pattern_hits": [],
+  "files_over_100_mb": [],
+  "merge_conflict_marker_hits": [],
+  "notebook_traceback_outputs": [],
+  "unresolved_implementation_markers": [],
+  "missing_required_paths": [],
+  "workflow_upload_artifact_major": "v7",
+  "workflow_permissions": "contents: read",
+  "deployment_steps": 0,
+  "validation_status": "PASS",
+  "external_actions_performed": 0
+}

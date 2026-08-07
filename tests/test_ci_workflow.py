@@ -1,4 +1,4 @@
-"""Structural tests for the Project 7 GitHub Actions quality gate."""
+"""Structural tests for the final Project 7 GitHub Actions quality gate."""
 
 from __future__ import annotations
 
@@ -6,6 +6,7 @@ import unittest
 from pathlib import Path
 
 import yaml
+
 
 ROOT = Path(__file__).resolve().parents[1]
 WORKFLOW_PATH = ROOT / ".github/workflows/project7-quality-gate.yml"
@@ -26,12 +27,13 @@ class CIWorkflowTests(unittest.TestCase):
     def test_current_official_action_majors(self):
         self.assertIn("actions/checkout@v5", TEXT)
         self.assertIn("actions/setup-python@v6", TEXT)
-        self.assertIn("actions/upload-artifact@v4", TEXT)
+        self.assertIn("actions/upload-artifact@v7", TEXT)
+        self.assertNotIn("actions/upload-artifact@v4", TEXT)
 
     def test_pinned_python_and_dependency_cache(self):
         self.assertIn('python-version: "3.12"', TEXT)
         self.assertIn("cache: pip", TEXT)
-        self.assertIn("requirements_p5_04.txt", TEXT)
+        self.assertIn("requirements_p5_05.txt", TEXT)
 
     def test_final_quality_verifiers_are_run(self):
         for script in [
@@ -40,12 +42,14 @@ class CIWorkflowTests(unittest.TestCase):
             "verify_p5_03_failure_analysis.py",
             "verify_p5_04_refinement.py",
             "verify_p5_04_portability.py",
+            "verify_p5_05_final_baseline.py",
         ]:
             self.assertIn(script, TEXT)
 
-    def test_evidence_is_uploaded(self):
-        self.assertIn("outputs/ci/project7-quality-gate.log", TEXT)
-        self.assertIn("outputs/evaluation/p5_04/", TEXT)
+    def test_hosted_metadata_and_final_evidence_are_uploaded(self):
+        self.assertIn("generate_ci_run_metadata.py", TEXT)
+        self.assertIn("outputs/ci/hosted-run-metadata.json", TEXT)
+        self.assertIn("outputs/evaluation/p5_05/", TEXT)
         self.assertIn("retention-days: 30", TEXT)
 
     def test_no_deployment_or_publish_step(self):
@@ -53,6 +57,7 @@ class CIWorkflowTests(unittest.TestCase):
         self.assertNotIn("deploy", lowered)
         self.assertNotIn("pypi", lowered)
         self.assertNotIn("docker push", lowered)
+        self.assertNotIn("contents: write", lowered)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,20 @@
+evidence_id,evidence_area,primary_path,supporting_paths,paper_use,presentation_use,freeze_required
+E-001,Project purpose and repository overview,README.md,docs/Integrated_System_Architecture.md,"Problem, scope, boundaries",Opening and system overview,True
+E-002,Integrated architecture and use cases,docs/Integrated_System_Architecture.md,figures/,Architecture and design rationale,Architecture and UML diagrams,True
+E-003,Shared data contracts,docs/Shared_Data_Contracts.md,config/schemas/,System integration contracts,Component interoperability,True
+E-004,Orchestration and component contracts,docs/Orchestration_and_Component_Contracts.md,config/contracts/,Workflow control and interfaces,Integrated component flow,True
+E-005,Safeguards and fail-closed behavior,docs/Safeguards_and_Fail_Closed_Behavior.md,config/system/safeguard_policy.json;config/system/safeguard_reason_codes.json,Responsible AI and risk controls,Safety and governance,True
+E-006,Prior-project traceability,docs/Prior_Project_Traceability_Matrix.md,docs/Prior_Project_Traceability_Matrix.csv;docs/Prior_Project_Traceability_Matrix.json,Synthesis of prior capstones,Portfolio integration,True
+E-007,Operational workload and frozen scenarios,docs/Representative_Operational_Workload.md,docs/Frozen_Scenario_Set_and_Evaluator_Guide.md;data/scenarios/frozen/v1.0.1/,Evaluation design,Scenario coverage,True
+E-008,Opportunity intake and provenance,docs/P4_01_Opportunity_Intake_and_Provenance.md,outputs/implementation/p4_01/,Implementation,Major function 1,True
+E-009,Alignment and historical context,docs/P4_02_Configurable_Alignment_and_Historical_Context.md,outputs/implementation/p4_02/,Implementation and configurability,Major function 2,True
+E-010,Bounded clause-theme inference,docs/P4_03_Bounded_Clause_Theme_Inference.md,models/project4/;notebooks/P4_03_Bounded_Clause_Triage_Validation.ipynb,Deep-learning integration,Major function 3,True
+E-011,Evidence-grounded workflow and escalation,docs/P4_04_Evidence_Grounded_Agent_Workflow.md,outputs/implementation/p4_04/;audit/p4_04_tool_trace.jsonl,Agentic integration and safeguards,Major function 4,True
+E-012,Integrated human decision-support packet,docs/P4_05_Integrated_Decision_Support_Packet.md,outputs/implementation/p4_05/,Recommendation and human authority,Major functions 5 and 6,True
+E-013,Audit and reproducibility,docs/P4_06_Audit_and_Reproducibility.md,outputs/p4_06/;audit/p4_06_consolidated_case_ledger.jsonl,Reproducibility and auditability,Governance evidence,True
+E-014,Frozen evaluation run,docs/P5_01_Frozen_Evaluation_Run.md,outputs/evaluation/p5_01/,Raw evaluation,Evaluation setup,True
+E-015,System-level metrics,docs/P5_02_System_Level_Metrics.md,outputs/evaluation/p5_02/,Quantitative evaluation,Metrics,True
+E-016,Failure analysis,docs/P5_03_Failure_and_Unexpected_Behavior_Analysis.md,outputs/evaluation/p5_03/,Failure modes and responsible refinement,Lessons and limitations,True
+E-017,Refined evaluation and portability,docs/P5_04_Refinement_Configuration_Portability_and_CI.md,outputs/evaluation/p5_04/,Refinement and portability,Before-and-after results,True
+E-018,Continuous integration,.github/workflows/project7-quality-gate.yml,docs/P5_04_CI_Quality_Gate.md;docs/P5_05_Hosted_CI_Run_1_Evidence.json,Automated reproducibility control,Professional engineering practices,True
+E-019,Final evaluation freeze,docs/P5_05_Final_Evaluation_Freeze.md,outputs/evaluation/p5_05/,Final evaluation baseline,Final results and evidence map,True

@@ -1,0 +1,18 @@
+{
+  "evidence_schema_version": "1.0.0",
+  "workflow_name": "Project 7 Quality Gate",
+  "run_number": 1,
+  "event": "workflow_dispatch",
+  "branch": "main",
+  "commit_short_sha": "d42ccf3",
+  "status": "success",
+  "total_duration_seconds": 24,
+  "job_name": "Validate refined integrated prototype",
+  "job_status": "success",
+  "artifact_count": 1,
+  "warning_count": 1,
+  "warning_summary": "actions/upload-artifact@v4 targets Node.js 20 and was forced by the GitHub-hosted runner to execute on Node.js 24.",
+  "evidence_source": "User-provided GitHub Actions screenshot",
+  "machine_retrieved": false,
+  "maintenance_response": "Upgrade the workflow to actions/upload-artifact@v7 and rerun the quality gate before P5-05 closure."
+}

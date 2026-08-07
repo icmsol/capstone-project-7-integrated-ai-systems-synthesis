@@ -1,0 +1,130 @@
+{
+  "summary_schema_version": "1.0.0",
+  "baseline_id": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0",
+  "metric_count": 15,
+  "metrics": [
+    {
+      "metric_id": "FM-01",
+      "metric_name": "Frozen cases executed",
+      "numerator": 19,
+      "denominator": 19,
+      "percentage": 100.0,
+      "source": "outputs/evaluation/p5_04/refined_run_manifest.json"
+    },
+    {
+      "metric_id": "FM-02",
+      "metric_name": "Full-case conformance",
+      "numerator": 19,
+      "denominator": 19,
+      "percentage": 100.0,
+      "source": "outputs/evaluation/p5_04/before_after_metrics.json"
+    },
+    {
+      "metric_id": "FM-03",
+      "metric_name": "Assertion conformance",
+      "numerator": 262,
+      "denominator": 262,
+      "percentage": 100.0,
+      "source": "outputs/evaluation/p5_04/refined_run_manifest.json"
+    },
+    {
+      "metric_id": "FM-04",
+      "metric_name": "Critical assertion conformance",
+      "numerator": 167,
+      "denominator": 167,
+      "percentage": 100.0,
+      "source": "outputs/evaluation/p5_02/system_metrics.json and P5-04 zero-regression evidence"
+    },
+    {
+      "metric_id": "FM-05",
+      "metric_name": "Major assertion conformance",
+      "numerator": 95,
+      "denominator": 95,
+      "percentage": 100.0,
+      "source": "outputs/evaluation/p5_02/system_metrics.json and P5-04 262/262 evidence"
+    },
+    {
+      "metric_id": "FM-06",
+      "metric_name": "Recommendation screening agreement",
+      "numerator": 13,
+      "denominator": 13,
+      "percentage": 100.0,
+      "source": "outputs/evaluation/p5_02/system_metrics.json and P5-04 zero-regression evidence"
+    },
+    {
+      "metric_id": "FM-07",
+      "metric_name": "Terminal outcome agreement",
+      "numerator": 19,
+      "denominator": 19,
+      "percentage": 100.0,
+      "source": "outputs/evaluation/p5_02/system_metrics.json and P5-04 zero-regression evidence"
+    },
+    {
+      "metric_id": "FM-08",
+      "metric_name": "Human routing agreement",
+      "numerator": 19,
+      "denominator": 19,
+      "percentage": 100.0,
+      "source": "outputs/evaluation/p5_02/system_metrics.json and P5-04 zero-regression evidence"
+    },
+    {
+      "metric_id": "FM-09",
+      "metric_name": "Escalation recall",
+      "numerator": 3,
+      "denominator": 3,
+      "percentage": 100.0,
+      "source": "outputs/evaluation/p5_02/system_metrics.json and P5-04 zero-regression evidence"
+    },
+    {
+      "metric_id": "FM-10",
+      "metric_name": "Fail-closed recall",
+      "numerator": 6,
+      "denominator": 6,
+      "percentage": 100.0,
+      "source": "outputs/evaluation/p5_02/system_metrics.json and P5-04 zero-regression evidence"
+    },
+    {
+      "metric_id": "FM-11",
+      "metric_name": "Citation and evidence-control agreement",
+      "numerator": 5,
+      "denominator": 5,
+      "percentage": 100.0,
+      "source": "outputs/evaluation/p5_02/system_metrics.json and P5-04 zero-regression evidence"
+    },
+    {
+      "metric_id": "FM-12",
+      "metric_name": "Traceability completeness",
+      "numerator": 19,
+      "denominator": 19,
+      "percentage": 100.0,
+      "source": "outputs/evaluation/p5_02/system_metrics.json and P5-04 zero-regression evidence"
+    },
+    {
+      "metric_id": "FM-13",
+      "metric_name": "Unsupported-claim prevention",
+      "numerator": 19,
+      "denominator": 19,
+      "percentage": 100.0,
+      "source": "outputs/evaluation/p5_02/system_metrics.json and P5-04 zero-regression evidence"
+    },
+    {
+      "metric_id": "FM-14",
+      "metric_name": "Audit-event classification conformance",
+      "numerator": 19,
+      "denominator": 19,
+      "percentage": 100.0,
+      "source": "outputs/evaluation/p5_04/before_after_metrics.json"
+    },
+    {
+      "metric_id": "FM-15",
+      "metric_name": "Primary component attribution agreement",
+      "numerator": 19,
+      "denominator": 19,
+      "percentage": 100.0,
+      "source": "outputs/evaluation/p5_04/before_after_metrics.json"
+    }
+  ],
+  "regression_case_ids": [],
+  "external_actions_performed": 0,
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

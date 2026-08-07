@@ -1,0 +1,35 @@
+{
+  "policy_schema_version": "1.0.0",
+  "policy_id": "PROJECT7-P5-05-FINAL-FREEZE-POLICY",
+  "baseline_id": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0",
+  "freeze_version": "1.0.0",
+  "frozen_scenario_version": "1.0.1",
+  "immutable_evidence_groups": [
+    "P5-01 raw frozen evaluation outputs",
+    "P5-02 system-level metric outputs",
+    "P5-03 failure-analysis outputs",
+    "P5-04 refined evaluation outputs",
+    "P5-04 configuration-portability outputs",
+    "P5-05 final baseline, evidence map, and checksum inventory"
+  ],
+  "permitted_post_freeze_changes": [
+    "explicitly versioned documentation corrections",
+    "explicitly versioned CI maintenance",
+    "paper and presentation development that references the frozen baseline"
+  ],
+  "prohibited_post_freeze_changes": [
+    "editing frozen cases or expected outcomes",
+    "editing P5-01 or P5-04 raw results",
+    "changing model or evidence thresholds without a new evaluation version",
+    "replacing failed or partial historical evidence",
+    "claiming production readiness or autonomous final authority"
+  ],
+  "hosted_ci_acceptance": {
+    "workflow_name": "Project 7 Quality Gate",
+    "required_branch": "main",
+    "required_status": "success",
+    "required_artifact_count_minimum": 1,
+    "final_confirmation_method": "GitHub Actions run and retained workflow artifact"
+  },
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

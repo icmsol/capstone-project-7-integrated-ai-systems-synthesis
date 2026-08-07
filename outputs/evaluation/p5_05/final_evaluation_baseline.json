@@ -1,0 +1,83 @@
+{
+  "baseline_schema_version": "1.0.0",
+  "baseline_id": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0",
+  "freeze_version": "1.0.0",
+  "frozen_at_utc": "2026-08-07T00:55:33.802170+00:00",
+  "baseline_status": "frozen",
+  "source_runs": {
+    "original_frozen_run_id": "P5-01-20260805T231721Z",
+    "refined_run_id": "P5-04-20260806T175242Z",
+    "hosted_ci_run_1": 1,
+    "hosted_ci_v7_run_required_for_p5_05_closure": true
+  },
+  "evaluation_results": {
+    "cases_executed": 19,
+    "cases_passed": 19,
+    "cases_partial": 0,
+    "cases_failed": 0,
+    "assertions_evaluated": 262,
+    "assertions_passed": 262,
+    "critical_assertions_passed": 167,
+    "critical_assertions_total": 167,
+    "major_assertions_passed": 95,
+    "major_assertions_total": 95,
+    "improved_case_ids": [
+      "TC-03",
+      "TC-05",
+      "TC-10",
+      "TC-14",
+      "TC-15",
+      "TC-18"
+    ],
+    "regression_case_ids": [],
+    "frozen_inputs_changed": false
+  },
+  "safety_and_governance_results": {
+    "recommendation_screening_agreement": "13/13",
+    "terminal_outcome_agreement": "19/19",
+    "human_routing_agreement": "19/19",
+    "escalation_recall": "3/3",
+    "fail_closed_recall": "6/6",
+    "citation_and_evidence_control_agreement": "5/5",
+    "traceability_completeness": "19/19",
+    "unsupported_claim_prevention": "19/19",
+    "audit_event_classification": "19/19",
+    "primary_component_attribution": "19/19",
+    "external_actions_performed": 0
+  },
+  "configuration_portability": {
+    "opportunity_count": 2,
+    "profile_count": 2,
+    "run_count": 4,
+    "same_executable_code": true,
+    "same_schemas": true,
+    "same_fixed_safeguards": true,
+    "profile_specific_alignment_and_recommendations": true,
+    "final_decisions_created": 0,
+    "external_actions_performed": 0
+  },
+  "ci_baseline": {
+    "workflow": ".github/workflows/project7-quality-gate.yml",
+    "checkout_action": "actions/checkout@v5",
+    "python_action": "actions/setup-python@v6",
+    "artifact_action": "actions/upload-artifact@v7",
+    "python_version": "3.12",
+    "permissions": "contents: read",
+    "deployment_steps": 0,
+    "hosted_run_1_status": "success",
+    "hosted_run_1_duration_seconds": 24,
+    "hosted_run_1_artifact_count": 1
+  },
+  "evidence_map_path": "outputs/evaluation/p5_05/final_evidence_map.json",
+  "artifact_inventory_path": "outputs/evaluation/p5_05/final_artifact_inventory.json",
+  "repository_validation_path": "outputs/evaluation/p5_05/repository_validation_report.json",
+  "immutability_policy_path": "config/system/final_evaluation_freeze_policy.json",
+  "limitations": [
+    "The evaluation is a controlled frozen-suite assessment and does not establish production readiness or live-source completeness.",
+    "The Project 4 classifier remains bounded clause-theme triage and does not provide legal interpretation.",
+    "Recommendations remain nonbinding and final decisions require an authorized human.",
+    "A hosted run using upload-artifact@v7 must succeed before P5-05 process closure."
+  ],
+  "external_actions_performed": 0,
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

@@ -1,0 +1,151 @@
+{
+  "artifact_id": "PROJECT7-P5-05-FINAL-EVALUATION-FREEZE",
+  "artifact_version": "1.0.0",
+  "created_at_utc": "2026-08-07T00:56:30.610195+00:00",
+  "baseline_id": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0",
+  "validation_status": "PASS",
+  "repository_inventory_file_count": 942,
+  "evidence_area_count": 19,
+  "local_quality_gate_command_count": 14,
+  "unit_test_count": 37,
+  "hosted_ci_run_1_status": "success",
+  "external_actions_performed": 0,
+  "files": [
+    {
+      "path": ".github/workflows/project7-quality-gate.yml",
+      "bytes": 2686,
+      "sha256": "5d21a84fd959f859acc862202246860c92ef489f757d286d3b7065feb32b4ba3"
+    },
+    {
+      "path": "audit/p5_05_final_freeze_event.jsonl",
+      "bytes": 624,
+      "sha256": "bcfa320da9d18b4e8129a88637ab560f6f511e483bedf95732541feca8d4f5af"
+    },
+    {
+      "path": "config/schemas/final_evaluation_baseline.schema.json",
+      "bytes": 2762,
+      "sha256": "228eee58b00159d3833856b94741be2c4152d1d2b5591403345a7bf26f3de10e"
+    },
+    {
+      "path": "config/system/final_evaluation_freeze_policy.json",
+      "bytes": 1509,
+      "sha256": "b566d3208ab3f5c41d120e5b654ffb9cf409775b62756214081bc1f6213196ac"
+    },
+    {
+      "path": "docs/P5_05_Final_CI_Quality_Gate.md",
+      "bytes": 697,
+      "sha256": "b76611950d44496bc43d355c9e5072a62381d74ac5751940cd51dc34abc3d706"
+    },
+    {
+      "path": "docs/P5_05_Final_Evaluation_Freeze.md",
+      "bytes": 3035,
+      "sha256": "62e09eda65f4e6c8366e4d9640665ca87806f9a6987fbda4792e912d0774cb54"
+    },
+    {
+      "path": "docs/P5_05_Hosted_CI_Run_1_Evidence.json",
+      "bytes": 734,
+      "sha256": "247cd2d46ba8d0387424ec3853116ad34183ec7707cf5fd636cfc8b9ecf1b5bf"
+    },
+    {
+      "path": "docs/P5_05_Requirements_Matrix.csv",
+      "bytes": 1895,
+      "sha256": "0d4f35b937be4f9e5c568c2cd2aee0578d3af9c81401994b4c5b81f9cc828527"
+    },
+    {
+      "path": "docs/P5_05_Validation_Evidence.json",
+      "bytes": 1000,
+      "sha256": "23ade61c0c038b8b5678434aed07745bd566645db1e66153c26df59432ce4875"
+    },
+    {
+      "path": "docs/ci/project7-quality-gate.yml",
+      "bytes": 2686,
+      "sha256": "5d21a84fd959f859acc862202246860c92ef489f757d286d3b7065feb32b4ba3"
+    },
+    {
+      "path": "outputs/ci/p5_05-local-quality-gate.log",
+      "bytes": 23711,
+      "sha256": "9a55f322aaedab370178546c380c064a3d3cff0f443d2095dcb76b50591d9ada"
+    },
+    {
+      "path": "outputs/evaluation/p5_05/final_artifact_inventory.csv",
+      "bytes": 128799,
+      "sha256": "0fc620ab4d0e03229d6ee5974eaa688ce7a94e420c21299cc01fe584bb1d13bf"
+    },
+    {
+      "path": "outputs/evaluation/p5_05/final_artifact_inventory.json",
+      "bytes": 232911,
+      "sha256": "7dcdc774ce2cb28bde311aa9beef30172f1ced6f4474b192c342d0ab2601cc2a"
+    },
+    {
+      "path": "outputs/evaluation/p5_05/final_evaluation_baseline.json",
+      "bytes": 3216,
+      "sha256": "f7978ca5287f6250bc80597ec4f3ab8b4b408204baed93c1f75ed876bdb57fe7"
+    },
+    {
+      "path": "outputs/evaluation/p5_05/final_evidence_map.csv",
+      "bytes": 3510,
+      "sha256": "2d7e9649278e32aa514cfdaaf43f1a2272423756045e980b278f015a79038fa5"
+    },
+    {
+      "path": "outputs/evaluation/p5_05/final_evidence_map.json",
+      "bytes": 7198,
+      "sha256": "a120dcbc483ab690bf61ae1ba1186b8743be73b22a2e6d8ce025ac232ea86649"
+    },
+    {
+      "path": "outputs/evaluation/p5_05/final_metric_summary.csv",
+      "bytes": 1815,
+      "sha256": "9b338d066bf6b98b9d339a252d8543d9c2e8dcbcffa06ce53e762b3f68fe8310"
+    },
+    {
+      "path": "outputs/evaluation/p5_05/final_metric_summary.json",
+      "bytes": 4199,
+      "sha256": "20dea5bb86237c444aad76591902c29c880544d81b2cee6d6115d629b9ac2e4a"
+    },
+    {
+      "path": "outputs/evaluation/p5_05/repository_validation_report.json",
+      "bytes": 613,
+      "sha256": "72b0a6cca07a08ebae3eb70abde5d9ba29420cd4962a70ef01d033e13aabc186"
+    },
+    {
+      "path": "requirements_p5_05.txt",
+      "bytes": 56,
+      "sha256": "bea7d1a84f53660d9ab99c4c5ff03c82e53dfebae2d62dd8bfdfa2264b222d5e"
+    },
+    {
+      "path": "scripts/ci_repository_checks.py",
+      "bytes": 3489,
+      "sha256": "2f4321fb9657651d278963b6d89b4bc95dc9d6d1761bacd3d7d244c002a4ec7f"
+    },
+    {
+      "path": "scripts/generate_ci_run_metadata.py",
+      "bytes": 1464,
+      "sha256": "d511e34fa49b67a4a1205153530ab19e215aa0fc80934ffc59b31dcfbbf5652b"
+    },
+    {
+      "path": "scripts/verify_p5_05_final_baseline.py",
+      "bytes": 3047,
+      "sha256": "69aa49b2e27f108099e83d909d8741cf40e6ab1e7ec333a16d1705bf25503166"
+    },
+    {
+      "path": "tests/__init__.py",
+      "bytes": 36,
+      "sha256": "9e679de7e336c3dec39bb2ddc91c624d36bb1440b5953367c7c836bcf2dd4c1f"
+    },
+    {
+      "path": "tests/test_ci_workflow.py",
+      "bytes": 2287,
+      "sha256": "78efc6e94d9dd1785e07712d588451c8593f026877f428a532530576812545f7"
+    },
+    {
+      "path": "tests/test_final_evaluation_freeze.py",
+      "bytes": 5596,
+      "sha256": "e675f853a53791e3a5b5ff8732201f4ca8a1f0e0233b5942069ed7f30b700e7d"
+    },
+    {
+      "path": "tests/verify_p5_05_final_baseline.py",
+      "bytes": 3047,
+      "sha256": "69aa49b2e27f108099e83d909d8741cf40e6ab1e7ec333a16d1705bf25503166"
+    }
+  ],
+  "hosted_ci_v7_run_status": "pending"
+}

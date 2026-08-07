@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/final_evaluation_baseline.schema.json",
+  "title": "Project 7 Final Evaluation Baseline",
+  "type": "object",
+  "required": [
+    "baseline_schema_version",
+    "baseline_id",
+    "freeze_version",
+    "frozen_at_utc",
+    "baseline_status",
+    "source_runs",
+    "evaluation_results",
+    "safety_and_governance_results",
+    "configuration_portability",
+    "ci_baseline",
+    "evidence_map_path",
+    "artifact_inventory_path",
+    "repository_validation_path",
+    "immutability_policy_path",
+    "limitations",
+    "external_actions_performed",
+    "production_boundary"
+  ],
+  "properties": {
+    "baseline_schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "baseline_id": {
+      "type": "string",
+      "const": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0"
+    },
+    "freeze_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "frozen_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "baseline_status": {
+      "type": "string",
+      "const": "frozen"
+    },
+    "source_runs": {
+      "type": "object"
+    },
+    "evaluation_results": {
+      "type": "object",
+      "properties": {
+        "cases_executed": {
+          "type": "integer",
+          "const": 19
+        },
+        "cases_passed": {
+          "type": "integer",
+          "const": 19
+        },
+        "cases_partial": {
+          "type": "integer",
+          "const": 0
+        },
+        "cases_failed": {
+          "type": "integer",
+          "const": 0
+        },
+        "assertions_evaluated": {
+          "type": "integer",
+          "const": 262
+        },
+        "assertions_passed": {
+          "type": "integer",
+          "const": 262
+        },
+        "regression_case_ids": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "frozen_inputs_changed": {
+          "type": "boolean",
+          "const": false
+        }
+      },
+      "required": [
+        "cases_executed",
+        "cases_passed",
+        "cases_partial",
+        "cases_failed",
+        "assertions_evaluated",
+        "assertions_passed",
+        "regression_case_ids",
+        "frozen_inputs_changed"
+      ]
+    },
+    "configuration_portability": {
+      "type": "object"
+    },
+    "ci_baseline": {
+      "type": "object"
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 4
+    },
+    "external_actions_performed": {
+      "type": "integer",
+      "const": 0
+    },
+    "production_boundary": {
+      "type": "string",
+      "const": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+    }
+  }
+}

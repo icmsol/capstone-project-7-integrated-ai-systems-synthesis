@@ -1,0 +1,27 @@
+{
+  "artifact_id": "PROJECT7-P5-05-VALIDATION-EVIDENCE",
+  "artifact_version": "1.0.0",
+  "validated_at_utc": "2026-08-07T00:56:23.758880+00:00",
+  "validation_status": "PASS",
+  "baseline_id": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0",
+  "checks": {
+    "full_quality_gate_commands": 14,
+    "unit_tests_passed": 37,
+    "cases_passed": 19,
+    "assertions_passed": 262,
+    "inventory_files": 942,
+    "evidence_areas": 19,
+    "credential_pattern_hits": 0,
+    "files_over_100_mb": 0,
+    "merge_conflict_markers": 0,
+    "notebook_tracebacks": 0,
+    "unresolved_markers": 0,
+    "workflow_upload_artifact_major": "v7",
+    "deployment_steps": 0,
+    "external_actions_performed": 0
+  },
+  "hosted_ci_run_1_status": "success",
+  "local_quality_gate_log": "outputs/ci/p5_05-local-quality-gate.log",
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required.",
+  "hosted_ci_v7_run_status": "pending"
+}
