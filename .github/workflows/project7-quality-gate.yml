@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   validate:
-    name: Validate frozen final evaluation baseline
+    name: Validate acceptance-corrected integrated baseline
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -36,7 +36,7 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements_p5_05.txt
 
-      - name: Run Project 7 final quality gate
+      - name: Run Project 7 acceptance-corrected quality gate
         shell: bash
         run: |
           set -euo pipefail
@@ -55,11 +55,15 @@ jobs:
             python scripts/verify_p5_04_refinement.py
             python scripts/verify_p5_04_portability.py
             python scripts/verify_p5_05_final_baseline.py
+            python scripts/verify_p5_06_acceptance_corrected_baseline.py
             python -m unittest \
               tests.test_refined_evaluation \
               tests.test_configuration_portability \
               tests.test_ci_workflow \
-              tests.test_final_evaluation_freeze -v
+              tests.test_final_evaluation_freeze \
+              tests.test_acceptance_corrected_baseline \
+              tests.test_decision_support_packet \
+              tests.test_pipeline_audit_path_overrides -v
           } 2>&1 | tee outputs/ci/project7-quality-gate.log
 
       - name: Generate hosted run metadata
@@ -70,15 +74,18 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: project7-final-quality-gate-${{ github.run_number }}
+          name: project7-acceptance-corrected-quality-gate-${{ github.run_number }}
           path: |
             outputs/ci/project7-quality-gate.log
             outputs/ci/hosted-run-metadata.json
             outputs/evaluation/p5_04/
             outputs/evaluation/p5_05/
+            outputs/evaluation/p5_06/
             docs/P5_04_*.md
             docs/P5_04_*Validation*.json
             docs/P5_05_*.md
             docs/P5_05_*Validation*.json
+            docs/P5_06_*.md
+            docs/P5_06_*Validation*.json
           if-no-files-found: error
           retention-days: 30
