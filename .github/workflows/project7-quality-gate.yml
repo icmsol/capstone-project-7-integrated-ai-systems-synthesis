@@ -64,7 +64,8 @@ jobs:
               tests.test_final_evaluation_freeze \
               tests.test_acceptance_corrected_baseline \
               tests.test_decision_support_packet \
-              tests.test_pipeline_audit_path_overrides -v
+              tests.test_pipeline_audit_path_overrides \
+              tests.test_human_disposition_recorder -v
           } 2>&1 | tee outputs/ci/project7-quality-gate.log
 
       - name: Generate hosted run metadata
