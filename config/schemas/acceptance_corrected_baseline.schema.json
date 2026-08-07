@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://icmsol.example/project7/schemas/acceptance_corrected_baseline.schema.json",
+  "title": "Project 7 Acceptance-Corrected Baseline",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "baseline_schema_version",
+    "baseline_id",
+    "parent_baseline_id",
+    "baseline_status",
+    "correction_reason",
+    "evaluation_results",
+    "manual_acceptance",
+    "versioned_overlay_manifest_path",
+    "hosted_ci_required",
+    "external_actions_performed",
+    "production_boundary"
+  ],
+  "properties": {
+    "baseline_schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "baseline_id": {
+      "type": "string",
+      "const": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.1"
+    },
+    "parent_baseline_id": {
+      "type": "string",
+      "const": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0"
+    },
+    "baseline_status": {
+      "type": "string",
+      "const": "frozen_pending_hosted_validation"
+    },
+    "correction_reason": {
+      "type": "string",
+      "minLength": 30
+    },
+    "evaluation_results": {
+      "type": "object",
+      "required": [
+        "cases_passed",
+        "cases_total",
+        "assertions_passed",
+        "assertions_total",
+        "regressions",
+        "frozen_inputs_changed"
+      ],
+      "properties": {
+        "cases_passed": {
+          "type": "integer",
+          "const": 19
+        },
+        "cases_total": {
+          "type": "integer",
+          "const": 19
+        },
+        "assertions_passed": {
+          "type": "integer",
+          "const": 262
+        },
+        "assertions_total": {
+          "type": "integer",
+          "const": 262
+        },
+        "regressions": {
+          "type": "integer",
+          "const": 0
+        },
+        "frozen_inputs_changed": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "manual_acceptance": {
+      "type": "object"
+    },
+    "versioned_overlay_manifest_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hosted_ci_required": {
+      "type": "boolean",
+      "const": true
+    },
+    "external_actions_performed": {
+      "type": "integer",
+      "const": 0
+    },
+    "production_boundary": {
+      "type": "string",
+      "const": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+    }
+  }
+}

@@ -28,6 +28,7 @@ def run_packet_assembly(
     output_directory: Path,
     audit_output_path: Path,
     event_time: str,
+    prior_audit_path: Path | None = None,
 ) -> dict[str, Any]:
     schema_dir = repo_root / "config" / "schemas"
     case_state = _load_json(case_state_path)
@@ -40,13 +41,14 @@ def run_packet_assembly(
         / "decision_support_packet_policy.json"
     )
 
+    prior_audit_path = (
+        prior_audit_path
+        if prior_audit_path is not None
+        else repo_root / "audit" / "p4_04_evidence_workflow_events.jsonl"
+    )
     prior_events = [
         json.loads(line)
-        for line in (
-            repo_root
-            / "audit"
-            / "p4_04_evidence_workflow_events.jsonl"
-        ).read_text(encoding="utf-8").splitlines()
+        for line in prior_audit_path.read_text(encoding="utf-8").splitlines()
         if line.strip()
     ]
     if not prior_events:
@@ -138,9 +140,9 @@ def run_packet_assembly(
         ],
         configuration_versions=versions,
         sanitized_details={
-            "required_reviewer": (
-                "Contracts or Legal Reviewer"
-            ),
+            "required_reviewer": recommendation[
+                "required_human_reviewer"
+            ]["role_name"],
             "packet_status": "ready_for_human_review",
             "human_disposition_recorded": False,
             "final_decision_created": False,

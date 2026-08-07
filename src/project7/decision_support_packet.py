@@ -69,24 +69,29 @@ def assemble_decision_support_packet(
 ) -> dict[str, Any]:
     """Assemble one coherent review packet from all prior components."""
 
-    required = [
+    required_nonempty = [
         "opportunity",
         "service_alignment",
         "historical_context",
         "clause_predictions",
-        "evidence_items",
         "evidence_assessments",
     ]
     missing = [
         name
-        for name in required
+        for name in required_nonempty
         if case_state.get(name) in (None, [], {})
     ]
+    if (
+        "evidence_items" not in case_state
+        or case_state.get("evidence_items") is None
+        or not isinstance(case_state.get("evidence_items"), list)
+    ):
+        missing.append("evidence_items")
     if missing:
         raise PacketAssemblyError(
             "PACKET_COMPONENT_MISSING",
             "Required packet components are absent: "
-            + ", ".join(missing),
+            + ", ".join(sorted(set(missing))),
         )
 
     opportunity = case_state["opportunity"]
@@ -111,6 +116,59 @@ def assemble_decision_support_packet(
         }
     )
 
+    escalation_count = sum(
+        item["decision"] == "escalate"
+        for item in predictions
+    )
+    domain_warning_count = sum(
+        bool(item.get("domain_warning"))
+        for item in predictions
+    )
+    truncation_count = sum(
+        bool(item.get("truncated"))
+        for item in predictions
+    )
+    sufficient_assessment_count = sum(
+        item["sufficiency_status"] == "sufficient"
+        for item in assessments
+    )
+    insufficient_assessment_count = (
+        len(assessments) - sufficient_assessment_count
+    )
+    material_conflict_count = sum(
+        item["conflict_status"] == "material_conflict"
+        for item in assessments
+    )
+
+    prediction_categories = list(
+        dict.fromkeys(
+            item["predicted_category"]
+            for item in predictions
+        )
+    )
+    prediction_summary = ", ".join(prediction_categories)
+    if not prediction_summary:
+        prediction_summary = "no clause themes"
+
+    alignment_phrase = alignment["alignment_label"].replace("_", " ")
+    evidence_phrase = (
+        f"{len(evidence_items)} accepted evidence item(s) and "
+        f"{sufficient_assessment_count}/{len(assessments)} sufficient assessment(s)"
+    )
+    warning_phrase = (
+        f"{domain_warning_count} domain warning(s) and "
+        f"{truncation_count} truncated passage(s)"
+    )
+    executive_summary = (
+        f"The opportunity has {alignment_phrase} configuration-driven alignment "
+        f"(score {alignment['alignment_score']:.2f}) and descriptive historical "
+        f"context. Project 4 triage identified {prediction_summary}; the bounded "
+        f"model produced {warning_phrase}. The evidence workflow produced "
+        f"{evidence_phrase}. The nonbinding system recommendation is "
+        f"'{recommendation['recommendation_label']}'. No pursuit, decline, legal, "
+        "contractual, staffing, pricing, or other final decision is made by the system."
+    )
+
     unresolved_issues = [
         _issue(
             issue_id="ISSUE-P4-05-001",
@@ -127,53 +185,6 @@ def assemble_decision_support_packet(
             reason_codes=["FULL_SOLICITATION_NOT_REVIEWED"],
             required_action=(
                 "Obtain and review the complete current solicitation package."
-            ),
-            blocks_final_disposition=True,
-        ),
-        _issue(
-            issue_id="ISSUE-P4-05-002",
-            category="model_domain",
-            severity="high",
-            description=(
-                "All Project 4 outputs carry a public-sector domain warning "
-                "because the model was trained on commercial-contract language."
-            ),
-            source_components=["clause_triage"],
-            reason_codes=["MODEL_DOMAIN_SHIFT"],
-            required_action=(
-                "Use the classifications only as triage and require qualified "
-                "review of the original complete language."
-            ),
-            blocks_final_disposition=True,
-        ),
-        _issue(
-            issue_id="ISSUE-P4-05-003",
-            category="model_input",
-            severity="critical",
-            description=(
-                "One representative passage exceeded the 256-token model limit "
-                "and was truncated before inference."
-            ),
-            source_components=["clause_triage"],
-            reason_codes=["MODEL_INPUT_TRUNCATED"],
-            required_action=(
-                "Review the complete passage and surrounding text outside the model."
-            ),
-            blocks_final_disposition=True,
-        ),
-        _issue(
-            issue_id="ISSUE-P4-05-004",
-            category="contract_applicability",
-            severity="high",
-            description=(
-                "Evidence retrieval validates metadata and bounded subject matter "
-                "but does not determine whether the clauses apply to this procurement."
-            ),
-            source_components=["official_evidence"],
-            reason_codes=["CLAUSE_APPLICABILITY_UNVERIFIED"],
-            required_action=(
-                "Have a Contracts or Legal Reviewer determine applicability using "
-                "the complete current acquisition context."
             ),
             blocks_final_disposition=True,
         ),
@@ -263,6 +274,118 @@ def assemble_decision_support_packet(
         ),
     ]
 
+    if domain_warning_count:
+        unresolved_issues.insert(
+            1,
+            _issue(
+                issue_id="ISSUE-P4-05-002",
+                category="model_domain",
+                severity="high",
+                description=(
+                    f"{domain_warning_count} Project 4 prediction(s) carry a "
+                    "domain warning because the bounded model was trained on "
+                    "commercial-contract language."
+                ),
+                source_components=["clause_triage"],
+                reason_codes=["MODEL_DOMAIN_SHIFT"],
+                required_action=(
+                    "Use the classifications only as triage and require qualified "
+                    "review of the original complete language."
+                ),
+                blocks_final_disposition=True,
+            ),
+        )
+
+    if truncation_count:
+        unresolved_issues.insert(
+            2 if domain_warning_count else 1,
+            _issue(
+                issue_id="ISSUE-P4-05-003",
+                category="model_input",
+                severity="critical",
+                description=(
+                    f"{truncation_count} passage(s) exceeded the bounded model "
+                    "input and were truncated before inference."
+                ),
+                source_components=["clause_triage"],
+                reason_codes=["MODEL_INPUT_TRUNCATED"],
+                required_action=(
+                    "Review each complete passage and surrounding text outside the model."
+                ),
+                blocks_final_disposition=True,
+            ),
+        )
+
+    evidence_issue_position = 1 + int(bool(domain_warning_count)) + int(bool(truncation_count))
+    if insufficient_assessment_count or not evidence_items:
+        evidence_reason_codes = sorted(
+            set(assessment_reason_codes)
+            or {"CLAUSE_APPLICABILITY_UNVERIFIED"}
+        )
+        unresolved_issues.insert(
+            evidence_issue_position,
+            _issue(
+                issue_id="ISSUE-P4-05-004",
+                category="evidence_sufficiency",
+                severity="high",
+                description=(
+                    f"The registered evidence workflow accepted {len(evidence_items)} "
+                    f"evidence item(s), and {insufficient_assessment_count} of "
+                    f"{len(assessments)} assessment(s) remain insufficient. "
+                    "Absence of registered evidence is not evidence of clause "
+                    "inapplicability, compliance, or acceptable risk."
+                ),
+                source_components=["official_evidence"],
+                reason_codes=evidence_reason_codes,
+                required_action=(
+                    "Obtain and review the applicable current official authority and "
+                    "have a Contracts or Legal Reviewer determine applicability."
+                ),
+                blocks_final_disposition=True,
+            ),
+        )
+    else:
+        unresolved_issues.insert(
+            evidence_issue_position,
+            _issue(
+                issue_id="ISSUE-P4-05-004",
+                category="contract_applicability",
+                severity="high",
+                description=(
+                    "Evidence retrieval validates metadata and bounded subject matter "
+                    "but does not determine whether the clauses apply to this procurement."
+                ),
+                source_components=["official_evidence"],
+                reason_codes=["CLAUSE_APPLICABILITY_UNVERIFIED"],
+                required_action=(
+                    "Have a Contracts or Legal Reviewer determine applicability using "
+                    "the complete current acquisition context."
+                ),
+                blocks_final_disposition=True,
+            ),
+        )
+
+    evidence_limitations = [
+        limitation
+        for item in evidence_items
+        for limitation in item["limitations"]
+    ]
+    if not evidence_items:
+        evidence_limitations.append(
+            {
+                "code": "EVIDENCE_SCOPE_LIMITED",
+                "description": (
+                    "No registered evidence record met the configured acceptance "
+                    "criteria for the assessed claims."
+                ),
+                "material": True,
+                "mitigation": (
+                    "Obtain and review applicable current official authority before "
+                    "a consequential human disposition."
+                ),
+            }
+        )
+
     packet = {
         "packet_schema_version": "1.0.0",
         "packet_id": packet_id,
@@ -272,17 +395,7 @@ def assemble_decision_support_packet(
         "source_case_state_sha256": _canonical_sha256(
             case_state
         ),
-        "executive_summary": (
-            "The opportunity demonstrates strong configuration-driven alignment "
-            "with ICM capabilities and has directional historical context. "
-            "Project 4 identified Audit Rights and Anti-Assignment themes with "
-            "high model confidence, but every public-sector result requires "
-            "domain-shift escalation and one passage was truncated. Registered "
-            "FAR evidence supports bounded metadata observations for FAR 52.215-2 "
-            "and FAR 52.232-23, while clause applicability and complete business "
-            "feasibility remain unresolved. The nonbinding system recommendation "
-            "is specialized human review; no pursuit or decline decision is made."
-        ),
+        "executive_summary": executive_summary,
         "opportunity_summary": {
             "agency": opportunity["agency"],
             "solicitation_id": opportunity["solicitation_id"],
@@ -326,16 +439,9 @@ def assemble_decision_support_packet(
         },
         "clause_triage_summary": {
             "prediction_count": len(predictions),
-            "escalation_count": sum(
-                item["decision"] == "escalate"
-                for item in predictions
-            ),
-            "domain_warning_count": sum(
-                item["domain_warning"] for item in predictions
-            ),
-            "truncation_count": sum(
-                item["truncated"] for item in predictions
-            ),
+            "escalation_count": escalation_count,
+            "domain_warning_count": domain_warning_count,
+            "truncation_count": truncation_count,
             "predictions": [
                 {
                     "passage_id": item["passage_id"],
@@ -354,15 +460,8 @@ def assemble_decision_support_packet(
         },
         "evidence_summary": {
             "evidence_item_count": len(evidence_items),
-            "sufficient_assessment_count": sum(
-                item["sufficiency_status"] == "sufficient"
-                for item in assessments
-            ),
-            "material_conflict_count": sum(
-                item["conflict_status"]
-                == "material_conflict"
-                for item in assessments
-            ),
+            "sufficient_assessment_count": sufficient_assessment_count,
+            "material_conflict_count": material_conflict_count,
             "citations": [
                 {
                     "evidence_id": item["evidence_id"],
@@ -382,11 +481,7 @@ def assemble_decision_support_packet(
                 for item in evidence_items
             ],
             "assessment_reason_codes": assessment_reason_codes,
-            "limitations": [
-                limitation
-                for item in evidence_items
-                for limitation in item["limitations"]
-            ],
+            "limitations": evidence_limitations,
         },
         "recommendation": recommendation,
         "unresolved_issues": unresolved_issues,
@@ -530,6 +625,11 @@ def render_packet_markdown(packet: dict[str, Any]) -> str:
         )
         for item in evidence["citations"]
     )
+    if not citation_rows:
+        citation_rows = (
+            "No registered evidence record met the configured acceptance criteria "
+            "for the assessed claims."
+        )
     issue_rows = "\n".join(
         (
             f"| `{item['issue_id']}` | **{item['severity']}** | "

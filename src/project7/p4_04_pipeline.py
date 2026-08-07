@@ -24,6 +24,7 @@ def run_evidence_workflow(
     audit_output_path: Path,
     tool_trace_output_path: Path,
     event_time: str,
+    prior_audit_path: Path | None = None,
 ) -> dict[str, Any]:
     schema_dir = repo_root / "config" / "schemas"
     case_state = _load_json(case_state_path)
@@ -65,8 +66,9 @@ def run_evidence_workflow(
         assessments.append(result["assessment"])
 
     prior_event_path = (
-        repo_root / "audit"
-        / "p4_03_clause_triage_event.jsonl"
+        prior_audit_path
+        if prior_audit_path is not None
+        else repo_root / "audit" / "p4_03_clause_triage_event.jsonl"
     )
     prior_events = [
         json.loads(line)

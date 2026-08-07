@@ -20,9 +20,11 @@ SRC = ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
-from project7 import (  # noqa: E402
+from project7.decision_support_packet import (  # noqa: E402
     PacketAssemblyError,
     assemble_decision_support_packet,
+)
+from project7.recommendation_engine import (  # noqa: E402
     create_nonbinding_recommendation,
 )
 from project7.p4_05_pipeline import (  # noqa: E402
@@ -192,10 +194,8 @@ class DecisionSupportPacketTests(unittest.TestCase):
         )
 
     def test_missing_component_fails_closed(self):
-        incomplete = {
-            **self.case_state,
-            "evidence_items": [],
-        }
+        incomplete = dict(self.case_state)
+        incomplete.pop("evidence_items")
         recommendation = self.recommendation()
         with self.assertRaises(
             PacketAssemblyError
@@ -215,6 +215,108 @@ class DecisionSupportPacketTests(unittest.TestCase):
         self.assertEqual(
             context.exception.reason_code,
             "PACKET_COMPONENT_MISSING",
+        )
+
+    def test_zero_accepted_evidence_is_not_missing_component(self):
+        zero_evidence = {
+            **self.case_state,
+            "evidence_items": [],
+            "evidence_assessments": [
+                {
+                    **item,
+                    "sufficiency_status": "insufficient",
+                    "evidence_score": 0.0,
+                    "reason_codes": ["SEARCH_NO_RESULTS"],
+                }
+                for item in self.case_state["evidence_assessments"]
+            ],
+        }
+        recommendation = create_nonbinding_recommendation(
+            case_state=zero_evidence,
+            policy=self.recommendation_policy,
+            schema_dir=self.schema_dir,
+            audit_reference=self.audit_reference,
+            created_at="2026-08-05T19:15:00Z",
+        )
+        self.assertEqual(
+            recommendation["recommendation_code"],
+            "R-05",
+        )
+        self.assertEqual(recommendation["supporting_evidence_ids"], [])
+        packet = assemble_decision_support_packet(
+            case_state=zero_evidence,
+            recommendation=recommendation,
+            packet_policy=self.packet_policy,
+            schema_dir=self.schema_dir,
+            packet_id="PACKET-ZERO-EVIDENCE-P4-05",
+            generated_at="2026-08-05T19:15:00Z",
+            audit_event_ids=[
+                self.audit_reference,
+                f"AUD-{self.case_state['case_id']}-11",
+            ],
+        )
+        self.assertEqual(packet["evidence_summary"]["evidence_item_count"], 0)
+        self.assertEqual(packet["evidence_summary"]["sufficient_assessment_count"], 0)
+        self.assertTrue(
+            any(
+                issue["category"] == "evidence_sufficiency"
+                for issue in packet["unresolved_issues"]
+            )
+        )
+
+    def test_packet_narrative_is_case_derived(self):
+        manual_like = {
+            **self.case_state,
+            "evidence_items": [],
+            "clause_predictions": [
+                {
+                    **item,
+                    "truncated": False,
+                    "reason_codes": [
+                        code
+                        for code in item["reason_codes"]
+                        if code != "MODEL_INPUT_TRUNCATED"
+                    ],
+                }
+                for item in self.case_state["clause_predictions"]
+            ],
+            "evidence_assessments": [
+                {
+                    **item,
+                    "sufficiency_status": "insufficient",
+                    "evidence_score": 0.0,
+                    "reason_codes": ["SEARCH_NO_RESULTS"],
+                }
+                for item in self.case_state["evidence_assessments"]
+            ],
+        }
+        recommendation = create_nonbinding_recommendation(
+            case_state=manual_like,
+            policy=self.recommendation_policy,
+            schema_dir=self.schema_dir,
+            audit_reference=self.audit_reference,
+            created_at="2026-08-05T19:15:00Z",
+        )
+        packet = assemble_decision_support_packet(
+            case_state=manual_like,
+            recommendation=recommendation,
+            packet_policy=self.packet_policy,
+            schema_dir=self.schema_dir,
+            packet_id="PACKET-DYNAMIC-P4-05",
+            generated_at="2026-08-05T19:15:00Z",
+            audit_event_ids=[
+                self.audit_reference,
+                f"AUD-{self.case_state['case_id']}-11",
+            ],
+        )
+        self.assertEqual(packet["clause_triage_summary"]["truncation_count"], 0)
+        self.assertNotIn("one passage was truncated", packet["executive_summary"].lower())
+        self.assertNotIn("FAR 52.215-2", packet["executive_summary"])
+        self.assertFalse(
+            any(
+                "MODEL_INPUT_TRUNCATED" in issue["reason_codes"]
+                for issue in packet["unresolved_issues"]
+            )
         )
 
     def test_replay_is_deterministic(self):

@@ -1,0 +1,22 @@
+{
+  "artifact_schema_version": "1.0.0",
+  "artifact_id": "PROJECT7-P5-06-FROZEN-SUITE-RERUN",
+  "run_type": "complete frozen v1.0.1 regression after manual-acceptance correction",
+  "recorded_at_utc": "2026-08-07T15:34:38.770186+00:00",
+  "case_count": 19,
+  "status_counts": {
+    "PASS": 19,
+    "PARTIAL": 0,
+    "FAIL": 0
+  },
+  "assertions_passed": 262,
+  "assertions_total": 262,
+  "frozen_inputs_changed": false,
+  "external_actions_performed": 0,
+  "correction_scope": [
+    "zero-evidence recommendation/packet handling",
+    "case-derived packet narrative",
+    "optional predecessor-audit path overrides"
+  ],
+  "result": "PASS"
+}

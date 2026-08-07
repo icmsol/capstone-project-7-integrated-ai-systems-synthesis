@@ -1,0 +1,116 @@
+{
+  "artifact_schema_version": "1.0.0",
+  "artifact_id": "PROJECT7-P5-06-MANUAL-OPERATOR-ACCEPTANCE",
+  "recorded_at_utc": "2026-08-07T15:34:38.770186+00:00",
+  "test_source": "RFO 3485A for EDD CalJOBS IV&V",
+  "source_handling": "Public source staged outside the GitHub repository; source document is not added to the repository.",
+  "case_id": "CASE-22E46661B5CFB3D8",
+  "stages": [
+    {
+      "stage": "repository_integrity",
+      "status": "PASS",
+      "details": {
+        "commit": "61edbdc",
+        "credential_hits": 0,
+        "files_over_100_mb": 0,
+        "working_tree": "clean"
+      }
+    },
+    {
+      "stage": "opportunity_intake",
+      "status": "PASS_WITH_FINDING",
+      "details": {
+        "case_status": "intake_validated",
+        "pdf_checksum": "PASS",
+        "finding_id": "MAF-01"
+      }
+    },
+    {
+      "stage": "alignment_history",
+      "status": "PASS",
+      "details": {
+        "alignment_label": "strong_alignment",
+        "alignment_score": 0.8633,
+        "matched_capabilities": 4,
+        "historical_matches": 108
+      }
+    },
+    {
+      "stage": "clause_triage",
+      "status": "PASS",
+      "details": {
+        "predictions": [
+          {
+            "theme": "Anti-Assignment",
+            "confidence": 0.999391
+          },
+          {
+            "theme": "Insurance",
+            "confidence": 0.999922
+          },
+          {
+            "theme": "Ip Ownership Assignment",
+            "confidence": 0.972807
+          }
+        ],
+        "escalations": 3,
+        "domain_warnings": 3,
+        "truncated": 0
+      }
+    },
+    {
+      "stage": "evidence_workflow",
+      "status": "PASS_WITH_LIMITATION",
+      "details": {
+        "requests": 3,
+        "accepted_evidence_items": 0,
+        "insufficient_assessments": 3,
+        "human_review_routes": 3,
+        "external_actions": 0,
+        "finding_id": "MAF-03"
+      }
+    },
+    {
+      "stage": "decision_support_packet_initial",
+      "status": "FAIL",
+      "details": {
+        "reason_code": "PACKET_COMPONENT_MISSING",
+        "message": "Recommendation input is incomplete: evidence_items",
+        "finding_id": "MAF-04"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "MAF-01",
+      "classification": "usability/control limitation",
+      "disposition": "document",
+      "description": "Structured intake validates provenance, checksums, schemas, and required fields but does not independently extract or semantically cross-check operator-entered solicitation metadata against the source PDF."
+    },
+    {
+      "finding_id": "MAF-02",
+      "classification": "integration usability defect",
+      "disposition": "corrected",
+      "description": "P4-02 through P4-05 wrappers were coupled to fixed predecessor audit-ledger paths. Optional prior_audit_path overrides are added while preserving original defaults."
+    },
+    {
+      "finding_id": "MAF-03",
+      "classification": "bounded prototype limitation",
+      "disposition": "document",
+      "description": "The representative three-record FAR corpus is intentionally too narrow for complete California solicitation review. Safe behavior is abstention/escalation when no evidence meets threshold."
+    },
+    {
+      "finding_id": "MAF-04",
+      "classification": "integration defect",
+      "disposition": "corrected",
+      "description": "A completed evidence workflow with zero accepted evidence items was incorrectly treated as a missing component, preventing a human review packet."
+    },
+    {
+      "finding_id": "MAF-05",
+      "classification": "packet correctness defect",
+      "disposition": "corrected",
+      "description": "The P4-05 packet narrative contained case-specific statements about predicted themes, truncation, and FAR citations. Packet narrative and unresolved issues are now derived from the actual case state."
+    }
+  ],
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

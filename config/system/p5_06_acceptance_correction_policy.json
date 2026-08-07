@@ -1,0 +1,16 @@
+{
+  "policy_schema_version": "1.0.0",
+  "policy_id": "PROJECT7-P5-06-ACCEPTANCE-CORRECTION-POLICY",
+  "parent_baseline_id": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0",
+  "corrected_baseline_id": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.1",
+  "allowed_change_basis": "Explicitly versioned correction after manual operator acceptance testing exposed integration defects. Frozen scenario inputs, expected outcomes, model weights, evidence thresholds, safeguards, and historical evaluation records remain unchanged.",
+  "required_regression": {
+    "frozen_cases": 19,
+    "assertions": 262,
+    "required_status": "PASS",
+    "zero_regressions": true
+  },
+  "human_authority_required": true,
+  "external_actions_allowed": false,
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

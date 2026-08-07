@@ -25,6 +25,7 @@ def run_alignment_and_history(
     output_directory: Path,
     audit_output_path: Path,
     event_time: str,
+    prior_audit_path: Path | None = None,
 ) -> dict[str, Any]:
     """Run configuration loading, alignment, and historical context."""
 
@@ -58,7 +59,11 @@ def run_alignment_and_history(
         schema_dir=schema_dir,
     )
 
-    prior_audit_path = repo_root / "audit" / "p4_01_intake_events.jsonl"
+    prior_audit_path = (
+        prior_audit_path
+        if prior_audit_path is not None
+        else repo_root / "audit" / "p4_01_intake_events.jsonl"
+    )
     prior_events = [
         json.loads(line)
         for line in prior_audit_path.read_text(

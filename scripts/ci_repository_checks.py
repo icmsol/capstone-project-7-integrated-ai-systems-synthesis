@@ -74,6 +74,8 @@ def main() -> None:
         "outputs/evaluation/p5_05/final_evaluation_baseline.json",
         "outputs/evaluation/p5_05/final_evidence_map.json",
         "outputs/evaluation/p5_05/final_artifact_inventory.json",
+        "outputs/evaluation/p5_06/acceptance_corrected_baseline.json",
+        "outputs/evaluation/p5_06/versioned_overlay_manifest.json",
     ]
     missing = [item for item in required if not (ROOT / item).is_file()]
 

@@ -26,6 +26,7 @@ def run_clause_triage(
     output_directory: Path,
     audit_output_path: Path,
     event_time: str,
+    prior_audit_path: Path | None = None,
 ) -> dict[str, Any]:
     schema_dir = repo_root / "config" / "schemas"
     case_state = _load_json(case_state_path)
@@ -63,13 +64,14 @@ def run_clause_triage(
         for item in passages
     ]
 
+    prior_audit_path = (
+        prior_audit_path
+        if prior_audit_path is not None
+        else repo_root / "audit" / "p4_02_alignment_history_events.jsonl"
+    )
     prior_events = [
         json.loads(line)
-        for line in (
-            repo_root
-            / "audit"
-            / "p4_02_alignment_history_events.jsonl"
-        ).read_text(encoding="utf-8").splitlines()
+        for line in prior_audit_path.read_text(encoding="utf-8").splitlines()
         if line.strip()
     ]
     previous_hash = prior_events[-1]["event_hash"]

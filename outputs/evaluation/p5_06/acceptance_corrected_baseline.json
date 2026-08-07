@@ -1,0 +1,28 @@
+{
+  "baseline_schema_version": "1.0.0",
+  "baseline_id": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.1",
+  "parent_baseline_id": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0",
+  "baseline_status": "frozen_pending_hosted_validation",
+  "correction_reason": "Manual operator acceptance testing exposed a zero-evidence packet-assembly defect, case-specific packet narrative, and fixed predecessor-audit path coupling. The corrections are explicitly versioned and regression-tested.",
+  "evaluation_results": {
+    "cases_passed": 19,
+    "cases_total": 19,
+    "assertions_passed": 262,
+    "assertions_total": 262,
+    "regressions": 0,
+    "frozen_inputs_changed": false
+  },
+  "manual_acceptance": {
+    "case_id": "CASE-22E46661B5CFB3D8",
+    "initial_packet_result": "PACKET_COMPONENT_MISSING",
+    "corrected_expected_route": "R-05 Escalate \u2014 Specialized Review Required",
+    "accepted_evidence_items": 0,
+    "evidence_assessments": 3,
+    "human_review_required": true,
+    "final_decision_created": false
+  },
+  "versioned_overlay_manifest_path": "outputs/evaluation/p5_06/versioned_overlay_manifest.json",
+  "hosted_ci_required": true,
+  "external_actions_performed": 0,
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

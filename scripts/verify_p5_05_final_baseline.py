@@ -96,6 +96,16 @@ def main():
     inventory = json.loads(INVENTORY_PATH.read_text(encoding="utf-8"))
     validation = json.loads(VALIDATION_PATH.read_text(encoding="utf-8"))
     evidence_map = json.loads(EVIDENCE_MAP_PATH.read_text(encoding="utf-8"))
+    overlay_path = (
+        ROOT / "outputs" / "evaluation" / "p5_06"
+        / "versioned_overlay_manifest.json"
+    )
+    superseded_paths = set()
+    if overlay_path.is_file():
+        overlay = json.loads(overlay_path.read_text(encoding="utf-8"))
+        superseded_paths = {
+            item["path"] for item in overlay.get("files", [])
+        }
 
     Draft202012Validator(
         schema,
@@ -116,7 +126,11 @@ def main():
     raw_verified = 0
     notebook_verified = 0
 
+    superseded_verified = 0
     for item in inventory["files"]:
+        if item["path"] in superseded_paths:
+            superseded_verified += 1
+            continue
         path = ROOT / item["path"]
         if not path.is_file():
             raise FileNotFoundError(path)
@@ -152,7 +166,11 @@ def main():
     print("Assertions: 262/262")
     print(f"Raw files verified: {raw_verified}")
     print(f"Canonical notebooks verified: {notebook_verified}")
-    print(f"Inventory files verified: {inventory['file_count']}")
+    print(
+        f"Historical inventory files verified: "
+        f"{inventory['file_count'] - superseded_verified}"
+    )
+    print(f"Versioned overlay paths deferred to P5-06: {superseded_verified}")
     print(f"Evidence areas verified: {evidence_map['evidence_count']}")
     print("Repository validation: PASS")
     print("External actions performed: 0")
