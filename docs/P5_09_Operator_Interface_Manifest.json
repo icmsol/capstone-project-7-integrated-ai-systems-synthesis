@@ -1,0 +1,47 @@
+{
+  "package": "Project 7 P5-09 Operator Interface",
+  "version": "1.0.0",
+  "file_count": 8,
+  "files": [
+    {
+      "path": "docs/P5_09_Operator_Interface.md",
+      "bytes": 3648,
+      "sha256": "7a9bf6f2a7238e94ca55b46d487f9223c0cad87fae5236676129469ab471acad"
+    },
+    {
+      "path": "docs/P5_09_Operator_Interface_Manifest.json",
+      "bytes": 1284,
+      "sha256": "not_applicable_self_manifest"
+    },
+    {
+      "path": "notebooks/Project_7_Operator_Interface.ipynb",
+      "bytes": 3658,
+      "sha256": "17580fed2d950d87a6c8650fb1ca93f33db3964253d9ea05fa882fbf25272d6a"
+    },
+    {
+      "path": "requirements_p5_09.txt",
+      "bytes": 93,
+      "sha256": "575e3984233b1f1f740495fc2c81cb81612c04dd06cb9870e4560f38dcb4c5ab"
+    },
+    {
+      "path": "scripts/validate_operator_interface.py",
+      "bytes": 3387,
+      "sha256": "581ed473084de8df83f64ab3c0b134a6b29e6531f1cc53814d9a55ed2cd836c6"
+    },
+    {
+      "path": "src/project7/operator_ui.py",
+      "bytes": 29748,
+      "sha256": "b6e7c080c095d11598a1f87ef927d4219776e1d62c27df5d37d1b914864a48a0"
+    },
+    {
+      "path": "src/project7/operator_workflow.py",
+      "bytes": 26813,
+      "sha256": "3a8a2d3983dc3d72b069c61132aa954b8db34055712d115791638df16e9cd354"
+    },
+    {
+      "path": "tests/test_operator_workflow.py",
+      "bytes": 4313,
+      "sha256": "4fff02e06fd7c3170d198236d121e83851e9045d2c3140d32b8cbdb1ddbddb89"
+    }
+  ]
+}
