@@ -1,0 +1,21 @@
+{
+  "package": "P5-08 human disposition recorder",
+  "base_commit": "27a837a",
+  "files": [
+    {
+      "path": "docs/P5_08_Human_Disposition_Recorder.md",
+      "bytes": 3071,
+      "sha256": "fdea8114a2280052ed4b0f4ba3b667d11fdaef0bfc9d768ffce2b2f4817b9aab"
+    },
+    {
+      "path": "src/project7/human_disposition.py",
+      "bytes": 10936,
+      "sha256": "174b854770af7f9dbb642dcb49aa4339c082391c63108736d161ae31c4df7c1b"
+    },
+    {
+      "path": "tests/test_human_disposition_recorder.py",
+      "bytes": 9788,
+      "sha256": "e9a91276a7f85a8818013c1356ef5188bf5c08aafa55f03da635c4aab0e76a2d"
+    }
+  ]
+}
