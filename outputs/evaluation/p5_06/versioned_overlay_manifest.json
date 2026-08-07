@@ -138,10 +138,11 @@
     },
     {
       "path": "tests/test_acceptance_corrected_baseline.py",
-      "bytes": 2645,
-      "sha256": "36ec7953ca27b464b84d2654cac3fb36e0e52af3170094567a7022952072bf9c",
-      "change_class": "versioned_post-freeze_correction",
-      "verification_mode": "strict_sha256"
+      "bytes": 3761,
+      "sha256": "c0b1a21c93c53706d2860703d7daeef54a326d2a50e4f88a835f12783b49f3e7",
+      "change_class": "p5_12_overlay_compatibility_test_correction",
+      "verification_mode": "strict_sha256",
+      "change_reason": "Legacy P5-06 regression test now distinguishes the preserved historical v1.0.1 overlay from the active v1.0.2 post-freeze governance overlay."
     },
     {
       "path": "tests/test_decision_support_packet.py",

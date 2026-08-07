@@ -1,0 +1,25 @@
+{
+  "package": "P5-12 CI Overlay Compatibility Fix",
+  "version": "1.0.0",
+  "root_cause": "Legacy P5-06 unit test hard-coded active overlay version 1.0.1 after P5-12 legitimately advanced active governance to 1.0.2.",
+  "historical_overlay_preserved": true,
+  "active_overlay_version": "1.0.2",
+  "files": [
+    {
+      "path": "tests/test_acceptance_corrected_baseline.py",
+      "bytes": 3761,
+      "sha256": "c0b1a21c93c53706d2860703d7daeef54a326d2a50e4f88a835f12783b49f3e7"
+    },
+    {
+      "path": "outputs/evaluation/p5_06/versioned_overlay_manifest.json",
+      "bytes": 7789,
+      "sha256": "1e9d5a10e85b81779d0f15cbdb875929b1c238acb5406a8dd1aa7f5ab46da177"
+    },
+    {
+      "path": "docs/P5_12_CI_Overlay_Compatibility_Fix.md",
+      "bytes": 1307,
+      "sha256": "6b2321236140c5c53616c552a13e3e53d889dfb2b580aab6667c38c52b6b7a43"
+    }
+  ],
+  "external_actions_performed": 0
+}
