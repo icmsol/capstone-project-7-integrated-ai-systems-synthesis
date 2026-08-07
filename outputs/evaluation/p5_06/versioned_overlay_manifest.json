@@ -1,134 +1,168 @@
 {
-  "overlay_schema_version": "1.0.0",
+  "overlay_schema_version": "1.0.1",
   "overlay_id": "PROJECT7-P5-06-VERSIONED-OVERLAY",
   "overlay_version": "1.0.1",
   "parent_baseline_id": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0",
   "corrected_baseline_id": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.1",
-  "generated_at_utc": "2026-08-07T15:38:51.992606+00:00",
+  "generated_at_utc": "2026-08-07T18:25:14.099222+00:00",
   "rationale": "Explicitly versioned post-freeze correction based on manual operator acceptance testing. Paths not listed remain governed by the P5-05 v1.0.0 inventory.",
   "file_count": 20,
   "files": [
     {
       "path": ".github/workflows/project7-quality-gate.yml",
-      "bytes": 3034,
-      "sha256": "dc8dcde2059f4235b599c28403b8c42f6c73c9df3251c21318eae3aee12a0906",
-      "change_class": "versioned_post-freeze_correction"
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "structural_current_ci",
+      "reference_sha256_at_overlay_creation": "dc8dcde2059f4235b599c28403b8c42f6c73c9df3251c21318eae3aee12a0906",
+      "reference_bytes_at_overlay_creation": 3034,
+      "mutable_reason": "The CI workflow is orchestration that is intentionally updated by P5-07; it must preserve required safety and validation invariants rather than a frozen byte hash.",
+      "required_invariants": [
+        "read-only repository permission",
+        "Python 3.12 setup",
+        "P5-01 through P5-06 verification",
+        "P5-06 acceptance-correction regression tests",
+        "upload-artifact v7",
+        "no deployment or publishing step"
+      ]
     },
     {
       "path": "config/schemas/acceptance_corrected_baseline.schema.json",
       "bytes": 2453,
       "sha256": "315a26035b59ae547011bb443bafe5fcf877ce22bbabe76c9f18a9d58db1d3bd",
-      "change_class": "versioned_post-freeze_correction"
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     },
     {
       "path": "config/system/p5_06_acceptance_correction_policy.json",
       "bytes": 883,
       "sha256": "24de73d9a02ed7b64389d4f1da03742832226eb06efbf20e85bf6d27768a6fa3",
-      "change_class": "versioned_post-freeze_correction"
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     },
     {
       "path": "docs/P5_06_Manual_Operator_Acceptance_and_Correction.md",
       "bytes": 3914,
       "sha256": "f1c36e1a27b3037ced740777d9d4fe50371feff3a78b8604e0240ccb2fe42760",
-      "change_class": "versioned_post-freeze_correction"
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     },
     {
       "path": "docs/P5_06_Validation_Evidence.json",
-      "bytes": 426,
-      "sha256": "0f539ce0aa5ad182f8454c313695a8d709b919e7ffabf5dd41c3ee543a06a888",
-      "change_class": "versioned_post-freeze_correction"
+      "bytes": 905,
+      "sha256": "d1b47eb664d4a8570d14f41cc5c3211c21fedd1d233382e8a42eca63ae7ab050",
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     },
     {
       "path": "outputs/evaluation/p5_06/acceptance_corrected_baseline.json",
       "bytes": 1335,
       "sha256": "ab2c337e2e3b046e2c5ac0f403d7f7d215e86efc616c462f618f6847420a1339",
-      "change_class": "versioned_post-freeze_correction"
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     },
     {
       "path": "outputs/evaluation/p5_06/frozen_suite_rerun_summary.json",
       "bytes": 642,
       "sha256": "e359bc7087cf9577d71a9ccf2bb07e707f8bb3fa770cad46a1bc5f2671c7d321",
-      "change_class": "versioned_post-freeze_correction"
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     },
     {
       "path": "outputs/evaluation/p5_06/manual_operator_acceptance_findings.json",
       "bytes": 4027,
       "sha256": "58580f3ec5e0a88dc9b9d1aecf43c869dffb241112587e99426bf738ab8a3d35",
-      "change_class": "versioned_post-freeze_correction"
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     },
     {
       "path": "scripts/ci_repository_checks.py",
       "bytes": 3628,
       "sha256": "cfae3064f7e2462cc7334b1f5fb441c9edb75c992eb956b7aa7e7e61f51ee4bb",
-      "change_class": "versioned_post-freeze_correction"
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     },
     {
       "path": "scripts/verify_p5_05_final_baseline.py",
       "bytes": 5953,
       "sha256": "cf2d2a702c0f9b2c8b1dcf9d3d89a90af20a8081f31e1190e0f797a82faf6dec",
-      "change_class": "versioned_post-freeze_correction"
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     },
     {
       "path": "scripts/verify_p5_06_acceptance_corrected_baseline.py",
-      "bytes": 3104,
-      "sha256": "f45f53309e804fdeffad25f18b16c172ae94030e4f072c37a6b2f4ecfa5f9257",
-      "change_class": "versioned_post-freeze_correction"
+      "bytes": 4935,
+      "sha256": "1e6fb60591e4b281f4dddb71030163e96729af3cbd8d3afe738739daec392e7a",
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     },
     {
       "path": "src/project7/decision_support_packet.py",
       "bytes": 27021,
       "sha256": "df341690cbf3ea980246978f84c8dd6b435547b64ba8b678fda8a6131f597874",
-      "change_class": "versioned_post-freeze_correction"
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     },
     {
       "path": "src/project7/p4_02_pipeline.py",
       "bytes": 8020,
       "sha256": "e413ab2ddc597311bf050680f3987da682e40ea658368ffd1864aef8b81191e3",
-      "change_class": "versioned_post-freeze_correction"
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     },
     {
       "path": "src/project7/p4_03_pipeline.py",
       "bytes": 5510,
       "sha256": "e20df1ee76634573f70c0ae3890644b68cf2d7695e5557358e35b6c1deeb9f50",
-      "change_class": "versioned_post-freeze_correction"
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     },
     {
       "path": "src/project7/p4_04_pipeline.py",
       "bytes": 9098,
       "sha256": "f867574da49548165b983535440a8ef2b4738fae67fd3aa5e8771fbd9dbf0858",
-      "change_class": "versioned_post-freeze_correction"
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     },
     {
       "path": "src/project7/p4_05_pipeline.py",
       "bytes": 8337,
       "sha256": "4fcf3544eb591490d70075a233c8a56dd0c7dd537fe9ca056134ee80648a378b",
-      "change_class": "versioned_post-freeze_correction"
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     },
     {
       "path": "src/project7/recommendation_engine.py",
       "bytes": 11415,
       "sha256": "d6027f31cd00abd21f41f5877983d8c9574452f231291e874888d5e454f73b13",
-      "change_class": "versioned_post-freeze_correction"
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     },
     {
       "path": "tests/test_acceptance_corrected_baseline.py",
-      "bytes": 2120,
-      "sha256": "c7499e4e353f0af704b42c1d9e0a58674d257d2cddea0e105246eeeca8ebc298",
-      "change_class": "versioned_post-freeze_correction"
+      "bytes": 2645,
+      "sha256": "36ec7953ca27b464b84d2654cac3fb36e0e52af3170094567a7022952072bf9c",
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     },
     {
       "path": "tests/test_decision_support_packet.py",
       "bytes": 11814,
       "sha256": "6befd8a7df28225b72f1a51dbd5eaac35790acc2a9847b3ee75c5637c87d23a0",
-      "change_class": "versioned_post-freeze_correction"
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     },
     {
       "path": "tests/test_pipeline_audit_path_overrides.py",
       "bytes": 991,
       "sha256": "16a2e79ab286274ecede2bc83a13f2c8543750ed15f75aed83de8bdddc21cfda",
-      "change_class": "versioned_post-freeze_correction"
+      "change_class": "versioned_post-freeze_correction",
+      "verification_mode": "strict_sha256"
     }
   ],
   "frozen_scenario_inputs_changed": false,
-  "external_actions_performed": 0
+  "external_actions_performed": 0,
+  "verification_policy": {
+    "default": "strict_sha256",
+    "mutable_ci_orchestration": "structural_current_ci",
+    "rationale": "Versioned source/evidence files are byte-frozen. The GitHub Actions workflow is intentionally mutable orchestration and is validated against required safety and coverage invariants."
+  }
 }

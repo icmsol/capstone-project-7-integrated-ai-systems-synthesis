@@ -1,7 +1,7 @@
 {
-  "artifact_schema_version": "1.0.0",
+  "artifact_schema_version": "1.0.1",
   "artifact_id": "PROJECT7-P5-06-VALIDATION",
-  "validated_at_utc": "2026-08-07T15:34:38.770186+00:00",
+  "validated_at_utc": "2026-08-07T18:24:23.676396+00:00",
   "local_status": "PASS",
   "frozen_suite": {
     "cases": "19/19",
@@ -9,7 +9,15 @@
     "regressions": 0
   },
   "decision_support_regression_tests": "12/12 PASS",
-  "hosted_ci_status": "pending",
+  "hosted_ci_status": "PASS \u2014 run #5 on commit bb5ef52",
   "manual_resume_status": "pending",
-  "external_actions_performed": 0
+  "external_actions_performed": 0,
+  "p5_07_first_hosted_run": {
+    "run_number": 6,
+    "status": "FAIL",
+    "failure_class": "verification_metadata_design",
+    "message": "P5-06 overlay checksum mismatch: .github/workflows/project7-quality-gate.yml",
+    "impact_on_backend_correction": "none",
+    "correction": "Treat the intentionally mutable CI workflow as structural orchestration while retaining strict SHA-256 verification for the 19 versioned source/evidence files."
+  }
 }

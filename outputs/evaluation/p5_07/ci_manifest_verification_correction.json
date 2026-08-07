@@ -1,0 +1,13 @@
+{
+  "artifact_schema_version": "1.0.0",
+  "artifact_id": "PROJECT7-P5-07-CI-MANIFEST-CORRECTION",
+  "observed_run": 6,
+  "observed_failure": "P5-06 overlay checksum mismatch: .github/workflows/project7-quality-gate.yml",
+  "root_cause": "The P5-06 overlay incorrectly byte-froze the GitHub Actions workflow even though P5-07 intentionally changes that workflow to extend validation coverage.",
+  "correction": "Keep strict SHA-256 verification for versioned source and evidence artifacts, but validate the current CI workflow structurally against required safety and validation invariants.",
+  "backend_behavior_changed": false,
+  "frozen_scenario_inputs_changed": false,
+  "evaluation_results_changed": false,
+  "external_actions_performed": 0,
+  "hosted_rerun_required": true
+}

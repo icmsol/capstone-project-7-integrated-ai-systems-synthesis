@@ -34,6 +34,22 @@ class AcceptanceCorrectedBaselineTests(unittest.TestCase):
         self.assertEqual(OVERLAY["overlay_version"], "1.0.1")
         self.assertGreaterEqual(len(OVERLAY["files"]), 10)
 
+
+    def test_ci_workflow_is_structurally_verified_not_byte_frozen(self):
+        workflow_items = [
+            item for item in OVERLAY["files"]
+            if item["path"] == ".github/workflows/project7-quality-gate.yml"
+        ]
+        self.assertEqual(len(workflow_items), 1)
+        self.assertEqual(
+            workflow_items[0]["verification_mode"],
+            "structural_current_ci",
+        )
+        self.assertIn(
+            "reference_sha256_at_overlay_creation",
+            workflow_items[0],
+        )
+
     def test_human_authority_and_external_action_boundary(self):
         self.assertTrue(BASELINE["manual_acceptance"]["human_review_required"])
         self.assertFalse(BASELINE["manual_acceptance"]["final_decision_created"])

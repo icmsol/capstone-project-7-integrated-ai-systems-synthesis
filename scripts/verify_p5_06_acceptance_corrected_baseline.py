@@ -25,6 +25,45 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+def verify_current_ci_workflow(path: Path) -> None:
+    text = path.read_text(encoding="utf-8")
+    required_tokens = [
+        "workflow_dispatch",
+        "contents: read",
+        'python-version: "3.12"',
+        "verify_p5_01_frozen_evaluation.py",
+        "verify_p5_02_metrics.py",
+        "verify_p5_03_failure_analysis.py",
+        "verify_p5_04_refinement.py",
+        "verify_p5_04_portability.py",
+        "verify_p5_05_final_baseline.py",
+        "verify_p5_06_acceptance_corrected_baseline.py",
+        "tests.test_acceptance_corrected_baseline",
+        "tests.test_decision_support_packet",
+        "tests.test_pipeline_audit_path_overrides",
+        "actions/upload-artifact@v7",
+    ]
+    missing = [token for token in required_tokens if token not in text]
+    if missing:
+        raise RuntimeError(
+            "P5-06 mutable CI workflow is missing required invariant(s): "
+            + ", ".join(missing)
+        )
+
+    prohibited_tokens = [
+        "contents: write",
+        "docker push",
+        "twine upload",
+        "gh release create",
+    ]
+    found = [token for token in prohibited_tokens if token in text.lower()]
+    if found:
+        raise RuntimeError(
+            "P5-06 mutable CI workflow violates read-only/no-publish boundary: "
+            + ", ".join(found)
+        )
+
+
 def main() -> None:
     baseline = json.loads(BASELINE_PATH.read_text(encoding="utf-8"))
     schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
@@ -53,15 +92,26 @@ def main() -> None:
         if finding_map[finding_id]["disposition"] != "corrected":
             raise RuntimeError(f"{finding_id} is not recorded as corrected.")
 
-    verified = 0
+    strict_verified = 0
+    structural_verified = 0
     for item in overlay["files"]:
         path = ROOT / item["path"]
         if not path.is_file():
             raise FileNotFoundError(path)
-        observed = sha256_file(path)
-        if observed != item["sha256"]:
-            raise RuntimeError(f"P5-06 overlay checksum mismatch: {item['path']}")
-        verified += 1
+
+        mode = item.get("verification_mode", "strict_sha256")
+        if mode == "strict_sha256":
+            observed = sha256_file(path)
+            if observed != item["sha256"]:
+                raise RuntimeError(f"P5-06 overlay checksum mismatch: {item['path']}")
+            strict_verified += 1
+        elif mode == "structural_current_ci":
+            verify_current_ci_workflow(path)
+            structural_verified += 1
+        else:
+            raise RuntimeError(
+                f"Unsupported P5-06 overlay verification mode for {item['path']}: {mode}"
+            )
 
     if baseline["external_actions_performed"] != 0:
         raise RuntimeError("External-action boundary violated.")
@@ -69,7 +119,8 @@ def main() -> None:
     print(f"Acceptance-corrected baseline: {baseline['baseline_id']}")
     print("Frozen cases rerun: 19/19 PASS")
     print("Frozen assertions rerun: 262/262 PASS")
-    print(f"Versioned overlay files verified: {verified}")
+    print(f"Strict overlay files verified: {strict_verified}")
+    print(f"Mutable CI workflow invariants verified: {structural_verified}")
     print("MAF-02, MAF-04, MAF-05 correction evidence: PASS")
     print("External actions performed: 0")
     print("P5-06 acceptance-corrected baseline verification: PASS")
