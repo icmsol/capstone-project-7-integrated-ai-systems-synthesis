@@ -58,6 +58,7 @@ jobs:
             python scripts/verify_p5_05_final_baseline.py
             python scripts/verify_p5_06_acceptance_corrected_baseline.py
             python scripts/validate_operator_interface.py
+            python scripts/verify_p5_12_operator_hardening.py
             python -m unittest \
               tests.test_refined_evaluation \
               tests.test_configuration_portability \
@@ -67,7 +68,8 @@ jobs:
               tests.test_decision_support_packet \
               tests.test_pipeline_audit_path_overrides \
               tests.test_human_disposition_recorder \
-              tests.test_operator_workflow -v
+              tests.test_operator_workflow \
+              tests.test_p5_12_operator_hardening -v
           } 2>&1 | tee outputs/ci/project7-quality-gate.log
 
       - name: Generate hosted run metadata
@@ -85,6 +87,7 @@ jobs:
             outputs/evaluation/p5_04/
             outputs/evaluation/p5_05/
             outputs/evaluation/p5_06/
+            outputs/evaluation/p5_12/
             docs/P5_04_*.md
             docs/P5_04_*Validation*.json
             docs/P5_05_*.md
@@ -93,6 +96,7 @@ jobs:
             docs/P5_06_*Validation*.json
             docs/P5_09_*.md
             docs/P5_09_*Manifest*.json
+            docs/P5_12_*.md
             notebooks/Project_7_Operator_Interface.ipynb
           if-no-files-found: error
           retention-days: 30
