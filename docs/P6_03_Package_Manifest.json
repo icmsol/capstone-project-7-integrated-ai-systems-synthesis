@@ -1,0 +1,138 @@
+{
+  "package_id": "PROJECT7-P6-03-GOVERNANCE-ETHICS-RISK",
+  "version": "1.0.0",
+  "parent_candidate": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0",
+  "hosted_parent_gate": {
+    "run_number": 20,
+    "commit": "2b981f6",
+    "status": "PASS",
+    "duration_seconds": 46,
+    "artifact_count": 1
+  },
+  "major_risks": 20,
+  "fixed_safeguards": 30,
+  "reviewer_roles": 7,
+  "record_classes": 12,
+  "production_readiness_gates": 15,
+  "high_residual_risks": [
+    "GR-06",
+    "GR-07",
+    "GR-08",
+    "GR-19",
+    "GR-20"
+  ],
+  "production_ready": false,
+  "documentation_only_change": true,
+  "technical_or_evaluation_behavior_changed": false,
+  "local_validation": "PASS",
+  "regression_unit_tests": "88/88 PASS",
+  "external_actions_performed": 0,
+  "files": [
+    {
+      "path": ".github/workflows/project7-quality-gate.yml",
+      "bytes": 3918,
+      "sha256": "225b584f48cb2ed4935cc34e007c7ff5ca509743f05a4719383c2487d8935294"
+    },
+    {
+      "path": "README.md",
+      "bytes": 14055,
+      "sha256": "b82263dc8b6d0eb4877b5e1d1c9545dd54c5134d92714c70dd9cd4e07328368f"
+    },
+    {
+      "path": "docs/P6_03_Governance_Ethics_and_Risk_Framework.md",
+      "bytes": 5969,
+      "sha256": "a36a8cfa36a7cf1312b9fdd16edb6ed6e8daa67d375a461a4e03309b48884b1e"
+    },
+    {
+      "path": "docs/P6_03_Human_Oversight_and_Accountability.md",
+      "bytes": 5770,
+      "sha256": "636552611864abc6736f6a62db305d4db9b1dfc559423401e55fef2f76afecf7"
+    },
+    {
+      "path": "docs/P6_03_Production_Readiness_Boundary.md",
+      "bytes": 3284,
+      "sha256": "4788fd944a28b81b6aa68cddbc55c6044a993a775145762c2d8ec88149f36175"
+    },
+    {
+      "path": "docs/P6_03_Production_Readiness_Gates.csv",
+      "bytes": 3326,
+      "sha256": "119436de3f42f749f2fd4a891993fd8acc27425b63b7e47bc66c04c27fd172b8"
+    },
+    {
+      "path": "docs/P6_03_Records_Audit_and_Retention_Expectations.md",
+      "bytes": 3171,
+      "sha256": "cb2ade1b16361e21e1bb8103318c6e3800b027a4ff1e2c2d02f11d1fa591b547"
+    },
+    {
+      "path": "docs/P6_03_Records_Expectations.csv",
+      "bytes": 4397,
+      "sha256": "c6077a6f54ea4076f305f4ab00ef5cc9227c3ba92bc496e5e17e8245a4f36cd2"
+    },
+    {
+      "path": "docs/P6_03_Risk_Register.csv",
+      "bytes": 12854,
+      "sha256": "cd06fb2a3fb288f93406df28357378b485381ce49a2f7a2a2feff4ac1a63e5b5"
+    },
+    {
+      "path": "docs/P6_03_Risk_Register.md",
+      "bytes": 3170,
+      "sha256": "c81c0dc7db2f524e025a9a1f9d031150b438d67875976147b197c74d5f8d2b2b"
+    },
+    {
+      "path": "docs/P6_03_Safeguard_Matrix.csv",
+      "bytes": 9287,
+      "sha256": "1f78d1cebfce28d32dd42e0649e1a919eb0a34bf6626f400a5e9db9d1307e710"
+    },
+    {
+      "path": "docs/P6_03_Validation_Evidence.json",
+      "bytes": 737,
+      "sha256": "99324e38015f14d96bbc88d1116ae3db37970b89412bb541f1249bab60d3983a"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 5273,
+      "sha256": "f1818b14aa91b4ad24dfe7006bbef78d225d959f67d9251044d95991a107ee43"
+    },
+    {
+      "path": "outputs/evaluation/p6_03/governance_risk_summary.json",
+      "bytes": 878,
+      "sha256": "2ce34757892c237e467ead821d05d18022109981fe44fd5d952c50e1bb91e292"
+    },
+    {
+      "path": "outputs/evaluation/p6_03/post_freeze_governance_overlay_manifest.json",
+      "bytes": 5442,
+      "sha256": "3f45b65b2c40076d52d09c4c3dcdf06bb527670cf357fabf24a614746983ea75"
+    },
+    {
+      "path": "scripts/verify_p5_05_final_baseline.py",
+      "bytes": 8282,
+      "sha256": "078666a4d90a6795d8fb93305a3fb183e8c48a283757d4b33b97f1917fe9d9e9"
+    },
+    {
+      "path": "scripts/verify_p5_06_acceptance_corrected_baseline.py",
+      "bytes": 7304,
+      "sha256": "d49c5606bb49bd44a9d26c6a52b1ad7e6d4b454633462a2c3a0e703ac568708c"
+    },
+    {
+      "path": "scripts/verify_p5_12_final_submission_candidate.py",
+      "bytes": 9054,
+      "sha256": "58e32a4d12a9cc179d92714efa174155648e2932d42e4a8d8bf1123fe3f61d65"
+    },
+    {
+      "path": "scripts/verify_p6_03_governance.py",
+      "bytes": 4782,
+      "sha256": "3229135635430bfdcc36494c80a137bdaedccedfd9e376140c60bdc897dae567"
+    },
+    {
+      "path": "tests/test_p5_12_final_submission_candidate.py",
+      "bytes": 3729,
+      "sha256": "d28598ff1e54abd90425a5a9e82eb21a9c05b06c3c0b1a55c2c2bf6fcf8deefe"
+    },
+    {
+      "path": "tests/test_p6_03_governance.py",
+      "bytes": 2058,
+      "sha256": "5a1e8b3e7510aeb198e389cb55fa7b71f392ab2cd16273af0a6df556fa2c8e9a"
+    }
+  ],
+  "self_manifest_note": "This manifest intentionally excludes its own checksum."
+}

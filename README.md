@@ -216,6 +216,15 @@ Each major repository area has its own README where one exists:
 - [P5-12 Operator Acceptance Findings and Hardening](docs/P5_12_Operator_Acceptance_Findings_and_Hardening.md)
 - [P5-12 Final Submission-Candidate Freeze](docs/P5_12_Final_Submission_Candidate_Freeze.md)
 
+
+### Governance, ethics, and production boundary
+
+- [P6-03 Governance, Ethics, and Risk Framework](docs/P6_03_Governance_Ethics_and_Risk_Framework.md)
+- [P6-03 Governance Risk Register](docs/P6_03_Risk_Register.md)
+- [P6-03 Human Oversight and Accountability](docs/P6_03_Human_Oversight_and_Accountability.md)
+- [P6-03 Records, Audit, and Retention Expectations](docs/P6_03_Records_Audit_and_Retention_Expectations.md)
+- [P6-03 Production-Readiness Boundary](docs/P6_03_Production_Readiness_Boundary.md)
+
 ### Diagrams
 
 See [Figures README](figures/README.md) for architecture, provenance, failure/escalation, recommendation/human-decision, portability, and six major-function use-case diagrams.

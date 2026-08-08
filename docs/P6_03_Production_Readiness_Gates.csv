@@ -1,0 +1,16 @@
+gate_id,gate,current_status,minimum_evidence_before_production,owner
+PRG-01,Security architecture and environment hardening,NOT SATISFIED,Threat model; hardened hosting architecture; network/end-point controls; vulnerability management; security approval,Security or Privacy Reviewer (RR-05)
+PRG-02,"Identity, authentication, authorization, and delegation",NOT SATISFIED,"Enterprise identity, MFA, role-based access, delegated authority, separation-of-duties rules",Executive Authority (RR-02) / Security or Privacy Reviewer (RR-05)
+PRG-03,Privacy and data classification,NOT SATISFIED,"Data inventory/classification, privacy review, approved handling rules, DLP/redaction controls",Security or Privacy Reviewer (RR-05)
+PRG-04,"Records retention, legal hold, and disposal",NOT SATISFIED,"Organization-specific retention schedule, legal-hold procedure, secure disposal, records ownership",Project Owner / Legal Counsel (RR-04)
+PRG-05,Complete authoritative evidence corpus governance,NOT SATISFIED,"Approved source inventory, ownership, update process/SLA, freshness monitoring, applicability review",Contracts or Procurement Specialist (RR-03)
+PRG-06,Public-sector model validation or replacement,NOT SATISFIED,"Representative public-sector training/validation data, defined performance criteria, domain-specific error analysis, approval",Technical Reviewer / Contracts or Procurement Specialist (RR-03)
+PRG-07,Whole-document ingestion and completeness assurance,NOT SATISFIED,"Validated extraction pipeline, section coverage checks, amendment/attachment handling, human completeness review",Contracts or Procurement Specialist (RR-03)
+PRG-08,"Production audit, monitoring, and alerting",NOT SATISFIED,"Centralized immutable logs, health monitoring, alert routing, review procedures, log access governance",Technical Reviewer
+PRG-09,Model/data drift and change management,NOT SATISFIED,"Drift monitoring, change thresholds, retraining/revalidation process, rollback and release approval",Technical Reviewer
+PRG-10,Incident response and recovery,NOT SATISFIED,"Incident playbooks, ownership, escalation, evidence preservation, recovery and communication procedures",Security or Privacy Reviewer (RR-05) / Project Owner
+PRG-11,"Availability, backup, and disaster recovery",NOT SATISFIED,"SLOs, backups, restore tests, continuity/recovery objectives, capacity testing",Technical Reviewer / Staffing or Delivery Lead (RR-06)
+PRG-12,"Legal, procurement, and contractual operating review",NOT SATISFIED,"Legal review of intended use, procurement-integrity constraints, disclaimers, contract/licensing obligations",Legal Counsel (RR-04) / Contracts or Procurement Specialist (RR-03)
+PRG-13,Human-oversight operating procedure and training,PARTIALLY SATISFIED,"Approved SOP, role training, escalation instructions, periodic competency/review process",Executive Authority (RR-02)
+PRG-14,"User experience, accessibility, and error-state validation",PARTIALLY SATISFIED,"Target-user usability testing, accessibility evaluation, error recovery, supported-browser/runtime testing",Project Owner / Staffing or Delivery Lead (RR-06)
+PRG-15,Independent release authorization,NOT SATISFIED,"Named production owner, independent validation, documented residual-risk acceptance, release authorization",Executive Authority (RR-02)

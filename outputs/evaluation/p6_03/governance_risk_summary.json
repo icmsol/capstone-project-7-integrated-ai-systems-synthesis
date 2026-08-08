@@ -1,0 +1,33 @@
+{
+  "artifact_id": "PROJECT7-P6-03-GOVERNANCE-RISK-SUMMARY",
+  "candidate_id": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0",
+  "major_risks": 20,
+  "fixed_safeguards": 30,
+  "configured_icm_reviewer_roles": 7,
+  "record_classes": 12,
+  "production_readiness_gates": 15,
+  "residual_risk_counts": {
+    "Low": 9,
+    "Medium": 6,
+    "High": 5
+  },
+  "risk_status_counts": {
+    "Controlled in prototype": 8,
+    "Controlled with accepted human-input limitation": 1,
+    "Accepted limitation / production blocker": 3,
+    "Controlled in prototype / production blocker": 3,
+    "Controlled with human/legal review": 1,
+    "Managed residual risk": 1,
+    "Controlled in documentation": 1,
+    "Production blocker": 2
+  },
+  "high_residual_risk_ids": [
+    "GR-06",
+    "GR-07",
+    "GR-08",
+    "GR-19",
+    "GR-20"
+  ],
+  "production_ready": false,
+  "external_actions_performed": 0
+}

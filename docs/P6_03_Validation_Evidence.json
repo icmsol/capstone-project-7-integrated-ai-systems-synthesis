@@ -1,0 +1,27 @@
+{
+  "artifact_id": "PROJECT7-P6-03-GOVERNANCE-VALIDATION",
+  "validation_date": "2026-08-08",
+  "candidate_id": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0",
+  "major_risks": 20,
+  "major_risks_with_owner_control_oversight_and_residual_statement": 20,
+  "fixed_safeguards_mapped": 30,
+  "configured_icm_reviewer_roles_documented": 7,
+  "record_classes": 12,
+  "production_readiness_gates": 15,
+  "high_residual_risk_ids": [
+    "GR-06",
+    "GR-07",
+    "GR-08",
+    "GR-19",
+    "GR-20"
+  ],
+  "production_ready": false,
+  "regression_unit_tests": {
+    "passed": 88,
+    "total": 88
+  },
+  "quality_gate_equivalent_result": "PASS",
+  "technical_or_evaluation_behavior_changed": false,
+  "external_actions_performed": 0,
+  "result": "PASS"
+}

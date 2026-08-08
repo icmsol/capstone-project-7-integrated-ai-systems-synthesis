@@ -77,3 +77,15 @@ Phase 6 may add/update reviewer documentation in `docs/` without silently changi
 - [P6-02 Documentation Reconciliation](P6_02_System_Design_and_Markdown_Reconciliation.md)
 - [P6-02 Diagram Reconciliation](P6_02_Diagram_Reconciliation.md)
 - [P6-02 Markdown Audit](P6_02_Non_README_Markdown_Audit.csv)
+
+## P6-03 Governance, Ethics, Risk, and Responsible Deployment
+
+- [Governance, Ethics, and Risk Framework](P6_03_Governance_Ethics_and_Risk_Framework.md)
+- [Governance Risk Register](P6_03_Risk_Register.md)
+- [Risk Register CSV](P6_03_Risk_Register.csv)
+- [Safeguard Matrix CSV](P6_03_Safeguard_Matrix.csv)
+- [Human Oversight and Accountability](P6_03_Human_Oversight_and_Accountability.md)
+- [Records, Audit, and Retention Expectations](P6_03_Records_Audit_and_Retention_Expectations.md)
+- [Records Expectations CSV](P6_03_Records_Expectations.csv)
+- [Production-Readiness Boundary](P6_03_Production_Readiness_Boundary.md)
+- [Production-Readiness Gates CSV](P6_03_Production_Readiness_Gates.csv)
