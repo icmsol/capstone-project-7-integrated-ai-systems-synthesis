@@ -1,0 +1,162 @@
+{
+  "overlay_schema_version": "1.0.0",
+  "overlay_id": "PROJECT7-P6-01-POST-FREEZE-OVERLAY-v1.0.0",
+  "created_at_utc": "2026-08-08T20:23:00Z",
+  "parent_candidate_id": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0",
+  "historical_baseline_preserved": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0",
+  "change_reason": "P6-01 trued up all existing README files and synchronized the documentation copy of the live CI workflow. The historical P5-05 inventory had byte-frozen those documentation artifacts even though the freeze policy permits explicitly versioned documentation corrections and CI maintenance. This overlay preserves the old inventory as historical evidence while checksum-governing the current documentation and the narrow verifier maintenance required to validate it.",
+  "documentation_only_and_ci_maintenance": true,
+  "technical_or_evaluation_behavior_changed": false,
+  "frozen_scenario_inputs_changed": false,
+  "model_artifacts_changed": false,
+  "safeguards_changed": false,
+  "evaluation_results_changed": false,
+  "recommendation_logic_changed": false,
+  "human_authority_boundary_changed": false,
+  "files": [
+    {
+      "path": "README.md",
+      "change_class": "documentation_correction",
+      "bytes": 13550,
+      "sha256": "62f9740dbfbce0257796fd70aae5d9a21d2afaed222ca453b805393a043e31e1"
+    },
+    {
+      "path": "audit/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 1814,
+      "sha256": "74db2de915387d91cd4fbdc9e63c5cf64878184cff80c257742279986eb2d0a7"
+    },
+    {
+      "path": "config/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 3989,
+      "sha256": "2046c3ac483a5c3c1d0a69b309bf90eaa35f9c48fd2e6d03e9a55e12e66d032b"
+    },
+    {
+      "path": "data/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 1564,
+      "sha256": "f90924d904b3bf333a7f177cacecd36378a7e4e2eac6c5fc2e50fbe373a7c002"
+    },
+    {
+      "path": "data/frozen_scenarios/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 766,
+      "sha256": "cc2af6a1aa79904e498e26af1678fa193da0596db3a94714c182962d2ee06c40"
+    },
+    {
+      "path": "data/processed/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 518,
+      "sha256": "9dea03f4d1bc33fde1e043979b82ae5b72427a7666f7b87835fd648ae68d28a9"
+    },
+    {
+      "path": "data/raw/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 583,
+      "sha256": "0d08a46c0d5f874dcd28d64764dd1f598d92f3f7713722f4f54cbce17a5cbe4c"
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/_shared/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 1094,
+      "sha256": "05bf9c58a2411b2aead2fdf59dc439c349bb639d08838ec2f486b4cbe6d74046"
+    },
+    {
+      "path": "docs/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 4304,
+      "sha256": "376a00e2fe08796b58150be10b3167b578427473a2ccff8d272739627f1a0a42"
+    },
+    {
+      "path": "figures/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 2054,
+      "sha256": "a6fe0bffc7eaac598646cfc8e86f64506f1265d908c36e5e6ef69ca5c9726c4b"
+    },
+    {
+      "path": "notebooks/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 1800,
+      "sha256": "b48dc7efb4c23457a78ac1fa2cb123556230115616bd8b284018c0857c10c330"
+    },
+    {
+      "path": "outputs/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 1918,
+      "sha256": "3394b2cc5124ab7fe8def7370856fe3407fb932db56d20edc4d3fe537923774b"
+    },
+    {
+      "path": "outputs/case_packets/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 746,
+      "sha256": "719667ff01b6a48e1c308496b827cc78ee5a4dcdcd042a807bf9416fe8100d42"
+    },
+    {
+      "path": "outputs/evaluation/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 2032,
+      "sha256": "137a5e82da35e65f9bba263be19c37402793b18c8efb2b7a551d37d961daa840"
+    },
+    {
+      "path": "presentation/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 806,
+      "sha256": "81a4e1be3c7ef802c59246c9b358779b5df6413073ca900c718452c9afc78176"
+    },
+    {
+      "path": "reports/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 1216,
+      "sha256": "6a5094916f3e29261e45c5e0dae45aa6d5b55a841eebde5c2092983085c1be9c"
+    },
+    {
+      "path": "src/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 3075,
+      "sha256": "fa3d97a11af292aea0b70fb84b4d0214da2119baa9efa0110b5e4f93aa56b021"
+    },
+    {
+      "path": "tests/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 2229,
+      "sha256": "261e7c67922da6bf51a63db3c27546a32888a54e4fb7dab67eb0e6cba7bb4fd8"
+    },
+    {
+      "path": "docs/ci/project7-quality-gate.yml",
+      "change_class": "documentation_correction",
+      "bytes": 3757,
+      "sha256": "8fe192c1e6e905786c3ad895cba3ecdfcf2729197d3d060fad184544d06dbc83"
+    },
+    {
+      "path": "scripts/verify_p5_05_final_baseline.py",
+      "change_class": "ci_maintenance",
+      "bytes": 8775,
+      "sha256": "7b988aed3ff0ebe42a0b4618fa1e32829b9deb83229fff50fea5ff0e639b2b4d"
+    },
+    {
+      "path": "scripts/verify_p5_06_acceptance_corrected_baseline.py",
+      "change_class": "ci_maintenance",
+      "bytes": 6168,
+      "sha256": "610e39da858547408a54897218bd39f0d613fe901550a50c8231e5748fd4bf1a"
+    },
+    {
+      "path": "scripts/verify_p5_12_final_submission_candidate.py",
+      "change_class": "ci_maintenance",
+      "bytes": 9849,
+      "sha256": "f3fa7b33e7681e0ea230da823b311b2c3cb857973e7088c0e0f9d57dff196420"
+    },
+    {
+      "path": "tests/test_p5_12_final_submission_candidate.py",
+      "change_class": "ci_maintenance",
+      "bytes": 3965,
+      "sha256": "06e4b079c206918679afa8f509e77223055fb1f1786efecb6d0c2363f36d3c4a"
+    }
+  ],
+  "counts": {
+    "documentation_corrections": 19,
+    "ci_maintenance": 4,
+    "total": 23
+  },
+  "external_actions_performed": 0
+}

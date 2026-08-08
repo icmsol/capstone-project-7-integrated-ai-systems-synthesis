@@ -1,0 +1,48 @@
+{
+  "package": "Project 7 P6-01 Post-Freeze Documentation and CI Compatibility Fix",
+  "version": "1.0.0",
+  "parent_candidate_id": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0",
+  "documentation_only_and_ci_maintenance": true,
+  "technical_or_evaluation_behavior_changed": false,
+  "overlay_id": "PROJECT7-P6-01-POST-FREEZE-OVERLAY-v1.0.0",
+  "local_validation": {
+    "python scripts/verify_p5_05_final_baseline.py": "PASS",
+    "python scripts/verify_p5_06_acceptance_corrected_baseline.py": "PASS",
+    "python scripts/verify_p5_12_operator_hardening.py": "PASS",
+    "python scripts/verify_p5_12_final_submission_candidate.py": "PASS",
+    "python -m unittest tests.test_p5_12_final_submission_candidate -v": "PASS"
+  },
+  "files": [
+    {
+      "path": "docs/P6_01_Post_Freeze_Documentation_and_CI_Compatibility.md",
+      "bytes": 2180,
+      "sha256": "08ae5b07970d2286577e617aeec0baa16ba85469f78ca829ebdb5f625af7fe36"
+    },
+    {
+      "path": "outputs/evaluation/p6_01/post_freeze_overlay_manifest.json",
+      "bytes": 6058,
+      "sha256": "1304b8affcebd46096f1c13e83ad4abaa8d8e37b6b1e03d3fdcd0c615ffde0d7"
+    },
+    {
+      "path": "scripts/verify_p5_05_final_baseline.py",
+      "bytes": 8775,
+      "sha256": "7b988aed3ff0ebe42a0b4618fa1e32829b9deb83229fff50fea5ff0e639b2b4d"
+    },
+    {
+      "path": "scripts/verify_p5_06_acceptance_corrected_baseline.py",
+      "bytes": 6168,
+      "sha256": "610e39da858547408a54897218bd39f0d613fe901550a50c8231e5748fd4bf1a"
+    },
+    {
+      "path": "scripts/verify_p5_12_final_submission_candidate.py",
+      "bytes": 9849,
+      "sha256": "f3fa7b33e7681e0ea230da823b311b2c3cb857973e7088c0e0f9d57dff196420"
+    },
+    {
+      "path": "tests/test_p5_12_final_submission_candidate.py",
+      "bytes": 3965,
+      "sha256": "06e4b079c206918679afa8f509e77223055fb1f1786efecb6d0c2363f36d3c4a"
+    }
+  ],
+  "external_actions_performed": 0
+}
