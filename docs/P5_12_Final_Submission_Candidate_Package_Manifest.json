@@ -1,0 +1,57 @@
+{
+  "package": "Project 7 P5-12 Final Submission Candidate Freeze",
+  "version": "1.0.0",
+  "candidate_id": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0",
+  "based_on_green_commit": "18faa3a",
+  "hosted_ci_run": 15,
+  "visual_regression": "PASS",
+  "file_count": 9,
+  "files": [
+    {
+      "path": "docs/P5_12_Final_Accepted_Limitations_and_Boundaries.md",
+      "bytes": 1569,
+      "sha256": "0fe093adfd04ef7c31686201def05338e4d9f7036587f373cd4ecc0dce320409"
+    },
+    {
+      "path": "docs/P5_12_Final_Submission_Candidate_Freeze.md",
+      "bytes": 3411,
+      "sha256": "4e0b53de4a0fe7121264e33cfb09939ec0a4de066c99d7d178966f26ee99b719"
+    },
+    {
+      "path": "outputs/evaluation/p5_12/final_submission_candidate_evidence_index.csv",
+      "bytes": 3597,
+      "sha256": "b035e6c2de2d750439abe3f931c6c87f62ff4df39b5bee44fe80e1564eb53d63"
+    },
+    {
+      "path": "outputs/evaluation/p5_12/final_submission_candidate_manifest.json",
+      "bytes": 3801,
+      "sha256": "b5b49e7392f55d6c76c221fd747736913465212ed12e2bf3304ceccb983f9448"
+    },
+    {
+      "path": "outputs/evaluation/p5_12/final_submission_candidate_strict_inventory.json",
+      "bytes": 10448,
+      "sha256": "9c9de9e6b67cc879350f3fb14b1a25059e1c85393737f6d16d05b61708117ff1"
+    },
+    {
+      "path": "outputs/evaluation/p5_12/final_visual_regression_acceptance.json",
+      "bytes": 3628,
+      "sha256": "bdc76731a9f5b6865d58e800a35f60448b2bd0ba861d8403ecd6a199233789d7"
+    },
+    {
+      "path": "scripts/verify_p5_12_final_submission_candidate.py",
+      "bytes": 6120,
+      "sha256": "5a4d9e176b57de23e0b925ea74aedb55a1eef6ac830014b0d944ea6e5586f8cb"
+    },
+    {
+      "path": "tests/test_p5_12_final_submission_candidate.py",
+      "bytes": 2603,
+      "sha256": "2be7a4f18335e57f7160c50bb55ad3f683e755ba7ac6a1c7af4ce43b8bf36d4d"
+    },
+    {
+      "path": "docs/P5_12_Final_Submission_Candidate_Package_Manifest.json",
+      "bytes": "self",
+      "sha256": "not_applicable_self_manifest"
+    }
+  ],
+  "external_actions_performed": 0
+}

@@ -1,0 +1,106 @@
+{
+  "artifact_schema_version": "1.0.0",
+  "artifact_id": "PROJECT7-P5-12-FINAL-VISUAL-REGRESSION",
+  "recorded_at_utc": "2026-08-08T17:37:00Z",
+  "case_id": "CASE-5EB707FCB1A3A397",
+  "solicitation": "Covered California RFP 2026-01 \u2014 Information Security Services",
+  "checks": [
+    {
+      "finding_id": "FR-01",
+      "check": "Generic RFP metadata no longer creates RFP/RFQ Preparation alignment.",
+      "status": "PASS",
+      "observed": {
+        "alignment_label": "weak_alignment",
+        "alignment_score": 0.3333,
+        "historical_matches": 9,
+        "matched_capabilities": [
+          {
+            "capability_id": "ICM-PM-004",
+            "name": "Risk, Issue, Dependency, and Change Control",
+            "strength": "strong",
+            "matched_terms": [
+              "risk management"
+            ]
+          }
+        ],
+        "rfp_preparation_capability_present": false
+      }
+    },
+    {
+      "finding_id": "FR-02",
+      "check": "Domain-shift confidence warning is explicit in the operator view.",
+      "status": "PASS",
+      "observed": {
+        "warning_text": "Domain-shift safeguard active: model confidence does not establish semantic correctness.",
+        "prediction_count": 3,
+        "domain_warning_count": 3,
+        "predictions": [
+          {
+            "theme": "Insurance",
+            "confidence": 0.999552,
+            "decision": "escalate"
+          },
+          {
+            "theme": "Ip Ownership Assignment",
+            "confidence": 0.989386,
+            "decision": "escalate"
+          },
+          {
+            "theme": "Ip Ownership Assignment",
+            "confidence": 0.994577,
+            "decision": "escalate"
+          }
+        ]
+      }
+    },
+    {
+      "finding_id": "FR-03",
+      "check": "Evidence layer remains fail-safe; retrieval is not treated as support.",
+      "status": "PASS",
+      "observed": {
+        "accepted_evidence_items": 0,
+        "sufficient_assessments": 0,
+        "assessment_count": 3,
+        "case_status": "escalated"
+      }
+    },
+    {
+      "finding_id": "FR-04",
+      "check": "Operator-facing decision packet is table-free/readable in Colab.",
+      "status": "PASS",
+      "observed": {
+        "collapsed_table_headers_present": false,
+        "sectioned_bullet_rendering": true
+      }
+    },
+    {
+      "finding_id": "FR-05",
+      "check": "Estimated value is human-readable currency.",
+      "status": "PASS",
+      "observed": {
+        "rendered_value": "$12,500,000 USD",
+        "raw_python_object_visible": false
+      }
+    }
+  ],
+  "recommendation": {
+    "code": "R-05",
+    "label": "Escalate \u2014 Specialized Review Required",
+    "strength": 1.0,
+    "required_reviewer": "Contracts or Legal Reviewer",
+    "packet_status": "ready_for_human_review",
+    "final_decision": null,
+    "external_actions_performed": 0
+  },
+  "visual_acceptance_result": "PASS",
+  "external_actions_performed": 0,
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required.",
+  "comparison_to_p5_11_smoke_test": {
+    "p5_11_accepted_evidence_items": 1,
+    "p5_12_visual_regression_accepted_evidence_items": 0,
+    "p5_11_sufficient_assessments": 0,
+    "p5_12_sufficient_assessments": 0,
+    "terminal_safety_behavior_unchanged": true,
+    "interpretation": "The exploratory fresh-request retrieval count differed between runs, but neither run established sufficient evidence and both remained escalated. Exact retrieval count for this non-frozen fresh request is not used as a benchmark metric."
+  }
+}

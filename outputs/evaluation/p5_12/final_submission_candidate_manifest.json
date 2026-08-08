@@ -1,0 +1,90 @@
+{
+  "manifest_schema_version": "1.0.0",
+  "candidate_id": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0",
+  "candidate_status": "frozen",
+  "frozen_at_utc": "2026-08-08T17:37:00Z",
+  "repository": {
+    "url": "https://github.com/icmsol/capstone-project-7-integrated-ai-systems-synthesis",
+    "branch": "main",
+    "source_green_commit_before_freeze": "18faa3a",
+    "source_green_ci_run": 15,
+    "source_green_ci_status": "success",
+    "source_green_ci_duration_seconds": 41,
+    "source_green_ci_artifact_count": 1
+  },
+  "baseline_chain": {
+    "evaluation_baseline": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0",
+    "acceptance_corrected_baseline": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.1",
+    "historical_p5_06_overlay_version": "1.0.1",
+    "active_post_freeze_overlay_version": "1.0.2",
+    "submission_candidate": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0"
+  },
+  "evaluation": {
+    "cases_passed": 19,
+    "cases_total": 19,
+    "assertions_passed": 262,
+    "assertions_total": 262,
+    "critical_assertions_passed": 167,
+    "critical_assertions_total": 167,
+    "major_assertions_passed": 95,
+    "major_assertions_total": 95,
+    "regressions": 0,
+    "frozen_inputs_changed": false,
+    "external_actions_performed": 0
+  },
+  "operator_acceptance": {
+    "p5_10_same_rfo": {
+      "status": "PASS",
+      "case_id": "CASE-22E46661B5CFB3D8",
+      "human_disposition_path": "accept",
+      "bundle_round_trip": "PASS",
+      "restored_status": "finalized"
+    },
+    "p5_11_fresh_request": {
+      "status": "PASS_WITH_FINDINGS",
+      "case_id": "CASE-5EB707FCB1A3A397",
+      "human_disposition_path": "escalate",
+      "bundle_round_trip": "PASS",
+      "restored_status": "escalated"
+    },
+    "p5_12_targeted_visual_regression": {
+      "status": "PASS",
+      "artifact": "outputs/evaluation/p5_12/final_visual_regression_acceptance.json"
+    }
+  },
+  "findings_disposition": {
+    "unresolved_critical_acceptance_defects": 0,
+    "unresolved_major_acceptance_defects": 0,
+    "accepted_bounded_limitations": [
+      "FR-02: Project 4 may produce semantically incorrect high-confidence classifications on public-sector text; MODEL_DOMAIN_SHIFT forces escalation and confidence is explicitly non-authoritative.",
+      "FR-03: Bounded evidence retrieval can return no sufficient authority; retrieval alone never establishes support.",
+      "FR-03 observation: the exploratory Covered California fresh-request retrieval count was 1 insufficient item in P5-11 and 0 items in the P5-12 visual regression; both runs remained 0/3 sufficient and escalated. Exact fresh-request retrieval count is not a frozen benchmark metric."
+    ],
+    "corrected_before_freeze": [
+      "FR-01",
+      "FR-04",
+      "FR-05"
+    ]
+  },
+  "freeze_scope": {
+    "strict_inventory_path": "outputs/evaluation/p5_12/final_submission_candidate_strict_inventory.json",
+    "strict_file_count": 44,
+    "evidence_index_path": "outputs/evaluation/p5_12/final_submission_candidate_evidence_index.csv",
+    "visual_acceptance_path": "outputs/evaluation/p5_12/final_visual_regression_acceptance.json",
+    "workflow_verification": "structural_current_ci",
+    "post_freeze_mutable_areas": [
+      "README.md",
+      "docs/ (Phase 6 documentation additions/edits that do not alter frozen technical/evaluation artifacts)",
+      "reports/",
+      "presentation/",
+      "figures/ (paper/defense visuals)"
+    ]
+  },
+  "change_control": {
+    "technical_or_evaluation_changes_after_freeze_require_new_candidate_version": true,
+    "silent_edits_prohibited": true,
+    "documentation_may_proceed_within_mutable_scope": true
+  },
+  "external_actions_performed": 0,
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

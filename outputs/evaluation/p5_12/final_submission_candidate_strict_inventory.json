@@ -1,0 +1,284 @@
+{
+  "inventory_schema_version": "1.0.0",
+  "candidate_id": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0",
+  "generated_at_utc": "2026-08-08T17:37:00Z",
+  "strict_file_count": 44,
+  "files": [
+    {
+      "path": "config/profiles/icm_service_catalog.csv",
+      "bytes": 56555,
+      "sha256": "3c020df8c9931ac27fe00664e9f7e0ab72d9af9338b519c7b32beecb9384ba9a",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "config/profiles/icm_solutions.json",
+      "bytes": 2087,
+      "sha256": "01c36cc8bd9509e10fc62e7442a4980a04565041158918dcb410c0d4be454076",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "config/profiles/fictional_small_business.json",
+      "bytes": 1321,
+      "sha256": "c259172e27abb6d8a5a289f55cd34daa68bb760c7cc5de7dc0599c065eab0cfb",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "config/system/fixed_safeguards.json",
+      "bytes": 1547,
+      "sha256": "20643de05287eb123fc7eb92331e4531e3f78303251aac5326503feb0c4e89d6",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "config/system/safeguard_policy.json",
+      "bytes": 34975,
+      "sha256": "6ad5f06fe17874b33e36c6c5241099a3bdce354be0518cc97277b5f7b6846cd4",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "config/system/recommendation_policy.json",
+      "bytes": 1290,
+      "sha256": "4f2b7adb245c64afe21eda3da971cf06c9f25b881f7550968cfa51b9c800dfdc",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "config/system/decision_support_packet_policy.json",
+      "bytes": 958,
+      "sha256": "bc369c57458587afee93e7dfe082e1b633c0a2c2c03d75b8c28d67664d1eb302",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "config/system/clause_triage_policy.json",
+      "bytes": 950,
+      "sha256": "2f5367664aec89bcb061502215f01beb8e864ad38dbf56ea448ffc0ede4fe36c",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "config/system/evidence_workflow_policy.json",
+      "bytes": 1529,
+      "sha256": "d3d1851a3dc73f79b997d580df537e7d6f6672c987da05aec944d7072bc3d669",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "config/system/project4_model_registry.json",
+      "bytes": 1395,
+      "sha256": "1bc3bec2aaa70a9d239f4de16799092b1f309e579da9d6fd66c4b41f307bf3a1",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "config/system/final_evaluation_freeze_policy.json",
+      "bytes": 1509,
+      "sha256": "b566d3208ab3f5c41d120e5b654ffb9cf409775b62756214081bc1f6213196ac",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "src/project7/operator_ui.py",
+      "bytes": 37895,
+      "sha256": "ae1dc9535fa53c7e0ad9e00619cf625c08034bd736f41dc32a026e9c1c31cf04",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "src/project7/operator_workflow.py",
+      "bytes": 26813,
+      "sha256": "3a8a2d3983dc3d72b069c61132aa954b8db34055712d115791638df16e9cd354",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "src/project7/opportunity_intake.py",
+      "bytes": 18684,
+      "sha256": "46bf1efa0e2e6ff7d0b16d4dbc78f922a0f8543c317fc80bbe889ee85da523fa",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "src/project7/service_alignment.py",
+      "bytes": 9976,
+      "sha256": "d9b72b329f1cce136c67d6a6e4e4d72246f289fa54d4dac8d5388fdc1ce38d6d",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "src/project7/clause_triage.py",
+      "bytes": 17258,
+      "sha256": "19922893ca65f45e67bbd271a76ab8bc4dea10ee12f7f08d6b25e33a4cac7eba",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "src/project7/evidence_workflow.py",
+      "bytes": 23493,
+      "sha256": "6fbe576f15d0b301a557c825bd29c0c93c77f8e0f7d13a34d0bc9d18c8dbae6c",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "src/project7/recommendation_engine.py",
+      "bytes": 11415,
+      "sha256": "d6027f31cd00abd21f41f5877983d8c9574452f231291e874888d5e454f73b13",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "src/project7/decision_support_packet.py",
+      "bytes": 27021,
+      "sha256": "df341690cbf3ea980246978f84c8dd6b435547b64ba8b678fda8a6131f597874",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "src/project7/human_disposition.py",
+      "bytes": 10936,
+      "sha256": "174b854770af7f9dbb642dcb49aa4339c082391c63108736d161ae31c4df7c1b",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "src/project7/p4_02_pipeline.py",
+      "bytes": 8020,
+      "sha256": "e413ab2ddc597311bf050680f3987da682e40ea658368ffd1864aef8b81191e3",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "src/project7/p4_03_pipeline.py",
+      "bytes": 5510,
+      "sha256": "e20df1ee76634573f70c0ae3890644b68cf2d7695e5557358e35b6c1deeb9f50",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "src/project7/p4_04_pipeline.py",
+      "bytes": 9098,
+      "sha256": "f867574da49548165b983535440a8ef2b4738fae67fd3aa5e8771fbd9dbf0858",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "src/project7/p4_05_pipeline.py",
+      "bytes": 8337,
+      "sha256": "4fcf3544eb591490d70075a233c8a56dd0c7dd537fe9ca056134ee80648a378b",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "src/project7/p4_06_pipeline.py",
+      "bytes": 14008,
+      "sha256": "8fddfe2dda17a1be0f024d589af8d9e7396fb9008e8d906574ace8c0b6cfc00e",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "notebooks/Project_7_Operator_Interface.ipynb",
+      "bytes": 3658,
+      "sha256": "17580fed2d950d87a6c8650fb1ca93f33db3964253d9ea05fa882fbf25272d6a",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "scripts/validate_operator_interface.py",
+      "bytes": 3387,
+      "sha256": "581ed473084de8df83f64ab3c0b134a6b29e6531f1cc53814d9a55ed2cd836c6",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "scripts/verify_p5_05_final_baseline.py",
+      "bytes": 5953,
+      "sha256": "cf2d2a702c0f9b2c8b1dcf9d3d89a90af20a8081f31e1190e0f797a82faf6dec",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "scripts/verify_p5_06_acceptance_corrected_baseline.py",
+      "bytes": 4935,
+      "sha256": "1e6fb60591e4b281f4dddb71030163e96729af3cbd8d3afe738739daec392e7a",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "scripts/verify_p5_12_operator_hardening.py",
+      "bytes": 3799,
+      "sha256": "60c57882a115c93bb7543b2808bb8f894d54fe06b55ff25754698a153627cf76",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "tests/test_operator_workflow.py",
+      "bytes": 4313,
+      "sha256": "4fff02e06fd7c3170d198236d121e83851e9045d2c3140d32b8cbdb1ddbddb89",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "tests/test_human_disposition_recorder.py",
+      "bytes": 9788,
+      "sha256": "e9a91276a7f85a8818013c1356ef5188bf5c08aafa55f03da635c4aab0e76a2d",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "tests/test_p5_12_operator_hardening.py",
+      "bytes": 4255,
+      "sha256": "db65206a7f1516dbe1cbbb442ab43d934b924cbaa377458b20f32634e40c85c7",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "tests/test_acceptance_corrected_baseline.py",
+      "bytes": 3761,
+      "sha256": "c0b1a21c93c53706d2860703d7daeef54a326d2a50e4f88a835f12783b49f3e7",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "outputs/evaluation/p5_05/final_evaluation_baseline.json",
+      "bytes": 3216,
+      "sha256": "f7978ca5287f6250bc80597ec4f3ab8b4b408204baed93c1f75ed876bdb57fe7",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "outputs/evaluation/p5_05/final_artifact_inventory.json",
+      "bytes": 349151,
+      "sha256": "f9f81ab6de8273b62cacb4455f4b7ea90e52e1c720d87a181e80b5dd78b7b2f1",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "outputs/evaluation/p5_05/final_evidence_map.json",
+      "bytes": 7198,
+      "sha256": "a120dcbc483ab690bf61ae1ba1186b8743be73b22a2e6d8ce025ac232ea86649",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "outputs/evaluation/p5_05/final_metric_summary.json",
+      "bytes": 4199,
+      "sha256": "20dea5bb86237c444aad76591902c29c880544d81b2cee6d6115d629b9ac2e4a",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "outputs/evaluation/p5_06/acceptance_corrected_baseline.json",
+      "bytes": 1335,
+      "sha256": "ab2c337e2e3b046e2c5ac0f403d7f7d215e86efc616c462f618f6847420a1339",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "outputs/evaluation/p5_06/frozen_suite_rerun_summary.json",
+      "bytes": 642,
+      "sha256": "e359bc7087cf9577d71a9ccf2bb07e707f8bb3fa770cad46a1bc5f2671c7d321",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "outputs/evaluation/p5_06/manual_operator_acceptance_findings.json",
+      "bytes": 4027,
+      "sha256": "58580f3ec5e0a88dc9b9d1aecf43c869dffb241112587e99426bf738ab8a3d35",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "outputs/evaluation/p5_06/versioned_overlay_manifest_v1.0.1.json",
+      "bytes": 7075,
+      "sha256": "f25e36ee7d7c5e9f0cad21337f73aca88ee339437696b32238869a848780c30f",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "outputs/evaluation/p5_06/versioned_overlay_manifest.json",
+      "bytes": 7789,
+      "sha256": "1e9d5a10e85b81779d0f15cbdb875929b1c238acb5406a8dd1aa7f5ab46da177",
+      "verification_mode": "strict_sha256"
+    },
+    {
+      "path": "outputs/evaluation/p5_12/operator_hardening_findings.json",
+      "bytes": 3281,
+      "sha256": "4a2014afb114777f7847a9b2132cbb3a3e3d2e80183a4af5111248dfb2879014",
+      "verification_mode": "strict_sha256"
+    }
+  ],
+  "excluded_mutable_or_structural_paths": [
+    {
+      "path": ".github/workflows/project7-quality-gate.yml",
+      "verification_mode": "structural_current_ci",
+      "reason": "CI orchestration is intentionally extended to verify the frozen candidate."
+    },
+    {
+      "path_prefix": "README.md, docs/, reports/, presentation/, figures/",
+      "verification_mode": "phase_6_documentation_mutable",
+      "reason": "Phase 6 documentation and defense artifacts are intentionally completed after the technical candidate freeze."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+evidence_area,artifact_or_reference,purpose,verification_mode,version_or_run,sha256
+Frozen evaluation baseline,outputs/evaluation/p5_05/final_evaluation_baseline.json,19/19 cases and 262/262 assertions; immutable evaluation baseline,strict_sha256,P5-05 v1.0.0,f7978ca5287f6250bc80597ec4f3ab8b4b408204baed93c1f75ed876bdb57fe7
+Frozen artifact inventory,outputs/evaluation/p5_05/final_artifact_inventory.json,Historical checksum inventory for the frozen evaluation baseline,strict_sha256,P5-05 v1.0.0,f9f81ab6de8273b62cacb4455f4b7ea90e52e1c720d87a181e80b5dd78b7b2f1
+Frozen evidence map,outputs/evaluation/p5_05/final_evidence_map.json,Evidence locations supporting final metrics and claims,strict_sha256,P5-05 v1.0.0,a120dcbc483ab690bf61ae1ba1186b8743be73b22a2e6d8ce025ac232ea86649
+Acceptance-corrected baseline,outputs/evaluation/p5_06/acceptance_corrected_baseline.json,Versioned manual-acceptance correction baseline,strict_sha256,P5-06 v1.0.1,ab2c337e2e3b046e2c5ac0f403d7f7d215e86efc616c462f618f6847420a1339
+Historical overlay,outputs/evaluation/p5_06/versioned_overlay_manifest_v1.0.1.json,Preserved historical post-freeze correction overlay,strict_sha256,P5-06 overlay 1.0.1,f25e36ee7d7c5e9f0cad21337f73aca88ee339437696b32238869a848780c30f
+Active overlay,outputs/evaluation/p5_06/versioned_overlay_manifest.json,Current post-freeze governance overlay containing P5-12 config correction,strict_sha256,active overlay 1.0.2,1e9d5a10e85b81779d0f15cbdb875929b1c238acb5406a8dd1aa7f5ab46da177
+Operator interface,notebooks/Project_7_Operator_Interface.ipynb,Single-entry-point reviewer/operator experience,strict_sha256,P5-09 + P5-12,17580fed2d950d87a6c8650fb1ca93f33db3964253d9ea05fa882fbf25272d6a
+Operator workflow,src/project7/operator_workflow.py,No-glue-code orchestration and resumable case bundles,strict_sha256,P5-09,3a8a2d3983dc3d72b069c61132aa954b8db34055712d115791638df16e9cd354
+Operator presentation,src/project7/operator_ui.py,Seven-stage interface and hardened reviewer presentation,strict_sha256,P5-12,ae1dc9535fa53c7e0ad9e00619cf625c08034bd736f41dc32a026e9c1c31cf04
+Hardening findings,outputs/evaluation/p5_12/operator_hardening_findings.json,FR-01 through FR-05 disposition evidence,strict_sha256,P5-12,4a2014afb114777f7847a9b2132cbb3a3e3d2e80183a4af5111248dfb2879014
+Final visual regression,outputs/evaluation/p5_12/final_visual_regression_acceptance.json,Observed acceptance of FR-01/02/04/05 fixes and safe evidence behavior,strict_sha256,P5-12 final,
+Project 4 model registry,config/system/project4_model_registry.json,"Frozen model identity, checkpoint SHA-256, and bounded limitations",strict_sha256,Project 4 runtime,1bc3bec2aaa70a9d239f4de16799092b1f309e579da9d6fd66c4b41f307bf3a1
+Safeguards,config/system/fixed_safeguards.json,Non-overridable system safeguards,strict_sha256,P2/P5,20643de05287eb123fc7eb92331e4531e3f78303251aac5326503feb0c4e89d6
+Recommendation policy,config/system/recommendation_policy.json,Nonbinding recommendation control,strict_sha256,P4/P5,4f2b7adb245c64afe21eda3da971cf06c9f25b881f7550968cfa51b9c800dfdc
+Human disposition recorder,src/project7/human_disposition.py,Authorized final human disposition remains separate from AI recommendation,strict_sha256,P5-08,174b854770af7f9dbb642dcb49aa4339c082391c63108736d161ae31c4df7c1b
+CI workflow,.github/workflows/project7-quality-gate.yml,Read-only hosted quality gate; no deployment/publish step,structural_current_ci,P5-12 final,
+Hosted CI,GitHub Actions Project 7 Quality Gate run #15,Green hosted validation on commit 18faa3a; duration 41s; one artifact,observed_hosted_evidence,run #15,
