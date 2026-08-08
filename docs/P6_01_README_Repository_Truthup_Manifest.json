@@ -1,0 +1,222 @@
+{
+  "artifact_id": "PROJECT7-P6-01-README-REPOSITORY-TRUTHUP",
+  "generated_at_utc": "2026-08-08T18:05:47+00:00",
+  "source_candidate": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0",
+  "readme_count_discovered": 18,
+  "readme_count_updated": 18,
+  "readmes": [
+    {
+      "path": "README.md",
+      "bytes": 13550,
+      "sha256": "62f9740dbfbce0257796fd70aae5d9a21d2afaed222ca453b805393a043e31e1"
+    },
+    {
+      "path": "audit/README.md",
+      "bytes": 1814,
+      "sha256": "74db2de915387d91cd4fbdc9e63c5cf64878184cff80c257742279986eb2d0a7"
+    },
+    {
+      "path": "config/README.md",
+      "bytes": 3989,
+      "sha256": "2046c3ac483a5c3c1d0a69b309bf90eaa35f9c48fd2e6d03e9a55e12e66d032b"
+    },
+    {
+      "path": "data/README.md",
+      "bytes": 1564,
+      "sha256": "f90924d904b3bf333a7f177cacecd36378a7e4e2eac6c5fc2e50fbe373a7c002"
+    },
+    {
+      "path": "data/frozen_scenarios/README.md",
+      "bytes": 766,
+      "sha256": "cc2af6a1aa79904e498e26af1678fa193da0596db3a94714c182962d2ee06c40"
+    },
+    {
+      "path": "data/processed/README.md",
+      "bytes": 518,
+      "sha256": "9dea03f4d1bc33fde1e043979b82ae5b72427a7666f7b87835fd648ae68d28a9"
+    },
+    {
+      "path": "data/raw/README.md",
+      "bytes": 583,
+      "sha256": "0d08a46c0d5f874dcd28d64764dd1f598d92f3f7713722f4f54cbce17a5cbe4c"
+    },
+    {
+      "path": "data/scenarios/frozen/v1.0.0/_shared/README.md",
+      "bytes": 1094,
+      "sha256": "05bf9c58a2411b2aead2fdf59dc439c349bb639d08838ec2f486b4cbe6d74046"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 4304,
+      "sha256": "376a00e2fe08796b58150be10b3167b578427473a2ccff8d272739627f1a0a42"
+    },
+    {
+      "path": "figures/README.md",
+      "bytes": 2054,
+      "sha256": "a6fe0bffc7eaac598646cfc8e86f64506f1265d908c36e5e6ef69ca5c9726c4b"
+    },
+    {
+      "path": "notebooks/README.md",
+      "bytes": 1800,
+      "sha256": "b48dc7efb4c23457a78ac1fa2cb123556230115616bd8b284018c0857c10c330"
+    },
+    {
+      "path": "outputs/README.md",
+      "bytes": 1918,
+      "sha256": "3394b2cc5124ab7fe8def7370856fe3407fb932db56d20edc4d3fe537923774b"
+    },
+    {
+      "path": "outputs/case_packets/README.md",
+      "bytes": 746,
+      "sha256": "719667ff01b6a48e1c308496b827cc78ee5a4dcdcd042a807bf9416fe8100d42"
+    },
+    {
+      "path": "outputs/evaluation/README.md",
+      "bytes": 2032,
+      "sha256": "137a5e82da35e65f9bba263be19c37402793b18c8efb2b7a551d37d961daa840"
+    },
+    {
+      "path": "presentation/README.md",
+      "bytes": 806,
+      "sha256": "81a4e1be3c7ef802c59246c9b358779b5df6413073ca900c718452c9afc78176"
+    },
+    {
+      "path": "reports/README.md",
+      "bytes": 1216,
+      "sha256": "6a5094916f3e29261e45c5e0dae45aa6d5b55a841eebde5c2092983085c1be9c"
+    },
+    {
+      "path": "src/README.md",
+      "bytes": 3075,
+      "sha256": "fa3d97a11af292aea0b70fb84b4d0214da2119baa9efa0110b5e4f93aa56b021"
+    },
+    {
+      "path": "tests/README.md",
+      "bytes": 2229,
+      "sha256": "261e7c67922da6bf51a63db3c27546a32888a54e4fb7dab67eb0e6cba7bb4fd8"
+    }
+  ],
+  "synchronized_documentation_files": [
+    {
+      "path": "docs/ci/project7-quality-gate.yml",
+      "matches_live_workflow": true,
+      "bytes": 3757,
+      "sha256": "8fe192c1e6e905786c3ad895cba3ecdfcf2729197d3d060fad184544d06dbc83"
+    }
+  ],
+  "validation": {
+    "readme_coverage_pass": true,
+    "relative_links_checked": 194,
+    "broken_relative_links": [],
+    "stale_phrase_hits": [],
+    "workflow_documentation_copy_matches_live": true
+  },
+  "top_level_repository_structure": [
+    {
+      "name": ".github",
+      "type": "directory"
+    },
+    {
+      "name": "audit",
+      "type": "directory"
+    },
+    {
+      "name": "config",
+      "type": "directory"
+    },
+    {
+      "name": "data",
+      "type": "directory"
+    },
+    {
+      "name": "docs",
+      "type": "directory"
+    },
+    {
+      "name": "figures",
+      "type": "directory"
+    },
+    {
+      "name": "notebooks",
+      "type": "directory"
+    },
+    {
+      "name": "outputs",
+      "type": "directory"
+    },
+    {
+      "name": "presentation",
+      "type": "directory"
+    },
+    {
+      "name": "README.md",
+      "type": "file"
+    },
+    {
+      "name": "reports",
+      "type": "directory"
+    },
+    {
+      "name": "requirements_p4_01.txt",
+      "type": "file"
+    },
+    {
+      "name": "requirements_p4_02.txt",
+      "type": "file"
+    },
+    {
+      "name": "requirements_p4_03.txt",
+      "type": "file"
+    },
+    {
+      "name": "requirements_p4_04.txt",
+      "type": "file"
+    },
+    {
+      "name": "requirements_p4_05.txt",
+      "type": "file"
+    },
+    {
+      "name": "requirements_p4_06.txt",
+      "type": "file"
+    },
+    {
+      "name": "requirements_p5_01.txt",
+      "type": "file"
+    },
+    {
+      "name": "requirements_p5_02.txt",
+      "type": "file"
+    },
+    {
+      "name": "requirements_p5_03.txt",
+      "type": "file"
+    },
+    {
+      "name": "requirements_p5_04.txt",
+      "type": "file"
+    },
+    {
+      "name": "requirements_p5_05.txt",
+      "type": "file"
+    },
+    {
+      "name": "requirements_p5_09.txt",
+      "type": "file"
+    },
+    {
+      "name": "scripts",
+      "type": "directory"
+    },
+    {
+      "name": "src",
+      "type": "directory"
+    },
+    {
+      "name": "tests",
+      "type": "directory"
+    }
+  ],
+  "documentation_only_change": true,
+  "frozen_technical_evaluation_candidate_changed": false
+}
