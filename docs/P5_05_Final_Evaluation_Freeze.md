@@ -1,5 +1,7 @@
 # P5-05 — Final Evaluation Freeze
 
+> **P6-02 historical-record notice (2026-08-08):** “Hosted quality-gate run pending” below is historical. Hosted verification subsequently passed and this baseline became the parent of the acceptance-corrected/final-candidate chain.
+
 ## Status
 
 **Final baseline frozen and locally validated. Updated hosted quality-gate run pending.**

@@ -1,5 +1,7 @@
 # Project 7 Continuous-Integration Quality Gate
 
+> **P6-02 historical-record notice (2026-08-08):** This describes the quality gate at its P5-04 introduction. The live workflow was later extended through acceptance, freeze, and documentation overlays.
+
 ## Purpose
 
 The quality gate provides automated reproducibility and control validation for the final refined baseline. It is a CI workflow only; it does not deploy or publish the prototype.

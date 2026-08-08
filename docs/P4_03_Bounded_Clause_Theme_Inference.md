@@ -1,5 +1,7 @@
 # P4-03 — Bounded Clause-Theme Inference
 
+> **P6-02 current-status clarification (2026-08-08):** The “requires one CPU Colab run after upload” statement below is historical. Actual repository-model execution was completed and preserved in `notebooks/P4_03_Bounded_Clause_Triage_Validation.ipynb`, then exercised through operator acceptance. Public-sector results remain bounded by `MODEL_DOMAIN_SHIFT`; confidence is not legal or semantic correctness. Any unrelated spreadsheet-runtime warmup traceback below is not a Project 4 inference failure.
+
 ## Status
 
 **Implementation and controlled validation complete. Actual repository-model wrapper execution requires one CPU Colab run after upload.**

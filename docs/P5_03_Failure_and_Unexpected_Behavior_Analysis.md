@@ -1,5 +1,7 @@
 # P5-03 — Failure and Unexpected-Behavior Analysis
 
+> **P6-02 historical-record notice (2026-08-08):** “GitHub upload pending” below is historical. The six governance/observability findings became the P5-04 refinement backlog and were regressed to **19/19 cases / 262/262 assertions PASS**.
+
 ## Status
 
 **Completed locally and validated. GitHub upload pending.**

@@ -1,5 +1,7 @@
 # P3-01 — Representative Operational Workload
 
+> **P6-02 historical-record notice (2026-08-08):** This P3-01 file defined targets before execution. Final refined results are **19/19 cases and 262/262 assertions PASS**.
+
 ## Workload
 
 **ICM Public-Sector Opportunity-to-Contract Decision-Support Workload**

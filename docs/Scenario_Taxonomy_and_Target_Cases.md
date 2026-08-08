@@ -1,5 +1,7 @@
 # P3-02 — Scenario Taxonomy and Target Cases
 
+> **P6-02 historical-record notice (2026-08-08):** This file defines pre-execution scenario coverage. The final evaluation/refinement later executed the suite with **19/19 cases and 262/262 assertions PASS**.
+
 ## Purpose
 
 The scenario taxonomy defines what the integrated system must prove before implementation results are interpreted. It balances successful operation, ambiguity, abstention, model limits, evidence failure, security and privacy misuse, configuration portability, human authority, audit resilience, and production-boundary enforcement.

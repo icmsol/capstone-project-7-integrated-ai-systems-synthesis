@@ -1,5 +1,7 @@
 # P5-02 — System-Level Metrics
 
+> **P6-02 historical-record notice (2026-08-08):** “GitHub upload pending” below is historical. The metrics were committed; the later refined suite achieved 262/262 assertion conformance.
+
 ## Status
 
 **Calculated and locally validated. GitHub upload pending.**

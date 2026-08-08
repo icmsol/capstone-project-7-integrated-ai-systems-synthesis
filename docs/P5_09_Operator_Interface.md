@@ -1,5 +1,8 @@
 # P5-09 — Single-Entry-Point Operator Interface
 
+> **P6-02 final-status reconciliation (2026-08-08):** The interface was exercised in P5-10/P5-11 and hardened in P5-12. The accepted workflow requires no user-written Python glue code. P5-12 removed the false generic RFP/RFQ capability match, strengthened the visible domain-shift warning, made the Colab packet presentation table-free, and rendered structured monetary values as currency. The candidate remains `PROJECT7-SUBMISSION-CANDIDATE-v1.0.0`.
+
+
 ## Purpose
 
 P5-09 converts the validated Project 7 backend into an operator-facing integrated
@@ -68,7 +71,16 @@ Restore validates every listed file before the case is accepted.
 This addresses the manual-acceptance finding that an ephemeral Colab runtime should not
 force an operator to reconstruct internal case state manually.
 
-## P5-09 acceptance gates
+## Final validated operator behavior
+
+- RFO 3485A completed through the interface, including authorized human disposition and bundle export/restore.
+- A fresh Covered California request completed through the same interface without source-code edits.
+- Public-sector model output remained governed by `MODEL_DOMAIN_SHIFT`.
+- Insufficient evidence failed safely.
+- Recommendation remained separate from human disposition.
+- External actions remained `0`.
+
+## Historical P5-09 acceptance gates
 
 - Static notebook validation passes.
 - Operator workflow unit tests pass.

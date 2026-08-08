@@ -1,0 +1,281 @@
+{
+  "artifact_id": "PROJECT7-P6-02-NON-README-MARKDOWN-AUDIT",
+  "markdown_files_reviewed": 34,
+  "readme_files_outside_this_count": 18,
+  "all_reviewed": true,
+  "generated_evidence_preserved": 1,
+  "files": [
+    {
+      "path": "docs/Frozen_Scenario_Set_and_Evaluator_Guide.md",
+      "classification": "historical_activity_record",
+      "action": "current_status_banner",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state."
+    },
+    {
+      "path": "docs/Integrated_System_Architecture.md",
+      "classification": "canonical_or_current",
+      "action": "full_reconciliation",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Current reviewer-facing design/boundary document reconciled to final implementation."
+    },
+    {
+      "path": "docs/Orchestration_and_Component_Contracts.md",
+      "classification": "canonical_or_current",
+      "action": "full_reconciliation",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Current reviewer-facing design/boundary document reconciled to final implementation."
+    },
+    {
+      "path": "docs/P3_04_Scenario_Quality_Review.md",
+      "classification": "historical_activity_record",
+      "action": "current_status_banner",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state."
+    },
+    {
+      "path": "docs/P3_04_v1_0_1_Correction_and_Evaluator_Guide.md",
+      "classification": "historical_activity_record",
+      "action": "reviewed_preserve_chronology",
+      "changed": false,
+      "status": "PASS",
+      "rationale": "Historical content remains materially accurate and does not require rewriting."
+    },
+    {
+      "path": "docs/P4_01_Opportunity_Intake_and_Provenance.md",
+      "classification": "historical_activity_record",
+      "action": "reviewed_preserve_chronology",
+      "changed": false,
+      "status": "PASS",
+      "rationale": "Historical content remains materially accurate and does not require rewriting."
+    },
+    {
+      "path": "docs/P4_02_Configurable_Alignment_and_Historical_Context.md",
+      "classification": "historical_activity_record",
+      "action": "reviewed_preserve_chronology",
+      "changed": false,
+      "status": "PASS",
+      "rationale": "Historical content remains materially accurate and does not require rewriting."
+    },
+    {
+      "path": "docs/P4_03_Bounded_Clause_Theme_Inference.md",
+      "classification": "historical_activity_record",
+      "action": "current_status_banner",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state."
+    },
+    {
+      "path": "docs/P4_04_Evidence_Grounded_Agent_Workflow.md",
+      "classification": "historical_activity_record",
+      "action": "reviewed_preserve_chronology",
+      "changed": false,
+      "status": "PASS",
+      "rationale": "Historical content remains materially accurate and does not require rewriting."
+    },
+    {
+      "path": "docs/P4_05_Integrated_Decision_Support_Packet.md",
+      "classification": "historical_activity_record",
+      "action": "reviewed_preserve_chronology",
+      "changed": false,
+      "status": "PASS",
+      "rationale": "Historical content remains materially accurate and does not require rewriting."
+    },
+    {
+      "path": "docs/P4_06_Audit_and_Reproducibility.md",
+      "classification": "historical_activity_record",
+      "action": "reviewed_preserve_chronology",
+      "changed": false,
+      "status": "PASS",
+      "rationale": "Historical content remains materially accurate and does not require rewriting."
+    },
+    {
+      "path": "docs/P5_01_Frozen_Evaluation_Run.md",
+      "classification": "historical_activity_record",
+      "action": "current_status_banner",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state."
+    },
+    {
+      "path": "docs/P5_02_System_Level_Metrics.md",
+      "classification": "historical_activity_record",
+      "action": "current_status_banner",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state."
+    },
+    {
+      "path": "docs/P5_03_Failure_and_Unexpected_Behavior_Analysis.md",
+      "classification": "historical_activity_record",
+      "action": "current_status_banner",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state."
+    },
+    {
+      "path": "docs/P5_04_CI_Quality_Gate.md",
+      "classification": "historical_activity_record",
+      "action": "current_status_banner",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state."
+    },
+    {
+      "path": "docs/P5_04_Refinement_Configuration_Portability_and_CI.md",
+      "classification": "historical_activity_record",
+      "action": "current_status_banner",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state."
+    },
+    {
+      "path": "docs/P5_05_Final_CI_Quality_Gate.md",
+      "classification": "historical_activity_record",
+      "action": "current_status_banner",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state."
+    },
+    {
+      "path": "docs/P5_05_Final_Evaluation_Freeze.md",
+      "classification": "historical_activity_record",
+      "action": "current_status_banner",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state."
+    },
+    {
+      "path": "docs/P5_06_Manual_Operator_Acceptance_and_Correction.md",
+      "classification": "historical_activity_record",
+      "action": "reviewed_preserve_chronology",
+      "changed": false,
+      "status": "PASS",
+      "rationale": "Historical content remains materially accurate and does not require rewriting."
+    },
+    {
+      "path": "docs/P5_07_CI_Manifest_Verification_Correction.md",
+      "classification": "historical_activity_record",
+      "action": "reviewed_preserve_chronology",
+      "changed": false,
+      "status": "PASS",
+      "rationale": "Historical content remains materially accurate and does not require rewriting."
+    },
+    {
+      "path": "docs/P5_08_Human_Disposition_Recorder.md",
+      "classification": "historical_activity_record",
+      "action": "reviewed_preserve_chronology",
+      "changed": false,
+      "status": "PASS",
+      "rationale": "Historical content remains materially accurate and does not require rewriting."
+    },
+    {
+      "path": "docs/P5_09_Operator_Interface.md",
+      "classification": "canonical_or_current",
+      "action": "full_reconciliation",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Current reviewer-facing design/boundary document reconciled to final implementation."
+    },
+    {
+      "path": "docs/P5_12_CI_Overlay_Compatibility_Fix.md",
+      "classification": "historical_activity_record",
+      "action": "reviewed_preserve_chronology",
+      "changed": false,
+      "status": "PASS",
+      "rationale": "Historical content remains materially accurate and does not require rewriting."
+    },
+    {
+      "path": "docs/P5_12_Final_Accepted_Limitations_and_Boundaries.md",
+      "classification": "canonical_or_current",
+      "action": "full_reconciliation",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Current reviewer-facing design/boundary document reconciled to final implementation."
+    },
+    {
+      "path": "docs/P5_12_Final_Submission_Candidate_Freeze.md",
+      "classification": "canonical_or_current",
+      "action": "full_reconciliation",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Current reviewer-facing design/boundary document reconciled to final implementation."
+    },
+    {
+      "path": "docs/P5_12_Operator_Acceptance_Findings_and_Hardening.md",
+      "classification": "historical_activity_record",
+      "action": "reviewed_preserve_chronology",
+      "changed": false,
+      "status": "PASS",
+      "rationale": "Historical content remains materially accurate and does not require rewriting."
+    },
+    {
+      "path": "docs/P6_01_Post_Freeze_Documentation_and_CI_Compatibility.md",
+      "classification": "current_governance_record",
+      "action": "verify_no_change",
+      "changed": false,
+      "status": "PASS",
+      "rationale": "P6-01 post-freeze governance evidence remains accurate."
+    },
+    {
+      "path": "docs/P6_01_README_Repository_Truthup.md",
+      "classification": "current_governance_record",
+      "action": "verify_no_change",
+      "changed": false,
+      "status": "PASS",
+      "rationale": "P6-01 post-freeze governance evidence remains accurate."
+    },
+    {
+      "path": "docs/Prior_Project_Traceability_Matrix.md",
+      "classification": "canonical_or_current",
+      "action": "full_reconciliation",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Current reviewer-facing design/boundary document reconciled to final implementation."
+    },
+    {
+      "path": "docs/Representative_Operational_Workload.md",
+      "classification": "historical_activity_record",
+      "action": "current_status_banner",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state."
+    },
+    {
+      "path": "docs/Safeguards_and_Fail_Closed_Behavior.md",
+      "classification": "canonical_or_current",
+      "action": "full_reconciliation",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Current reviewer-facing design/boundary document reconciled to final implementation."
+    },
+    {
+      "path": "docs/Scenario_Taxonomy_and_Target_Cases.md",
+      "classification": "historical_activity_record",
+      "action": "current_status_banner",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state."
+    },
+    {
+      "path": "docs/Shared_Data_Contracts.md",
+      "classification": "canonical_or_current",
+      "action": "full_reconciliation",
+      "changed": true,
+      "status": "PASS",
+      "rationale": "Current reviewer-facing design/boundary document reconciled to final implementation."
+    },
+    {
+      "path": "outputs/p4_05/decision_support_packet.md",
+      "classification": "generated_execution_evidence",
+      "action": "preserve_unchanged",
+      "changed": false,
+      "status": "PASS",
+      "rationale": "Generated packet evidence is immutable."
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # P5-04 — Refinement, Configuration Portability, and CI Quality Gate
 
+> **P6-02 historical-record notice (2026-08-08):** Hosted-Actions-pending wording below records the point before commit. Hosted quality-gate execution subsequently passed.
+
 ## Status
 
 **Implemented and locally validated. GitHub upload and hosted Actions confirmation pending.**

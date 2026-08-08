@@ -25,3 +25,7 @@ Each current diagram is stored as both PNG and SVG.
 Editable DOT sources are in [`../docs/diagram_sources/`](../docs/diagram_sources/).
 
 Additional final-paper or defense figures may be added during Phase 6; those documentation visuals are outside the frozen P5-12 technical/evaluation checksum scope unless explicitly versioned into a later candidate.
+
+## P6-02 reconciliation
+
+P6-02 verified all 12 DOT sources and corresponding PNG/SVG artifacts against the final operator workflow. No structural redraw was required. See [`../docs/P6_02_Diagram_Reconciliation.md`](../docs/P6_02_Diagram_Reconciliation.md).

@@ -1,101 +1,72 @@
-# P2-02 — Shared Data Contracts and JSON Schemas
+# Shared Data Contracts and JSON Schemas — Final Reconciliation (P6-02)
 
-## Purpose
+> **Current-state document.** The original P2-02 foundation contained 11 principal runtime schemas. Implementation/evaluation expanded the repository to **34 JSON Schemas**, all validated by the current quality gate.
 
-The Project 7 data contracts define explicit, versioned handoffs between opportunity intake, organization configuration, structured analysis, clause triage, official evidence review, recommendation assembly, audit logging, and authorized human disposition.
+## Current Schema Inventory — 34
 
-The schemas use **JSON Schema Draft 2020-12** and reject undeclared fields through `additionalProperties: false` at the principal object boundaries.
+### Core runtime records
 
-## Schema Inventory
+- `common_definitions.schema.json`
+- `opportunity_record.schema.json`
+- `service_alignment.schema.json`
+- `historical_context.schema.json`
+- `clause_prediction.schema.json`
+- `evidence_item.schema.json`
+- `evidence_assessment.schema.json`
+- `recommendation.schema.json`
+- `human_disposition.schema.json`
+- `audit_event.schema.json`
+- `integrated_case_state.schema.json`
+- `decision_support_packet.schema.json`
+- `evidence_workflow_request.schema.json`
+- `evidence_workflow_result.schema.json`
 
-| Schema | Primary Producer | Primary Consumer | Purpose |
-|---|---|---|---|
-| `common_definitions.schema.json` | Framework | All components | Shared versions, IDs, hashes, source references, limitations, and human roles |
-| `opportunity_record.schema.json` | Intake and normalization | Alignment, triage, audit | Preserves normalized and original opportunity values with provenance |
-| `service_alignment.schema.json` | Alignment engine | Recommendation and packet assembly | Records capability matches, exclusions, score, label, staffing families, and limitations |
-| `historical_context.schema.json` | Historical context component | Recommendation and reporting | Supplies descriptive counts and explicitly non-predictive interpretation |
-| `clause_prediction.schema.json` | Project 4 inference component | Evidence workflow and reviewer routing | Provides bounded theme, confidence, abstention/escalation, model version, and limitations |
-| `evidence_item.schema.json` | Evidence tools | Evidence assessment and recommendation | Stores validated citations, retrieval method, relevance, support/conflict, and freshness |
-| `evidence_assessment.schema.json` | Evidence validator | Recommendation engine | Determines sufficiency, conflict, missing information, and required action |
-| `recommendation.schema.json` | Recommendation engine | Human review | Defines the complete nonbinding recommendation contract |
-| `human_disposition.schema.json` | Authorized human reviewer | Case state and audit | Separates final human judgment from the system recommendation |
-| `audit_event.schema.json` | Every component | Audit log and evaluation | Records append-only, sanitized, chained events |
-| `integrated_case_state.schema.json` | Orchestrator | All workflow components | Aggregates the complete case lifecycle |
+### Configuration / orchestration / governance
 
-## Core Design Rules
+- `organization_profile.schema.json`
+- `component_contract.schema.json`
+- `orchestration_policy.schema.json`
+- `safeguard_policy.schema.json`
+- `safeguard_reason_code_registry.schema.json`
+- `prior_project_traceability.schema.json`
+- `operational_workload.schema.json`
+- `scenario_taxonomy.schema.json`
 
-### Versioning
+### Scenario / evaluation / freeze evidence
 
-Every principal record contains a semantic schema version. Configuration, model, corpus, and safeguard versions are stored in the integrated case and audit events.
+- `expected_case_outcome.schema.json`
+- `frozen_case_manifest.schema.json`
+- `frozen_evaluation_run_manifest.schema.json`
+- `scenario_evaluation_result.schema.json`
+- `system_metrics_report.schema.json`
+- `failure_analysis_report.schema.json`
+- `refined_evaluation_run_manifest.schema.json`
+- `portability_test_report.schema.json`
+- `final_evaluation_baseline.schema.json`
+- `acceptance_corrected_baseline.schema.json`
+- `reproducibility_manifest.schema.json`
+- `human_disposition_fixture.schema.json`
 
-### Provenance
 
-Opportunity and evidence records require source identifiers, source type, location, retrieval timestamp, SHA-256, and an explicit approved-for-use flag.
+## Core Rules
 
-### Original Values
+- Opportunity/evidence records preserve provenance and original source values.
+- Organization-specific behavior is configuration-driven.
+- Clause predictions preserve model identity, confidence, domain warning, routing, reason codes, and limitations.
+- Evidence retrieval and evidence sufficiency are separate.
+- Recommendations preserve nonbinding disclosure, evidence/gaps/conditions, reviewer routing, reason codes, and audit reference.
+- Human disposition is a separate authorized record.
+- Evaluation/freeze schemas preserve scenario lineage, metrics, failures, refinements, portability, reproducibility, and baseline history.
 
-The normalized opportunity record retains source-provided values in `original_values`; normalization does not destroy the original representation.
-
-### Recommendation Completeness
-
-A recommendation cannot omit:
-
-- nonbinding disclosure;
-- strength or confidence;
-- supporting evidence;
-- counterevidence;
-- missing information;
-- conditions;
-- limitations;
-- required human reviewer;
-- recommended next action;
-- data freshness;
-- reason codes;
-- audit reference.
-
-`Recommend Pursue with Conditions` requires at least one condition.
-
-### Human Authority
-
-A finalized case requires a separate `human_disposition`. The human record contains the reviewer role, selected disposition, rationale, modified conditions, escalation target when applicable, and decision time.
-
-### Bounded Model Use
-
-The clause-prediction schema stores model identity, package checksum, confidence, decision, reviewer routing, domain warning, truncation, reason codes, and limitations. Classification is not legal interpretation.
-
-### Fail-Closed Errors
-
-The integrated case stores component errors and whether each error caused fail-closed behavior. Audit persistence remains a prerequisite for normal workflow continuation.
-
-### Portability
-
-The integrated case uses organization IDs and configuration versions rather than hard-coded ICM service logic. The same schemas support both the ICM reference profile and the fictional portability profile.
-
-## Validation Examples
-
-The package includes:
-
-- `valid_integrated_case.json`;
-- `valid_audit_event.json`;
-- `invalid_integrated_case.json`.
-
-The invalid example attempts to mark a case finalized without a human disposition and weakens the recommendation disclosure. It must be rejected.
-
-Run:
-
-```bash
-python tests/validate_shared_schemas.py
-```
-
-Expected output:
+## Validation
 
 ```text
-Schemas checked: 11
+Schemas checked: 34
 Valid integrated case: PASS
 Valid audit event: PASS
-Invalid integrated case: correctly rejected with at least 1 validation error
+Invalid integrated case: correctly rejected
 ```
 
 ## Production Boundary
 
-These schemas support a controlled capstone prototype. They do not themselves establish legal sufficiency, regulatory compliance, security authorization, production readiness, or authority to make organizational commitments.
+Schema conformance is structural validation; it is not legal sufficiency, regulatory compliance, security authorization, production readiness, or organizational decision authority.

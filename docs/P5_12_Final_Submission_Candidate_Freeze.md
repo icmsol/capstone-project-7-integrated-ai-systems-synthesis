@@ -9,6 +9,13 @@
 
 The final technical/evaluation submission candidate is frozen after successful hosted regression testing and targeted operator visual acceptance.
 
+### Subsequent verification chain
+
+- Quality Gate run **#17** verified the final submission candidate after the final-candidate verifier was added.
+- P6-01 documentation truth-up introduced no technical/evaluation behavior change.
+- Quality Gate run **#19** passed after the P6-01 documentation/CI compatibility overlay.
+- P6-02 documentation uses a separate versioned overlay and does not rewrite historical P5-05/P5-06 manifests.
+
 ## Evidence chain
 
 1. `PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0` — P5-05 frozen evaluation baseline.
@@ -46,6 +53,8 @@ The evidence corpus is bounded. No retrieval result is automatically treated as 
 Technical, configuration, model, safeguard, schema, operator-interface, test, or evaluation changes after this freeze require an explicitly new candidate version.
 
 Phase 6 may update reviewer documentation and defense materials (`README.md`, appropriate `docs/`, `reports/`, `presentation/`, and paper/defense `figures/`) provided those edits do not alter frozen technical/evaluation artifacts.
+
+P6-01 and P6-02 implement this through explicit versioned documentation overlays rather than rewriting historical checksum manifests.
 
 ## Verification
 

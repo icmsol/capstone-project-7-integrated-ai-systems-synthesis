@@ -13,3 +13,7 @@ The registered evidence corpus is bounded, and retrieval alone never establishes
 
 ## Authority boundary
 The system can produce a nonbinding recommendation only. It cannot record the organization's final decision without an authorized human disposition, and it performs no autonomous external action.
+
+## P6-02 documentation interpretation
+
+Phase 6 documentation must continue to reflect these boundaries: intake is not automatic semantic PDF extraction; passage selection is not complete-document clause discovery; Project 4 confidence is not legal/semantic certainty; retrieval count is not evidence sufficiency; alignment is not eligibility/capacity/award probability; and a recommendation is not the final organizational decision.

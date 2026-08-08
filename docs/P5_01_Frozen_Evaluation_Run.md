@@ -1,5 +1,7 @@
 # P5-01 — Frozen Evaluation Suite Run
 
+> **P6-02 historical-record notice (2026-08-08):** “GitHub upload pending” below reflects the P5-01 point in time. The run was subsequently committed and incorporated into the final evaluation chain.
+
 ## Status
 
 **Executed and locally validated. GitHub upload pending.**

@@ -1,114 +1,77 @@
-# P2-03 — Orchestration, Configuration, and Component Contracts
+# Orchestration, Configuration, and Component Contracts — Final Reconciliation (P6-02)
 
-## Purpose
-
-This package converts the approved architecture and shared data schemas into explicit machine-validatable execution contracts. Each component contract specifies:
-
-- required inputs and schemas;
-- outputs and downstream consumers;
-- configurable and fixed dependencies;
-- preconditions and postconditions;
-- allowed and prohibited side effects;
-- fail-closed, abstention, warning, retry, deferral, and escalation behavior;
-- audit events;
-- idempotency and retry rules;
-- required human checkpoints;
-- the non-production boundary.
+> **Current-state document.** The P2-03 design was implemented and extended through operator-interface and acceptance work. The registry contains **14 executable component contracts** plus the registry artifact.
 
 ## Component Contract Registry
 
-| Component ID | Component | Type | Boundary | Human Checkpoint |
-|---|---|---|---|---|
-| `profile_loader` | Organization Profile Loader and Validator | configuration_loader | hybrid | No |
-| `case_intake_normalizer` | Opportunity Intake, Normalization, and Provenance | deterministic_transform | framework_controlled | No |
-| `service_alignment_engine` | Configuration-Driven Service Alignment Engine | deterministic_rule_engine | hybrid | No |
-| `historical_context_provider` | Frozen Historical Procurement Context Provider | historical_context_provider | framework_controlled | No |
-| `passage_selector` | Relevant Passage Selector | deterministic_transform | hybrid | No |
-| `clause_triage_model` | Project 4 Clause-Theme Triage | model_inference | framework_controlled | No |
-| `official_evidence_retriever` | Official Evidence Retrieval Tool | retrieval_tool | framework_controlled | No |
-| `evidence_validator` | Citation, Metadata, Sufficiency, and Conflict Validator | validation_tool | framework_controlled | No |
-| `risk_escalation_router` | Risk and Escalation Router | risk_routing | hybrid | No |
-| `recommendation_engine` | Evidence-Linked Nonbinding Recommendation Engine | recommendation_engine | hybrid | Yes |
-| `packet_assembler` | Decision-Support Packet Assembler | packet_assembler | framework_controlled | Yes |
-| `human_disposition_recorder` | Authorized Human Disposition Recorder | human_checkpoint | human_authority | Yes |
-| `audit_writer` | Append-Only Audit Event Writer | audit_writer | framework_controlled | No |
-| `workflow_orchestrator` | Integrated Case Workflow Orchestrator | stateful_orchestrator | framework_controlled | Yes |
+| Component ID | Final implementation |
+|---|---|
+| `profile_loader` | `src/project7/profile_loader.py` |
+| `case_intake_normalizer` | `src/project7/opportunity_intake.py` |
+| `service_alignment_engine` | `src/project7/service_alignment.py` |
+| `historical_context_provider` | `src/project7/historical_context.py` |
+| `passage_selector` | Operator-selected passage boundary represented by contract/operator workflow |
+| `clause_triage_model` | `src/project7/clause_triage.py`; `src/project7/p4_03_pipeline.py` |
+| `official_evidence_retriever` | `src/project7/evidence_retrieval.py` |
+| `evidence_validator` | `src/project7/evidence_workflow.py` |
+| `risk_escalation_router` | Safeguard/reason-code policy plus integrated routing |
+| `recommendation_engine` | `src/project7/recommendation_engine.py` |
+| `packet_assembler` | `src/project7/decision_support_packet.py`; `src/project7/p4_05_pipeline.py` |
+| `human_disposition_recorder` | `src/project7/human_disposition.py` |
+| `audit_writer` | `src/project7/audit_utils.py` |
+| `workflow_orchestrator` | Stage pipelines plus `src/project7/operator_workflow.py` |
 
-## Orchestration Sequence
+## Final Operator Orchestration
 
-1. Load and validate the organization configuration.
-2. Create, normalize, and provenance-lock the opportunity case.
-3. Assess configured service alignment.
-4. Attach frozen historical context when approved and comparable.
-5. Select approved passages when text is available.
-6. Run bounded Project 4 clause-theme triage when applicable.
-7. Retrieve approved official evidence when required.
-8. Validate citations, metadata, sufficiency, conflicts, and freshness.
-9. Apply fixed mandatory escalation and configured reviewer routing.
-10. Create a complete nonbinding recommendation or explicit No Recommendation outcome.
-11. Assemble and validate the decision-support packet.
-12. Record an authorized human disposition.
+1. Stage/checksum the approved solicitation.
+2. Confirm/validate structured opportunity intake.
+3. Load/validate the organization profile.
+4. Run service alignment and frozen historical context.
+5. Accept operator-selected solicitation passages.
+6. Execute bounded Project 4 clause-theme inference.
+7. Build evidence requests from actual passages/predictions.
+8. Retrieve and validate registered evidence.
+9. Apply evidence-sufficiency and mandatory escalation controls.
+10. Create a nonbinding recommendation or controlled abstention/escalation.
+11. Assemble the decision-support packet.
+12. Record an authorized human disposition when ready.
+13. Persist audit/state artifacts.
+14. Export/restore a checksum-inventoried case bundle when needed.
 
 ## Configuration Resolution Order
 
-Configuration is resolved in descending precedence:
-
 1. fixed framework safeguards;
-2. schema and component-contract requirements;
+2. schemas and component contracts;
 3. validated organization profile;
 4. authorized case-specific business preferences.
 
-A lower-precedence layer cannot weaken a higher-precedence requirement. Any conflict is rejected or audited according to the higher-precedence control.
+A lower layer cannot weaken a higher layer.
 
 ## Global Gates
 
-The orchestration policy requires:
+Valid provenance, safeguards, privacy/security boundaries, schema-valid transitions, model/corpus integrity, evidence sufficiency, separate human disposition, audit persistence, and zero autonomous external writes are enforced.
 
-- audit availability before every stage;
-- active fixed safeguards before every stage;
-- approved source provenance before source processing;
-- privacy and security screening before persistence;
-- sufficient validated evidence before a directional recommendation;
-- authorized human disposition before finalization;
-- prohibition of all autonomous external write actions.
+## Operator-Controlled Passage Boundary
 
-## Fail-Closed Boundary
+The interface does **not** claim automatic whole-document passage extraction. The `passage_selector` contract represents the bounded selection boundary; the operator identifies/pastes passages before triage.
 
-The orchestrator stops normal processing when:
+## Fail-Closed, Abstention, and Escalation
 
-- configuration or contract validation fails;
-- an unregistered component is requested;
-- a required component violates its contract;
-- a state transition is invalid;
-- audit persistence fails;
-- a prohibited source or external action is requested.
+Normal processing fails closed for integrity, authorization, schema, audit, or prohibited-action failures.
 
-Optional analytical components may abstain or be skipped only when the limitation is explicit and the routing and recommendation stages account for the missing output.
+Analytical components abstain/escalate for insufficient information, low confidence, `MODEL_DOMAIN_SHIFT`, invalid/missing evidence, insufficient evidence, conflicts, or mandatory specialist review.
 
-## Resumability
+## Human Authority
 
-A deferred or escalated case may be reassessed only as a new versioned run. Resumption requires:
+The recommendation/packet components produce advisory output only. The human-disposition recorder validates reviewer authorization, stores the response separately, preserves the original recommendation, records rationale/conditions/escalation target, and performs no external action.
 
-- a schema-valid case state;
-- a valid audit chain;
-- original source checksums;
-- preservation of any original recommendation;
-- configuration revalidation;
-- source-freshness revalidation.
+## Resumability and Reassessment
 
-## Concurrency
+**Runtime resume:** an exported bundle may be restored as the same case after manifest/checksum validation.
 
-Different cases may run in parallel. The same case may not execute stages in parallel, and a state lock is required.
+**Analytical reassessment:** materially new source, configuration, evidence, or business facts should create an explicitly versioned reassessment instead of overwriting the prior evidence/recommendation chain.
 
 ## Validation
-
-Run:
-
-```bash
-python tests/validate_component_contracts.py
-```
-
-Expected output:
 
 ```text
 Component contracts checked: 14
@@ -121,4 +84,4 @@ Invalid orchestration policy: correctly rejected
 
 ## Production Boundary
 
-The contracts govern a controlled capstone prototype. They do not grant production authority, legal sufficiency, compliance approval, permission to process restricted data, or authority to execute organizational commitments.
+These contracts govern a controlled capstone prototype and do not grant production, legal, procurement, security, pricing, staffing, or contractual authority.

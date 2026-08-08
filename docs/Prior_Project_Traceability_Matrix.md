@@ -1,4 +1,21 @@
-# P2-05 — Prior-Project Traceability Matrix
+# P2-05 — Prior-Project Traceability Matrix (P6-02 Reconciled)
+
+> **Current-state reconciliation.** The 39-row P2-05 table remains below as design-time traceability evidence. Any `(planned)` or `(future)` destination is historical design intent, not the final repository path.
+
+## Final Implementation Mapping
+
+| Prior project | Final Project 7 use | Current implementation/evidence |
+|---|---|---|
+| Project 1 | Adapted intake/normalization/provenance concepts; hard-coded ICM screening replaced | `src/project7/opportunity_intake.py`; `config/schemas/opportunity_record.schema.json`; `config/profiles/` |
+| Project 2 | Runtime historical context and configurable alignment | `data/reference/project2/`; `src/project7/service_alignment.py`; `src/project7/historical_context.py` |
+| Project 3 | Evaluation-design evidence only; trained classifier excluded | frozen scenario/evaluation and failure-analysis methodology; no Project 3 runtime model |
+| Project 4 | Direct bounded CPU clause-theme runtime contributor | `models/project4/`; `src/project7/clause_triage.py`; `src/project7/p4_03_pipeline.py`; `notebooks/P4_03_Bounded_Clause_Triage_Validation.ipynb` |
+| Project 5 | Responsible-AI/corpus-governance evidence only; generator excluded | no generator runtime; lessons reflected in evidence sufficiency and accepted-limitations documentation |
+| Project 6 | Governance/evidence/audit/human-authority patterns adapted into runtime | `config/contracts/`; `config/system/`; `src/project7/evidence_retrieval.py`; `src/project7/evidence_workflow.py`; `src/project7/audit_utils.py`; `src/project7/human_disposition.py` |
+
+Projects **1, 2, 4, and 6** contribute runtime assets/methods. Projects **3 and 5** remain bounded design/evaluation evidence.
+
+## Original P2-05 Detailed Traceability Record
 
 ## Approved Portfolio Integration Decision
 

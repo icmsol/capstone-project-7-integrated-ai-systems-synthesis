@@ -71,3 +71,9 @@ Primary machine-readable evidence:
 - [Operator hardening findings](../outputs/evaluation/p5_12/operator_hardening_findings.json)
 
 Phase 6 may add/update reviewer documentation in `docs/` without silently changing frozen technical/evaluation artifacts.
+
+## P6-02 System Design and Markdown Reconciliation
+
+- [P6-02 Documentation Reconciliation](P6_02_System_Design_and_Markdown_Reconciliation.md)
+- [P6-02 Diagram Reconciliation](P6_02_Diagram_Reconciliation.md)
+- [P6-02 Markdown Audit](P6_02_Non_README_Markdown_Audit.csv)

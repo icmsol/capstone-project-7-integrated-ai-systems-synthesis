@@ -1,5 +1,7 @@
 # P3-04 — Scenario Quality Review
 
+> **P6-02 historical-record notice (2026-08-08):** The findings below were addressed through the versioned `v1.0.1` correction. The original “corrections required” verdict is retained as point-in-time evidence; the final refined evaluation reached **19/19 cases / 262/262 assertions PASS**.
+
 ## Review Verdict
 
 **Corrections are required before Phase 3 can be closed.**

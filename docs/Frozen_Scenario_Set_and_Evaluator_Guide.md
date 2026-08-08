@@ -1,5 +1,7 @@
 # P3-03 — Frozen Scenario Set and Evaluator Guide
 
+> **P6-02 historical-record notice (2026-08-08):** This preserves the P3-03 `v1.0.0` target state. A corrected `v1.0.1` lineage was later evaluated, and the final refined suite completed **19/19 cases and 262/262 assertions PASS**. “Unexecuted target” wording below is historical.
+
 ## Status
 
 The Project 7 frozen scenario set contains **19 checksum-locked target cases** and **192 evaluator assertions**.

@@ -1,0 +1,35 @@
+path,classification,action,changed,status,rationale
+docs/Frozen_Scenario_Set_and_Evaluator_Guide.md,historical_activity_record,current_status_banner,True,PASS,Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state.
+docs/Integrated_System_Architecture.md,canonical_or_current,full_reconciliation,True,PASS,Current reviewer-facing design/boundary document reconciled to final implementation.
+docs/Orchestration_and_Component_Contracts.md,canonical_or_current,full_reconciliation,True,PASS,Current reviewer-facing design/boundary document reconciled to final implementation.
+docs/P3_04_Scenario_Quality_Review.md,historical_activity_record,current_status_banner,True,PASS,Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state.
+docs/P3_04_v1_0_1_Correction_and_Evaluator_Guide.md,historical_activity_record,reviewed_preserve_chronology,False,PASS,Historical content remains materially accurate and does not require rewriting.
+docs/P4_01_Opportunity_Intake_and_Provenance.md,historical_activity_record,reviewed_preserve_chronology,False,PASS,Historical content remains materially accurate and does not require rewriting.
+docs/P4_02_Configurable_Alignment_and_Historical_Context.md,historical_activity_record,reviewed_preserve_chronology,False,PASS,Historical content remains materially accurate and does not require rewriting.
+docs/P4_03_Bounded_Clause_Theme_Inference.md,historical_activity_record,current_status_banner,True,PASS,Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state.
+docs/P4_04_Evidence_Grounded_Agent_Workflow.md,historical_activity_record,reviewed_preserve_chronology,False,PASS,Historical content remains materially accurate and does not require rewriting.
+docs/P4_05_Integrated_Decision_Support_Packet.md,historical_activity_record,reviewed_preserve_chronology,False,PASS,Historical content remains materially accurate and does not require rewriting.
+docs/P4_06_Audit_and_Reproducibility.md,historical_activity_record,reviewed_preserve_chronology,False,PASS,Historical content remains materially accurate and does not require rewriting.
+docs/P5_01_Frozen_Evaluation_Run.md,historical_activity_record,current_status_banner,True,PASS,Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state.
+docs/P5_02_System_Level_Metrics.md,historical_activity_record,current_status_banner,True,PASS,Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state.
+docs/P5_03_Failure_and_Unexpected_Behavior_Analysis.md,historical_activity_record,current_status_banner,True,PASS,Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state.
+docs/P5_04_CI_Quality_Gate.md,historical_activity_record,current_status_banner,True,PASS,Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state.
+docs/P5_04_Refinement_Configuration_Portability_and_CI.md,historical_activity_record,current_status_banner,True,PASS,Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state.
+docs/P5_05_Final_CI_Quality_Gate.md,historical_activity_record,current_status_banner,True,PASS,Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state.
+docs/P5_05_Final_Evaluation_Freeze.md,historical_activity_record,current_status_banner,True,PASS,Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state.
+docs/P5_06_Manual_Operator_Acceptance_and_Correction.md,historical_activity_record,reviewed_preserve_chronology,False,PASS,Historical content remains materially accurate and does not require rewriting.
+docs/P5_07_CI_Manifest_Verification_Correction.md,historical_activity_record,reviewed_preserve_chronology,False,PASS,Historical content remains materially accurate and does not require rewriting.
+docs/P5_08_Human_Disposition_Recorder.md,historical_activity_record,reviewed_preserve_chronology,False,PASS,Historical content remains materially accurate and does not require rewriting.
+docs/P5_09_Operator_Interface.md,canonical_or_current,full_reconciliation,True,PASS,Current reviewer-facing design/boundary document reconciled to final implementation.
+docs/P5_12_CI_Overlay_Compatibility_Fix.md,historical_activity_record,reviewed_preserve_chronology,False,PASS,Historical content remains materially accurate and does not require rewriting.
+docs/P5_12_Final_Accepted_Limitations_and_Boundaries.md,canonical_or_current,full_reconciliation,True,PASS,Current reviewer-facing design/boundary document reconciled to final implementation.
+docs/P5_12_Final_Submission_Candidate_Freeze.md,canonical_or_current,full_reconciliation,True,PASS,Current reviewer-facing design/boundary document reconciled to final implementation.
+docs/P5_12_Operator_Acceptance_Findings_and_Hardening.md,historical_activity_record,reviewed_preserve_chronology,False,PASS,Historical content remains materially accurate and does not require rewriting.
+docs/P6_01_Post_Freeze_Documentation_and_CI_Compatibility.md,current_governance_record,verify_no_change,False,PASS,P6-01 post-freeze governance evidence remains accurate.
+docs/P6_01_README_Repository_Truthup.md,current_governance_record,verify_no_change,False,PASS,P6-01 post-freeze governance evidence remains accurate.
+docs/Prior_Project_Traceability_Matrix.md,canonical_or_current,full_reconciliation,True,PASS,Current reviewer-facing design/boundary document reconciled to final implementation.
+docs/Representative_Operational_Workload.md,historical_activity_record,current_status_banner,True,PASS,Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state.
+docs/Safeguards_and_Fail_Closed_Behavior.md,canonical_or_current,full_reconciliation,True,PASS,Current reviewer-facing design/boundary document reconciled to final implementation.
+docs/Scenario_Taxonomy_and_Target_Cases.md,historical_activity_record,current_status_banner,True,PASS,Historical body preserved; clarification prevents stale point-in-time status from being mistaken for current state.
+docs/Shared_Data_Contracts.md,canonical_or_current,full_reconciliation,True,PASS,Current reviewer-facing design/boundary document reconciled to final implementation.
+outputs/p4_05/decision_support_packet.md,generated_execution_evidence,preserve_unchanged,False,PASS,Generated packet evidence is immutable.

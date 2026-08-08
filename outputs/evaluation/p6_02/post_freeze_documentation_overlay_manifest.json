@@ -1,0 +1,211 @@
+{
+  "overlay_schema_version": "1.0.0",
+  "overlay_id": "PROJECT7-P6-02-POST-FREEZE-DOCUMENTATION-OVERLAY-v1.0.0",
+  "parent_candidate_id": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0",
+  "predecessor_overlay_id": "PROJECT7-P6-01-POST-FREEZE-OVERLAY-v1.0.0",
+  "change_reason": "P6-02 reconciles current system design, clarifies historical Markdown status, verifies diagram consistency, and records the complete non-README Markdown audit without changing frozen technical/evaluation behavior.",
+  "documentation_only_and_ci_maintenance": true,
+  "technical_or_evaluation_behavior_changed": false,
+  "frozen_scenario_inputs_changed": false,
+  "model_artifacts_changed": false,
+  "safeguards_changed": false,
+  "evaluation_results_changed": false,
+  "recommendation_logic_changed": false,
+  "operator_workflow_behavior_changed": false,
+  "human_authority_boundary_changed": false,
+  "files": [
+    {
+      "path": "docs/Frozen_Scenario_Set_and_Evaluator_Guide.md",
+      "change_class": "documentation_correction",
+      "bytes": 7299,
+      "sha256": "ec0a7bd9913454142e6c45f1e047905c8e02aa2aa3d9b82484a5606038cd5809"
+    },
+    {
+      "path": "docs/Integrated_System_Architecture.md",
+      "change_class": "documentation_correction",
+      "bytes": 10385,
+      "sha256": "e240a98e19e11c7af1dbcec8d9ddd9d7c665ecf7324df82e5174711ed16b6d60"
+    },
+    {
+      "path": "docs/Orchestration_and_Component_Contracts.md",
+      "change_class": "documentation_correction",
+      "bytes": 4414,
+      "sha256": "bc722fb0af014f120c7590e9bed8360265780c2f2a97c82e68f0f64e84c4581c"
+    },
+    {
+      "path": "docs/P3_04_Scenario_Quality_Review.md",
+      "change_class": "documentation_correction",
+      "bytes": 8946,
+      "sha256": "099b0e54c2f03179370139b0004fb344dfab091504ea724edf0878c3599a1080"
+    },
+    {
+      "path": "docs/P4_03_Bounded_Clause_Theme_Inference.md",
+      "change_class": "documentation_correction",
+      "bytes": 5539,
+      "sha256": "22000f7c08566da23dbb2ae6e3a42f52a769b33de7261a71b4a7f4d4493b8241"
+    },
+    {
+      "path": "docs/P5_01_Frozen_Evaluation_Run.md",
+      "change_class": "documentation_correction",
+      "bytes": 7085,
+      "sha256": "ebc01a01e996bc9637a341e6d5cbe20b85ba43478b4fa0ef65354283dfb89cdd"
+    },
+    {
+      "path": "docs/P5_02_System_Level_Metrics.md",
+      "change_class": "documentation_correction",
+      "bytes": 5393,
+      "sha256": "7266587a4d31c343e986f3552f85ff6a9a6885c77dc44a57a06111978973b792"
+    },
+    {
+      "path": "docs/P5_03_Failure_and_Unexpected_Behavior_Analysis.md",
+      "change_class": "documentation_correction",
+      "bytes": 5617,
+      "sha256": "bf7a2f1d07ac1d8cdaed988cde1d3703945c0134d56ec3e659d35d4c24d93c0c"
+    },
+    {
+      "path": "docs/P5_04_CI_Quality_Gate.md",
+      "change_class": "documentation_correction",
+      "bytes": 2130,
+      "sha256": "c13348956450d17b4efb24ec8706a39306a82d2d929ca87ba4c7aa1a51efae44"
+    },
+    {
+      "path": "docs/P5_04_Refinement_Configuration_Portability_and_CI.md",
+      "change_class": "documentation_correction",
+      "bytes": 9880,
+      "sha256": "00927fcb400f6bad4cdde46e10dc03550972a21f7df5205fe981fdfdccacb0fd"
+    },
+    {
+      "path": "docs/P5_05_Final_CI_Quality_Gate.md",
+      "change_class": "documentation_correction",
+      "bytes": 897,
+      "sha256": "02279849d2cd044f095a56701e7ad69b86032eaac1f2ff2b52841ed4eef3197b"
+    },
+    {
+      "path": "docs/P5_05_Final_Evaluation_Freeze.md",
+      "change_class": "documentation_correction",
+      "bytes": 3926,
+      "sha256": "d6ffaeed1c9e52ebbba1f729d827ddc246073b4c42cd6a137833f550291d51ba"
+    },
+    {
+      "path": "docs/P5_09_Operator_Interface.md",
+      "change_class": "documentation_correction",
+      "bytes": 4567,
+      "sha256": "c9c0181890f8625c64a3acd1e3b1ebae4e336b45407c4eff304beab46c9529d2"
+    },
+    {
+      "path": "docs/P5_12_Final_Accepted_Limitations_and_Boundaries.md",
+      "change_class": "documentation_correction",
+      "bytes": 2003,
+      "sha256": "be4432ddb1e3005f7f2e51f9d9627a04fc9ae94c442197419a2a04dbe21295ed"
+    },
+    {
+      "path": "docs/P5_12_Final_Submission_Candidate_Freeze.md",
+      "change_class": "documentation_correction",
+      "bytes": 3979,
+      "sha256": "0c043de684e01f720fe6c668199f4d1b7569f83d9d7aa912cdbdba5639b6617e"
+    },
+    {
+      "path": "docs/Prior_Project_Traceability_Matrix.md",
+      "change_class": "documentation_correction",
+      "bytes": 19722,
+      "sha256": "2535d828a2e0343ec7a0c066bbdd3b996b171f7528226920eadfc12ec2e21a43"
+    },
+    {
+      "path": "docs/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 4576,
+      "sha256": "1c89a3de5fc5992a9d43c8573ef230413869558e0faa5d3dd59ff76227d972be"
+    },
+    {
+      "path": "docs/Representative_Operational_Workload.md",
+      "change_class": "documentation_correction",
+      "bytes": 10333,
+      "sha256": "1e645767007d0b14534ae5cf36f45999c20148697d4f130f2b8248df968285fc"
+    },
+    {
+      "path": "docs/Safeguards_and_Fail_Closed_Behavior.md",
+      "change_class": "documentation_correction",
+      "bytes": 1877,
+      "sha256": "6e80e10fcbf1c9b3f59188a279e0122c40d99bd895f6b5cb5404ef8a3d81c2c0"
+    },
+    {
+      "path": "docs/Scenario_Taxonomy_and_Target_Cases.md",
+      "change_class": "documentation_correction",
+      "bytes": 5774,
+      "sha256": "ef35f015142189f6f3d8e2d9b1fa6fbd91ea86fe0be53503655fe5bfcd0f368e"
+    },
+    {
+      "path": "docs/Shared_Data_Contracts.md",
+      "change_class": "documentation_correction",
+      "bytes": 2747,
+      "sha256": "0adfde5d6f8c6c2750b7cf4f203ac8eff918aad8a9ccf75ac8c0c5cef3eebd72"
+    },
+    {
+      "path": "figures/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 2312,
+      "sha256": "865ba7e00d5143d231aa16ab1d44b41a41b6755bbf8706188a3309686d539492"
+    },
+    {
+      "path": "docs/P6_02_Diagram_Reconciliation.md",
+      "change_class": "documentation_governance",
+      "bytes": 2044,
+      "sha256": "c23e7a17e20926c8b59f6f337ac3b1e31b0ab7c1077b4e0dccf382b6e7465235"
+    },
+    {
+      "path": "docs/P6_02_Non_README_Markdown_Audit.csv",
+      "change_class": "documentation_governance",
+      "bytes": 6729,
+      "sha256": "29f9e4b2ac123a8c529b00ce8075aa146a7b58d7788006a82e2169a7c039ef72"
+    },
+    {
+      "path": "docs/P6_02_System_Design_and_Markdown_Reconciliation.md",
+      "change_class": "documentation_governance",
+      "bytes": 1973,
+      "sha256": "4105a9fecd6da738fe688954fc7a75df35a0339d266017ec23b31835cc42c624"
+    },
+    {
+      "path": "outputs/evaluation/p6_02/non_readme_markdown_audit.json",
+      "change_class": "documentation_governance",
+      "bytes": 11414,
+      "sha256": "998dd93379f0608c143b49c94ed88c24891898636a8b76361581c0d03e855682"
+    },
+    {
+      "path": "scripts/verify_p5_05_final_baseline.py",
+      "change_class": "ci_maintenance",
+      "bytes": 8067,
+      "sha256": "6f433060529497d1b1951e9e946f15ca8ea81b4c4e32dc9a22348b2f206d1093"
+    },
+    {
+      "path": "scripts/verify_p5_06_acceptance_corrected_baseline.py",
+      "change_class": "ci_maintenance",
+      "bytes": 7089,
+      "sha256": "3534c95e05ef6c794eeeeb9816fc543c07d914e7edab17fcdac2c0446c64160a"
+    },
+    {
+      "path": "scripts/verify_p5_12_final_submission_candidate.py",
+      "change_class": "ci_maintenance",
+      "bytes": 8839,
+      "sha256": "02bc58308c45b0ddda8ba6e0c59e8137ce59cc30df5577eea1949feaa587af68"
+    },
+    {
+      "path": "tests/test_p5_12_final_submission_candidate.py",
+      "change_class": "ci_maintenance",
+      "bytes": 3051,
+      "sha256": "6ed19abc90a8f1a6ba012ac3a28954fa3b18182407c6296fe85fe49738d0faa0"
+    },
+    {
+      "path": "docs/P6_02_Validation_Evidence.json",
+      "change_class": "documentation_governance",
+      "bytes": 1673,
+      "sha256": "4a055bc74a2011b6aebd14f7917701de3150d63205f80ffb5c3dde9366cb86a9"
+    }
+  ],
+  "counts": {
+    "documentation_corrections": 22,
+    "documentation_governance": 5,
+    "ci_maintenance": 4,
+    "total": 31
+  },
+  "external_actions_performed": 0
+}
