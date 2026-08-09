@@ -25,6 +25,7 @@ P6_OVERLAY_PATHS = [
     ROOT / "outputs/evaluation/p6_01/post_freeze_overlay_manifest.json",
     ROOT / "outputs/evaluation/p6_02/post_freeze_documentation_overlay_manifest.json",
     ROOT / "outputs/evaluation/p6_03/post_freeze_governance_overlay_manifest.json",
+    ROOT / "outputs/evaluation/p6_04/post_freeze_reproducibility_overlay_manifest.json",
 ]
 
 ALLOWED_CI_MAINTENANCE_PATHS = {
@@ -33,8 +34,10 @@ ALLOWED_CI_MAINTENANCE_PATHS = {
     "scripts/verify_p5_06_acceptance_corrected_baseline.py",
     "scripts/verify_p5_12_final_submission_candidate.py",
     "scripts/verify_p6_03_governance.py",
+    "scripts/verify_p6_04_reproducibility.py",
     "tests/test_p5_12_final_submission_candidate.py",
     "tests/test_p6_03_governance.py",
+    "tests/test_p6_04_reproducibility.py",
 }
 
 def is_allowed_documentation_path(path_string):
@@ -86,6 +89,12 @@ def load_versioned_post_freeze_overlays():
         path = ROOT / path_string
         if not path.is_file():
             raise FileNotFoundError(path)
+        # The quality-gate workflow is a structural-current CI artifact, not a
+        # frozen byte-for-byte candidate artifact. Its behavior is validated by
+        # tests/test_ci_workflow.py and the hosted Actions run. This preserves
+        # the final-candidate policy that CI may be extended after the freeze.
+        if path_string == ".github/workflows/project7-quality-gate.yml":
+            continue
         if path.stat().st_size != item["bytes"]:
             raise RuntimeError(f"Latest overlay size mismatch: {path_string}")
         if sha256_file(path) != item["sha256"]:

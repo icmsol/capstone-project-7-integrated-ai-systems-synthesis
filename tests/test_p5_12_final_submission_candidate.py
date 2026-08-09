@@ -15,6 +15,7 @@ class FinalCandidatePhase6OverlayTests(unittest.TestCase):
         cls.p6_01 = json.loads((ROOT / "outputs/evaluation/p6_01/post_freeze_overlay_manifest.json").read_text(encoding="utf-8"))
         cls.p6_02 = json.loads((ROOT / "outputs/evaluation/p6_02/post_freeze_documentation_overlay_manifest.json").read_text(encoding="utf-8"))
         cls.p6_03 = json.loads((ROOT / "outputs/evaluation/p6_03/post_freeze_governance_overlay_manifest.json").read_text(encoding="utf-8"))
+        cls.p6_04 = json.loads((ROOT / "outputs/evaluation/p6_04/post_freeze_reproducibility_overlay_manifest.json").read_text(encoding="utf-8"))
 
     def test_candidate_identity(self):
         self.assertEqual(self.manifest["candidate_id"], "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0")
@@ -64,6 +65,14 @@ class FinalCandidatePhase6OverlayTests(unittest.TestCase):
         self.assertFalse(self.p6_03["technical_or_evaluation_behavior_changed"])
         self.assertFalse(self.p6_03["evaluation_results_changed"])
         self.assertEqual(self.p6_03["external_actions_performed"], 0)
+
+    def test_p6_04_overlay(self):
+        self.assertEqual(self.p6_04["overlay_id"], "PROJECT7-P6-04-POST-FREEZE-REPRODUCIBILITY-OVERLAY-v1.0.0")
+        self.assertEqual(self.p6_04["parent_candidate_id"], "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0")
+        self.assertTrue(self.p6_04["documentation_only_and_ci_maintenance"])
+        self.assertFalse(self.p6_04["technical_or_evaluation_behavior_changed"])
+        self.assertFalse(self.p6_04["evaluation_results_changed"])
+        self.assertEqual(self.p6_04["external_actions_performed"], 0)
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

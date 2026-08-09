@@ -1,0 +1,110 @@
+{
+  "overlay_schema_version": "1.0.0",
+  "overlay_id": "PROJECT7-P6-04-POST-FREEZE-REPRODUCIBILITY-OVERLAY-v1.0.0",
+  "parent_candidate_id": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0",
+  "predecessor_overlay_id": "PROJECT7-P6-03-POST-FREEZE-GOVERNANCE-OVERLAY-v1.0.0",
+  "change_reason": "P6-04 adds the final reproducibility manifest, source/checksum inventory, environment/version specification, replay instructions, and verifier/tests without changing frozen technical/evaluation behavior.",
+  "documentation_only_and_ci_maintenance": true,
+  "technical_or_evaluation_behavior_changed": false,
+  "frozen_scenario_inputs_changed": false,
+  "model_artifacts_changed": false,
+  "safeguards_changed": false,
+  "evaluation_results_changed": false,
+  "recommendation_logic_changed": false,
+  "operator_workflow_behavior_changed": false,
+  "human_authority_boundary_changed": false,
+  "workflow_verification_mode": "structural_current_ci_not_hashed_in_overlay",
+  "files": [
+    {
+      "path": "README.md",
+      "change_class": "documentation_correction",
+      "bytes": 14356,
+      "sha256": "3177b6552240a07a97a72be249687305b73692a8d0c7fdcaf65835c59cfae21f"
+    },
+    {
+      "path": "docs/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 5545,
+      "sha256": "5ffaa0abd482ffcba3a80b25caf11a3ce307e10a7f505cffd5e22531ed3609f3"
+    },
+    {
+      "path": "docs/P6_04_Reproducibility_Manifest_and_Replay_Guide.md",
+      "change_class": "documentation_governance",
+      "bytes": 6141,
+      "sha256": "cb9c15c00379a94f3e3c151bd79c88fc38970ff647074d978a2933baaecf9b82"
+    },
+    {
+      "path": "docs/P6_04_Source_Snapshot_and_Checksum_Inventory.csv",
+      "change_class": "documentation_governance",
+      "bytes": 4626,
+      "sha256": "237dda78f6d708fdbe4b7f5e0bff62d9863bf8a1149561abefae1bd1fd031f28"
+    },
+    {
+      "path": "docs/P6_04_Replay_Matrix.csv",
+      "change_class": "documentation_governance",
+      "bytes": 2468,
+      "sha256": "8bf184d6abf78dafd1249f7c067ab66949e585ff859737938cd7691b4078c715"
+    },
+    {
+      "path": "outputs/evaluation/p6_04/reproducibility_manifest.json",
+      "change_class": "documentation_governance",
+      "bytes": 4566,
+      "sha256": "b131677c5c0b608b932801d74d474e60ae09a8b23db187041a887b434d8b1efc"
+    },
+    {
+      "path": "outputs/evaluation/p6_04/environment_and_version_spec.json",
+      "change_class": "documentation_governance",
+      "bytes": 2808,
+      "sha256": "04683d1cba11ac83a3f5349909728b56fdc505f07dbaa18174046f440b6913be"
+    },
+    {
+      "path": "scripts/verify_p5_05_final_baseline.py",
+      "change_class": "ci_maintenance",
+      "bytes": 8872,
+      "sha256": "94c9710baad95016395ff058d605a47eb5ef21e24e61a17c46c675a9b273c95a"
+    },
+    {
+      "path": "scripts/verify_p5_06_acceptance_corrected_baseline.py",
+      "change_class": "ci_maintenance",
+      "bytes": 7894,
+      "sha256": "6a4c1191d439b1303cd3b276412e0970a9ca6fe01b8ffeeb01c5061529e846f5"
+    },
+    {
+      "path": "scripts/verify_p5_12_final_submission_candidate.py",
+      "change_class": "ci_maintenance",
+      "bytes": 9644,
+      "sha256": "b31a2f059fce0459d7e3749b226087f0e842ea1ff20cf90a71b2339460b2a084"
+    },
+    {
+      "path": "scripts/verify_p6_04_reproducibility.py",
+      "change_class": "ci_maintenance",
+      "bytes": 3999,
+      "sha256": "aa8401093b0b383579f56e8c7191113c835d9f41ed014af1d9b5834120979d80"
+    },
+    {
+      "path": "tests/test_p5_12_final_submission_candidate.py",
+      "change_class": "ci_maintenance",
+      "bytes": 4417,
+      "sha256": "00398345fd2c6f46156c16ce3c09c517f7d9c5b5ee4b055458dc2c7580b719dc"
+    },
+    {
+      "path": "tests/test_p6_04_reproducibility.py",
+      "change_class": "ci_maintenance",
+      "bytes": 2121,
+      "sha256": "1ae4461f7e24a43426b985a45479ba69d040f99ac50315b23cb07fa1fdb8a752"
+    },
+    {
+      "path": "docs/P6_04_Validation_Evidence.json",
+      "change_class": "documentation_governance",
+      "bytes": 852,
+      "sha256": "31ec00118aeb41402339d070a8e23269d6193675eaf3b100ebec49257dc8853d"
+    }
+  ],
+  "counts": {
+    "documentation_corrections": 2,
+    "documentation_governance": 6,
+    "ci_maintenance": 6,
+    "total": 14
+  },
+  "external_actions_performed": 0
+}

@@ -89,3 +89,9 @@ Phase 6 may add/update reviewer documentation in `docs/` without silently changi
 - [Records Expectations CSV](P6_03_Records_Expectations.csv)
 - [Production-Readiness Boundary](P6_03_Production_Readiness_Boundary.md)
 - [Production-Readiness Gates CSV](P6_03_Production_Readiness_Gates.csv)
+
+## P6-04 Reproducibility and Replay
+
+- [Reproducibility Manifest and Replay Guide](P6_04_Reproducibility_Manifest_and_Replay_Guide.md)
+- [Source Snapshot and Checksum Inventory](P6_04_Source_Snapshot_and_Checksum_Inventory.csv)
+- [Replay Matrix](P6_04_Replay_Matrix.csv)

@@ -1,0 +1,96 @@
+{
+  "manifest_schema_version": "1.0.0",
+  "manifest_id": "PROJECT7-P6-04-REPRODUCIBILITY-MANIFEST-v1.0.0",
+  "candidate_id": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0",
+  "current_repository_reference": {
+    "url": "https://github.com/icmsol/capstone-project-7-integrated-ai-systems-synthesis",
+    "branch": "main",
+    "latest_confirmed_commit": "de89e0f",
+    "latest_confirmed_quality_gate_run": 22,
+    "latest_confirmed_quality_gate_status": "success",
+    "latest_confirmed_quality_gate_duration_seconds": 35,
+    "latest_confirmed_quality_gate_artifact_count": 1
+  },
+  "candidate_freeze_reference": {
+    "frozen_at_utc": "2026-08-08T17:37:00Z",
+    "source_green_commit_before_freeze": "18faa3a",
+    "source_green_ci_run": 15,
+    "strict_inventory_path": "outputs/evaluation/p5_12/final_submission_candidate_strict_inventory.json",
+    "strict_file_count": 44
+  },
+  "baseline_chain": {
+    "evaluation_baseline": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.0",
+    "acceptance_corrected_baseline": "PROJECT7-FINAL-EVALUATION-BASELINE-v1.0.1",
+    "historical_p5_06_overlay_version": "1.0.1",
+    "active_post_freeze_overlay_version": "1.0.2",
+    "submission_candidate": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0"
+  },
+  "post_freeze_overlays": [
+    {
+      "overlay_id": "PROJECT7-P6-01-POST-FREEZE-OVERLAY-v1.0.0",
+      "path": "outputs/evaluation/p6_01/post_freeze_overlay_manifest.json",
+      "sha256": "1304b8affcebd46096f1c13e83ad4abaa8d8e37b6b1e03d3fdcd0c615ffde0d7",
+      "bytes": 6058
+    },
+    {
+      "overlay_id": "PROJECT7-P6-02-POST-FREEZE-DOCUMENTATION-OVERLAY-v1.0.0",
+      "path": "outputs/evaluation/p6_02/post_freeze_documentation_overlay_manifest.json",
+      "sha256": "9d84453556a7c14f453f7068e7533b6b68a1d79d0fc6462cecbd3b1f53c7062b",
+      "bytes": 8018
+    },
+    {
+      "overlay_id": "PROJECT7-P6-03-POST-FREEZE-GOVERNANCE-OVERLAY-v1.0.0",
+      "path": "outputs/evaluation/p6_03/post_freeze_governance_overlay_manifest.json",
+      "sha256": "3f45b65b2c40076d52d09c4c3dcdf06bb527670cf357fabf24a614746983ea75",
+      "bytes": 5442
+    }
+  ],
+  "source_snapshot_inventory_path": "docs/P6_04_Source_Snapshot_and_Checksum_Inventory.csv",
+  "environment_and_versions_path": "outputs/evaluation/p6_04/environment_and_version_spec.json",
+  "replay_matrix_path": "docs/P6_04_Replay_Matrix.csv",
+  "frozen_evaluation": {
+    "deterministic_seed": 42,
+    "cases": 19,
+    "assertions": 262,
+    "cases_passed": 19,
+    "assertions_passed": 262,
+    "regressions": 0,
+    "frozen_inputs_changed": false
+  },
+  "project4_model": {
+    "artifact_id": "PROJECT4-CLAUSE-CLASSIFIER-INFERENCE",
+    "version": "1.0.0",
+    "checkpoint_path": "models/project4/selected_clause_classifier.pt",
+    "checkpoint_sha256": "50a280950d31466d7002578295c64e957d144611f5b9731bb059be50e68c6c92",
+    "selected_configuration": "Baseline dropout 0.10",
+    "class_count": 10,
+    "vocabulary_size": 4417,
+    "maximum_sequence_length": 256,
+    "runtime_device": "cpu"
+  },
+  "official_evidence": {
+    "registry_id": "PROJECT7-P4-04-EVIDENCE-CORPUS-REGISTRY",
+    "corpus_sha256": "8b2994a12060b320a8b3da77dba20c9bced12438fad71e2db8d1ebe06167f7ea",
+    "fac_number": "2026-01",
+    "fac_effective_date": "2026-03-13",
+    "record_count": 3,
+    "representative_subset_only": true
+  },
+  "governance": {
+    "major_risks": 20,
+    "fixed_safeguards": 30,
+    "configured_reviewer_roles": 7,
+    "production_ready": false
+  },
+  "known_replay_boundaries": [
+    "The public GitHub repository is the authoritative complete code/model source; this P6-04 package does not duplicate the large Project 4 model files.",
+    "Full Project 4 inference requires the complete models/project4 package and checkpoint SHA-256 in the model registry.",
+    "The FAR corpus is a representative three-record frozen subset, not a live or complete authority corpus.",
+    "The historical context is a derived frozen summary, not a current market forecast.",
+    "Interactive operator replay depends on human-entered metadata, selected passages, and disposition rationale.",
+    "Exact third-party patch versions may resolve differently within the existing bounded requirements ranges; replay must capture the resolved environment and fail visibly on incompatibility.",
+    "Timestamps, hosted-run IDs/durations, and human-entered values are not expected to reproduce byte-for-byte."
+  ],
+  "external_actions_performed": 0,
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

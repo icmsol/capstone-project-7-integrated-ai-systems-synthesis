@@ -1,0 +1,63 @@
+{
+  "artifact_id": "PROJECT7-P6-04-ENVIRONMENT-AND-VERSION-SPEC",
+  "candidate_id": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0",
+  "python": {
+    "hosted_ci_specification": "3.12",
+    "manual_colab_acceptance_observed": "3.12.13",
+    "note": "Hosted CI intentionally specifies the Python minor line; the manual acceptance notebook recorded Python 3.12.13."
+  },
+  "dependency_constraints": {
+    "requirements_p4_03.txt": [
+      "torch>=2.5,<3",
+      "jsonschema>=4.22,<5",
+      "referencing>=0.35,<1"
+    ],
+    "requirements_p5_05.txt": [
+      "jsonschema>=4.22,<5",
+      "referencing>=0.35,<1",
+      "PyYAML>=6.0,<7"
+    ],
+    "requirements_p5_09.txt": [
+      "# Project 7 P5-09 operator-interface dependencies",
+      "-r requirements_p5_05.txt",
+      "ipywidgets>=8,<9"
+    ]
+  },
+  "dependency_version_policy": {
+    "exact_hosted_resolution_frozen_in_repository": false,
+    "reason": "The established candidate uses bounded compatible version ranges. P6-04 does not change post-freeze runtime dependencies merely to create a new lock.",
+    "replay_requirement": "Install from the existing requirements files and capture exact resolved versions during replay/CI.",
+    "limitation": "Exact third-party patch versions may differ across future resolver dates; any incompatibility must be treated as a reproducibility failure rather than silently patched."
+  },
+  "model": {
+    "artifact_id": "PROJECT4-CLAUSE-CLASSIFIER-INFERENCE",
+    "version": "1.0.0",
+    "checkpoint_path": "models/project4/selected_clause_classifier.pt",
+    "checkpoint_sha256": "50a280950d31466d7002578295c64e957d144611f5b9731bb059be50e68c6c92",
+    "selected_configuration": "Baseline dropout 0.10",
+    "class_count": 10,
+    "vocabulary_size": 4417,
+    "maximum_sequence_length": 256,
+    "runtime_device": "cpu"
+  },
+  "api_and_format_versions": {
+    "model_provider_api": "None in the final Project 7 runtime",
+    "openai_api_runtime_dependency": false,
+    "json_schema_draft": "2020-12",
+    "github_actions_checkout": "actions/checkout@v5",
+    "github_actions_setup_python": "actions/setup-python@v6",
+    "github_actions_upload_artifact": "actions/upload-artifact@v7"
+  },
+  "determinism": {
+    "frozen_evaluation_seed": 42,
+    "source_case_identifiers": "deterministic SHA-256-derived identifiers from normalized source identity",
+    "evidence_item_identifiers": "deterministic SHA-256-derived identifiers",
+    "expected_nondeterministic_fields": [
+      "human/operator-entered rationale",
+      "execution timestamps",
+      "hosted CI run identifiers and duration",
+      "environment package patch versions within allowed ranges"
+    ]
+  },
+  "production_boundary": "Controlled capstone prototype; nonbinding recommendations only; no autonomous external action; final human authority required."
+}

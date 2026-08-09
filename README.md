@@ -217,6 +217,13 @@ Each major repository area has its own README where one exists:
 - [P5-12 Final Submission-Candidate Freeze](docs/P5_12_Final_Submission_Candidate_Freeze.md)
 
 
+
+### Reproducibility and replay
+
+- [P6-04 Reproducibility Manifest and Replay Guide](docs/P6_04_Reproducibility_Manifest_and_Replay_Guide.md)
+- [P6-04 Source Snapshot and Checksum Inventory](docs/P6_04_Source_Snapshot_and_Checksum_Inventory.csv)
+- [P6-04 Replay Matrix](docs/P6_04_Replay_Matrix.csv)
+
 ### Governance, ethics, and production boundary
 
 - [P6-03 Governance, Ethics, and Risk Framework](docs/P6_03_Governance_Ethics_and_Risk_Framework.md)

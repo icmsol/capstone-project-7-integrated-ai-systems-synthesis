@@ -1,0 +1,25 @@
+{
+  "artifact_id": "PROJECT7-P6-04-REPRODUCIBILITY-VALIDATION",
+  "validation_date": "2026-08-08",
+  "parent_hosted_gate": {
+    "run": 22,
+    "commit": "de89e0f",
+    "status": "PASS",
+    "duration_seconds": 35,
+    "artifacts": 1
+  },
+  "candidate_id": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0",
+  "first_commit_without_github_folder": "PASS",
+  "second_commit_workflow_state": "PASS",
+  "source_snapshot_entries": 13,
+  "replay_scopes": 10,
+  "frozen_seed": 42,
+  "frozen_results": "19/19 cases; 262/262 assertions; 0 regressions",
+  "model_checkpoint_sha256": "50a280950d31466d7002578295c64e957d144611f5b9731bb059be50e68c6c92",
+  "openai_api_runtime_dependency": false,
+  "regression_unit_tests": "95/95 PASS",
+  "technical_or_evaluation_behavior_changed": false,
+  "production_ready": false,
+  "external_actions_performed": 0,
+  "result": "PASS"
+}
