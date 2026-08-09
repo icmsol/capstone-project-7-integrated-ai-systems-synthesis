@@ -1,4 +1,4 @@
-name: Project 7 Quality Gate
+ame: Project 7 Quality Gate
 
 on:
   push:
@@ -60,6 +60,7 @@ jobs:
             python scripts/validate_operator_interface.py
             python scripts/verify_p5_12_operator_hardening.py
             python scripts/verify_p6_03_governance.py
+            python scripts/verify_p6_04_reproducibility.py
             python scripts/verify_p5_12_final_submission_candidate.py
             python -m unittest \
               tests.test_refined_evaluation \
@@ -73,6 +74,7 @@ jobs:
               tests.test_operator_workflow \
               tests.test_p5_12_operator_hardening \
               tests.test_p6_03_governance \
+              tests.test_p6_04_reproducibility \
               tests.test_p5_12_final_submission_candidate -v
           } 2>&1 | tee outputs/ci/project7-quality-gate.log
 
@@ -93,6 +95,7 @@ jobs:
             outputs/evaluation/p5_06/
             outputs/evaluation/p5_12/
             outputs/evaluation/p6_03/
+            outputs/evaluation/p6_04/
             docs/P5_04_*.md
             docs/P5_04_*Validation*.json
             docs/P5_05_*.md
@@ -103,6 +106,7 @@ jobs:
             docs/P5_09_*Manifest*.json
             docs/P5_12_*.md
             docs/P6_03_*
+            docs/P6_04_*
             notebooks/Project_7_Operator_Interface.ipynb
           if-no-files-found: error
           retention-days: 30
