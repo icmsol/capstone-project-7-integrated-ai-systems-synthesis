@@ -1,0 +1,89 @@
+{
+  "overlay_schema_version": "1.0.0",
+  "overlay_id": "PROJECT7-P7-04-POST-FREEZE-PAPER-OVERLAY-v1.0.0",
+  "parent_candidate_id": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0",
+  "predecessor_overlay_id": "PROJECT7-P6-04-POST-FREEZE-REPRODUCIBILITY-OVERLAY-v1.0.0",
+  "change_reason": "P7-04 publishes the final Reflective Synthesis Paper and reconciles reviewer-facing documentation. Overlay-aware CI verifiers are extended to recognize Phase 7 report/presentation documentation while preserving the frozen technical/evaluation candidate.",
+  "triggering_publication_commit": "d1d9114b",
+  "triggering_quality_gate_run_number": 26,
+  "triggering_quality_gate_run_id": 31345853282,
+  "triggering_quality_gate_failure": "Stale P6-04 overlay size/checksum metadata for README.md after legitimate Phase 7 documentation publication.",
+  "documentation_only_and_ci_maintenance": true,
+  "technical_or_evaluation_behavior_changed": false,
+  "frozen_scenario_inputs_changed": false,
+  "model_artifacts_changed": false,
+  "safeguards_changed": false,
+  "evaluation_results_changed": false,
+  "recommendation_logic_changed": false,
+  "operator_workflow_behavior_changed": false,
+  "human_authority_boundary_changed": false,
+  "files": [
+    {
+      "path": "README.md",
+      "change_class": "documentation_correction",
+      "bytes": 14811,
+      "sha256": "09f89d8358f5348447668b16dfa28fc240f729455326b52bee70e4b3610fddb4"
+    },
+    {
+      "path": "docs/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 6288,
+      "sha256": "ecec58ece51e965a746b3f79f98ac8c3569d12f654f7fef19d5bf24e1eaddc9a"
+    },
+    {
+      "path": "figures/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 2458,
+      "sha256": "e31965009aced61ce76ac91f0a1a550827a0bef4e18661f22323ad74487f2752"
+    },
+    {
+      "path": "reports/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 2288,
+      "sha256": "b2c12482123a858d73bb5157d3fd0b5c92c312148e9da28868cf3edd70a1532f"
+    },
+    {
+      "path": "presentation/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 1296,
+      "sha256": "23fa5cca3e9b070e68edf6a86a221884b547915493680660eb969ac48305a66f"
+    },
+    {
+      "path": "reports/Reflective_Synthesis_Paper.pdf",
+      "change_class": "documentation_governance",
+      "bytes": 1357446,
+      "sha256": "4ed542b91de58382cf743a93787d55ed912e56567ac37567f9ab020f3df7f0a4"
+    },
+    {
+      "path": "reports/Reflective_Synthesis_Paper.docx",
+      "change_class": "documentation_governance",
+      "bytes": 1474978,
+      "sha256": "e923aa5cf9e753c11cfc7477110375e9b4edad04bbe35d66308ccf98a41d9d00"
+    },
+    {
+      "path": "scripts/verify_p5_05_final_baseline.py",
+      "change_class": "ci_maintenance",
+      "bytes": 9302,
+      "sha256": "210dfea5d6ea6433c485bb6368b0d9c5836701a84866050924c5f7cc76a0a888"
+    },
+    {
+      "path": "scripts/verify_p5_06_acceptance_corrected_baseline.py",
+      "change_class": "ci_maintenance",
+      "bytes": 7852,
+      "sha256": "13f67de2a92bb536594ee8614e13b29655d12f90c01efae1261a9d22c7339350"
+    },
+    {
+      "path": "scripts/verify_p5_12_final_submission_candidate.py",
+      "change_class": "ci_maintenance",
+      "bytes": 9713,
+      "sha256": "08c9c0cf5a1dcd940810e26c427877a5d375f9b4bdb85277e9685ab61ba841c2"
+    }
+  ],
+  "counts": {
+    "documentation_corrections": 5,
+    "documentation_governance": 2,
+    "ci_maintenance": 3,
+    "total": 10
+  },
+  "external_actions_performed": 0
+}
