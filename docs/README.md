@@ -56,7 +56,7 @@ Each P4 activity also has an implementation manifest, requirements matrix, and v
 
 The live workflow is [`../.github/workflows/project7-quality-gate.yml`](../.github/workflows/project7-quality-gate.yml).
 
-[`ci/project7-quality-gate.yml`](ci/project7-quality-gate.yml) is maintained as a documentation copy and should match the live workflow when P6-01 is committed.
+[`ci/project7-quality-gate.yml`](ci/project7-quality-gate.yml) is maintained as a documentation copy and should match the live workflow.
 
 ## Final Candidate Evidence
 
@@ -70,7 +70,7 @@ Primary machine-readable evidence:
 - [Final visual-regression acceptance](../outputs/evaluation/p5_12/final_visual_regression_acceptance.json)
 - [Operator hardening findings](../outputs/evaluation/p5_12/operator_hardening_findings.json)
 
-Phase 6 may add/update reviewer documentation in `docs/` without silently changing frozen technical/evaluation artifacts.
+Phases 6–8 may add or update reviewer-facing documentation, reports, figures, and presentation/defense assets without silently changing the frozen technical/evaluation artifacts. The `PROJECT7-SUBMISSION-CANDIDATE-v1.0.0` freeze remains controlling for the technical/evaluation evidence set.
 
 ## P6-02 System Design and Markdown Reconciliation
 
@@ -95,3 +95,11 @@ Phase 6 may add/update reviewer documentation in `docs/` without silently changi
 - [Reproducibility Manifest and Replay Guide](P6_04_Reproducibility_Manifest_and_Replay_Guide.md)
 - [Source Snapshot and Checksum Inventory](P6_04_Source_Snapshot_and_Checksum_Inventory.csv)
 - [Replay Matrix](P6_04_Replay_Matrix.csv)
+
+## Phase 7 Reflective Synthesis Paper
+
+- [Final Reflective Synthesis Paper (PDF)](../reports/Reflective_Synthesis_Paper.pdf)
+- [Editable Reflective Synthesis Paper source (DOCX)](../reports/Reflective_Synthesis_Paper.docx)
+- [Reports README and paper provenance](../reports/README.md)
+
+Phase 7 reporting is complete. The final paper synthesizes the industry problem, prior-project integration, technical design and tradeoffs, governance and responsible-AI controls, limitations, professional relevance, and future extensions while remaining bounded by the frozen technical/evaluation evidence.
