@@ -70,7 +70,7 @@ Primary machine-readable evidence:
 - [Final visual-regression acceptance](../outputs/evaluation/p5_12/final_visual_regression_acceptance.json)
 - [Operator hardening findings](../outputs/evaluation/p5_12/operator_hardening_findings.json)
 
-Phases 6–8 may add or update reviewer-facing documentation, reports, figures, and presentation/defense assets without silently changing the frozen technical/evaluation artifacts. The `PROJECT7-SUBMISSION-CANDIDATE-v1.0.0` freeze remains controlling for the technical/evaluation evidence set.
+Phases 6–9 may add or update reviewer-facing documentation, reports, figures, presentation assets, and final-QA environment/inventory evidence without silently changing the frozen technical/evaluation artifacts. The `PROJECT7-SUBMISSION-CANDIDATE-v1.0.0` freeze remains controlling for the technical/evaluation evidence set.
 
 ## P6-02 System Design and Markdown Reconciliation
 
@@ -111,3 +111,19 @@ Phase 7 reporting is complete. The final paper synthesizes the industry problem,
 - [Presentation README and public/private boundary](../presentation/README.md)
 
 Phase 8 reviewer-facing presentation materials are finalized for Project 7 submission. Private speaker notes, defense-question preparation, and later live rehearsal/timing material remain off-repository. The presentation remains bounded by the frozen technical/evaluation candidate and final Phase 7 paper.
+
+## Phase 8 Mentor Presentation
+
+- [Final Mentor Defense Deck (PPTX)](../presentation/Project_7_Mentor_Defense.pptx)
+- [Final Mentor Defense Deck (PDF)](../presentation/Project_7_Mentor_Defense.pdf)
+- [Presentation README and public/private boundary](../presentation/README.md)
+
+Phase 8 reviewer-facing presentation artifacts are complete. Private speaker notes, defense-question preparation, and live rehearsal materials are intentionally excluded from the repository.
+
+## P9-02 Final Submission Environment and Inventory
+
+- [Final Submission Environment and Repository Inventory](P9_02_Final_Environment_and_Repository_Inventory.md)
+- [Repository Area Inventory](P9_02_Final_Repository_Area_Inventory.csv)
+- [Authoritative final `requirements.txt`](../requirements.txt)
+
+P9-02 adds the final exact Python 3.12 CPU dependency lock and hosted inventory controls without relocating historical stage-specific requirements files or changing the frozen technical/evaluation candidate.

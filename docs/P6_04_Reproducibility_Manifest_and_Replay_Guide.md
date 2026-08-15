@@ -151,3 +151,13 @@ Reproducibility does not establish production readiness. The P6-03 governance pa
 ## Completion Criterion
 
 P6-04 is complete when this manifest and replay evidence are committed and the updated hosted quality gate verifies the reproducibility package without changing `PROJECT7-SUBMISSION-CANDIDATE-v1.0.0`.
+
+## P9-02 Final Submission Environment Addendum
+
+This addendum records a later **final-submission QA control** and does not rewrite the historical P6-04 acceptance evidence above. The P6-04 dependency constraints and replay statements remain point-in-time evidence for the accepted technical/evaluation candidate.
+
+P9-02 adds an authoritative root [`../requirements.txt`](../requirements.txt) exact lock for the final Python 3.12 CPU submission/hosted-replay environment. All 12 historical `requirements_p4_*` / `requirements_p5_*` snapshots remain at their original paths. The accepted operator notebook retains its historical `requirements_p5_09.txt` bootstrap and explicit CPU-PyTorch install; it is not modified by P9-02.
+
+The final hosted Quality Gate installs the root lock, runs `pip check`, emits `outputs/ci/p9_02_pip_freeze.txt`, and generates an exhaustive repository file inventory plus summary. The P9-02 environment/inventory change is separately versioned by `PROJECT7-P9-02-POST-FREEZE-SUBMISSION-ENVIRONMENT-OVERLAY-v1.0.0`.
+
+No frozen scenario, model artifact, safeguard, evaluation result, recommendation behavior, operator responsibility, human-authority boundary, or external-action prohibition is changed by this addendum.

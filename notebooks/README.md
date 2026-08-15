@@ -43,4 +43,6 @@ It is **not** the primary Project 7 user interface.
 
 ## Runtime Boundary
 
-The operator notebook is designed for Google Colab/Python 3.12. The current operator dependency entry point is [`../requirements_p5_09.txt`](../requirements_p5_09.txt), which layers `ipywidgets` on the frozen final-baseline requirements.
+The operator notebook is designed for Google Colab/Python 3.12. Its accepted historical bootstrap remains [`../requirements_p5_09.txt`](../requirements_p5_09.txt), which layers `ipywidgets` on the frozen final-baseline requirements; the notebook also preserves its explicit CPU-PyTorch install. P9-02 intentionally does not rewrite that accepted notebook.
+
+For the **final submission and hosted replay environment**, use the authoritative root [`../requirements.txt`](../requirements.txt). The final Quality Gate installs that exact lock in Python 3.12 and records `pip freeze` evidence, while the stage-specific requirements files remain historical acceptance snapshots.

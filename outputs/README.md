@@ -42,3 +42,13 @@ The frozen candidate is anchored by:
 Reviewer-facing post-freeze documentation changes are versioned under `evaluation/p6_*`, `evaluation/p7_04`, and `evaluation/p8_04` so later reports/presentation materials do not silently change the frozen technical/evaluation candidate.
 
 Generated outputs are evidence artifacts; they do not replace source documents or authorized human decisions.
+
+## P9-02 Final Submission QA Evidence
+
+The committed P9-02 overlay is under [`evaluation/p9_02/`](evaluation/p9_02/). A successful hosted run additionally emits the non-committed run evidence under `outputs/ci/`:
+
+- `p9_02_pip_freeze.txt`
+- `p9_02_repository_inventory.csv`
+- `p9_02_repository_inventory_summary.json`
+
+These run-generated files document the final installed environment and repository inventory; they do not change the frozen candidate.

@@ -32,6 +32,7 @@ POST_FREEZE_OVERLAY_PATHS = [
     ROOT / "outputs/evaluation/p6_04/post_freeze_reproducibility_overlay_manifest.json",
     ROOT / "outputs/evaluation/p7_04/post_freeze_paper_overlay_manifest.json",
     ROOT / "outputs/evaluation/p8_04/post_freeze_presentation_overlay_manifest.json",
+    ROOT / "outputs/evaluation/p9_02/post_freeze_submission_environment_overlay_manifest.json",
 ]
 
 ALLOWED_CI_MAINTENANCE_PATHS = {
@@ -44,7 +45,11 @@ ALLOWED_CI_MAINTENANCE_PATHS = {
     "tests/test_p5_12_final_submission_candidate.py",
     "tests/test_p6_03_governance.py",
     "tests/test_p6_04_reproducibility.py",
+    "scripts/verify_p9_02_submission_environment.py",
+    "tests/test_ci_workflow.py",
 }
+
+ALLOWED_ENVIRONMENT_LOCK_PATHS = {"requirements.txt"}
 
 DOCUMENTATION_PREFIXES = (
     "docs/",
@@ -68,6 +73,7 @@ def load_versioned_post_freeze_overlays():
     all_paths = set()
     doc_entries = 0
     ci_entries = 0
+    environment_entries = 0
     overlay_ids = []
 
     for overlay_path in POST_FREEZE_OVERLAY_PATHS:
@@ -91,6 +97,10 @@ def load_versioned_post_freeze_overlays():
                 if path_string not in ALLOWED_CI_MAINTENANCE_PATHS:
                     raise RuntimeError(f"Disallowed CI-maintenance path: {path_string}")
                 ci_entries += 1
+            elif change_class == "environment_lock":
+                if path_string not in ALLOWED_ENVIRONMENT_LOCK_PATHS:
+                    raise RuntimeError(f"Disallowed environment-lock path: {path_string}")
+                environment_entries += 1
             else:
                 raise RuntimeError(f"Unsupported overlay change class: {change_class}")
             latest[path_string] = item
@@ -109,7 +119,7 @@ def load_versioned_post_freeze_overlays():
         if sha256_file(path) != item["sha256"]:
             raise RuntimeError(f"Latest overlay checksum mismatch: {path_string}")
 
-    return latest, all_paths, doc_entries, ci_entries, overlay_ids
+    return latest, all_paths, doc_entries, ci_entries, environment_entries, overlay_ids
 
 
 def verify_ci_structure():
@@ -123,6 +133,9 @@ def verify_ci_structure():
         "validate_operator_interface.py",
         "verify_p5_12_operator_hardening.py",
         "verify_p5_12_final_submission_candidate.py",
+        "requirements.txt",
+        "verify_p9_02_submission_environment.py",
+        "outputs/evaluation/p9_02/",
         "tests.test_p5_12_final_submission_candidate",
         "actions/upload-artifact@v7",
     ]
@@ -144,7 +157,7 @@ def main():
     active_overlay = load_json(P6 / "versioned_overlay_manifest.json")
     historical_overlay = load_json(P6 / "versioned_overlay_manifest_v1.0.1.json")
     findings = load_json(P12 / "operator_hardening_findings.json")
-    _, post_freeze_paths, doc_entries, ci_entries, overlay_ids = (
+    _, post_freeze_paths, doc_entries, ci_entries, environment_entries, overlay_ids = (
         load_versioned_post_freeze_overlays()
     )
 
@@ -217,6 +230,7 @@ def main():
     print(f"Strict paths superseded only by versioned post-freeze overlays: {superseded}")
     print(f"Post-freeze documentation entries verified: {doc_entries}")
     print(f"Post-freeze CI-maintenance entries verified: {ci_entries}")
+    print(f"Post-freeze environment-lock entries verified: {environment_entries}")
     print(f"Overlay chain: {overlay_ids}")
     print("Final operator visual regression: PASS")
     print("Unresolved critical/major acceptance defects: 0")

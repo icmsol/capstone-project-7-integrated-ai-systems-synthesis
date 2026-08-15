@@ -1,0 +1,120 @@
+{
+  "overlay_schema_version": "1.0.0",
+  "overlay_id": "PROJECT7-P9-02-POST-FREEZE-SUBMISSION-ENVIRONMENT-OVERLAY-v1.0.0",
+  "parent_candidate_id": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0",
+  "predecessor_overlay_id": "PROJECT7-P8-04-POST-FREEZE-PRESENTATION-OVERLAY-v1.0.0",
+  "change_reason": "P9-02 adds the authoritative final Python 3.12 CPU requirements.txt lock, final repository/environment inventory controls, documentation reconciliation, and CI-maintenance needed to validate that submission environment while preserving the frozen technical/evaluation candidate.",
+  "environment_and_documentation_only": true,
+  "technical_or_evaluation_behavior_changed": false,
+  "frozen_scenario_inputs_changed": false,
+  "model_artifacts_changed": false,
+  "safeguards_changed": false,
+  "evaluation_results_changed": false,
+  "recommendation_logic_changed": false,
+  "operator_workflow_behavior_changed": false,
+  "human_authority_boundary_changed": false,
+  "historical_dependency_snapshots_relocated": false,
+  "final_environment_lock_added": true,
+  "final_environment_lock_path": "requirements.txt",
+  "structural_current_ci_path": ".github/workflows/project7-quality-gate.yml",
+  "files": [
+    {
+      "path": "README.md",
+      "change_class": "documentation_correction",
+      "bytes": 15819,
+      "sha256": "39166fe9b74ea6e76bcdadd7aab83e85be70272651bfcc0d7f6dd426129d9a2c"
+    },
+    {
+      "path": "notebooks/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 2234,
+      "sha256": "29f1afb6f77419d011b36882e362f7c4159ea47922a23636dc3e9ace345c3297"
+    },
+    {
+      "path": "docs/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 7888,
+      "sha256": "75528c052089585bfbf18012877d930316ad6d4ff96bee9fdc454b7cdb918a32"
+    },
+    {
+      "path": "docs/P6_04_Reproducibility_Manifest_and_Replay_Guide.md",
+      "change_class": "documentation_governance",
+      "bytes": 7386,
+      "sha256": "ad452817e5e43f1ae12caee06235de2458fa86c7838b4b2d99942fa6295ee131"
+    },
+    {
+      "path": "docs/P9_02_Final_Environment_and_Repository_Inventory.md",
+      "change_class": "documentation_governance",
+      "bytes": 4564,
+      "sha256": "8522bd31a89dd0da1b036bfce787aea8f96d7e26eb4f8a79dcc69ef96b9d183d"
+    },
+    {
+      "path": "docs/P9_02_Final_Repository_Area_Inventory.csv",
+      "change_class": "documentation_governance",
+      "bytes": 1971,
+      "sha256": "c7c7c5e1eb502e0f98ec7bf0308776cbe2cb789eccad4292050040c50b34204a"
+    },
+    {
+      "path": "docs/ci/project7-quality-gate.yml",
+      "change_class": "documentation_governance",
+      "bytes": 4667,
+      "sha256": "afede07d8c2eae65eb4ab541535f0fd0f9a33dbca9dae1de6f4c17d377118eb7"
+    },
+    {
+      "path": "outputs/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 2655,
+      "sha256": "eb6965e71ee0c694d15307a6b5183cf2d8173bb24a9f298562d7b546a7e015a3"
+    },
+    {
+      "path": "outputs/evaluation/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 2448,
+      "sha256": "5e16cd5ee25c0aa701bd92f5cea18195a425a2d4a4daf3fc9dfc0a2840518401"
+    },
+    {
+      "path": "requirements.txt",
+      "change_class": "environment_lock",
+      "bytes": 682,
+      "sha256": "68582bb190797d62f72088d7a29192dcb6884f23ae3579fec8be7d512f9971e8"
+    },
+    {
+      "path": "scripts/verify_p5_05_final_baseline.py",
+      "change_class": "ci_maintenance",
+      "bytes": 10090,
+      "sha256": "b1016052175f198f5e1d8aac6692cc2cfac488fb4180ee9e2109f7b0e9c7f9e9"
+    },
+    {
+      "path": "scripts/verify_p5_06_acceptance_corrected_baseline.py",
+      "change_class": "ci_maintenance",
+      "bytes": 8561,
+      "sha256": "39bb1c071b18770f1ec4340662e2576acd913fcc4d7a6b00fd2457b4c04c31e5"
+    },
+    {
+      "path": "scripts/verify_p5_12_final_submission_candidate.py",
+      "change_class": "ci_maintenance",
+      "bytes": 10560,
+      "sha256": "3636d374ef4222f63cd59b672a1f391d0a5f0cc70f797e78eec7cf0841b375d1"
+    },
+    {
+      "path": "scripts/verify_p9_02_submission_environment.py",
+      "change_class": "ci_maintenance",
+      "bytes": 7615,
+      "sha256": "a93770542c4dd41a02f7f11228b33f256703823329aedbe477282a24d199b9be"
+    },
+    {
+      "path": "tests/test_ci_workflow.py",
+      "change_class": "ci_maintenance",
+      "bytes": 2683,
+      "sha256": "62605698f7e2b62bb8f89e73b772a035ebe39f53f82f02c70798a2b35f2a1680"
+    }
+  ],
+  "counts": {
+    "documentation_corrections": 5,
+    "documentation_governance": 4,
+    "environment_lock": 1,
+    "ci_maintenance": 5,
+    "total": 15
+  },
+  "external_actions_performed": 0
+}

@@ -5,7 +5,7 @@
 [![Project 7 Quality Gate](https://github.com/icmsol/capstone-project-7-integrated-ai-systems-synthesis/actions/workflows/project7-quality-gate.yml/badge.svg)](https://github.com/icmsol/capstone-project-7-integrated-ai-systems-synthesis/actions/workflows/project7-quality-gate.yml)
 [![Open Operator Interface in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/icmsol/capstone-project-7-integrated-ai-systems-synthesis/blob/main/notebooks/Project_7_Operator_Interface.ipynb)
 
-This repository contains a configurable, evidence-grounded AI decision-support prototype for small public-sector consulting businesses. It integrates opportunity intake, organization-fit screening, historical procurement context, bounded clause-theme triage, evidence validation, nonbinding recommendations, auditability, resumable case state, and explicit human disposition.
+This repository contains a configurable, evidence-grounded AI decision-support prototype for small consulting firms pursuing public-sector work. It integrates opportunity intake, organization-fit screening, historical procurement context, bounded clause-theme triage, governed evidence retrieval and validation, nonbinding recommendations, auditability, resumable case state, and explicit human disposition.
 
 ICM Solutions is the reference organization profile. A fictional second profile is included to demonstrate configuration portability.
 
@@ -176,8 +176,9 @@ src/
   project7/                          Reusable integrated-system Python modules
 tests/                               Schemas, contracts, safeguards, component, regression, and freeze tests
 
+requirements.txt                    Authoritative final Python 3.12 CPU submission lock
 requirements_p4_01.txt ...           Historical stage-specific dependency snapshots
-requirements_p5_09.txt               Operator-interface dependency entry point
+requirements_p5_09.txt               Historical operator-interface dependency entry point
 ```
 
 Each major repository area has its own README where one exists:
@@ -234,6 +235,9 @@ Each major repository area has its own README where one exists:
 - [P6-04 Reproducibility Manifest and Replay Guide](docs/P6_04_Reproducibility_Manifest_and_Replay_Guide.md)
 - [P6-04 Source Snapshot and Checksum Inventory](docs/P6_04_Source_Snapshot_and_Checksum_Inventory.csv)
 - [P6-04 Replay Matrix](docs/P6_04_Replay_Matrix.csv)
+- [P9-02 Final Submission Environment and Repository Inventory](docs/P9_02_Final_Environment_and_Repository_Inventory.md)
+- [P9-02 Repository Area Inventory](docs/P9_02_Final_Repository_Area_Inventory.csv)
+- [Final `requirements.txt`](requirements.txt)
 
 ### Governance, ethics, and production boundary
 
@@ -253,7 +257,7 @@ The live GitHub Actions workflow is:
 
 [` .github/workflows/project7-quality-gate.yml`](.github/workflows/project7-quality-gate.yml)
 
-It runs repository-integrity checks, schema/contract/safeguard validation, frozen evaluation verification, P5-12 hardening checks, the final submission-candidate verifier, and regression/unit tests. The workflow uses read-only repository permissions and contains no deployment/publishing step.
+It installs the exact root `requirements.txt` in a clean Python 3.12 CPU environment, runs `pip check`, verifies the final environment and repository inventory, and then runs repository-integrity checks, schema/contract/safeguard validation, frozen evaluation verification, P5-12 hardening checks, the final submission-candidate verifier, and regression/unit tests. The workflow uses read-only repository permissions and contains no deployment/publishing step.
 
 The current workflow status is available on the [Project 7 Actions page](https://github.com/icmsol/capstone-project-7-integrated-ai-systems-synthesis/actions).
 
