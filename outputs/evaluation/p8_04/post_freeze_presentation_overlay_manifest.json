@@ -1,0 +1,92 @@
+{
+  "overlay_schema_version": "1.0.0",
+  "overlay_id": "PROJECT7-P8-04-POST-FREEZE-PRESENTATION-OVERLAY-v1.0.0",
+  "parent_candidate_id": "PROJECT7-SUBMISSION-CANDIDATE-v1.0.0",
+  "predecessor_overlay_id": "PROJECT7-P7-04-POST-FREEZE-PAPER-OVERLAY-v1.0.0",
+  "change_reason": "P8-04 publishes the final reviewer-facing mentor presentation PPTX/PDF, reconciles presentation-related Markdown, and extends overlay-aware CI verifiers to recognize the Phase 8 publication while preserving the frozen technical/evaluation candidate.",
+  "documentation_only_and_ci_maintenance": true,
+  "technical_or_evaluation_behavior_changed": false,
+  "frozen_scenario_inputs_changed": false,
+  "model_artifacts_changed": false,
+  "safeguards_changed": false,
+  "evaluation_results_changed": false,
+  "recommendation_logic_changed": false,
+  "operator_workflow_behavior_changed": false,
+  "human_authority_boundary_changed": false,
+  "private_preparation_artifacts_included": false,
+  "files": [
+    {
+      "path": "README.md",
+      "change_class": "documentation_correction",
+      "bytes": 15268,
+      "sha256": "f9f0198c31f31b9feac27ace213c32b89283a337c166f87819a29da8860751bf"
+    },
+    {
+      "path": "docs/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 6874,
+      "sha256": "9595257e60d9f67ef4dcf6e53b3e7472e1f12487038ad09edea89ae8484fb55c"
+    },
+    {
+      "path": "figures/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 2536,
+      "sha256": "5b247cb9b24ffd0fd78920b297efb9b04b55b3f11f9566d53e87c840fb487f40"
+    },
+    {
+      "path": "presentation/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 2141,
+      "sha256": "11b56e0ce24a6421ce3ff0f6636bd84d8a0a267fcc709f9231510c457f7a20c1"
+    },
+    {
+      "path": "outputs/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 2201,
+      "sha256": "9a2f14593a304a4ae97e67961445718f707008ef7dd7f0ca58984e144f8d1857"
+    },
+    {
+      "path": "outputs/evaluation/README.md",
+      "change_class": "documentation_correction",
+      "bytes": 2448,
+      "sha256": "5e16cd5ee25c0aa701bd92f5cea18195a425a2d4a4daf3fc9dfc0a2840518401"
+    },
+    {
+      "path": "presentation/Project_7_Mentor_Defense.pptx",
+      "change_class": "documentation_governance",
+      "bytes": 4979309,
+      "sha256": "33a3837a33096566548881cee356a19f3a2e6fea025c330c5cf0dd81e7318b81"
+    },
+    {
+      "path": "presentation/Project_7_Mentor_Defense.pdf",
+      "change_class": "documentation_governance",
+      "bytes": 1722195,
+      "sha256": "8da0f84f7032c203ab3089c009b44efdba66028cdd377c446b3dc6df001705c9"
+    },
+    {
+      "path": "scripts/verify_p5_05_final_baseline.py",
+      "change_class": "ci_maintenance",
+      "bytes": 9388,
+      "sha256": "38d225b3975077a524dd755d7cfab05c5cf6f24feba742ed366e7598e9e998c6"
+    },
+    {
+      "path": "scripts/verify_p5_06_acceptance_corrected_baseline.py",
+      "change_class": "ci_maintenance",
+      "bytes": 7938,
+      "sha256": "f2a63b1799169d5e637aaa94c980ff762a24aa9f03909c9013fd918bb4205488"
+    },
+    {
+      "path": "scripts/verify_p5_12_final_submission_candidate.py",
+      "change_class": "ci_maintenance",
+      "bytes": 9799,
+      "sha256": "94f79d1c0f35459487e54ffe1656b274a3ab93ec265ed6c33d2d54bbe1749467"
+    }
+  ],
+  "counts": {
+    "documentation_corrections": 6,
+    "documentation_governance": 2,
+    "ci_maintenance": 3,
+    "total": 11
+  },
+  "external_actions_performed": 0
+}

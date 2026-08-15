@@ -103,3 +103,11 @@ Phases 6–8 may add or update reviewer-facing documentation, reports, figures, 
 - [Reports README and paper provenance](../reports/README.md)
 
 Phase 7 reporting is complete. The final paper synthesizes the industry problem, prior-project integration, technical design and tradeoffs, governance and responsible-AI controls, limitations, professional relevance, and future extensions while remaining bounded by the frozen technical/evaluation evidence.
+
+## Phase 8 Mentor Presentation
+
+- [Final Mentor Defense Deck (PPTX)](../presentation/Project_7_Mentor_Defense.pptx)
+- [Final Mentor Defense Deck (PDF)](../presentation/Project_7_Mentor_Defense.pdf)
+- [Presentation README and public/private boundary](../presentation/README.md)
+
+Phase 8 reviewer-facing presentation materials are finalized for Project 7 submission. Private speaker notes, defense-question preparation, and later live rehearsal/timing material remain off-repository. The presentation remains bounded by the frozen technical/evaluation candidate and final Phase 7 paper.

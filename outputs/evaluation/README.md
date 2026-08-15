@@ -1,6 +1,6 @@
 # Evaluation Outputs
 
-This directory contains the Project 7 evaluation, refinement, acceptance, and freeze evidence.
+This directory contains the Project 7 evaluation, refinement, acceptance, freeze evidence, and versioned post-freeze documentation/CI overlays.
 
 ## Evaluation Lineage
 
@@ -13,6 +13,12 @@ p5_05/   Final frozen evaluation baseline and evidence inventory
 p5_06/   Acceptance-corrected baseline and versioned overlay evidence
 p5_07/   CI manifest-verification correction evidence
 p5_12/   Operator hardening findings and final submission-candidate freeze
+p6_01/   Post-freeze documentation overlay
+p6_02/   Post-freeze Markdown/system-design overlay
+p6_03/   Post-freeze governance overlay
+p6_04/   Post-freeze reproducibility overlay
+p7_04/   Post-freeze synthesis-paper publication overlay
+p8_04/   Post-freeze mentor-presentation publication overlay
 ```
 
 ## Frozen Final Metrics
@@ -38,6 +44,6 @@ See [`p5_05/final_evaluation_baseline.json`](p5_05/final_evaluation_baseline.jso
 - [`p5_12/final_visual_regression_acceptance.json`](p5_12/final_visual_regression_acceptance.json)
 - [`p5_12/operator_hardening_findings.json`](p5_12/operator_hardening_findings.json)
 
-The P5-06 historical overlay `1.0.1` is preserved, while the active post-freeze overlay is explicitly versioned `1.0.2`. Frozen scenario history is not silently rewritten.
+The P5-06 historical overlay remains preserved. Later P6-P8 reviewer-facing documentation/publication changes are explicitly versioned as post-freeze overlays and do not rewrite the frozen scenario history or technical/evaluation candidate.
 
 The Covered California fresh-request retrieval count differed between exploratory runs (one insufficient item in P5-11 versus zero in the P5-12 visual regression); both remained 0/3 sufficient and escalated. That count is documented as exploratory rather than treated as a frozen benchmark metric.

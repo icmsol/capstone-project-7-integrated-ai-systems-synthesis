@@ -29,7 +29,7 @@ Current frozen evidence includes:
 
 See the [final submission-candidate manifest](outputs/evaluation/p5_12/final_submission_candidate_manifest.json), [strict inventory](outputs/evaluation/p5_12/final_submission_candidate_strict_inventory.json), [final evidence index](outputs/evaluation/p5_12/final_submission_candidate_evidence_index.csv), and [freeze documentation](docs/P5_12_Final_Submission_Candidate_Freeze.md).
 
-Phase 6 technical documentation, governance, and reproducibility work is complete. Phase 7 reflective-synthesis reporting is also complete and published under [`reports/`](reports/). Phase 8 presentation and defense materials remain intentionally mutable under the documented freeze boundary. These reviewer-facing artifacts do not silently change the frozen technical/evaluation candidate.
+Phase 6 technical documentation, governance, and reproducibility work is complete. Phase 7 reflective-synthesis reporting is complete and published under [`reports/`](reports/). Phase 8 reviewer-facing mentor-presentation materials are also finalized under [`presentation/`](presentation/) and are versioned through a post-freeze presentation overlay. Private speaker notes, defense-question preparation, and later live rehearsal materials are intentionally excluded from the repository. These reviewer-facing artifacts do not silently change the frozen technical/evaluation candidate.
 
 ## Fastest Reviewer Path
 
@@ -200,6 +200,12 @@ Each major repository area has its own README where one exists:
 
 - [Final Reflective Synthesis Paper (PDF)](reports/Reflective_Synthesis_Paper.pdf)
 - [Editable Reflective Synthesis Paper source (DOCX)](reports/Reflective_Synthesis_Paper.docx)
+
+### Mentor presentation
+
+- [Final Mentor Defense Deck (PPTX)](presentation/Project_7_Mentor_Defense.pptx)
+- [Final Mentor Defense Deck (PDF)](presentation/Project_7_Mentor_Defense.pdf)
+- [Presentation README and public/private boundary](presentation/README.md)
 
 ### Architecture and design
 

@@ -1,6 +1,6 @@
 # Figures
 
-This directory contains the rendered architecture, control-flow, provenance, portability, recommendation/human-decision, and major-function use-case diagrams used by Project 7 documentation and the final Phase 7 paper. Selected figures may also be reused in the Phase 8 mentor presentation and defense.
+This directory contains the rendered architecture, control-flow, provenance, portability, recommendation/human-decision, and major-function use-case diagrams used by Project 7 documentation and the final Phase 7 paper. Selected figures are also reused in the finalized Phase 8 mentor presentation and defense deck.
 
 Each current diagram is stored as both PNG and SVG.
 
@@ -24,7 +24,7 @@ Each current diagram is stored as both PNG and SVG.
 
 Editable DOT sources are in [`../docs/diagram_sources/`](../docs/diagram_sources/).
 
-The final Phase 7 paper also contains synthesis-level visuals assembled specifically for the report. Reviewer-facing paper and Phase 8 defense visuals are outside the frozen P5-12 technical/evaluation checksum scope unless explicitly versioned into a later technical candidate.
+The final Phase 7 paper also contains synthesis-level visuals assembled specifically for the report. Reviewer-facing paper and Phase 8 defense visuals are outside the frozen P5-12 technical/evaluation checksum scope and are governed through later post-freeze documentation overlays; they do not alter the frozen technical/evaluation candidate.
 
 ## P6-02 reconciliation
 
