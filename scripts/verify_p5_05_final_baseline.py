@@ -72,6 +72,7 @@ POST_FREEZE_OVERLAY_PATHS = [
     ROOT / "outputs/evaluation/p7_04/post_freeze_paper_overlay_manifest.json",
     ROOT / "outputs/evaluation/p8_04/post_freeze_presentation_overlay_manifest.json",
     ROOT / "outputs/evaluation/p9_02/post_freeze_submission_environment_overlay_manifest.json",
+    ROOT / "outputs/evaluation/p9_03/post_freeze_final_qa_overlay_manifest.json",
 ]
 
 ALLOWED_CI_MAINTENANCE_PATHS = {

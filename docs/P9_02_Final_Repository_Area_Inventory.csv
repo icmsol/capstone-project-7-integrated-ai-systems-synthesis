@@ -1,5 +1,5 @@
 Area,Purpose,Final submission disposition,Reviewer / control note
-.github/workflows,Hosted read-only Project 7 Quality Gate,Retain,Final workflow installs root requirements.txt and validates P9-02 evidence
+.github/workflows,Hosted read-only Project 7 Quality Gate,Retain,Final workflow installs root requirements.txt and validates environment/inventory plus final-QA overlay evidence
 audit,"Audit ledgers, checksums, traceability records",Retain,Evidence/provenance
 config,"Contracts, schemas, profiles, fixed safeguards, templates",Retain,System configuration and governance boundary
 data,"Approved/public source inputs, frozen scenarios, processed/reference data",Retain,Controlled evidence inputs
@@ -7,11 +7,11 @@ docs,"Architecture, evaluation, governance, reproducibility, final QA documentat
 figures,Rendered architecture and use-case visuals,Retain,Paper/presentation/reviewer visuals
 models/project4,Frozen Project 4 inference package and model assets,Retain,Bounded clause-theme triage runtime contributor
 notebooks,Reviewer operator interface and Project 4 validation notebook,Retain,Primary interactive reviewer entry point
-outputs,"Implementation, evaluation, acceptance, overlay, and CI evidence",Retain,Machine-readable evidence and representative packets
+outputs,"Implementation, evaluation, acceptance, post-freeze overlay, and CI evidence",Retain,"Machine-readable evidence, representative packets, and P6-P9 overlays"
 presentation,Final reviewer-facing mentor defense PPTX/PDF,Retain,Phase 8 submission artifacts; private prep excluded
 reports,Final reflective synthesis paper PDF/DOCX,Retain,Phase 7 submission artifacts
 scripts,"Validation, verification, CI, and evidence-generation scripts",Retain,Reproducibility and quality controls
 src,Reusable integrated-system Python modules,Retain,Executable Project 7 system
 tests,"Schema, contract, safeguard, component, regression, freeze, and CI tests",Retain,Hosted quality gate
-requirements.txt,Exact final Python 3.12 CPU submission lock,Retain / authoritative final lock,Final reviewer/hosted replay dependency entry point
+requirements.txt,Exact final Python 3.12 CPU submission lock,Retain / authoritative final lock,Authoritative reviewer/hosted replay entry point; includes explicit NumPy/Pandas/Matplotlib setup stack
 requirements_p4_01.txt ... requirements_p5_09.txt,12 historical stage-specific dependency snapshots,Retain in original root paths,Historical provenance; intentionally not relocated

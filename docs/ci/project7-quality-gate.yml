@@ -95,6 +95,7 @@ jobs:
             outputs/evaluation/p7_04/
             outputs/evaluation/p8_04/
             outputs/evaluation/p9_02/
+            outputs/evaluation/p9_03/
             docs/P5_04_*.md
             docs/P5_04_*Validation*.json
             docs/P5_05_*.md

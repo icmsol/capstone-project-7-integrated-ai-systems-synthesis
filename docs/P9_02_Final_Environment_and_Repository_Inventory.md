@@ -2,7 +2,7 @@
 
 ## Status
 
-**Final submission environment lock and repository-inventory controls prepared for hosted validation.** P9-02 is accepted only when the updated read-only Project 7 Quality Gate installs the root lock and completes successfully.
+**P9-02 COMPLETE.** Hosted Project 7 Quality Gate #32 passed on commit `d0b1560` in 50 seconds with one retained artifact, confirming the original P9-02 exact lock, repository inventory, placeholder controls, and prior frozen-candidate checks. A subsequent P9-03 hostile audit identified that the Project 7 environment setup explicitly calls for NumPy, Pandas, and Matplotlib; the final submission lock was therefore broadened under a separate P9-03 post-freeze QA overlay while preserving this P9-02 historical acceptance evidence.
 
 ## Purpose
 
@@ -20,7 +20,7 @@ This activity does **not** change `PROJECT7-SUBMISSION-CANDIDATE-v1.0.0`, frozen
 - PyTorch: exact CPU build, installed using the official PyTorch CPU wheel index
 - Hosted verification: `pip check`, `pip freeze`, exact lock comparison, required imports, and CPU-only torch check
 
-The root lock covers the final integrated validation/runtime families: JSON Schema validation, reference resolution, YAML parsing, the frozen Project 4 CPU inference dependency, and the Jupyter widget stack used by the reviewer-facing operator interface.
+The authoritative root lock covers the Project 7 environment setup's core NumPy, Pandas, and Matplotlib libraries plus JSON Schema validation, reference resolution, YAML parsing, the frozen Project 4 CPU inference dependency, and the Jupyter widget stack used by the reviewer-facing operator interface. P9-03 broadened the original P9-02 lock to make those explicit core-library expectations reviewer-reproducible.
 
 ## Historical Dependency Snapshots Are Preserved
 
@@ -65,7 +65,7 @@ The workflow remains read-only and performs no deployment, publishing, procureme
 
 ## Acceptance Criterion
 
-P9-02 passes when a fresh hosted Quality Gate confirms:
+P9-02 historical acceptance (#32) confirmed:
 
 - all exact lock entries are installed at their pinned versions;
 - the CPU-only PyTorch boundary is preserved;

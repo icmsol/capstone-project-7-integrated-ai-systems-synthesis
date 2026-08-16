@@ -10,6 +10,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 WORKFLOW_PATH = ROOT / ".github/workflows/project7-quality-gate.yml"
 TEXT = WORKFLOW_PATH.read_text(encoding="utf-8")
+REQUIREMENTS_TEXT = (ROOT / "requirements.txt").read_text(encoding="utf-8")
 WORKFLOW = yaml.load(TEXT, Loader=yaml.BaseLoader)
 
 
@@ -36,6 +37,11 @@ class CIWorkflowTests(unittest.TestCase):
         self.assertIn("-r requirements.txt", TEXT)
         self.assertIn("pip check", TEXT)
 
+    def test_project_instructions_core_libraries_are_locked(self):
+        self.assertIn("numpy==", REQUIREMENTS_TEXT.lower())
+        self.assertIn("pandas==", REQUIREMENTS_TEXT.lower())
+        self.assertIn("matplotlib==", REQUIREMENTS_TEXT.lower())
+
     def test_final_quality_verifiers_are_run(self):
         for script in [
             "verify_p5_01_frozen_evaluation.py",
@@ -54,6 +60,7 @@ class CIWorkflowTests(unittest.TestCase):
         self.assertIn("outputs/ci/hosted-run-metadata.json", TEXT)
         self.assertIn("outputs/evaluation/p5_05/", TEXT)
         self.assertIn("outputs/evaluation/p9_02/", TEXT)
+        self.assertIn("outputs/evaluation/p9_03/", TEXT)
         self.assertIn("outputs/ci/p9_02_pip_freeze.txt", TEXT)
         self.assertIn("requirements.txt", TEXT)
         self.assertIn("retention-days: 30", TEXT)

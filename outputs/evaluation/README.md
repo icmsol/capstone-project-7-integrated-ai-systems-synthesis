@@ -19,6 +19,8 @@ p6_03/   Post-freeze governance overlay
 p6_04/   Post-freeze reproducibility overlay
 p7_04/   Post-freeze synthesis-paper publication overlay
 p8_04/   Post-freeze mentor-presentation publication overlay
+p9_02/   Post-freeze final submission-environment/inventory overlay
+p9_03/   Post-freeze hostile final-QA reconciliation overlay
 ```
 
 ## Frozen Final Metrics
@@ -44,6 +46,6 @@ See [`p5_05/final_evaluation_baseline.json`](p5_05/final_evaluation_baseline.jso
 - [`p5_12/final_visual_regression_acceptance.json`](p5_12/final_visual_regression_acceptance.json)
 - [`p5_12/operator_hardening_findings.json`](p5_12/operator_hardening_findings.json)
 
-The P5-06 historical overlay remains preserved. Later P6-P8 reviewer-facing documentation/publication changes are explicitly versioned as post-freeze overlays and do not rewrite the frozen scenario history or technical/evaluation candidate.
+The P5-06 historical overlay remains preserved. Later P6-P9 reviewer-facing documentation/environment/final-QA changes are explicitly versioned as post-freeze overlays and do not rewrite the frozen scenario history or technical/evaluation candidate.
 
 The Covered California fresh-request retrieval count differed between exploratory runs (one insufficient item in P5-11 versus zero in the P5-12 visual regression); both remained 0/3 sufficient and escalated. That count is documented as exploratory rather than treated as a frozen benchmark metric.

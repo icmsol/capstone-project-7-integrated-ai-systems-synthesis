@@ -29,7 +29,7 @@ Current frozen evidence includes:
 
 See the [final submission-candidate manifest](outputs/evaluation/p5_12/final_submission_candidate_manifest.json), [strict inventory](outputs/evaluation/p5_12/final_submission_candidate_strict_inventory.json), [final evidence index](outputs/evaluation/p5_12/final_submission_candidate_evidence_index.csv), and [freeze documentation](docs/P5_12_Final_Submission_Candidate_Freeze.md).
 
-Phase 6 technical documentation, governance, and reproducibility work is complete. Phase 7 reflective-synthesis reporting is complete and published under [`reports/`](reports/). Phase 8 reviewer-facing mentor-presentation materials are also finalized under [`presentation/`](presentation/) and are versioned through a post-freeze presentation overlay. Private speaker notes, defense-question preparation, and later live rehearsal materials are intentionally excluded from the repository. These reviewer-facing artifacts do not silently change the frozen technical/evaluation candidate.
+Phase 6 technical documentation, governance, and reproducibility work is complete. Phase 7 reflective-synthesis reporting is complete and published under [`reports/`](reports/). Phase 8 reviewer-facing mentor-presentation materials are finalized under [`presentation/`](presentation/). Phase 9 establishes the authoritative final Python 3.12 CPU environment lock and final-QA overlays. Private speaker notes, defense-question preparation, and later live rehearsal materials are intentionally excluded from the repository. These post-freeze reviewer/environment artifacts do not silently change the frozen technical/evaluation candidate.
 
 ## Fastest Reviewer Path
 
@@ -167,6 +167,8 @@ outputs/
   ci/                                Local/hosted quality-gate logs and metadata when generated
   evaluation/
     p5_01/ ... p5_12/                Frozen evaluation, metrics, failure, acceptance, and final-candidate evidence
+    p6_01/ ... p8_04/                Versioned post-freeze documentation/report/presentation overlays
+    p9_02/ ... p9_03/                Final environment/inventory and hostile-final-QA overlays
   p4_01/ ... p4_06/                  Stage-level implementation outputs
 
 presentation/                        Phase 8 mentor presentation and defense materials
@@ -238,6 +240,7 @@ Each major repository area has its own README where one exists:
 - [P9-02 Final Submission Environment and Repository Inventory](docs/P9_02_Final_Environment_and_Repository_Inventory.md)
 - [P9-02 Repository Area Inventory](docs/P9_02_Final_Repository_Area_Inventory.csv)
 - [Final `requirements.txt`](requirements.txt)
+- [P9-03 Final QA Overlay](outputs/evaluation/p9_03/post_freeze_final_qa_overlay_manifest.json)
 
 ### Governance, ethics, and production boundary
 
@@ -257,7 +260,7 @@ The live GitHub Actions workflow is:
 
 [` .github/workflows/project7-quality-gate.yml`](.github/workflows/project7-quality-gate.yml)
 
-It installs the exact root `requirements.txt` in a clean Python 3.12 CPU environment, runs `pip check`, verifies the final environment and repository inventory, and then runs repository-integrity checks, schema/contract/safeguard validation, frozen evaluation verification, P5-12 hardening checks, the final submission-candidate verifier, and regression/unit tests. The workflow uses read-only repository permissions and contains no deployment/publishing step.
+It installs the exact root `requirements.txt` in a clean Python 3.12 CPU environment, including the Project 7 setup's core NumPy, Pandas, and Matplotlib libraries plus the integrated runtime/validation dependencies; runs `pip check`; verifies the final environment and repository inventory; and then runs repository-integrity checks, schema/contract/safeguard validation, frozen evaluation verification, P5-12 hardening checks, the final submission-candidate verifier, and regression/unit tests. The workflow uses read-only repository permissions and contains no deployment/publishing step.
 
 The current workflow status is available on the [Project 7 Actions page](https://github.com/icmsol/capstone-project-7-integrated-ai-systems-synthesis/actions).
 

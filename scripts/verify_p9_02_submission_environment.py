@@ -26,7 +26,7 @@ HISTORICAL_REQUIREMENTS = [
     "requirements_p5_01.txt", "requirements_p5_02.txt", "requirements_p5_03.txt",
     "requirements_p5_04.txt", "requirements_p5_05.txt", "requirements_p5_09.txt",
 ]
-REQUIRED_LOCK_PACKAGES = {"jsonschema", "referencing", "pyyaml", "torch", "ipywidgets"}
+REQUIRED_LOCK_PACKAGES = {"numpy", "pandas", "matplotlib", "jsonschema", "referencing", "pyyaml", "torch", "ipywidgets"}
 IGNORE_DIR_NAMES = {".git", "__pycache__", ".pytest_cache", ".mypy_cache", ".ipynb_checkpoints"}
 TEMP_NAMES = {".DS_Store", "Thumbs.db", ".gitkeep"}
 TEMP_SUFFIXES = (".tmp", ".bak", "~")
@@ -94,8 +94,8 @@ def main() -> None:
             raise RuntimeError(f"Historical dependency snapshot moved or missing: {rel}")
 
     lock = parse_exact_lines(LOCK_PATH.read_text(encoding="utf-8"), "requirements.txt")
-    if len(lock) != 37:
-        raise RuntimeError(f"Expected 37 exact packages in final lock; found {len(lock)}")
+    if len(lock) != 51:
+        raise RuntimeError(f"Expected 51 exact packages in final lock; found {len(lock)}")
     if not REQUIRED_LOCK_PACKAGES.issubset(lock):
         raise RuntimeError("Final lock is missing a required Project 7 dependency family.")
     if lock.get("torch") != "2.10.0+cpu":
@@ -117,6 +117,11 @@ def main() -> None:
     if mismatches:
         raise RuntimeError(f"Final environment lock mismatch: {mismatches}")
 
+    import numpy as np  # noqa: F401
+    import pandas as pd  # noqa: F401
+    import matplotlib
+    matplotlib.use("Agg", force=True)
+    import matplotlib.pyplot as plt  # noqa: F401
     import torch  # noqa: F401
     if "+cpu" not in torch.__version__ or torch.cuda.is_available():
         raise RuntimeError(f"Expected CPU-only torch runtime; got {torch.__version__}")
@@ -150,6 +155,9 @@ def main() -> None:
         "locked_packages": len(lock),
         "pip_freeze_packages": len(installed),
         "additional_runner_packages_not_in_lock": extras,
+        "numpy_version": np.__version__,
+        "pandas_version": pd.__version__,
+        "matplotlib_version": matplotlib.__version__,
         "torch_version": torch.__version__,
         "torch_cuda_available": bool(torch.cuda.is_available()),
         "historical_requirement_snapshots_preserved": HISTORICAL_REQUIREMENTS,
@@ -175,6 +183,7 @@ def main() -> None:
     print(f"Historical requirements snapshots preserved: {len(HISTORICAL_REQUIREMENTS)}/12")
     print(f"Repository files inventoried: {len(rows)}")
     print("Temporary/placeholder file hits: 0")
+    print(f"Core setup libraries: numpy={np.__version__}, pandas={pd.__version__}, matplotlib={matplotlib.__version__}")
     print(f"CPU torch runtime: {torch.__version__}")
     print("Frozen candidate changed: FALSE")
     print("External actions performed: 0")

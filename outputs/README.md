@@ -8,7 +8,7 @@ This directory contains committed implementation outputs, evaluation evidence, C
 outputs/
   case_packets/   Curated representative packet location
   ci/             Quality-gate logs/metadata when generated
-  evaluation/     P5 frozen evaluation plus P6-P8 post-freeze documentation/CI overlays
+  evaluation/     P5 frozen evaluation plus P6-P9 post-freeze documentation/CI/environment/final-QA overlays
   p4_01/          Intake/provenance outputs
   p4_02/          Alignment and historical-context outputs
   p4_03/          Clause-triage outputs
@@ -39,7 +39,7 @@ The frozen candidate is anchored by:
 - [`evaluation/p5_12/final_submission_candidate_evidence_index.csv`](evaluation/p5_12/final_submission_candidate_evidence_index.csv)
 - [`evaluation/p5_12/final_visual_regression_acceptance.json`](evaluation/p5_12/final_visual_regression_acceptance.json)
 
-Reviewer-facing post-freeze documentation changes are versioned under `evaluation/p6_*`, `evaluation/p7_04`, and `evaluation/p8_04` so later reports/presentation materials do not silently change the frozen technical/evaluation candidate.
+Reviewer-facing post-freeze documentation changes are versioned under `evaluation/p6_*`, `evaluation/p7_04`, `evaluation/p8_04`, `evaluation/p9_02`, and `evaluation/p9_03` so later reports/presentation materials do not silently change the frozen technical/evaluation candidate.
 
 Generated outputs are evidence artifacts; they do not replace source documents or authorized human decisions.
 

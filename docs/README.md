@@ -112,13 +112,6 @@ Phase 7 reporting is complete. The final paper synthesizes the industry problem,
 
 Phase 8 reviewer-facing presentation materials are finalized for Project 7 submission. Private speaker notes, defense-question preparation, and later live rehearsal/timing material remain off-repository. The presentation remains bounded by the frozen technical/evaluation candidate and final Phase 7 paper.
 
-## Phase 8 Mentor Presentation
-
-- [Final Mentor Defense Deck (PPTX)](../presentation/Project_7_Mentor_Defense.pptx)
-- [Final Mentor Defense Deck (PDF)](../presentation/Project_7_Mentor_Defense.pdf)
-- [Presentation README and public/private boundary](../presentation/README.md)
-
-Phase 8 reviewer-facing presentation artifacts are complete. Private speaker notes, defense-question preparation, and live rehearsal materials are intentionally excluded from the repository.
 
 ## P9-02 Final Submission Environment and Inventory
 
@@ -127,3 +120,9 @@ Phase 8 reviewer-facing presentation artifacts are complete. Private speaker not
 - [Authoritative final `requirements.txt`](../requirements.txt)
 
 P9-02 adds the final exact Python 3.12 CPU dependency lock and hosted inventory controls without relocating historical stage-specific requirements files or changing the frozen technical/evaluation candidate.
+
+## P9-03 Hostile Final QA Reconciliation
+
+- [P9-03 Final QA Overlay](../outputs/evaluation/p9_03/post_freeze_final_qa_overlay_manifest.json)
+
+P9-03 reconciles the explicit Project 7 core-library environment setup (NumPy, Pandas, and Matplotlib), current-state documentation, the live/documentation CI workflow pair, and the presentation reproducibility crosswalk. It does not change the frozen technical/evaluation candidate, evaluation results, safeguards, recommendation logic, or human-authority boundary.
